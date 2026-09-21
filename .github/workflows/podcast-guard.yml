@@ -1,0 +1,38 @@
+name: Podcast guard
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  guard:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Auto-merge podcast-only PRs
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR: ${{ github.event.pull_request.number }}
+          REPO: ${{ github.repository }}
+        run: |
+          set -euo pipefail
+          files=$(gh api "repos/$REPO/pulls/$PR/files" --paginate --jq '.[].filename')
+          echo "Changed files:"; echo "$files"
+
+          if [ -z "$files" ]; then
+            echo "::notice::Empty diff - not auto-merging."
+            exit 0
+          fi
+
+          outside=$(echo "$files" | grep -Ev '^(podcast/|public/podcast/)' || true)
+          if [ -n "$outside" ]; then
+            echo "::notice::Touches files outside the podcast paths - leaving open for review:"
+            echo "$outside"
+            exit 0
+          fi
+
+          gh pr merge "$PR" --repo "$REPO" --squash --auto
+          echo "::notice::Podcast-only diff - auto-merge enabled."
