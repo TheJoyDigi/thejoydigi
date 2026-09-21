@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+<title>Money, Mastered</title>
+<link>https://thejoydigi.github.io/thejoydigi/podcasts/money-mastered</link>
+<language>en-us</language>
+<description>Money, Mastered: a 36-chapter audiobook taking you from zero to mastery in macroeconomics, money, investing, trading, and Bitcoin. Hosted by Alex and Jordan.</description>
+<itunes:author>Long La</itunes:author>
+<itunes:summary>Money, Mastered: a 36-chapter audiobook taking you from zero to mastery in macroeconomics, money, investing, trading, and Bitcoin. Hosted by Alex and Jordan.</itunes:summary>
+<itunes:owner>
+<itunes:name>Long La</itunes:name>
+<itunes:email>baolonguit@gmail.com</itunes:email>
+</itunes:owner>
+<itunes:image href="https://thejoydigi.github.io/thejoydigi/podcasts/money-mastered/cover.jpg"/>
+<itunes:category text="Education"/>
+<itunes:explicit>false</itunes:explicit>
+<itunes:type>serial</itunes:type>
+<managingEditor>baolonguit@gmail.com (Long La)</managingEditor>
+<atom:link href="https://thejoydigi.github.io/thejoydigi/podcasts/money-mastered/feed.xml" rel="self" type="application/rss+xml"/>
+<item>
+<title>Money, Mastered — Chapter 1: What Money Really Is</title>
+<description>Chapter 1: what money is, why the dollar has value, and why wealth is not money.</description>
+<pubDate>Mon, 21 Sep 2026 22:25:37 +0000</pubDate>
+<enclosure url="https://thejoydigi.github.io/thejoydigi/podcasts/money-mastered/money-mastered-chapter-1-what-money-really-is-2026-09-21.mp3" length="5940130" type="audio/mpeg"/>
+<guid isPermaLink="false">mm-ch1-2026-09-21</guid>
+<itunes:author>Long La</itunes:author>
+<itunes:duration>0:09:54</itunes:duration>
+<itunes:episodeType>full</itunes:episodeType>
+</item><item>
+<title>Money, Mastered — Chapter 2: Inflation, the Silent Tax</title>
+<description>Chapter 2: inflation, CPI, winners and losers, and real vs nominal returns.</description>
+<pubDate>Mon, 21 Sep 2026 22:29:16 +0000</pubDate>
+<enclosure url="https://thejoydigi.github.io/thejoydigi/podcasts/money-mastered/money-mastered-chapter-2-inflation-the-silent-tax-2026-09-21.mp3" length="6035212" type="audio/mpeg"/>
+<guid isPermaLink="false">mm-ch2-2026-09-21</guid>
+<itunes:author>Long La</itunes:author>
+<itunes:duration>0:10:00</itunes:duration>
+<itunes:episodeType>full</itunes:episodeType>
+</item><item>
+<title>Money, Mastered — Chapter 3: The Fed and Central Banks</title>
+<description>Chapter 3: central banks, the rate transmission chain, QE, and why you never fight the Fed.</description>
+<pubDate>Mon, 21 Sep 2026 22:32:29 +0000</pubDate>
+<enclosure url="https://thejoydigi.github.io/thejoydigi/podcasts/money-mastered/money-mastered-chapter-3-the-fed-and-central-banks-2026-09-21.mp3" length="5413457" type="audio/mpeg"/>
+<guid isPermaLink="false">mm-ch3-2026-09-21</guid>
+<itunes:author>Long La</itunes:author>
+<itunes:duration>0:08:56</itunes:duration>
+<itunes:episodeType>full</itunes:episodeType>
+</item>
+</channel>
+</rss>
