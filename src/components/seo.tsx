@@ -1,4 +1,5 @@
 import { NextSeo } from "next-seo";
+import { useRouter } from "next/router";
 
 interface DefaultSEOProps {
   title?: string;
@@ -11,14 +12,16 @@ export const DefaultSEO: React.FC<DefaultSEOProps> = ({
   description = "Helping businesses grow with joyful experiences, purposeful design, custom tech, and clear strategy. Specializing in website design, web & mobile apps, SEO, and digital consulting.",
   image = "/long-digital-partner-websites-apps-seo-the-joy-digi-rectangle.webp",
 }) => {
+  const { asPath } = useRouter();
+  const url = `https://thejoydigi.com${asPath.split(/[?#]/)[0]}`;
   return (
     <NextSeo
       title={title}
       description={description}
-      canonical="https://thejoydigi.com/"
+      canonical={url}
       openGraph={{
         type: "website",
-        url: "https://thejoydigi.com/",
+        url,
         title,
         description,
         images: [

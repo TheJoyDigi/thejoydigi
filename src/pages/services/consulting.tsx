@@ -1,5 +1,4 @@
 import { NextPage } from "next";
-import Link from "next/link";
 import {
   FaChartLine,
   FaRocket,
@@ -8,208 +7,137 @@ import {
   FaUserCog,
   FaUsers,
 } from "react-icons/fa";
+import {
+  Button,
+  Card,
+  CtaBand,
+  IconBadge,
+  PageHero,
+  Reveal,
+  Section,
+  Steps,
+} from "@/components/marketing/kit";
 import MainLayout from "../_layouts";
 
+const services = [
+  {
+    icon: <FaSearch />,
+    color: "#4ABEFF",
+    title: "SEO Strategy",
+    description: "Comprehensive SEO audits and strategies to improve your search visibility and organic traffic.",
+  },
+  {
+    icon: <FaChartLine />,
+    color: "#FFC94A",
+    title: "Digital Growth",
+    description: "Data-driven strategies to grow your online presence and customer base.",
+  },
+  {
+    icon: <FaTools />,
+    color: "#7EE0C3",
+    title: "Tech Stack Selection",
+    description: "Expert guidance in choosing the right technologies for your business needs.",
+  },
+  {
+    icon: <FaRocket />,
+    color: "#FF6B6B",
+    title: "Performance Optimization",
+    description: "Improve your website's speed, user experience, and conversion rates.",
+  },
+  {
+    icon: <FaUsers />,
+    color: "#4ABEFF",
+    title: "Team Training",
+    description: "Workshops and training sessions to upskill your team in digital best practices.",
+  },
+];
+
+const perfectFor = [
+  {
+    icon: <FaUserCog />,
+    color: "#4ABEFF",
+    title: "Non-technical Founders",
+    description: "Needing digital guidance and strategy",
+  },
+  {
+    icon: <FaChartLine />,
+    color: "#FFC94A",
+    title: "Growing Businesses",
+    description: "Planning digital transformation",
+  },
+  {
+    icon: <FaTools />,
+    color: "#7EE0C3",
+    title: "Tech Teams",
+    description: "Needing stack recommendations",
+  },
+  {
+    icon: <FaSearch />,
+    color: "#FF6B6B",
+    title: "Online Businesses",
+    description: "Wanting to improve their presence",
+  },
+];
+
+const process = [
+  { title: "Assessment", description: "Analyze your current digital presence and identify opportunities." },
+  { title: "Strategy", description: "Develop a customized digital roadmap aligned with your goals." },
+  { title: "Implementation", description: "Guide your team through executing the recommended changes." },
+  { title: "Monitoring", description: "Track progress and adjust strategies based on performance data." },
+  { title: "Optimization", description: "Continuously refine and improve your digital presence." },
+];
+
 const Consulting: NextPage = () => {
-  const services = [
-    {
-      icon: <FaSearch className="w-6 h-6" />,
-      title: "SEO Strategy",
-      description:
-        "Comprehensive SEO audits and strategies to improve your search visibility and organic traffic.",
-    },
-    {
-      icon: <FaChartLine className="w-6 h-6" />,
-      title: "Digital Growth",
-      description:
-        "Data-driven strategies to grow your online presence and customer base.",
-    },
-    {
-      icon: <FaTools className="w-6 h-6" />,
-      title: "Tech Stack Selection",
-      description:
-        "Expert guidance in choosing the right technologies for your business needs.",
-    },
-    {
-      icon: <FaRocket className="w-6 h-6" />,
-      title: "Performance Optimization",
-      description:
-        "Improve your website's speed, user experience, and conversion rates.",
-    },
-    {
-      icon: <FaUsers className="w-6 h-6" />,
-      title: "Team Training",
-      description:
-        "Workshops and training sessions to upskill your team in digital best practices.",
-    },
-  ];
-
-  const process = [
-    {
-      step: "1",
-      title: "Assessment",
-      description:
-        "Analyze your current digital presence and identify opportunities.",
-    },
-    {
-      step: "2",
-      title: "Strategy",
-      description:
-        "Develop a customized digital roadmap aligned with your goals.",
-    },
-    {
-      step: "3",
-      title: "Implementation",
-      description: "Guide your team through executing the recommended changes.",
-    },
-    {
-      step: "4",
-      title: "Monitoring",
-      description:
-        "Track progress and adjust strategies based on performance data.",
-    },
-    {
-      step: "5",
-      title: "Optimization",
-      description: "Continuously refine and improve your digital presence.",
-    },
-  ];
-
   return (
     <MainLayout
       title="Digital Consulting | The Joy Digi"
       description="Expert guidance to clarify your digital roadmap. Whether you're choosing the right tools, boosting visibility on search engines, or improving your funnel — we help you move smarter."
     >
-      <div className="min-h-screen bg-soft-sand">
-        <main className="container mx-auto px-4 py-16">
-          <section className="max-w-4xl mx-auto text-center mb-16">
-            <h1 className="text-4xl font-bold text-deep-teal mb-6">
-              Digital Consulting
-            </h1>
-            <p className="text-xl text-deep-teal mb-8">
-              Expert guidance to clarify your digital roadmap. Whether you're
-              choosing the right tools, boosting visibility on search engines,
-              or improving your funnel — we help you move smarter.
-            </p>
-          </section>
+      <PageHero
+        kicker="Service"
+        title="Digital consulting that"
+        accent="moves you smarter."
+        lead="Expert guidance to clarify your digital roadmap. Whether you're choosing the right tools, boosting visibility on search engines, or improving your funnel — we help you move smarter."
+      >
+        <Button href="/#booking">Book a free consultation</Button>
+        <Button href="/case-studies" variant="ghost">
+          See our work
+        </Button>
+      </PageHero>
 
-          <div className="max-w-6xl mx-auto">
-            <section className="mb-16">
-              <h2 className="text-2xl font-semibold text-deep-teal mb-8">
-                Our Services
-              </h2>
-              <div className="grid md:grid-cols-3 gap-8">
-                {services.map((service, index) => (
-                  <div
-                    key={index}
-                    className="bg-white p-6 rounded-lg shadow-sm"
-                  >
-                    <div className="w-12 h-12 bg-sky-blue/10 rounded-full flex items-center justify-center mb-4">
-                      {service.icon}
-                    </div>
-                    <h3 className="text-xl font-semibold text-deep-teal mb-3">
-                      {service.title}
-                    </h3>
-                    <p className="text-gray-600">{service.description}</p>
-                  </div>
-                ))}
-              </div>
-            </section>
+      <Section tone="white" kicker="Our services" title="A roadmap for" accent="every stage.">
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {services.map((s, i) => (
+            <Reveal key={s.title} delay={i * 0.05}>
+              <Card>
+                <IconBadge color={s.color}>{s.icon}</IconBadge>
+                <h3 className="font-display !py-0 mb-2 text-2xl font-[460]">{s.title}</h3>
+                <p className="text-[#003B49]/75">{s.description}</p>
+              </Card>
+            </Reveal>
+          ))}
+        </div>
+      </Section>
 
-            <section className="mb-16">
-              <h2 className="text-2xl font-semibold text-deep-teal mb-8">
-                Our Approach
-              </h2>
-              <div className="space-y-8">
-                {process.map((step, index) => (
-                  <div key={index} className="flex items-start gap-6">
-                    <div className="w-12 h-12 bg-sky-blue text-white rounded-full flex items-center justify-center text-xl font-bold flex-shrink-0">
-                      {step.step}
-                    </div>
-                    <div>
-                      <h3 className="text-xl font-semibold text-deep-teal mb-2">
-                        {step.title}
-                      </h3>
-                      <p className="text-gray-600">{step.description}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </section>
+      <Section tone="cream" kicker="Our approach" title="Clarity, then" accent="momentum.">
+        <Steps steps={process} />
+      </Section>
 
-            <section className="mb-16">
-              <h2 className="text-2xl font-semibold text-deep-teal mb-8">
-                Perfect For
-              </h2>
-              <div className="bg-white p-8 rounded-lg shadow-sm">
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div className="flex items-start gap-4 p-4 rounded-lg hover:bg-soft-sand/50 transition-colors duration-300">
-                    <div className="w-10 h-10 bg-sky-blue/10 rounded-full flex items-center justify-center flex-shrink-0">
-                      <FaUserCog className="w-5 h-5 text-sky-blue" />
-                    </div>
-                    <div>
-                      <h3 className="text-lg font-semibold text-deep-teal mb-1">
-                        Non-technical Founders
-                      </h3>
-                      <p className="text-gray-600">
-                        Needing digital guidance and strategy
-                      </p>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-4 p-4 rounded-lg hover:bg-soft-sand/50 transition-colors duration-300">
-                    <div className="w-10 h-10 bg-sky-blue/10 rounded-full flex items-center justify-center flex-shrink-0">
-                      <FaChartLine className="w-5 h-5 text-sky-blue" />
-                    </div>
-                    <div>
-                      <h3 className="text-lg font-semibold text-deep-teal mb-1">
-                        Growing Businesses
-                      </h3>
-                      <p className="text-gray-600">
-                        Planning digital transformation
-                      </p>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-4 p-4 rounded-lg hover:bg-soft-sand/50 transition-colors duration-300">
-                    <div className="w-10 h-10 bg-sky-blue/10 rounded-full flex items-center justify-center flex-shrink-0">
-                      <FaTools className="w-5 h-5 text-sky-blue" />
-                    </div>
-                    <div>
-                      <h3 className="text-lg font-semibold text-deep-teal mb-1">
-                        Tech Teams
-                      </h3>
-                      <p className="text-gray-600">
-                        Needing stack recommendations
-                      </p>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-4 p-4 rounded-lg hover:bg-soft-sand/50 transition-colors duration-300">
-                    <div className="w-10 h-10 bg-sky-blue/10 rounded-full flex items-center justify-center flex-shrink-0">
-                      <FaSearch className="w-5 h-5 text-sky-blue" />
-                    </div>
-                    <div>
-                      <h3 className="text-lg font-semibold text-deep-teal mb-1">
-                        Online Businesses
-                      </h3>
-                      <p className="text-gray-600">
-                        Wanting to improve their presence
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </section>
+      <Section tone="white" kicker="Perfect for" title="Built for teams" accent="ready to grow.">
+        <div className="grid gap-6 md:grid-cols-2">
+          {perfectFor.map((p, i) => (
+            <Reveal key={p.title} delay={i * 0.05}>
+              <Card>
+                <IconBadge color={p.color}>{p.icon}</IconBadge>
+                <h3 className="font-display !py-0 mb-2 text-2xl font-[460]">{p.title}</h3>
+                <p className="text-[#003B49]/75">{p.description}</p>
+              </Card>
+            </Reveal>
+          ))}
+        </div>
+      </Section>
 
-            <section className="text-center">
-              <Link
-                href="/#booking"
-                className="inline-block bg-[#4ABEFF] text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-[#FF6B6B] transition-colors duration-300"
-              >
-                Start Your Digital Transformation
-              </Link>
-            </section>
-          </div>
-        </main>
-      </div>
+      <CtaBand title="Ready to move your" accent="business smarter?" />
     </MainLayout>
   );
 };

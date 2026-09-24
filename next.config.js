@@ -8,6 +8,15 @@ const withMDX = require("@next/mdx")({
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  async redirects() {
+    return [
+      {
+        source: "/case-studies/ruh-roh-retreat",
+        destination: "/case-studies/the-blue-sock",
+        permanent: true,
+      },
+    ];
+  },
   pageExtensions: ["ts", "tsx", "js", "jsx", "md", "mdx"],
   images: {
     formats: ["image/webp"],

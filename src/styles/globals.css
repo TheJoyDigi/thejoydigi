@@ -79,35 +79,43 @@ a {
   @apply w-full px-4 md:px-[20%];
 }
 .blogContainer p {
-  @apply text-lg md:text-xl leading-[1.8] md:leading-[1.8] mb-8 text-gray-800 tracking-wide;
+  @apply text-lg md:text-xl leading-[1.8] md:leading-[1.8] mb-8 tracking-wide text-[#003B49]/85;
 }
 .blogContainer h2 {
-  @apply text-2xl md:text-3xl font-bold mt-12 mb-6 text-gray-900;
+  @apply !py-0 mt-12 mb-6 text-2xl font-[460] md:text-3xl text-[#003B49];
+  font-family: var(--font-display), Georgia, serif;
 }
 .blogContainer h3 {
-  @apply text-xl md:text-2xl font-semibold mt-8 mb-4 text-gray-900;
+  @apply !py-0 mt-8 mb-4 text-xl font-[460] md:text-2xl text-[#003B49];
+  font-family: var(--font-display), Georgia, serif;
 }
 .blogContainer ul,
 .blogContainer ol {
-  @apply mb-8 ml-8 text-lg md:text-xl text-gray-800;
+  @apply mb-8 ml-8 text-lg md:text-xl text-[#003B49]/85;
+}
+.blogContainer ul {
+  @apply list-disc;
+}
+.blogContainer ol {
+  @apply list-decimal;
 }
 .blogContainer li {
-  @apply mb-4 leading-[1.8] md:leading-[1.8];
+  @apply mb-4 pl-1 leading-[1.8] md:leading-[1.8] marker:text-[#FF6B6B];
 }
 .blogContainer strong {
-  @apply font-semibold text-gray-900;
+  @apply font-semibold text-[#003B49];
 }
 .blogContainer em {
-  @apply italic text-gray-800;
+  @apply italic text-[#003B49]/85;
 }
 .blogContainer a {
-  @apply text-primary-500 hover:text-primary-600 underline;
+  @apply text-[#FF6B6B] underline underline-offset-4 hover:text-[#003B49];
 }
 .blogContainer blockquote {
-  @apply pl-6 border-l-4 border-primary-500 italic my-8 text-lg md:text-xl text-gray-700;
+  @apply my-8 rounded-r-xl border-l-4 border-[#FFC94A] bg-[#FDF6EC] py-4 pl-6 pr-4 text-lg italic text-[#003B49]/85 md:text-xl;
 }
 .blogContainer code {
-  @apply bg-gray-100 px-2 py-1 rounded text-base md:text-lg;
+  @apply rounded bg-[#FDF6EC] px-2 py-1 text-base text-[#003B49] md:text-lg;
   font-family: "JetBrains Mono", monospace;
 }
 .logo {

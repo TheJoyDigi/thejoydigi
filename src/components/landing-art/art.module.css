@@ -1,0 +1,486 @@
+.scene {
+  position: relative;
+}
+
+.scene[data-paused="true"] *,
+.scene[data-paused="true"] *::before,
+.scene[data-paused="true"] *::after {
+  animation-play-state: paused !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scene *,
+  .scene *::before,
+  .scene *::after {
+    animation: none !important;
+  }
+}
+
+.self {
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.spin {
+  composes: self;
+}
+
+.live .spin,
+:global(.group):hover .hoverPlay .spin,
+:global(.group):focus-visible .hoverPlay .spin {
+  animation: spin 24s linear infinite;
+}
+
+.spinSlow {
+  composes: self;
+}
+
+.live .spinSlow,
+:global(.group):hover .hoverPlay .spinSlow,
+:global(.group):focus-visible .hoverPlay .spinSlow {
+  animation: spin 60s linear infinite;
+}
+
+.spinReverse {
+  composes: self;
+}
+
+.live .spinReverse,
+:global(.group):hover .hoverPlay .spinReverse,
+:global(.group):focus-visible .hoverPlay .spinReverse {
+  animation: spin 36s linear infinite reverse;
+}
+
+.spinView {
+  transform-origin: center;
+}
+
+.live .spinView,
+:global(.group):hover .hoverPlay .spinView,
+:global(.group):focus-visible .hoverPlay .spinView {
+  animation: spin 18s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.float {
+  composes: self;
+}
+
+.live .float,
+:global(.group):hover .hoverPlay .float,
+:global(.group):focus-visible .hoverPlay .float {
+  animation: float 7s ease-in-out infinite;
+}
+
+.floatAlt {
+  composes: self;
+}
+
+.live .floatAlt,
+:global(.group):hover .hoverPlay .floatAlt,
+:global(.group):focus-visible .hoverPlay .floatAlt {
+  animation: float 9s ease-in-out -3s infinite;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  50% {
+    transform: translate(0, -14px) rotate(4deg);
+  }
+}
+
+.twinkle {
+  composes: self;
+}
+
+.live .twinkle,
+:global(.group):hover .hoverPlay .twinkle,
+:global(.group):focus-visible .hoverPlay .twinkle {
+  animation: twinkle 3.2s ease-in-out infinite;
+}
+
+@keyframes twinkle {
+  0%,
+  100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(0.4) rotate(45deg);
+    opacity: 0.3;
+  }
+}
+
+.blink {
+  composes: self;
+}
+
+.live .blink,
+:global(.group):hover .hoverPlay .blink,
+:global(.group):focus-visible .hoverPlay .blink {
+  animation: blink 5.5s ease-in-out infinite;
+}
+
+@keyframes blink {
+  0%,
+  92%,
+  100% {
+    transform: scaleY(1);
+  }
+  95% {
+    transform: scaleY(0.08);
+  }
+}
+
+.dashFlow {
+  isolation: auto;
+}
+
+.live .dashFlow,
+:global(.group):hover .hoverPlay .dashFlow,
+:global(.group):focus-visible .hoverPlay .dashFlow {
+  animation: dashFlow 1.6s linear infinite;
+}
+
+@keyframes dashFlow {
+  to {
+    stroke-dashoffset: -24;
+  }
+}
+
+.drawLoop {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 0;
+}
+
+.live .drawLoop,
+:global(.group):hover .hoverPlay .drawLoop,
+:global(.group):focus-visible .hoverPlay .drawLoop {
+  animation: drawLoop 5s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+}
+
+@keyframes drawLoop {
+  0%,
+  55%,
+  100% {
+    stroke-dashoffset: 0;
+  }
+  75% {
+    stroke-dashoffset: 1;
+  }
+}
+
+.pop {
+  composes: self;
+}
+
+.live .pop,
+:global(.group):hover .hoverPlay .pop,
+:global(.group):focus-visible .hoverPlay .pop {
+  animation: pop 5s cubic-bezier(0.34, 1.56, 0.64, 1) infinite;
+}
+
+@keyframes pop {
+  0%,
+  60%,
+  100% {
+    transform: scale(1);
+  }
+  72% {
+    transform: scale(0);
+  }
+  86% {
+    transform: scale(1.12);
+  }
+}
+
+.cursor {
+  isolation: auto;
+}
+
+.live .cursor,
+:global(.group):hover .hoverPlay .cursor,
+:global(.group):focus-visible .hoverPlay .cursor {
+  animation: cursor 7s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+}
+
+@keyframes cursor {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(-120px, -40px);
+  }
+  45% {
+    transform: translate(-60px, 40px);
+  }
+  55% {
+    transform: translate(-60px, 40px) scale(0.85);
+  }
+  60% {
+    transform: translate(-60px, 40px);
+  }
+  80% {
+    transform: translate(30px, -70px);
+  }
+}
+
+.click {
+  composes: self;
+  opacity: 0;
+}
+
+.live .click,
+:global(.group):hover .hoverPlay .click,
+:global(.group):focus-visible .hoverPlay .click {
+  animation: click 7s ease-out infinite;
+}
+
+@keyframes click {
+  0%,
+  52% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  55% {
+    transform: scale(0.4);
+    opacity: 1;
+  }
+  68%,
+  100% {
+    transform: scale(1.8);
+    opacity: 0;
+  }
+}
+
+.scrollFeed {
+  isolation: auto;
+}
+
+.live .scrollFeed,
+:global(.group):hover .hoverPlay .scrollFeed,
+:global(.group):focus-visible .hoverPlay .scrollFeed {
+  animation: scrollFeed 8s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+}
+
+@keyframes scrollFeed {
+  0%,
+  18% {
+    transform: translateY(0);
+  }
+  33%,
+  51% {
+    transform: translateY(-58px);
+  }
+  66%,
+  84% {
+    transform: translateY(-116px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.bubble {
+  composes: self;
+}
+
+.live .bubble,
+:global(.group):hover .hoverPlay .bubble,
+:global(.group):focus-visible .hoverPlay .bubble {
+  animation: bubble 4s cubic-bezier(0.34, 1.56, 0.64, 1) infinite;
+}
+
+@keyframes bubble {
+  0%,
+  60%,
+  100% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+  }
+  72% {
+    transform: scale(0.9) translateY(-12px);
+    opacity: 0;
+  }
+  80% {
+    transform: scale(0) translateY(8px);
+    opacity: 0;
+  }
+  90% {
+    transform: scale(1.06) translateY(0);
+    opacity: 1;
+  }
+}
+
+.qrCell {
+  composes: self;
+}
+
+.live .qrCell,
+:global(.group):hover .hoverPlay .qrCell,
+:global(.group):focus-visible .hoverPlay .qrCell {
+  animation: qrCell 3.6s ease-in-out infinite;
+}
+
+@keyframes qrCell {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  40% {
+    transform: scale(0.2) rotate(45deg);
+  }
+  60% {
+    transform: scale(1.12);
+  }
+}
+
+.paw {
+  composes: self;
+}
+
+.live .paw,
+:global(.group):hover .hoverPlay .paw,
+:global(.group):focus-visible .hoverPlay .paw {
+  animation: paw 6s ease-out infinite;
+}
+
+@keyframes paw {
+  0%,
+  40%,
+  100% {
+    opacity: 1;
+  }
+  65% {
+    opacity: 0.15;
+  }
+}
+
+.grow {
+  transform-origin: bottom;
+  transform-box: fill-box;
+}
+
+.live .grow,
+:global(.group):hover .hoverPlay .grow,
+:global(.group):focus-visible .hoverPlay .grow {
+  animation: grow 4.8s cubic-bezier(0.34, 1.56, 0.64, 1) infinite;
+}
+
+@keyframes grow {
+  0%,
+  55%,
+  100% {
+    transform: scaleY(1);
+  }
+  75% {
+    transform: scaleY(0.25);
+  }
+}
+
+.beat {
+  composes: self;
+}
+
+.live .beat,
+:global(.group):hover .hoverPlay .beat,
+:global(.group):focus-visible .hoverPlay .beat {
+  animation: beat 1.4s ease-in-out infinite;
+}
+
+@keyframes beat {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  15% {
+    transform: scale(1.14);
+  }
+  30% {
+    transform: scale(0.98);
+  }
+  45% {
+    transform: scale(1.08);
+  }
+}
+
+.tick {
+  transform-origin: 0 0;
+}
+
+.live .tick,
+:global(.group):hover .hoverPlay .tick,
+:global(.group):focus-visible .hoverPlay .tick {
+  animation: spin 6s steps(60) infinite;
+}
+
+.sweep {
+  transform-origin: 0 0;
+}
+
+.live .sweep,
+:global(.group):hover .hoverPlay .sweep,
+:global(.group):focus-visible .hoverPlay .sweep {
+  animation: spin 2.4s linear infinite;
+}
+
+.plane {
+  offset-path: path("M -40 160 C 60 40, 180 40, 240 120 S 380 220, 460 60");
+  offset-rotate: auto;
+}
+
+.live .plane,
+:global(.group):hover .hoverPlay .plane,
+:global(.group):focus-visible .hoverPlay .plane {
+  animation: plane 2.6s cubic-bezier(0.45, 0, 0.55, 1) 0.4s 1 both;
+}
+
+@keyframes plane {
+  0% {
+    offset-distance: 0%;
+  }
+  100% {
+    offset-distance: 88%;
+  }
+}
+
+.shimmer {
+  background-size: 200% auto;
+}
+
+.live .shimmer,
+:global(.group):hover .hoverPlay .shimmer,
+:global(.group):focus-visible .hoverPlay .shimmer {
+  animation: shimmer 6s linear infinite;
+}
+
+@keyframes shimmer {
+  to {
+    background-position: -200% center;
+  }
+}
+
+.grain {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 40;
+  opacity: 0.045;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.9 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+}
+
+
+.live,
+.hoverPlay {
+  isolation: auto;
+}

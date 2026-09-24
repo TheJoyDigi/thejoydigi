@@ -18,6 +18,7 @@ const config: Config = {
       heading: ["Raleway", "sans-serif"],
       logo: ["Quicksand", "sans-serif"],
       body: ["Inter", "sans-serif"],
+      display: ["var(--font-display)", "Georgia", "serif"],
     },
     extend: {
       backgroundImage: {

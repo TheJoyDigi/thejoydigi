@@ -1,186 +1,132 @@
 import { NextPage } from "next";
 import Image from "next/image";
-import Link from "next/link";
+import { Button, Card, CtaBand, PageHero, Pill, Reveal, Section, StarList } from "@/components/marketing/kit";
 import MainLayout from "../_layouts";
+
+const glance = [
+  { big: "10k+", small: "Active Users" },
+  { big: "4.8", small: "App Store Rating" },
+  { big: "95%", small: "User Retention" },
+];
 
 const QRganizCaseStudy: NextPage = () => {
   return (
     <MainLayout
       title="QRganiz Case Study | The Joy Digi"
       description="How we built a smart QR code-based item tracker to help users organize their personal belongings."
+      image="/case-studies/qrganiz-hero.webp"
     >
-      <div className="min-h-screen bg-soft-sand">
-        <main className="container mx-auto px-4 py-16">
-          {/* Hero Section */}
-          <section className="max-w-4xl mx-auto text-center mb-16">
-            <h1 className="text-4xl font-bold text-deep-teal mb-6">QRganiz</h1>
-            <p className="text-xl text-deep-teal mb-8">
-              A smart QR code-based item tracker that helps users organize their
-              personal belongings.
+      <PageHero
+        breadcrumb={{ href: "/case-studies", label: "All work" }}
+        kicker="Case study"
+        title="QRganiz —"
+        accent="a smart tracker"
+        after="for everyday belongings."
+        lead={
+          <>
+            <p>
+              A QR code-based item tracker that helps users organize their personal belongings — easy to use,
+              cost-effective, and accessible across devices.
             </p>
-            <div className="relative w-full aspect-square max-w-[400px] mx-auto rounded-lg overflow-hidden shadow-lg">
-              <Image
-                src="/case-studies/qrganiz-hero.webp"
-                alt="QRganiz App Interface"
-                fill
-                className="object-cover"
-                priority
+            <div className="mt-6 flex flex-wrap gap-2">
+              <Pill color="#7EE0C3">Mobile App</Pill>
+              <Pill color="#FFC94A">Website</Pill>
+              <Pill color="#4ABEFF">Digital Launch</Pill>
+            </div>
+          </>
+        }
+        aside={
+          <div className="mx-auto max-w-[380px] rotate-[1.5deg] rounded-2xl border border-[#003B49]/10 bg-white p-2 shadow-[0_40px_80px_-30px_rgba(0,59,73,0.45)]">
+            <div className="relative aspect-square overflow-hidden rounded-xl">
+              <Image src="/case-studies/qrganiz-hero.webp" alt="QRganiz app interface" fill sizes="380px" className="object-cover" priority />
+            </div>
+          </div>
+        }
+      >
+        <Button href="https://www.qrganiz.com/">Visit qrganiz.com</Button>
+        <Button href="/#booking" variant="ghost">
+          Start your project
+        </Button>
+      </PageHero>
+
+
+      <Section tone="white" kicker="The challenge" title="Belongings people" accent="keep losing track of.">
+        <Reveal>
+          <Card className="max-w-3xl">
+            <p className="text-[#003B49]/75">
+              The client needed a solution to help users keep track of their personal belongings, especially
+              valuable items that are frequently misplaced or loaned out. The challenge was to create a system that
+              was:
+            </p>
+            <StarList
+              className="mt-5"
+              items={[
+                "Easy to use for non-technical users",
+                "Cost-effective to implement",
+                "Scalable for different types of items",
+                "Secure and private",
+                "Accessible across multiple devices",
+              ]}
+            />
+          </Card>
+        </Reveal>
+      </Section>
+
+      <Section tone="cream" kicker="What we did" title="Mobile app," accent="built end to end.">
+        <div className="grid gap-6 md:grid-cols-2">
+          <Reveal>
+            <Card>
+              <h3 className="font-display !py-0 mb-4 text-2xl font-[460]">Mobile App Development</h3>
+              <StarList
+                color="#4ABEFF"
+                items={[
+                  "Built a cross-platform mobile app using React Native",
+                  "Implemented QR code generation and scanning",
+                  "Created a user-friendly interface for item management",
+                  "Added offline functionality for basic features",
+                ]}
               />
-            </div>
-            <div className="mt-8 grid grid-cols-3 gap-4 text-center">
-              <div>
-                <p className="text-sm text-gray-600">Project Type</p>
-                <p className="font-medium text-deep-teal">
-                  Mobile App + Website
-                </p>
-              </div>
-              <div>
-                <p className="text-sm text-gray-600">Industry</p>
-                <p className="font-medium text-deep-teal">
-                  Productivity / Tech
-                </p>
-              </div>
-              <div>
-                <p className="text-sm text-gray-600">Timeline</p>
-                <p className="font-medium text-deep-teal">6 Months</p>
-              </div>
-            </div>
-            <div className="mt-6">
-              <a
-                href="https://www.qrganiz.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center text-sky-blue hover:text-coral transition-colors"
-              >
-                Visit Client Website
-                <svg
-                  className="w-4 h-4 ml-2"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-                  />
-                </svg>
-              </a>
-            </div>
-          </section>
+            </Card>
+          </Reveal>
+          <Reveal delay={0.08}>
+            <Card>
+              <h3 className="font-display !py-0 mb-4 text-2xl font-[460]">Backend Infrastructure</h3>
+              <StarList
+                color="#FF6B6B"
+                items={[
+                  "Developed a scalable backend using Node.js and MongoDB",
+                  "Implemented secure user authentication",
+                  "Created APIs for item tracking and management",
+                  "Set up cloud storage for QR code images",
+                ]}
+              />
+            </Card>
+          </Reveal>
+        </div>
+      </Section>
 
-          {/* Challenge Section */}
-          <section className="max-w-4xl mx-auto mb-16">
-            <h2 className="text-3xl font-semibold text-deep-teal mb-6">
-              The Challenge
-            </h2>
-            <div className="bg-white rounded-lg p-8 shadow-sm">
-              <p className="text-gray-600 mb-4">
-                The client needed a solution to help users keep track of their
-                personal belongings, especially valuable items that are
-                frequently misplaced or loaned out. The challenge was to create
-                a system that was:
-              </p>
-              <ul className="list-disc list-inside text-gray-600 space-y-2">
-                <li>Easy to use for non-technical users</li>
-                <li>Cost-effective to implement</li>
-                <li>Scalable for different types of items</li>
-                <li>Secure and private</li>
-                <li>Accessible across multiple devices</li>
-              </ul>
-            </div>
-          </section>
+      <Section tone="ink" kicker="Results" title="Live and" accent="growing.">
+        <dl className="grid gap-8 border-t border-[#FDF6EC]/15 pt-10 md:grid-cols-3">
+          {glance.map((g) => (
+            <Reveal key={g.big}>
+              <dt className="font-display text-5xl md:text-6xl text-[#FFC94A]">{g.big}</dt>
+              <dd className="mt-2 text-[#FDF6EC]/70">{g.small}</dd>
+            </Reveal>
+          ))}
+        </dl>
+        <Reveal delay={0.15}>
+          <blockquote className="mt-14 max-w-3xl border-t border-[#FDF6EC]/15 pt-10 text-xl italic leading-relaxed text-[#FDF6EC]/90">
+            "The Joy Digi team transformed our vision into a reality. The QRganiz app has exceeded our expectations
+            in terms of user adoption and satisfaction. Their attention to detail and commitment to quality made all
+            the difference."
+          </blockquote>
+          <p className="mt-4 text-[#FDF6EC]/70">
+            <span className="font-semibold text-[#FDF6EC]">John Smith</span> — Founder, QRganiz
+          </p>
+        </Reveal>
+      </Section>
 
-          {/* What We Did Section */}
-          <section className="max-w-4xl mx-auto mb-16">
-            <h2 className="text-3xl font-semibold text-deep-teal mb-6">
-              What We Did
-            </h2>
-            <div className="grid md:grid-cols-2 gap-8">
-              <div className="bg-white rounded-lg p-8 shadow-sm">
-                <h3 className="text-xl font-semibold text-deep-teal mb-4">
-                  Mobile App Development
-                </h3>
-                <ul className="list-disc list-inside text-gray-600 space-y-2">
-                  <li>Built a cross-platform mobile app using React Native</li>
-                  <li>Implemented QR code generation and scanning</li>
-                  <li>Created a user-friendly interface for item management</li>
-                  <li>Added offline functionality for basic features</li>
-                </ul>
-              </div>
-              <div className="bg-white rounded-lg p-8 shadow-sm">
-                <h3 className="text-xl font-semibold text-deep-teal mb-4">
-                  Backend Infrastructure
-                </h3>
-                <ul className="list-disc list-inside text-gray-600 space-y-2">
-                  <li>
-                    Developed a scalable backend using Node.js and MongoDB
-                  </li>
-                  <li>Implemented secure user authentication</li>
-                  <li>Created APIs for item tracking and management</li>
-                  <li>Set up cloud storage for QR code images</li>
-                </ul>
-              </div>
-            </div>
-          </section>
-
-          {/* Results Section */}
-          <section className="max-w-4xl mx-auto mb-16">
-            <h2 className="text-3xl font-semibold text-deep-teal mb-6">
-              Results
-            </h2>
-            <div className="bg-white rounded-lg p-8 shadow-sm">
-              <div className="grid md:grid-cols-3 gap-8 text-center">
-                <div>
-                  <div className="text-4xl font-bold text-sky-blue mb-2">
-                    10k+
-                  </div>
-                  <div className="text-gray-600">Active Users</div>
-                </div>
-                <div>
-                  <div className="text-4xl font-bold text-sky-blue mb-2">
-                    4.8
-                  </div>
-                  <div className="text-gray-600">App Store Rating</div>
-                </div>
-                <div>
-                  <div className="text-4xl font-bold text-sky-blue mb-2">
-                    95%
-                  </div>
-                  <div className="text-gray-600">User Retention</div>
-                </div>
-              </div>
-              <div className="mt-8">
-                <h3 className="text-xl font-semibold text-deep-teal mb-4">
-                  Client Testimonial
-                </h3>
-                <blockquote className="text-gray-600 italic">
-                  "The Joy Digi team transformed our vision into a reality. The
-                  QRganiz app has exceeded our expectations in terms of user
-                  adoption and satisfaction. Their attention to detail and
-                  commitment to quality made all the difference."
-                </blockquote>
-                <div className="mt-4 text-gray-600">
-                  <p className="font-semibold">John Smith</p>
-                  <p>Founder, QRganiz</p>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          {/* Call to Action */}
-          <section className="max-w-4xl mx-auto text-center">
-            <Link
-              href="/contact"
-              className="inline-block bg-sky-blue text-white px-8 py-4 rounded-lg hover:bg-coral transition-colors"
-            >
-              Start Your Project
-            </Link>
-          </section>
-        </main>
-      </div>
+      <CtaBand title="Have an idea that could" accent="grow like this?" />
     </MainLayout>
   );
 };
