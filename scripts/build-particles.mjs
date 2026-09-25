@@ -90,11 +90,21 @@ async function bake(pose, seed) {
   });
   const buf = Buffer.concat([Buffer.from(pos.buffer), Buffer.from(col.buffer)]);
   fs.writeFileSync(path.join(OUT, `${pose.name}.bin`), buf);
-  return { name: pose.name, bytes: buf.length, raster: `${w}x${h}`, opaque: opaque.length };
+  const plane = {
+    src: pose.src.replace(/^public/, ""),
+    w: +(w * scale).toFixed(4),
+    h: +(h * scale).toFixed(4),
+    x: +((w / 2 - cx) * scale).toFixed(4),
+    y: +(-(h / 2 - cy) * scale).toFixed(4),
+  };
+  return { name: pose.name, bytes: buf.length, raster: `${w}x${h}`, opaque: opaque.length, plane };
 }
 
 fs.mkdirSync(OUT, { recursive: true });
 const results = [];
 for (const [k, pose] of POSES.entries()) results.push(await bake(pose, 1000 + k));
-fs.writeFileSync(path.join(OUT, "meta.json"), JSON.stringify({ count: N, poses: POSES.map((p) => p.name) }));
-console.table(results);
+fs.writeFileSync(
+  path.join(OUT, "meta.json"),
+  JSON.stringify({ count: N, poses: results.map((r) => r.name), planes: results.map((r) => r.plane) })
+);
+console.table(results.map(({ plane, ...r }) => ({ ...r, plane: `${plane.w}x${plane.h} @ ${plane.x},${plane.y}` })));
