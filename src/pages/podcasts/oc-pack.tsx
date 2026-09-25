@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import { Equalizer, PauseIcon, PlayIcon, PodcastSeo, SkipIcon, useCopy } from "@/components/podcast/common";
+import { OcPackEmailForm } from "@/components/podcast/oc-pack-email-form";
 import { fmt, usePlayer, type Player } from "@/components/podcast/use-player";
 import { getShow, type Show } from "@/lib/podcasts";
 
@@ -20,6 +21,8 @@ const TEAL = "#2E9CA6";
 const PALM = "#1F6B5C";
 const BROWN = "#6B3410";
 const EASE = [0.22, 1, 0.36, 1] as const;
+
+const SPOTIFY_URL = "https://open.spotify.com/show/1vEadmFS7Bq1i3K9HfAzXO";
 
 const display = "font-[family-name:var(--oc-display)]";
 const sticker = "border-[3px] border-[#6B3410] shadow-[5px_5px_0_0_#6B3410]";
@@ -367,15 +370,45 @@ function JoinThePack({ show }: { show: Show }) {
           Join the pack
         </h2>
         <p className="mx-auto mt-5 max-w-xl text-lg font-semibold text-[#FFF4DA]/90">
-          Add The OC Pack to Apple Podcasts, Overcast, Pocket Casts, or any podcast app — new episodes land every Thursday.
+          New episodes land every Thursday — pick your favorite way to listen.
         </p>
-        <div className={`mx-auto mt-10 flex max-w-2xl flex-col items-stretch gap-3 rounded-[1.5rem] bg-[#FFF4DA] p-2 sm:flex-row sm:items-center ${sticker}`}>
-          <code className="flex-1 truncate px-4 py-3 text-left text-sm font-bold text-[#6B3410]/80">{show.feedUrl}</code>
-          <button onClick={copy} className="rounded-2xl border-[3px] border-[#6B3410] bg-[#FC7F46] px-6 py-3 font-extrabold text-[#FFF4DA]">
-            {copied ? "Copied ✓" : "Copy RSS feed"}
+
+        <div className="mx-auto mt-10 flex max-w-2xl flex-col items-center justify-center gap-4 sm:flex-row">
+          <a
+            href={SPOTIFY_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={`inline-flex items-center gap-2 rounded-full bg-[#1DB954] px-7 py-4 text-lg font-extrabold text-white ${sticker} transition-transform hover:-translate-y-1`}
+          >
+            <PlayIcon className="h-5 w-5" />
+            Listen on Spotify
+          </a>
+          <button
+            onClick={copy}
+            className={`inline-flex items-center gap-2 rounded-full bg-[#FFF4DA] px-7 py-4 text-lg font-extrabold text-[#6B3410] ${sticker} transition-transform hover:-translate-y-1`}
+          >
+            {copied ? "Feed copied ✓" : "Copy RSS feed"}
           </button>
         </div>
-        <p className="mt-16 text-sm font-bold text-[#FFF4DA]/70">
+        <p className="mx-auto mt-4 max-w-xl text-sm font-semibold text-[#FFF4DA]/70">
+          The RSS feed also works in Apple Podcasts, Overcast, Pocket Casts, and any podcast app.
+        </p>
+
+        <div className={`mx-auto mt-12 max-w-2xl rounded-[1.5rem] bg-[#FFF4DA] p-6 text-left md:p-8 ${sticker}`}>
+          <h3 className={`!py-0 ${display} text-2xl text-[#6B3410] md:text-3xl`}>Get Thursday&apos;s episode by email 🐶</h3>
+          <p className="mt-2 font-semibold text-[#6B3410]/75">One short email per week. Unsubscribe anytime.</p>
+          <div className="mt-5">
+            <OcPackEmailForm />
+          </div>
+        </div>
+
+        <p className="mx-auto mt-14 max-w-xl text-base font-bold text-[#FFF4DA]/90">
+          Rescue, vet, or pet business in OC?{" "}
+          <a href="mailto:hello@thejoydigi.com" className="text-[#FFF4DA] underline decoration-2 underline-offset-4">
+            Partner with the pack →
+          </a>
+        </p>
+        <p className="mt-6 text-sm font-bold text-[#FFF4DA]/70">
           A production of{" "}
           <Link href="/" className="text-[#FFF4DA] underline decoration-2 underline-offset-4">
             The Joy Digi
