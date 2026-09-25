@@ -117,6 +117,7 @@ const FOOTER_COLUMNS = [
       { href: "/case-studies/the-blue-sock", label: "The Blue Sock" },
       { href: "/case-studies/qrganiz", label: "QRganiz" },
       { href: "/case-studies", label: "All case studies" },
+      { href: "/podcasts", label: "Podcasts" },
       { href: "/blog", label: "Blog" },
     ],
   },
