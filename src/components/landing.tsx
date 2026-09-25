@@ -5,6 +5,7 @@ import Beliefs from "./home/beliefs";
 import Hello from "./home/hello";
 import Hero from "./home/hero";
 import How from "./home/how";
+import JoyEngine from "./home/joy-engine";
 import Lab from "./home/lab";
 import Work from "./home/work";
 import s from "./landing-art/art.module.css";
@@ -37,6 +38,7 @@ export default function Landing({ data }: { data: HomeData }) {
         <div aria-hidden className={s.grain} />
         <Hero data={data} />
         <Marquee words={now} />
+        <JoyEngine />
         <Work data={data} />
         <Lab />
         <How />

@@ -75,7 +75,7 @@ export default function Hello() {
               {[
                 { href: "/podcasts", label: "🎧 Podcasts" },
                 { href: "/case-studies", label: "🛠 Projects" },
-                { href: "#lab", label: "🧪 The Lab" },
+                { href: "/#lab", label: "🧪 The Lab" },
               ].map((l) => (
                 <Link key={l.href} href={l.href} className="rounded-full border border-[#003B49]/15 bg-white px-4 py-2 text-[#003B49] transition-colors hover:border-[#003B49] no-underline hover:no-underline">
                   {l.label}
