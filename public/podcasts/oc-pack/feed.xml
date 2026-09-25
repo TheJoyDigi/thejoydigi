@@ -19,5 +19,14 @@
 <itunes:type>episodic</itunes:type>
 <managingEditor>hello@thejoydigi.com (Long La)</managingEditor>
 <atom:link href="https://www.thejoydigi.com/podcasts/oc-pack/feed.xml" rel="self" type="application/rss+xml"/>
-</channel>
+<item>
+<title>Episode 1: The OC Pet Parent Starter Pack</title>
+<description>The OC dog beach and trail guide, a pet adoption event in Irvine, the vet-bill trick that saves real money, and the two-minute safety check every trail dog needs.</description>
+<pubDate>Fri, 25 Sep 2026 09:49:00 -0700</pubDate>
+<enclosure url="https://www.thejoydigi.com/podcasts/oc-pack/oc-pack-episode-1-the-oc-pet-parent-starter-pack-2026-09-25.mp3" length="7514564" type="audio/mpeg"/>
+<guid isPermaLink="false">ocp-ep1-2026-09-25</guid>
+<itunes:author>Long La</itunes:author>
+<itunes:duration>0:07:49</itunes:duration>
+<itunes:episodeType>full</itunes:episodeType>
+</item></channel>
 </rss>
