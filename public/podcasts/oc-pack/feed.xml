@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+<title>The OC Pack</title>
+<link>https://www.thejoydigi.com/podcasts/oc-pack</link>
+<language>en-us</language>
+<description>The OC Pack is the weekly podcast for Orange County pet parents: dog-friendly beaches, trails and patios, vet-bill saving strategies, training and health tips, and the local intel that makes life with your pet happier and more affordable. Hosted by Alex and Jordan. New episode every Thursday.</description>
+<itunes:author>Long La</itunes:author>
+<itunes:summary>The OC Pack is the weekly podcast for Orange County pet parents: dog-friendly beaches, trails and patios, vet-bill saving strategies, training and health tips, and the local intel that makes life with your pet happier and more affordable. Hosted by Alex and Jordan. New episode every Thursday.</itunes:summary>
+<itunes:owner>
+<itunes:name>Long La</itunes:name>
+<itunes:email>hello@thejoydigi.com</itunes:email>
+</itunes:owner>
+<itunes:image href="https://www.thejoydigi.com/podcasts/oc-pack/cover.jpg"/>
+<itunes:category text="Kids &amp; Family">
+<itunes:category text="Pets &amp; Animals"/>
+</itunes:category>
+<itunes:explicit>false</itunes:explicit>
+<itunes:type>episodic</itunes:type>
+<managingEditor>hello@thejoydigi.com (Long La)</managingEditor>
+<atom:link href="https://www.thejoydigi.com/podcasts/oc-pack/feed.xml" rel="self" type="application/rss+xml"/>
+</channel>
+</rss>
