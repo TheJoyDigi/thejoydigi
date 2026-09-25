@@ -84,21 +84,23 @@ export function RevealWords({
     <span className={className}>
       {words.map((w, i) => (
         <React.Fragment key={i}>
-          <span className="inline-block overflow-hidden pb-[0.12em] -mb-[0.12em] px-[0.08em] -mx-[0.08em] align-bottom">
+          {/* Bottom-only clip keeps italic overhangs intact; observe the wrapper since a fully clipped word never reports in view. */}
+          <motion.span
+            className="inline-block align-bottom [clip-path:inset(-0.6em_-0.45em_-0.18em_-0.45em)]"
+            initial="hidden"
+            whileInView="shown"
+            viewport={{ once: true, margin: "-40px 0px" }}
+          >
             <motion.span
               className={`inline-block ${highlight?.[w] ?? ""} ${wordClassName}`}
-              initial={{ y: "105%" }}
-              whileInView={{ y: "0%" }}
-              viewport={{ once: true, margin: "-40px 0px" }}
-              transition={{
-                duration: 0.8,
-                ease: [0.22, 1, 0.36, 1],
-                delay: delay + i * stagger,
+              variants={{
+                hidden: { y: "130%" },
+                shown: { y: "0%", transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: delay + i * stagger } },
               }}
             >
               {w}
             </motion.span>
-          </span>
+          </motion.span>
           {i < words.length - 1 && " "}
         </React.Fragment>
       ))}
