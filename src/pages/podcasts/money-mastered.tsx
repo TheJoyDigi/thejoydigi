@@ -299,7 +299,7 @@ function Contents({ show, player }: { show: Show; player: Player }) {
                 key={ep.audio}
                 initial={{ opacity: 0, y: 16 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-40px" }}
+                viewport={{ once: true, margin: "-40px 0px" }}
                 transition={{ duration: 0.8, ease: EASE }}
                 className="border-b border-[#D9B56A]/20"
               >

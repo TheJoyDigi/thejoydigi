@@ -89,7 +89,7 @@ export function RevealWords({
               className={`inline-block ${highlight?.[w] ?? ""} ${wordClassName}`}
               initial={{ y: "105%" }}
               whileInView={{ y: "0%" }}
-              viewport={{ once: true, margin: "-40px" }}
+              viewport={{ once: true, margin: "-40px 0px" }}
               transition={{
                 duration: 0.8,
                 ease: [0.22, 1, 0.36, 1],

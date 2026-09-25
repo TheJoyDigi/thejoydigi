@@ -107,8 +107,8 @@ const TheBlueSock: NextPage = () => {
         }
       >
         <Button href="https://www.thebluesock.com/">Visit thebluesock.com</Button>
-        <Button href="/#booking" variant="ghost">
-          Start your project
+        <Button href="/#work" variant="ghost">
+          More projects
         </Button>
       </PageHero>
 
@@ -180,7 +180,7 @@ const TheBlueSock: NextPage = () => {
         </dl>
       </Section>
 
-      <CtaBand title="Have an idea that could" accent="grow like this?" />
+      <CtaBand />
     </MainLayout>
   );
 };

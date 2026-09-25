@@ -21,7 +21,7 @@ export function Reveal({
     <motion.div
       initial={{ opacity: 0, y: 24 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-60px" }}
+      viewport={{ once: true, margin: "-60px 0px" }}
       transition={{ duration: 0.7, ease: EASE, delay }}
       className={className}
     >
@@ -315,9 +315,9 @@ export function Steps({ steps }: { steps: { title: string; description: string }
 }
 
 export function CtaBand({
-  title = "Ready to build something",
-  accent = "joyful?",
-  lead = "Book a free 30-minute consultation — we'll talk goals, options, and a clear next step. No pressure.",
+  title = "Let's build something",
+  accent = "joyful.",
+  lead = "Got an idea, a question, or something delightful you're working on? I'd love to hear about it.",
 }: {
   title?: string;
   accent?: string;
@@ -337,14 +337,17 @@ export function CtaBand({
                 <p className="mt-5 max-w-xl text-lg text-[#FDF6EC]/75">{lead}</p>
               </div>
               <div className="flex flex-col gap-3 sm:flex-row lg:justify-end">
-                <Button href="/#booking" variant="light">
-                  Book a free consultation
-                </Button>
+                <a
+                  href="mailto:hello@thejoydigi.com"
+                  className="group inline-flex items-center justify-center gap-3 rounded-full bg-[#FDF6EC] px-7 py-4 font-semibold text-[#003B49] transition-colors hover:bg-white no-underline hover:no-underline"
+                >
+                  Say hello <span aria-hidden className="transition-transform group-hover:translate-x-1">→</span>
+                </a>
                 <Link
-                  href="/#contact"
+                  href="/#work"
                   className="inline-flex items-center justify-center rounded-full border border-[#FDF6EC]/30 px-7 py-4 font-semibold text-[#FDF6EC] transition-colors hover:border-[#FDF6EC] no-underline hover:no-underline"
                 >
-                  Send a message
+                  See more work
                 </Link>
               </div>
             </div>

@@ -8,12 +8,13 @@ interface DefaultSEOProps {
 }
 
 export const DefaultSEO: React.FC<DefaultSEOProps> = ({
-  title = "The Joy Digi | A Digital Studio for visionary brands",
-  description = "Helping businesses grow with joyful experiences, purposeful design, custom tech, and clear strategy. Specializing in website design, web & mobile apps, SEO, and digital consulting.",
-  image = "/long-digital-partner-websites-apps-seo-the-joy-digi-rectangle.webp",
+  title = "The Joy Digi — Long La, a joyful builder",
+  description = "Long La builds joyful things with code and AI: The Blue Sock, QRganiz, the Money, Mastered audiobook, The OC Pack podcast, and experiments from the lab.",
+  image = "/og-the-joy-digi.png",
 }) => {
   const { asPath } = useRouter();
   const url = `https://thejoydigi.com${asPath.split(/[?#]/)[0]}`;
+  const imageUrl = image.startsWith("/") ? `https://www.thejoydigi.com${image}` : image;
   return (
     <NextSeo
       title={title}
@@ -26,10 +27,10 @@ export const DefaultSEO: React.FC<DefaultSEOProps> = ({
         description,
         images: [
           {
-            url: image,
+            url: imageUrl,
             width: 1200,
             height: 630,
-            alt: "The Joy Digi",
+            alt: "Long La, a 3D illustrated portrait, next to the words: I build joyful things with code & AI",
           },
         ],
         siteName: "TheJoyDigi",
@@ -43,7 +44,7 @@ export const DefaultSEO: React.FC<DefaultSEOProps> = ({
         {
           name: "keywords",
           content:
-            "digital studio, web design, web development, mobile apps, SEO, digital marketing, tech consulting, custom software, business growth, digital strategy",
+            "Long La, The Joy Digi, software engineer, AI, builder, portfolio, podcasts, The Blue Sock, QRganiz, Money Mastered, The OC Pack",
         },
         {
           name: "author",
@@ -77,7 +78,7 @@ export const BlogPostSEO: React.FC<BlogPostSEOProps> = ({
 }) => {
   const imageUrl = hasCoverImage
     ? `https://www.thejoydigi.com/posts/${slug}/cover.webp`
-    : "https://www.thejoydigi.com/about-image.webp";
+    : "https://www.thejoydigi.com/og-the-joy-digi.png";
 
   const fullTitle = `${title} - TheJoyDigi Blog`;
   const formattedDate = new Date(date).toLocaleDateString("en-US", {

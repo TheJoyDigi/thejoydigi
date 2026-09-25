@@ -44,8 +44,8 @@ const QRganizCaseStudy: NextPage = () => {
         }
       >
         <Button href="https://www.qrganiz.com/">Visit qrganiz.com</Button>
-        <Button href="/#booking" variant="ghost">
-          Start your project
+        <Button href="/#work" variant="ghost">
+          More projects
         </Button>
       </PageHero>
 
@@ -126,7 +126,7 @@ const QRganizCaseStudy: NextPage = () => {
         </Reveal>
       </Section>
 
-      <CtaBand title="Have an idea that could" accent="grow like this?" />
+      <CtaBand />
     </MainLayout>
   );
 };

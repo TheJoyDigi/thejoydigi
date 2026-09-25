@@ -203,7 +203,7 @@ function Postcard({ show, player }: { show: Show; player: Player }) {
         <motion.article
           initial={{ opacity: 0, y: 40, rotate: -1 }}
           whileInView={{ opacity: 1, y: 0, rotate: -0.8 }}
-          viewport={{ once: true, margin: "-60px" }}
+          viewport={{ once: true, margin: "-60px 0px" }}
           transition={{ duration: 0.8, ease: EASE }}
           className={`relative rounded-[1.75rem] bg-[#FFF4DA] p-4 md:p-6 ${sticker} !shadow-[10px_10px_0_0_#6B3410]`}
         >

@@ -23,10 +23,10 @@ export default function BlogIndex({ posts }: BlogIndexProps) {
   return (
     <BlogLayout>
       <PageHero
-        kicker="Journal"
-        title="Insights to help your business"
-        accent="thrive."
-        lead="Practical tips, industry updates, and behind-the-scenes notes on building websites and apps that grow with you."
+        kicker="Field notes"
+        title="Notes from the"
+        accent="workbench."
+        lead="Honest write-ups on what I'm building, what AI is changing, and what I learn along the way."
       />
 
       <section className="bg-[#FDF6EC] py-16 md:py-24">
@@ -66,11 +66,30 @@ export default function BlogIndex({ posts }: BlogIndexProps) {
             </Reveal>
           )}
 
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-            {rest.map((post) => (
-              <BlogCard key={post.slug} {...post} />
-            ))}
-          </div>
+          {featured ? (
+            <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+              {rest.map((post) => (
+                <BlogCard key={post.slug} {...post} />
+              ))}
+            </div>
+          ) : (
+            <Reveal>
+              <div className="mx-auto max-w-2xl rounded-[2rem] border-2 border-dashed border-[#003B49]/25 bg-white/60 px-8 py-16 text-center">
+                <p className="font-display text-3xl md:text-4xl text-[#003B49]">The first notes are brewing.</p>
+                <p className="mt-4 text-[#003B49]/70">
+                  In the meantime, see what I&apos;m building in the{" "}
+                  <Link href="/#lab" className="font-semibold text-[#FF6B6B] underline-offset-4 hover:underline">
+                    Lab
+                  </Link>{" "}
+                  or press play on a{" "}
+                  <Link href="/podcasts" className="font-semibold text-[#FF6B6B] underline-offset-4 hover:underline">
+                    podcast
+                  </Link>
+                  .
+                </p>
+              </div>
+            </Reveal>
+          )}
         </div>
       </section>
 

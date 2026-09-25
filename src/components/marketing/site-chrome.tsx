@@ -5,12 +5,13 @@ import React, { useState } from "react";
 import { CORAL, INK } from "../landing-art/primitives";
 import { fontVars } from "./fonts";
 
+export const EMAIL = "hello@thejoydigi.com";
+
 const NAV = [
-  { href: "/services", label: "Services" },
-  { href: "/case-studies", label: "Work" },
+  { href: "/#work", label: "Work" },
+  { href: "/#lab", label: "Lab" },
+  { href: "/podcasts", label: "Podcasts" },
   { href: "/#about", label: "About" },
-  { href: "/blog", label: "Blog" },
-  { href: "/#contact", label: "Contact" },
 ];
 
 function Logo() {
@@ -29,7 +30,8 @@ function Logo() {
 export function SiteHeader() {
   const [open, setOpen] = useState(false);
   const { pathname } = useRouter();
-  const isActive = (href: string) => !href.includes("#") && href !== "/" && pathname.startsWith(href);
+  const isActive = (href: string) =>
+    href === "/#work" ? pathname.startsWith("/case-studies") : !href.includes("#") && pathname.startsWith(href);
 
   return (
     <header className="sticky top-0 z-50 border-b border-[#003B49]/10 bg-[#FDF6EC]/85 backdrop-blur-md">
@@ -47,12 +49,12 @@ export function SiteHeader() {
               {item.label}
             </Link>
           ))}
-          <Link
-            href="/#booking"
+          <a
+            href={`mailto:${EMAIL}`}
             className="rounded-full bg-[#003B49] px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-[#0B5566] no-underline hover:no-underline"
           >
-            Book a call
-          </Link>
+            Say hi 👋
+          </a>
         </nav>
         <button
           onClick={() => setOpen((v) => !v)}
@@ -86,13 +88,13 @@ export function SiteHeader() {
                   {item.label}
                 </Link>
               ))}
-              <Link
-                href="/#booking"
+              <a
+                href={`mailto:${EMAIL}`}
                 onClick={() => setOpen(false)}
                 className="mt-4 mb-2 rounded-full bg-[#003B49] py-3.5 text-center font-semibold text-white no-underline hover:no-underline"
               >
-                Book a call
-              </Link>
+                Say hi 👋
+              </a>
             </div>
           </motion.nav>
         )}
@@ -103,30 +105,26 @@ export function SiteHeader() {
 
 const FOOTER_COLUMNS = [
   {
-    title: "Services",
-    links: [
-      { href: "/services/websites", label: "Website Design & Development" },
-      { href: "/services/apps", label: "Web & Mobile Applications" },
-      { href: "/services/consulting", label: "Digital Consulting" },
-      { href: "/services/cto", label: "Freelance CTO" },
-    ],
-  },
-  {
     title: "Work",
     links: [
       { href: "/case-studies/the-blue-sock", label: "The Blue Sock" },
       { href: "/case-studies/qrganiz", label: "QRganiz" },
-      { href: "/case-studies", label: "All case studies" },
-      { href: "/podcasts", label: "Podcasts" },
-      { href: "/blog", label: "Blog" },
+      { href: "/case-studies", label: "All projects" },
     ],
   },
   {
-    title: "Contact",
+    title: "Listen",
     links: [
-      { href: "mailto:hello@thejoydigi.com", label: "hello@thejoydigi.com" },
-      { href: "tel:+17147942861", label: "(714) 794-2861" },
-      { href: "/#booking", label: "Book a free consultation" },
+      { href: "/podcasts/money-mastered", label: "Money, Mastered" },
+      { href: "/podcasts/oc-pack", label: "The OC Pack" },
+      { href: "/podcasts", label: "All podcasts" },
+    ],
+  },
+  {
+    title: "Say hi",
+    links: [
+      { href: `mailto:${EMAIL}`, label: EMAIL },
+      { href: "/#lab", label: "The Lab" },
     ],
   },
 ];
@@ -141,15 +139,14 @@ export function SiteFooter() {
               Let&apos;s make something <em className="text-[#FFC94A]">joyful.</em>
             </p>
             <p className="mt-5 max-w-sm text-[#FDF6EC]/70">
-              A digital studio for visionary brands — purposeful design, custom
-              tech, and clear strategy.
+              The Joy Digi is where Long La builds joyful things with code and AI — products, podcasts, and experiments.
             </p>
-            <Link
-              href="/#booking"
+            <a
+              href={`mailto:${EMAIL}`}
               className="mt-8 inline-flex items-center gap-3 rounded-full bg-[#FDF6EC] px-6 py-3.5 font-semibold text-[#003B49] transition-colors hover:bg-white no-underline hover:no-underline"
             >
-              Schedule a free consultation <span aria-hidden>→</span>
-            </Link>
+              Say hello <span aria-hidden>→</span>
+            </a>
           </div>
           <div className="grid gap-10 sm:grid-cols-3">
             {FOOTER_COLUMNS.map((col) => (

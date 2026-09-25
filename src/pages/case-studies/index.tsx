@@ -31,7 +31,7 @@ const CaseStudies: NextPage = () => {
         kicker="Selected work"
         title="Real projects."
         accent="Real results."
-        lead="A look at the brands and products we've helped launch and grow — from boutique marketplaces to mobile apps."
+        lead="Products I've designed, built, and helped launch — from a boutique marketplace to a QR-powered app."
       />
 
       <Section tone="white">

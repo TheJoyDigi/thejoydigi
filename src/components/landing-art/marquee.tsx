@@ -24,7 +24,7 @@ function Star({ color }: { color: string }) {
   );
 }
 
-function Track({
+export function Track({
   words,
   baseVelocity,
   className,
@@ -76,16 +76,11 @@ function Track({
   );
 }
 
-export default function Marquee() {
+export default function Marquee({ words }: { words: string[] }) {
   return (
-    <div aria-hidden className="relative py-8 md:py-10 overflow-hidden bg-[#FDF6EC]">
+    <div aria-label="Now shipping" className="relative overflow-hidden bg-[#FDF6EC] py-6 md:py-8">
       <div className="bg-[#003B49] py-4 md:py-5">
-        <Track
-          words={["Websites", "Mobile Apps", "Strategy", "SEO", "Branding", "Joy"]}
-          baseVelocity={-1.6}
-          starColors={[SUN, CORAL, SKY]}
-          className="font-display text-2xl md:text-4xl italic text-[#FDF6EC]"
-        />
+        <Track words={words} baseVelocity={-1.4} starColors={[SUN, CORAL, SKY]} className="font-display text-xl md:text-3xl italic text-[#FDF6EC]" />
       </div>
     </div>
   );

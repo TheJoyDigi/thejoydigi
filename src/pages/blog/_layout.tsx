@@ -37,8 +37,8 @@ const BlogLayout: React.FC<BlogLayoutProps> = ({ children, postData }) => {
         />
       ) : (
         <BlogPostSEO
-          title="Digital Solutions Blog"
-          description="Explore our latest insights on web development, digital transformation, IT solutions, and business technology. Stay updated with industry trends and expert perspectives."
+          title="Field Notes"
+          description="Long La's notes on building joyful products, podcasts, and AI experiments."
           date={new Date().toISOString()}
           author="TheJoyDigi Team"
           slug="blog"
