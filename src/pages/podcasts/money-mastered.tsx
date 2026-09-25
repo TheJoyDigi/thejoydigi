@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect, useRef } from "react";
 import { Equalizer, PauseIcon, PlayIcon, PodcastSeo, SkipIcon, useCopy } from "@/components/podcast/common";
+import { EmailSignupForm } from "@/components/podcast/email-signup-form";
 import { fmt, usePlayer, type Player } from "@/components/podcast/use-player";
 import { getShow, type Show } from "@/lib/podcasts";
 
@@ -23,6 +24,8 @@ const GOLD_LIGHT = "#F3DE9E";
 const NIGHT = "#060E1A";
 const EASE = [0.22, 1, 0.36, 1] as const;
 const SUBJECTS = ["Macroeconomics", "Money", "Investing", "Trading", "Bitcoin"];
+
+const SPOTIFY_URL = "https://open.spotify.com/show/4lfKVQtvDKY7X6YWn4JmfO";
 
 const roman = (n: number) => {
   let out = "";
@@ -386,16 +389,37 @@ function Subscribe({ show }: { show: Show }) {
           Take the course <em className="text-[#F3DE9E]">on the go.</em>
         </h2>
         <p className="mx-auto mt-5 max-w-xl text-[#EFE6D2]/60">
-          Add the feed to Apple Podcasts, Overcast, Pocket Casts, or any podcast app — new chapters arrive automatically.
+          New chapters arrive three times a week — follow on Spotify or add the feed to any podcast app.
         </p>
-        <div className="mx-auto mt-10 flex max-w-2xl flex-col items-stretch gap-3 rounded-2xl border border-[#D9B56A]/30 bg-[#0B1B2E]/70 p-2 sm:flex-row sm:items-center">
-          <code className="flex-1 truncate px-4 py-3 text-left text-sm text-[#EFE6D2]/80">{show.feedUrl}</code>
+        <div className="mx-auto mt-10 flex max-w-2xl flex-col items-center justify-center gap-3 sm:flex-row">
+          <a
+            href={SPOTIFY_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center gap-3 rounded-full bg-gradient-to-b from-[#F3DE9E] to-[#C9A45C] px-7 py-4 font-semibold text-[#060E1A] shadow-[0_0_40px_-6px_rgba(217,181,106,0.7)] transition-transform duration-300 hover:-translate-y-0.5"
+          >
+            <PlayIcon className="h-5 w-5" />
+            Listen on Spotify
+          </a>
           <button
             onClick={copy}
-            className="rounded-xl bg-gradient-to-b from-[#F3DE9E] to-[#C9A45C] px-6 py-3 text-sm font-semibold text-[#060E1A]"
+            className="inline-flex items-center justify-center gap-3 rounded-full border border-[#D9B56A]/50 px-7 py-4 font-semibold text-[#F3DE9E] transition-colors hover:border-[#D9B56A] hover:bg-[#D9B56A]/10"
           >
             {copied ? "Copied ✓" : "Copy RSS feed"}
           </button>
+        </div>
+        <p className="mx-auto mt-4 max-w-xl text-sm text-[#EFE6D2]/45">
+          The RSS feed also works in Apple Podcasts, Overcast, Pocket Casts, and any podcast app.
+        </p>
+
+        <div className="mx-auto mt-12 max-w-2xl rounded-2xl border border-[#D9B56A]/30 bg-[#0B1B2E]/70 p-6 text-left md:p-8">
+          <h3 className="!py-0 font-[family-name:var(--mm-serif)] text-2xl md:text-3xl font-medium text-[#F3DE9E]">
+            Get new chapters by email
+          </h3>
+          <p className="mt-2 text-[#EFE6D2]/60">New chapter alerts, straight to your inbox. Unsubscribe anytime.</p>
+          <div className="mt-5">
+            <EmailSignupForm endpoint="/api/money-mastered/subscribe" tone="dark" buttonLabel="Subscribe" />
+          </div>
         </div>
       </div>
     </section>
