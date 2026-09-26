@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+<title>Value, Created</title>
+<link>https://www.thejoydigi.com/podcasts/value-created</link>
+<language>en-us</language>
+<description>Value, Created: a 32-chapter audiobook on the secret of value creation — what value is, how it is made, captured, and scaled. Hosted by Alex and Jordan. Produced by The Joy Digi.</description>
+<itunes:author>The Joy Digi</itunes:author>
+<itunes:summary>Value, Created: a 32-chapter audiobook on the secret of value creation — what value is, how it is made, captured, and scaled. Hosted by Alex and Jordan. Produced by The Joy Digi.</itunes:summary>
+<itunes:owner>
+<itunes:name>The Joy Digi</itunes:name>
+<itunes:email>hello@thejoydigi.com</itunes:email>
+</itunes:owner>
+<itunes:image href="https://www.thejoydigi.com/podcasts/value-created/cover.jpg"/>
+<itunes:category text="Education"/>
+<itunes:explicit>false</itunes:explicit>
+<itunes:type>serial</itunes:type>
+<managingEditor>hello@thejoydigi.com (The Joy Digi)</managingEditor>
+<atom:link href="https://www.thejoydigi.com/podcasts/value-created/feed.xml" rel="self" type="application/rss+xml"/>
+<item>
+<title>Value, Created — Chapter 1: What &#x27;Value&#x27; Actually Means</title>
+<description>Alex and Jordan open the book with the diamond-water paradox: value isn&#x27;t in things, it&#x27;s in people. Desire, scarcity, and context decide what anything is worth — and creating value means changing something for someone.</description>
+<pubDate>Sat, 26 Sep 2026 15:00:00 -0700</pubDate>
+<enclosure url="https://www.thejoydigi.com/podcasts/value-created/value-created-chapter-1-what-value-actually-means-2026-09-26.mp3" length="9850120" type="audio/mpeg"/>
+<guid isPermaLink="false">vc-ch1-2026-09-26</guid>
+<itunes:author>The Joy Digi</itunes:author>
+<itunes:duration>0:10:15</itunes:duration>
+<itunes:episodeType>full</itunes:episodeType>
+</item></channel>
+</rss>
