@@ -1,10 +1,15 @@
-# Value, Created — show stub (DEFERRED)
+# Value, Created — show source
 
 Long's second book: the secret of value creation. *Money, Mastered* taught how money
 works; this teaches what money is made of.
 
-**Status: DEFERRED.** Production starts only when Long greenlights it (post Money,
-Mastered, ~mid-December 2026). Do not start production before then.
+**Status: LAUNCHED.** Chapter 1 greenlit, produced, and published 2026-09-26 at
+Long's direction. Self-hosted feed: `public/podcasts/value-created/feed.xml`
+(Spotify submission in progress).
+
+**Credit (standing, per Long 2026-09-26): the book/show is credited as
+"Produced by The Joy Digi" — never "written by Long La".** Feeds, pages, and
+listings must use The Joy Digi as author/producer.
 
 - **Curriculum:** `curriculum.md` — 32 chapters in five parts (Seeing Value, Creating
   Value, Capturing Value, Exchanging and Scaling, Mastery). Approved by Long 2026-09-26.
