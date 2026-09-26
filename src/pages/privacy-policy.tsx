@@ -4,8 +4,8 @@ import MainLayout from "../pages/_layouts";
 function TermOfUsePage() {
   return (
     <MainLayout
-      title="Privacy Policy | QRganiz"
-      description="Read the privacy policy for the QRganiz service."
+      title="Privacy Policy | The Joy Digi"
+      description="Read the privacy policy for The Joy Digi."
     >
       <PrivacyPolicyComponent />
     </MainLayout>

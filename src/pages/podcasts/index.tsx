@@ -1,4 +1,5 @@
 import { GetStaticProps } from "next";
+import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import { CtaBand, PageHero, Reveal, Section } from "@/components/marketing/kit";
@@ -32,6 +33,20 @@ export default function Podcasts({ shows }: { shows: ShowCard[] }) {
       title="Podcasts | The Joy Digi"
       description="Podcasts produced by The Joy Digi: Money, Mastered — an audiobook on money and investing — and The OC Pack, the weekly show for Orange County pet parents."
     >
+      <Head>
+        <link
+          rel="alternate"
+          type="application/rss+xml"
+          title="Money, Mastered"
+          href="https://www.thejoydigi.com/podcasts/money-mastered/feed.xml"
+        />
+        <link
+          rel="alternate"
+          type="application/rss+xml"
+          title="The OC Pack"
+          href="https://www.thejoydigi.com/podcasts/oc-pack/feed.xml"
+        />
+      </Head>
       <PageHero
         kicker="Podcasts"
         title="Shows we"

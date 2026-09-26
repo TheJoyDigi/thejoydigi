@@ -43,7 +43,7 @@ export default function ManageInterests() {
   };
 
   return (
-    <MainLayout title="Manage Interests">
+    <MainLayout title="Manage Interests" noindex>
       <div className="container mx-auto px-4 py-8 max-w-xl">
         <h1 className="text-2xl font-bold mb-4">Manage Interest Topics</h1>
         <form onSubmit={addTopic} className="flex space-x-2 mb-6">

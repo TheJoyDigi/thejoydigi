@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import React, { useState } from 'react';
 
 const XAiTestPage: React.FC = () => {
@@ -67,6 +68,11 @@ const XAiTestPage: React.FC = () => {
   };
 
   return (
+    <>
+      <Head>
+        <title>X AI API Test Page</title>
+        <meta name="robots" content="noindex, nofollow" />
+      </Head>
     <div className="min-h-screen bg-gray-100 py-6 flex flex-col justify-center sm:py-12">
       <div className="relative py-3 sm:max-w-xl sm:mx-auto">
         <div className="relative px-4 py-10 bg-white shadow-lg sm:rounded-3xl sm:p-20">
@@ -190,6 +196,7 @@ const XAiTestPage: React.FC = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 

@@ -20,6 +20,7 @@ export default function SEOPlan({ content }: { content: string }) {
         author="TheJoyDigi Team"
         slug="seo-plan"
         hasCoverImage={false}
+        path="/seo-plan"
       />
       <div
         className="seo-content prose prose-lg max-w-none

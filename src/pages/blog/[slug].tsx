@@ -29,7 +29,7 @@ interface BlogPostProps {
 }
 
 export default function BlogPost({ post, relatedPosts }: BlogPostProps) {
-  const postUrl = `https://thejoydigi.com/blog/${post.slug}`;
+  const postUrl = `https://www.thejoydigi.com/blog/${post.slug}`;
 
   return (
     <BlogLayout postData={post}>
