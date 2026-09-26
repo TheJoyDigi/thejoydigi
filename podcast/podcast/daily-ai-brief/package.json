@@ -1,0 +1,17 @@
+{
+  "name": "joy-digi-daily-brief",
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "node src/handler.js",
+    "start": "node src/handler.js"
+  },
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.550.0",
+    "dotenv": "^16.4.5",
+    "ffmpeg-static": "^5.1.0",
+    "googleapis": "^133.0.0",
+    "openai": "^4.45.0",
+    "xmlbuilder2": "^4.9.2"
+  }
+}
