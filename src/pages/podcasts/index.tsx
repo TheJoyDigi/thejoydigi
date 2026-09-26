@@ -25,13 +25,21 @@ const SKINS: Record<string, { bg: string; text: string; sub: string; cta: string
     label: "Weekly show",
     unit: "episodes",
   },
+  "value-created": {
+    bg: "bg-[#0C1130] bg-[radial-gradient(circle_at_85%_25%,rgba(242,168,29,0.35),transparent_55%)]",
+    text: "text-[#FFD47E]",
+    sub: "text-[#F4EEDD]/70",
+    cta: "border border-[#F2A81D]/60 text-[#FFD47E] group-hover:bg-[#FFD47E] group-hover:text-[#0C1130]",
+    label: "Audiobook series",
+    unit: "chapters",
+  },
 };
 
 export default function Podcasts({ shows }: { shows: ShowCard[] }) {
   return (
     <MainLayout
       title="Podcasts | The Joy Digi"
-      description="Podcasts produced by The Joy Digi: Money, Mastered — an audiobook on money and investing — and The OC Pack, the weekly show for Orange County pet parents."
+      description="Podcasts produced by The Joy Digi: Money, Mastered — an audiobook on money and investing — The OC Pack, the weekly show for Orange County pet parents, and Value, Created — an audiobook on the secret of value creation."
     >
       <Head>
         <link
@@ -45,6 +53,12 @@ export default function Podcasts({ shows }: { shows: ShowCard[] }) {
           type="application/rss+xml"
           title="The OC Pack"
           href="https://www.thejoydigi.com/podcasts/oc-pack/feed.xml"
+        />
+        <link
+          rel="alternate"
+          type="application/rss+xml"
+          title="Value, Created"
+          href="https://www.thejoydigi.com/podcasts/value-created/feed.xml"
         />
       </Head>
       <PageHero
@@ -87,7 +101,7 @@ export default function Podcasts({ shows }: { shows: ShowCard[] }) {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const shows = ["money-mastered", "oc-pack"].map((slug) => {
+  const shows = ["money-mastered", "oc-pack", "value-created"].map((slug) => {
     const s = getShow(slug);
     return {
       slug,
