@@ -173,7 +173,7 @@ function Hero({ show, player, total }: { show: Show; player: Player; total: numb
             transition={{ duration: 1, delay: 0.7 }}
             className="mt-4 text-sm tracking-wide text-[#EFE6D2]/55"
           >
-            Written by {show.author} · Voiced by Alex &amp; Jordan
+            Produced by {show.author} · Voiced by Alex &amp; Jordan
           </motion.p>
           <motion.div
             initial={{ opacity: 0, y: 16 }}
