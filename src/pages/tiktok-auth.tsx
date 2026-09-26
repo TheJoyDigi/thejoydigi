@@ -54,6 +54,7 @@ export default function TikTokAuthPage() {
       <Head>
         <title>TikTok Authorization</title>
         <meta name="description" content="Authorize TikTok to get access tokens" />
+        <meta name="robots" content="noindex, nofollow" />
       </Head>
       <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', minHeight: '100vh', fontFamily: 'sans-serif' }}>
         <h1>Authorize with TikTok</h1>

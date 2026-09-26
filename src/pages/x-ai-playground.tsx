@@ -34,6 +34,7 @@ function XAiPlaygroundPage() {
     <MainLayout
       title="X AI Playground"
       description="Test page for X AI API"
+      noindex
     >
       <div style={{ padding: '20px', maxWidth: '800px', margin: '0 auto' }}>
         <h1>X AI API Test Page</h1>

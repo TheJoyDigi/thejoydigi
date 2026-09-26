@@ -1,4 +1,4 @@
-import { BlogPostSEO } from "@/components/seo";
+import { BlogPostSEO, DefaultSEO } from "@/components/seo";
 import { SiteFrame } from "@/components/marketing/site-chrome";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
@@ -36,13 +36,9 @@ const BlogLayout: React.FC<BlogLayoutProps> = ({ children, postData }) => {
           hasCoverImage={!!currentPostData.coverImage}
         />
       ) : (
-        <BlogPostSEO
-          title="Field Notes"
+        <DefaultSEO
+          title="Field Notes | The Joy Digi"
           description="Long La's notes on building joyful products, podcasts, and AI experiments."
-          date={new Date().toISOString()}
-          author="TheJoyDigi Team"
-          slug="blog"
-          hasCoverImage={false}
         />
       )}
       <SiteFrame>{children}</SiteFrame>

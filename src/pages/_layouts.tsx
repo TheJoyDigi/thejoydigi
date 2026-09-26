@@ -7,12 +7,14 @@ type MainLayoutProps = {
   title?: string;
   description?: string;
   image?: string;
+  /** Set for utility/internal pages that must not be indexed (auth callbacks, test pages, etc.). */
+  noindex?: boolean;
 };
 
-const MainLayout: React.FC<MainLayoutProps> = ({ children, title, description, image }) => {
+const MainLayout: React.FC<MainLayoutProps> = ({ children, title, description, image, noindex }) => {
   return (
     <>
-      <DefaultSEO title={title} description={description} image={image} />
+      <DefaultSEO title={title} description={description} image={image} noindex={noindex} />
       <SiteFrame>{children}</SiteFrame>
     </>
   );

@@ -5,6 +5,12 @@ import type { Show } from "@/lib/podcasts";
 
 export function PodcastSeo({ show, title, description }: { show: Show; title: string; description: string }) {
   const cover = `https://www.thejoydigi.com${show.cover}`;
+  // Actual cover art dimensions (square podcast artwork).
+  const coverDims: Record<string, { width: number; height: number }> = {
+    "money-mastered": { width: 3000, height: 3000 },
+    "oc-pack": { width: 1600, height: 1600 },
+  };
+  const dims = coverDims[show.slug] ?? { width: 1200, height: 1200 };
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "PodcastSeries",
@@ -36,7 +42,7 @@ export function PodcastSeo({ show, title, description }: { show: Show; title: st
           title,
           description,
           siteName: "The Joy Digi",
-          images: [{ url: cover, width: 1400, height: 1400, alt: show.title }],
+          images: [{ url: cover, width: dims.width, height: dims.height, alt: show.title }],
         }}
         twitter={{ cardType: "summary_large_image", site: "@thejoydigi" }}
       />
