@@ -29,8 +29,7 @@ const CREAM = "#F4EEDD";
 const EASE = [0.22, 1, 0.36, 1] as const;
 const PARTS = ["Seeing Value", "Creating Value", "Capturing Value", "Exchanging and Scaling", "Mastery"];
 
-// TODO: set once the Spotify listing is live (feed submitted 2026-09-26).
-const SPOTIFY_URL = "";
+const SPOTIFY_URL = "https://open.spotify.com/show/3ZKCjfSrrsJ1W3kJRn9qXk";
 
 const roman = (n: number) => {
   let out = "";
