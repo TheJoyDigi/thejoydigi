@@ -36,7 +36,7 @@ export function usePlayer(show: Show, cueIndex?: number) {
     };
   }, []);
 
-  // Shared episode links land with the episode cued (browsers block autoplay); ?t= uses a media fragment to start mid-episode.
+  // Shared episode links autoplay; ?t= uses a media fragment to start mid-episode.
   useEffect(() => {
     const audio = audioRef.current;
     const ep = cueIndex === undefined ? undefined : show.episodes[cueIndex];
@@ -46,6 +46,20 @@ export function usePlayer(show: Show, cueIndex?: number) {
     setIndex(cueIndex!);
     setTime(t);
     setDuration(ep.seconds);
+
+    // Autoplay policy usually blocks sound until a user gesture, so retry on the first tap/key; controls handle their own taps.
+    const events = ["click", "touchend", "keydown"] as const;
+    const onGesture = (e: Event) => {
+      if ((e.target as Element | null)?.closest?.("button, a, input, textarea, select, label")) return;
+      if (audio.paused) void audio.play().catch(() => {});
+    };
+    const stop = () => events.forEach((name) => document.removeEventListener(name, onGesture, true));
+    audio.addEventListener("play", stop, { once: true });
+    audio.play().catch(() => events.forEach((name) => document.addEventListener(name, onGesture, true)));
+    return () => {
+      stop();
+      audio.removeEventListener("play", stop);
+    };
   }, [cueIndex, show.episodes]);
 
   const playIndex = useCallback(
