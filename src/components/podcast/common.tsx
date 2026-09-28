@@ -3,7 +3,11 @@ import Head from "next/head";
 import { useCallback, useState } from "react";
 import type { Show } from "@/lib/podcasts";
 
-export function PodcastSeo({ show, title, description }: { show: Show; title: string; description: string }) {
+export function PodcastSeo({ show, title: showTitle, description: showDescription, episode }: { show: Show; title: string; description: string; episode?: number }) {
+  const ep = episode === undefined ? undefined : show.episodes[episode];
+  const title = ep ? `${ep.shortTitle} — ${show.title}` : showTitle;
+  const description = ep ? ep.description : showDescription;
+  const url = ep ? `${show.pageUrl}/${ep.number}` : show.pageUrl;
   const cover = `https://www.thejoydigi.com${show.cover}`;
   // Actual cover art dimensions (square podcast artwork).
   const coverDims: Record<string, { width: number; height: number }> = {
@@ -23,6 +27,7 @@ export function PodcastSeo({ show, title, description }: { show: Show; title: st
     publisher: { "@type": "Organization", name: "The Joy Digi", url: "https://www.thejoydigi.com" },
     episode: show.episodes.map((ep) => ({
       "@type": "PodcastEpisode",
+      url: `${show.pageUrl}/${ep.number}`,
       name: ep.title,
       description: ep.description,
       datePublished: new Date(ep.pubDate).toISOString(),
@@ -35,10 +40,10 @@ export function PodcastSeo({ show, title, description }: { show: Show; title: st
       <NextSeo
         title={title}
         description={description}
-        canonical={show.pageUrl}
+        canonical={url}
         openGraph={{
           type: "website",
-          url: show.pageUrl,
+          url,
           title,
           description,
           siteName: "The Joy Digi",

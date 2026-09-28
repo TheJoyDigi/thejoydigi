@@ -4,7 +4,7 @@ import type { Episode, Show } from "@/lib/podcasts";
 const RATES = [1, 1.25, 1.5, 2];
 
 /** One shared <audio> element per page; UI components stay purely presentational. */
-export function usePlayer(show: Show) {
+export function usePlayer(show: Show, cueIndex?: number) {
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const [index, setIndex] = useState<number | null>(null);
   const [playing, setPlaying] = useState(false);
@@ -35,6 +35,18 @@ export function usePlayer(show: Show) {
       audioRef.current = null;
     };
   }, []);
+
+  // Shared episode links land with the episode cued (browsers block autoplay); ?t= uses a media fragment to start mid-episode.
+  useEffect(() => {
+    const audio = audioRef.current;
+    const ep = cueIndex === undefined ? undefined : show.episodes[cueIndex];
+    if (!audio || !ep) return;
+    const t = Math.max(0, Math.min(Number(new URLSearchParams(window.location.search).get("t")) || 0, ep.seconds - 1));
+    audio.src = t ? `${ep.audio}#t=${t}` : ep.audio;
+    setIndex(cueIndex!);
+    setTime(t);
+    setDuration(ep.seconds);
+  }, [cueIndex, show.episodes]);
 
   const playIndex = useCallback(
     (i: number) => {

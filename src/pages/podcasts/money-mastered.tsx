@@ -6,6 +6,7 @@ import Link from "next/link";
 import React, { useEffect, useRef } from "react";
 import { Equalizer, PauseIcon, PlayIcon, PodcastSeo, SkipIcon, useCopy } from "@/components/podcast/common";
 import { EmailSignupForm } from "@/components/podcast/email-signup-form";
+import { ShareIcon, ShareSheet, useShare, type ShareControl, type ShareTheme } from "@/components/podcast/share";
 import { fmt, usePlayer, type Player } from "@/components/podcast/use-player";
 import { getShow, type Show } from "@/lib/podcasts";
 
@@ -18,6 +19,19 @@ const cormorant = Cormorant_Garamond({
   display: "swap",
 });
 const sans = DM_Sans({ subsets: ["latin"], variable: "--mm-sans", display: "swap" });
+
+const SHARE_THEME: ShareTheme = {
+  fontClass: `${cormorant.variable} ${sans.variable}`,
+  headingFont: "var(--mm-serif)",
+  bodyFont: "var(--mm-sans), system-ui, sans-serif",
+  panel: "#0B1B2E",
+  text: "#EFE6D2",
+  muted: "#EFE6D299",
+  border: "rgba(217,181,106,0.3)",
+  accent: "#F3DE9E",
+  onAccent: "#060E1A",
+  tile: "rgba(217,181,106,0.1)",
+};
 
 const GOLD = "#D9B56A";
 const GOLD_LIGHT = "#F3DE9E";
@@ -122,7 +136,7 @@ function Panorama() {
   );
 }
 
-function Hero({ show, player, total }: { show: Show; player: Player; total: number }) {
+function Hero({ show, player, total, share }: { show: Show; player: Player; total: number; share: ShareControl }) {
   const latest = show.episodes[show.episodes.length - 1];
   return (
     <section className="relative isolate min-h-[100svh] overflow-hidden">
@@ -133,9 +147,19 @@ function Hero({ show, player, total }: { show: Show; player: Player; total: numb
         <Link href="/" className="text-sm tracking-[0.2em] text-[#EFE6D2]/70 uppercase no-underline hover:text-[#F3DE9E] hover:no-underline">
           ← The Joy Digi
         </Link>
-        <a href="#subscribe" className="rounded-full border border-[#D9B56A]/40 px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-[#F3DE9E] no-underline hover:border-[#D9B56A] hover:no-underline">
-          Subscribe
-        </a>
+        <div className="flex items-center gap-2">
+          <button
+            onClick={() => share.open({ show })}
+            aria-label="Share this podcast"
+            className="inline-flex items-center gap-2 rounded-full border border-[#D9B56A]/40 px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-[#F3DE9E] hover:border-[#D9B56A]"
+          >
+            <ShareIcon className="h-3.5 w-3.5" />
+            <span className="hidden sm:inline">Share</span>
+          </button>
+          <a href="#subscribe" className="rounded-full border border-[#D9B56A]/40 px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-[#F3DE9E] no-underline hover:border-[#D9B56A] hover:no-underline">
+            Subscribe
+          </a>
+        </div>
       </nav>
 
       <div className="relative z-10 mx-auto grid max-w-7xl items-center gap-12 px-5 pt-10 pb-40 md:px-8 lg:grid-cols-[1.1fr_0.9fr] lg:pt-16">
@@ -285,7 +309,7 @@ function Ledger({ show, player, total }: { show: Show; player: Player; total: nu
   );
 }
 
-function Contents({ show, player }: { show: Show; player: Player }) {
+function Contents({ show, player, share }: { show: Show; player: Player; share: ShareControl }) {
   const latest = show.episodes.length - 1;
   return (
     <section className="relative px-5 py-24 md:px-8">
@@ -304,13 +328,11 @@ function Contents({ show, player }: { show: Show; player: Player }) {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-40px 0px" }}
                 transition={{ duration: 0.8, ease: EASE }}
-                className="border-b border-[#D9B56A]/20"
+                className={`flex items-center border-b border-[#D9B56A]/20 transition-colors ${active ? "bg-[#D9B56A]/[0.07]" : "hover:bg-[#D9B56A]/[0.04]"}`}
               >
                 <button
                   onClick={() => player.playIndex(i)}
-                  className={`group grid w-full grid-cols-[3.2rem_1fr_auto] items-center gap-4 px-2 py-7 text-left transition-colors md:grid-cols-[5rem_1fr_auto_auto] md:gap-8 md:px-4 ${
-                    active ? "bg-[#D9B56A]/[0.07]" : "hover:bg-[#D9B56A]/[0.04]"
-                  }`}
+                  className={`group grid min-w-0 flex-1 grid-cols-[3.2rem_1fr_auto] items-center gap-4 px-2 py-7 text-left transition-colors md:grid-cols-[5rem_1fr_auto_auto] md:gap-8 md:px-4`}
                 >
                   <span className="font-[family-name:var(--mm-display)] text-2xl md:text-4xl font-semibold" style={goldText}>
                     {roman(ep.number)}
@@ -337,6 +359,13 @@ function Contents({ show, player }: { show: Show; player: Player }) {
                   >
                     {active && player.playing ? <PauseIcon className="h-5 w-5" /> : <PlayIcon className="ml-0.5 h-5 w-5" />}
                   </span>
+                </button>
+                <button
+                  onClick={() => share.open({ show, episode: ep, time: active ? player.time : undefined })}
+                  aria-label={`Share ${ep.shortTitle}`}
+                  className="mr-1 grid h-10 w-10 shrink-0 place-items-center rounded-full text-[#EFE6D2]/50 transition-colors hover:bg-[#D9B56A]/10 hover:text-[#F3DE9E] md:mr-3"
+                >
+                  <ShareIcon className="h-[18px] w-[18px]" />
                 </button>
               </motion.li>
             );
@@ -426,7 +455,7 @@ function Subscribe({ show }: { show: Show }) {
   );
 }
 
-function StickyPlayer({ show, player }: { show: Show; player: Player }) {
+function StickyPlayer({ show, player, share }: { show: Show; player: Player; share: ShareControl }) {
   const ep = player.current;
   const pct = player.duration ? (player.time / player.duration) * 100 : 0;
   return (
@@ -460,6 +489,13 @@ function StickyPlayer({ show, player }: { show: Show; player: Player }) {
             <button onClick={() => player.skip(30)} aria-label="Forward 30 seconds" className="hidden h-10 w-10 place-items-center text-[#EFE6D2]/70 hover:text-[#F3DE9E] sm:grid">
               <SkipIcon seconds={30} className="h-6 w-6" />
             </button>
+            <button
+              onClick={() => share.open({ show, episode: ep, time: player.time })}
+              aria-label="Share this episode"
+              className="grid h-10 w-10 shrink-0 place-items-center text-[#EFE6D2]/70 hover:text-[#F3DE9E]"
+            >
+              <ShareIcon className="h-5 w-5" />
+            </button>
             <button onClick={player.cycleRate} aria-label="Playback speed" className="w-12 rounded-full border border-[#D9B56A]/40 py-1.5 text-xs font-semibold tabular-nums text-[#F3DE9E]">
               {player.rate}×
             </button>
@@ -487,8 +523,9 @@ function StickyPlayer({ show, player }: { show: Show; player: Player }) {
   );
 }
 
-export default function MoneyMastered({ show }: { show: Show }) {
-  const player = usePlayer(show);
+export default function MoneyMastered({ show, episode }: { show: Show; episode?: number }) {
+  const player = usePlayer(show, episode);
+  const share = useShare();
   const total = Number(show.description.match(/(\d+)-chapter/)?.[1] ?? show.episodes.length);
   return (
     <div
@@ -498,10 +535,11 @@ export default function MoneyMastered({ show }: { show: Show }) {
         show={show}
         title="Money, Mastered — an audiobook podcast on money, investing & Bitcoin"
         description={show.description}
+        episode={episode}
       />
-      <Hero show={show} player={player} total={total} />
+      <Hero show={show} player={player} total={total} share={share} />
       <Ledger show={show} player={player} total={total} />
-      <Contents show={show} player={player} />
+      <Contents show={show} player={player} share={share} />
       <Path />
       <Subscribe show={show} />
       <footer className="border-t border-[#D9B56A]/15 px-5 pt-10 pb-32 text-center text-sm text-[#EFE6D2]/45">
@@ -510,7 +548,8 @@ export default function MoneyMastered({ show }: { show: Show }) {
           The Joy Digi
         </Link>
       </footer>
-      <StickyPlayer show={show} player={player} />
+      <StickyPlayer show={show} player={player} share={share} />
+      <ShareSheet share={share} theme={SHARE_THEME} />
     </div>
   );
 }

@@ -6,6 +6,7 @@ import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import { Equalizer, PauseIcon, PlayIcon, PodcastSeo, SkipIcon, useCopy } from "@/components/podcast/common";
 import { OcPackEmailForm } from "@/components/podcast/oc-pack-email-form";
+import { ShareIcon, ShareSheet, useShare, type ShareControl, type ShareTheme } from "@/components/podcast/share";
 import { fmt, usePlayer, type Player } from "@/components/podcast/use-player";
 import { getShow, type Show } from "@/lib/podcasts";
 
@@ -26,6 +27,19 @@ const SPOTIFY_URL = "https://open.spotify.com/show/1vEadmFS7Bq1i3K9HfAzXO";
 
 const display = "font-[family-name:var(--oc-display)]";
 const sticker = "border-[3px] border-[#6B3410] shadow-[5px_5px_0_0_#6B3410]";
+
+const SHARE_THEME: ShareTheme = {
+  fontClass: `${titan.variable} ${nunito.variable}`,
+  headingFont: "var(--oc-display)",
+  bodyFont: "var(--oc-body), system-ui, sans-serif",
+  panel: CREAM,
+  text: BROWN,
+  muted: "rgba(107,52,16,0.7)",
+  border: BROWN,
+  accent: CORAL,
+  onAccent: CREAM,
+  tile: "rgba(254,187,85,0.35)",
+};
 
 function Sunburst({ className = "" }: { className?: string }) {
   const rays = 20;
@@ -95,7 +109,7 @@ const Paw = ({ className = "", fill = BROWN }: { className?: string; fill?: stri
   </svg>
 );
 
-function Hero({ show, player }: { show: Show; player: Player }) {
+function Hero({ show, player, share }: { show: Show; player: Player; share: ShareControl }) {
   const latest = show.episodes.length - 1;
   const ep = show.episodes[latest];
   const isLatestPlaying = player.index === latest && player.playing;
@@ -106,9 +120,18 @@ function Hero({ show, player }: { show: Show; player: Player }) {
         <Link href="/" className="font-bold text-[#6B3410]/80 no-underline hover:text-[#6B3410] hover:no-underline">
           ← The Joy Digi
         </Link>
-        <button onClick={copy} className={`rounded-full bg-[#FFF4DA] px-4 py-2 text-sm font-extrabold text-[#6B3410] ${sticker} !shadow-[3px_3px_0_0_#6B3410] transition-transform hover:-translate-y-0.5`}>
-          {copied ? "Feed copied ✓" : "Copy RSS"}
-        </button>
+        <div className="flex items-center gap-3">
+          <button
+            onClick={() => share.open({ show })}
+            className={`inline-flex items-center gap-2 rounded-full bg-[#FEBB55] px-4 py-2 text-sm font-extrabold text-[#6B3410] ${sticker} !shadow-[3px_3px_0_0_#6B3410] transition-transform hover:-translate-y-0.5`}
+          >
+            <ShareIcon className="h-4 w-4" strokeWidth={2.5} />
+            Share
+          </button>
+          <button onClick={copy} className={`rounded-full bg-[#FFF4DA] px-4 py-2 text-sm font-extrabold text-[#6B3410] ${sticker} !shadow-[3px_3px_0_0_#6B3410] transition-transform hover:-translate-y-0.5`}>
+            {copied ? "Feed copied ✓" : "Copy RSS"}
+          </button>
+        </div>
       </nav>
 
       <div className="relative z-10 mx-auto grid max-w-7xl items-center gap-12 px-5 pt-10 pb-10 md:px-8 lg:grid-cols-[1.05fr_1fr] lg:pt-14">
@@ -194,7 +217,7 @@ function Hero({ show, player }: { show: Show; player: Player }) {
   );
 }
 
-function Postcard({ show, player }: { show: Show; player: Player }) {
+function Postcard({ show, player, share }: { show: Show; player: Player; share: ShareControl }) {
   const i = show.episodes.length - 1;
   const ep = show.episodes[i];
   if (!ep) return null;
@@ -240,14 +263,23 @@ function Postcard({ show, player }: { show: Show; player: Player }) {
               </p>
               <h2 className={`!py-0 mt-3 max-w-lg ${display} text-4xl leading-[1.05] text-[#6B3410] md:text-5xl`}>{ep.shortTitle}</h2>
               <p className="mt-5 max-w-xl text-lg font-semibold leading-relaxed text-[#6B3410]/80">{ep.description}</p>
-              <button
-                onClick={() => player.playIndex(i)}
-                className={`mt-8 inline-flex items-center gap-3 rounded-full bg-[#FF6F61] px-7 py-4 text-lg font-extrabold text-[#FFF4DA] ${sticker} transition-transform hover:-translate-y-1`}
-              >
-                {active && player.playing ? <PauseIcon className="h-6 w-6" /> : <PlayIcon className="h-6 w-6" />}
-                {active && player.playing ? "Pause" : "Listen now"}
-                {active && <Equalizer color={CREAM} active={player.playing} />}
-              </button>
+              <div className="mt-8 flex flex-wrap items-center gap-4">
+                <button
+                  onClick={() => player.playIndex(i)}
+                  className={`inline-flex items-center gap-3 rounded-full bg-[#FF6F61] px-7 py-4 text-lg font-extrabold text-[#FFF4DA] ${sticker} transition-transform hover:-translate-y-1`}
+                >
+                  {active && player.playing ? <PauseIcon className="h-6 w-6" /> : <PlayIcon className="h-6 w-6" />}
+                  {active && player.playing ? "Pause" : "Listen now"}
+                  {active && <Equalizer color={CREAM} active={player.playing} />}
+                </button>
+                <button
+                  onClick={() => share.open({ show, episode: ep, time: active ? player.time : undefined })}
+                  className={`inline-flex items-center gap-2 rounded-full bg-[#FFF4DA] px-6 py-4 text-lg font-extrabold text-[#6B3410] ${sticker} transition-transform hover:-translate-y-1`}
+                >
+                  <ShareIcon className="h-5 w-5" strokeWidth={2.5} />
+                  Send to a friend
+                </button>
+              </div>
             </div>
           </div>
         </motion.article>
@@ -306,7 +338,7 @@ function nextThursday() {
   return d.toLocaleDateString("en-US", { weekday: "long", month: "short", day: "numeric" });
 }
 
-function Episodes({ show, player }: { show: Show; player: Player }) {
+function Episodes({ show, player, share }: { show: Show; player: Player; share: ShareControl }) {
   const [next, setNext] = useState<string | null>(null);
   useEffect(() => setNext(nextThursday()), []);
   const list = [...show.episodes].reverse();
@@ -319,7 +351,7 @@ function Episodes({ show, player }: { show: Show; player: Player }) {
             const i = show.episodes.indexOf(ep);
             const active = player.index === i;
             return (
-              <li key={ep.audio}>
+              <li key={ep.audio} className="relative">
                 <button
                   onClick={() => player.playIndex(i)}
                   className={`group flex w-full items-stretch overflow-hidden rounded-[1.5rem] bg-white text-left ${sticker} transition-transform hover:-translate-y-0.5`}
@@ -330,7 +362,7 @@ function Episodes({ show, player }: { show: Show; player: Player }) {
                       <span className={`block ${display} text-4xl text-[#6B3410] md:text-5xl`}>{String(ep.number).padStart(2, "0")}</span>
                     </span>
                   </span>
-                  <span className="flex flex-1 items-center gap-4 p-5 md:p-6">
+                  <span className="flex flex-1 items-center gap-4 p-5 pr-[4.5rem] md:p-6 md:pr-20">
                     <span className="min-w-0 flex-1">
                       <span className="flex items-center gap-3">
                         <span className={`${display} text-xl text-[#6B3410] md:text-2xl`}>{ep.shortTitle}</span>
@@ -344,6 +376,13 @@ function Episodes({ show, player }: { show: Show; player: Player }) {
                       {active && player.playing ? <PauseIcon className="h-5 w-5" /> : <PlayIcon className="ml-0.5 h-5 w-5" />}
                     </span>
                   </span>
+                </button>
+                <button
+                  onClick={() => share.open({ show, episode: ep, time: active ? player.time : undefined })}
+                  aria-label={`Share ${ep.shortTitle}`}
+                  className="absolute right-5 top-1/2 grid h-11 w-11 -translate-y-1/2 place-items-center rounded-full border-[3px] border-[#6B3410] bg-[#FEBB55] text-[#6B3410] transition-transform hover:scale-105 md:right-6"
+                >
+                  <ShareIcon className="h-[18px] w-[18px]" strokeWidth={2.5} />
                 </button>
               </li>
             );
@@ -419,7 +458,7 @@ function JoinThePack({ show }: { show: Show }) {
   );
 }
 
-function StickyPlayer({ show, player }: { show: Show; player: Player }) {
+function StickyPlayer({ show, player, share }: { show: Show; player: Player; share: ShareControl }) {
   const ep = player.current;
   const pct = player.duration ? (player.time / player.duration) * 100 : 0;
   return (
@@ -453,6 +492,9 @@ function StickyPlayer({ show, player }: { show: Show; player: Player }) {
             <button onClick={() => player.skip(30)} aria-label="Forward 30 seconds" className="hidden h-10 w-10 place-items-center sm:grid">
               <SkipIcon seconds={30} className="h-6 w-6" />
             </button>
+            <button onClick={() => share.open({ show, episode: ep, time: player.time })} aria-label="Share this episode" className="grid h-10 w-10 shrink-0 place-items-center">
+              <ShareIcon className="h-5 w-5" strokeWidth={2.5} />
+            </button>
             <button onClick={player.cycleRate} aria-label="Playback speed" className="w-12 rounded-full border-2 border-[#6B3410] bg-[#FFF4DA]/20 py-1 text-xs font-extrabold tabular-nums">
               {player.rate}×
             </button>
@@ -480,8 +522,9 @@ function StickyPlayer({ show, player }: { show: Show; player: Player }) {
   );
 }
 
-export default function OcPack({ show }: { show: Show }) {
-  const player = usePlayer(show);
+export default function OcPack({ show, episode }: { show: Show; episode?: number }) {
+  const player = usePlayer(show, episode);
+  const share = useShare();
   return (
     <div
       className={`${titan.variable} ${nunito.variable} min-h-screen overflow-x-clip text-[#6B3410] [font-family:var(--oc-body),system-ui,sans-serif] selection:bg-[#FC7F46] selection:text-[#FFF4DA]`}
@@ -491,13 +534,15 @@ export default function OcPack({ show }: { show: Show }) {
         show={show}
         title="The OC Pack — the podcast for Orange County dog & pet parents"
         description={show.description}
+        episode={episode}
       />
-      <Hero show={show} player={player} />
-      <Postcard show={show} player={player} />
+      <Hero show={show} player={player} share={share} />
+      <Postcard show={show} player={player} share={share} />
       <Topics />
-      <Episodes show={show} player={player} />
+      <Episodes show={show} player={player} share={share} />
       <JoinThePack show={show} />
-      <StickyPlayer show={show} player={player} />
+      <StickyPlayer show={show} player={player} share={share} />
+      <ShareSheet share={share} theme={SHARE_THEME} />
     </div>
   );
 }
