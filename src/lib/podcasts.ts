@@ -96,3 +96,17 @@ export function getShow(slug: string): Show {
     episodes,
   };
 }
+
+/** Static paths/props for /podcasts/<slug>/<episode number> share links. */
+export const episodePaths = (slug: string) => async () => ({
+  paths: getShow(slug).episodes.map((ep) => ({ params: { episode: String(ep.number) } })),
+  fallback: false as const,
+});
+
+export const episodeProps =
+  (slug: string) =>
+  async ({ params }: { params?: { episode?: string | string[] } }) => {
+    const show = getShow(slug);
+    const episode = show.episodes.findIndex((ep) => String(ep.number) === params?.episode);
+    return episode < 0 ? { notFound: true as const } : { props: { show, episode } };
+  };
