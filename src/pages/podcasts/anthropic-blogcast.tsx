@@ -6,6 +6,7 @@ import Link from "next/link";
 import React from "react";
 import { Equalizer, PauseIcon, PlayIcon, PodcastSeo, SkipIcon, useCopy } from "@/components/podcast/common";
 import { EmailSignupForm } from "@/components/podcast/email-signup-form";
+import { EpisodeTranscript } from "@/components/podcast/episode-transcript";
 import { ShareIcon, ShareSheet, useShare, type ShareControl, type ShareTheme } from "@/components/podcast/share";
 import { fmt, usePlayer, type Player } from "@/components/podcast/use-player";
 import { getShow, type Show } from "@/lib/podcasts";
@@ -408,6 +409,7 @@ export default function AnthropicBlogcast({ show, episode }: { show: Show; episo
       <Hero show={show} player={player} share={share} />
       <Latest show={show} player={player} share={share} />
       <Episodes show={show} player={player} share={share} />
+      <EpisodeTranscript episode={episode === undefined ? undefined : show.episodes[episode]} />
       <Subscribe show={show} />
       <StickyPlayer show={show} player={player} share={share} />
       <ShareSheet share={share} theme={SHARE_THEME} />

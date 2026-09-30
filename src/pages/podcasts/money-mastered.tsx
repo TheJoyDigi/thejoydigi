@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect, useRef } from "react";
 import { Equalizer, PauseIcon, PlayIcon, PodcastSeo, SkipIcon, useCopy } from "@/components/podcast/common";
+import { EpisodeTranscript } from "@/components/podcast/episode-transcript";
 import { EmailSignupForm } from "@/components/podcast/email-signup-form";
 import { ShareIcon, ShareSheet, useShare, type ShareControl, type ShareTheme } from "@/components/podcast/share";
 import { fmt, usePlayer, type Player } from "@/components/podcast/use-player";
@@ -550,6 +551,7 @@ export default function MoneyMastered({ show, episode }: { show: Show; episode?:
       <Hero show={show} player={player} total={total} share={share} />
       <Ledger show={show} player={player} total={total} />
       <Contents show={show} player={player} share={share} />
+      <EpisodeTranscript episode={episode === undefined ? undefined : show.episodes[episode]} />
       <Path />
       <Subscribe show={show} />
       <footer className="border-t border-[#D9B56A]/15 px-5 pt-10 pb-32 text-center text-sm text-[#EFE6D2]/45">

@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect, useRef } from "react";
 import { Equalizer, PauseIcon, PlayIcon, PodcastSeo, SkipIcon, useCopy } from "@/components/podcast/common";
+import { EpisodeTranscript } from "@/components/podcast/episode-transcript";
 import { EmailSignupForm } from "@/components/podcast/email-signup-form";
 import { ShareIcon, ShareSheet, useShare, type ShareControl, type ShareTheme } from "@/components/podcast/share";
 import { fmt, usePlayer, type Player } from "@/components/podcast/use-player";
@@ -568,6 +569,7 @@ export default function ValueCreated({ show, episode }: { show: Show; episode?: 
       <Hero show={show} player={player} total={total} share={share} />
       <Ledger show={show} player={player} total={total} />
       <Contents show={show} player={player} share={share} />
+      <EpisodeTranscript episode={episode === undefined ? undefined : show.episodes[episode]} />
       <Parts />
       <Subscribe show={show} />
       <footer className="border-t border-[#F2A81D]/15 px-5 pt-10 pb-32 text-center text-sm text-[#F4EEDD]/45">
