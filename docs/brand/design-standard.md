@@ -74,9 +74,9 @@ Full token sets (muted, kicker, outline, subtle) live in `THEMES` in `brand.ts`.
 - Numbers and claims match the show's feed and page (chapter counts, cadence). Don't promise what the show doesn't do.
 - No money clichés on Value, Created / Money, Mastered (no $ signs, coins or charts in imagery).
 
-### Known gaps (to resolve before the first broadcast / new-chapter email)
-- **Postal address:** CAN-SPAM requires a physical postal address in commercial email (chapter alerts, newsletters). It's not in the footer yet; add it to the footer in `layout.ts` once one is chosen.
-- **Unsubscribe is manual (mailto):** switch to Resend's hosted unsubscribe when broadcasts start.
+### Chapter broadcast launch gate
+- **Postal address:** CAN-SPAM requires a physical postal address in commercial email. Set `NEWSLETTER_POSTAL_ADDRESS` to a street address or PO Box before enabling chapter broadcasts; `layout.ts` includes it in the footer.
+- **Unsubscribe:** chapter broadcasts use Resend's hosted unsubscribe link; welcome emails still use the existing mailto unsubscribe.
 
 ## 4. Adding a new show or email
 

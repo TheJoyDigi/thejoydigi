@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { Equalizer, PauseIcon, PlayIcon, PodcastSeo, SkipIcon, useCopy } from "@/components/podcast/common";
+import { EmailSignupForm } from "@/components/podcast/email-signup-form";
 import { ShareIcon, ShareSheet, useShare, type ShareControl, type ShareTheme } from "@/components/podcast/share";
 import { fmt, usePlayer, type Player } from "@/components/podcast/use-player";
 import { getShow, type Show } from "@/lib/podcasts";
@@ -44,7 +45,6 @@ function Hero({ show, player, share }: { show: Show; player: Player; share: Shar
   const latest = show.episodes.length - 1;
   const ep = show.episodes[latest];
   const isLatestPlaying = player.index === latest && player.playing;
-  const { copied, copy } = useCopy(show.feedUrl);
   return (
     <section className="relative overflow-hidden" style={{ background: INK }}>
       <div
@@ -64,12 +64,9 @@ function Hero({ show, player, share }: { show: Show; player: Player; share: Shar
             <ShareIcon className="h-4 w-4" strokeWidth={2.5} />
             Share
           </button>
-          <button
-            onClick={copy}
-            className="rounded-full bg-white/10 px-4 py-2 text-sm font-bold text-white backdrop-blur transition-colors hover:bg-white/20"
-          >
-            {copied ? "Feed copied ✓" : "Copy RSS"}
-          </button>
+          <a href="#subscribe" className="rounded-full bg-white/10 px-4 py-2 text-sm font-bold text-white backdrop-blur transition-colors hover:bg-white/20 no-underline hover:no-underline">
+            Email updates
+          </a>
         </div>
       </nav>
 
@@ -263,7 +260,7 @@ function Episodes({ show, player, share }: { show: Show; player: Player; share: 
 function Subscribe({ show }: { show: Show }) {
   const { copied, copy } = useCopy(show.feedUrl);
   return (
-    <section className="px-5 pb-28 md:px-8" style={{ background: INK }}>
+    <section id="subscribe" className="px-5 pb-28 md:px-8" style={{ background: INK }}>
       <div className="mx-auto max-w-3xl text-center">
         <h2 className={`!py-0 ${font} text-4xl font-bold md:text-5xl`} style={{ color: PAPER }}>
           Never miss a launch
@@ -306,6 +303,17 @@ function Subscribe({ show }: { show: Show }) {
           The RSS feed works in Apple Podcasts, Overcast, Pocket Casts, and any podcast app.
           {SPOTIFY_URL ? "" : " Spotify and YouTube listings are on the way."}
         </p>
+        <div className="mx-auto mt-12 max-w-2xl rounded-[1.75rem] border border-[#E2725B]/35 bg-[#1A2029] p-6 text-left md:p-8">
+          <h3 className={`!py-0 ${font} text-2xl font-bold md:text-3xl`} style={{ color: PAPER }}>
+            Get the next episode in your inbox
+          </h3>
+          <p className="mt-2 text-sm" style={{ color: MUTED }}>
+            Anthropic Blogcast updates when new episodes arrive. Unsubscribe anytime.
+          </p>
+          <div className="mt-5">
+            <EmailSignupForm show="anthropic-blogcast" tone="anthropic" buttonLabel="Keep me posted" successMessage="You're on the Anthropic Blogcast list! Watch your inbox for updates." />
+          </div>
+        </div>
         <p className="mt-12 text-sm font-bold" style={{ color: MUTED }}>
           A production of <Link href="/" className="underline decoration-2 underline-offset-4" style={{ color: PAPER }}>The Joy Digi</Link>
         </p>

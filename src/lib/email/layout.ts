@@ -18,6 +18,13 @@ export type EmailContent = {
   reason: string;
 };
 
+export type EmailFooter = {
+  /** Resend replaces this token with each recipient's hosted unsubscribe link. */
+  unsubscribeUrl?: string;
+  /** Required for chapter broadcasts; kept optional for existing welcome emails. */
+  postalAddress?: string;
+};
+
 export const UNSUBSCRIBE_EMAIL = "hello@thejoydigi.com";
 
 export const escapeHtml = (s: string) =>
@@ -39,8 +46,12 @@ function button(cta: Cta, bg: string, fg: string, border: string) {
 </td></tr></table></td>`.replace(/\n/g, "");
 }
 
-export function renderEmail(c: EmailContent): { html: string; text: string } {
+export function renderEmail(c: EmailContent, footer: EmailFooter = {}): { html: string; text: string } {
   const t = c.theme;
+  const unsubscribeUrl = footer.unsubscribeUrl ?? unsubscribeHref(t);
+  const addressHtml = footer.postalAddress
+    ? `<p style="margin:8px 0 0;">${escapeHtml(footer.postalAddress)}</p>`
+    : "";
   const p = (s: string) => `<p style="margin:0 0 16px;font-family:${JOY.body};font-size:16px;line-height:26px;color:${t.text};">${rich(s)}</p>`;
   const bullets = c.bullets?.length
     ? `<table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin:0 0 20px;">${c.bullets
@@ -110,7 +121,8 @@ export function renderEmail(c: EmailContent): { html: string; text: string } {
 <tr><td class="jd-pad" align="left" style="padding:24px 8px 0;font-family:${JOY.body};font-size:13px;line-height:20px;color:${JOY.inkSoft};">
   <p style="margin:0 0 8px;">${escapeHtml(t.name)} is a production of <a href="${SITE}" target="_blank" style="color:${JOY.ink};font-weight:700;text-decoration:none;">The Joy Digi</a>: joyful things made with code and AI.</p>
   <p style="margin:0 0 8px;"><a href="${SITE}/podcasts" target="_blank" style="color:${JOY.ink};">All Joy Digi shows</a> &nbsp;&middot;&nbsp; <a href="${t.pageUrl}" target="_blank" style="color:${JOY.ink};">${escapeHtml(t.name)} on the web</a></p>
-  <p style="margin:0;">${escapeHtml(c.reason)} <a href="${unsubscribeHref(t)}" style="color:${JOY.ink};">Unsubscribe</a>.</p>
+  <p style="margin:0;">${escapeHtml(c.reason)} <a href="${unsubscribeUrl}" style="color:${JOY.ink};">Unsubscribe</a>.</p>
+  ${addressHtml}
 </td></tr>
 
 </table>
@@ -134,7 +146,10 @@ export function renderEmail(c: EmailContent): { html: string; text: string } {
     "",
     "--",
     `${t.name} is a production of The Joy Digi (${SITE}).`,
-    `${c.reason} Unsubscribe: email ${UNSUBSCRIBE_EMAIL} with the subject "Unsubscribe from ${t.name}".`,
+    footer.unsubscribeUrl
+      ? `${c.reason} Unsubscribe: ${footer.unsubscribeUrl}`
+      : `${c.reason} Unsubscribe: email ${UNSUBSCRIBE_EMAIL} with the subject "Unsubscribe from ${t.name}".`,
+    ...(footer.postalAddress ? [footer.postalAddress] : []),
   ].join("\n");
 
   return { html, text };
