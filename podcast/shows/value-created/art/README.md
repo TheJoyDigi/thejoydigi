@@ -4,7 +4,8 @@ Generated with Codex image generation from `originals/codex-brief.md` (edit the 
 
 | File | Use |
 |---|---|
-| `../../../../public/podcasts/value-created/cover-v2.jpg` | Live podcast cover (3000x3000 JPEG, upscaled from `originals/cover-codex-1254.png`) |
+| `../../../../public/podcasts/value-created/cover-v3.jpg` | Live podcast cover (3000x3000 JPEG): `originals/cover-codex-1254-noframe.png` upscaled, with "The Joy Digi" added at the bottom (Palatino, pale-gold gradient `#F7E2A6`→`#D9AE4A`) |
+| `originals/cover-codex-1254.png` | Codex's raw cover, including its double gold frame (removed in the live cover: it looks cropped inside rounded containers) |
 | `youtube-banner-2560x1440.png` | YouTube channel banner, artwork shrunk and recentred to sit inside the safe area |
 | `originals/youtube-banner-upscaled-unadjusted.png` | Plain 2560x1440 upscale of Codex's output (artwork sits low; its ripples get cropped on phones) |
 | `originals/banner-safe-area-check.png` | Banner with the YouTube safe area (1546x423, centred) outlined in green |
