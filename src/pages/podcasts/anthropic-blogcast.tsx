@@ -40,17 +40,6 @@ const SHARE_THEME: ShareTheme = {
 const font = "font-[family-name:var(--ab-display)]";
 const card = "rounded-[1.75rem] border border-white/10 bg-white/[0.04]";
 
-function Signal({ className = "" }: { className?: string }) {
-  return (
-    <svg viewBox="0 0 48 48" className={className} aria-hidden>
-      <circle cx="24" cy="24" r="5" fill={CORAL} />
-      <path d="M14 14a14 14 0 0 1 20 0" fill="none" stroke={CORAL} strokeWidth="3.5" strokeLinecap="round" opacity="0.85" />
-      <path d="M8.5 8.5a22 22 0 0 1 31 0" fill="none" stroke={CORAL} strokeWidth="3.5" strokeLinecap="round" opacity="0.45" />
-      <path d="M19.5 19.5a6.5 6.5 0 0 1 9 0" fill="none" stroke={AMBER} strokeWidth="3" strokeLinecap="round" />
-    </svg>
-  );
-}
-
 function Hero({ show, player, share }: { show: Show; player: Player; share: ShareControl }) {
   const latest = show.episodes.length - 1;
   const ep = show.episodes[latest];
@@ -90,10 +79,9 @@ function Hero({ show, player, share }: { show: Show; player: Player; share: Shar
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: EASE }}
-            className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/[0.06] px-4 py-2 text-sm font-bold uppercase tracking-widest"
+            className="inline-flex items-center rounded-full border border-white/15 bg-white/[0.06] px-4 py-2 text-sm font-bold uppercase tracking-widest"
             style={{ color: AMBER }}
           >
-            <Signal className="h-4 w-4" />
             New episode when Anthropic publishes
           </motion.span>
           <motion.h1
