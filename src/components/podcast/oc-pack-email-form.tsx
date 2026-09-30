@@ -7,6 +7,7 @@ const inputCls =
 export function OcPackEmailForm() {
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
+  const [hp, setHp] = useState("");
   const [status, setStatus] = useState<"idle" | "sending" | "done" | "error">("idle");
   const [message, setMessage] = useState("");
 
@@ -18,7 +19,7 @@ export function OcPackEmailForm() {
       const res = await fetch("/api/oc-pack/subscribe", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, name }),
+        body: JSON.stringify({ email, name, hp }),
       });
       const data = await res.json().catch(() => ({}));
       if (res.ok) {
@@ -43,6 +44,16 @@ export function OcPackEmailForm() {
 
   return (
     <form onSubmit={onSubmit} className="flex flex-col gap-3">
+      <input
+        type="text"
+        name="hp"
+        value={hp}
+        onChange={(e) => setHp(e.target.value)}
+        tabIndex={-1}
+        autoComplete="off"
+        aria-hidden="true"
+        style={{ position: "absolute", left: "-9999px", width: 1, height: 1, opacity: 0 }}
+      />
       <input
         type="text"
         value={name}
