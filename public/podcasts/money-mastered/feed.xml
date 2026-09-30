@@ -81,5 +81,14 @@
 <itunes:author>The Joy Digi</itunes:author>
 <itunes:duration>0:09:58</itunes:duration>
 <itunes:episodeType>full</itunes:episodeType>
+</item><item>
+<title>Money, Mastered — Chapter 8: Exchanges, Orders, and Market Makers</title>
+<description>You tap buy on your phone, and a fraction of a second later you own a piece of a company — but who sold it to you? Chapter 8 opens the hood of the market: the order book, bids and asks, market versus limit orders, and the market makers who keep every trade moving.</description>
+<pubDate>Wed, 30 Sep 2026 08:49:00 -0700</pubDate>
+<enclosure url="https://www.thejoydigi.com/podcasts/money-mastered/money-mastered-chapter-8-exchanges-orders-and-market-makers-2026-09-30.mp3" length="9844686" type="audio/mpeg"/>
+<guid isPermaLink="false">mm-ch8-2026-09-30</guid>
+<itunes:author>The Joy Digi</itunes:author>
+<itunes:duration>0:10:15</itunes:duration>
+<itunes:episodeType>full</itunes:episodeType>
 </item></channel>
 </rss>
