@@ -64,3 +64,4 @@ Thumbs.db
 /podcast/daily-ai-brief/.env.production
 /podcast/daily-ai-brief/.env.example
 
+.email-previews/

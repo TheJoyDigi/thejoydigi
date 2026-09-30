@@ -1,0 +1,87 @@
+# The Joy Digi — Design Standard
+
+Every show is a production **of** The Joy Digi. The umbrella is always present and always the same; a show's own look lives *inside* it and never replaces it.
+
+```
+┌─ The Joy Digi frame (never changes) ───────────────┐
+│ ✦ The Joy Digi                        ← wordmark    │
+│ ┌─ Show card (the show owns this) ───────────────┐ │
+│ │ [cover] SHOW KICKER                             │ │
+│ │ Heading · body · bullets · CTAs · RSS · signoff │ │
+│ └─────────────────────────────────────────────────┘ │
+│ "<Show> is a production of The Joy Digi" · links    │
+│ why you got this · Unsubscribe                      │
+└─────────────────────────────────────────────────────┘
+```
+
+Code source of truth: `src/lib/email/brand.ts` (tokens) and `src/lib/email/layout.ts` (the frame). If this doc and the code disagree, fix one to match the other in the same PR.
+
+## 1. Umbrella brand (The Joy Digi)
+
+| Token | Hex | Use |
+|---|---|---|
+| Deep Teal (ink) | `#003B49` | Wordmark, primary text, links on sand, site buttons |
+| Soft Sand | `#FDF6EC` | Canvas / page and email background |
+| Coral | `#FF6B6B` | The ✦ mark, accents, active states |
+| Sun | `#FFC94A` | Highlight accent (site footer emphasis) |
+| Sky | `#4ABEFF` | Optional fresh accent, glows |
+| Mint | `#7EE0C3` | Optional accent (site illustrations) |
+| Ink Soft | `#4D7580` | Secondary text on sand (4.69:1, the lightest allowed) |
+
+- **Type:** Fraunces (display, headings, wordmark) + DM Sans (body, UI). Email fallbacks: Georgia and Helvetica/Arial.
+- **Mark:** the four-point coral sparkle ✦ (`public/logo.svg`; email PNG at `public/email/joydigi-mark.png`). Always paired with the "The Joy Digi" wordmark in Deep Teal.
+- **Voice:** warm, clear, a little playful, never corporate. "Let's make something joyful." Plain words, short sentences, no hype.
+- **Credit line:** "Produced by The Joy Digi" or "<Show> is a production of The Joy Digi". Never "written by Long La" on show material (standing rule, 2026-09-26).
+
+## 2. Show sub-brands
+
+A show owns: card colours, its cover art, its kicker, its heading/CTA wording and tone. A show never changes: the frame, the type families, the layout skeleton, the footer.
+
+| Show | Card | Text | Heading | Accent (button) | On accent | Tone |
+|---|---|---|---|---|---|---|
+| Value, Created | `#0C1130` | `#F4EEDD` | `#FFD47E` | `#F2A81D` | `#0C1130` | Timeless hardcover, quietly luxurious |
+| Money, Mastered | `#060E1A` | `#EFE6D2` | `#F3DE9E` | `#D9B56A` | `#060E1A` | Classic, confident course |
+| The OC Pack | `#FFF4DA` | `#6B3410` | `#6B3410` | `#B8431F` | `#FFFFFF` | Sunny, friendly, local, emoji welcome |
+| Anthropic Blogcast | `#101418` | `#F4EFE6` | `#F4EFE6` | `#E2725B` | `#101418` | Smart, warm tech-editorial, independent |
+
+Full token sets (muted, kicker, outline, subtle) live in `THEMES` in `brand.ts`.
+
+**Note:** OC Pack's web accent is `#FC7F46`/`#FF6F61`. In email it's `#B8431F` because the brighter orange fails contrast for 16px button text (3.5:1). Keep the brighter orange for large display art only.
+
+**Anthropic Blogcast:** never use Anthropic's or Claude's logo, wordmark, starburst or mascot. Always say it's independent and not affiliated.
+
+## 3. Email rules
+
+### Structure (enforced by `renderEmail`)
+1. Hidden preheader (40–90 chars) that adds to the subject, not repeats it.
+2. Umbrella header: ✦ + "The Joy Digi", linking to the site.
+3. Show card: cover (64px, rounded) + kicker, one H1, 1–3 short paragraphs, optional ✦ bullets (≤5), a primary CTA and at most one secondary, RSS box, signoff from "Alex & Jordan".
+4. Umbrella footer: production credit, "All Joy Digi shows" + show page links, why they got it, visible **Unsubscribe**.
+
+### Hard requirements (checked by `node scripts/email-brand-check.cjs`)
+- **Contrast (WCAG AA):** 4.5:1 for all text under 18.66px bold, including button labels, kicker, muted and footer text. 3:1 for the 34px heading and for outline-button borders.
+- 600px max width, table layout, inline styles only; no `<script>`, no web fonts required to read it.
+- Every `<img>` has `alt`, and every image is absolute `https://` (served from `public/email/`, not full-size covers).
+- Links are `https://` or `mailto:` only. Every email has a plain-text part.
+- Unsubscribe: visible footer link plus a `List-Unsubscribe` header (`unsubscribeHeaders()`).
+- User input (names) is always HTML-escaped: pass it raw to the template, never pre-build HTML.
+- HTML stays well under Gmail's ~102 KB clip limit (target < 90 KB; current ~7 KB).
+- Sender is `"<Show name> <hello@thejoydigi.com>"`.
+
+### Content
+- One idea per email, one primary action. Subject ≤ 50 chars.
+- Write like a person: "Hi Sam," not "Dear Subscriber". A signoff, not a signature block.
+- Numbers and claims match the show's feed and page (chapter counts, cadence). Don't promise what the show doesn't do.
+- No money clichés on Value, Created / Money, Mastered (no $ signs, coins or charts in imagery).
+
+### Known gaps (to resolve before the first broadcast / new-chapter email)
+- **Postal address:** CAN-SPAM requires a physical postal address in commercial email (chapter alerts, newsletters). It's not in the footer yet; add it to the footer in `layout.ts` once one is chosen.
+- **Unsubscribe is manual (mailto):** switch to Resend's hosted unsubscribe when broadcasts start.
+
+## 4. Adding a new show or email
+
+1. Add the show to `THEMES` in `brand.ts`. Start from its web palette, then adjust until the brand check passes.
+2. Add a 240×240 cover to `public/email/<slug>-cover.jpg` (from the live feed cover).
+3. Add its copy to `welcome.ts` (or a new builder that calls `renderEmail`). Never hand-write a new HTML shell.
+4. Run `node scripts/email-brand-check.cjs` (must pass) and `node scripts/email-preview.cjs`, then look at the previews at 600px and 375px.
+5. Ask the **joydigi-design** agent (`.claude/agents/joydigi-design.md`) to review before merging.
