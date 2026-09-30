@@ -11,6 +11,7 @@ export type Episode = {
   duration: string;
   seconds: number;
   audio: string;
+  transcript?: string;
 };
 
 export type Show = {
@@ -83,7 +84,15 @@ export function getShow(slug: string): Show {
       };
     })
     .sort((a, b) => order(a) - order(b))
-    .map((ep, i) => ({ ...ep, number: numbered(ep.title) ?? i + 1 }));
+    .map((ep, i) => {
+      const number = numbered(ep.title) ?? i + 1;
+      const transcriptPath = path.join(process.cwd(), "public", "podcasts", slug, "transcripts", `${number}.md`);
+      return {
+        ...ep,
+        number,
+        ...(fs.existsSync(transcriptPath) ? { transcript: fs.readFileSync(transcriptPath, "utf8") } : {}),
+      };
+    });
 
   return {
     slug,

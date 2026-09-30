@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import { Equalizer, PauseIcon, PlayIcon, PodcastSeo, SkipIcon, useCopy } from "@/components/podcast/common";
+import { EpisodeTranscript } from "@/components/podcast/episode-transcript";
 import { OcPackEmailForm } from "@/components/podcast/oc-pack-email-form";
 import { ShareIcon, ShareSheet, useShare, type ShareControl, type ShareTheme } from "@/components/podcast/share";
 import { fmt, usePlayer, type Player } from "@/components/podcast/use-player";
@@ -550,6 +551,7 @@ export default function OcPack({ show, episode }: { show: Show; episode?: number
       <Postcard show={show} player={player} share={share} />
       <Topics />
       <Episodes show={show} player={player} share={share} />
+      <EpisodeTranscript episode={episode === undefined ? undefined : show.episodes[episode]} />
       <JoinThePack show={show} />
       <StickyPlayer show={show} player={player} share={share} />
       <ShareSheet share={share} theme={SHARE_THEME} />

@@ -7,8 +7,8 @@ Ships the finished episode to the site. The last pair of eyes before it goes liv
   the show's feed slug and GUID.
 
 ## Outputs
-- A PR against main touching only `public/podcasts/<show>/`: the MP3 plus a
-  `feed.xml` update. Nothing else.
+- A PR against main touching only `public/podcasts/<show>/`: the MP3, a
+  `feed.xml` update, and `transcripts/<episode-number>.md`.
 
 ## Feed rules (non-negotiable)
 - Every URL absolute on `https://www.thejoydigi.com`. Never `thejoydigi.github.io`.
@@ -24,6 +24,10 @@ the link listeners share. No `src/` change is needed per episode.
   `N` is the URL; `<Title>` is the link-preview headline. No "Chapter/Episode N" = unstable URL.
 - A published `N` is permanent. Renumbering, retitling or removing an item breaks links
   already sitting in people's texts.
+- Convert the final `script.txt` to readable Markdown with
+  `python3 scripts/format-podcast-transcript.py <script.txt> public/podcasts/<show>/transcripts/<N>.md`.
+  Keep the transcript's number aligned with the share URL. The publishing
+  script should create this file before opening the podcast-path PR.
 - The description's first sentence is the link-preview text — write it as a teaser.
 - Never commit `public/sitemap-0.xml` (a local build rewrites it); it's outside
   `public/podcasts/`, so the guard won't auto-merge. The deploy regenerates it.
