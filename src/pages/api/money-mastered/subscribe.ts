@@ -1,7 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 
 const RESEND_API_KEY = process.env.RESEND_API_KEY;
-// Saving contacts needs a full-access key; the sending-only key can only send mail.
+// Saving contacts needs a full-access key; RESEND_API_KEY can stay sending-only.
 const CONTACTS_API_KEY = process.env.RESEND_CONTACTS_API_KEY || RESEND_API_KEY;
 const SEGMENT_ID = process.env.RESEND_SEGMENT_MONEY_MASTERED;
 const FROM = "Money, Mastered <hello@thejoydigi.com>";
@@ -11,14 +11,14 @@ const FEED_URL = "https://www.thejoydigi.com/podcasts/money-mastered/feed.xml";
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-async function resend(path: string, body: unknown, apiKey = RESEND_API_KEY): Promise<{ ok: boolean; data: any }> {
+async function resend(path: string, body?: unknown, apiKey = RESEND_API_KEY, method = "POST"): Promise<{ ok: boolean; data: any }> {
   const res = await fetch(`https://api.resend.com${path}`, {
-    method: "POST",
+    method,
     headers: {
       Authorization: `Bearer ${apiKey}`,
       "Content-Type": "application/json",
     },
-    body: JSON.stringify(body),
+    body: body === undefined ? undefined : JSON.stringify(body),
   });
   let data: any = {};
   try {
@@ -65,7 +65,9 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     return res.status(500).json({ error: "Email signup is not available right now." });
   }
 
-  const { email: rawEmail, name: rawName } = req.body ?? {};
+  const { email: rawEmail, name: rawName, hp } = req.body ?? {};
+  // Honeypot: real visitors never see this field, bots fill it. Pretend success, do nothing.
+  if (hp) return res.status(200).json({ ok: true });
   const email = String(rawEmail || "").trim().toLowerCase();
   const name = String(rawName || "").trim().slice(0, 80);
 
@@ -84,9 +86,20 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     },
     CONTACTS_API_KEY
   );
-  if (!contact.ok && !/already/i.test(JSON.stringify(contact.data))) {
+  const exists = !contact.ok && /already/i.test(JSON.stringify(contact.data));
+  if (!contact.ok && !exists) {
     console.error("Resend contacts.create failed:", contact.data);
     return res.status(500).json({ error: "Something went wrong. Please try again." });
+  }
+  if (exists) {
+    // Already a contact: only welcome them if this show's list is new to them (stops repeat-email abuse).
+    const listed = SEGMENT_ID ? await resend(`/contacts/${encodeURIComponent(email)}/segments`, undefined, CONTACTS_API_KEY, "GET") : null;
+    const segments: { id: string }[] | null = listed?.ok ? (listed.data?.data ?? []) : null;
+    if (!SEGMENT_ID || !segments || segments.some((seg) => seg.id === SEGMENT_ID)) {
+      return res.status(200).json({ ok: true });
+    }
+    const added = await resend(`/contacts/${encodeURIComponent(email)}/segments/${SEGMENT_ID}`, {}, CONTACTS_API_KEY);
+    if (!added.ok) console.error("Resend add-to-segment failed:", added.data);
   }
 
   // 2. Welcome email (contact is saved even if this fails)
