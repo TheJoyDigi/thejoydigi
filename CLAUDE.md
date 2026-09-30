@@ -36,3 +36,9 @@
 - Font: Poppins - Modern, clean, professional yet friendly
 - Animation: Framer Motion for subtle, playful interactions that appeal to pet owners
 - Layout: Mobile-first responsive design with focused sections
+
+## Brand & email design
+
+- All shows are productions of The Joy Digi. Standard: `docs/brand/design-standard.md`.
+- Emails must be built with `renderEmail` in `src/lib/email/` (tokens in `brand.ts`); never hand-write HTML in API handlers.
+- Before merging any email/brand change: `node scripts/email-brand-check.cjs` must pass, then have the `joydigi-design` agent review (`.claude/agents/joydigi-design.md`).
