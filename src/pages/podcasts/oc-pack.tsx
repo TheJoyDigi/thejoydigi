@@ -24,6 +24,7 @@ const BROWN = "#6B3410";
 const EASE = [0.22, 1, 0.36, 1] as const;
 
 const SPOTIFY_URL = "https://open.spotify.com/show/1vEadmFS7Bq1i3K9HfAzXO";
+const YOUTUBE_URL = "https://www.youtube.com/playlist?list=PLAo7MyXolMhA";
 
 const display = "font-[family-name:var(--oc-display)]";
 const sticker = "border-[3px] border-[#6B3410] shadow-[5px_5px_0_0_#6B3410]";
@@ -421,6 +422,15 @@ function JoinThePack({ show }: { show: Show }) {
           >
             <PlayIcon className="h-5 w-5" />
             Listen on Spotify
+          </a>
+          <a
+            href={YOUTUBE_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={`inline-flex items-center gap-2 rounded-full bg-[#FF0000] px-7 py-4 text-lg font-extrabold text-white ${sticker} transition-transform hover:-translate-y-1`}
+          >
+            <PlayIcon className="h-5 w-5" />
+            Watch on YouTube
           </a>
           <button
             onClick={copy}

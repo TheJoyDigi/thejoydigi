@@ -44,6 +44,7 @@ const EASE = [0.22, 1, 0.36, 1] as const;
 const PARTS = ["Seeing Value", "Creating Value", "Capturing Value", "Exchanging and Scaling", "Mastery"];
 
 const SPOTIFY_URL = "https://open.spotify.com/show/3ZKCjfSrrsJ1W3kJRn9qXk";
+const YOUTUBE_URL = "https://www.youtube.com/playlist?list=PLN6TtRixtU8E";
 
 const roman = (n: number) => {
   let out = "";
@@ -430,7 +431,7 @@ function Subscribe({ show }: { show: Show }) {
           Take the book <em className="text-[#FFD47E]">on the go.</em>
         </h2>
         <p className="mx-auto mt-5 max-w-xl text-[#F4EEDD]/60">
-          New chapters on the way — follow on Spotify or add the feed to any podcast app.
+          New chapters on the way — follow on Spotify, watch on YouTube, or add the feed to any podcast app.
         </p>
         <div className="mx-auto mt-10 flex max-w-2xl flex-col items-center justify-center gap-3 sm:flex-row">
           {SPOTIFY_URL ? (
@@ -448,6 +449,15 @@ function Subscribe({ show }: { show: Show }) {
               Coming soon to Spotify
             </span>
           )}
+          <a
+            href={YOUTUBE_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center gap-3 rounded-full bg-[#FF0000] px-7 py-4 font-semibold text-white shadow-[0_0_40px_-6px_rgba(255,0,0,0.55)] transition-transform duration-300 hover:-translate-y-0.5"
+          >
+            <PlayIcon className="h-5 w-5" />
+            Watch on YouTube
+          </a>
           <button
             onClick={copy}
             className="inline-flex items-center justify-center gap-3 rounded-full border border-[#F2A81D]/50 px-7 py-4 font-semibold text-[#FFD47E] transition-colors hover:border-[#F2A81D] hover:bg-[#F2A81D]/10"

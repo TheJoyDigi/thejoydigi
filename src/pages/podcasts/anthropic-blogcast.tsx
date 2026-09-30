@@ -21,8 +21,8 @@ const MUTED = "rgba(244,239,230,0.65)";
 const EASE = [0.22, 1, 0.36, 1] as const;
 
 // Filled in once the show is submitted to Spotify / YouTube.
-const SPOTIFY_URL = "";
-const YOUTUBE_URL = "";
+const SPOTIFY_URL = "https://open.spotify.com/show/0U5pyPMawaksXnC5PD821m";
+const YOUTUBE_URL = "https://www.youtube.com/playlist?list=PLTqAN17_fo_U";
 
 const SHARE_THEME: ShareTheme = {
   fontClass: `${display.variable} ${body.variable}`,
@@ -281,7 +281,7 @@ function Subscribe({ show }: { show: Show }) {
           Never miss a launch
         </h2>
         <p className="mx-auto mt-4 max-w-xl text-lg" style={{ color: MUTED }}>
-          Episodes drop whenever Anthropic publishes — grab the feed in your favorite app.
+          Episodes drop whenever Anthropic publishes — follow on Spotify, watch on YouTube, or grab the feed in your favorite app.
         </p>
         <div className="mx-auto mt-10 flex max-w-2xl flex-col items-center justify-center gap-4 sm:flex-row">
           {SPOTIFY_URL ? (
