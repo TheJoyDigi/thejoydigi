@@ -4,7 +4,7 @@ import { welcomeEmail } from "@/lib/email/welcome";
 const RESEND_API_KEY = process.env.RESEND_API_KEY;
 // Saving contacts needs a full-access key; RESEND_API_KEY can stay sending-only.
 const CONTACTS_API_KEY = process.env.RESEND_CONTACTS_API_KEY || RESEND_API_KEY;
-const SEGMENT_ID = process.env.RESEND_SEGMENT_MONEY_MASTERED;
+const SEGMENT_ID = process.env.RESEND_SEGMENT_MONEY_MASTERED ?? "245e081b-be4e-4c6c-9b42-84db1b445216";
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
