@@ -33,6 +33,14 @@ const SKINS: Record<string, { bg: string; text: string; sub: string; cta: string
     label: "Audiobook series",
     unit: "chapters",
   },
+  "anthropic-blogcast": {
+    bg: "bg-[#101418] bg-[radial-gradient(circle_at_85%_25%,rgba(226,114,91,0.35),transparent_55%)]",
+    text: "text-[#F4EFE6]",
+    sub: "text-[#F4EFE6]/70",
+    cta: "border border-[#E2725B]/60 text-[#F4EFE6] group-hover:bg-[#E2725B] group-hover:text-[#101418]",
+    label: "News show",
+    unit: "episodes",
+  },
 };
 
 export default function Podcasts({ shows }: { shows: ShowCard[] }) {
@@ -59,6 +67,12 @@ export default function Podcasts({ shows }: { shows: ShowCard[] }) {
           type="application/rss+xml"
           title="Value, Created"
           href="https://www.thejoydigi.com/podcasts/value-created/feed.xml"
+        />
+        <link
+          rel="alternate"
+          type="application/rss+xml"
+          title="Anthropic Blogcast"
+          href="https://www.thejoydigi.com/podcasts/anthropic-blogcast/feed.xml"
         />
       </Head>
       <PageHero
@@ -101,7 +115,7 @@ export default function Podcasts({ shows }: { shows: ShowCard[] }) {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const shows = ["money-mastered", "oc-pack", "value-created"].map((slug) => {
+  const shows = ["money-mastered", "oc-pack", "value-created", "anthropic-blogcast"].map((slug) => {
     const s = getShow(slug);
     return {
       slug,
