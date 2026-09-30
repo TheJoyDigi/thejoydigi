@@ -309,6 +309,9 @@ function Subscribe({ show }: { show: Show }) {
         <p className="mt-12 text-sm font-bold" style={{ color: MUTED }}>
           A production of <Link href="/" className="underline decoration-2 underline-offset-4" style={{ color: PAPER }}>The Joy Digi</Link>
         </p>
+        <p className="mx-auto mt-3 max-w-xl text-xs" style={{ color: MUTED }}>
+          An independent show. Not affiliated with, endorsed by, or sponsored by Anthropic.
+        </p>
       </div>
     </section>
   );
