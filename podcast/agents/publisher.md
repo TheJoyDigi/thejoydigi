@@ -4,7 +4,7 @@ Ships the finished episode to the site. The last pair of eyes before it goes liv
 
 ## Inputs
 - The final MP3 (with exact byte size), `episodes/<n>/claims.md` (verdicts clean),
-  the show's feed slug and GUID.
+  the show's feed slug and GUID, and the final spoken `script.txt`.
 
 ## Outputs
 - A PR against main touching only `public/podcasts/<show>/`: the MP3, a
@@ -24,13 +24,40 @@ the link listeners share. No `src/` change is needed per episode.
   `N` is the URL; `<Title>` is the link-preview headline. No "Chapter/Episode N" = unstable URL.
 - A published `N` is permanent. Renumbering, retitling or removing an item breaks links
   already sitting in people's texts.
-- Convert the final `script.txt` to readable Markdown with
-  `python3 scripts/format-podcast-transcript.py <script.txt> public/podcasts/<show>/transcripts/<N>.md`.
-  Keep the transcript's number aligned with the share URL. The publishing
-  script should create this file before opening the podcast-path PR.
 - The description's first sentence is the link-preview text — write it as a teaser.
 - Never commit `public/sitemap-0.xml` (a local build rewrites it); it's outside
   `public/podcasts/`, so the guard won't auto-merge. The deploy regenerates it.
+
+## Transcript step for every new episode
+Run this from the site repo root **after the spoken script is final and before
+opening the podcast-path PR**. Use the script for the audio being published,
+including any approved corrections. `N` is the chapter or episode number in
+the share URL, not the number of items currently in the feed.
+
+| Show slug | Publishing command in `~/workspace/skills/github/bin/` |
+| --- | --- |
+| `value-created` | `publish_value_created_chapter.py` |
+| `money-mastered` | `publish_chapter.py` |
+| `anthropic-blogcast` | `publish_anthropic_blogcast_episode.py` |
+| `oc-pack` | `publish_oc_pack_episode.py` |
+
+```sh
+python3 scripts/format-podcast-transcript.py \
+  /absolute/path/to/final/script.txt \
+  public/podcasts/<show>/transcripts/<N>.md
+```
+
+The publishing command should run that formatter and include the resulting file
+with the MP3 and feed update. Until a command does so automatically, the
+publisher agent must run it before opening the PR. If the final script is
+missing or the formatter rejects a line, stop the publish and fix the source;
+do not invent transcript text or publish an audio-only episode.
+
+Before opening the PR, check that the transcript exists, has the full speaker
+turns, matches the audio and URL number, and is included in the diff. Keep the
+PR limited to `public/podcasts/<show>/` and do not add a transcript to `feed.xml`.
+After merge, fetch `/podcasts/<show>/<N>` and confirm the full transcript is
+present in the HTML source.
 
 ## Process rules
 - Branch + PR only. Never push to main, never merge your own PR, never touch
@@ -41,10 +68,11 @@ the link listeners share. No `src/` change is needed per episode.
 
 ## Gates
 - Feed validates: item present, GUID unchanged, enclosure length matches the file.
+- The numbered transcript file is in the PR and matches the final audio script.
 - After merge: the live feed shows the new item and the MP3 URL serves HTTP 200
   with the matching Content-Length.
 - After merge: `/podcasts/<show>/<N>` serves HTTP 200 and its `og:title` is the
   episode title.
 
 ## Done
-- Episode live on the feed, verified by fetching the feed and the audio yourself.
+- Episode and transcript live, verified by fetching the feed, audio, and share page yourself.
