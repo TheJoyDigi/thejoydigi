@@ -471,11 +471,11 @@ function Subscribe({ show }: { show: Show }) {
 
         <div className="mx-auto mt-12 max-w-2xl rounded-2xl border border-[#F2A81D]/30 bg-[#0B1330]/70 p-6 text-left md:p-8">
           <h3 className="!py-0 font-[family-name:var(--vc-serif)] text-2xl md:text-3xl font-medium text-[#FFD47E]">
-            Get new chapters by email
+            Get the next chapter in your inbox
           </h3>
-          <p className="mt-2 text-[#F4EEDD]/60">New chapter alerts, straight to your inbox. Unsubscribe anytime.</p>
+          <p className="mt-2 text-[#F4EEDD]/60">Value, Created chapter emails as new chapters publish. Unsubscribe anytime.</p>
           <div className="mt-5">
-            <EmailSignupForm endpoint="/api/value-created/subscribe" tone="dark" buttonLabel="Subscribe" />
+            <EmailSignupForm show="value-created" tone="dark" buttonLabel="Keep me posted" successMessage="You're on the list! Watch your inbox for the next Value, Created chapter." />
           </div>
         </div>
       </div>

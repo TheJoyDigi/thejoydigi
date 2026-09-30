@@ -444,7 +444,7 @@ function JoinThePack({ show }: { show: Show }) {
         </p>
 
         <div className={`mx-auto mt-12 max-w-2xl rounded-[1.5rem] bg-[#FFF4DA] p-6 text-left md:p-8 ${sticker}`}>
-          <h3 className={`!py-0 ${display} text-2xl text-[#6B3410] md:text-3xl`}>Get Thursday&apos;s episode by email 🐶</h3>
+          <h3 className={`!py-0 ${display} text-2xl text-[#6B3410] md:text-3xl`}>Get the next episode in your inbox 🐶</h3>
           <p className="mt-2 font-semibold text-[#6B3410]/75">One short email per week. Unsubscribe anytime.</p>
           <div className="mt-5">
             <OcPackEmailForm />
