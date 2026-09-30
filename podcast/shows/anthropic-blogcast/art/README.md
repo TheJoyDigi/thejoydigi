@@ -15,3 +15,8 @@ Generated with Codex image generation from `codex-brief.md` (edit the brief and 
 
 ## Palette
 Ink `#101418`, Paper `#F4EFE6`, Coral `#E2725B`, Amber `#E9B44C` (same as `src/pages/podcasts/anthropic-blogcast.tsx`).
+
+## Cover refresh rule
+Podcast apps cache artwork by URL. The live cover is `public/podcasts/anthropic-blogcast/cover-v2.jpg`
+(the feed points there). To change it again, add a NEW filename and update the feed's `<itunes:image href>`;
+overwriting a file in place will not refresh Apple/Spotify.

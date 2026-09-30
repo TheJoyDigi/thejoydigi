@@ -14,6 +14,7 @@ export function PodcastSeo({ show, title: showTitle, description: showDescriptio
     "money-mastered": { width: 3000, height: 3000 },
     "oc-pack": { width: 1600, height: 1600 },
     "anthropic-blogcast": { width: 3000, height: 3000 },
+    "value-created": { width: 3000, height: 3000 },
   };
   const dims = coverDims[show.slug] ?? { width: 1200, height: 1200 };
   const jsonLd = {
