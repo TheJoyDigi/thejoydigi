@@ -14,8 +14,9 @@ A single faceted gold diamond hovering above a luminous, glass-clear water drop,
 
 IMAGE 1, cover.png: PODCAST COVER
 - Square 1:1 for a podcast-directory tile.
-- A thin double-line gold frame (like a hardcover book) inset ~4% from the edges.
-- Title text exactly: "VALUE, CREATED" in a classical Roman serif in all caps (Cinzel / Trajan-like), gold gradient lettering, placed in the lower part under the artwork, on two lines: VALUE, / CREATED (keep the comma after VALUE). Perfectly spelled, high contrast, inside a safe margin. No other text. Double-check the spelling in the result; regenerate if any letter is wrong.
+- NO frame or border: the art is full-bleed to every edge (the cover is shown inside rounded containers, so any frame looks cropped and wrong).
+- A small credit line "The Joy Digi" centred near the bottom, in a refined serif (mixed case, pale gold), like the Money, Mastered cover. Spelled exactly.
+- Title text exactly: "VALUE, CREATED" in a classical Roman serif in all caps (Cinzel / Trajan-like), gold gradient lettering, placed in the lower part under the artwork, on two lines: VALUE, / CREATED (keep the comma after VALUE). Perfectly spelled, high contrast, inside a safe margin. No other text besides the title and the credit line. Double-check the spelling in the result; regenerate if any letter is wrong.
 
 IMAGE 2, youtube-banner.png: YOUTUBE CHANNEL BANNER BACKGROUND
 - Wide 16:9 (as close to 2560x1440 as the tool allows).
