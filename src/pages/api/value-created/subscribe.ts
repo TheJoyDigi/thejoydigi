@@ -1,7 +1,8 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 
-// Full-access key from the Resend team that verified thejoydigi.com (a sending-only key can't save contacts).
-const RESEND_API_KEY = process.env.RESEND_CONTACTS_API_KEY || process.env.RESEND_API_KEY;
+const RESEND_API_KEY = process.env.RESEND_API_KEY;
+// Saving contacts needs a full-access key; RESEND_API_KEY can stay sending-only.
+const CONTACTS_API_KEY = process.env.RESEND_CONTACTS_API_KEY || RESEND_API_KEY;
 const SEGMENT_ID = process.env.RESEND_SEGMENT_VALUE_CREATED ?? "1f112a61-0dd0-454e-872a-0d731a143985";
 const FROM = "Value, Created <hello@thejoydigi.com>";
 const PAGE_URL = "https://www.thejoydigi.com/podcasts/value-created";
@@ -9,11 +10,11 @@ const FEED_URL = "https://www.thejoydigi.com/podcasts/value-created/feed.xml";
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-async function resend(path: string, body: unknown): Promise<{ ok: boolean; data: any }> {
+async function resend(path: string, body: unknown, apiKey = RESEND_API_KEY): Promise<{ ok: boolean; data: any }> {
   const res = await fetch(`https://api.resend.com${path}`, {
     method: "POST",
     headers: {
-      Authorization: `Bearer ${RESEND_API_KEY}`,
+      Authorization: `Bearer ${apiKey}`,
       "Content-Type": "application/json",
     },
     body: JSON.stringify(body),
@@ -71,19 +72,23 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   }
 
   // 1. Save the contact in this show's segment. "Already exists" is fine.
-  const contact = await resend("/contacts", {
-    email,
-    first_name: name || undefined,
-    unsubscribed: false,
-    segments: SEGMENT_ID ? [{ id: SEGMENT_ID }] : undefined,
-  });
+  const contact = await resend(
+    "/contacts",
+    {
+      email,
+      first_name: name || undefined,
+      unsubscribed: false,
+      segments: SEGMENT_ID ? [{ id: SEGMENT_ID }] : undefined,
+    },
+    CONTACTS_API_KEY
+  );
   const exists = !contact.ok && /already/i.test(JSON.stringify(contact.data));
   if (!contact.ok && !exists) {
     console.error("Resend contacts.create failed:", contact.data);
     return res.status(500).json({ error: "Something went wrong. Please try again." });
   }
   if (exists && SEGMENT_ID) {
-    const added = await resend(`/contacts/${encodeURIComponent(email)}/segments/${SEGMENT_ID}`, {});
+    const added = await resend(`/contacts/${encodeURIComponent(email)}/segments/${SEGMENT_ID}`, {}, CONTACTS_API_KEY);
     if (!added.ok) console.error("Resend add-to-segment failed:", added.data);
   }
 
