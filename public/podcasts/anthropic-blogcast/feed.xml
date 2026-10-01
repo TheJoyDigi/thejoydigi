@@ -28,5 +28,14 @@
 <itunes:author>TheJoyDigi</itunes:author>
 <itunes:duration>0:07:23</itunes:duration>
 <itunes:episodeType>full</itunes:episodeType>
+</item><item>
+<title>Episode 2: Barclays Goes All In on Claude</title>
+<description>Alex and Jordan unpack Barclays&#x27; bank-wide Claude rollout: Claude Code for engineers, a million-search knowledge assistant, and 120,000 emails a day.</description>
+<pubDate>Thu, 01 Oct 2026 05:10:00 -0700</pubDate>
+<enclosure url="https://www.thejoydigi.com/podcasts/anthropic-blogcast/ab-ep2-barclays-scales-claude.mp3" length="4836281" type="audio/mpeg"/>
+<guid isPermaLink="false">ab-ep2-2026-10-01</guid>
+<itunes:author>TheJoyDigi</itunes:author>
+<itunes:duration>0:05:02</itunes:duration>
+<itunes:episodeType>full</itunes:episodeType>
 </item></channel>
 </rss>
