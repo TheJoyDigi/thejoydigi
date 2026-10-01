@@ -47,9 +47,12 @@ python3 scripts/format-podcast-transcript.py \
   public/podcasts/<show>/transcripts/<N>.md
 ```
 
-The publishing command should run that formatter and include the resulting file
-with the MP3 and feed update. Until a command does so automatically, the
-publisher agent must run it before opening the PR. If the final script is
+The publishing commands accept `--script /path/to/final/script.txt` (2026-10-01 and
+later): the command runs the formatter itself, stages
+`public/podcasts/<show>/transcripts/<N>.md` in the same PR, and refuses to
+publish at all when the script is missing or the formatter rejects it. Always
+pass `--script` — manual transcript generation is the fallback only when a
+command is invoked in a way that cannot take the flag. If the final script is
 missing or the formatter rejects a line, stop the publish and fix the source;
 do not invent transcript text or publish an audio-only episode.
 
