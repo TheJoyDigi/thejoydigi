@@ -9,14 +9,7 @@ export function PodcastSeo({ show, title: showTitle, description: showDescriptio
   const description = ep ? ep.description : showDescription;
   const url = ep ? `${show.pageUrl}/${ep.number}` : show.pageUrl;
   const cover = `https://www.thejoydigi.com${show.cover}`;
-  // Actual cover art dimensions (square podcast artwork).
-  const coverDims: Record<string, { width: number; height: number }> = {
-    "money-mastered": { width: 3000, height: 3000 },
-    "oc-pack": { width: 1600, height: 1600 },
-    "anthropic-blogcast": { width: 3000, height: 3000 },
-    "value-created": { width: 3000, height: 3000 },
-  };
-  const dims = coverDims[show.slug] ?? { width: 1200, height: 1200 };
+  const card = `https://www.thejoydigi.com/og/podcasts/${show.slug}/${ep ? ep.number : "show"}.png`;
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "PodcastSeries",
@@ -49,7 +42,7 @@ export function PodcastSeo({ show, title: showTitle, description: showDescriptio
           title,
           description,
           siteName: "The Joy Digi",
-          images: [{ url: cover, width: dims.width, height: dims.height, alt: show.title }],
+          images: [{ url: card, width: 1200, height: 630, alt: ep ? `${ep.shortTitle}, ${show.title}` : show.title }],
         }}
         twitter={{ cardType: "summary_large_image", site: "@thejoydigi" }}
       />
