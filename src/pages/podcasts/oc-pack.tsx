@@ -4,7 +4,7 @@ import { Nunito, Titan_One } from "next/font/google";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
-import { Equalizer, PauseIcon, PlayIcon, PodcastSeo, SkipIcon, useCopy } from "@/components/podcast/common";
+import { episodePath, Equalizer, PauseIcon, PlayIcon, playOnPlainClick, PodcastSeo, SkipIcon, useCopy } from "@/components/podcast/common";
 import { EpisodeTranscript } from "@/components/podcast/episode-transcript";
 import { OcPackEmailForm } from "@/components/podcast/oc-pack-email-form";
 import { ShareIcon, ShareSheet, useShare, type ShareControl, type ShareTheme } from "@/components/podcast/share";
@@ -354,9 +354,9 @@ function Episodes({ show, player, share }: { show: Show; player: Player; share: 
             const active = player.index === i;
             return (
               <li key={ep.audio} className="relative">
-                <button
+                <div
                   onClick={() => player.playIndex(i)}
-                  className={`group flex w-full items-stretch overflow-hidden rounded-[1.5rem] bg-white text-left ${sticker} transition-transform hover:-translate-y-0.5`}
+                  className={`group flex w-full items-stretch overflow-hidden rounded-[1.5rem] bg-white text-left ${sticker} transition-transform hover:-translate-y-0.5 cursor-pointer`}
                 >
                   <span className="relative grid w-24 shrink-0 place-items-center border-r-[3px] border-dashed border-[#6B3410]/40 bg-[#FEBB55] md:w-32">
                     <span className="text-center">
@@ -367,18 +367,35 @@ function Episodes({ show, player, share }: { show: Show; player: Player; share: 
                   <span className="flex flex-1 items-center gap-4 p-5 pr-[4.5rem] md:p-6 md:pr-20">
                     <span className="min-w-0 flex-1">
                       <span className="flex items-center gap-3">
-                        <span className={`${display} text-xl text-[#6B3410] md:text-2xl`}>{ep.shortTitle}</span>
+                        <a href={episodePath(show, ep)} onClick={(e) => playOnPlainClick(e, () => player.playIndex(i))} className={`no-underline hover:no-underline ${display} text-xl text-[#6B3410] md:text-2xl`}>{ep.shortTitle}</a>
                         {active && <Equalizer color={SUNSET} active={player.playing} />}
                       </span>
                       <span className="mt-1 block text-sm font-bold text-[#6B3410]/55">
                         {ep.dateLabel} · {ep.duration}
                       </span>
+                      {ep.hasTranscript && (
+                        <a
+                          href={`${episodePath(show, ep)}#transcript`}
+                          onClick={(e) => e.stopPropagation()}
+                          className="mt-1 inline-block text-sm font-bold underline decoration-1 underline-offset-4 text-[#B8431F] hover:text-[#6B3410]"
+                        >
+                          Read transcript
+                        </a>
+                      )}
                     </span>
-                    <span className={`grid h-12 w-12 shrink-0 place-items-center rounded-full border-[3px] border-[#6B3410] ${active ? "bg-[#FC7F46] text-[#FFF4DA]" : "bg-[#FFF4DA] text-[#6B3410] group-hover:bg-[#FC7F46] group-hover:text-[#FFF4DA]"} transition-colors`}>
+                    <button
+                      type="button"
+                      aria-label={active && player.playing ? `Pause ${ep.shortTitle}` : `Play ${ep.shortTitle}`}
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        player.playIndex(i);
+                      }}
+                      className={`grid h-12 w-12 shrink-0 place-items-center rounded-full border-[3px] border-[#6B3410] ${active ? "bg-[#FC7F46] text-[#FFF4DA]" : "bg-[#FFF4DA] text-[#6B3410] group-hover:bg-[#FC7F46] group-hover:text-[#FFF4DA]"} transition-colors`}
+                    >
                       {active && player.playing ? <PauseIcon className="h-5 w-5" /> : <PlayIcon className="ml-0.5 h-5 w-5" />}
-                    </span>
+                    </button>
                   </span>
-                </button>
+                </div>
                 <button
                   onClick={() => share.open({ show, episode: ep, time: active ? player.time : undefined })}
                   aria-label={`Share ${ep.shortTitle}`}
