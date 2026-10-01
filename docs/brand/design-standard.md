@@ -78,7 +78,15 @@ Full token sets (muted, kicker, outline, subtle) live in `THEMES` in `brand.ts`.
 - **Postal address:** CAN-SPAM requires a physical postal address in commercial email. Set `NEWSLETTER_POSTAL_ADDRESS` to a street address or PO Box before enabling chapter broadcasts; `layout.ts` includes it in the footer.
 - **Unsubscribe:** chapter broadcasts use Resend's hosted unsubscribe link; welcome emails still use the existing mailto unsubscribe.
 
-## 4. Adding a new show or email
+## 4. Social share cards
+
+- Every show page and episode page has a 1200×630 share card (`og:image`), built at deploy by `src/app/og/podcasts/[show]/[card]/route.tsx` at `/og/podcasts/<slug>/show.png` and `/og/podcasts/<slug>/<n>.png`.
+- Colours come from the show's `THEMES` entry; Fraunces for the title, DM Sans for everything else.
+- Every card carries the credit "Produced by The Joy Digi". Anthropic Blogcast cards add "Not affiliated with Anthropic".
+- A new show needs a `THEMES` entry before it gets cards.
+- Known exception: the existing Money, Mastered cover art shows coins and banknotes, and the cards show it. Swap the cover, not the card, if that changes.
+
+## 5. Adding a new show or email
 
 1. Add the show to `THEMES` in `brand.ts`. Start from its web palette, then adjust until the brand check passes.
 2. Add a 240×240 cover to `public/email/<slug>-cover.jpg` (from the live feed cover).

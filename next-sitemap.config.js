@@ -7,7 +7,7 @@ module.exports = {
   // Utility, auth-callback, test, and internal pages must never appear in the sitemap.
   exclude: [
     "/blog/_layout",
-    "/x-ai-playground",
+    "/og/*",
     "/x-ai-test",
     "/tiktok-auth",
     "/tiktok-tokens",
