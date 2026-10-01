@@ -47,14 +47,21 @@ python3 scripts/format-podcast-transcript.py \
   public/podcasts/<show>/transcripts/<N>.md
 ```
 
-The publishing commands accept `--script /path/to/final/script.txt` (2026-10-01 and
+The publishing commands REQUIRE `--script /path/to/final/script.txt` (2026-10-01 and
 later): the command runs the formatter itself, stages
 `public/podcasts/<show>/transcripts/<N>.md` in the same PR, and refuses to
-publish at all when the script is missing or the formatter rejects it. Always
-pass `--script` — manual transcript generation is the fallback only when a
-command is invoked in a way that cannot take the flag. If the final script is
+publish at all when the flag is missing, the script file is missing, or the
+formatter rejects it — so a human or worker cannot publish audio-only by
+forgetting the flag. The manual formatter flow above is the fallback only for
+episodes published before this rule (backfills), never for new episodes. If the final script is
 missing or the formatter rejects a line, stop the publish and fix the source;
 do not invent transcript text or publish an audio-only episode.
+
+Second net: `deploy_dir.py` (which every publish command funnels through) runs a
+transcript gate before creating the branch/PR — it compares the staged
+`feed.xml` item count against the default branch and refuses the deploy when a
+new episode has no `transcripts/<N>.md`. Local git hooks cannot enforce this:
+commits are created through the GitHub API, which bypasses hooks entirely.
 
 Before opening the PR, check that the transcript exists, has the full speaker
 turns, matches the audio and URL number, and is included in the diff. Keep the
