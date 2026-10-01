@@ -16,9 +16,11 @@ export default function UniverseWhisperLandingPage() {
             Connect your TikTok account and let The Universe Whisper share inspiring and
             thought-provoking video content effortlessly.
           </p>
-          <button className="bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-6 rounded-lg text-lg">
-            Connect to TikTok
-          </button>
+          <Link href="/tiktok-auth" legacyBehavior>
+            <a className="bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-6 rounded-lg text-lg">
+              Connect to TikTok
+            </a>
+          </Link>
           <div className="mt-8 text-sm text-gray-500 space-x-4">
             <Link href="/universe-whisper-terms" legacyBehavior>
               <a className="hover:text-gray-300">Terms of Service</a>

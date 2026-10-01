@@ -1,0 +1,59 @@
+name: Value Created chapter email
+
+on:
+  push:
+    branches: [main]
+    paths: [public/podcasts/value-created/feed.xml]
+  schedule:
+    # Catches chapters merged by podcast-guard using GITHUB_TOKEN; GitHub suppresses their push workflows.
+    - cron: "17 * * * *"
+  workflow_dispatch:
+
+concurrency:
+  group: value-created-chapter-email
+  cancel-in-progress: false
+
+permissions: {}
+
+jobs:
+  notify:
+    if: vars.VALUE_CHAPTER_EMAIL_ENABLED == 'true'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send any newly published chapters
+        env:
+          VALUE_CHAPTER_NOTIFY_SECRET: ${{ secrets.VALUE_CHAPTER_NOTIFY_SECRET }}
+        run: |
+          set -euo pipefail
+          if [ -z "$VALUE_CHAPTER_NOTIFY_SECRET" ]; then
+            echo "VALUE_CHAPTER_NOTIFY_SECRET is not configured."
+            exit 1
+          fi
+
+          response_file=$(mktemp)
+          trap 'rm -f "$response_file"' EXIT
+
+          # A feed update can reach GitHub before the matching Vercel deployment is live.
+          for attempt in {1..30}; do
+            status=$(curl --silent --show-error --output "$response_file" --write-out '%{http_code}' \
+              --max-time 90 --request POST \
+              --header "Authorization: Bearer $VALUE_CHAPTER_NOTIFY_SECRET" \
+              --header 'Content-Type: application/json' \
+              --data '{}' \
+              https://www.thejoydigi.com/api/value-created/notify) || status=000
+
+            if [ "$status" = 200 ]; then
+              cat "$response_file"
+              exit 0
+            fi
+            if [ "$status" = 401 ] || [ "$status" = 403 ]; then
+              echo "Chapter email authorization failed ($status)."
+              exit 1
+            fi
+            echo "Chapter email is not ready (HTTP $status, attempt $attempt/30)."
+            sleep 30
+          done
+
+          echo "Chapter email did not become ready within 15 minutes."
+          cat "$response_file"
+          exit 1

@@ -9,6 +9,7 @@ This is the official website for TheJoyDigi, providing innovative IT solutions t
 - Blog section with industry insights and digital transformation guides
 - Contact form for business inquiries
 - Mobile-friendly design
+- Hidden admin page for managing interest topics stored in S3
 
 ## Tech Stack
 

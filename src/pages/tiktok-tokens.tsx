@@ -49,6 +49,7 @@ export default function TikTokTokensPage() {
       <Head>
         <title>TikTok Tokens</title>
         <meta name="description" content="Display TikTok Access and Refresh Tokens" />
+        <meta name="robots" content="noindex, nofollow" />
       </Head>
       <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', minHeight: '100vh', fontFamily: 'sans-serif', padding: '20px' }}>
         <h1>TikTok Tokens</h1>

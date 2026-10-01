@@ -79,6 +79,7 @@ const TikTokContentPage: React.FC = () => {
       <Head>
         <title>The Universe Whisper Video Library</title>
         <meta name="description" content="Browse and share videos from The Universe Whisper video library to TikTok." />
+        <meta name="robots" content="noindex, nofollow" />
       </Head>
       <div style={{ padding: '20px', fontFamily: 'Arial, sans-serif', maxWidth: '800px', margin: '0 auto' }}>
         <header style={{ textAlign: 'center', marginBottom: '30px' }}>

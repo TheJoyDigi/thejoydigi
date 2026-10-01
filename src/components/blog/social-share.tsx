@@ -22,19 +22,22 @@ const SocialShare: React.FC<SocialShareProps> = ({
     whatsapp: `https://wa.me/?text=${encodedTitle}%20${encodedUrl}`,
   };
 
+  const iconButtonClass =
+    "inline-grid h-10 w-10 place-items-center rounded-full border-2 border-[#003B49] text-[#003B49] transition-colors duration-300 hover:bg-[#003B49] hover:text-white no-underline hover:no-underline";
+
   return (
-    <div className="flex items-center space-x-4 py-6 border-t border-b border-secondary-200">
-      <span className="text-secondary-600 font-medium">Share this post:</span>
-      <div className="flex space-x-4">
+    <div className="flex flex-wrap items-center gap-4 border-y-2 border-[#003B49]/10 py-6">
+      <span className="font-semibold text-[#003B49]">Share this post:</span>
+      <div className="flex gap-3">
         <a
           href={shareLinks.twitter}
           target="_blank"
           rel="noopener noreferrer"
-          className="text-secondary-600 hover:text-primary transition-colors"
+          className={iconButtonClass}
           aria-label="Share on Twitter"
         >
           <svg
-            className="w-6 h-6"
+            className="w-5 h-5"
             fill="currentColor"
             viewBox="0 0 24 24"
             aria-hidden="true"
@@ -46,11 +49,11 @@ const SocialShare: React.FC<SocialShareProps> = ({
           href={shareLinks.facebook}
           target="_blank"
           rel="noopener noreferrer"
-          className="text-secondary-600 hover:text-primary transition-colors"
+          className={iconButtonClass}
           aria-label="Share on Facebook"
         >
           <svg
-            className="w-6 h-6"
+            className="w-5 h-5"
             fill="currentColor"
             viewBox="0 0 24 24"
             aria-hidden="true"
@@ -66,11 +69,11 @@ const SocialShare: React.FC<SocialShareProps> = ({
           href={shareLinks.linkedin}
           target="_blank"
           rel="noopener noreferrer"
-          className="text-secondary-600 hover:text-primary transition-colors"
+          className={iconButtonClass}
           aria-label="Share on LinkedIn"
         >
           <svg
-            className="w-6 h-6"
+            className="w-5 h-5"
             fill="currentColor"
             viewBox="0 0 24 24"
             aria-hidden="true"
@@ -86,11 +89,11 @@ const SocialShare: React.FC<SocialShareProps> = ({
           href={shareLinks.whatsapp}
           target="_blank"
           rel="noopener noreferrer"
-          className="text-secondary-600 hover:text-primary transition-colors"
+          className={iconButtonClass}
           aria-label="Share on WhatsApp"
         >
           <svg
-            className="w-6 h-6"
+            className="w-5 h-5"
             fill="currentColor"
             viewBox="0 0 24 24"
             aria-hidden="true"

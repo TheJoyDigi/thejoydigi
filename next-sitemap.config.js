@@ -4,7 +4,18 @@ module.exports = {
   generateRobotsTxt: true,
   sitemapSize: 5000,
   changefreq: "weekly",
-  exclude: ["/blog/_layout", "/x-ai-playground"],
+  // Utility, auth-callback, test, and internal pages must never appear in the sitemap.
+  exclude: [
+    "/blog/_layout",
+    "/x-ai-playground",
+    "/x-ai-test",
+    "/tiktok-auth",
+    "/tiktok-tokens",
+    "/tiktok-content",
+    "/manage-interests",
+    "/docs",
+    "/brand-deck",
+  ],
   robotsTxtOptions: {
     policies: [
       { userAgent: "*", allow: "/" },

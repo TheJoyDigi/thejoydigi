@@ -1,0 +1,108 @@
+openapi: 3.1.0
+info:
+  title: The Joy Digi API
+  version: 1.0.0
+  description: API documentation for The Joy Digi Next.js application. This API allows you to manage interests for users.
+servers:
+  - url: https://www.thejoydigi.com/api
+paths:
+  /interests:
+    get:
+      summary: Get the list of interests
+      operationId: getInterests
+      description: Retrieves a list of all available interests.
+      responses:
+        "200":
+          description: A list of interests
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Interest"
+    post:
+      summary: Add a new interest
+      operationId: addInterest
+      description: Creates a new interest in the system.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/AddInterestRequest"
+      responses:
+        "200":
+          description: Interest added successfully
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/MessageResponse"
+  /interests/delete:
+    post:
+      summary: Remove multiple interests
+      operationId: removeMultipleInterests
+      description: Removes multiple existing interests from the system.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/RemoveMultipleInterestsRequest"
+      responses:
+        "200":
+          description: Interests removed successfully
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/MessageResponse"
+components:
+  schemas:
+    Interest:
+      type: object
+      properties:
+        id:
+          type: integer
+          description: The unique identifier for the interest.
+        name:
+          type: string
+          description: The name of the interest.
+    AddInterestRequest:
+      type: object
+      required:
+        - topic
+      properties:
+        topic:
+          type: string
+          description: The topic of the interest to add.
+    RemoveInterestRequest:
+      type: object
+      required:
+        - topic
+      properties:
+        topic:
+          type: string
+          description: The topic of the interest to remove.
+    MessageResponse:
+      type: object
+      properties:
+        message:
+          type: string
+          description: A confirmation message.
+    RemoveMultipleInterestsRequest:
+      type: object
+      required:
+        - topics
+      properties:
+        topics:
+          type: array
+          items:
+            type: string
+          description: An array of topics to remove.
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: Authorization
+      x-openai-is_authenticated: false
+security:
+  - ApiKeyAuth: []

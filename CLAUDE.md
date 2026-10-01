@@ -1,4 +1,4 @@
-# Ruh-Roh Retreat Project Notes
+# The Joy Digi Project Notes
 
 ## Build Commands
 
@@ -24,15 +24,20 @@
 
 ## SEO Information
 
-- Business name: Ruh-Roh Retreat
-- Primary keywords: luxury pet boarding, overnight pet care, premium pet accommodation
-- Target audience: Pet owners who need reliable and comfortable pet boarding while they're away
-- Service areas: Local regions (customize in the landing page service areas section)
+- Business name: The Joy Digi (thejoydigi.com), where Long La builds joyful things with code and AI: products, podcasts, and experiments.
+- Podcasts: Value, Created; Money, Mastered; The OC Pack; Anthropic Blogcast, all credited "Produced by The Joy Digi".
+- The old Ruh-Roh Retreat case study now redirects to `/case-studies/the-blue-sock` (see `next.config.js`).
 - Contact: hello@thejoydigi.com, +1 (714) 329-4534
 
 ## Design Choices
 
-- Primary color: Green (#3dc756) - Represents freshness, nature, and growth
-- Font: Poppins - Modern, clean, professional yet friendly
-- Animation: Framer Motion for subtle, playful interactions that appeal to pet owners
-- Layout: Mobile-first responsive design with focused sections
+- The Joy Digi brand: Deep Teal `#003B49`, Soft Sand `#FDF6EC`, Coral `#FF6B6B` (+ Sun, Sky, Mint accents); Fraunces display + DM Sans body. Full rules in `docs/brand/design-standard.md`.
+- Each podcast has its own palette inside that umbrella (see the standard's show table).
+- Animation: Framer Motion for subtle, playful interactions.
+- Layout: mobile-first responsive design with focused sections.
+
+## Brand & email design
+
+- All shows are productions of The Joy Digi. Standard: `docs/brand/design-standard.md`.
+- Emails must be built with `renderEmail` in `src/lib/email/` (tokens in `brand.ts`); never hand-write HTML in API handlers.
+- Before merging any email/brand change: `node scripts/email-brand-check.cjs` must pass, then have the `joydigi-design` agent review (`.claude/agents/joydigi-design.md`).

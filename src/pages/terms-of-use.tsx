@@ -3,7 +3,10 @@ import MainLayout from "../pages/_layouts";
 
 function TermOfUsePage() {
   return (
-    <MainLayout>
+    <MainLayout
+      title="Terms of Use | The Joy Digi"
+      description="Read the terms of use for The Joy Digi."
+    >
       <TermsOfUseComponent />
     </MainLayout>
   );

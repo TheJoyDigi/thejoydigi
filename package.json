@@ -16,6 +16,7 @@
     "convert:webp": "node scripts/convert-to-webp.js"
   },
   "dependencies": {
+    "@aws-sdk/client-s3": "^3.550.0",
     "@heroicons/react": "^2.2.0",
     "@mdx-js/loader": "^3.1.0",
     "@mdx-js/react": "^3.1.0",
@@ -27,8 +28,8 @@
     "inquirer": "^9.2.15",
     "lucide-react": "^0.476.0",
     "marked": "^15.0.8",
-    "next": "^15.1.7",
-    "next-mdx-remote": "^5.0.0",
+    "next": "^15.5.25",
+    "next-mdx-remote": "^6.0.0",
     "next-seo": "^6.6.0",
     "nodemailer": "^6.10.0",
     "react": "^19.0.0",
@@ -36,7 +37,10 @@
     "react-icons": "^5.5.0",
     "react-markdown": "^9.0.1",
     "sharp": "^0.33.2",
-    "slugify": "^1.6.6"
+    "slugify": "^1.6.6",
+    "swagger-ui-express": "^5.0.1",
+    "swagger-ui-react": "^5.26.0",
+    "yamljs": "^0.3.0"
   },
   "devDependencies": {
     "@google/generative-ai": "^0.24.0",
@@ -44,6 +48,7 @@
     "@types/nodemailer": "^6.4.17",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "@types/swagger-ui-react": "^5.18.0",
     "autoprefixer": "^10.0.1",
     "eslint": "^8",
     "eslint-config-next": "^15.1.7",
