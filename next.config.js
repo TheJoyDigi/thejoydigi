@@ -23,6 +23,8 @@ const nextConfig = {
       ...removedPosts.map((slug) => ({ source: `/blog/${slug}`, destination: "/blog", permanent: true })),
     ];
   },
+  // Share cards are prerendered; keep podcast audio out of the route's function bundle (Vercel 250 MB cap).
+  outputFileTracingExcludes: { "/og/**/*": ["public/**/*.mp3", "public/**/*.wav", "public/**/*.m4a"] },
   pageExtensions: ["ts", "tsx", "js", "jsx", "md", "mdx"],
   images: {
     formats: ["image/webp"],
