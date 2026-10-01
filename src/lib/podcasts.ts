@@ -11,7 +11,9 @@ export type Episode = {
   duration: string;
   seconds: number;
   audio: string;
+  /** Full text, only loaded on the episode's own page (see episodeProps). */
   transcript?: string;
+  hasTranscript: boolean;
 };
 
 export type Show = {
@@ -61,6 +63,8 @@ const toSeconds = (d: string) => d.split(":").reduce((acc, part) => acc * 60 + N
 /** Feed URLs are absolute production URLs; serve them site-relative so previews and dev play local files. */
 const sitePath = (url: string) => url.replace(/^https?:\/\/(www\.)?thejoydigi\.com/, "");
 
+const transcriptFile = (slug: string, number: number) => path.join(process.cwd(), "public", "podcasts", slug, "transcripts", `${number}.md`);
+
 /** Reads public/podcasts/<slug>/feed.xml at build time; episodes come back in chapter/episode order. */
 export function getShow(slug: string): Show {
   const xml = fs.readFileSync(path.join(process.cwd(), "public", "podcasts", slug, "feed.xml"), "utf8");
@@ -86,11 +90,11 @@ export function getShow(slug: string): Show {
     .sort((a, b) => order(a) - order(b))
     .map((ep, i) => {
       const number = numbered(ep.title) ?? i + 1;
-      const transcriptPath = path.join(process.cwd(), "public", "podcasts", slug, "transcripts", `${number}.md`);
+      const transcriptPath = transcriptFile(slug, number);
       return {
         ...ep,
         number,
-        ...(fs.existsSync(transcriptPath) ? { transcript: fs.readFileSync(transcriptPath, "utf8") } : {}),
+        hasTranscript: fs.existsSync(transcriptPath),
       };
     });
 
@@ -117,5 +121,8 @@ export const episodeProps =
   async ({ params }: { params?: { episode?: string | string[] } }) => {
     const show = getShow(slug);
     const episode = show.episodes.findIndex((ep) => String(ep.number) === params?.episode);
-    return episode < 0 ? { notFound: true as const } : { props: { show, episode } };
+    if (episode < 0) return { notFound: true as const };
+    const ep = show.episodes[episode];
+    if (ep.hasTranscript) ep.transcript = fs.readFileSync(transcriptFile(slug, ep.number), "utf8");
+    return { props: { show, episode } };
   };

@@ -4,7 +4,7 @@ import { Cinzel, Cormorant_Garamond, DM_Sans } from "next/font/google";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect, useRef } from "react";
-import { Equalizer, PauseIcon, PlayIcon, PodcastSeo, SkipIcon, useCopy } from "@/components/podcast/common";
+import { episodePath, Equalizer, PauseIcon, PlayIcon, playOnPlainClick, PodcastSeo, SkipIcon, useCopy } from "@/components/podcast/common";
 import { EpisodeTranscript } from "@/components/podcast/episode-transcript";
 import { EmailSignupForm } from "@/components/podcast/email-signup-form";
 import { ShareIcon, ShareSheet, useShare, type ShareControl, type ShareTheme } from "@/components/podcast/share";
@@ -332,18 +332,18 @@ function Contents({ show, player, share }: { show: Show; player: Player; share: 
                 transition={{ duration: 0.8, ease: EASE }}
                 className={`flex items-center border-b border-[#D9B56A]/20 transition-colors ${active ? "bg-[#D9B56A]/[0.07]" : "hover:bg-[#D9B56A]/[0.04]"}`}
               >
-                <button
+                <div
                   onClick={() => player.playIndex(i)}
-                  className={`group grid min-w-0 flex-1 grid-cols-[3.2rem_1fr_auto] items-center gap-4 px-2 py-7 text-left transition-colors md:grid-cols-[5rem_1fr_auto_auto] md:gap-8 md:px-4`}
+                  className={`group grid min-w-0 flex-1 grid-cols-[3.2rem_1fr_auto] items-center gap-4 px-2 py-7 text-left transition-colors md:grid-cols-[5rem_1fr_auto_auto] md:gap-8 md:px-4 cursor-pointer`}
                 >
                   <span className="font-[family-name:var(--mm-display)] text-2xl md:text-4xl font-semibold" style={goldText}>
                     {roman(ep.number)}
                   </span>
                   <span>
                     <span className="flex flex-wrap items-center gap-3">
-                      <span className="font-[family-name:var(--mm-serif)] text-2xl md:text-3xl font-medium text-[#EFE6D2] group-hover:text-[#F3DE9E] transition-colors">
+                      <a href={episodePath(show, ep)} onClick={(e) => playOnPlainClick(e, () => player.playIndex(i))} className="font-[family-name:var(--mm-serif)] text-2xl md:text-3xl font-medium text-[#EFE6D2] group-hover:text-[#F3DE9E] transition-colors no-underline hover:no-underline">
                         {ep.shortTitle}
-                      </span>
+                      </a>
                       {i === latest && (
                         <span className="rounded-full border border-[#D9B56A]/50 px-2.5 py-0.5 font-[family-name:var(--mm-display)] text-[10px] tracking-[0.25em] text-[#F3DE9E]">
                           New
@@ -352,16 +352,31 @@ function Contents({ show, player, share }: { show: Show; player: Player; share: 
                       {active && <Equalizer color={GOLD_LIGHT} active={player.playing} />}
                     </span>
                     <span className="mt-2 block font-[family-name:var(--mm-serif)] text-lg italic leading-snug text-[#EFE6D2]/60">{ep.description}</span>
+                    {ep.hasTranscript && (
+                      <a
+                        href={`${episodePath(show, ep)}#transcript`}
+                        onClick={(e) => e.stopPropagation()}
+                        className="mt-2 inline-block text-sm font-semibold underline decoration-1 underline-offset-4 text-[#F3DE9E]/80 hover:text-[#F3DE9E]"
+                      >
+                        Read transcript
+                      </a>
+                    )}
                   </span>
                   <span className="hidden text-sm tabular-nums text-[#EFE6D2]/50 md:block">{ep.duration}</span>
-                  <span
+                  <button
+                    type="button"
+                    aria-label={active && player.playing ? `Pause ${ep.shortTitle}` : `Play ${ep.shortTitle}`}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      player.playIndex(i);
+                    }}
                     className={`grid h-12 w-12 place-items-center rounded-full border transition-all duration-300 ${
                       active ? "border-[#F3DE9E] bg-[#F3DE9E] text-[#060E1A]" : "border-[#D9B56A]/50 text-[#F3DE9E] group-hover:border-[#F3DE9E] group-hover:bg-[#F3DE9E] group-hover:text-[#060E1A]"
                     }`}
                   >
                     {active && player.playing ? <PauseIcon className="h-5 w-5" /> : <PlayIcon className="ml-0.5 h-5 w-5" />}
-                  </span>
-                </button>
+                  </button>
+                </div>
                 <button
                   onClick={() => share.open({ show, episode: ep, time: active ? player.time : undefined })}
                   aria-label={`Share ${ep.shortTitle}`}

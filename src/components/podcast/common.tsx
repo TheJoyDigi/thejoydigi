@@ -1,6 +1,6 @@
 import { NextSeo } from "next-seo";
 import Head from "next/head";
-import { useCallback, useState } from "react";
+import { useCallback, useState, type MouseEvent } from "react";
 import type { Show } from "@/lib/podcasts";
 
 export function PodcastSeo({ show, title: showTitle, description: showDescription, episode }: { show: Show; title: string; description: string; episode?: number }) {
@@ -124,4 +124,14 @@ export function Equalizer({ color, active }: { color: string; active: boolean })
       `}</style>
     </span>
   );
+}
+
+export const episodePath = (show: Show, ep: { number: number }) => `/podcasts/${show.slug}/${ep.number}`;
+
+/** Plain clicks play in place; modified clicks (new tab, etc.) follow the link to the episode page. */
+export function playOnPlainClick(e: MouseEvent, play: () => void) {
+  if (e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+  e.preventDefault();
+  e.stopPropagation();
+  play();
 }

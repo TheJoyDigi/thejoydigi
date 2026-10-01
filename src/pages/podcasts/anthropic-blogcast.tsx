@@ -4,7 +4,7 @@ import { Space_Grotesk, Inter } from "next/font/google";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import { Equalizer, PauseIcon, PlayIcon, PodcastSeo, SkipIcon, useCopy } from "@/components/podcast/common";
+import { episodePath, Equalizer, PauseIcon, PlayIcon, playOnPlainClick, PodcastSeo, SkipIcon, useCopy } from "@/components/podcast/common";
 import { EmailSignupForm } from "@/components/podcast/email-signup-form";
 import { EpisodeTranscript } from "@/components/podcast/episode-transcript";
 import { ShareIcon, ShareSheet, useShare, type ShareControl, type ShareTheme } from "@/components/podcast/share";
@@ -211,9 +211,9 @@ function Episodes({ show, player, share }: { show: Show; player: Player; share: 
             const active = player.index === i;
             return (
               <li key={ep.audio} className="relative">
-                <button
+                <div
                   onClick={() => player.playIndex(i)}
-                  className={`group flex w-full items-stretch overflow-hidden ${card} text-left transition-transform hover:-translate-y-0.5`}
+                  className={`group flex w-full items-stretch overflow-hidden ${card} text-left transition-transform hover:-translate-y-0.5 cursor-pointer`}
                 >
                   <span
                     className="grid w-24 shrink-0 place-items-center border-r border-white/10 md:w-28"
@@ -227,21 +227,36 @@ function Episodes({ show, player, share }: { show: Show; player: Player; share: 
                   <span className="flex flex-1 items-center gap-4 p-5 pr-20 md:p-6 md:pr-24">
                     <span className="min-w-0 flex-1">
                       <span className="flex items-center gap-3">
-                        <span className={`${font} text-xl font-bold`} style={{ color: PAPER }}>{ep.shortTitle}</span>
+                        <a href={episodePath(show, ep)} onClick={(e) => playOnPlainClick(e, () => player.playIndex(i))} className={`no-underline hover:no-underline ${font} text-xl font-bold`} style={{ color: PAPER }}>{ep.shortTitle}</a>
                         {active && <Equalizer color={CORAL} active={player.playing} />}
                       </span>
                       <span className="mt-1 block text-sm font-semibold" style={{ color: MUTED }}>
                         {ep.dateLabel} · {ep.duration}
                       </span>
+                      {ep.hasTranscript && (
+                        <a
+                          href={`${episodePath(show, ep)}#transcript`}
+                          onClick={(e) => e.stopPropagation()}
+                          className="mt-1 inline-block text-sm font-bold underline decoration-1 underline-offset-4 text-[#E9B44C] hover:text-[#F4EFE6]"
+                        >
+                          Read transcript
+                        </a>
+                      )}
                     </span>
-                    <span
+                    <button
+                      type="button"
+                      aria-label={active && player.playing ? `Pause ${ep.shortTitle}` : `Play ${ep.shortTitle}`}
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        player.playIndex(i);
+                      }}
                       className="grid h-12 w-12 shrink-0 place-items-center rounded-full transition-colors"
                       style={{ background: active ? CORAL : "rgba(255,255,255,0.1)", color: active ? INK : PAPER }}
                     >
                       {active && player.playing ? <PauseIcon className="h-5 w-5" /> : <PlayIcon className="ml-0.5 h-5 w-5" />}
-                    </span>
+                    </button>
                   </span>
-                </button>
+                </div>
                 <button
                   onClick={() => share.open({ show, episode: ep, time: active ? player.time : undefined })}
                   aria-label={`Share ${ep.shortTitle}`}
