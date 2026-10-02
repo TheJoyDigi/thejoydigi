@@ -81,13 +81,20 @@ window.WL={
   makeSynth:makeSynth,soundCues:SOUND,
   DUR:DUR,BEATS:BEATS,CUES:CUES,LAYERS:LAYERS,POSE_NAMES:POSE_NAMES,FACE_NAMES:FACE_NAMES,DEVICES:DEVICES,beatAt:beatAt,
   palette:G,
+  frameJpeg:function(t,q){drawDemo(t);return cv.toDataURL('image/jpeg',q||.95).split(',')[1];},
+  framePng:function(t){drawDemo(t);return cv.toDataURL('image/png').split(',')[1];},
   frame:function(t,target){drawDemo(t);var tc=target.getContext('2d');tc.drawImage(cv,0,0,target.width,target.height);},
-  poseShot:function(target,name,t){
+  setLead:function(who){LEAD=who==='kai'?'kai':'wren';},
+  poseShot:function(target,name,t,who){
     var box=[85,215,190,215];sizeTo(target,box,2);
-    c.setTransform(SC,0,0,SC,0,0);gBg(0,{tint:G.violet});wiLead(180,400,1.6,name,t||1);copyOut(target,box);},
-  faceShot:function(target,face,t){
+    c.setTransform(SC,0,0,SC,0,0);gBg(0,{tint:who==='kai'?'#6A55FF':G.violet});wiLead(180,400,1.6,name,t||1,{who:who});copyOut(target,box);},
+  duoShot:function(target,t){
+    var box=[0,255,360,225];sizeTo(target,box,2);
+    c.setTransform(SC,0,0,SC,0,0);gBg(t||0,{tint:G.violet,pos:(t||0)*1.2});
+    wiLead(105,470,1.55,'point',t||0,{who:'wren'});wiLead(255,470,1.55,'resolve',(t||0)+.6,{who:'kai',flip:false});copyOut(target,box);},
+  faceShot:function(target,face,t,who){
     var box=[110,205,140,130];sizeTo(target,box,2);
-    c.setTransform(SC,0,0,SC,0,0);gBg(0,{tint:G.violet});wiLead(180,480,2.6,'stand',t||1,{face:face,gz:[0,0]});copyOut(target,box);},
+    c.setTransform(SC,0,0,SC,0,0);gBg(0,{tint:who==='kai'?'#6A55FF':G.violet});wiLead(180,480,2.6,'stand',t||1,{face:face,gz:[0,0],who:who});copyOut(target,box);},
   deviceShot:function(target,id,t){
     var d=null,i;for(i=0;i<DEVICES.length;i++)if(DEVICES[i].id===id)d=DEVICES[i];
     if(!d)return;sizeTo(target,d.box,2);

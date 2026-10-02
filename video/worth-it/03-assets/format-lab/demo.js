@@ -89,8 +89,10 @@ function worldOpt(t){return LAYERS.world?{pos:worldPos(t)}:{};}
 function beatAt(t){var k=0;for(var i=0;i<BEATS.length;i++)if(t>=BEATS[i].t0)k=i;return BEATS[k];}
 var PUNCH=[[.95,.10,7,.012],[5.3,.05,3,0],[6.55,.025,0,0],[7.85,.025,0,0],[11.3,.03,0,0],[13.75,.07,5,.008],[14.3,.06,4,.006],[18.5,.06,4,.01],[22.6,.05,3,0],[23.25,.03,0,0],[26.2,.09,6,.01],[28.05,.06,5,.008],[29.65,.05,3,0]];
 var POPS=[[.95,.2],[2.6,.07],[5.3,.1],[7.85,.07],[11.3,.1],[13.75,.1],[18.5,.14],[22.6,.08],[26.2,.16],[28.05,.07]];
+var LEAD='wren';
 function leadDraw(x,y,s,pose,t,o){
   if(!LAYERS.char)return;
+  o=o||{};o.who=LEAD;
   if(!fxOn()){wiLead(x,y,s,pose,t,o);return;}
   var q=gSquash(t,POPS),wp=LAYERS.world?worldPos(t):0,bob=LAYERS.world?-Math.abs(Math.sin(wp*3.4))*1.8*clamp(worldSpeed(t)/1.2,0,1.4):0;
   c.save();c.translate(x,y+q[2]+bob);c.scale(q[0],q[1]);c.translate(-x,-y);wiLead(x,y,s,pose,t,o);c.restore();
@@ -156,7 +158,7 @@ function drawDemo(t){
       if(uiOn())gHud(t,xp,lv,'EP 01');
       if(fxOn()){c.save();c.globalAlpha=(.14+.05*Math.sin(v2*3))*(1-lit);c.font='400 150px '+F_RU;c.fillStyle=G.cyan;c.textAlign='center';c.textBaseline='middle';c.fillText('?',180,170);c.restore();}
       if(uiOn()){gGate(248,v2,{lit:lit});
-        gDialog(40,296,220,100,'WREN',['What can I make that','someone would pay','five dollars for?'],v2-.2,{cps:30});
+        gDialog(40,296,220,100,LEAD.toUpperCase(),['What can I make that','someone would pay','five dollars for?'],v2-.2,{cps:30});
         if(fxOn()&&v2>2.1){c.save();c.globalAlpha=sm(clamp((v2-2.1)/.3,0,1));gTx('NEW PATH UNLOCKED',180,190,19,v2-2.1,{fill:G.green,glow:G.green,blur:14});c.restore();}}
       leadDraw(150,522,.75,v2<2.2?'think':'resolve',t);
     }

@@ -2,8 +2,7 @@
   "pace": "fast-paced, snappy, clear",
   "voices": [
     "Leda",
-    "Puck",
-    "Charon"
+    "Puck"
   ],
   "lines": [
     {
@@ -78,5 +77,9 @@
       "text": "Worth it.",
       "style": "warm, final, a small smile"
     }
-  ]
+  ],
+  "lead_voice": {
+    "wren": "Leda",
+    "kai": "Puck"
+  }
 }
