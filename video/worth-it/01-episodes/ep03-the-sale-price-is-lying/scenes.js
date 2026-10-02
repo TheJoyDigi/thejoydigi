@@ -27,6 +27,7 @@ function draw(t){
     wiPriceTag(180,300,1.15,'$200');
     c.restore();
     wiTx('was $200 — never real',180,412,17,t-4.4,{fam:F_H,wt:'700',fill:'rgba(27,36,64,.7)'});
+    wiTx('Illustrative example.',180,438,10,t-4.8,{fam:F_U,wt:'600',fill:'rgba(27,36,64,.5)'});
   }else if(t<15.7){
     wiPaper(t);
     wiTx('Price is a rumor about value.',180,140,22,t-9.0,{});
