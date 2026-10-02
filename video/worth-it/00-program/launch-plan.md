@@ -17,7 +17,7 @@ build → QA → render → voice → package.
 
 | Ep | Title | Why at launch | Status |
 |---|---|---|---|
-| 1 | The Five-Dollar Coffee | the thesis; strongest reframe | voiced, awaiting visual build |
+| 1 | The Five-Dollar Coffee | the thesis; strongest reframe | **final cut rendered (anime format, Wren, Leda)**; QA gate passes; awaiting Lola's sign-off and Long's device test |
 | 5 | The Most Boring Way to Get Rich | broadest curiosity hook | scripted (season map) |
 | 3 | The Sale Price Is Lying | everyone shops; instantly gettable | scripted (season map) |
 

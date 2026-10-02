@@ -53,7 +53,7 @@ Director (human):
 - [ ] The move is safe, free, and under 5 minutes
 - [ ] **Mute test:** with sound off, the myth, reframe, and move are clear
 - [ ] **Freeze-frame test:** every paused frame has one focal point
-- [ ] **Safe-box test:** nothing important outside y 90–470
+- [ ] **Safe-box test:** nothing important outside y 90–520 (turn on the Safe box overlay in the Format Lab)
 - [ ] **Device test:** private draft on a real phone, app UI showing
 - [ ] Spelling and punctuation correct everywhere on screen
 - [ ] The voice echoes the screen text — no new information in audio only

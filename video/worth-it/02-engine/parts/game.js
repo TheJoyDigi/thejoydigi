@@ -392,6 +392,6 @@
     wiTx('The Joy Digi',CX,330,30,u-.95,{fam:F_FR,wt:'700',fill:WI.sand,sw:0,stag:.035});
     var ct=sm(clamp((u-1.5)/.4,0,1));
     c.globalAlpha=ct;c.fillStyle='#BFE9EE';c.font='600 12px '+F_HD;c.textAlign='center';c.textBaseline='alphabetic';c.fillText('Worth It is a production of The Joy Digi',CX,356);
-    c.globalAlpha=ct*.85;c.fillStyle=G.mute;c.font='500 10.5px '+F_HD;c.fillText('Educational only. Not financial advice.',CX,376);
+    c.globalAlpha=ct;c.fillStyle='#A9D7DD';c.font='600 10.5px '+F_HD;c.fillText('Educational only. Not financial advice.',CX,376);
     c.restore();
   }

@@ -34,7 +34,7 @@ burned into the video.
 | The launch plan | `00-program/launch-plan.md` |
 | Platform specs and safe zones | `00-program/platform-guide.md` |
 | The season map | `01-episodes/season-map.md` |
-| Ep 1 (voiced) | `01-episodes/ep01-the-five-dollar-coffee/` |
+| Ep 1 (final cut, for Lola's check) | `01-episodes/ep01-the-five-dollar-coffee/` |
 
 ## Folder map
 
