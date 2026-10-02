@@ -24,7 +24,7 @@ def opt(name):
     p = os.path.join(ep_dir, name)
     return read(p) if os.path.exists(p) else ''
 
-parts = ['core', 'rig-mei', 'infographics', 'music', 'scenes-common']
+parts = ['core', 'rig-mei', 'infographics', 'music', 'scenes-common', 'worth']
 js = ["(function(){", "  var W=360,H=640,SC=2;",
       "  var cv=document.getElementById('cv'),c=cv.getContext('2d');"]
 js += [read(os.path.join(here, 'parts', p + '.js')) for p in parts]

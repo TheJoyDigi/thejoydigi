@@ -70,6 +70,7 @@
       document.fonts.load('400 20px "Bowlby One"','THE X-RAY'),
       document.fonts.load('400 20px "Pacifico"','Level up!'),
       document.fonts.load('700 26px "Fraunces"','The Joy Digi'),
+      document.fonts.load('700 40px "Space Grotesk"','Worth it.'),
       document.fonts.load('500 10px "DM Sans"','Trap or Treasure is a production')
     ]).then(function(){dirty=true;}).catch(function(){});
   }
