@@ -90,5 +90,14 @@
 <itunes:author>The Joy Digi</itunes:author>
 <itunes:duration>0:10:15</itunes:duration>
 <itunes:episodeType>full</itunes:episodeType>
+</item><item>
+<title>Money, Mastered — Chapter 9: Market Cap and Indexes</title>
+<description>The market was up today — but what does that even mean? This chapter opens up the scoreboard: how market capitalization really works, why a handful of trillion-dollar giants decide where the Dow, the S and P five hundred, and the Nasdaq go, and how an index fund lets you buy the whole basket in a single trade.</description>
+<pubDate>Fri, 02 Oct 2026 10:18:00 -0700</pubDate>
+<enclosure url="https://www.thejoydigi.com/podcasts/money-mastered/money-mastered-chapter-9-market-cap-and-indexes-2026-10-02.mp3" length="11090205" type="audio/mpeg"/>
+<guid isPermaLink="false">mm-ch9-2026-10-02</guid>
+<itunes:author>The Joy Digi</itunes:author>
+<itunes:duration>0:11:33</itunes:duration>
+<itunes:episodeType>full</itunes:episodeType>
 </item></channel>
 </rss>
