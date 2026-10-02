@@ -1,0 +1,600 @@
+<title>Worth It Format Lab</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bangers&family=DM+Sans:wght@500&family=Fraunces:wght@700&family=Rajdhani:wght@500;600;700&family=Russo+One&display=swap" rel="stylesheet">
+<style>
+/* Single arcade look, dark only. Layout: sticky phone player left, scrolling breakdown right; stacks on narrow screens. */
+:root{
+  --bg:#070B22;--surface:#0E1438;--surface2:#151D52;--line:#2A3590;--fg:#F4F7FF;--muted:#8F9BD6;
+  --cyan:#2FE3D0;--gold:#FFC83D;--red:#FF4D5E;--green:#4DFFA0;--violet:#7B5CFF;--ink:#05081F;
+  --accent:#2FE3D0;
+  --display:'Russo One',Impact,system-ui,sans-serif;--body:'Rajdhani',system-ui,sans-serif;--sfx:'Bangers','Russo One',Impact,sans-serif;--mono:ui-monospace,Menlo,Consolas,monospace;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+body{background:radial-gradient(1200px 600px at 80% -10%,#1A1450 0%,rgba(26,20,80,0) 60%),var(--bg);color:var(--fg);font-family:var(--body);font-size:17px;font-weight:500;line-height:1.45;padding-inline:16px}
+h1,h2,h3{font-family:var(--display);font-weight:400;margin:0;text-wrap:balance;line-height:1.12;letter-spacing:.01em}
+h1{font-size:clamp(1.9rem,5.2vw,2.8rem);text-shadow:0 0 22px rgba(47,227,208,.35)}
+h2{font-size:1.5rem}
+h3{font-size:1.05rem}
+p{margin:0}
+button{font:inherit;color:inherit}
+.page{max-width:1120px;margin:0 auto;padding-block:24px 72px}
+.mast{display:flex;flex-direction:column;gap:8px;margin-bottom:22px;max-width:62ch}
+.kicker{font:700 .85rem var(--body);letter-spacing:.2em;text-transform:uppercase;color:var(--cyan)}
+.lede{color:var(--muted)}
+.grid{display:grid;grid-template-columns:minmax(0,380px) minmax(0,1fr);gap:32px;align-items:start}
+@media (max-width:900px){.grid{grid-template-columns:minmax(0,1fr)}}
+.stage{position:sticky;top:12px;display:flex;flex-direction:column;gap:12px}
+@media (max-width:900px){.stage{position:static;max-width:380px;width:100%;margin-inline:auto}}
+.phone{position:relative;aspect-ratio:9/16;background:#000;border-radius:18px;overflow:hidden;border:2px solid var(--cyan);box-shadow:0 0 28px rgba(47,227,208,.25),inset 0 0 0 1px rgba(255,255,255,.06)}
+.phone canvas,.phone svg{position:absolute;inset:0;width:100%;height:100%;display:block}
+.phone svg{pointer-events:none}
+.bar{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.btn{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:9px 16px;min-height:44px;cursor:pointer;font-weight:700;letter-spacing:.04em;text-transform:uppercase}
+.btn:hover{border-color:var(--muted)}
+.btn.primary{background:var(--cyan);color:var(--ink);border-color:var(--cyan);box-shadow:0 0 16px rgba(47,227,208,.4)}
+.btn[aria-pressed="true"]{background:var(--cyan);color:var(--ink);border-color:var(--cyan)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+input[type=range]{flex:1 1 140px;min-width:0;accent-color:var(--accent);height:32px}
+.time{font:400 .78rem var(--mono);color:var(--muted);min-width:7.5em;text-align:right}
+.toggles{display:flex;gap:6px;flex-wrap:wrap}
+.tog{font-size:.9rem;font-weight:700;letter-spacing:.04em;padding:7px 14px;min-height:40px;border-radius:999px;border:1px solid var(--line);background:var(--surface);cursor:pointer}
+.tog[aria-pressed="true"]{background:var(--cyan);color:var(--ink);border-color:var(--cyan);box-shadow:0 0 12px rgba(47,227,208,.35)}
+select{font:inherit;background:var(--surface);color:var(--fg);border:1px solid var(--line);border-radius:8px;padding:8px;min-height:40px}
+.live{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:12px 14px}
+.live h3{font-size:.8rem;text-transform:uppercase;letter-spacing:.14em;color:var(--cyan);margin-bottom:8px}
+.live dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:6px 12px;font-size:.86rem}
+.live dt{font:500 .72rem var(--mono);color:var(--muted);text-transform:uppercase;padding-top:2px}
+.live dd{margin:0;min-height:1.4em}
+.sec{padding-block:30px;border-top:1px solid var(--line)}
+.sec:first-child{border-top:0;padding-top:0}
+.sec>p.lede{margin-top:6px;max-width:62ch}
+.beats{display:flex;gap:2px;margin:16px 0 14px;height:46px}
+.bt{border:1px solid var(--line);border-radius:6px;background:var(--surface2);color:var(--fg);cursor:pointer;font:400 .72rem var(--display);letter-spacing:.04em;padding:0 2px;overflow:hidden;min-width:0}
+.bt[aria-current="true"]{background:var(--cyan);color:var(--ink);border-color:var(--cyan);box-shadow:0 0 14px rgba(47,227,208,.45)}
+.bt:hover{outline:1px solid var(--muted)}
+.facts{display:grid;grid-template-columns:minmax(0,9rem) minmax(0,1fr);gap:0;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--surface)}
+.facts>div{padding:10px 14px;border-top:1px solid var(--line);min-width:0}
+.facts>div:nth-child(-n+2){border-top:0}
+.facts .k{font:700 .8rem var(--body);color:var(--cyan);text-transform:uppercase;letter-spacing:.12em;background:var(--surface2)}
+@media (max-width:520px){.facts{grid-template-columns:1fr}.facts .k{border-top:1px solid var(--line)}.facts>div:nth-child(2){border-top:0}}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:14px;margin-top:16px}
+.card{display:flex;flex-direction:column;gap:8px;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:10px 10px 14px;min-width:0}
+.card canvas{width:100%;height:auto;border-radius:8px;background:var(--surface2);display:block;cursor:pointer}
+.card h3{font-size:1rem;color:var(--gold)}
+.card p{font-size:.92rem;color:var(--muted)}
+.card .rule{font-size:.85rem;color:var(--fg);border-left:3px solid var(--gold);padding-left:8px}
+.poses{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:10px;margin-top:16px}
+.pose{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:6px;text-align:center;min-width:0}
+.pose canvas{width:100%;height:auto;border-radius:6px;display:block}
+.pose span{display:block;font:700 .8rem var(--body);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);padding-top:4px}
+.traits{margin-top:16px}
+.sw{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:10px;margin-top:16px}
+.sw div{border:1px solid var(--line);border-radius:10px;overflow:hidden;background:var(--surface);min-width:0}
+.sw i{display:block;height:54px;border-bottom:1px solid var(--line)}
+.sw b{display:block;padding:8px 10px 0;font-size:.86rem}
+.sw span{display:block;padding:0 10px 10px;font-size:.78rem;color:var(--muted)}
+.sw code{font:400 .74rem var(--mono)}
+.type{display:grid;gap:10px;margin-top:16px}
+.type div{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:12px 14px;min-width:0}
+.type small{display:block;font:500 .72rem var(--mono);color:var(--muted);text-transform:uppercase;margin-bottom:4px}
+.safe{display:grid;grid-template-columns:minmax(0,170px) minmax(0,1fr);gap:18px;margin-top:16px;align-items:center}
+@media (max-width:520px){.safe{grid-template-columns:1fr}}
+.rules{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin-top:16px}
+.rules ul{margin:6px 0 0;padding-left:1.1em;font-size:.88rem}
+.rules li{margin-top:4px}
+.rules h3{font-size:.95rem}
+.fb{margin-top:20px;background:var(--surface2);border:1px solid var(--line);border-radius:12px;padding:12px 14px;display:flex;flex-direction:column;gap:8px}
+.fb h4{margin:0;font:700 .82rem var(--body);text-transform:uppercase;letter-spacing:.14em;color:var(--gold)}
+.fb .row{display:flex;gap:6px;flex-wrap:wrap}
+.fb textarea{width:100%;min-height:68px;resize:vertical;font:inherit;color:var(--fg);background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:8px 10px}
+.fb .st{font-size:.76rem;color:var(--muted);min-height:1.2em}
+.opt{border:1px solid var(--line);background:var(--surface);border-radius:8px;padding:8px 12px;min-height:40px;cursor:pointer;font-size:.95rem;font-weight:700}
+.opt[aria-pressed="true"]{background:var(--cyan);color:var(--ink);border-color:var(--cyan)}
+.opt.change[aria-pressed="true"]{background:var(--gold);border-color:var(--gold);color:var(--ink)}
+.q{margin-top:16px;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px;display:flex;flex-direction:column;gap:8px}
+.q h3{font-size:1rem}
+.q p{font-size:.86rem;color:var(--muted)}
+.sum{width:100%;min-height:150px;font:400 .8rem var(--mono);color:var(--fg);background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:10px}
+.soundgate{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:3;background:var(--cyan);color:var(--ink);border:0;border-radius:12px;padding:14px 22px;font:400 1.05rem var(--display);letter-spacing:.04em;cursor:pointer;box-shadow:0 0 28px rgba(47,227,208,.6)}
+.soundgate:hover{background:#6FF0E2}
+.cap{min-height:3em;text-align:center;font-weight:700;font-size:1.05rem;color:var(--fg);padding:2px 6px}
+.cap small{display:block;font:700 .72rem var(--body);letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.vbtns{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
+.vopt{display:flex;flex-direction:column;align-items:flex-start;text-align:left;border:1px solid var(--line);background:var(--surface);border-radius:10px;padding:10px 14px;min-width:150px;cursor:pointer;gap:2px}
+.vopt b{font:400 1rem var(--display)}
+.vopt span{font-size:.88rem;color:var(--muted)}
+.vopt[aria-pressed="true"]{border-color:var(--cyan);box-shadow:0 0 14px rgba(47,227,208,.35);background:var(--surface2)}
+.lines{margin-top:14px;display:grid;grid-template-columns:minmax(0,5.5rem) minmax(0,1fr);border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--surface)}
+.lines>div{padding:7px 12px;border-top:1px solid var(--line);min-width:0}
+.lines>div:nth-child(-n+2){border-top:0}
+.lines .tm{font:500 .8rem var(--mono);color:var(--cyan);background:var(--surface2)}
+.lines .on{background:rgba(47,227,208,.14)}
+.seg{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
+.seg button{display:flex;flex-direction:column;align-items:flex-start;text-align:left;border:1px solid var(--line);background:var(--surface);border-radius:10px;padding:10px 16px;min-width:170px;cursor:pointer;gap:2px}
+.seg button b{font:400 1.05rem var(--display)}
+.seg button span{font-size:.88rem;color:var(--muted)}
+.seg button[aria-pressed="true"]{border-color:var(--cyan);box-shadow:0 0 14px rgba(47,227,208,.35);background:var(--surface2)}
+.seg button[data-who="kai"][aria-pressed="true"]{border-color:#9B8CFF;box-shadow:0 0 14px rgba(155,140,255,.4)}
+.duo{margin-top:16px;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#000}
+.duo canvas{display:block;width:100%;height:auto}
+.lineup{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px;margin-top:16px}
+.ep{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:10px 12px;min-width:0;display:flex;flex-direction:column;gap:6px}
+.ep .n{font:400 .8rem var(--mono);color:var(--muted);letter-spacing:.06em}
+.ep b{font:400 .92rem var(--display);line-height:1.2}
+.ep .who{align-self:flex-start;font:700 .78rem var(--body);letter-spacing:.08em;text-transform:uppercase;border-radius:999px;padding:2px 10px;color:var(--ink)}
+.ep .who.wren{background:#2FE3D0}.ep .who.kai{background:#9B8CFF}
+.ep small{font-size:.82rem;color:var(--muted)}
+.part{grid-column:1/-1;font:700 .8rem var(--body);letter-spacing:.14em;text-transform:uppercase;color:var(--cyan);margin-top:8px}
+.mix{position:relative;display:flex;height:54px;border-radius:10px;overflow:hidden;border:1px solid var(--line);margin-top:16px}
+.mix button{border:0;border-right:1px solid var(--ink);padding:0 4px;cursor:pointer;color:var(--ink);font:400 .72rem var(--display);overflow:hidden;min-width:0;text-align:center;line-height:1.05}
+.mix button:last-of-type{border-right:0}
+.mix .head{position:absolute;top:0;bottom:0;width:3px;background:#fff;box-shadow:0 0 10px #fff;pointer-events:none}
+.key{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px;margin-top:16px}
+.key div{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:10px 12px;min-width:0}
+.key b{display:flex;align-items:center;gap:8px;font:400 .95rem var(--display)}
+.key i{display:inline-block;width:12px;height:12px;border-radius:3px}
+.key p{font-size:.92rem;color:var(--muted);margin-top:4px}
+.mixnote{margin-top:14px;font-size:.95rem;color:var(--muted);max-width:62ch}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+</style>
+
+<div class="page">
+  <header class="mast">
+    <p class="kicker">The Joy Digi &middot; Worth It</p>
+    <h1>Worth It Format Lab</h1>
+    <p class="lede">Anime acting, infographic explainers and game HUD in one 30-second short. Watch Ep 1 re-staged, see every layer and cue as it plays, then tell Claude what to keep and what to change in each section. Your notes save automatically.</p>
+  </header>
+
+  <div class="grid">
+    <aside class="stage" aria-label="Player">
+      <div class="phone">
+        <canvas id="cv" width="540" height="960" role="img" aria-label="Worth It Ep 1 anime demo"></canvas>
+        <svg id="safe" viewBox="0 0 360 640" hidden aria-hidden="true">
+          <defs><mask id="sm"><rect width="360" height="640" fill="#fff"/><polygon points="40,90 320,90 320,280 260,280 260,520 40,520" fill="#000"/></mask></defs>
+          <rect width="360" height="640" fill="rgba(0,0,0,.45)" mask="url(#sm)"/>
+          <polygon points="40,90 320,90 320,280 260,280 260,520 40,520" fill="none" stroke="#6EE7A8" stroke-width="1.5" stroke-dasharray="5 4"/>
+          <text x="316" y="502" text-anchor="end" font-size="9" fill="#6EE7A8" font-family="sans-serif">SAFE BOX</text>
+        </svg>
+        <button class="soundgate" id="soundGate" type="button">Play with sound</button>
+      </div>
+      <p class="cap" id="cap" aria-live="off"></p>
+      <div class="bar">
+        <button class="btn primary" id="play" type="button">Pause</button>
+        <input id="scrub" type="range" min="0" max="1000" value="0" aria-label="Scrub timeline">
+        <span class="time" id="time">0.0 / 32.0 s</span>
+      </div>
+      <div class="toggles" role="group" aria-label="Layers and overlays">
+        <button class="tog" id="tChar" type="button" aria-pressed="true">Wren</button>
+        <button class="tog" id="tFx" type="button" aria-pressed="true">Anime FX</button>
+        <button class="tog" id="tUi" type="button" aria-pressed="true">Text + devices</button>
+        <button class="tog" id="tWorld" type="button" aria-pressed="true">Moving world</button>
+        <button class="tog" id="tSound" type="button" aria-pressed="true">Sound</button>
+        <button class="tog" id="tSafe" type="button" aria-pressed="false">Safe box</button>
+        <label>Lead <select id="leadSel"><option value="wren">Wren (odd eps)</option><option value="kai">Kai (even eps)</option></select></label>
+        <label>Speed <select id="rate"><option value="1">1x</option><option value=".5">0.5x</option><option value=".25">0.25x</option></select></label>
+        <span id="sndNote" style="font-size:.85rem;color:var(--muted)" hidden>Sound plays at 1x only</span>
+      </div>
+      <div class="live" aria-live="off">
+        <h3>On screen now</h3>
+        <dl id="liveDl"></dl>
+      </div>
+      <div class="fb" data-fb="overall" data-title="Overall feel of the video"></div>
+    </aside>
+
+    <main>
+      <section class="sec" id="mixsec">
+        <h2>Style mix</h2>
+        <p class="lede">The look changes every few seconds so attention never settles. Each style has one job. Click a segment to jump to it.</p>
+        <div class="mix" id="mix" role="group" aria-label="Style mix timeline"><div class="head" id="mixHead"></div></div>
+        <div class="key" id="mixKey"></div>
+        <p class="mixnote">Rule of thumb: never hold one visual mode longer than about 5 seconds. Anime carries emotion, infographics carry the explanation, game HUD carries stakes and reward, big type carries the punchline.</p>
+        <div class="fb" data-fb="mix" data-title="The mix of animation styles"></div>
+      </section>
+
+      <section class="sec" id="beats">
+        <h2>Beat breakdown</h2>
+        <p class="lede">Five beats, 32 seconds. Pick one to jump to it. The table shows what that beat is made of.</p>
+        <div class="beats" id="beatBar" role="tablist" aria-label="Beats"></div>
+        <div class="facts" id="facts"></div>
+        <div class="fb" data-fb="beats" data-title="Beat structure and pacing"></div>
+      </section>
+
+      <section class="sec" id="voice">
+        <h2>Voice and sound</h2>
+        <p class="lede">The narrator matches the lead: <b>Leda</b> for Wren\u2019s episodes, <b>Puck</b> for Kai\u2019s. The soundtrack is synthesized and timed to the picture. Press Play with sound; switching the lead switches the voice.</p>
+        <div class="vbtns" id="vbtns" role="group" aria-label="Narrator voice"></div>
+        <div class="lines" id="vlines"></div>
+        <div class="key" id="sndKey">
+          <div><b><i style="background:#FFC83D"></i>Voice</b><p>Gemini text-to-speech, one narrator. Lines echo the on-screen words and never add new facts.</p></div>
+          <div><b><i style="background:#7B5CFF"></i>Bed</b><p>A pad chord per story beat: tense, bright, open, resolved. Quiet under the voice.</p></div>
+          <div><b><i style="background:#2FE3D0"></i>Rhythm</b><p>A soft 128 bpm kick and hat drive the explain beats. It drops out for the trade-places moment.</p></div>
+          <div><b><i style="background:#FF4D5E"></i>Effects</b><p>Alert blips and a heavy hit on the myth, scan beeps, plucks per step, typing ticks, a level-up arpeggio, a stamp thump.</p></div>
+        </div>
+        <div class="fb" data-fb="sound" data-title="Voice and sound"></div>
+      </section>
+
+      <section class="sec" id="lead">
+        <h2>The leads</h2>
+        <p class="lede">Two recurring characters, both early 20s, working names Wren and Kai. Odd episodes star Wren, even episodes star Kai. Neither speaks; the narrator talks and the lead reacts. Each wears a gold piece that glows when value shows up.</p>
+        <div class="duo"><canvas id="duo"></canvas></div>
+        <div class="seg" id="leadSeg" role="group" aria-label="Choose a lead">
+          <button type="button" data-who="wren" aria-pressed="true"><b>Wren</b><span>Odd episodes, 1 3 5 7 9 11</span></button>
+          <button type="button" data-who="kai" aria-pressed="false"><b>Kai</b><span>Even episodes, 2 4 6 8 10 12</span></button>
+        </div>
+        <div class="poses" id="poses"></div>
+        <h3 style="margin-top:22px">Faces</h3>
+        <div class="poses" id="faces"></div>
+        <div class="facts traits" id="traits"></div>
+        <div class="fb" data-fb="lead" data-title="The two leads: design and acting"></div>
+      </section>
+
+      <section class="sec" id="lineup">
+        <h2>Episode lineup</h2>
+        <p class="lede">The lead alternates by episode number. The chapter, myth and move stay the same; only who lives the moment changes. Click an episode to preview its lead in the player.</p>
+        <div class="lineup" id="lineupGrid"></div>
+        <div class="fb" data-fb="lineup" data-title="Alternating leads by odd and even episode"></div>
+      </section>
+
+      <section class="sec" id="toolkit">
+        <h2>Toolkit</h2>
+        <p class="lede">Anime, game and infographic pieces every episode is built from. Tap or hover a card to play it.</p>
+        <div class="cards" id="cards"></div>
+        <div class="fb" data-fb="toolkit" data-title="Toolkit: effects, HUD and infographics"></div>
+      </section>
+
+      <section class="sec" id="look">
+        <h2>Look</h2>
+        <p class="lede">A dark arcade world with neon signals. Colour always means something.</p>
+        <div class="sw" id="sw"></div>
+        <div class="type">
+          <div><small>Statement and impact &middot; Russo One</small><span style="font:400 1.7rem 'Russo One',Impact,sans-serif">PROBLEM SOLVED. VALUE PAID.</span></div>
+          <div><small>HUD, labels, dialogue &middot; Rajdhani 700</small><span style="font:700 1.25rem 'Rajdhani',sans-serif">WREN: What can I make that someone would pay five dollars for?</span></div>
+          <div><small>Sound effects &middot; Bangers</small><span style="font:400 2rem 'Bangers',Impact,sans-serif;color:var(--gold);letter-spacing:.04em">CRIT! &nbsp; DING! &nbsp; LV UP!</span></div>
+        </div>
+        <div class="safe">
+          <svg viewBox="0 0 360 640" role="img" aria-label="Safe box diagram" style="width:100%;max-width:170px;border:1px solid var(--line);border-radius:10px;background:var(--surface)">
+            <rect width="360" height="640" fill="rgba(255,77,94,.12)"/>
+            <polygon points="40,90 320,90 320,280 260,280 260,520 40,520" fill="rgba(77,255,160,.16)" stroke="#4DFFA0" stroke-width="3"/>
+            <text x="180" y="45" text-anchor="middle" font-size="22" fill="#8F9BD6" font-family="sans-serif">app UI</text>
+            <text x="150" y="190" text-anchor="middle" font-size="22" fill="#F4F7FF" font-family="sans-serif">safe box</text>
+            <text x="150" y="585" text-anchor="middle" font-size="22" fill="#8F9BD6" font-family="sans-serif">caption</text>
+          </svg>
+          <p>Faces, panels and words stay inside the green box (y 90 to 520, narrower below y 280). Everything outside is decoration only, because TikTok, Reels and Shorts cover the top, the bottom and a button column on the right. The bottom edge (520) is an estimate for organic posts, so your phone test decides. Turn on the Safe box overlay on the player to check any frame.</p>
+        </div>
+        <div class="rules">
+          <div><h3>Always</h3><ul><li>One idea per beat, about 8 words max</li><li>Frame 0 shows the hook; it becomes the cover</li><li>Switch visual mode every 3 to 5 seconds</li><li>Show it, then say it</li><li>Works on mute</li></ul></div>
+          <div><h3>Never</h3><ul><li>Money-hype: no $$$, rockets, luxury flexing</li><li>Strike or shame Wren or the viewer</li><li>Red on anything but the myth</li><li>Hold one mode so long it goes flat</li><li>Kid-targeting cues in titles or covers</li></ul></div>
+        </div>
+        <div class="fb" data-fb="look" data-title="Palette, type and layout"></div>
+      </section>
+
+      <section class="sec" id="decide">
+        <h2>Decisions for you</h2>
+        <p class="lede">Pick what feels right, add a note if none fit. Claude reads these and updates the format.</p>
+        <div id="qs"></div>
+      </section>
+
+      <section class="sec" id="export">
+        <h2>All feedback</h2>
+        <p class="lede">Everything you have saved, in one block. Claude can read it directly; copy it into chat if saving is unavailable.</p>
+        <textarea class="sum" id="sum" readonly aria-label="Feedback summary"></textarea>
+        <div class="bar" style="margin-top:8px"><button class="btn" id="copy" type="button">Copy summary</button><span class="st" id="copySt" style="font-size:.8rem;color:var(--muted)"></span></div>
+      </section>
+    </main>
+  </div>
+</div>
+
+<script>
+/*{{VOICES}}*/
+/*{{ENGINE}}*/
+</script>
+<script>
+(function(){
+  var WL=window.WL,$=function(id){return document.getElementById(id);};
+  var cv=$('cv'),ctx=cv.getContext('2d');
+  var t=0,playing=true,rate=1,last=performance.now(),dirty=true,fontsReady=false;
+  var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(reduce){playing=false;t=2.8;}
+
+  /* ---------- audio: narrator + synth, restarted from the playhead on every seek ---------- */
+  var HQ=/[?&]hq=1/.test(location.search);
+  var VO=window.VOICES||{},voiceName=Object.keys(VO).indexOf('leda')>=0?'leda':(Object.keys(VO)[0]||'');
+  var unlocked=false,soundOn=true,actx=null,master=null,mixNow=null,bufs={},decoding={},audioTok=0,seekTimer=null;
+  var VDESC={leda:['Leda','Youthful and warm \u00b7 narrates Wren (odd episodes)'],puck:['Puck','Upbeat and playful \u00b7 narrates Kai (even episodes)']};
+  var LEAD_VOICE={wren:'leda',kai:'puck'};
+  function ensureCtx(){
+    if(actx)return actx;
+    try{actx=new (window.AudioContext||window.webkitAudioContext)();master=actx.createGain();master.gain.value=.92;var lim=actx.createDynamicsCompressor();lim.threshold.value=-12;lim.knee.value=10;lim.ratio.value=5;lim.attack.value=.003;lim.release.value=.2;master.connect(lim);lim.connect(actx.destination);}catch(e){actx=null;}
+    if(actx&&actx.state==='suspended'){try{actx.resume();}catch(e){}}
+    return actx;
+  }
+  function b64ToBuf(b64){var bin=atob(b64),n=bin.length,u=new Uint8Array(n);for(var i=0;i<n;i++)u[i]=bin.charCodeAt(i);return u.buffer;}
+  function loadVoice(name){
+    if(bufs[name])return Promise.resolve(bufs[name]);
+    if(decoding[name])return decoding[name];
+    var c=ensureCtx();if(!c||!VO[name])return Promise.resolve(null);
+    decoding[name]=new Promise(function(res){try{c.decodeAudioData(b64ToBuf(VO[name].b64),function(b){bufs[name]=b;res(b);},function(){res(null);});}catch(e){res(null);}});
+    return decoding[name];
+  }
+  function audioStop(){
+    audioTok++;
+    if(mixNow){if(mixNow.src){try{mixNow.src.stop();}catch(e){}}mixNow.nodes.forEach(function(n){try{n.disconnect();}catch(e){}});mixNow=null;}
+  }
+  /* mix graph: bed (ducks under the voice), fx (never ducked), voice; all into the limiter */
+  function buildMix(c,dest,off,lead,voiceBuf,fadeDur){
+    var bed=c.createGain(),fx=c.createGain(),vg=c.createGain(),BED=3.8,FX=1.5,DUCK=.5;
+    bed.gain.value=BED;fx.gain.value=FX;vg.gain.value=1;bed.connect(dest);fx.connect(dest);vg.connect(dest);
+    var base=c.currentTime+lead,plan=VO[voiceName]?VO[voiceName].plan:[],i,g=bed.gain;
+    for(i=0;i<plan.length;i++){
+      var L=plan[i];if(L.end<off)continue;
+      if(L.start<=off){g.setValueAtTime(BED*DUCK,base);}
+      else g.setTargetAtTime(BED*DUCK,base+Math.max(0,L.start-off-.06),.05);
+      g.setTargetAtTime(BED,base+(L.end-off)+.05,.2);
+    }
+    var fd=fadeDur||(WL.DUR+1.3);
+    try{WL.soundCues(WL.makeSynth(c,bed,off,fd,lead),WL.makeSynth(c,fx,off,fd,lead));}catch(e){}
+    if(voiceBuf&&off<voiceBuf.duration){var src=c.createBufferSource();src.buffer=voiceBuf;src.connect(vg);try{src.start(base,off);}catch(e){}return {nodes:[bed,fx,vg],src:src};}
+    return {nodes:[bed,fx,vg],src:null};
+  }
+  window.labMix=function(c,dest,voice,off,lead,fd){voiceName=voice;return buildMix(c,dest,off,lead,null,fd);};
+  /* offline render of the full mix (voice + soundtrack + limiter) to interleaved 16-bit stereo PCM, base64. Used by the MP4 export */
+  window.renderMixPCM=async function(voice,sr){
+    sr=sr||48000;var len=Math.ceil(WL.DUR*sr),oc=new OfflineAudioContext(2,len,sr);
+    var m=oc.createGain();m.gain.value=.92;var lim=oc.createDynamicsCompressor();lim.threshold.value=-12;lim.knee.value=10;lim.ratio.value=5;lim.attack.value=.003;lim.release.value=.2;m.connect(lim);lim.connect(oc.destination);
+    voiceName=voice;var mix=buildMix(oc,m,0,0,null,WL.DUR);
+    var bin=atob(VO[voice].b64),u=new Uint8Array(bin.length);for(var i=0;i<bin.length;i++)u[i]=bin.charCodeAt(i);
+    var buf=await oc.decodeAudioData(u.buffer),s=oc.createBufferSource();s.buffer=buf;s.connect(mix.nodes[2]);s.start(0,0);
+    var r=await oc.startRendering(),L=r.getChannelData(0),R=r.getChannelData(1),out=new Int16Array(len*2);
+    for(var k=0;k<len;k++){var a=Math.max(-1,Math.min(1,L[k])),b2=Math.max(-1,Math.min(1,R[k]));out[2*k]=a*32767;out[2*k+1]=b2*32767;}
+    var bytes=new Uint8Array(out.buffer),CH=0x8000,str='';for(var j=0;j<bytes.length;j+=CH)str+=String.fromCharCode.apply(null,bytes.subarray(j,j+CH));
+    return btoa(str);
+  };
+  function audioStart(){
+    audioStop();
+    if(!unlocked||!soundOn||!playing||rate!==1)return;
+    var c=ensureCtx();if(!c)return;
+    if(c.state==='suspended'){try{c.resume();}catch(e){}}
+    var my=audioTok;
+    loadVoice(voiceName).then(function(buf){
+      if(my!==audioTok||!playing)return;
+      var lead=.12,off=t+lead;
+      mixNow=buildMix(c,master,off,lead,buf);
+    });
+  }
+  function audioSoon(){clearTimeout(seekTimer);audioStop();seekTimer=setTimeout(audioStart,140);}
+  function unlock(){
+    if(unlocked)return;unlocked=true;ensureCtx();
+    $('soundGate').hidden=true;
+    loadVoice(voiceName);
+  }
+  $('soundGate').onclick=function(){unlock();seek(0);playing=true;last=performance.now();syncPlay();audioStart();};
+  document.addEventListener('visibilitychange',function(){if(document.hidden&&playing){playing=false;syncPlay();audioStop();}});
+
+  /* ---------- player ---------- */
+  function fmt(x){return x.toFixed(1);}
+  function esc(s){return String(s).replace(/[&<>"]/g,function(m){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m];});}
+  var kindNames={voice:'Narrator',text:'Text',char:'Lead',device:'Device',fx:'FX',camera:'Camera'};
+  var kindOrder=['voice','text','char','device','fx','camera'];
+  function planNow(){var p=VO[voiceName]?VO[voiceName].plan:[],i;for(i=0;i<p.length;i++)if(t>=p[i].start&&t<p[i].end+.2)return p[i];return null;}
+  var liveSig='';
+  function renderLive(){
+    var act={},i,c;
+    for(i=0;i<WL.CUES.length;i++){c=WL.CUES[i];
+      var kind=c.length===4?c[2]:'device',label=c.length===4?c[3]:c[2];
+      if(t>=c[0]&&t<c[1]){(act[kind]=act[kind]||[]).push(nm(label));}
+    }
+    var pn=planNow();if(pn)act.voice=[pn.text];
+    var cap=$('cap');if(cap)cap.innerHTML=pn?'<small>Narrator</small>'+esc(pn.text):'';
+    var sig=JSON.stringify(act);if(sig===liveSig)return;liveSig=sig;
+    $('liveDl').innerHTML=kindOrder.map(function(k){return '<dt>'+kindNames[k]+'</dt><dd>'+((act[k]||[]).map(esc).join('<br>')||'<span style="color:var(--muted)">none</span>')+'</dd>';}).join('');
+  }
+  var curBeat=null;
+  function renderBeat(){
+    var b=WL.beatAt(t);if(b===curBeat)return;curBeat=b;
+    var btns=$('beatBar').children;
+    for(var i=0;i<btns.length;i++)btns[i].setAttribute('aria-current',WL.BEATS[i]===b?'true':'false');
+    var rows=[['Job',b.job],['On screen',b.onscreen],['Narrator',b.narr],[curLead==='kai'?'Kai':'Wren',nm(b.char)],['Device',b.device],['Anime FX',b.fx],['Camera',b.camera],['Sound',b.sound],['Timing',b.hold]];
+    $('facts').innerHTML=rows.map(function(r){return '<div class="k">'+r[0]+'</div><div>'+esc(r[1])+'</div>';}).join('');
+  }
+  function draw(){
+    if(!fontsReady&&!dirty)return;
+    WL.frame(t,cv);
+    $('scrub').value=Math.round(t/WL.DUR*1000);
+    $('time').textContent=fmt(t)+' / '+fmt(WL.DUR)+' s';
+    renderLive();renderBeat();moveHead();
+    dirty=false;
+  }
+  function seek(v){t=Math.max(0,Math.min(WL.DUR-.001,v));dirty=true;if(unlocked)audioSoon();}
+  function syncPlay(){$('play').textContent=playing?'Pause':'Play';}
+  $('play').onclick=function(){unlock();playing=!playing;if(playing&&t>=WL.DUR-.05)seek(0);last=performance.now();syncPlay();if(playing)audioStart();else audioStop();};
+  $('scrub').oninput=function(){unlock();seek(this.value/1000*WL.DUR);};
+  $('rate').onchange=function(){rate=parseFloat(this.value);$('sndNote').hidden=rate===1;audioStart();};
+  function bindTog(id,fn,initial){var b=$(id);b.onclick=function(){var on=b.getAttribute('aria-pressed')!=='true';b.setAttribute('aria-pressed',on);fn(on);dirty=true;};}
+  bindTog('tChar',function(on){WL.LAYERS.char=on;});
+  bindTog('tFx',function(on){WL.LAYERS.fx=on;});
+  bindTog('tUi',function(on){WL.LAYERS.ui=on;});
+  bindTog('tWorld',function(on){WL.LAYERS.world=on;});
+  bindTog('tSound',function(on){soundOn=on;unlock();if(on)audioStart();else audioStop();});
+  bindTog('tSafe',function(on){if(on)$('safe').removeAttribute('hidden');else $('safe').setAttribute('hidden','');});
+
+  /* ---------- beat bar ---------- */
+  $('beatBar').innerHTML=WL.BEATS.map(function(b,i){
+    return '<button class="bt" type="button" role="tab" style="flex:'+(b.t1-b.t0)+' 1 0" data-i="'+i+'" aria-label="'+b.name+' '+fmt(b.t0)+' to '+fmt(b.t1)+' seconds">'+b.name+'</button>';}).join('');
+  $('beatBar').onclick=function(e){var b=e.target.closest('.bt');if(!b)return;unlock();playing=true;seek(WL.BEATS[+b.dataset.i].t0);last=performance.now();syncPlay();};
+
+  /* ---------- lead sheet ---------- */
+  function mk(parent,label){var d=document.createElement('div');d.className='pose';d.innerHTML='<canvas></canvas><span>'+label+'</span>';parent.appendChild(d);return d.firstChild;}
+  var curLead='wren';
+  var LEADS={
+    wren:{name:'Wren',rows:[['Build','Waist-up in most shots. Early 20s, narrower shoulders, expressive gradient teal eyes.'],['Look','Ink-navy hair with a cyan streak, gold-trimmed teal jacket, gaming headset on her head.'],['Signature','Gold lens pendant. When it glows, value is about to show up.'],['Energy (draft)','Curious and quick. Reacts first, thinks out loud with her hands.']]},
+    kai:{name:'Kai',rows:[['Build','Waist-up in most shots. Early 20s, broader shoulders, warm amber eyes, stronger brows and jaw.'],['Look','Spiky brown hair with a silver streak, violet bomber with white trim, headphones around his neck.'],['Signature','Gold dog tag. When it glows, value is about to show up.'],['Energy (draft)','Calm and dry, a step ahead. Raises one brow before he explains.']]}
+  };
+  function setLead(who){
+    curLead=who==='kai'?'kai':'wren';WL.setLead(curLead);
+    if(VO[LEAD_VOICE[curLead]]){voiceName=LEAD_VOICE[curLead];if(typeof renderVoiceSec==='function')renderVoiceSec();if(unlocked&&playing)audioStart();}
+    Array.prototype.forEach.call($('leadSeg').children,function(b){b.setAttribute('aria-pressed',b.dataset.who===curLead?'true':'false');});
+    $('leadSel').value=curLead;
+    $('traits').innerHTML=LEADS[curLead].rows.map(function(r){return '<div class="k">'+r[0]+'</div><div>'+esc(r[1])+'</div>';}).join('')+'<div class="k">Rule</div><div>The myth gets struck, never the lead. '+LEADS[curLead].name+' is surprised, curious, determined. Never shamed.</div>';
+    renderStatic();liveSig='';curBeat=null;dirty=true;
+  }
+  function nm(s){return curLead==='kai'?String(s).replace(/Wren/g,'Kai'):s;}
+  $('leadSeg').onclick=function(e){var b=e.target.closest('button');if(b)setLead(b.dataset.who);};
+  $('leadSel').onchange=function(){setLead(this.value);};
+  var EPS=[['The Five-Dollar Coffee','I','Seeing'],['The Diamond in the Desert','I','Seeing'],['The Sale Price Is Lying','I','Seeing'],['The Slow Way to Get Rich','II','Creating'],['The Most Boring Way to Get Rich','II','Creating'],['The Invisible Dividend','II','Creating'],['Stop Trying to Be Original','II','Creating'],['A Raise Is a Price','III','Capturing'],['Great Work Doesn\u2019t Pay','III','Capturing'],['The Salary Is Not the Prize','III','Capturing'],['The Most Expensive Choice','IV','Exchanging and scaling'],['Give It Away','V','Mastery']];
+  (function(){
+    var g=$('lineupGrid'),last='',html='';
+    EPS.forEach(function(e,i){
+      var n=i+1,who=n%2?'wren':'kai';
+      if(e[1]!==last){last=e[1];html+='<div class="part">Part '+e[1]+' \u00b7 '+e[2]+'</div>';}
+      html+='<button type="button" class="ep" data-who="'+who+'" style="text-align:left;cursor:pointer;font:inherit;color:inherit"><span class="n">EP '+('0'+n).slice(-2)+'</span><b>'+esc(e[0])+'</b><span class="who '+who+'">'+(who==='kai'?'Kai':'Wren')+'</span>'+(n===1?'<small>Built: the demo above</small>':'')+'</button>';
+    });
+    g.innerHTML=html;
+    g.onclick=function(ev){var b=ev.target.closest('.ep');if(!b)return;setLead(b.dataset.who);window.scrollTo({top:0,behavior:'smooth'});};
+  })();
+  var poseCv=WL.POSE_NAMES.map(function(n){return [mk($('poses'),n),n];});
+  var faceCv=WL.FACE_NAMES.map(function(n){return [mk($('faces'),n),n];});
+  function renderStatic(){
+    poseCv.forEach(function(p){WL.poseShot(p[0],p[1],1,curLead);});
+    faceCv.forEach(function(f){WL.faceShot(f[0],f[1],1,curLead);});
+    WL.duoShot($('duo'),1.2);
+    cardState.forEach(function(s){WL.deviceShot(s.cv,s.d.id,s.d.poster);});
+  }
+
+  /* ---------- toolkit cards ---------- */
+  var cardState=[];
+  $('cards').innerHTML=WL.DEVICES.map(function(d){return '<article class="card"><canvas data-id="'+d.id+'" tabindex="0" role="button" aria-label="Play '+esc(d.title)+'"></canvas><h3>'+esc(d.title)+'</h3><p>'+esc(d.what)+'</p><p class="rule">'+esc(d.rule)+'</p></article>';}).join('');
+  Array.prototype.forEach.call($('cards').querySelectorAll('canvas'),function(el){
+    var d=WL.DEVICES.filter(function(x){return x.id===el.dataset.id;})[0];
+    var s={cv:el,d:d,start:null};cardState.push(s);
+    function play(){s.start=performance.now();}
+    el.addEventListener('pointerenter',play);el.addEventListener('click',play);
+    el.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();play();}});
+  });
+
+  /* ---------- palette ---------- */
+  var P=[['Void navy','#0A0F2C','The arcade world behind everything.'],['Panel','#10163F','HUD panels, dialogue boxes, cards.'],['Interface cyan','#2FE3D0','HUD, scans, neutral UI, infographic flow.'],['Value gold','#FFC83D','Value found: stats, XP, rewards, level-up.'],['Myth red','#FF4D5E','The myth only. Struck, then gone.'],['Path green','#4DFFA0','The flip and the move: the way forward.'],['Depth violet','#7B5CFF','Glow, shade, anime burst lines.'],['Signal white','#F4F7FF','Primary text on dark.']];
+  $('sw').innerHTML=P.map(function(p){return '<div><i style="background:'+p[1]+'"></i><b>'+p[0]+'</b><span><code>'+p[1]+'</code><br>'+p[2]+'</span></div>';}).join('');
+
+  /* ---------- feedback (db when available, else this browser) ---------- */
+  var db=null,fbData={},LS='worthit-lab-fb';
+  try{var raw=localStorage.getItem(LS);if(raw)fbData=JSON.parse(raw)||{};}catch(e){}
+  function persistLocal(){try{localStorage.setItem(LS,JSON.stringify(fbData));}catch(e){}}
+  var timers={},statusEls={};
+  function setStatus(id,msg){if(statusEls[id])statusEls[id].textContent=msg;}
+  function save(id){
+    persistLocal();renderSummary();
+    clearTimeout(timers[id]);
+    timers[id]=setTimeout(function(){
+      if(!db){setStatus(id,'Saved on this device only (sign-in needed to share with Claude).');return;}
+      var d=fbData[id];
+      db.doc('feedback/'+id).set({title:d.title||'',verdict:d.verdict||'',note:d.note||'',at:new Date().toISOString()})
+        .then(function(){setStatus(id,'Saved for Claude.');})
+        .catch(function(){setStatus(id,'Saved on this device only (could not reach the shared store).');});
+    },700);
+  }
+  function mountFb(el){
+    var id=el.dataset.fb,title=el.dataset.title,d=fbData[id]||(fbData[id]={title:title,verdict:'',note:''});d.title=title;
+    el.innerHTML='<h4>Your take: '+esc(title)+'</h4><div class="row"><button class="opt" type="button" data-v="keep" aria-pressed="false">Keep this</button><button class="opt change" type="button" data-v="change" aria-pressed="false">Change this</button></div><textarea id="n-'+id+'" placeholder="What should be different? Any detail helps." aria-label="Notes: '+esc(title)+'"></textarea><div class="st" aria-live="polite"></div>';
+    var ta=el.querySelector('textarea');ta.value=d.note||'';statusEls[id]=el.querySelector('.st');
+    function paint(){Array.prototype.forEach.call(el.querySelectorAll('.opt'),function(b){b.setAttribute('aria-pressed',d.verdict===b.dataset.v?'true':'false');});}
+    paint();
+    el.querySelector('.row').onclick=function(e){var b=e.target.closest('.opt');if(!b)return;d.verdict=d.verdict===b.dataset.v?'':b.dataset.v;paint();save(id);};
+    ta.oninput=function(){d.note=ta.value;save(id);};
+  }
+  Array.prototype.forEach.call(document.querySelectorAll('[data-fb]'),mountFb);
+
+  var Q=[
+    {id:'q-lead',t:'Wren’s look',p:'Is this the right face for the show?',o:['Keep Wren as drawn','Older, early 20s','Younger, teen','Different hair or outfit']},
+    {id:'q-energy',t:'Anime intensity',p:'How loud should the anime language be?',o:['Subtle: impact on the myth only','Medium: as in this demo','High energy: frequent impacts and lines']},
+    {id:'q-size',t:'Wren on screen',p:'How much of the frame does Wren own?',o:['Big hero, face-forward','Small companion in a corner','Big on myth and flip, small elsewhere']},
+    {id:'q-bg',t:'Backgrounds',p:'What sits behind the action?',o:['Paper only, as now','Simple painted places (café, desk, street)','Mix: paper for devices, places for story']},
+    {id:'q-cameo',t:'Both leads together',p:'When do Wren and Kai share a frame?',o:['Only in the season finale','Occasional cameos','Never, keep them separate']},
+    {id:'q-voice',t:'Who talks',p:'Narrator only, or do the leads get a voice?',o:['Narrator only','Narrator plus short lead lines','The lead narrates in first person']}
+  ];
+  $('qs').innerHTML=Q.map(function(q){return '<div class="q" data-q="'+q.id+'"><h3>'+esc(q.t)+'</h3><p>'+esc(q.p)+'</p><div class="row" style="display:flex;gap:6px;flex-wrap:wrap">'+q.o.map(function(o){return '<button class="opt" type="button" aria-pressed="false">'+esc(o)+'</button>';}).join('')+'</div><div class="fb" style="margin-top:6px;padding:8px 10px" data-fb="'+q.id+'-note" data-title="'+esc(q.t)+' (note)"></div></div>';}).join('');
+  Array.prototype.forEach.call($('qs').querySelectorAll('.q'),function(el){
+    var q=Q.filter(function(x){return x.id===el.dataset.q;})[0],d=fbData[q.id]||(fbData[q.id]={title:q.t+': '+q.p,verdict:'',note:''});
+    function paint(){Array.prototype.forEach.call(el.querySelectorAll(':scope > .row .opt'),function(b){b.setAttribute('aria-pressed',d.verdict===b.textContent?'true':'false');});}
+    paint();
+    el.querySelector(':scope > .row').onclick=function(e){var b=e.target.closest('.opt');if(!b)return;d.verdict=d.verdict===b.textContent?'':b.textContent;paint();save(q.id);};
+    mountFb(el.querySelector('[data-fb]'));
+    var nb=el.querySelector('.fb');nb.querySelector('.row').style.display='none';
+  });
+
+  function summaryText(){
+    var lines=[],k;
+    Object.keys(fbData).forEach(function(id){var d=fbData[id];if(!d||(!d.verdict&&!d.note))return;lines.push('['+id+'] '+(d.title||'')+'\n  verdict: '+(d.verdict||'(none)')+(d.note?'\n  note: '+d.note:''));});
+    return lines.length?lines.join('\n\n'):'Nothing yet. Use Keep / Change and notes in each section.';
+  }
+  function renderSummary(){$('sum').value=summaryText();}
+  $('copy').onclick=function(){
+    var s=summaryText();
+    function fallback(){$('sum').select();$('copySt').textContent='Selected. Press copy on your keyboard.';}
+    if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(s).then(function(){$('copySt').textContent='Copied.';},fallback);}else fallback();
+  };
+  renderSummary();
+
+  /* connect shared store, then merge anything already saved there */
+  if(window.claude&&window.claude.use){
+    window.claude.use('db').then(function(d){
+      if(!d)return;db=d;
+      d.collection('feedback').get().then(function(snap){
+        snap.docs.forEach(function(doc){var v=doc.data();if(!v)return;var cur=fbData[doc.id];
+          if(!cur||(!cur.verdict&&!cur.note)){fbData[doc.id]={title:v.title||'',verdict:v.verdict||'',note:v.note||''};}});
+        persistLocal();
+        Array.prototype.forEach.call(document.querySelectorAll('[data-fb]'),function(el){
+          var dd=fbData[el.dataset.fb];if(!dd)return;var ta=el.querySelector('textarea');if(ta&&document.activeElement!==ta)ta.value=dd.note||'';
+          Array.prototype.forEach.call(el.querySelectorAll(':scope > .row .opt'),function(b){b.setAttribute('aria-pressed',dd.verdict===b.dataset.v?'true':'false');});});
+        Array.prototype.forEach.call($('qs').querySelectorAll('.q'),function(el){var dd=fbData[el.dataset.q];Array.prototype.forEach.call(el.querySelectorAll(':scope > .row .opt'),function(b){b.setAttribute('aria-pressed',dd&&dd.verdict===b.textContent?'true':'false');});});
+        renderSummary();
+      }).catch(function(){});
+    }).catch(function(){});
+  }
+
+  /* ---------- style mix ribbon ---------- */
+  var MIX=[[0,5.3,'anime','Boss fight'],[5.3,6.5,'anime','Wren scans'],[6.5,13.7,'info','Flow: problem, solved, paid'],[13.7,15.6,'type','Kinetic punch'],[15.6,20.1,'info','Trade places'],[20.1,23.2,'game','Dialogue + gate'],[23.2,28.9,'game','Quest + level up'],[28.9,32,'brand','Outro']];
+  var MK={anime:['Anime acting','#7B5CFF','Emotion and the hook. Wren reacts so the viewer feels it first.'],info:['Infographic','#2FE3D0','The explanation. Flows, swaps and diagrams show how the mechanism works.'],game:['Game HUD','#FFC83D','Stakes and reward. Boss bars, XP, quests and level-ups make progress feel earned.'],type:['Kinetic type','#F4F7FF','The punchline. Big words slam in so the idea sticks even on mute.'],brand:['Brand outro','#FF6B6B','The Joy Digi mark, credit and disclaimer, in the show\u2019s arcade style.']};
+  (function(){
+    var m=$('mix');
+    MIX.forEach(function(x){var b=document.createElement('button');b.type='button';b.style.flex=(x[1]-x[0])+' 1 0';b.style.background=MK[x[2]][1];b.textContent=x[3];b.setAttribute('aria-label',x[3]+', '+fmt(x[0])+' to '+fmt(x[1])+' seconds');b.onclick=function(){unlock();playing=true;seek(x[0]);last=performance.now();syncPlay();};m.insertBefore(b,$('mixHead'));});
+    $('mixKey').innerHTML=Object.keys(MK).map(function(k){return '<div><b><i style="background:'+MK[k][1]+'"></i>'+MK[k][0]+'</b><p>'+MK[k][2]+'</p></div>';}).join('');
+  })();
+  function moveHead(){$('mixHead').style.left=(t/WL.DUR*100)+'%';}
+
+  /* ---------- voice section ---------- */
+  function renderVoiceSec(){
+    var names=Object.keys(VO);
+    $('vbtns').innerHTML=names.map(function(n){var d=VDESC[n]||[n,''];return '<button class="vopt" type="button" data-v="'+n+'" aria-pressed="'+(n===voiceName?'true':'false')+'"><b>'+esc(d[0])+'</b><span>'+esc(d[1])+'</span></button>';}).join('')||'<p class="lede">No voices are loaded.</p>';
+    var p=VO[voiceName]?VO[voiceName].plan:[];
+    $('vlines').innerHTML=p.map(function(l){return '<div class="tm">'+l.start.toFixed(1)+'\u2013'+l.end.toFixed(1)+' s</div><div>'+esc(l.text)+'</div>';}).join('');
+  }
+  $('vbtns').onclick=function(e){
+    var b=e.target.closest('.vopt');if(!b)return;
+    setLead(b.dataset.v==='puck'?'kai':'wren');
+  };
+  renderVoiceSec();
+
+  /* ---------- loop ---------- */
+  var visible=true;
+  if('IntersectionObserver' in window){new IntersectionObserver(function(es){visible=es[0].isIntersecting;}).observe($('cards'));}
+  function tick(now){
+    if(HQ)return;
+    var dt=Math.min(.1,(now-last)/1000);last=now;
+    if(playing){t+=dt*rate;if(t>=WL.DUR){t=0;if(unlocked)audioStart();}dirty=true;}
+    if(dirty||fontsReady)draw();
+    fontsReady=false;
+    if(visible){cardState.forEach(function(s){
+      if(s.start==null)return;var u=(now-s.start)/1000;
+      if(u>=s.d.dur){s.start=null;WL.deviceShot(s.cv,s.d.id,s.d.poster);}else WL.deviceShot(s.cv,s.d.id,u);});}
+    requestAnimationFrame(tick);
+  }
+  syncPlay();
+  draw();setLead((/[?&]lead=kai/.test(location.search))?'kai':'wren');
+  var fl=['400 20px "Russo One"','700 20px "Rajdhani"','400 20px "Bangers"','700 20px "Fraunces"','500 10px "DM Sans"'].map(function(f){return document.fonts?document.fonts.load(f,'Worth it.'):Promise.resolve();});
+  Promise.all(fl).then(function(){fontsReady=true;dirty=true;renderStatic();}).catch(function(){});
+  requestAnimationFrame(tick);
+})();
+</script>

@@ -24,14 +24,15 @@ script asserts. A number that cannot be sourced never reaches the build.
 | 11 | **Learn** | numbers in `season-map.md` | after 48 hours and 7 days; decisions logged | Lola |
 
 ## Roles
-- **Lola (series director):** story, season map, scripts, claims, high-level
-  art and voice direction, QA sign-off, managing Claude agent's work, reading
+- **Lola (series director):** story, season map, scripts, claims, voice
+  direction, QA sign-off, managing Claude agent's work, reading
   the numbers, weekly report to Long. The only content brain on the show.
   **Boundary (Long's call, 2026-10-02): Lola does not build visuals or video.**
   No video samples, no production commits, no tech detail on how video gets
   made — direction is high-level only ("what", never "how"). Lola's craft is
   writing and directing; the agent's is producing.
-- **Claude agent (production worker):** builds ALL animation and visual
+- **Claude agent (art director + production worker):** owns art direction
+  (`visual-style.md`, Long approves); builds ALL animation and visual
   content from the director's scripts per `visual-style.md`; renders;
   packages; keeps the engine healthy. The hands. Owns every production
   commit under `01-episodes/` and `02-engine/`.
@@ -48,8 +49,7 @@ script asserts. A number that cannot be sourced never reaches the build.
 `02-engine/` is the deterministic render pipeline (kinetic type, `render.js`
 MP4, `sheet.js --safe` contact sheets, `qa.py` gate). Claude agent restyles
 its parts to the Worth It art guideline and builds the four signature devices
-(Lens, Counter, Myth Strike, Move Card) plus the 12 everyday objects. The
-Trap-or-Treasure creature rigs are parked, not deleted.
+(Lens, Counter, Myth Strike, Move Card) plus the 12 everyday objects.
 
 ## Definition of done for the season
 12 episodes posted, engine documented, results reviewed against our own

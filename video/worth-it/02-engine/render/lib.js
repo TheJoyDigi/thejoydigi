@@ -37,7 +37,7 @@ async function openEpisode(browser, epDir, slug, query) {
   await page.waitForFunction(f => f.every(x => document.fonts.check(x)), FONTS, { timeout: 30000 });
   return page;
 }
-/* an episode folder given relative to the current directory or to video/trap-or-treasure */
+/* an episode folder given relative to the current directory or to video/worth-it */
 function resolveEp(arg) {
   const root = path.resolve(__dirname, '..', '..');
   if (path.isAbsolute(arg)) return arg;

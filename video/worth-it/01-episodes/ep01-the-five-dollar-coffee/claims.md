@@ -1,6 +1,8 @@
 # Claims — EP01 The Five-Dollar Coffee
 
-Verification date: 2026-10-01
+Verification date: 2026-10-02
+
+Final cut (anime format, 32 s) re-checked 2026-10-02: no numbers added.
 
 Verdict: **no numbers asserted.** The "five-dollar coffee" is an everyday
 example, not a statistic. No ledger rows needed. If a future cut adds a

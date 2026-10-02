@@ -10,7 +10,7 @@ reveals the value hiding inside it, the better question, one move. Ends on
 *"Worth it."*
 
 **Format:** 9:16, ~30 s, burned-in kinetic type (mute-safe), one warm narrator,
-subtle bed. Warm editorial art: paper cream, ink, gold. No mascots, no hype.
+subtle bed. Anime: a recurring lead, cel-shaded, on a paper cream, ink and gold palette. No hype.
 
 **Season 1:** 12 episodes in 5 movements — Seeing → Creating → Capturing →
 Scaling → Giving. Each episode dramatizes one *Value, Created* chapter
@@ -34,7 +34,9 @@ burned into the video.
 | The launch plan | `00-program/launch-plan.md` |
 | Platform specs and safe zones | `00-program/platform-guide.md` |
 | The season map | `01-episodes/season-map.md` |
-| Ep 1 (voiced) | `01-episodes/ep01-the-five-dollar-coffee/` |
+| **Lola: what needs updating (start here)** | `01-episodes/lola-handoff.md` |
+| Episode brief template for the new format | `01-episodes/_template/` |
+| Ep 1 (final cut, for Lola's check) | `01-episodes/ep01-the-five-dollar-coffee/` |
 
 ## Folder map
 
@@ -55,22 +57,23 @@ video/worth-it/
   01-episodes/
     season-map.md                all 12 episodes: myth / reframe / flip / move / chapter
     ep01-the-five-dollar-coffee/ script + (audio kept local, git-ignored)
-    _parked-trap-or-treasure/     the earlier Trap or Treasure work — parked, not deleted
-  02-engine/                     deterministic render pipeline (inherited; needs Worth It restyle)
+  02-engine/                     deterministic render pipeline + the anime, game and infographic parts
   03-assets/
+    cast/                        the lead (Wren) cast sheet
+    format-lab/                  interactive format reference + the Ep 1 anime demo (start at its README)
   04-export/                     (final files live in each episode's export/; git-ignored)
 ```
 
 ## Roles
-- **Lola — series director.** Content, scripts, art direction, QA. Manages production.
-- **Claude agent — production worker.** Builds animation/visuals from the director's scripts.
+- **Lola — series director.** Content, scripts, claims, voice direction, QA. Manages production.
+- **Claude agent — art director + production worker.** Owns the look (`00-program/visual-style.md`); builds animation/visuals from the director's scripts.
 - **Long — executive.** Approves scripts and cuts, device test, posts.
 
 ## Open decisions
 | # | Decision | Status |
 |---|---|---|
 | 1 | Series title | Worth It (working title; trademark + handle check open) |
-| 2 | Art guideline | Written; awaiting Long's approval |
-| 3 | Voice | Warm narrator; Ep 1 cut voiced, awaiting Long's listen |
+| 2 | Art guideline | Approved by Long as of Format Lab v7 (2026-10-02): anime x infographic x game, owned by the Claude agent |
+| 3 | Voice | Decided 2026-10-02: Leda narrates Wren (odd episodes), Puck narrates Kai (even episodes) |
 | 4 | Launch batch | Ep 1, 5, 3 — scripts for 5 and 3 to be written |
-| 5 | Trap or Treasure | Parked. Engine reused; creature rigs retired |
+| 5 | Trap or Treasure | Deleted (2026-10-02) |

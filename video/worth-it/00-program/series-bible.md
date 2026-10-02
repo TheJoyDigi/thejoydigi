@@ -66,6 +66,9 @@ game, not hype and not lectures. Full picture in `audience.md`.
   the sign-off. Feeling, never carrier.
 - **Sound is a layer, never the carrier.** The mute test is a hard gate.
 
+## The leads
+Two recurring leads alternate by episode number: odd = Wren, even = Kai (working names). Neither speaks; the narrator does. Details in `visual-style.md`.
+
 ## Episode structure
 
 ```
@@ -79,6 +82,7 @@ The viewer should feel the click: first the myth breaks, then the value comes
 into focus, then the question turns on them — in a good way.
 
 ## Series devices
+*Staged in the anime x infographic x game format; see `visual-style.md`. Boss alert = Myth Strike, Identify scan = Lens, Level gate = Counter, Quest card = Move Card.*
 - **The Lens:** a gold circle that settles over the ordinary object (cup, price
   tag, paycheck) and reveals the value inside it. The show's visual thesis.
 - **The Counter:** a horizontal line — buy side below, create side above. The
@@ -111,11 +115,12 @@ and follows per movement. No platform publishes benchmarks — set our own
 baseline from the first six posts. See `growth-plan.md`.
 
 ## Roles
-- **Lola — series director.** Owns the content: season map, scripts, art
-  direction, voice direction, QA sign-off. Manages Claude agent's production
+- **Lola — series director.** Owns the content: season map, scripts, voice
+  direction, QA sign-off. Manages Claude agent's production
   work. Reports to Long.
-- **Claude agent — production worker.** Builds the animation and visual content
-  from the director's scripts, per the art guideline (`visual-style.md`).
+- **Claude agent — art director and production worker.** Owns art direction
+  (`visual-style.md`, Long approves). Builds the animation and visual content
+  from the director's scripts.
   Renders, packages. Reuses and restyles the deterministic engine in
   `02-engine/`.
 - **Long — executive.** Approves scripts (5 min) and final cuts (10 min),

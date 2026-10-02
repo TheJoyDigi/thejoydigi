@@ -12,33 +12,23 @@ and demo pages were removed; the engine below is what the show runs on.)
 - Export: GIF (own encoder: shared 256-color palette, LZW, delta frames), MP4/WebM by recording the canvas in real time with a generated music track.
 - Saving through the artifact `downloads` capability.
 
-## Build system (built for Ep 14)
+## Build system
 
 ```
 02-engine/
   parts/
-    core.js          helpers, fonts, text effects            (lifted from reference/mei-reel.html)
-    rig-mei.js       Mei and Rex rig, poses, faces           (extended: work look, rex look, shock face)
-    infographics.js  the show's kit: Snare (gremlin), coin sack, Trap File card, stamp, phone UI, money arrow,
-                     coin, wallet, treadmill, stairs, chest, HP bar, Nickel, brand mark
-    scenes-common.js shared scene helpers: backgrounds, camera, hook text, Mei work look, lower third, ground set dressing,
-                     Pearl and treasure backgrounds, silhouette, cover lockup
-    music.js         seeded 128 bpm synth: kick, hat, clap, bass, pluck, tone, noise, sound effects
-    transport.js     canvas, play, scrub, sound, window.TT (draw, scale, frameData, renderAudio, seek, setHook)
-  shell.html         page shell (phone-first, themed), build.py
-  render/
-    render.js        deterministic MP4: every frame at 1080x1920, offline audio, loudness-normalized, 720p share copy
-    sheet.js         contact sheets; --safe overlays the app-UI zones; --balance measures detail per third
-    verify.js        frame fingerprints before and after a refactor
-    safezone.json    the safe-zone numbers and where they come from
-    lib.js           finds playwright and an installed headless browser
-  voice/voice.py     Gemini TTS: audition voices, generate lines, fit to beats, duck music, mux (reads voice.json)
-  qa/qa.py           the QA gate
+    core.js        helpers, fonts, text effects
+    worth.js       the Worth It look: paper, grain, Lens, Counter, Myth Strike, Move Card, objects, cover lockup
+    music.js       seeded 128 bpm synth bed and sound effects
+    transport.js   canvas, play, scrub, sound, window.TT (draw, scale, frameData, renderAudio, seek, setHook)
+  shell.html       page shell (phone-first, themed), build.py
+  render/          render.js (deterministic MP4), sheet.js (contact sheets, --safe), verify.js, safezone.json, lib.js
+  voice/voice.py   Gemini TTS: audition voices, generate lines, fit to beats, duck music, mux (reads voice.json)
+  qa/qa.py         the QA gate
 01-episodes/epNN-slug/
-  scenes.js          the only new code per episode (timeline, scenes, cues)
-  page.json          title and copy for the demo page
-  feedback.html/.js/.css   optional director-feedback panel for the demo page
-  dist/              built page(s)       export/  rendered files (git-ignored)
+  scenes.js        the only new code per episode (timeline, scenes, cues)
+  page.json        title and copy for the demo page
+  dist/            built page(s)       export/  rendered files (git-ignored)
 ```
 
 ```
@@ -47,31 +37,6 @@ node    02-engine/render/sheet.js <ep> [--safe] [--balance] [--times 1,2,3] [--w
 node    02-engine/render/render.js <ep> [--query "?hook=B&t=0" --suffix -hookB]
 python3 02-engine/qa/qa.py <ep>
 ```
-
-Not built yet: `rig-pearl.js`, `scenes-common.js` (reusable rooms and backgrounds), GIF export. The original plan is kept below.
-
-## Original plan
-
-```
-02-engine/
-  parts/
-    core.js          helpers, fonts, text effects
-    rig-mei.js       Mei parts, poses, faces
-    rig-pearl.js     Pearl parts and poses
-    rig-nickel.js    Nickel the coin (new)
-    infographics.js  counter, jar, donut, gauge, stats screen, tree, snowball, shield, bridge (new)
-    scenes-common.js street, room, office, backgrounds
-    music.js         mood-based generative music and sfx
-    transport.js     play, scrub, scene chips
-    export.js        GIF encoder + MP4 recorder
-  shell.html         page layout and styles (phone-first)
-  build.py           concatenates parts + an episode's scenes.js into one HTML
-01-episodes/epNN-slug/
-  scenes.js          the only new code per episode: timeline, text, infographic calls
-  dist/epNN.html     built artifact, ready to publish
-```
-
-An episode then costs mostly: script, `scenes.js` (about 150 lines), music mood, QA.
 
 ## Lessons learned (do not relearn these)
 1. **Vertical 9:16 always** (360x640 logical, canvas 720x1280).

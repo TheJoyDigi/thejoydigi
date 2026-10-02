@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Build one episode into a single HTML file.
 
-usage: python3 build.py 01-episodes/ep14-minimum-payment-trap
+usage: python3 build.py 01-episodes/ep01-the-five-dollar-coffee
 Reads <ep>/scenes.js and <ep>/page.json (title, copy, body html), writes <ep>/dist/<slug>.html
 """
 import json, os, re, sys
@@ -24,7 +24,7 @@ def opt(name):
     p = os.path.join(ep_dir, name)
     return read(p) if os.path.exists(p) else ''
 
-parts = ['core', 'rig-mei', 'infographics', 'music', 'scenes-common', 'worth']
+parts = ['core', 'music', 'worth', 'lead', 'anime', 'game', 'info']
 js = ["(function(){", "  var W=360,H=640,SC=2;",
       "  var cv=document.getElementById('cv'),c=cv.getContext('2d');"]
 js += [read(os.path.join(here, 'parts', p + '.js')) for p in parts]

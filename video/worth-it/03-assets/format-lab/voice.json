@@ -1,0 +1,85 @@
+{
+  "pace": "fast-paced, snappy, clear",
+  "voices": [
+    "Leda",
+    "Puck"
+  ],
+  "lines": [
+    {
+      "id": "m1",
+      "at": 0.25,
+      "text": "Everyone says the five-dollar coffee is keeping you broke.",
+      "style": "confident, a little provocative"
+    },
+    {
+      "id": "m2",
+      "at": 3.2,
+      "text": "They're wrong. The coffee was never the trap.",
+      "style": "calm, sure, a slight smile"
+    },
+    {
+      "id": "r1",
+      "at": 6.5,
+      "text": "Someone solved a problem.",
+      "style": "warm, curious"
+    },
+    {
+      "id": "r2",
+      "at": 7.85,
+      "text": "A warm cup, a place to sit, ten quiet minutes.",
+      "style": "brisk, light, three quick beats"
+    },
+    {
+      "id": "r3",
+      "at": 11.35,
+      "text": "And you gladly paid five dollars for it.",
+      "style": "knowing, warm"
+    },
+    {
+      "id": "k1",
+      "at": 13.75,
+      "text": "Problem solved. Value paid.",
+      "style": "punchy, emphatic, confident"
+    },
+    {
+      "id": "f1",
+      "at": 15.65,
+      "text": "So stop asking, how do I spend less.",
+      "style": "gentle, reframing"
+    },
+    {
+      "id": "f2",
+      "at": 18.55,
+      "text": "Ask the better question.",
+      "style": "calm, inviting"
+    },
+    {
+      "id": "f3",
+      "at": 20.15,
+      "text": "What can I make, that someone would pay five dollars for?",
+      "style": "curious, building"
+    },
+    {
+      "id": "g1",
+      "at": 23.25,
+      "text": "Answer that, and you're not the customer anymore.",
+      "style": "resolved, warm"
+    },
+    {
+      "id": "g2",
+      "at": 25.95,
+      "text": "You're on the other side of the counter.",
+      "style": "quietly triumphant"
+    },
+    {
+      "id": "g3",
+      "at": 28.05,
+      "text": "Worth it.",
+      "style": "warm, final, a small smile"
+    }
+  ],
+  "lead_voice": {
+    "wren": "Leda",
+    "kai": "Puck"
+  }
+}

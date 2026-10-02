@@ -18,16 +18,18 @@ Three lanes. One pipeline. Nothing crosses lanes.
 ### Lola — Series Director · the content brain
 - Story, season map, scripts
 - Claims with receipts (`claims.md`)
-- High-level art & voice direction
+- Voice direction (high level)
 - QA sign-off on every cut
 - Reads the numbers, weekly report to Long
 
-**Boundary (Long's call, 2026-10-02): Lola does not build visuals or video.**
+**Boundary (Long's call, 2026-10-02): Lola does not build visuals or video, and the Claude agent now owns art direction.**
 No video samples, no production commits, no tech detail on how video gets
 made. Direction is high-level only — **what**, not **how**. Lola's craft is
 writing and directing; the agent's is producing.
 
-### Claude agent — Production · the hands
+### Claude agent — Art direction + Production · the hands
+- **Owns art direction** (Long's call, 2026-10-02): look, characters, type,
+  palette, animation styles. The art guideline is `visual-style.md`; Long approves
 - Builds **all** animation and visual content from the director's scripts
   per `visual-style.md`
 - Renders 1080×1920, ~-16 LUFS
@@ -74,7 +76,7 @@ profile bio — never burned into the video.
 - The myth is attacked, never the viewer.
 - Every number has a receipt.
 - No hype, no shame, no financial-product pitches.
-- Calm, adult, confident — warm editorial, never cartoon.
+- Anime x infographic x game: high energy, legible, never childish, never hype.
 
 ---
 

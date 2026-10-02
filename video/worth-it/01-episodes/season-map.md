@@ -15,6 +15,8 @@ The season itself has an arc: **Seeing → Creating → Capturing → Scaling �
 It starts with learning to see value and lands on giving it away — which is the
 book's final move and Long's own play (Nextdoor, The Joy Digi).
 
+**Leads alternate by episode number:** odd episodes (1, 3, 5, 7, 9, 11) star **Wren**; even episodes (2, 4, 6, 8, 10, 12) star **Kai**. Same arc, same devices; only who lives the moment changes. See `../00-program/visual-style.md`.
+
 ---
 
 ## PART I — SEEING VALUE
@@ -110,7 +112,7 @@ book's final move and Long's own play (Nextdoor, The Joy Digi).
 ---
 
 ## Production notes
-- **Length:** ~30s each, same slot as the Trap or Treasure plan. Voice-first; video can follow.
+- **Length:** ~30s each, Voice-first; video can follow.
 - **Post order:** by hook strength, not chapter order (same rule as the existing plan) — lead with Ep 1, Ep 5, Ep 3.
 - **Each episode ends:** the move + "Worth it." — the verdict doubles as the brand.
 - **Season 2** pulls from the remaining chapters (use vs. exchange, needs/wants/pain, knowledge as raw material, service by hand, attention, scarcity and moats, systems, brand, money frozen, markets, leverage, distribution, networks, compounding, reputation flywheel, choosing what to build, your system, teach it).

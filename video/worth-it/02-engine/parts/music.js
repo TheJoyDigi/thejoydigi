@@ -50,5 +50,27 @@
     function clink(at,vol){tone(at,100,.5,'sine',vol,6000,.002);tone(at+.012,107,.45,'sine',vol*.7,6000,.002);tone(at+.03,112,.35,'sine',vol*.4,6000,.002);}
     function bass(at,n,len,vol){tone(at,n,len,'sawtooth',vol,420,.01);tone(at,n-12,len,'sine',vol*.8,200,.01);}
     function pluck(at,n,vol){tone(at,n,.28,'triangle',vol,3200,.004);}
-    return{tone:tone,noise:noise,thump:thump,pad:pad,arp:arp,kick:kick,hat:hat,clap:clap,click:click,clink:clink,bass:bass,pluck:pluck};
+    function sweep(at,len,n0,n1,type,vol,lpf){
+      if(!live(at))return;
+      var o=ctx.createOscillator(),g=ctx.createGain(),f=ctx.createBiquadFilter(),s=T0+at;
+      o.type=type||'sawtooth';o.frequency.setValueAtTime(mnote(n0),s);o.frequency.exponentialRampToValueAtTime(mnote(n1),s+len);
+      f.type='lowpass';f.frequency.value=lpf||3000;
+      g.gain.setValueAtTime(.0001,s);g.gain.exponentialRampToValueAtTime(vol,s+Math.min(.04,len*.25));g.gain.exponentialRampToValueAtTime(.0005,s+len);
+      o.connect(f);f.connect(g);g.connect(master);o.start(s);o.stop(s+len+.05);
+    }
+    function boom(at,vol){
+      if(!live(at))return;
+      var s=T0+at,o=ctx.createOscillator(),g=ctx.createGain();
+      o.type='sine';o.frequency.setValueAtTime(95,s);o.frequency.exponentialRampToValueAtTime(26,s+1.1);
+      g.gain.setValueAtTime(vol,s);g.gain.exponentialRampToValueAtTime(.001,s+1.3);
+      o.connect(g);g.connect(master);o.start(s);o.stop(s+1.4);
+      noise(at,.5,vol*.5,900,120);
+    }
+    function riser(at,len,vol){noise(at,len,vol,400,9000);sweep(at,len,48,84,'sawtooth',vol*.35,2400);}
+    function snare(at,vol){noise(at,.14,vol,2400,1800);tone(at,57,.12,'triangle',vol*.6,2200,.002);}
+    function crash(at,vol){noise(at,1.3,vol,7000,3500);}
+    function stab(at,notes,len,vol){notes.forEach(function(n){tone(at,n,len,'sawtooth',vol,2400,.004);});}
+    function coin(at,vol){tone(at,91,.09,'square',vol,5000,.002);tone(at+.07,96,.35,'square',vol,5000,.002);}
+    function hit(at,vol){kick(at,vol);boom(at,vol*.8);crash(at,vol*.35);clap(at,vol*.5);}
+    return{tone:tone,noise:noise,thump:thump,pad:pad,arp:arp,kick:kick,hat:hat,clap:clap,click:click,clink:clink,bass:bass,pluck:pluck,sweep:sweep,boom:boom,riser:riser,snare:snare,crash:crash,stab:stab,coin:coin,hit:hit};
   }

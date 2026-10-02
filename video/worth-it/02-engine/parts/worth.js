@@ -1,8 +1,18 @@
-/* worth: the Worth It visual system. Warm editorial, not cartoon: paper cream,
-   ink, gold. Devices: Lens, Counter, Myth Strike, Move Card. Objects: coffee
-   cup, price tag, knot resolving to a straight line. Every piece is a pure
-   function of time on the shared canvas context `c`. Creature rigs live in
-   rig-mei.js / infographics.js and are RETIRED (not deleted, not used here). */
+/* worth: the Worth It visual system. Warm editorial paper look: paper cream, ink, gold.
+   Devices: Lens, Counter, Myth Strike, Move Card. Every piece is a pure function of time on the shared canvas context `c`. */
+
+  var F_FR='"Fraunces",Georgia,serif';
+  var F_DM='"DM Sans","Figtree",system-ui,sans-serif';
+  function rrect(x,y,w,h,r){
+    r=Math.min(r,w/2,h/2);
+    c.beginPath();c.moveTo(x+r,y);c.arcTo(x+w,y,x+w,y+h,r);c.arcTo(x+w,y+h,x,y+h,r);c.arcTo(x,y+h,x,y,r);c.arcTo(x,y,x+w,y,r);c.closePath();
+  }
+  function star4(x,y,r,rot){
+    c.save();c.translate(x,y);c.rotate(rot||0);
+    c.beginPath();c.moveTo(0,-r);c.quadraticCurveTo(r*.12,-r*.12,r,0);c.quadraticCurveTo(r*.12,r*.12,0,r);c.quadraticCurveTo(-r*.12,r*.12,-r,0);c.quadraticCurveTo(-r*.12,-r*.12,0,-r);c.closePath();
+    c.restore();
+  }
+  function wob(tt,amp){return Math.sin(tt*2.1)*amp;}
 
   var WI={paper:'#F6EEDC',ink:'#1B2340',gold:'#F5B83D',teal:'#0E4D5C',red:'#E4574D',green:'#3FA97C',
           card:'#FFFDF7',goldSoft:'rgba(245,184,61,.15)',redWash:'rgba(228,87,77,.13)',tealDeep:'#003B49',coral:'#FF6B6B',sand:'#FDF6EC'};
@@ -36,7 +46,7 @@
     o=o||{};
     var fam=o.fam||F_SG,wt=o.wt||'700',stag=o.stag==null?.035:o.stag;
     c.save();
-    c.font=wt+' '+size+'px '+fam;c.textBaseline='alphabetic';c.textAlign='left';c.lineJoin='round';
+    c.font=wt+' '+size+'px '+fam;c.textBaseline='alphabetic';c.textAlign='center';c.lineJoin='round';
     var ws=[],tot=0,i;
     for(i=0;i<str.length;i++){ws[i]=c.measureText(str[i]).width;tot+=ws[i];}
     var cx=o.align==='left'?x:x-tot/2;

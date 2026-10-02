@@ -14,7 +14,7 @@
     ],
     [
       0,
-      0.734,
+      0.8125,
       1,
       1
     ],
@@ -43,7 +43,7 @@
       640
     ],
     "top": 90,
-    "bottom": 470,
+    "bottom": 520,
     "left": 40,
     "right_upper": 320,
     "right_lower": 260,
@@ -55,8 +55,8 @@
       0,
       0.65,
       1,
-      0.734
+      0.8125
     ]
   ],
-  "note": "2026-10-01: the working bottom limit moved from 416 (ad-spec union) to 470 so the layout can use the whole frame. 470 is an ESTIMATE for organic posts (Shorts ad spec is 480). Amber = beyond the strict ad spec but inside our limit; red = beyond our limit. The phone test decides."
+  "note": "2026-10-02: the working bottom limit moved from 470 to 520 (18.75% from the bottom) so the layout is balanced top to bottom. 520 is an ESTIMATE for organic posts: no platform publishes organic numbers, ad specs are 416 (strict) and Shorts' own is 480. Amber = beyond the strict ad spec but inside our limit; red = beyond our limit. The phone test decides."
 }
