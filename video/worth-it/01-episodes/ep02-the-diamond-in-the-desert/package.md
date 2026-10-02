@@ -8,9 +8,13 @@ The diamond-water paradox | Worth It Ep 2
 ## Caption (TikTok, Reels, Shorts description)
 They say you get what you pay for. But in a desert, a glass of water beats a diamond. Same things — the value moved. It was never in the thing. It's in the person.
 The move: before your next purchase, ask whose problem it solves — mine, or the ad's?
+From Value, Created — Chapter 1: What "Value" Actually Means.
 Want the full 15 minutes on this? Link in bio.
 Worth It · Ep 2/12 | A production of The Joy Digi
 Educational only. Not financial advice.
+
+## YouTube Shorts description — prepend this as the first line (clickable)
+Full 15-minute chapter: https://www.thejoydigi.com/podcasts/value-created/1
 
 ## Pinned comment 1 — Receipts
 No numbers asserted in this episode. The diamond and the water are the classic paradox as a thought experiment, not a price claim. The philosophy: Value, Created Ch 1 (what "value" actually means), Ch 6 (every value starts as a problem solved). Corrections: none.

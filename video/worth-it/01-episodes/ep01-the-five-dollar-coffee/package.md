@@ -8,9 +8,13 @@ The five-dollar coffee myth | Worth It Ep 1
 ## Caption (TikTok, Reels, Shorts description)
 Everyone says the five-dollar coffee is keeping you broke. Someone solved a problem, and you gladly paid for it. Problem solved, value paid.
 The move: write down one thing people already ask you for help with.
-Want the full 15 minutes on this? Link in bio.
+From Value, Created — Chapter 6: Every Value Starts as a Problem Solved.
+Want the full 15 minutes? Link in bio.
 Worth It · Ep 1/12 | A production of The Joy Digi
 Educational only. Not financial advice.
+
+## YouTube Shorts description — prepend this as the first line (clickable)
+Full 15-minute chapter: https://www.thejoydigi.com/podcasts/value-created/6
 
 ## Pinned comment 1 — Receipts
 No numbers asserted in this episode. The "five dollars" is an everyday example, not a statistic. The philosophy: Value, Created Ch 6 (every value starts as a problem solved), Ch 4 (price is not value), Ch 15 (creating isn't enough — capture). Corrections: none.

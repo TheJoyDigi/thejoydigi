@@ -41,6 +41,21 @@ Ep 1 → 2 → 3, then season order. The first three plant the lens: the flip
 (coffee), value lives in people (diamond), price ≠ value (sale). Everything
 after is built on those three.
 
+## Connecting each short to its chapter (per-post formula)
+The video never carries the CTA. The connection lives in the post text,
+per platform:
+- **TikTok / Reels** (captions aren't clickable): the caption names the
+  chapter in words — "From Value, Created — Chapter 6: Every Value Starts
+  as a Problem Solved." — then "Want the full 15 minutes? Link in bio."
+  The bio link goes to the audiobook show page (all chapters, one tap away).
+- **YouTube Shorts** (descriptions are clickable): the **first line** of the
+  description is the direct chapter link
+  (`https://www.thejoydigi.com/podcasts/value-created/<N>`), then the
+  standard caption. Also attach the full chapter as the Short's related
+  video. YouTube is the conversion platform — zero friction here.
+- Every episode's `package.md` ships both: the chapter line in the caption
+  and the YouTube first-line link.
+
 ## Per-episode directives
 | Ep | Lead | Words → target | Card type | Claims / notes | Status |
 |---|---|---|---|---|---|
