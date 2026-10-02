@@ -1,44 +1,48 @@
 # EP16 (Trap 16 / 24): Pay in 4 Is Not Free
 
-**World:** 4, Interest Swamp (debt)  |  **Length target:** 30 s  |  **Status:** idea
+**Trap:** 16 / 24  |  **World:** 4, Interest Swamp (debt)  |  **Length target:** 30 s  |  **Status:** scripted, awaiting your approval  |  **Post:** launch day (Mon, week of Nov 9), ahead of Black Friday
+
+## Hook (on screen, frame 1)
+ONLY $50. → 12 PAYMENTS. 6 WEEKS.
 
 ## The trap (named)
-Pay in 4 feels free, but the bills stack up.
+Each Pay in 4 feels tiny, so it's easy to stack several at once. The small payments land on the same dates and collide with your paycheck.
+
+## The one idea
+Pay in 4 is a loan. Four small payments hide one big total, and stacked plans pile up on the same dates.
+
+## Visual metaphor
+A six-week calendar where payment bricks stack into a wall on every second Friday.
+
+## The Snare
+**Quad Imp**: four arms, each holding an invoice. Its size is how much is due.
+
+## Who falls
+**Rex** ("It's only $50!"), on Black Friday. Mei does the X-ray and the way out. This is Rex's first episode.
 
 ## X-ray: who profits
-(to write: the follow-the-money picture, fictional companies only)
+The store pays the lender a fee to offer Pay in 4; late fees add more (CFPB). We show it as an arrow from the store and from late fees to the Quad Imp. No amounts.
 
 ## Treasure: the way out
-Add up all installments due this month.
+Add it up before you tap, and one plan at a time.
 
-## Hook (on screen, frame 1, max 8 words)
-Pay in 4 feels free. Is it?
+## The numbers on screen (all from `calc.py` or `claims.md`)
+| Number | Source |
+|---|---|
+| $200, $120, $80 cart → 12 payments, $100 every two weeks, $400 in 6 weeks | `calc.py` (illustrative) |
+| 63% had more than one at a time | CFPB 2025 |
+| about 1 in 3 users aged 18 to 29 paid late | Fed 2026 |
+| one plan at a time: $50 per date | `calc.py` |
 
-## The one idea (one sentence)
-Small installments stack up, can carry fees if late, and shrink next month budget.
-
-## Visual metaphor (one only)
-Pizza slices of payments pile onto next month calendar.
-
-## The number on screen
-| Number | Source | Date checked |
-|---|---|---|
-| Policies and credit reporting vary by provider. Verify before claiming. | (add source) | (add date) |
-
-## Mei's problem (relatable moment, 8 s)
-(to write)
-
-## The rule (what we teach, 20 s)
-(to write)
-
-## Quest (one tiny free action)
-Add up all installments due this month.
+## Quest
+Add up every Pay in 4 payment due this month, across every app.
 
 ## Characters and location
-Mei. (add Pearl / Nickel / Rex as needed)
+Rex (falls), Mei (explains), Quad Imp (new Snare), Nickel. A generic online shop's checkout on a phone; Black Friday banner with no store name.
 
 ## Music mood
-(to choose)
+128 bpm: tense, bouncy, bright (same bed as Ep 14).
 
 ## Notes
-Run `../../00-program/content-rules.md` checklist before posting.
+- New builds: Quad Imp (gremlin base, four arms, invoices), calendar-brick infographic, Rex's voice (pick with `pick.py`, a male voice), Rex face pass.
+- Caption tip: "Most of these loans don't show up on your credit report" (claim 8).

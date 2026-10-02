@@ -23,7 +23,7 @@ Four episodes are ready before the first post. Each goes through claims → scri
 
 | Ep | Trap | Why at launch | Status |
 |---|---|---|---|
-| 16 | Pay in 4 | widest reach (32% of 18 to 34 used BNPL in 2024); Black Friday | in progress |
+| 16 | Pay in 4 | widest reach (32% of 18 to 34 used BNPL in 2024); Black Friday | scripted, awaiting your approval |
 | 2 | Free Trials | everyone has one, including under-18s; check the FTC click-to-cancel rule first | next |
 | 14 | Minimum Payment | the pilot | done |
 | 21 | Scam Radar | scam losses often start on social media, where the audience already is | after 2 |

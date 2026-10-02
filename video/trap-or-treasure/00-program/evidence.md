@@ -22,13 +22,16 @@ Most sources cut at 18 to 34 or 18 to 29. **We have almost no data on 16 and 17 
 | 35% say they probably or certainly could not come up with $2,000 in an emergency | all adults, 2024 | same, emergency-savings section |
 | 31% bet on sports in the past year (36% of men, 29% of women); 17% bet online | adults under 30, July to August 2025, n = 9,916 | Pew Research Center, 2 Oct 2025. https://www.pewresearch.org/short-reads/2025/10/02/americans-increasingly-see-legal-sports-betting-as-a-bad-thing-for-society-and-sports/ |
 
+| 63% of BNPL borrowers had several loans at once at some point in the year (33% across companies); stacking spikes over the holidays; most loans did not appear in credit records | 2022 data, six large lenders | CFPB, Jan 2025, https://files.consumerfinance.gov/f/documents/cfpb_BNPL_Report_2025_01.pdf |
+| 22% of 18 to 29 used BNPL in the past year; 32% of those users paid late; 64% of late payers were charged extra; 11% of users had a BNPL payment trigger an overdraft or NSF fee | 2025 survey | Federal Reserve SHED, May 2026, https://www.federalreserve.gov/publications/files/2025-report-economic-well-being-us-households-202605.pdf |
+| Stores pay BNPL lenders "merchant discount fees"; consumer fees were 13.4% of lender revenue in 2021; late fees often about $7 | 2021 | CFPB, Sept 2022, https://files.consumerfinance.gov/f/documents/cfpb_buy-now-pay-later-market-trends-consumer-impacts_report_2022-09.pdf |
+
 ## Reported (verify before use)
 
 | Fact | Group, year | Source | Note |
 |---|---|---|---|
 | FTC fraud reports: ages 20 to 29, 44% lost money, median loss $417; under 20, 51%, median $189 | 2024 | FTC Consumer Sentinel Data Book 2024, https://www.ftc.gov/system/files/ftc_gov/pdf/csn-annual-data-book-2024.pdf | PDF text could not be read by our tools. |
 | 40% of 18 to 29 fraud loss reports began on social media | 2025 | FTC data spotlight, https://www.ftc.gov/news-events/data-visualizations/data-spotlight/2026/04/reported-losses-scams-social-media-eight-times-higher-2020 | Directly relevant: they are being scammed where they watch us. |
-| 22% of 18 to 29 used BNPL; 32% of those paid late | 2025 | Federal Reserve SHED, https://www.federalreserve.gov/publications/files/2025-report-economic-well-being-us-households-202605.pdf | |
 | 15% of banked 18 to 29 paid an overdraft fee | 2025 | same | |
 | 57% of ages 18 to 25 had unwanted subscription charges | Jan 2022, n = 2,497 | YouGov for Bankrate, https://www.bankrate.com/pdfs/pr/20220207-subscription-services-survey.pdf | Private survey. |
 | 52% of Gen Z investors trust sources that "share own financial performance"; 37% cite an influencer as a factor in starting; 50% made a FOMO-driven investment | 18 to 25 investors, 2022 | FINRA Foundation, *Gen Z and Investing*, https://www.finrafoundation.org/sites/finrafoundation/files/Gen-Z-and-Investing.pdf | Investors only. |
