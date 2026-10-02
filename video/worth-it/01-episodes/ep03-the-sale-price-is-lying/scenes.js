@@ -16,7 +16,7 @@ function draw(t){
   c.setTransform(SC,0,0,SC,0,0);
   if(t<3.2){
     wiPaper(t);
-    wiTx('EP 3 · THE SALE PRICE IS LYING',180,112,12,t,{fam:F_U,wt:'700',fill:'rgba(27,36,64,.45)'});
+    wiTx('EP 3 · THE SALE PRICE IS LYING',180,150,12,t,{fam:F_U,wt:'700',fill:'rgba(27,36,64,.45)'});
     wiMythStrike(['Everyone loves','a good sale.','50% OFF!'],180,215,30,t+.15,{w:300,stag:.2});
   }else if(t<9.0){
     /* the rumor wobbles: shaky, unserious — a small extension of wiPriceTag */
