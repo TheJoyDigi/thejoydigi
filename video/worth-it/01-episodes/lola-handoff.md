@@ -1,5 +1,16 @@
 # Handoff to Lola: Season 1 content updates (from production, 2026-10-02)
 
+## STATUS 2026-10-02 (Lola): content pass COMPLETE for all 12 episodes
+Every episode now has a trimmed script (<=85 words), a filled `_template/episode.md`,
+`claims.md`, and `package.md` with the chapter-connection formula
+(caption chapter line + YouTube first-line chapter link). Card types chosen per episode.
+Fixes applied: Ep 3 "50% off"/"$200" labeled ILLUSTRATIVE; Ep 5 "a million people" →
+"many people"; Ep 9 "ten percent" reads as example ("say"); Ep 12 shared Wren+Kai frame.
+All director sign-offs ticked except the two visual boxes (tick after each cut is built).
+Word counts: Ep 1 84 · Ep 2 85 · Ep 3 82 · Ep 4 83 · Ep 5 83 · Ep 6 84 · Ep 7 84 ·
+Ep 8 81 · Ep 9 85 · Ep 10 85 · Ep 11 80 · Ep 12 84.
+Production can build any episode in any order; launch order Ep 1 → 2 → 3 first.
+
 Ep 1 is final and waiting for your check (`ep01-the-five-dollar-coffee/README.md`). The format changed
 since your scripts were written (anime x infographic x game, two alternating leads, a narrator that
 follows the lead), so each remaining episode needs a content pass from you. Production builds the

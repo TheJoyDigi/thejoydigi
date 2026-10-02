@@ -1,21 +1,58 @@
 # EP03 script — The Sale Price Is Lying (Ch 4: Price Is Not Value)
 
-Target ~30 s. Arc: MYTH → REFRAME → FLIP → MOVE → "Worth it."
-Mute-safe: every beat readable with sound off. Voice echoes screen text only.
+**Lead:** Wren (odd episodes). **Narrator:** Leda (follows the lead).
+Final cut about 32 s. Narration **82 words**. Every beat works on mute.
+Describe what the viewer sees in plain words; production decides how it is drawn.
 
-| Time | Beat | Picture / animation | On-screen text |
-|---|---|---|---|
-| 0-4 | MYTH | "Everyone loves a good sale." then "50% OFF!" slams in on a red wash; the Myth Strike crosses it | "Everyone loves a good sale." / "50% OFF!" |
-| 4-10 | REFRAME | A price tag; "was $200" wobbles like a rumor — shaky, unserious | "The sale price is lying to you." / "was $200 — never real" |
-| 10-16 | REFRAME | The Lens settles over the tag; the value list writes on: "the jacket didn't change. Only the rumor did." | "Price is a rumor about value." |
-| 16-22 | FLIP | The Counter appears; cross buy-side → create-side | "Ignore the sticker." / margin note: "What's it actually worth to you?" |
-| 22-27 | MOVE | Move Card: gold "DO THIS" tab | "DO THIS: price one thing you own by what it does, not what you paid." |
-| 27-32 | SIGN-OFF | "Worth it." stamp lands, then the Joy Digi slate | "That's the game. Problem solved, value paid." / "Worth it." / "Worth It is a production of The Joy Digi" / "Educational only. Not financial advice." |
+## The one idea (one sentence)
+Price is a rumor about value; the jacket didn't change.
+
+## Narration (one line per row, in order)
+| # | Beat | Line |
+|---|---|---|
+| 1 | MYTH | Everyone loves a good sale. Fifty percent off! |
+| 2 | MYTH | But the sale price is lying to you. |
+| 3 | REFRAME | That two hundred dollars was never real. |
+| 4 | REFRAME | The price is just a rumor about value, and rumors move. |
+| 5 | REFRAME | The jacket didn't change. Only the rumor did. |
+| 6 | PUNCH | So ignore the sticker. |
+| 7 | FLIP | Ask the better question. |
+| 8 | FLIP | What's it actually worth to you? |
+| 9 | FLIP | What it does for you. |
+| 10 | MOVE | Take one thing you own. Price it by what it does, not what you paid. |
+| 11 | MOVE | Problem solved, value paid. |
+| 12 | MOVE | Worth it. |
+
+## On screen (what the viewer reads)
+- **MYTH panel** (the belief, at most 10 words, 3 short lines): "Everyone loves / a good sale."
+- **REFRAME: the thing** (one object we can draw): a price tag reading $200, wobbling
+- **REFRAME: card type**: **steps**. "WAS $200*" / "NEVER REAL" / "JACKET UNCHANGED" (*ILLUSTRATIVE label on screen)
+- **PUNCH** (2 lines, at most 6 words each): "IGNORE" / "THE STICKER."
+- **FLIP: the picture** (who or what trades places, or the two sides): the tag's number dissolves into static; the jacket stays solid — rumor vs. thing
+- **FLIP: the question** (at most 12 words): "What's it actually worth to you?"
+- **MOVE: the quest** (3 lines, at most 6 words each): "Take one thing you own." / "Price it by what it does," / "not what you paid."
+- **Numbers** (each needs a `claims.md` row or an ILLUSTRATIVE label): "Fifty percent off" and "$200" are ILLUSTRATIVE — labeled on screen, not claims.
+
+## Changes from the earlier approved script (for the record)
+- **Cut for runtime (10 words):** "Not what they say it was." (redundant with the flip question); "That's the game."
+- **Fixed:** "That was two hundred dollars was never real." → "That two hundred dollars was never real."
+- **Kept:** the refrain "Problem solved, value paid." and the "Worth it." close.
 
 ## Philosophy check
-- Chapter: Ch 4 — Price Is Not Value ("price is a rumor about value; mispricings are where opportunity lives").
-- The reframe earns it: the rumor/value split is the chapter's core image.
-- Series refrain reused: "Problem solved, value paid."
+- Chapter: Ch 4 — Price Is Not Value (price is a rumor about value; mispricings are where opportunity lives).
+- Also earns: Ch 1 (value isn't in things).
 
 ## Claims
-No numbers asserted. No ledger rows needed.
+No numbers asserted. See `claims.md`.
+
+## Director sign-off (Lola)
+- [x] The one idea is stated in one sentence
+- [x] The reframe earns its chapter (philosophy check)
+- [x] The myth is struck, never the person
+- [x] The move is concrete, free, and under 5 minutes
+- [ ] myth, reframe and move are clear with sound off (tick after build)
+- [ ] every paused frame has one focal point (tick after build)
+- [x] The voice echoes the screen text, with no new information in audio only
+- [x] Spelling and punctuation are correct everywhere on screen
+
+Content approved — ready for build. The two visual boxes tick after the cut.

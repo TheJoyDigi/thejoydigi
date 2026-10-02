@@ -1,21 +1,56 @@
 # EP10 script — The Salary Is Not the Prize (Ch 20: Ownership)
 
-Target ~30 s. Arc: MYTH → REFRAME → FLIP → MOVE → "Worth it."
-Mute-safe: every beat readable with sound off. Voice echoes screen text only.
+**Lead:** Kai (even episodes). **Narrator:** Puck (follows the lead).
+Final cut about 32 s. Narration **85 words**. Every beat works on mute.
+Describe what the viewer sees in plain words; production decides how it is drawn.
 
-| Time | Beat | Picture / animation | On-screen text |
-|---|---|---|---|
-| 0-4 | MYTH | "Land the good salary and you're set." slams in on a red wash; the Myth Strike crosses it | "Land the good salary and you're set." |
-| 4-10 | REFRAME | An hourglass labeled "salary" draining to zero; beside it a small deed/key quietly compounding | "A salary is rent on your time. It stops the day you stop." |
-| 10-16 | REFRAME | The Lens settles over the deed; the value list writes on | "Owners keep what workers create. Equity is the capture machine." |
-| 16-22 | FLIP | The Counter appears; cross buy-side → create-side | "Stop asking how to earn more per hour." / margin note: "What's the smallest piece of ownership you can start?" |
-| 22-28 | MOVE | Move Card: gold "DO THIS" tab | "DO THIS: look up what one share of anything costs. Start there." |
-| 28-34 | SIGN-OFF | "Worth it." stamp lands, then the Joy Digi slate | "That's the game. Problem solved, value paid." / "Worth it." / "Worth It is a production of The Joy Digi" / "Educational only. Not financial advice." |
+## The one idea (one sentence)
+A salary rents your time; ownership keeps paying.
+
+## Narration (one line per row, in order)
+| # | Beat | Line |
+|---|---|---|
+| 1 | MYTH | They say land the salary and you're set. |
+| 2 | MYTH | A salary is rent on your time. It stops the day you stop. |
+| 3 | REFRAME | Owners don't get paid for hours. They keep what workers create. |
+| 4 | REFRAME | A slice of everything, while they sleep. Equity is the capture machine. |
+| 5 | PUNCH | So stop asking how to earn more. |
+| 6 | FLIP | Ask the better question. |
+| 7 | FLIP | What's the smallest piece of ownership you can buy? |
+| 8 | FLIP | It doesn't take much to begin. |
+| 9 | MOVE | Look up the price of one share. Start there. |
+| 10 | MOVE | Problem solved, value paid. |
+| 11 | MOVE | Worth it. |
+
+## On screen (what the viewer reads)
+- **MYTH panel** (the belief, at most 10 words, 3 short lines): "Land the salary," / "you're set."
+- **REFRAME: the thing** (one object we can draw): a paycheck that stops, next to a machine that keeps paying while its owner sleeps
+- **REFRAME: card type**: **split**. "SALARY / RENT ON TIME" vs "OWNERSHIP / KEEPS PAYING"
+- **PUNCH** (2 lines, at most 6 words each): "SALARY STOPS." / "OWNERSHIP COMPOUNDS."
+- **FLIP: the picture** (who or what trades places, or the two sides): the paycheck shrinks; a single share certificate glows
+- **FLIP: the question** (at most 12 words): "What's the smallest piece of ownership you can buy?"
+- **MOVE: the quest** (3 lines, at most 6 words each): "Look up the price" / "of one share." / "Start there."
+- **Numbers** (each needs a `claims.md` row or an ILLUSTRATIVE label): none asserted.
+
+## Changes from the earlier approved script (for the record)
+- **Cut for runtime (13 words):** "That's the game."; "A slice of everything the machine makes, while they sleep." → "A slice of everything, while they sleep."; "It takes beginning."; "land the good salary" → "land the salary"; "Look up what one share of anything costs." → "Look up the price of one share."
+- **Kept:** the refrain "Problem solved, value paid." and the "Worth it." close.
 
 ## Philosophy check
-- Chapter: Ch 20 — Ownership (equity and assets; why owners keep what workers create).
-- The reframe earns it: salary as rent vs ownership as the capture machine — the chapter's core contrast.
-- Series refrain reused: "Problem solved, value paid."
+- Chapter: Ch 20 — Ownership (a salary is rent on your time; equity is the capture machine).
+- Also earns: Ch 18 (systems keep working while you don't).
 
 ## Claims
-No numbers asserted. No ledger rows needed.
+No numbers asserted. See `claims.md`.
+
+## Director sign-off (Lola)
+- [x] The one idea is stated in one sentence
+- [x] The reframe earns its chapter (philosophy check)
+- [x] The myth is struck, never the person
+- [x] The move is concrete, free, and under 5 minutes
+- [ ] myth, reframe and move are clear with sound off (tick after build)
+- [ ] every paused frame has one focal point (tick after build)
+- [x] The voice echoes the screen text, with no new information in audio only
+- [x] Spelling and punctuation are correct everywhere on screen
+
+Content approved — ready for build. The two visual boxes tick after the cut.

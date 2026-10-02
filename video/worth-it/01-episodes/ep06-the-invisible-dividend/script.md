@@ -1,22 +1,57 @@
 # EP06 script — The Invisible Dividend (Ch 12: Trust, the Invisible Ingredient)
 
-Target ~30 s. Arc: MYTH → REFRAME → FLIP → MOVE → "Worth it."
-Mute-safe: every beat readable with sound off. Voice echoes screen text only.
+**Lead:** Kai (even episodes). **Narrator:** Puck (follows the lead).
+Final cut about 32 s. Narration **84 words**. Every beat works on mute.
+Describe what the viewer sees in plain words; production decides how it is drawn.
 
-| Time | Beat | Picture / animation | On-screen text |
-|---|---|---|---|
-| 0-4 | MYTH | "Trust is soft." slams in on a red wash; the Myth Strike crosses it | "Trust is soft." / "Only numbers are real." |
-| 4-10 | REFRAME | Contracts, lawyers, checklists dissolve away; a handshake remains, deals speeding up | "Everything costs less when trust is there." / "No contracts. No checking up." |
-| 10-16 | REFRAME | The Lens settles over the handshake; the value list writes on | "The most valuable line item that never appears on a balance sheet." |
-| 16-22 | FLIP | The Counter appears; cross buy-side → create-side | "Stop asking how to look trustworthy." / margin note: "Who trusts you — and what does that save them?" |
-| 22-28 | MOVE | Move Card: gold "DO THIS" tab | "DO THIS: keep one small promise today. Out loud, where they can see it." |
-| 28-34 | SIGN-OFF | "Worth it." stamp lands, then the Joy Digi slate | "That's the game. Problem solved, value paid." / "Worth it." / "Worth It is a production of The Joy Digi" / "Educational only. Not financial advice." |
+## The one idea (one sentence)
+Trust cuts the cost of every deal — it's the invisible dividend.
+
+## Narration (one line per row, in order)
+| # | Beat | Line |
+|---|---|---|
+| 1 | MYTH | They say trust is soft. That only numbers are real. |
+| 2 | MYTH | Then why does everything cost less when trust is there? |
+| 3 | REFRAME | No contracts, no lawyers, no checking up. |
+| 4 | REFRAME | Every deal gets cheaper, every yes gets faster. |
+| 5 | REFRAME | Trust is the most valuable line item no balance sheet shows. |
+| 6 | PUNCH | So stop asking how to look trustworthy. |
+| 7 | FLIP | Ask the better question. |
+| 8 | FLIP | Who trusts you, and what does that save them? |
+| 9 | FLIP | That's your real net worth. |
+| 10 | MOVE | Keep one small promise today, out loud. |
+| 11 | MOVE | Problem solved, value paid. |
+| 12 | MOVE | Worth it. |
+
+## On screen (what the viewer reads)
+- **MYTH panel** (the belief, at most 10 words, 3 short lines): "Trust is soft." / "Only numbers are real."
+- **REFRAME: the thing** (one object we can draw): a handshake over a desk where the contracts and lawyers fade away
+- **REFRAME: card type**: **compare**. "NO TRUST: contracts, lawyers, checking" vs "TRUST: cheaper, faster"
+- **PUNCH** (2 lines, at most 6 words each): "TRUST IS" / "THE DIVIDEND."
+- **FLIP: the picture** (who or what trades places, or the two sides): the line item "TRUST" appears on an otherwise blank balance sheet
+- **FLIP: the question** (at most 12 words): "Who trusts you, and what does that save them?"
+- **MOVE: the quest** (3 lines, at most 6 words each): "Keep one small promise" / "today, out loud," / "where they can see."
+- **Numbers** (each needs a `claims.md` row or an ILLUSTRATIVE label): none asserted.
+
+## Changes from the earlier approved script (for the record)
+- **Cut for runtime (11 words):** "That's the game."; folded "Out loud, where they can see it." into "Keep one small promise today, out loud."; "that never appears on a balance sheet" → "no balance sheet shows."
+- **Kept:** the refrain "Problem solved, value paid." and the "Worth it." close.
 
 ## Philosophy check
-- Chapter: Ch 12 — Trust, the Invisible Ingredient (the most valuable line item that never appears on a balance sheet).
-- The reframe earns it: trust priced as a dividend — it cuts the cost of every deal.
-- "That's your real net worth" lands the chapter's point in one line.
-- Series refrain reused: "Problem solved, value paid."
+- Chapter: Ch 12 — Trust, the Invisible Ingredient (trust lowers transaction cost; it's value that never appears on the books).
+- Also earns: Ch 6 (trust is a problem solved for the other side).
 
 ## Claims
-No numbers asserted. No ledger rows needed.
+No numbers asserted. See `claims.md`.
+
+## Director sign-off (Lola)
+- [x] The one idea is stated in one sentence
+- [x] The reframe earns its chapter (philosophy check)
+- [x] The myth is struck, never the person
+- [x] The move is concrete, free, and under 5 minutes
+- [ ] myth, reframe and move are clear with sound off (tick after build)
+- [ ] every paused frame has one focal point (tick after build)
+- [x] The voice echoes the screen text, with no new information in audio only
+- [x] Spelling and punctuation are correct everywhere on screen
+
+Content approved — ready for build. The two visual boxes tick after the cut.
