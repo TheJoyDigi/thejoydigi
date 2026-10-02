@@ -1,8 +1,13 @@
 # Growth plan — Worth It
 
 Brand: **The Joy Digi** umbrella; credit line "Worth It is a production of
-The Joy Digi". Voice: warm, clear, confident, no hype. Handles and profile
-text still to decide.
+The Joy Digi". Voice: warm, clear, confident, no hype.
+**Handles (Long's call, 2026-10-01): the show publishes under the umbrella
+@thejoydigi on all platforms** — one account, one compounding audience. No
+separate show handle: the shorts are the audiobook's marketing arm, so
+splitting them into a second account would add a hop to the funnel. (YouTube:
+@thejoydigi is Long's existing channel — Shorts and full episodes live
+together, making "want the full 15 minutes?" a native one-tap step.)
 
 **How to read this plan.** A research pass (2026-10-01) found that **no
 platform publishes effect sizes** for hooks, pacing, loops, or posting times,

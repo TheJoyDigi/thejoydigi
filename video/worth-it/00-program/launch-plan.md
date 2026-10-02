@@ -4,7 +4,8 @@
 | Task | Who | Status |
 |---|---|---|
 | Series docs committed (this branch) | Lola | in progress |
-| Handle + trademark check for "Worth It" | Long | open |
+| Handle | Umbrella @thejoydigi on all platforms (Long's call — no separate show handle) | Long | open |
+| Series-title trademark check ("Worth It" — crowded field, BuzzFeed shadow; fallback "The Other Side") | Long | open |
 | Approve the art guideline | Long | open |
 | Ep 1 voice approved (the 30.8 s cut) | Long | open |
 | Device test: private draft on TikTok, Reels, Shorts | Long | open |
