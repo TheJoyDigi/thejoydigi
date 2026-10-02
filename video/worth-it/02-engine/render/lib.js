@@ -13,6 +13,8 @@ function loadPlaywright() {
 
 async function launch() {
   const { chromium } = loadPlaywright();
+  const envExe = process.env.WI_CHROME || process.env.CHROME_PATH;
+  if (envExe && fs.existsSync(envExe)) return chromium.launch({ executablePath: envExe });
   const cache = path.join(os.homedir(), 'Library', 'Caches', 'ms-playwright'), shells = [];
   for (const d of fs.existsSync(cache) ? fs.readdirSync(cache) : []) {
     if (!d.startsWith('chromium_headless_shell-')) continue;
@@ -25,7 +27,7 @@ async function launch() {
   return chromium.launch(shells.length ? { executablePath: shells[0][1] } : {});
 }
 
-const FONTS = ['400 20px "Dela Gothic One"', '700 20px "Caveat"', '400 20px "Bowlby One"', '400 20px "Pacifico"', '700 20px "Fraunces"', '500 20px "DM Sans"', '700 20px "Figtree"'];
+const FONTS = ['400 20px "Dela Gothic One"', '700 20px "Caveat"', '400 20px "Bowlby One"', '400 20px "Pacifico"', '700 20px "Fraunces"', '500 20px "DM Sans"', '700 20px "Figtree"', '700 20px "Space Grotesk"'];
 
 async function openEpisode(browser, epDir, slug, query) {
   const page = await browser.newPage({ viewport: { width: 480, height: 900 } });
