@@ -195,7 +195,7 @@
       if(K.lid){c.fillStyle=C.skin;c.fillRect(cx-6,cy-8,14,8+K.lid-1.5);}
       c.restore();
       c.strokeStyle=C.ink;c.lineWidth=.35;c.globalAlpha=.5;c.stroke(shape);c.globalAlpha=1;
-      line(lid,C.ink,1.7);
+      line(lid,C.ink,rex?1.2:1.7);
     }
     if(K.face==='joy'){
       line(new Path2D('M0.5 -12.5 C2 -16.8 7 -16.8 9 -12.5'),C.ink,1.7);
@@ -204,8 +204,8 @@
       eye(V.eyeN,V.lidN,4.8,-13.6,3.7,4.7);
       eye(V.eyeF,V.lidF,13.6,-13.3,2.5,4.1);
     }
-    line(new Path2D(bro[0]),C.hair,1.5);
-    line(new Path2D(bro[1]),C.hair,1.3);
+    line(new Path2D(bro[0]),C.hair,rex?2.6:1.5);
+    line(new Path2D(bro[1]),C.hair,rex?2.2:1.3);
     line(V.nose,C.sShade,.8);
     if(K.face==='joy'||K.face==='shout'||K.face==='sad'){c.fillStyle='rgba(255,110,140,.32)';c.fill(V.blush);}
     if(K.face==='sad'){c.fillStyle='rgba(170,220,255,.9)';c.fill(V.tear);}

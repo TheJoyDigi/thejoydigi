@@ -1,0 +1,144 @@
+{
+  "voice": "Leda",
+  "pace": "fast-paced, snappy, natural conversational rhythm, no long pauses",
+  "music_gain": 3.0,
+  "duck_ratio": 7,
+  "pick_rex": {
+    "voices": [
+      "Puck",
+      "Fenrir",
+      "Iapetus",
+      "Umbriel",
+      "Achird",
+      "Zubenelgenubi",
+      "Sadachbia",
+      "Algieba"
+    ],
+    "judges": [
+      "gemini-3.8-flash",
+      "gemini-3.1-pro-preview"
+    ],
+    "brief": "You are a casting director for a short animated money-education series on TikTok and Reels, for viewers aged 18 to 25. Rex is the lead's best friend: a 19-year-old young man who buys first and thinks later. He is funny, warm, a little overconfident, never dumb and never a caricature. He must sound like a real young adult guy, clearly different from the lead (a young woman with a bright, youthful voice). Not an announcer, not a teacher, not a child. Numbers must be clear. Judge only what you hear; if a voice does not sound like a young man, say so.",
+    "lines": [
+      {
+        "text": "Only fifty! Wait... twelve payments?",
+        "style": "excited, then shocked"
+      },
+      {
+        "text": "It's only fifty. And thirty. And twenty.",
+        "style": "carefree, cocky, quick"
+      },
+      {
+        "text": "Feels free.",
+        "style": "pleased with himself"
+      }
+    ]
+  },
+  "lines": [
+    {
+      "id": "hook1",
+      "at": 0.05,
+      "voice": "Umbriel",
+      "text": "Only fifty!",
+      "style": "excited, delighted"
+    },
+    {
+      "id": "hook2",
+      "at": 0.92,
+      "voice": "Umbriel",
+      "text": "Wait... twelve payments?",
+      "style": "shocked, rising"
+    },
+    {
+      "id": "taps",
+      "at": 2.65,
+      "voice": "Umbriel",
+      "text": "And thirty. And twenty.",
+      "style": "carefree, cocky"
+    },
+    {
+      "id": "free",
+      "at": 4.45,
+      "voice": "Umbriel",
+      "text": "Feels free.",
+      "style": "pleased with himself"
+    },
+    {
+      "id": "loan",
+      "at": 5.35,
+      "voice": "Leda",
+      "text": "It's a loan.",
+      "style": "dry, matter-of-fact"
+    },
+    {
+      "id": "xray1",
+      "at": 6.45,
+      "voice": "Leda",
+      "text": "What's due when?",
+      "style": "curious, leaning in"
+    },
+    {
+      "id": "xray2",
+      "at": 8.1,
+      "voice": "Leda",
+      "text": "A hundred, every two weeks.",
+      "style": "stunned, clear"
+    },
+    {
+      "id": "miss",
+      "at": 11.0,
+      "voice": "Leda",
+      "text": "Miss one, and the fees pile on.",
+      "style": "warning, a little annoyed"
+    },
+    {
+      "id": "late",
+      "at": 13.05,
+      "voice": "Leda",
+      "text": "About one in three young users paid late.",
+      "style": "serious, clear"
+    },
+    {
+      "id": "addup",
+      "at": 15.65,
+      "voice": "Leda",
+      "text": "Add it up before you tap.",
+      "style": "bright, encouraging"
+    },
+    {
+      "id": "oneplan",
+      "at": 19.0,
+      "voice": "Leda",
+      "text": "One plan at a time.",
+      "style": "confident"
+    },
+    {
+      "id": "half",
+      "at": 21.5,
+      "voice": "Leda",
+      "text": "Half the hit, every due date.",
+      "style": "triumphant"
+    },
+    {
+      "id": "quest1",
+      "at": 24.6,
+      "voice": "Leda",
+      "text": "Quest: add up every payment due this month.",
+      "style": "clear, warm, encouraging"
+    },
+    {
+      "id": "quest2",
+      "at": 27.3,
+      "voice": "Leda",
+      "text": "Which trap got you?",
+      "style": "friendly, curious"
+    }
+  ],
+  "decided": {
+    "rex": "Umbriel",
+    "mei": "Leda",
+    "by": "director",
+    "date": "2026-10-01",
+    "how": "blind scored comparison of 8 male-leaning voices by two audio-capable Gemini models (pick.py --key pick_rex); Umbriel had the best average (8.1) and scored well with both judges"
+  }
+}

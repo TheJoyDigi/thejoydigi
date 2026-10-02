@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """pick.py: blind, scored voice comparison.
 
-  python3 02-engine/voice/pick.py <ep> [--voices Leda,Zephyr,...] [--judges gemini-3.8-flash,gemini-3.1-pro-preview] [--reuse 1]
+  python3 02-engine/voice/pick.py <ep> [--voices Leda,Zephyr,...] [--judges gemini-3.8-flash,gemini-3.1-pro-preview] [--reuse 1] [--key pick_rex]
 
 Speaks the same representative lines in each candidate voice, concatenates them, relabels the clips with random
 letters (so voice names cannot bias the judge), and asks audio-capable Gemini models to score each clip against the
@@ -45,11 +45,11 @@ def main():
     opts = {a[i][2:]: a[i + 1] for i in range(1, len(a) - 1) if a[i].startswith('--')}
     ep, meta = V.ep_paths(a[0])
     cfg = json.load(open(os.path.join(ep, 'voice.json')))
-    pick = cfg['pick']
+    pick = cfg[opts.get('key', 'pick')]
     voices = (opts.get('voices') or ','.join(pick['voices'])).split(',')
     judges = (opts.get('judges') or ','.join(pick['judges'])).split(',')
     key = V.api_key()
-    out = os.path.join(ep, 'export', 'voice', 'pick')
+    out = os.path.join(ep, 'export', 'voice', opts.get('key', 'pick'))
     os.makedirs(out, exist_ok=True)
     clips = {}
     for v in voices:

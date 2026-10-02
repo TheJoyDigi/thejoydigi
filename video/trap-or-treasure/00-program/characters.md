@@ -36,8 +36,9 @@ Cast sheet (live, look at it first): `03-assets/cast/` (build: `python3 02-engin
 - **Who:** buys first, thinks later. Funny, warm, loyal. Learns by the end of each world, but not every episode.
 - **Look:** coral hoodie, **headphones**, spiky dark hair, dark jeans, yellow sneakers. Built on Mei's rig (`env.look = 'rex'`), so he costs almost nothing to animate.
 - **Line:** "It's only $8!" It is never only $8.
+- **Voice:** Google Gemini TTS, **Umbriel** ("Easy-going"). Chosen on 2026-10-01 by the same blind test as Mei's: 8 male-leaning voices, two audio-capable judges, names hidden; Umbriel had the best average (8.1) and scored well with both judges (8.9 and 7.4). Runner-up: Sadachbia (one judge heard it as too mature). First episode: 16.
 - **Rule:** never humiliated.
-- **To do:** a face pass so he does not read as Mei with different hair.
+- **Face pass (done, first round):** heavier brows and a lighter lid line so he does not read as Mei with different hair. Revisit after his first episode is seen.
 
 ## The Snares: the traps as creatures
 - **What:** every episode's trap is a small, sly creature. It stands for **one mechanism** (minimum payments, urgency, auto-renew), **never a company and never "all lenders"**. Borrowing has a fair price; the Snare is the trick, not the loan.

@@ -23,7 +23,7 @@ Evidence column: **V** = a verified statistic exists for this trap, **R** = repo
 | 13 | World 4, Interest Swamp | Interest Is a Snowball | Snowball Yeti | Borrow $100, owe $124? | Find the APR on any card or loan you have. | R | idea |
 | 14 | World 4, Interest Swamp | The Minimum Payment Trap | Treadmill Gremlin | You paid $30. Debt dropped $10. | Pay a fixed amount above your minimum, every month. | V (mechanism: CFPB; 41% of card holders paid only the minimum, NFCS 2024) | demo built, awaiting your feedback |
 | 15 | World 4, Interest Swamp | What You Sign For | Fine-Print Fox | 35% of 18 to 34 year olds have one. | Write down balance, rate and monthly payment. | V (35% of 18-34 have student loans; 42% of payers late) | idea |
-| 16 | World 4, Interest Swamp | Pay in 4 Is Not Free | Quad Imp | ONLY $50. → 12 PAYMENTS. 6 WEEKS. | Add up every Pay in 4 payment due this month. | V (63% stacked, CFPB 2025; 32% of 18-29 users paid late, Fed 2026) | scripted, awaiting approval |
+| 16 | World 4, Interest Swamp | Pay in 4 Is Not Free | Quad Imp | ONLY $50. → 12 PAYMENTS. 6 WEEKS. | Add up every Pay in 4 payment due this month. | V (63% stacked, CFPB 2025; 32% of 18-29 users paid late, Fed 2026) | built, awaiting your final-cut review |
 | 17 | World 5, Seed Garden | The Shrink Ray | Shrink-Ray Bot | Your $100 is shrinking. | Compare a price today with what you remember. |  | idea |
 | 18 | World 5, Seed Garden | Money That Makes Babies | Late-Start Sloth | Time makes your money grow. | Run your own numbers in a compound interest calculator. |  | idea |
 | 19 | World 5, Seed Garden | The Screenshot Is Not Proof | Hype Hawk | He turned $500 into $50,000. (screenshot) | Answer the 3 Receipts questions on one influencer. | R | idea |

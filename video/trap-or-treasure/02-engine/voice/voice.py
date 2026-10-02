@@ -7,7 +7,7 @@
 Reads <ep>/voice.json: {"voice": "Leda", "music_gain": 2.4, "duck_ratio": 6, "lines": [{"id","text","style","at"}]}
   - text is spoken verbatim (the model treats it as a transcript), so write numbers as words
   - style is a short delivery note ("shocked, quick") passed as speech metadata; "pace" is appended to every line
-  - at is the start time in seconds in the final video
+  - at is the start time in seconds in the final video; a line may set its own "voice" (e.g. Rex vs Mei)
 Generates every line, fits each to the gap before the next line (a slight speed-up if needed), mixes it over
 the music with ducking, loudness-normalizes, and muxes onto export/<slug>.mp4 without re-encoding the picture.
 Needs the Gemini API key in your interactive shell (NANOBANANA_GEMINI_API_KEY or GEMINI_API_KEY). The key is never printed.
@@ -115,7 +115,7 @@ def build(ep, meta, args):
     total = float(subprocess.run(['ffprobe', '-v', 'error', '-show_entries', 'format=duration', '-of', 'csv=p=0', os.path.join(ep, 'export', slug + '.mp4')], capture_output=True, text=True).stdout)
     plan = []
     for i, l in enumerate(lines):
-        f = cached(ep, l['text'], voice, (l.get('style', '') + '; ' + cfg.get('pace', '')).strip('; '), key)
+        f = cached(ep, l['text'], l.get('voice', voice), (l.get('style', '') + '; ' + cfg.get('pace', '')).strip('; '), key)
         d = dur(f)
         limit = (lines[i + 1]['at'] if i + 1 < len(lines) else total - 0.3) - 0.08
         room = limit - l['at']

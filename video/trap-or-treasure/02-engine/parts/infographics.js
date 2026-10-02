@@ -317,6 +317,22 @@
     c.strokeStyle=GR.body;c.lineWidth=2.8;
     c.beginPath();c.moveTo(-16,-18);c.quadraticCurveTo(-24,-14,-25,-6+wave);c.stroke();
     c.beginPath();c.moveTo(16,-18);c.quadraticCurveTo(24,-14,25,-6-wave);c.stroke();
+    if(o.quad){ /* Quad Imp: a second pair of arms, and an invoice in every hand */
+      var jg=Math.sin(t*6+ph)*3;
+      c.strokeStyle=PC.navy;c.lineWidth=5.2;
+      c.beginPath();c.moveTo(-14,-24);c.quadraticCurveTo(-26,-30,-29,-42-jg);c.stroke();
+      c.beginPath();c.moveTo(14,-24);c.quadraticCurveTo(26,-30,29,-42+jg);c.stroke();
+      c.strokeStyle=GR.body;c.lineWidth=2.8;
+      c.beginPath();c.moveTo(-14,-24);c.quadraticCurveTo(-26,-30,-29,-42-jg);c.stroke();
+      c.beginPath();c.moveTo(14,-24);c.quadraticCurveTo(26,-30,29,-42+jg);c.stroke();
+      [[-29,-48-jg,-.3],[29,-48+jg,.3],[-27,-10,-.15],[27,-10,.15]].forEach(function(q){
+        c.save();c.translate(q[0],q[1]);c.rotate(q[2]);
+        c.fillStyle=PC.paper;c.strokeStyle=PC.navy;c.lineWidth=1.6;rrect(-6,-8,12,16,2);c.fill();c.stroke();
+        c.fillStyle=PC.red;c.font='700 7px '+F_U;c.textAlign='center';c.textBaseline='alphabetic';c.fillText('$',0,-1);
+        c.fillStyle='rgba(28,37,80,.4)';c.fillRect(-3.5,2,7,1.4);c.fillRect(-3.5,5,5,1.4);
+        c.restore();
+      });
+    }
     if(o.remote){c.fillStyle='#2b2f4e';c.strokeStyle=PC.navy;c.lineWidth=2;rrect(-31,-16,11,15,3);c.fill();c.stroke();c.fillStyle=PC.red;c.beginPath();c.arc(-25.5,-11,2.4,0,6.3);c.fill();}
     /* face */
     var ey=-25,blink=((t*.8+ph)%3.4)<.1?.25:1;
@@ -378,7 +394,7 @@
     c.save();rrect(px,py,pw,ph,9);c.clip();
     var g=c.createLinearGradient(0,py,0,py+ph);g.addColorStop(0,o.sky0||'#3a0d22');g.addColorStop(1,o.sky1||'#7a1d2f');c.fillStyle=g;c.fillRect(px,py,pw,ph);
     if(o.locked){tx('?',w/2,py+ph*.72,ph*.7,{fill:'rgba(255,255,255,.25)',sw:0,shadow:false});}
-    else gremlin(w/2,py+ph-6,Math.min(pw,ph)/62,t||0,{mood:o.mood||'smug',remote:true});
+    else gremlin(w/2,py+ph-6,Math.min(pw,ph)/(o.quad?70:62),t||0,{mood:o.mood||'smug',remote:!o.quad,quad:o.quad});
     c.restore();
     c.strokeStyle=PC.navy;c.lineWidth=2.4;rrect(px,py,pw,ph,9);c.stroke();
     /* header */
@@ -394,4 +410,67 @@
     if(!o.locked&&!o.compact){c.fillText('MOVE   '+o.move,12,ty+17);c.fillStyle=PC.green;c.font='700 10px '+F_U;c.fillText('WEAKNESS   '+o.weak,12,ty+33);}
     c.restore();
     if(o.solT!=null&&o.solT>=0)stamp(x+w-52,y+26+h*.50-8,'SOLVED',null,o.solT,{w:84,h:28,rot:-.2,col:PC.green,size:15,bg:'rgba(253,246,236,.95)'});
+  }
+
+  /* a generic shop checkout: no store name, no brand */
+  function checkoutUI(x,y,w,h,o){
+    o=o||{};
+    c.save();c.translate(x,y);
+    c.fillStyle='rgba(0,0,0,.4)';rrect(5,9,w,h,20);c.fill();
+    c.fillStyle='#10163a';rrect(0,0,w,h,20);c.fill();
+    c.fillStyle=PC.sand;rrect(6,6,w-12,h-12,15);c.fill();
+    c.save();rrect(6,6,w-12,h-12,15);c.clip();
+    c.fillStyle=PC.red;c.fillRect(6,6,w-12,30);
+    c.fillStyle=PC.paper;c.font='400 12px '+F_T;c.textAlign='center';c.textBaseline='middle';c.fillText('BLACK FRIDAY',w/2,22);
+    /* product */
+    c.fillStyle='#e6e9f6';rrect(18,46,w-36,96,10);c.fill();
+    c.save();c.translate(w/2,96);productIcon(o.icon||'jacket');c.restore();
+    c.fillStyle=PC.navy;c.textAlign='left';c.textBaseline='alphabetic';c.font='700 12px '+F_U;c.fillText(o.item||'Jacket',20,162);
+    c.font='400 22px '+F_T;c.fillText(o.price||'$200',20,188);
+    var pr=o.press||0,bw=w-32,bh=48,by=202;
+    c.save();c.translate(16+bw/2,by+bh/2);c.scale(1-pr*.06,1-pr*.06);
+    c.fillStyle=PC.purple;rrect(-bw/2,-bh/2,bw,bh,24);c.fill();c.strokeStyle=PC.navy;c.lineWidth=2;c.stroke();
+    c.fillStyle=PC.paper;c.textAlign='center';c.textBaseline='middle';c.font='400 13px '+F_T;c.fillText('Pay in 4',0,-8);
+    c.font='700 11px '+F_U;c.fillText((o.part||'$50')+' today',0,10);
+    c.restore();
+    c.fillStyle='#a3abc8';c.font='500 9.5px '+F_U;c.textAlign='center';c.textBaseline='alphabetic';c.fillText('Pay '+(o.price||'$200')+' now',w/2,by+bh+20);
+    c.restore();c.restore();
+  }
+  function productIcon(kind){
+    c.strokeStyle=PC.navy;c.lineWidth=2.4;c.lineJoin='round';
+    if(kind==='buds'){c.fillStyle=PC.paper;[-14,14].forEach(function(dx){c.beginPath();c.ellipse(dx,-4,10,13,0,0,6.3);c.fill();c.stroke();c.fillRect(dx-3,6,6,16);c.strokeRect(dx-3,6,6,16);});}
+    else if(kind==='shoes'){c.fillStyle=PC.coral;c.beginPath();c.moveTo(-34,10);c.lineTo(-30,-12);c.lineTo(-6,-12);c.quadraticCurveTo(4,0,30,4);c.quadraticCurveTo(36,10,34,16);c.lineTo(-34,16);c.closePath();c.fill();c.stroke();c.fillStyle=PC.paper;c.fillRect(-34,12,68,5);c.strokeRect(-34,12,68,5);}
+    else{c.fillStyle=PC.blue;c.beginPath();c.moveTo(-28,-28);c.lineTo(-10,-34);c.lineTo(0,-26);c.lineTo(10,-34);c.lineTo(28,-28);c.lineTo(34,20);c.lineTo(18,24);c.lineTo(16,-6);c.lineTo(-16,-6);c.lineTo(-18,24);c.lineTo(-34,20);c.closePath();c.fill();c.stroke();c.beginPath();c.moveTo(0,-26);c.lineTo(0,24);c.stroke();}
+  }
+  /* calendar of stacked payments: cols = [{label, bricks:[{v,col}]}], drop = how many bricks have landed (0..total) */
+  function brickCalendar(x,y,w,cols,drop,t,o){
+    o=o||{};
+    var n=cols.length,gap=8,cw=(w-gap*(n-1))/n,base=y,k=0,scale=o.scale||.9;
+    cols.forEach(function(col,i){
+      var cx=x+i*(cw+gap),stackY=base,tot=0;
+      c.fillStyle='rgba(28,37,80,.10)';rrect(cx,base-(o.mini?84:120),cw,o.mini?84:120,6);c.fill();
+      col.bricks.forEach(function(b){
+        var land=clamp(drop-k,0,1);k++;
+        if(land<=0)return;
+        var bh=b.v*scale,fall=(1-sm(land))*(o.fall||70);
+        c.fillStyle=b.col;c.strokeStyle=PC.navy;c.lineWidth=2;
+        rrect(cx+3,stackY-bh-fall,cw-6,bh-2,4);c.fill();c.stroke();
+        if(bh>14&&!o.mini){c.fillStyle=PC.navy;c.font='700 '+(bh>24?11:9)+'px '+F_U;c.textAlign='center';c.textBaseline='middle';c.fillText('$'+b.v,cx+cw/2,stackY-bh/2-fall-1);}
+        if(land>=1){stackY-=bh;tot+=b.v;}
+      });
+      if(tot>0&&!o.mini)tx('$'+tot,cx+cw/2,stackY-8,15,{fill:PC.paper,stroke:PC.navy});
+      if(!o.mini){c.fillStyle=PC.navy;c.font='700 10px '+F_U;c.textAlign='center';c.textBaseline='alphabetic';c.fillText(col.label,cx+cw/2,base+15);}
+    });
+  }
+  /* fee tag that slams onto the scene */
+  function feeTag(x,y,txt,tt,col){
+    if(tt<0)return;
+    var k=clamp(tt/.14,0,1),sc=1+(1-k)*(1-k)*1.4;
+    c.save();c.translate(x+(tt<.3?Math.sin(tt*80)*2:0),y);c.rotate(-.08);c.scale(sc,sc);
+    c.font='400 13px '+F_T;var w=c.measureText(txt).width+38;
+    c.fillStyle=col||PC.red;rrect(-w/2,-15,w,30,15);c.fill();c.strokeStyle=PC.navy;c.lineWidth=2.4;c.stroke();
+    c.fillStyle=PC.paper;c.beginPath();c.arc(-w/2+16,0,8,0,6.3);c.fill();
+    c.fillStyle=col||PC.red;c.font='700 12px '+F_U;c.textAlign='center';c.textBaseline='middle';c.fillText('!',-w/2+16,1);
+    c.fillStyle=PC.paper;c.font='400 13px '+F_T;c.fillText(txt,10,1);
+    c.restore();
   }

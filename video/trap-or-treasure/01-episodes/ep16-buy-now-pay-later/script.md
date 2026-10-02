@@ -1,4 +1,4 @@
-# EP16 script (draft for approval; ~28.6 s, 128 bpm, same beat grid as Ep 14)
+# EP16 script (approved 2026-10-01; 28.6 s, 128 bpm, same beat grid as Ep 14)
 
 Every beat works on mute. Voice lines only echo the on-screen text. Rex speaks in the trap; Mei speaks from the X-ray on.
 
@@ -15,6 +15,14 @@ Every beat works on mute. Voice lines only echo the on-screen text. Rex speaks i
 
 ## New builds needed
 Quad Imp (Snare), calendar-brick infographic, checkout UI variant (Pay in 4 button), late-fee and overdraft tags, Rex's voice and a face pass.
+
+## Mute test and freeze-frame test
+- [x] trap, number and quest are clear with sound off (director, contact sheets, 2026-10-01; pending your viewing)
+- [x] every paused frame has one focal point (director, contact sheets, 2026-10-01; pending your viewing)
+- [x] safe-box test: `sheet.js --safe`, nothing important in the red; balance 33% / 44% / 23%
+
+## Voice (built)
+Rex: Umbriel. Mei: Leda. One planned Mei line ("Most people have more than one") was cut in the mix because it collided with the next beat; the 63% stat is on screen instead.
 
 ## Fact check
 - [x] every number is in `claims.md` or `calc.py`

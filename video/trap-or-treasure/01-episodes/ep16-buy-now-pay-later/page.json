@@ -1,0 +1,11 @@
+{
+  "slug": "ep16",
+  "title": "Trap or Treasure Ep 16",
+  "kicker": "Trap or Treasure  |  Trap 16 of 24  |  Director's cut",
+  "heading": "Pay in 4 Is Not Free",
+  "sub": "A 29 second vertical short. Rex stacks three Pay in 4 plans on Black Friday; Mei shows what is due when, and the way out.",
+  "aria": "Vertical animated short: Rex splits three purchases with Pay in 4, a calendar shows 100 dollars due every two weeks, a missed payment brings fees, and one plan at a time halves each payment.",
+  "dur": 28.6,
+  "body": "\n  <section class=\"panel\" id=\"rendered\" aria-labelledby=\"rv-h\">\n    <h2 id=\"rv-h\">The rendered video</h2>\n    <p class=\"note\">Rex (voice: Umbriel) and Mei (voice: Leda), Google Gemini text-to-speech. 720p copy; the 1080x1920 master stays on your computer. The live preview above is the same video drawn in your browser.</p>\n    <video id=\"mp4\" controls playsinline preload=\"metadata\" src=\"/_blob/e3ead6deed1827b672704669146d2c6d\" aria-label=\"Rendered video of Trap 16 with voices\"></video>\n  </section>\n",
+  "css": "#mp4{display:block;width:100%;max-width:320px;margin:12px auto 0;aspect-ratio:9/16;background:#000;border-radius:12px;border:1px solid var(--line)}\n"
+}
