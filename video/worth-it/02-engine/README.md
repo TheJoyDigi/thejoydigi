@@ -1,13 +1,9 @@
 # Engine: how videos get built
 
 ## What exists today
-Four working films prove every piece we need. They are single HTML files that draw on a canvas, play in the browser, and export.
-
-| File in `reference/` | What it proves |
-|---|---|
-| `mei-reel.html` | **The template.** Vertical 9:16, Mei vector rig (walk, run, sit, slump, bend, victory), kinetic text library, parallax backgrounds, record-to-MP4 with generated music, GIF export, phone-friendly page. |
-| `popcorn-vertical.html` | Pearl's front-facing rig, retro print look with grain, popcorn particle systems, camera shake, coworkers, swing music. Its wall sign was changed to "The Joy Digi" for this public repo. |
-| `one-more-take.html` | Original side-view rig (Rex's source). Landscape, superseded by the vertical rule. Use only for the character. |
+The engine renders deterministic vertical video: single HTML pages draw on a
+canvas, play in the browser, and export to MP4. (The original reference films
+and demo pages were removed; the engine below is what the show runs on.)
 
 ## Built-in features (all in the vertical films)
 - `draw(t)` is a pure function of time, so scrubbing, export and record all work.
