@@ -16,7 +16,7 @@ function draw(t){
   c.setTransform(SC,0,0,SC,0,0);
   if(t<2.9){
     wiPaper(t);
-    wiTx('EP 5 · THE MOST BORING WAY TO GET RICH',180,112,11,t,{fam:F_U,wt:'700',fill:'rgba(27,36,64,.45)'});
+    wiTx('EP 5 · THE MOST BORING WAY TO GET RICH',180,150,11,t,{fam:F_U,wt:'700',fill:'rgba(27,36,64,.45)'});
     wiMythStrike(['You need a brilliant idea','to get rich.'],180,225,28,t+.15,{w:320,stag:.015});
   }else if(t<8.5){
     wiPaper(t);
