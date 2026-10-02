@@ -12,5 +12,6 @@
   "share": "export/ep01-five-dollar-coffee-anime-leda-share.mp4",
   "cover": "export/ep01-five-dollar-coffee-anime-cover.png",
   "captions": "export/ep01-five-dollar-coffee-anime-leda.srt",
-  "rebuild": "cd 03-assets/format-lab && python3 build.py && node render_mp4.js leda && python3 make_srt.py leda ../../01-episodes/ep01-the-five-dollar-coffee/export/ep01-five-dollar-coffee-anime-leda.srt"
+  "rebuild": "cd 03-assets/format-lab && python3 build.py && node render_mp4.js leda && python3 make_srt.py leda ../../01-episodes/ep01-the-five-dollar-coffee/export/ep01-five-dollar-coffee-anime-leda.srt",
+  "plan": "../../03-assets/format-lab/export/plan-leda.json"
 }

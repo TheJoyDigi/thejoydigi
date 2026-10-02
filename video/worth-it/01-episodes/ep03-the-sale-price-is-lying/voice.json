@@ -1,0 +1,78 @@
+{
+  "voice": "Leda",
+  "pace": "fast-paced, snappy, clear",
+  "lines": [
+    {
+      "id": "m1",
+      "text": "Everyone loves a good sale. Fifty percent off!",
+      "style": "confident, a little provocative",
+      "at": 0.25
+    },
+    {
+      "id": "m2",
+      "text": "But the sale price is lying to you.",
+      "style": "sharp, a knowing smile",
+      "gap": 0.35
+    },
+    {
+      "id": "r1",
+      "text": "That two hundred dollars was never real.",
+      "style": "warm, vivid",
+      "gap": 0.9
+    },
+    {
+      "id": "r2",
+      "text": "The price is just a rumor about value, and rumors move.",
+      "style": "curious, building",
+      "gap": 0.2
+    },
+    {
+      "id": "r3",
+      "text": "The jacket didn't change. Only the rumor did.",
+      "style": "clear, landing the point",
+      "gap": 0.2
+    },
+    {
+      "id": "k1",
+      "text": "So ignore the sticker.",
+      "style": "punchy, emphatic",
+      "gap": 0.25
+    },
+    {
+      "id": "f1",
+      "text": "Ask the better question.",
+      "style": "calm, inviting",
+      "gap": 0.25
+    },
+    {
+      "id": "f2",
+      "text": "What's it actually worth to you?",
+      "style": "curious, direct",
+      "gap": 0.2
+    },
+    {
+      "id": "f3",
+      "text": "What it does for you.",
+      "style": "matter of fact, warm",
+      "gap": 0.2
+    },
+    {
+      "id": "g1",
+      "text": "Take one thing you own. Price it by what it does, not what you paid.",
+      "style": "resolved, practical",
+      "gap": 0.25
+    },
+    {
+      "id": "g2",
+      "text": "Problem solved, value paid.",
+      "style": "satisfied, confident",
+      "gap": 0.2
+    },
+    {
+      "id": "g3",
+      "text": "Worth it.",
+      "style": "warm, final, a small smile",
+      "gap": 0.2
+    }
+  ]
+}

@@ -3,3 +3,5 @@
 *.gif
 *.webm
 !README.md
+*.png
+*.srt
