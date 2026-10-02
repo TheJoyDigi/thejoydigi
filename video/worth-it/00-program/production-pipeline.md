@@ -18,7 +18,7 @@ script asserts. A number that cannot be sourced never reaches the build.
 | 5 | **QA gate** | a passing report | automated checks 0 fail **and** the director has ticked the mute, freeze-frame, and philosophy checks | Lola |
 | 6 | **Render** | `export/<slug>.mp4`, `-cover.png` | 1080x1920, 30 fps, H.264, loudness near -16 LUFS | Claude agent |
 | 7 | **Voice** | `export/<slug>-voice.mp4` + silent cut kept | lines fit beats, music ducked, ~-16 LUFS | Claude agent (voice direction: Lola) |
-| 8 | **Package** | `package.md` | caption, pinned open question, receipts, alt text, audience setting, cover | Claude agent |
+| 8 | **Package** | `package.md` | caption (with the audiobook CTA: "want the full 15 minutes? link in bio"), pinned open question, receipts, alt text, audience setting, cover | Claude agent |
 | 9 | **Device test** | screenshots of a private draft on each platform | nothing important hidden by the app UI | Long |
 | 10 | **Post** | the live post | the checklist in `content-rules.md` is clean | Long |
 | 11 | **Learn** | numbers in `season-map.md` | after 48 hours and 7 days; decisions logged | Lola |

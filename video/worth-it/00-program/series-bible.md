@@ -9,6 +9,11 @@ defense with their money and start playing offense. Every episode takes one
 ordinary money moment, reveals the value hiding inside it, and hands the viewer
 one move that puts them on the creating side.
 
+**Worth It is the short-video companion to the *Value, Created* audiobook.**
+Each episode dramatizes one audiobook chapter in 30 seconds; the audiobook is
+where the viewer goes for the full 15 minutes. The show earns attention, the
+audiobook earns habit. (Long's call, 2026-10-01.)
+
 ```
 THE MYTH     the common advice everyone repeats      (pattern interrupt)
 THE REFRAME  where the value actually was            (see it)
@@ -82,6 +87,13 @@ into focus, then the question turns on them — in a good way.
   reframe lands. Satisfying, repeatable.
 - **The Move Card:** the final card. One action, gold "DO THIS" tab, then the
   "Worth it." stamp and the Joy Digi slate.
+
+## The audiobook CTA (the rule)
+The call to action lives in the **caption and the profile bio, never burned
+into the video** (keeps every episode timeless and platform-agnostic):
+"Want the full 15 minutes on this? Link in bio." The video itself never sells;
+it earns. The profile is the funnel: bio → thejoydigi.com → the *Value,
+Created* audiobook feed.
 
 ## Season 1 plan
 12 episodes in 5 movements: Seeing → Creating → Capturing → Scaling → Giving

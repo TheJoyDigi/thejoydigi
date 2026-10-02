@@ -16,6 +16,11 @@ subtle bed. Warm editorial art: paper cream, ink, gold. No mascots, no hype.
 Scaling → Giving. Each episode dramatizes one *Value, Created* chapter
 (`01-episodes/season-map.md`).
 
+**Position:** the short-video companion to the *Value, Created* audiobook
+(Long's call, 2026-10-01). Each short maps 1:1 to an audiobook chapter; the
+CTA ("want the full 15 minutes?") lives in captions and the profile bio, never
+burned into the video.
+
 ## Start here
 
 | If you want to... | Open |
