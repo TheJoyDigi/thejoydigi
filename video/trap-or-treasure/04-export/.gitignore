@@ -1,0 +1,5 @@
+# final renders stay local
+*.mp4
+*.gif
+*.webm
+!README.md

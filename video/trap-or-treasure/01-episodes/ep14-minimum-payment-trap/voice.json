@@ -1,0 +1,141 @@
+{
+  "voice": "Leda",
+  "audition": {
+    "text": "I paid thirty. My debt dropped ten?",
+    "style": "shocked, quick, a little breathless, young woman, casual",
+    "voices": [
+      "Leda",
+      "Zephyr",
+      "Aoede",
+      "Autonoe",
+      "Sadachbia",
+      "Sulafat"
+    ]
+  },
+  "lines": [
+    {
+      "id": "hook1",
+      "at": 0.02,
+      "text": "I paid thirty.",
+      "style": "proud, bright"
+    },
+    {
+      "id": "hook2",
+      "at": 0.92,
+      "text": "My debt dropped ten?",
+      "style": "shocked, wide-eyed, rising"
+    },
+    {
+      "id": "step-in",
+      "at": 2.28,
+      "text": "Easy. Pay the minimum.",
+      "style": "casual, upbeat, a little proud"
+    },
+    {
+      "id": "tread",
+      "at": 4.36,
+      "text": "Feels responsible. Goes nowhere.",
+      "style": "wry, a bit deflated"
+    },
+    {
+      "id": "xray1",
+      "at": 6.25,
+      "text": "Where'd the twenty go?",
+      "style": "curious, leaning in"
+    },
+    {
+      "id": "xray2",
+      "at": 7.72,
+      "text": "Interest.",
+      "style": "matter-of-fact, a little annoyed"
+    },
+    {
+      "id": "xray3",
+      "at": 8.66,
+      "text": "Only ten pays the debt.",
+      "style": "stunned, flat"
+    },
+    {
+      "id": "price1",
+      "at": 10.95,
+      "text": "Seventy-four payments later...",
+      "style": "dawning realization"
+    },
+    {
+      "id": "price2",
+      "at": 13.72,
+      "text": "About six years.",
+      "style": "stunned, stress the word six"
+    },
+    {
+      "id": "treasure1",
+      "at": 15.75,
+      "text": "What if I pay fifty, every month?",
+      "style": "hopeful, bright, lifting"
+    },
+    {
+      "id": "race1",
+      "at": 18.95,
+      "text": "Watch the debt shrink.",
+      "style": "excited, building"
+    },
+    {
+      "id": "race2",
+      "at": 21.55,
+      "text": "Two years. I keep almost six hundred.",
+      "style": "triumphant, delighted"
+    },
+    {
+      "id": "quest1",
+      "at": 24.66,
+      "text": "Quest: pay a fixed amount, every month.",
+      "style": "clear, warm, encouraging"
+    },
+    {
+      "id": "quest2",
+      "at": 27.0,
+      "text": "Which trap got you?",
+      "style": "friendly, curious"
+    }
+  ],
+  "pace": "fast-paced, snappy, natural conversational rhythm, no long pauses",
+  "music_gain": 3.0,
+  "duck_ratio": 7,
+  "pick": {
+    "voices": [
+      "Leda",
+      "Zephyr",
+      "Aoede",
+      "Autonoe",
+      "Sadachbia",
+      "Sulafat",
+      "Laomedeia",
+      "Callirrhoe"
+    ],
+    "judges": [
+      "gemini-3.8-flash",
+      "gemini-3.1-pro-preview"
+    ],
+    "brief": "You are a casting director for a short animated money-education series on TikTok and Reels, for viewers aged 18 to 25. The lead, Mei, is a 19-year-old woman in her first job. She is warm, a little wry, never preachy, and she explains money traps to her peers. The voice must sound like a relatable young adult friend, not an announcer, a teacher, a child, or a salesperson. Numbers and dollar amounts must be crystal clear. It must hold attention at a fast short-form pace and stay trustworthy. Judge only what you hear.",
+    "lines": [
+      {
+        "text": "I paid thirty. My debt dropped ten?",
+        "style": "shocked, wide-eyed, rising"
+      },
+      {
+        "text": "Where'd the twenty go? Interest. Only ten pays the debt.",
+        "style": "curious, then matter-of-fact and a little annoyed"
+      },
+      {
+        "text": "Two years. I keep almost six hundred.",
+        "style": "triumphant, delighted"
+      }
+    ]
+  },
+  "decided": {
+    "voice": "Leda",
+    "by": "director",
+    "date": "2026-10-01",
+    "how": "blind scored comparison of 8 voices by two audio-capable Gemini models (02-engine/voice/pick.py); Leda was the top average (8.5) and the only voice in both judges' top two; delivery style tested against two slower variants and kept"
+  }
+}
