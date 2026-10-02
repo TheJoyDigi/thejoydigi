@@ -1,0 +1,78 @@
+{
+  "voice": "Puck",
+  "pace": "fast-paced, snappy, clear",
+  "lines": [
+    {
+      "id": "m1",
+      "text": "They say the answer is working harder. More hours, more hustle.",
+      "style": "confident, a little provocative",
+      "at": 0.25
+    },
+    {
+      "id": "m2",
+      "text": "But hours don't compound.",
+      "style": "sharp, a knowing smile",
+      "gap": 0.35
+    },
+    {
+      "id": "r1",
+      "text": "Time gets spent. Effort gets tired.",
+      "style": "warm, vivid",
+      "gap": 0.9
+    },
+    {
+      "id": "r2",
+      "text": "Skill is the only input that grows while you sleep.",
+      "style": "curious, building",
+      "gap": 0.2
+    },
+    {
+      "id": "r3",
+      "text": "Everything you learn today pays you again tomorrow.",
+      "style": "clear, landing the point",
+      "gap": 0.2
+    },
+    {
+      "id": "k1",
+      "text": "So stop asking where the extra hours come from.",
+      "style": "punchy, emphatic",
+      "gap": 0.25
+    },
+    {
+      "id": "f1",
+      "text": "Ask the better question.",
+      "style": "calm, inviting",
+      "gap": 0.25
+    },
+    {
+      "id": "f2",
+      "text": "Which of your inputs grows without you?",
+      "style": "curious, direct",
+      "gap": 0.2
+    },
+    {
+      "id": "f3",
+      "text": "One of them does. Feed that one.",
+      "style": "matter of fact, warm",
+      "gap": 0.2
+    },
+    {
+      "id": "g1",
+      "text": "Give this week's extra hour to the skill, not the shift.",
+      "style": "resolved, practical",
+      "gap": 0.25
+    },
+    {
+      "id": "g2",
+      "text": "Problem solved, value paid.",
+      "style": "satisfied, confident",
+      "gap": 0.2
+    },
+    {
+      "id": "g3",
+      "text": "Worth it.",
+      "style": "warm, final, a small smile",
+      "gap": 0.2
+    }
+  ]
+}

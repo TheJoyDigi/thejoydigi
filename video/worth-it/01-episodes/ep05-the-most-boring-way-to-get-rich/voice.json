@@ -1,0 +1,66 @@
+{
+  "voice": "Leda",
+  "pace": "fast-paced, snappy, clear",
+  "lines": [
+    {
+      "id": "m1",
+      "text": "Everyone says you need a brilliant idea to get rich.",
+      "style": "confident, a little provocative",
+      "at": 0.25
+    },
+    {
+      "id": "m2",
+      "text": "You don't. The most boring fortunes were built on shorter lines and fewer clicks.",
+      "style": "sharp, a knowing smile",
+      "gap": 0.25
+    },
+    {
+      "id": "r1",
+      "text": "Every wait erased, every hassle removed, that's value created.",
+      "style": "warm, vivid",
+      "gap": 0.5
+    },
+    {
+      "id": "r2",
+      "text": "Someone solved a tiny annoyance for many people, and the money followed the solution.",
+      "style": "curious, building",
+      "gap": 0.1
+    },
+    {
+      "id": "k1",
+      "text": "So stop hunting for the big idea.",
+      "style": "punchy, emphatic",
+      "gap": 0.15
+    },
+    {
+      "id": "f1",
+      "text": "Ask the boring question.",
+      "style": "calm, inviting",
+      "gap": 0.15
+    },
+    {
+      "id": "f2",
+      "text": "What do the people around you complain about?",
+      "style": "curious, direct",
+      "gap": 0.1
+    },
+    {
+      "id": "g1",
+      "text": "Find one tiny friction. Erase it for one person this week.",
+      "style": "resolved, practical",
+      "gap": 0.15
+    },
+    {
+      "id": "g2",
+      "text": "Problem solved, value paid.",
+      "style": "satisfied, confident",
+      "gap": 0.1
+    },
+    {
+      "id": "g3",
+      "text": "Worth it.",
+      "style": "warm, final, a small smile",
+      "gap": 0.1
+    }
+  ]
+}

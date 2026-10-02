@@ -204,7 +204,8 @@
     gGlow(G.gold,10,function(){c.fillStyle=G.gold;c.fill(gChamfer(x+10,y-12,92,22,6));});
     c.fillStyle=G.ink;c.font='400 13px '+F_RU;c.textAlign='center';c.textBaseline='middle';c.fillText('NEW QUEST',x+56,y-1);
     c.restore();
-    var i;for(i=0;i<lines.length;i++)gTx(lines[i],x+w/2,y+40+i*lh,17,tt-.4-i*.28,{sw:.14,stag:.02});
+    var i,fs=17,mw=0;c.save();c.font='400 17px '+F_RU;for(i=0;i<lines.length;i++)mw=Math.max(mw,c.measureText(lines[i]).width);c.restore();if(mw>w-26)fs=Math.floor(17*(w-26)/mw*10)/10;
+    for(i=0;i<lines.length;i++)gTx(lines[i],x+w/2,y+40+i*lh,fs,tt-.4-i*.28,{sw:.14,stag:.02});
     var rt=tt-.4-lines.length*.28-.2;
     if(rt>0){c.save();c.globalAlpha=sm(clamp(rt/.3,0,1));c.fillStyle='rgba(255,200,61,.14)';c.fillRect(x+10,y+h-30,w-20,20);
       gLabel('REWARD',x+16,y+h-15,12,G.mute);gLabel('+1 WORTH',x+w-16,y+h-15,14,G.gold,'right');c.restore();}
@@ -333,6 +334,7 @@
   }
   function gWorld(t,pos,o){
     o=o||{};var hy=o.hy||430;
+    if(o.sun){var sg=c.createRadialGradient(180,hy-6,6,180,hy-6,110);sg.addColorStop(0,'rgba(255,200,61,.75)');sg.addColorStop(.45,'rgba(255,140,60,.35)');sg.addColorStop(1,'rgba(255,140,60,0)');c.fillStyle=sg;c.fillRect(0,hy-120,W,124);c.fillStyle='rgba(255,214,120,.85)';c.beginPath();c.arc(180,hy-4,34,Math.PI,0);c.fill();}
     gSkyLayer(pos*.55,hy,{sp:.10,hmax:62,col:'rgba(18,24,88,.9)',win:'rgba(123,92,255,.55)',seed:11});
     gSkyLayer(pos*.9,hy,{sp:.22,hmax:40,col:'rgba(10,14,60,.95)',win:'rgba(255,200,61,.55)',seed:23});
     gFloor(pos,hy);

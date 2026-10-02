@@ -1,0 +1,18 @@
+{
+  "voice": "Puck",
+  "pace": "fast-paced, snappy, clear",
+  "lines": [
+    {"id": "m1", "at": 0.25, "text": "They say you get what you pay for.", "style": "confident, a little provocative"},
+    {"id": "m2", "gap": 0.35, "text": "Not in a desert.", "style": "sharp, a knowing smile"},
+    {"id": "r1", "gap": 0.9, "text": "In a desert, a glass of water beats a diamond.", "style": "warm, vivid"},
+    {"id": "r2", "gap": 0.2, "text": "Same diamond, same water, the value moved.", "style": "curious, building"},
+    {"id": "r3", "gap": 0.2, "text": "It was never in the thing. It's in the person.", "style": "clear, landing the point"},
+    {"id": "k1", "gap": 0.25, "text": "So stop asking what it's worth.", "style": "punchy, emphatic"},
+    {"id": "f1", "gap": 0.25, "text": "Ask the better question.", "style": "calm, inviting"},
+    {"id": "f2", "gap": 0.15, "text": "Who is it worth it to?", "style": "curious, direct"},
+    {"id": "f3", "gap": 0.2, "text": "A thing is only valuable if it solves someone's problem.", "style": "matter of fact, warm"},
+    {"id": "g1", "gap": 0.25, "text": "Before your next purchase, ask: whose problem does this solve, mine or the ad's?", "style": "resolved, practical"},
+    {"id": "g2", "gap": 0.2, "text": "Problem solved, value paid.", "style": "satisfied, confident"},
+    {"id": "g3", "gap": 0.2, "text": "Worth it.", "style": "warm, final, a small smile"}
+  ]
+}

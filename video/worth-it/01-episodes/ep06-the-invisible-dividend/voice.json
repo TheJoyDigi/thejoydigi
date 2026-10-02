@@ -1,0 +1,78 @@
+{
+  "voice": "Puck",
+  "pace": "fast-paced, snappy, clear",
+  "lines": [
+    {
+      "id": "m1",
+      "text": "They say trust is soft. That only numbers are real.",
+      "style": "confident, a little provocative",
+      "at": 0.25
+    },
+    {
+      "id": "m2",
+      "text": "Then why does everything cost less when trust is there?",
+      "style": "sharp, a knowing smile",
+      "gap": 0.35
+    },
+    {
+      "id": "r1",
+      "text": "No contracts, no lawyers, no checking up.",
+      "style": "warm, vivid",
+      "gap": 0.9
+    },
+    {
+      "id": "r2",
+      "text": "Every deal gets cheaper, every yes gets faster.",
+      "style": "curious, building",
+      "gap": 0.2
+    },
+    {
+      "id": "r3",
+      "text": "Trust is the most valuable line item no balance sheet shows.",
+      "style": "clear, landing the point",
+      "gap": 0.2
+    },
+    {
+      "id": "k1",
+      "text": "So stop asking how to look trustworthy.",
+      "style": "punchy, emphatic",
+      "gap": 0.25
+    },
+    {
+      "id": "f1",
+      "text": "Ask the better question.",
+      "style": "calm, inviting",
+      "gap": 0.25
+    },
+    {
+      "id": "f2",
+      "text": "Who trusts you, and what does that save them?",
+      "style": "curious, direct",
+      "gap": 0.2
+    },
+    {
+      "id": "f3",
+      "text": "That's your real net worth.",
+      "style": "matter of fact, warm",
+      "gap": 0.2
+    },
+    {
+      "id": "g1",
+      "text": "Keep one small promise today, out loud.",
+      "style": "resolved, practical",
+      "gap": 0.25
+    },
+    {
+      "id": "g2",
+      "text": "Problem solved, value paid.",
+      "style": "satisfied, confident",
+      "gap": 0.2
+    },
+    {
+      "id": "g3",
+      "text": "Worth it.",
+      "style": "warm, final, a small smile",
+      "gap": 0.2
+    }
+  ]
+}
