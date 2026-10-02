@@ -15,6 +15,8 @@ The season itself has an arc: **Seeing → Creating → Capturing → Scaling �
 It starts with learning to see value and lands on giving it away — which is the
 book's final move and Long's own play (Nextdoor, The Joy Digi).
 
+**Leads alternate by episode number:** odd episodes (1, 3, 5, 7, 9, 11) star **Wren**; even episodes (2, 4, 6, 8, 10, 12) star **Kai**. Same arc, same devices; only who lives the moment changes. See `../00-program/visual-style.md`.
+
 ---
 
 ## PART I — SEEING VALUE

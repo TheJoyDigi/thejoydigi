@@ -72,6 +72,6 @@ video/worth-it/
 |---|---|---|
 | 1 | Series title | Worth It (working title; trademark + handle check open) |
 | 2 | Art guideline | Approved by Long as of Format Lab v7 (2026-10-02): anime x infographic x game, owned by the Claude agent |
-| 3 | Voice | Narrator candidates built (Leda, Puck, Charon); Long to pick |
+| 3 | Voice | Decided 2026-10-02: Leda narrates Wren (odd episodes), Puck narrates Kai (even episodes) |
 | 4 | Launch batch | Ep 1, 5, 3 — scripts for 5 and 3 to be written |
 | 5 | Trap or Treasure | Deleted (2026-10-02) |

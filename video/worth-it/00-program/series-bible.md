@@ -66,6 +66,9 @@ game, not hype and not lectures. Full picture in `audience.md`.
   the sign-off. Feeling, never carrier.
 - **Sound is a layer, never the carrier.** The mute test is a hard gate.
 
+## The leads
+Two recurring leads alternate by episode number: odd = Wren, even = Kai (working names). Neither speaks; the narrator does. Details in `visual-style.md`.
+
 ## Episode structure
 
 ```

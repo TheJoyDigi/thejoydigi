@@ -32,13 +32,24 @@ Must work on mute.
 - **One idea per beat**, about 8 words on screen at once.
 - Frame 0 shows the hook (it becomes the cover): boss panel plus Wren's face.
 
-## The lead
-**Wren** (working name), early 20s. The viewer's stand-in: curious, capable,
-never the butt of the joke. Never speaks; the narrator talks and Wren reacts.
-Ink-navy hair with a cyan streak, gold-trimmed teal jacket, gaming headset,
-gold pendant that glows when value shows up. Rig: `02-engine/parts/lead.js`
-(7 poses, 6 faces, blink, breath, rim light). Cast sheet: `03-assets/cast/`.
-Rule: the myth gets struck, never Wren or the viewer.
+## The leads
+**Two recurring leads, alternating by episode: odd episodes star Wren, even
+episodes star Kai** (working names; added 2026-10-02 to widen the audience and
+keep the season fresh). Both are early 20s, the viewer's stand-in: curious,
+capable, never the butt of the joke. Neither speaks; the narrator talks and the
+lead reacts. Each wears a gold piece that glows when value shows up.
+
+| | Wren (odd) | Kai (even) |
+|---|---|---|
+| Build | narrower shoulders, expressive gradient teal eyes | broader shoulders, warm amber eyes, stronger brows and jaw |
+| Look | ink-navy hair with a cyan streak, gold-trimmed teal jacket, gaming headset on her head | spiky brown hair with a silver streak, violet bomber with white trim, headphones around his neck |
+| Signature | gold lens pendant | gold dog tag |
+| Rim light | cyan | violet |
+
+Rig: `02-engine/parts/lead.js` (`wiLead(..., {who:'wren'|'kai'})`, 7 poses, 6
+faces, blink, breath, rim light). Cast sheets: `03-assets/cast/`. Rule: the myth
+gets struck, never the lead. Open: crossover moments, and whether the narrator
+voice matches the lead (see the Format Lab Decisions).
 
 ## Density rules (added after review, 2026-10-02)
 - **Three things per frame, max:** the main information, Wren, and one accent
@@ -123,10 +134,11 @@ Something is always moving, so the eye never rests.
   Only on hits and slams: quick attack, fast decay.
 
 ## Voice and sound (added 2026-10-02)
-- **Narrator:** one voice, Gemini TTS, lines echo the on-screen words and never
-  add facts. Candidates built: Leda (youthful, warm), Puck (upbeat), Charon
-  (calm). Script, timing anchors and delivery notes live in
-  `03-assets/format-lab/voice.json`; `voice_build.py <Voice>` renders it.
+- **Narrator matches the lead (Long's call, 2026-10-02):** **Leda** (youthful, warm)
+  narrates Wren's odd episodes; **Puck** (upbeat) narrates Kai's even episodes.
+  Lines echo the on-screen words and never add facts. Script, timing anchors and
+  delivery notes live in `03-assets/format-lab/voice.json`; `voice_build.py <Voice>`
+  renders it.
 - **The picture follows the voice.** Beat boundaries are set by where the
   narrator's lines fall (no speed-up needed), not the other way round.
 - **Soundtrack:** synthesized in `03-assets/format-lab/sound.js` with the
