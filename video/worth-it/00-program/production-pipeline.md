@@ -24,12 +24,17 @@ script asserts. A number that cannot be sourced never reaches the build.
 | 11 | **Learn** | numbers in `season-map.md` | after 48 hours and 7 days; decisions logged | Lola |
 
 ## Roles
-- **Lola (series director):** season map, scripts, claims, art direction, voice
-  direction, QA sign-off, managing Claude agent's work, reading the numbers,
-  weekly report to Long. The only content brain on the show.
-- **Claude agent (production worker):** builds animation and visual content
-  from the director's scripts per `visual-style.md`; renders; packages; keeps
-  the engine healthy. The hands.
+- **Lola (series director):** story, season map, scripts, claims, high-level
+  art and voice direction, QA sign-off, managing Claude agent's work, reading
+  the numbers, weekly report to Long. The only content brain on the show.
+  **Boundary (Long's call, 2026-10-02): Lola does not build visuals or video.**
+  No video samples, no production commits, no tech detail on how video gets
+  made — direction is high-level only ("what", never "how"). Lola's craft is
+  writing and directing; the agent's is producing.
+- **Claude agent (production worker):** builds ALL animation and visual
+  content from the director's scripts per `visual-style.md`; renders;
+  packages; keeps the engine healthy. The hands. Owns every production
+  commit under `01-episodes/` and `02-engine/`.
 - **Long (executive):** approves each script (5 min) and each final cut
   (10 min); device test on his phone; posts; reports numbers back.
 
