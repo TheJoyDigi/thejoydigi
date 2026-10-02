@@ -110,7 +110,7 @@ book's final move and Long's own play (Nextdoor, The Joy Digi).
 ---
 
 ## Production notes
-- **Length:** ~30s each, same slot as the Trap or Treasure plan. Voice-first; video can follow.
+- **Length:** ~30s each, Voice-first; video can follow.
 - **Post order:** by hook strength, not chapter order (same rule as the existing plan) — lead with Ep 1, Ep 5, Ep 3.
 - **Each episode ends:** the move + "Worth it." — the verdict doubles as the brand.
 - **Season 2** pulls from the remaining chapters (use vs. exchange, needs/wants/pain, knowledge as raw material, service by hand, attention, scarcity and moats, systems, brand, money frozen, markets, leverage, distribution, networks, compounding, reputation flywheel, choosing what to build, your system, teach it).

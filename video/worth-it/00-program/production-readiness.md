@@ -19,8 +19,12 @@ DISTRIBUTION     -                      NOT READY         accounts, handles, nam
 - Season 1 map: 12 episodes, each with myth / reframe / flip / move and its
   *Value, Created* chapter.
 - Ep 1 fully voiced: 30.8 s, -16 LUFS, 128 kbps, mute-safe script.
-- Engine inherited from the parked Trap-or-Treasure work: deterministic MP4
+- Engine: deterministic MP4
   render, contact sheets with safe-zone overlay, QA gate — all proven.
+
+## Where things stand (2026-10-02)
+- The format is settled and approved (Format Lab v7, `03-assets/format-lab/`): anime acting, infographic explainers, game HUD, constant motion, voice and sound.
+- Ep 1 exists as an anime demo with narrator and soundtrack inside the Format Lab. It is **not yet in the render pipeline**; Eps 1, 3 and 5 under `01-episodes/` are still in the earlier paper style and need rebuilding.
 
 ## Blockers before the first post
 | # | Blocker | Who |
@@ -33,7 +37,3 @@ DISTRIBUTION     -                      NOT READY         accounts, handles, nam
 | 6 | Device test on all three platforms | Long |
 | 7 | Business accounts; YouTube "not made for kids" | Long |
 
-## Parked, not deleted
-The Trap-or-Treasure work (bible, engine, Ep 14 pilot) is parked in
-`01-episodes/_parked-trap-or-treasure/`. The engine is reused; the creature
-rigs are retired.

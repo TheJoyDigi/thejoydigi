@@ -5,7 +5,7 @@ Production sources for The Joy Digi's animated shows. Same idea as `podcast/`: t
 ```
 video/
   README.md
-  trap-or-treasure/ money-education anime for young people (24 episodes for TikTok, Reels and Shorts)
+  worth-it/   Worth It: 30-second money shorts for young people (12 episodes for TikTok, Reels and Shorts)
 ```
 
 ## Rules

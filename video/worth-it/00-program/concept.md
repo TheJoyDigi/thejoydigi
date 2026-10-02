@@ -2,7 +2,7 @@
 
 **Working title:** Worth It. **Tagline:** *See the value. Be the value.*
 **Format:** ~30-second vertical shorts. One everyday transaction per episode.
-**Voice:** one warm, direct narrator. No characters, no creatures.
+**Voice:** one warm, direct narrator. **Format:** anime, with one recurring lead who emotes while the narrator talks.
 
 ## Why this instead of Trap or Treasure
 
