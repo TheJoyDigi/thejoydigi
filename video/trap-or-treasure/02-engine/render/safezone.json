@@ -1,0 +1,62 @@
+{
+  "source": "Union of the ad-spec safe zones for 1080x1920: TikTok (top 240px, bottom 660px, sides 120px, button column 300px from the right edge below y=840), Instagram Reels (14% top, 35% bottom, 6% sides), YouTube Shorts (10% top, 25% bottom, 10% right). TikTok figures are the in-feed template scaled from 720x1280. These are AD zones, no platform publishes organic numbers: verify on a real phone with a private test post.",
+  "checked": "2026-10-01",
+  "frame": [
+    1080,
+    1920
+  ],
+  "rects": [
+    [
+      0,
+      0,
+      1,
+      0.14
+    ],
+    [
+      0,
+      0.734,
+      1,
+      1
+    ],
+    [
+      0,
+      0,
+      0.111,
+      1
+    ],
+    [
+      0.889,
+      0,
+      1,
+      1
+    ],
+    [
+      0.722,
+      0.4375,
+      1,
+      1
+    ]
+  ],
+  "design_units": {
+    "frame": [
+      360,
+      640
+    ],
+    "top": 90,
+    "bottom": 470,
+    "left": 40,
+    "right_upper": 320,
+    "right_lower": 260,
+    "split_y": 280,
+    "bottom_ad_spec": 416
+  },
+  "caution": [
+    [
+      0,
+      0.65,
+      1,
+      0.734
+    ]
+  ],
+  "note": "2026-10-01: the working bottom limit moved from 416 (ad-spec union) to 470 so the layout can use the whole frame. 470 is an ESTIMATE for organic posts (Shorts ad spec is 480). Amber = beyond the strict ad spec but inside our limit; red = beyond our limit. The phone test decides."
+}

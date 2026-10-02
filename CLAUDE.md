@@ -21,6 +21,7 @@
 - SSG is used for blog pages with getStaticProps and getStaticPaths
 - `gray-matter` parses the post metadata
 - `react-markdown` renders the post content
+- Video shows (animated, vertical) are produced in `/video/<show>/`, the video counterpart of `/podcast/`: sources and docs only, finals stay local. First show: `video/trap-or-treasure/` (start at its README).
 
 ## SEO Information
 

@@ -1,0 +1,10 @@
+# finals and render intermediates stay local (repo rule: sources and docs only)
+**/export/
+**/04-export/*.mp4
+**/04-export/*.gif
+*.mp4
+*.mov
+*.wav
+*.gif
+# build output, regenerate with: python3 02-engine/build.py <ep>
+**/dist/
