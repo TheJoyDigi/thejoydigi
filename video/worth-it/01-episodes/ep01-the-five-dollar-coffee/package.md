@@ -11,9 +11,12 @@ No numbers asserted in this episode — the "five dollars" is an everyday
 example, not a statistic. The philosophy: Value, Created Ch 6 (every value
 starts as a problem solved), Ch 4 (price is not value), Ch 15 (creating isn't
 enough — capture). Corrections: none.
+Philosophy source: https://www.thejoydigi.com/podcasts/value-created/feed.xml
 
 ## Pinned comment 2 — open question
+```
 What's something you paid for this week that was genuinely worth it?
+```
 
 ## Alt text
 Animated short: the myth "the five-dollar coffee is keeping you broke" gets

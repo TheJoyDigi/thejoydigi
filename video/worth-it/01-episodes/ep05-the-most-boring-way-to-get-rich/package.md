@@ -10,9 +10,12 @@ Educational only, not financial advice.
 No numbers asserted in this episode — "a million people" is illustrative, not
 a statistic. The philosophy: Value, Created Ch 13 (removing friction — every
 wait, click, and hassle you erase is value created). Corrections: none.
+Philosophy source: https://www.thejoydigi.com/podcasts/value-created/feed.xml
 
 ## Pinned comment 2 — open question
+```
 What tiny annoyance do the people around you complain about most?
+```
 
 ## Alt text
 Animated short: the myth "you need a brilliant idea to get rich" gets struck
