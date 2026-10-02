@@ -46,5 +46,14 @@
 <itunes:author>TheJoyDigi</itunes:author>
 <itunes:duration>0:06:59</itunes:duration>
 <itunes:episodeType>full</itunes:episodeType>
+</item><item>
+<title>Episode 4: Automating Eval Design and Hillclimbing with Claude</title>
+<description>Alex and Jordan unpack Anthropic&#x27;s guide to building evaluations and improving against them with the claude-api skill&#x27;s build-eval and hillclimb commands.</description>
+<pubDate>Fri, 02 Oct 2026 10:30:00 -0700</pubDate>
+<enclosure url="https://www.thejoydigi.com/podcasts/anthropic-blogcast/ab-ep4-automating-eval-design-and-hillclimbing.mp3" length="9436758" type="audio/mpeg"/>
+<guid isPermaLink="false">ab-ep4-2026-10-02</guid>
+<itunes:author>TheJoyDigi</itunes:author>
+<itunes:duration>0:09:49</itunes:duration>
+<itunes:episodeType>full</itunes:episodeType>
 </item></channel>
 </rss>
