@@ -42,6 +42,7 @@ lean in. This is weak evidence (topics differ) but it's our own audience's.
 ```
 [the reframe in plain words, e.g. "Problem solved, value paid."]
 Move: [the one action]
+Want the full 15 minutes on this? Link in bio. 🎧
 Worth It  Ep N/12  |  A production of The Joy Digi
 Educational only, not financial advice.
 ```

@@ -42,10 +42,14 @@ moves toward problems solved, and they could be the solver.
 - Our edge is the philosophy itself: no affiliates, no hype, no product picks,
   and every episode is free value with no ask.
 
-## The business loop (the philosophy applied to the show itself)
-The shorts **are** Chapter 28 — give value first, every day, to strangers. The
-*Value, Created* book and podcast sit downstream for the ones who want the full
-system. The show doesn't funnel people; it earns them.
+## The business loop (official positioning, Long's call 2026-10-01)
+**Worth It is the short-video arm of the *Value, Created* audiobook.** The
+capture chain: shorts earn attention → the audiobook earns habit (each episode
+maps 1:1 to a chapter: "want the full 15 minutes?") → the book earns the true
+believers → a direct relationship (email/community) earns what no platform can
+take away. The shorts are Chapter 28 — give value first, every day, to
+strangers. The show doesn't funnel people; it earns them, and the profile bio
+is where the earning converts.
 
 ## What we don't know yet (hypotheses, not facts)
 - That the "offensive finance" positioning beats defensive hooks with this

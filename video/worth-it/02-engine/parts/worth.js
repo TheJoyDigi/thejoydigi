@@ -166,7 +166,7 @@
     if(st>0){
       var sk=sm(st),sc=1+(1-sk)*(1-sk)*1.6;
       c.save();
-      c.translate(cx+64,cy+h/2-32);c.rotate(-.14);c.scale(sc,sc);c.globalAlpha=clamp(st/.15,0,1);
+      c.translate(cx+(o.stampX==null?64:o.stampX),cy+h/2+(o.stampY==null?-32:o.stampY));c.rotate(-.14);c.scale(sc,sc);c.globalAlpha=clamp(st/.15,0,1);
       c.strokeStyle=WI.ink;c.lineWidth=3;rrect(-62,-19,124,38,8);c.stroke();
       c.lineWidth=1.2;rrect(-56,-13,112,26,5);c.stroke();
       c.fillStyle=WI.ink;c.font='700 21px '+F_SG;c.textAlign='center';c.textBaseline='middle';
