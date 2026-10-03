@@ -242,5 +242,14 @@
 <itunes:author>The Joy Digi</itunes:author>
 <itunes:duration>0:06:10</itunes:duration>
 <itunes:episodeType>full</itunes:episodeType>
+</item><item>
+<title>Value, Created — Chapter 26: Networks</title>
+<description>A single fax machine is a paperweight. Two machines, and each one wakes up. A product&#x27;s value isn&#x27;t just what it does — it&#x27;s who else is on it. Alex and Jordan on network effects: the flywheel, the dark-mirror trap of signal versus noise, and how to beat the cold start by building for the second user. Next chapter: Compounding. Produced by The Joy Digi.</description>
+<pubDate>Sat, 03 Oct 2026 00:00:00 </pubDate>
+<enclosure url="https://www.thejoydigi.com/podcasts/value-created/value-created-chapter-26-final.mp3" length="6122728" type="audio/mpeg"/>
+<guid isPermaLink="false">vc-ch26-2026-10-03</guid>
+<itunes:author>The Joy Digi</itunes:author>
+<itunes:duration>0:06:22</itunes:duration>
+<itunes:episodeType>full</itunes:episodeType>
 </item></channel>
 </rss>
