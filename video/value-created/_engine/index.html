@@ -7,4 +7,7 @@
 html,body{margin:0;background:#111}
 canvas{display:block;width:540px;height:540px}
 </style></head>
-<body><canvas id="c" width="1080" height="1080"></canvas><script src="scene.js"></script></body></html>
+<body><canvas id="c" width="1080" height="1080"></canvas>
+<script src="core.js"></script>
+<script>document.write('<script src="../' + new URLSearchParams(location.search).get('ch') + '/scene.js"><\/script><script>boot()<\/script>');</script>
+</body></html>

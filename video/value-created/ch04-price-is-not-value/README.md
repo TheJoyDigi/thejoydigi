@@ -4,7 +4,7 @@ The social video for sharing Chapter 4. It teaches the whole idea on screen, so 
 
 | | |
 |---|---|
-| File | `value-created-ch4-price-is-not-value.mp4` (2026-10-03) |
+| File | `value-created-ch4-price-is-not-value.mp4` (approved by Long, 2026-10-03) |
 | Format | 1080 × 1080, 30 fps, H.264 + AAC, 37.6 s, about 6.9 MB, -14.9 LUFS |
 | Thumbnail | `thumbnail.png` (the takeaway frame), for LinkedIn's custom thumbnail |
 | Source | `public/podcasts/value-created/transcripts/4.md` |
@@ -26,8 +26,8 @@ Copy rules kept: no hashtags, no emojis, no hard sell, no author byline. The epi
 
 ## Re-render
 ```
-cd video/value-created/ch04-price-is-not-value
-node render.js --sheet 2,6,11,15,19,24,30   # PNG stills in out/
-node render.js                             # out/value-created-ch4-price-is-not-value.mp4 (about 30 s)
+cd video/value-created
+node _engine/render.js ch04-price-is-not-value --sheet 2,6,11,15,19,24,30   # stills + out/sheet.png (real seconds; add --design for design time)
+node _engine/render.js ch04-price-is-not-value                             # out/<slug>.mp4 + checks (about 30 s)
 ```
-Same engine as `../ch07-the-inputs/` (see its README): `scene.js` holds the scenes, the `WARP` pacing table and the sound cue list; `music.py` and `render.js` are shared copies.
+`scene.js` holds this chapter's scenes, `WARP` pacing and sound cues; everything else is the shared engine (`../_engine/README.md`). Copy the MP4 here only once it's approved.

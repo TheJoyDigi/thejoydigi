@@ -27,11 +27,8 @@ Copy rules kept: no hashtags, no emojis, no hard sell, no author byline. The epi
 
 ## Re-render
 ```
-cd video/value-created/ch07-the-inputs
-node render.js --sheet 3,9,16,25,31   # PNG stills in out/
-node render.js                        # out/value-created-ch7-the-inputs.mp4 (about 30 s)
+cd video/value-created
+node _engine/render.js ch07-the-inputs --sheet 2,6,11,15,19,24,30   # stills + out/sheet.png (real seconds; add --design for design time)
+node _engine/render.js ch07-the-inputs                             # out/<slug>.mp4 + checks (about 30 s)
 ```
-- `scene.js` draws each frame as a pure function of time; the `WARP` table sets the pacing.
-- `music.py` builds the 100 bpm bed and sound effects from the cue list `scene.js` exports, so the sound stays in sync after retiming. Needs numpy and ffmpeg.
-- Fonts come from `src/assets/fonts/`; the headless browser comes from the Worth It engine (`video/worth-it/02-engine/render/lib.js`).
-- After a re-render, copy the MP4 over the committed one only once it's approved.
+`scene.js` holds this chapter's scenes, `WARP` pacing and sound cues; everything else is the shared engine (`../_engine/README.md`). Copy the MP4 here only once it's approved.
