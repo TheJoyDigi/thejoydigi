@@ -5,11 +5,13 @@ Production sources for The Joy Digi's animated shows. Same idea as `podcast/`: t
 ```
 video/
   README.md
-  worth-it/   Worth It: 30-second money shorts for young people (12 episodes for TikTok, Reels and Shorts)
+  worth-it/         Worth It: 30-second money shorts for young people (12 episodes for TikTok, Reels and Shorts)
+  value-created/    Square social cuts that teach one audiobook chapter each (LinkedIn): _engine/ (shared, start at its README) + one chNN-<slug>/ per chapter
 ```
 
 ## Rules
-- Text, docs, scripts, claim ledgers and small reference code only. Final MP4/GIF renders stay local (each show's `04-export/` is git-ignored).
+- Text, docs, scripts, claim ledgers and small reference code only. Final MP4/GIF renders stay local (each show's `04-export/` is git-ignored). Exception: approved `value-created/` social cuts commit their final MP4 so the team can find the shared version.
+- `value-created/` end cards say "Full N-minute episode", with N the episode length (`itunes:duration` in the feed) rounded **up** to the next minute (9:17 is 10, 10:44 is 11).
 - Every show is a production of The Joy Digi and follows `docs/brand/design-standard.md`.
 - Every factual claim needs a claim ledger (`podcast/shared/CLAIMS_TEMPLATE.md`).
 - This folder is intentionally **not** under `podcast/**`, so changes here go through normal review instead of the podcast auto-merge guard.
