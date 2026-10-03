@@ -1,0 +1,66 @@
+{
+  "voice": "Leda",
+  "pace": "fast-paced, snappy, clear",
+  "lines": [
+    {
+      "id": "m1",
+      "text": "They say self-made means doing it all yourself.",
+      "style": "confident, a little provocative",
+      "at": 0.25
+    },
+    {
+      "id": "m2",
+      "text": "Doing everything yourself is the most expensive choice.",
+      "style": "sharp, a knowing smile",
+      "gap": 0.3
+    },
+    {
+      "id": "r1",
+      "text": "Every hour spent on your weakness is stolen from your strength.",
+      "style": "warm, vivid",
+      "gap": 0.6
+    },
+    {
+      "id": "r2",
+      "text": "Trade is the first leverage. Do one thing well, trade for the rest.",
+      "style": "curious, building",
+      "gap": 0.15
+    },
+    {
+      "id": "k1",
+      "text": "So stop asking how to do more.",
+      "style": "punchy, emphatic",
+      "gap": 0.2
+    },
+    {
+      "id": "f1",
+      "text": "Ask the better question.",
+      "style": "calm, inviting",
+      "gap": 0.2
+    },
+    {
+      "id": "f2",
+      "text": "What's your one thing, and what will you trade for?",
+      "style": "curious, direct",
+      "gap": 0.15
+    },
+    {
+      "id": "g1",
+      "text": "Trade away one task this week instead of doing it.",
+      "style": "resolved, practical",
+      "gap": 0.2
+    },
+    {
+      "id": "g2",
+      "text": "Problem solved, value paid.",
+      "style": "satisfied, confident",
+      "gap": 0.15
+    },
+    {
+      "id": "g3",
+      "text": "Worth it.",
+      "style": "warm, final, a small smile",
+      "gap": 0.15
+    }
+  ]
+}

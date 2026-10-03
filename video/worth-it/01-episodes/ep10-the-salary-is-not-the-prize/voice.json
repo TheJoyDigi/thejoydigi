@@ -1,0 +1,72 @@
+{
+  "voice": "Puck",
+  "pace": "fast-paced, snappy, clear",
+  "lines": [
+    {
+      "id": "m1",
+      "text": "They say land the salary and you're set.",
+      "style": "confident, a little provocative",
+      "at": 0.25
+    },
+    {
+      "id": "m2",
+      "text": "A salary is rent on your time. It stops the day you stop.",
+      "style": "sharp, a knowing smile",
+      "gap": 0.3
+    },
+    {
+      "id": "r1",
+      "text": "Owners don't get paid for hours. They keep what workers create.",
+      "style": "warm, vivid",
+      "gap": 0.6
+    },
+    {
+      "id": "r2",
+      "text": "A slice of everything, while they sleep. Equity is the capture machine.",
+      "style": "curious, building",
+      "gap": 0.15
+    },
+    {
+      "id": "k1",
+      "text": "So stop asking how to earn more.",
+      "style": "punchy, emphatic",
+      "gap": 0.2
+    },
+    {
+      "id": "f1",
+      "text": "Ask the better question.",
+      "style": "calm, inviting",
+      "gap": 0.2
+    },
+    {
+      "id": "f2",
+      "text": "What's the smallest piece of ownership you can buy?",
+      "style": "curious, direct",
+      "gap": 0.15
+    },
+    {
+      "id": "f3",
+      "text": "It doesn't take much to begin.",
+      "style": "matter of fact, warm",
+      "gap": 0.15
+    },
+    {
+      "id": "g1",
+      "text": "Look up the price of one share. Start there.",
+      "style": "resolved, practical",
+      "gap": 0.2
+    },
+    {
+      "id": "g2",
+      "text": "Problem solved, value paid.",
+      "style": "satisfied, confident",
+      "gap": 0.15
+    },
+    {
+      "id": "g3",
+      "text": "Worth it.",
+      "style": "warm, final, a small smile",
+      "gap": 0.15
+    }
+  ]
+}

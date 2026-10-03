@@ -1,0 +1,78 @@
+{
+  "voice": "Leda",
+  "pace": "fast-paced, snappy, clear",
+  "lines": [
+    {
+      "id": "m1",
+      "text": "They say do great work and you'll be rewarded.",
+      "style": "confident, a little provocative",
+      "at": 0.25
+    },
+    {
+      "id": "m2",
+      "text": "Tell that to the chef.",
+      "style": "sharp, a knowing smile",
+      "gap": 0.3
+    },
+    {
+      "id": "r1",
+      "text": "He makes the meal. The owner keeps the margin.",
+      "style": "warm, vivid",
+      "gap": 0.6
+    },
+    {
+      "id": "r2",
+      "text": "Same food, same night. One is rich. It isn't the cook.",
+      "style": "curious, building",
+      "gap": 0.15
+    },
+    {
+      "id": "r3",
+      "text": "Creating isn't enough. Someone always captures. Rarely the maker.",
+      "style": "clear, landing the point",
+      "gap": 0.15
+    },
+    {
+      "id": "k1",
+      "text": "So stop asking how to work better.",
+      "style": "punchy, emphatic",
+      "gap": 0.2
+    },
+    {
+      "id": "f1",
+      "text": "Ask the better question.",
+      "style": "calm, inviting",
+      "gap": 0.2
+    },
+    {
+      "id": "f2",
+      "text": "Who captures the value you create?",
+      "style": "curious, direct",
+      "gap": 0.15
+    },
+    {
+      "id": "f3",
+      "text": "Find the leak. Then plug one.",
+      "style": "matter of fact, warm",
+      "gap": 0.15
+    },
+    {
+      "id": "g1",
+      "text": "Name one way to keep, say, ten percent more of what you make.",
+      "style": "resolved, practical",
+      "gap": 0.2
+    },
+    {
+      "id": "g2",
+      "text": "Problem solved, value paid.",
+      "style": "satisfied, confident",
+      "gap": 0.15
+    },
+    {
+      "id": "g3",
+      "text": "Worth it.",
+      "style": "warm, final, a small smile",
+      "gap": 0.15
+    }
+  ]
+}
