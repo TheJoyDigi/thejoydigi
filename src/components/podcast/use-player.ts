@@ -1,11 +1,34 @@
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import type { Episode, Show } from "@/lib/podcasts";
 
 const RATES = [1, 1.25, 1.5, 2];
 
+/** Per-show listening progress, keyed by episode number so it survives feed reordering. */
+type Saved = { last?: number; eps: Record<number, { t: number; done?: boolean }> };
+
+const storageKey = (slug: string) => `joydigi:podcast-progress:${slug}`;
+
+function loadSaved(slug: string): Saved {
+  try {
+    const s = JSON.parse(localStorage.getItem(storageKey(slug)) || "null");
+    return s && typeof s === "object" && s.eps && typeof s.eps === "object" ? s : { eps: {} };
+  } catch {
+    return { eps: {} };
+  }
+}
+
+/** Where to pick an episode back up; the first few seconds and the outro restart from 0. */
+const startAt = (ep: Episode, entry?: { t: number }) => (entry && entry.t > 5 && entry.t < ep.seconds - 20 ? entry.t : 0);
+
+export type EpisodeProgress = { time: number; done: boolean };
+
 /** One shared <audio> element per page; UI components stay purely presentational. */
 export function usePlayer(show: Show, cueIndex?: number) {
   const audioRef = useRef<HTMLAudioElement | null>(null);
+  // Mirrors `index` synchronously so audio events never credit time to the wrong episode mid-switch.
+  const indexRef = useRef<number | null>(null);
+  const savedRef = useRef<Saved>({ eps: {} });
+  const [saved, setSaved] = useState<Saved>({ eps: {} });
   const [index, setIndex] = useState<number | null>(null);
   const [playing, setPlaying] = useState(false);
   const [time, setTime] = useState(0);
@@ -13,6 +36,27 @@ export function usePlayer(show: Show, cueIndex?: number) {
   const [rate, setRate] = useState(1);
 
   const current: Episode | null = index === null ? null : show.episodes[index];
+
+  const remember = useCallback(
+    (i: number, patch: { t?: number; done?: boolean }) => {
+      const ep = show.episodes[i];
+      if (!ep) return;
+      const prev = savedRef.current.eps[ep.number] ?? { t: 0 };
+      const next: Saved = { last: ep.number, eps: { ...savedRef.current.eps, [ep.number]: { ...prev, ...patch } } };
+      savedRef.current = next;
+      setSaved(next);
+      try {
+        localStorage.setItem(storageKey(show.slug), JSON.stringify(next));
+      } catch {}
+    },
+    [show.episodes, show.slug]
+  );
+
+  // Runs before the cue effect below, so a shared episode link can resume from saved progress.
+  useEffect(() => {
+    savedRef.current = loadSaved(show.slug);
+    setSaved(savedRef.current);
+  }, [show.slug]);
 
   useEffect(() => {
     const audio = new Audio();
@@ -36,13 +80,44 @@ export function usePlayer(show: Show, cueIndex?: number) {
     };
   }, []);
 
-  // Shared episode links autoplay; ?t= uses a media fragment to start mid-episode.
+  // Save position every ~5 s, on pause and when the tab goes away; t < 1 is skipped because a src swap briefly reports 0.
+  useEffect(() => {
+    const audio = audioRef.current;
+    if (!audio) return;
+    let lastSaved = -1;
+    const save = () => {
+      const i = indexRef.current;
+      const t = audio.currentTime;
+      if (i === null || t < 1) return;
+      const ep = show.episodes[i];
+      lastSaved = t;
+      remember(i, t >= ep.seconds - 20 ? { t, done: true } : { t });
+    };
+    const onTime = () => {
+      if (!audio.paused && Math.abs(audio.currentTime - lastSaved) >= 5) save();
+    };
+    const onHide = () => document.visibilityState === "hidden" && save();
+    audio.addEventListener("timeupdate", onTime);
+    audio.addEventListener("pause", save);
+    window.addEventListener("pagehide", save);
+    document.addEventListener("visibilitychange", onHide);
+    return () => {
+      audio.removeEventListener("timeupdate", onTime);
+      audio.removeEventListener("pause", save);
+      window.removeEventListener("pagehide", save);
+      document.removeEventListener("visibilitychange", onHide);
+    };
+  }, [remember, show.episodes]);
+
+  // Shared episode links autoplay; ?t= uses a media fragment to start mid-episode, else resume saved progress.
   useEffect(() => {
     const audio = audioRef.current;
     const ep = cueIndex === undefined ? undefined : show.episodes[cueIndex];
     if (!audio || !ep) return;
-    const t = Math.max(0, Math.min(Number(new URLSearchParams(window.location.search).get("t")) || 0, ep.seconds - 1));
+    const asked = Number(new URLSearchParams(window.location.search).get("t")) || 0;
+    const t = Math.max(0, Math.min(asked || startAt(ep, savedRef.current.eps[ep.number]), ep.seconds - 1));
     audio.src = t ? `${ep.audio}#t=${t}` : ep.audio;
+    indexRef.current = cueIndex!;
     setIndex(cueIndex!);
     setTime(t);
     setDuration(ep.seconds);
@@ -71,26 +146,52 @@ export function usePlayer(show: Show, cueIndex?: number) {
         else audio.pause();
         return;
       }
+      if (index !== null && !audio.ended && audio.currentTime >= 1) remember(index, { t: audio.currentTime });
       const ep = show.episodes[i];
-      audio.src = ep.audio;
+      const t = startAt(ep, savedRef.current.eps[ep.number]);
+      audio.src = t ? `${ep.audio}#t=${t}` : ep.audio;
       audio.playbackRate = rate;
+      indexRef.current = i;
+      remember(i, {});
       setIndex(i);
-      setTime(0);
+      setTime(t);
       setDuration(ep.seconds);
       void audio.play();
     },
-    [index, rate, show.episodes]
+    [index, rate, remember, show.episodes]
   );
 
   useEffect(() => {
     const audio = audioRef.current;
     if (!audio) return;
     const onEnded = () => {
-      if (index !== null && index < show.episodes.length - 1) playIndex(index + 1);
+      if (index === null) return;
+      remember(index, { t: 0, done: true });
+      if (index < show.episodes.length - 1) playIndex(index + 1);
     };
     audio.addEventListener("ended", onEnded);
     return () => audio.removeEventListener("ended", onEnded);
-  }, [index, playIndex, show.episodes.length]);
+  }, [index, playIndex, remember, show.episodes.length]);
+
+  const progress = useCallback(
+    (i: number): EpisodeProgress => {
+      const ep = show.episodes[i];
+      const entry = ep ? saved.eps[ep.number] : undefined;
+      return { time: i === index ? time : entry?.t ?? 0, done: !!entry?.done };
+    },
+    [index, saved, show.episodes, time]
+  );
+
+  /** The episode to continue: the last one played, or the next one if it was finished. */
+  const resume = useMemo(() => {
+    const i = show.episodes.findIndex((ep) => ep.number === saved.last);
+    if (i < 0) return null;
+    const ep = show.episodes[i];
+    const entry = saved.eps[ep.number];
+    if (!entry?.done || startAt(ep, entry) > 0) return { index: i, time: startAt(ep, entry) };
+    const next = show.episodes[i + 1];
+    return next && !saved.eps[next.number]?.done ? { index: i + 1, time: startAt(next, saved.eps[next.number]) } : null;
+  }, [saved, show.episodes]);
 
   const toggle = useCallback(() => playIndex(index ?? 0), [index, playIndex]);
   const seek = useCallback((t: number) => {
@@ -117,7 +218,7 @@ export function usePlayer(show: Show, cueIndex?: number) {
     navigator.mediaSession.setActionHandler("seekforward", () => skip(30));
   }, [current, show.title, show.cover, toggle, skip]);
 
-  return { current, index, playing, time, duration, rate, playIndex, toggle, seek, skip, cycleRate };
+  return { current, index, playing, time, duration, rate, playIndex, toggle, seek, skip, cycleRate, progress, resume };
 }
 
 export type Player = ReturnType<typeof usePlayer>;

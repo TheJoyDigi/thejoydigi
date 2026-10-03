@@ -50,6 +50,8 @@ Full token sets (muted, kicker, outline, subtle) live in `THEMES` in `brand.ts`.
 
 **Anthropic Blogcast:** never use Anthropic's or Claude's logo, wordmark, starburst or mascot. Always say it's independent and not affiliated.
 
+**Platform marks (Spotify, YouTube):** official glyphs only (`react-icons/si`), full colour, at least 21px, never redrawn. Show pages use `PlatformLinks` in `src/components/podcast/common.tsx`.
+
 ## 3. Email rules
 
 ### Structure (enforced by `renderEmail`)

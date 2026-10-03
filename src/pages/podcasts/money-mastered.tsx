@@ -4,7 +4,7 @@ import { Cinzel, Cormorant_Garamond, DM_Sans } from "next/font/google";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect, useRef } from "react";
-import { episodePath, Equalizer, PauseIcon, PlayIcon, playOnPlainClick, PodcastSeo, SkipIcon, useCopy } from "@/components/podcast/common";
+import { episodePath, Equalizer, fmtLeft, ListenProgress, PauseIcon, PlatformLinks, PlayIcon, playOnPlainClick, PodcastSeo, SkipIcon, useCopy } from "@/components/podcast/common";
 import { EpisodeTranscript } from "@/components/podcast/episode-transcript";
 import { EmailSignupForm } from "@/components/podcast/email-signup-form";
 import { ShareIcon, ShareSheet, useShare, type ShareControl, type ShareTheme } from "@/components/podcast/share";
@@ -140,6 +140,8 @@ function Panorama() {
 
 function Hero({ show, player, total, share }: { show: Show; player: Player; total: number; share: ShareControl }) {
   const latest = show.episodes[show.episodes.length - 1];
+  const resumeEp = player.resume ? show.episodes[player.resume.index] : null;
+  const start = player.resume?.index ?? 0;
   return (
     <section className="relative isolate min-h-[100svh] overflow-hidden">
       <Panorama />
@@ -208,13 +210,14 @@ function Hero({ show, player, total, share }: { show: Show; player: Player; tota
             className="mt-10 flex flex-col gap-3 sm:flex-row"
           >
             <button
-              onClick={() => player.playIndex(0)}
+              onClick={() => player.playIndex(start)}
               className="group inline-flex items-center justify-center gap-3 rounded-full bg-gradient-to-b from-[#F3DE9E] to-[#C9A45C] px-7 py-4 font-semibold text-[#060E1A] shadow-[0_0_40px_-6px_rgba(217,181,106,0.7)] transition-transform duration-300 hover:-translate-y-0.5"
             >
-              {player.index === 0 && player.playing ? <PauseIcon className="h-5 w-5" /> : <PlayIcon className="h-5 w-5" />}
-              Begin Chapter I
+              {player.index === start && player.playing ? <PauseIcon className="h-5 w-5" /> : <PlayIcon className="h-5 w-5" />}
+              {resumeEp ? `Continue Chapter ${roman(resumeEp.number)}` : "Begin Chapter I"}
+              {resumeEp && player.resume!.time > 0 && <span className="text-sm font-medium opacity-70">· {fmtLeft(resumeEp.seconds - (player.index === start ? player.time : player.resume!.time))}</span>}
             </button>
-            {latest && latest.number !== 1 && (
+            {latest && latest.number !== (resumeEp?.number ?? 1) && (
               <button
                 onClick={() => player.playIndex(show.episodes.length - 1)}
                 className="inline-flex items-center justify-center gap-3 rounded-full border border-[#D9B56A]/50 px-7 py-4 font-semibold text-[#F3DE9E] transition-colors hover:border-[#D9B56A] hover:bg-[#D9B56A]/10"
@@ -222,6 +225,10 @@ function Hero({ show, player, total, share }: { show: Show; player: Player; tota
                 Latest · Chapter {roman(latest.number)}
               </button>
             )}
+          </motion.div>
+          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1, delay: 1 }} className="mt-6 flex flex-wrap items-center gap-3">
+            <span className="text-xs uppercase tracking-[0.25em] text-[#EFE6D2]/60">Also on</span>
+            <PlatformLinks spotify={SPOTIFY_URL} youtube={YOUTUBE_URL} linkClassName="rounded-full border border-[#D9B56A]/35 bg-[#060E1A]/50 px-4 py-2 text-sm font-semibold text-[#EFE6D2] backdrop-blur transition-colors hover:border-[#D9B56A]" />
           </motion.div>
         </div>
 
@@ -352,6 +359,7 @@ function Contents({ show, player, share }: { show: Show; player: Player; share: 
                       {active && <Equalizer color={GOLD_LIGHT} active={player.playing} />}
                     </span>
                     <span className="mt-2 block font-[family-name:var(--mm-serif)] text-lg italic leading-snug text-[#EFE6D2]/60">{ep.description}</span>
+                    <ListenProgress {...player.progress(i)} seconds={ep.seconds} color={GOLD_LIGHT} track="rgba(217,181,106,0.2)" className="mt-2 text-[#EFE6D2]/55" />
                     {ep.hasTranscript && (
                       <a
                         href={`${episodePath(show, ep)}#transcript`}

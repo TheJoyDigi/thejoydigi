@@ -1,6 +1,7 @@
 import { NextSeo } from "next-seo";
 import Head from "next/head";
 import { useCallback, useState, type MouseEvent } from "react";
+import { SiSpotify, SiYoutube } from "react-icons/si";
 import type { Show } from "@/lib/podcasts";
 
 export function PodcastSeo({ show, title: showTitle, description: showDescription, episode }: { show: Show; title: string; description: string; episode?: number }) {
@@ -118,6 +119,46 @@ export function Equalizer({ color, active }: { color: string; active: boolean })
     </span>
   );
 }
+
+/** Hero "listen elsewhere" pills; each page passes its own themed pill classes. */
+export function PlatformLinks({ spotify, youtube, className = "", linkClassName = "" }: { spotify?: string; youtube?: string; className?: string; linkClassName?: string }) {
+  const pill = `inline-flex min-h-11 items-center gap-2 no-underline hover:no-underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 ${linkClassName}`;
+  return (
+    <div className={`flex flex-wrap items-center gap-2.5 ${className}`}>
+      {spotify && (
+        <a href={spotify} target="_blank" rel="noopener noreferrer" className={pill}>
+          <SiSpotify aria-hidden size={22} color="#1DB954" />
+          Spotify
+        </a>
+      )}
+      {youtube && (
+        <a href={youtube} target="_blank" rel="noopener noreferrer" className={pill}>
+          <SiYoutube aria-hidden size={22} color="#FF0000" />
+          YouTube
+        </a>
+      )}
+    </div>
+  );
+}
+
+/** "✓ Played" or a thin bar with time left, for an episode row. */
+export function ListenProgress({ time, seconds, done, color, track, className = "" }: { time: number; seconds: number; done: boolean; color: string; track: string; className?: string }) {
+  if (done && (time < 1 || time >= seconds - 20)) return <span className={`flex w-fit items-center gap-1 text-xs font-semibold ${className}`}>✓ Played</span>;
+  if (time < 1) return null;
+  return (
+    <span className={`flex w-fit items-center gap-2 text-xs font-semibold tabular-nums ${className}`}>
+      <span className="relative h-1 w-16 overflow-hidden rounded-full" style={{ background: track }}>
+        <span className="absolute inset-y-0 left-0 rounded-full" style={{ background: color, width: `${Math.min(100, (time / seconds) * 100)}%` }} />
+      </span>
+      {fmtLeft(seconds - time)}
+    </span>
+  );
+}
+
+export const fmtLeft = (s: number) => {
+  const m = Math.max(1, Math.round(s / 60));
+  return m >= 60 ? `${Math.floor(m / 60)}h ${m % 60}m left` : `${m} min left`;
+};
 
 export const episodePath = (show: Show, ep: { number: number }) => `/podcasts/${show.slug}/${ep.number}`;
 
