@@ -119,6 +119,64 @@ export function Equalizer({ color, active }: { color: string; active: boolean })
   );
 }
 
+export const SpotifyIcon = ({ className = "" }: { className?: string }) => (
+  <svg viewBox="0 0 24 24" className={className} aria-hidden>
+    <circle cx="12" cy="12" r="12" fill="#1DB954" />
+    <g fill="none" stroke="#fff" strokeLinecap="round">
+      <path d="M6.2 9.1c3.9-1.2 8.3-.8 11.7 1.1" strokeWidth="1.9" />
+      <path d="M6.9 12.4c3.2-.9 6.6-.5 9.4 1" strokeWidth="1.6" />
+      <path d="M7.5 15.5c2.5-.6 5-.3 7.2.9" strokeWidth="1.3" />
+    </g>
+  </svg>
+);
+
+export const YouTubeIcon = ({ className = "" }: { className?: string }) => (
+  <svg viewBox="0 0 24 24" className={className} aria-hidden>
+    <rect x="1" y="4.5" width="22" height="15" rx="4.5" fill="#FF0000" />
+    <path d="M10 8.7v6.6l5.6-3.3z" fill="#fff" />
+  </svg>
+);
+
+/** Hero "listen elsewhere" pills; each page passes its own themed pill classes. */
+export function PlatformLinks({ spotify, youtube, className = "", linkClassName = "" }: { spotify?: string; youtube?: string; className?: string; linkClassName?: string }) {
+  const pill = `inline-flex items-center gap-2 no-underline hover:no-underline ${linkClassName}`;
+  return (
+    <div className={`flex flex-wrap items-center gap-2.5 ${className}`}>
+      {spotify && (
+        <a href={spotify} target="_blank" rel="noopener noreferrer" className={pill}>
+          <SpotifyIcon className="h-5 w-5" />
+          Spotify
+        </a>
+      )}
+      {youtube && (
+        <a href={youtube} target="_blank" rel="noopener noreferrer" className={pill}>
+          <YouTubeIcon className="h-5 w-5" />
+          YouTube
+        </a>
+      )}
+    </div>
+  );
+}
+
+/** "✓ Played" or a thin bar with time left, for an episode row. */
+export function ListenProgress({ time, seconds, done, color, track, className = "" }: { time: number; seconds: number; done: boolean; color: string; track: string; className?: string }) {
+  if (done && (time < 1 || time >= seconds - 20)) return <span className={`flex w-fit items-center gap-1 text-xs font-semibold ${className}`}>✓ Played</span>;
+  if (time < 1) return null;
+  return (
+    <span className={`flex w-fit items-center gap-2 text-xs font-semibold tabular-nums ${className}`}>
+      <span className="relative h-1 w-16 overflow-hidden rounded-full" style={{ background: track }}>
+        <span className="absolute inset-y-0 left-0 rounded-full" style={{ background: color, width: `${Math.min(100, (time / seconds) * 100)}%` }} />
+      </span>
+      {fmtLeft(seconds - time)}
+    </span>
+  );
+}
+
+export const fmtLeft = (s: number) => {
+  const m = Math.max(1, Math.round(s / 60));
+  return m >= 60 ? `${Math.floor(m / 60)}h ${m % 60}m left` : `${m} min left`;
+};
+
 export const episodePath = (show: Show, ep: { number: number }) => `/podcasts/${show.slug}/${ep.number}`;
 
 /** Plain clicks play in place; modified clicks (new tab, etc.) follow the link to the episode page. */

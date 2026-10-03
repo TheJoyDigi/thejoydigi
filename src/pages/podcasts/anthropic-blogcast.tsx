@@ -4,7 +4,7 @@ import { Space_Grotesk, Inter } from "next/font/google";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import { episodePath, Equalizer, PauseIcon, PlayIcon, playOnPlainClick, PodcastSeo, SkipIcon, useCopy } from "@/components/podcast/common";
+import { episodePath, Equalizer, ListenProgress, PauseIcon, PlatformLinks, PlayIcon, playOnPlainClick, PodcastSeo, SkipIcon, useCopy } from "@/components/podcast/common";
 import { EmailSignupForm } from "@/components/podcast/email-signup-form";
 import { EpisodeTranscript } from "@/components/podcast/episode-transcript";
 import { ShareIcon, ShareSheet, useShare, type ShareControl, type ShareTheme } from "@/components/podcast/share";
@@ -46,6 +46,7 @@ function Hero({ show, player, share }: { show: Show; player: Player; share: Shar
   const latest = show.episodes.length - 1;
   const ep = show.episodes[latest];
   const isLatestPlaying = player.index === latest && player.playing;
+  const cont = player.resume && player.resume.index !== latest ? player.resume : null;
   return (
     <section className="relative overflow-hidden" style={{ background: INK }}>
       <div
@@ -123,6 +124,20 @@ function Hero({ show, player, share }: { show: Show; player: Player; share: Shar
               </span>
             </motion.div>
           )}
+          {ep && <ListenProgress {...player.progress(latest)} seconds={ep.seconds} color={CORAL} track="rgba(255,255,255,0.15)" className="mx-auto mt-3 text-white/60 lg:mx-0" />}
+          {cont && (
+            <div className="mt-5 flex flex-col items-center gap-2 lg:items-start">
+              <button onClick={() => player.playIndex(cont.index)} className="inline-flex items-center gap-3 rounded-full border border-white/20 px-6 py-3 text-base font-bold text-[#F4EFE6] transition-colors hover:bg-white/10">
+                {player.index === cont.index && player.playing ? <PauseIcon className="h-5 w-5" /> : <PlayIcon className="h-5 w-5" />}
+                Continue Episode {show.episodes[cont.index].number}
+              </button>
+              <ListenProgress {...player.progress(cont.index)} seconds={show.episodes[cont.index].seconds} color={CORAL} track="rgba(255,255,255,0.15)" className="text-white/60" />
+            </div>
+          )}
+          <div className="mt-6 flex flex-wrap items-center justify-center gap-3 lg:justify-start">
+            <span className="text-xs font-bold uppercase tracking-[0.2em] text-white/50">Also on</span>
+            <PlatformLinks spotify={SPOTIFY_URL} youtube={YOUTUBE_URL} linkClassName="rounded-full bg-white/10 px-4 py-2 text-sm font-bold text-white backdrop-blur transition-colors hover:bg-white/20" />
+          </div>
         </div>
 
         <motion.div
@@ -233,6 +248,7 @@ function Episodes({ show, player, share }: { show: Show; player: Player; share: 
                       <span className="mt-1 block text-sm font-semibold" style={{ color: MUTED }}>
                         {ep.dateLabel} · {ep.duration}
                       </span>
+                      <ListenProgress {...player.progress(i)} seconds={ep.seconds} color={CORAL} track="rgba(255,255,255,0.15)" className="mt-1.5 text-white/60" />
                       {ep.hasTranscript && (
                         <a
                           href={`${episodePath(show, ep)}#transcript`}
