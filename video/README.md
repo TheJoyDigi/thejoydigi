@@ -6,7 +6,7 @@ Production sources for The Joy Digi's animated shows. Same idea as `podcast/`: t
 video/
   README.md
   worth-it/         Worth It: 30-second money shorts for young people (12 episodes for TikTok, Reels and Shorts)
-  value-created/    Square social cuts that teach one audiobook chapter each (LinkedIn); first: ch07-the-inputs
+  value-created/    Square social cuts that teach one audiobook chapter each (LinkedIn); ch04-price-is-not-value, ch07-the-inputs
 ```
 
 ## Rules

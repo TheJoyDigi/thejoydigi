@@ -3,6 +3,7 @@ const fs = require('fs'), path = require('path'), { spawn, spawnSync } = require
 const { launch } = require('../../worth-it/02-engine/render/lib.js');
 const args = process.argv.slice(2), opt = n => { const i = args.indexOf('--' + n); return i > -1 ? args[i + 1] : null; };
 const fps = 30, out = path.join(__dirname, 'out');
+fs.mkdirSync(out, { recursive: true });
 (async () => {
   const browser = await launch();
   const page = await browser.newPage({ viewport: { width: 1100, height: 1100 } });
