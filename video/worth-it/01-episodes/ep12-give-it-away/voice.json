@@ -1,0 +1,94 @@
+{
+  "voice": "Puck",
+  "pace": "fast-paced, snappy, clear",
+  "lines": [
+    {
+      "id": "m1",
+      "text": "They say protect what you know. Keep your secrets.",
+      "style": "confident, a little provocative",
+      "at": 0.25,
+      "voice": "Leda"
+    },
+    {
+      "id": "m2",
+      "text": "Here's the secret: give it away.",
+      "style": "sharp, a knowing smile",
+      "gap": 0.25,
+      "voice": "Puck"
+    },
+    {
+      "id": "r1",
+      "text": "What you give costs you nothing and buys you everything.",
+      "style": "warm, vivid",
+      "gap": 0.45,
+      "voice": "Leda"
+    },
+    {
+      "id": "r2",
+      "text": "Delivered value becomes reputation. Reputation becomes opportunity.",
+      "style": "curious, building",
+      "gap": 0.1,
+      "voice": "Puck"
+    },
+    {
+      "id": "r3",
+      "text": "The givers end up with the most. That's not charity, that's strategy.",
+      "style": "clear, landing the point",
+      "gap": 0.1,
+      "voice": "Leda"
+    },
+    {
+      "id": "k1",
+      "text": "So stop asking what you get back.",
+      "style": "punchy, emphatic",
+      "gap": 0.15,
+      "voice": "Puck"
+    },
+    {
+      "id": "f1",
+      "text": "Ask the better question.",
+      "style": "calm, inviting",
+      "gap": 0.15,
+      "voice": "Leda"
+    },
+    {
+      "id": "f2",
+      "text": "What can you give that costs you nothing?",
+      "style": "curious, direct",
+      "gap": 0.1,
+      "voice": "Puck"
+    },
+    {
+      "id": "f3",
+      "text": "You know something someone needs. That's currency.",
+      "style": "matter of fact, warm",
+      "gap": 0.1,
+      "voice": "Leda"
+    },
+    {
+      "id": "g1",
+      "text": "Give one useful thing away today. No strings.",
+      "style": "resolved, practical",
+      "gap": 0.15,
+      "voice": "Puck"
+    },
+    {
+      "id": "g2",
+      "text": "Problem solved, value paid.",
+      "style": "satisfied, confident",
+      "gap": 0.1,
+      "voice": "Leda"
+    },
+    {
+      "id": "g3",
+      "text": "Worth it.",
+      "style": "warm, final, a small smile",
+      "gap": 0.1,
+      "voices": [
+        "Leda",
+        "Puck"
+      ]
+    }
+  ],
+  "label": "Leda-Puck"
+}

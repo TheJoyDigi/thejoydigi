@@ -1,0 +1,17 @@
+{
+  "format": "anime-v1-template",
+  "lead": "kai",
+  "voice": "Puck",
+  "scene_sources": [
+    "episode.js",
+    "../../02-engine/parts/director.js",
+    "../../02-engine/parts/game.js",
+    "../../02-engine/parts/info.js"
+  ],
+  "master": "export/ep10-salary-prize-anime-puck.mp4",
+  "silent": "export/ep10-salary-prize-anime-silent.mp4",
+  "share": "export/ep10-salary-prize-anime-puck-share.mp4",
+  "cover": "export/ep10-salary-prize-anime-cover.png",
+  "captions": "export/ep10-salary-prize-anime-puck.srt",
+  "rebuild": "python3 02-engine/episode/voice_ep.py <ep> && python3 02-engine/episode/build_ep.py <ep> && node 02-engine/episode/render_ep.js <ep>"
+}

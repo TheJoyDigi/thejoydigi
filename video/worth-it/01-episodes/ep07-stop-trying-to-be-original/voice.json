@@ -1,0 +1,78 @@
+{
+  "voice": "Leda",
+  "pace": "fast-paced, snappy, clear",
+  "lines": [
+    {
+      "id": "m1",
+      "text": "They say be original. Invent something the world has never seen.",
+      "style": "confident, a little provocative",
+      "at": 0.25
+    },
+    {
+      "id": "m2",
+      "text": "Nobody does.",
+      "style": "sharp, a knowing smile",
+      "gap": 0.3
+    },
+    {
+      "id": "r1",
+      "text": "The camera phone wasn't invented. A camera and a phone were combined.",
+      "style": "warm, vivid",
+      "gap": 0.6
+    },
+    {
+      "id": "r2",
+      "text": "Sushi burrito. Two old things, one new value.",
+      "style": "curious, building",
+      "gap": 0.15
+    },
+    {
+      "id": "r3",
+      "text": "Innovation is mostly rearrangement.",
+      "style": "clear, landing the point",
+      "gap": 0.15
+    },
+    {
+      "id": "k1",
+      "text": "So stop staring at a blank page.",
+      "style": "punchy, emphatic",
+      "gap": 0.2
+    },
+    {
+      "id": "f1",
+      "text": "Ask the better question.",
+      "style": "calm, inviting",
+      "gap": 0.2
+    },
+    {
+      "id": "f2",
+      "text": "What two things do you know that nobody's combined?",
+      "style": "curious, direct",
+      "gap": 0.15
+    },
+    {
+      "id": "f3",
+      "text": "You already hold the pieces.",
+      "style": "matter of fact, warm",
+      "gap": 0.15
+    },
+    {
+      "id": "g1",
+      "text": "Write down one mashup today. Most will be bad. You only need one.",
+      "style": "resolved, practical",
+      "gap": 0.2
+    },
+    {
+      "id": "g2",
+      "text": "Problem solved, value paid.",
+      "style": "satisfied, confident",
+      "gap": 0.15
+    },
+    {
+      "id": "g3",
+      "text": "Worth it.",
+      "style": "warm, final, a small smile",
+      "gap": 0.15
+    }
+  ]
+}

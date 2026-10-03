@@ -342,7 +342,7 @@
   }
 
   /* ---------- OUTRO: arcade "episode complete" card with the Joy Digi brand. u = seconds since the outro began. Centre x = 150 (inside the lower safe notch) ---------- */
-  function gOutro(u,ep){
+  function gOutro(u,ep,label){
     var CX=150,SY=262,k;
     /* tag: EPISODE COMPLETE */
     var tk=gBack(clamp((u-.1)/.4,0,1));
@@ -351,7 +351,7 @@
       gGlow(G.green,10,function(){c.fillStyle=G.ink;c.fill(gChamfer(CX-92,122,184,26,7));c.strokeStyle=G.green;c.lineWidth=2;c.stroke(gChamfer(CX-92,122,184,26,7));});
       iIcon('check',CX-72,135,.75,G.green);
       c.font='700 13px '+F_HD;c.textAlign='center';c.textBaseline='middle';c.fillStyle=G.white;try{c.letterSpacing='2px';}catch(e){}
-      c.fillText('EPISODE '+(ep||1)+' COMPLETE',CX+8,136);try{c.letterSpacing='0px';}catch(e){}
+      c.fillText(label||('EPISODE '+(ep||1)+' COMPLETE'),CX+8,136);try{c.letterSpacing='0px';}catch(e){}
       c.restore();
     }
     /* brand title card (Joy Digi teal) */

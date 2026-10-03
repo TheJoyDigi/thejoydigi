@@ -1,0 +1,17 @@
+{
+  "format": "anime-v1-template",
+  "lead": "wren+kai",
+  "voice": "Leda + Puck",
+  "scene_sources": [
+    "episode.js",
+    "../../02-engine/parts/director.js",
+    "../../02-engine/parts/game.js",
+    "../../02-engine/parts/info.js"
+  ],
+  "master": "export/ep12-give-it-away-anime-leda-puck.mp4",
+  "silent": "export/ep12-give-it-away-anime-silent.mp4",
+  "share": "export/ep12-give-it-away-anime-leda-puck-share.mp4",
+  "cover": "export/ep12-give-it-away-anime-cover.png",
+  "captions": "export/ep12-give-it-away-anime-leda-puck.srt",
+  "rebuild": "python3 02-engine/episode/voice_ep.py <ep> && python3 02-engine/episode/build_ep.py <ep> && node 02-engine/episode/render_ep.js <ep>"
+}

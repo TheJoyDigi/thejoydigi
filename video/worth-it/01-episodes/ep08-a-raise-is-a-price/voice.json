@@ -1,0 +1,78 @@
+{
+  "voice": "Puck",
+  "pace": "fast-paced, snappy, clear",
+  "lines": [
+    {
+      "id": "m1",
+      "text": "They say be grateful. Don't ask for more.",
+      "style": "confident, a little provocative",
+      "at": 0.25
+    },
+    {
+      "id": "m2",
+      "text": "But a raise isn't a reward. It's a price.",
+      "style": "sharp, a knowing smile",
+      "gap": 0.3
+    },
+    {
+      "id": "r1",
+      "text": "And a price is just a name you put on value.",
+      "style": "warm, vivid",
+      "gap": 0.6
+    },
+    {
+      "id": "r2",
+      "text": "Beggars hope. Pricers name.",
+      "style": "curious, building",
+      "gap": 0.15
+    },
+    {
+      "id": "r3",
+      "text": "The work didn't change, only the number you named.",
+      "style": "clear, landing the point",
+      "gap": 0.15
+    },
+    {
+      "id": "k1",
+      "text": "So stop wondering if you deserve it.",
+      "style": "punchy, emphatic",
+      "gap": 0.2
+    },
+    {
+      "id": "f1",
+      "text": "Ask the better question.",
+      "style": "calm, inviting",
+      "gap": 0.2
+    },
+    {
+      "id": "f2",
+      "text": "What value did you create this year, in one number?",
+      "style": "curious, direct",
+      "gap": 0.15
+    },
+    {
+      "id": "f3",
+      "text": "Name it before they do.",
+      "style": "matter of fact, warm",
+      "gap": 0.15
+    },
+    {
+      "id": "g1",
+      "text": "Write the number down. Walk in with it.",
+      "style": "resolved, practical",
+      "gap": 0.2
+    },
+    {
+      "id": "g2",
+      "text": "Problem solved, value paid.",
+      "style": "satisfied, confident",
+      "gap": 0.15
+    },
+    {
+      "id": "g3",
+      "text": "Worth it.",
+      "style": "warm, final, a small smile",
+      "gap": 0.15
+    }
+  ]
+}

@@ -2,7 +2,8 @@
    1080x1920, 30 fps, H.264 + AAC. Frames come from the page's drawDemo(t) at 3x; audio is the page's own mix rendered offline. */
 const fs = require('fs'), path = require('path'), { spawn, spawnSync } = require('child_process');
 const lib = require(path.join(__dirname, '..', 'render', 'lib.js'));
-const voice = JSON.parse(fs.readFileSync(path.join(path.resolve(process.argv[2]), 'voice.json'), 'utf8')).voice.toLowerCase();
+const vcfg = JSON.parse(fs.readFileSync(path.join(path.resolve(process.argv[2]), 'voice.json'), 'utf8'));
+const voice = (vcfg.label || vcfg.voice).toLowerCase();
 const ep = path.resolve(process.argv[2]);
 const cfg = fs.readFileSync(path.join(ep, 'episode.js'), 'utf8');
 const outDir = path.join(ep, 'export');
@@ -17,6 +18,7 @@ const f = n => path.join(outDir, n);
   page.on('pageerror', e => console.error('page error:', e.message));
   await page.goto('file://' + path.join(ep, 'dist', slug + '.html') + '?hq=1');
   await page.evaluate(() => Promise.all(['400 20px "Russo One"', '700 20px "Rajdhani"', '400 20px "Bangers"', '700 20px "Fraunces"', '500 10px "DM Sans"', '500 9px "Figtree"'].map(x => document.fonts.load(x, 'Worth it. The Joy Digi 0123'))));
+  await page.evaluate(() => window.WL && WL.fontsReady ? WL.fontsReady.then(() => 1) : 1);
   await page.waitForTimeout(500);
   const dur = await page.evaluate(() => WL.DUR), size = await page.evaluate(() => [document.querySelector('#cv').width, 0]);
   const frames = Math.round(dur * FPS);

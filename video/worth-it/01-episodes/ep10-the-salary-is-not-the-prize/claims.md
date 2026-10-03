@@ -1,5 +1,7 @@
 # Claims — EP10 The Salary Is Not the Prize
 
+Verification date: 2026-10-02
+
 No numbers asserted. No ledger rows needed.
 
 - "A salary is rent on your time" and "equity is the capture machine"
@@ -8,3 +10,7 @@ No numbers asserted. No ledger rows needed.
 - The move ("look up the price of one share") is research, not investment
   advice. The package carries "Educational only. Not financial advice."
   Nothing to source.
+
+| # | Claim | Source | Verdict |
+|---|---|---|---|
+| 1 | No statistics asserted; any figures are illustrative examples | https://www.thejoydigi.com/podcasts/value-created/feed.xml | keep |
