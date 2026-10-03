@@ -239,7 +239,7 @@ function Hero({ show, player, total, share }: { show: Show; player: Player; tota
             )}
           </motion.div>
           <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1, delay: 1 }} className="mt-6 flex flex-wrap items-center gap-3">
-            <span className="text-xs uppercase tracking-[0.25em] text-[#F4EEDD]/45">Also on</span>
+            <span className="text-xs uppercase tracking-[0.25em] text-[#F4EEDD]/60">Also on</span>
             <PlatformLinks spotify={SPOTIFY_URL} youtube={YOUTUBE_URL} linkClassName="rounded-full border border-[#F2A81D]/35 bg-[#070B22]/50 px-4 py-2 text-sm font-semibold text-[#F4EEDD] backdrop-blur transition-colors hover:border-[#F2A81D]" />
           </motion.div>
         </div>

@@ -198,18 +198,18 @@ function Hero({ show, player, share }: { show: Show; player: Player; share: Shar
               </span>
             </motion.div>
           )}
-          {ep && <ListenProgress {...player.progress(latest)} seconds={ep.seconds} color={SUNSET} track="rgba(107,52,16,0.18)" className="mx-auto mt-3 text-[#6B3410]/70 lg:mx-0" />}
+          {ep && <ListenProgress {...player.progress(latest)} seconds={ep.seconds} color={SUNSET} track="rgba(107,52,16,0.18)" className="mx-auto mt-3 text-[#6B3410]/85 lg:mx-0" />}
           {cont && (
             <div className="mt-5 flex flex-col items-center gap-2 lg:items-start">
               <button onClick={() => player.playIndex(cont.index)} className={`inline-flex items-center gap-3 rounded-full bg-[#FFF4DA] px-6 py-3 text-base font-extrabold text-[#6B3410] ${sticker} !shadow-[3px_3px_0_0_#6B3410] transition-transform hover:-translate-y-0.5`}>
                 {player.index === cont.index && player.playing ? <PauseIcon className="h-5 w-5" /> : <PlayIcon className="h-5 w-5" />}
                 Continue Episode {show.episodes[cont.index].number}
               </button>
-              <ListenProgress {...player.progress(cont.index)} seconds={show.episodes[cont.index].seconds} color={SUNSET} track="rgba(107,52,16,0.18)" className="text-[#6B3410]/70" />
+              <ListenProgress {...player.progress(cont.index)} seconds={show.episodes[cont.index].seconds} color={SUNSET} track="rgba(107,52,16,0.18)" className="text-[#6B3410]/85" />
             </div>
           )}
           <div className="mt-6 flex flex-wrap items-center justify-center gap-3 lg:justify-start">
-            <span className="text-sm font-extrabold uppercase tracking-[0.2em] text-[#6B3410]/60">Also on</span>
+            <span className="text-sm font-extrabold uppercase tracking-[0.2em] text-[#6B3410]">Also on</span>
             <PlatformLinks spotify={SPOTIFY_URL} youtube={YOUTUBE_URL} linkClassName={`rounded-full bg-[#FFF4DA] px-4 py-2 text-sm font-extrabold text-[#6B3410] ${sticker} !shadow-[3px_3px_0_0_#6B3410] transition-transform hover:-translate-y-0.5`} />
           </div>
         </div>
@@ -388,7 +388,7 @@ function Episodes({ show, player, share }: { show: Show; player: Player; share: 
                       <span className="mt-1 block text-sm font-bold text-[#6B3410]/55">
                         {ep.dateLabel} · {ep.duration}
                       </span>
-                      <ListenProgress {...player.progress(i)} seconds={ep.seconds} color={SUNSET} track="rgba(107,52,16,0.18)" className="mt-1.5 text-[#6B3410]/70" />
+                      <ListenProgress {...player.progress(i)} seconds={ep.seconds} color={SUNSET} track="rgba(107,52,16,0.18)" className="mt-1.5 text-[#6B3410]/80" />
                       {ep.hasTranscript && (
                         <a
                           href={`${episodePath(show, ep)}#transcript`}

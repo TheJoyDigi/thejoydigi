@@ -1,6 +1,7 @@
 import { NextSeo } from "next-seo";
 import Head from "next/head";
 import { useCallback, useState, type MouseEvent } from "react";
+import { SiSpotify, SiYoutube } from "react-icons/si";
 import type { Show } from "@/lib/podcasts";
 
 export function PodcastSeo({ show, title: showTitle, description: showDescription, episode }: { show: Show; title: string; description: string; episode?: number }) {
@@ -119,38 +120,20 @@ export function Equalizer({ color, active }: { color: string; active: boolean })
   );
 }
 
-export const SpotifyIcon = ({ className = "" }: { className?: string }) => (
-  <svg viewBox="0 0 24 24" className={className} aria-hidden>
-    <circle cx="12" cy="12" r="12" fill="#1DB954" />
-    <g fill="none" stroke="#fff" strokeLinecap="round">
-      <path d="M6.2 9.1c3.9-1.2 8.3-.8 11.7 1.1" strokeWidth="1.9" />
-      <path d="M6.9 12.4c3.2-.9 6.6-.5 9.4 1" strokeWidth="1.6" />
-      <path d="M7.5 15.5c2.5-.6 5-.3 7.2.9" strokeWidth="1.3" />
-    </g>
-  </svg>
-);
-
-export const YouTubeIcon = ({ className = "" }: { className?: string }) => (
-  <svg viewBox="0 0 24 24" className={className} aria-hidden>
-    <rect x="1" y="4.5" width="22" height="15" rx="4.5" fill="#FF0000" />
-    <path d="M10 8.7v6.6l5.6-3.3z" fill="#fff" />
-  </svg>
-);
-
 /** Hero "listen elsewhere" pills; each page passes its own themed pill classes. */
 export function PlatformLinks({ spotify, youtube, className = "", linkClassName = "" }: { spotify?: string; youtube?: string; className?: string; linkClassName?: string }) {
-  const pill = `inline-flex items-center gap-2 no-underline hover:no-underline ${linkClassName}`;
+  const pill = `inline-flex min-h-11 items-center gap-2 no-underline hover:no-underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 ${linkClassName}`;
   return (
     <div className={`flex flex-wrap items-center gap-2.5 ${className}`}>
       {spotify && (
         <a href={spotify} target="_blank" rel="noopener noreferrer" className={pill}>
-          <SpotifyIcon className="h-5 w-5" />
+          <SiSpotify aria-hidden size={22} color="#1DB954" />
           Spotify
         </a>
       )}
       {youtube && (
         <a href={youtube} target="_blank" rel="noopener noreferrer" className={pill}>
-          <YouTubeIcon className="h-5 w-5" />
+          <SiYoutube aria-hidden size={22} color="#FF0000" />
           YouTube
         </a>
       )}
