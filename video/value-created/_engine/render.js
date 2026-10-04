@@ -1,4 +1,4 @@
-/* node _engine/render.js <chapter-folder> [--sheet t1,t2,...] [--design] [--audio-only] [--warp]: renders <chapter>/out/<slug>.mp4 or PNG stills. */
+/* node _engine/render.js <chapter-folder> [--sheet t1,t2,...] [--design] [--safe] [--audio-only] [--warp]: renders <chapter>/out/<slug>.mp4 or PNG stills. */
 const fs = require('fs'), path = require('path'), { spawn, spawnSync } = require('child_process');
 const { launch } = require('../../worth-it/02-engine/render/lib.js');
 const args = process.argv.slice(2), opt = n => { const i = args.indexOf('--' + n); return i > -1 ? args[i + 1] : null; };
@@ -7,6 +7,8 @@ if (!chArg) { console.error('usage: render.js <chapter-folder> [--sheet t1,t2] [
 const chDir = path.resolve(chArg), ch = path.basename(chDir);
 if (!fs.existsSync(path.join(chDir, 'scene.js'))) { console.error(`no scene.js in ${chDir}`); process.exit(1); }
 const slug = 'value-created-' + ch.replace(/^ch0?(\d+)/, 'ch$1');
+/* optional <folder>/video.json: { "height": 1920 } for a 9:16 video */
+const cfgPath = path.join(chDir, 'video.json'), VH = fs.existsSync(cfgPath) ? JSON.parse(fs.readFileSync(cfgPath, 'utf8')).height || 1080 : 1080;
 const fps = 30, out = path.join(chDir, 'out'), ff = a => spawnSync('ffmpeg', ['-y', '-loglevel', 'error', ...a]);
 fs.mkdirSync(out, { recursive: true });
 
@@ -14,7 +16,7 @@ fs.mkdirSync(out, { recursive: true });
 function tile(inputs, dest, cols, size) {
   const list = path.join(out, 'list.txt');
   fs.writeFileSync(list, inputs.map(f => `file '${f}'`).join('\n'));
-  ff(['-f', 'concat', '-safe', '0', '-i', list, '-vf', `scale=${size}:${size},tile=${cols}x${Math.ceil(inputs.length / cols)}:padding=4:color=gray`, '-frames:v', '1', dest]);
+  ff(['-f', 'concat', '-safe', '0', '-i', list, '-vf', `scale=${size}:-2,tile=${cols}x${Math.ceil(inputs.length / cols)}:padding=4:color=gray`, '-frames:v', '1', dest]);
 }
 
 (async () => {
@@ -22,7 +24,7 @@ function tile(inputs, dest, cols, size) {
   const page = await browser.newPage({ viewport: { width: 1100, height: 1100 } });
   page.on('pageerror', e => console.error('page error:', e.message));
   page.on('console', m => console.log('console:', m.text()));
-  await page.goto('file://' + path.join(__dirname, 'index.html') + '?render&ch=' + encodeURIComponent(ch));
+  await page.goto('file://' + path.join(__dirname, 'index.html') + '?render&h=' + VH + '&ch=' + encodeURIComponent(ch));
   await page.waitForFunction(() => window.ready); await page.evaluate(() => window.ready);
   const dur = await page.evaluate(() => window.DUR);
   if (args.includes('--warp')) {
@@ -37,7 +39,7 @@ function tile(inputs, dest, cols, size) {
     const files = [];
     for (const t of ts) {
       const f = path.join(out, `f-${t.toFixed(2)}.png`);
-      fs.writeFileSync(f, Buffer.from(await page.evaluate(t => frame(t, 'image/png'), t), 'base64'));
+      fs.writeFileSync(f, Buffer.from(await page.evaluate(([t, safe]) => frame(t, 'image/png', 1, safe), [t, args.includes('--safe')]), 'base64'));
       files.push(f);
     }
     tile(files, path.join(out, 'sheet.png'), Math.min(6, files.length), 330);
@@ -65,6 +67,6 @@ function tile(inputs, dest, cols, size) {
   /* checks: format, loudness, and a 32-frame contact sheet of the finished file */
   const probe = spawnSync('ffprobe', ['-v', 'error', '-show_entries', 'stream=codec_name,width,height,r_frame_rate:format=duration,size', '-of', 'compact', mp4], { encoding: 'utf8' }).stdout.trim();
   const lufs = (spawnSync('ffmpeg', ['-hide_banner', '-nostats', '-i', mp4, '-af', 'ebur128', '-f', 'null', '-'], { encoding: 'utf8' }).stderr.match(/I:\s+(-?[\d.]+) LUFS/g) || []).pop();
-  ff(['-i', mp4, '-vf', `fps=32/${dur},scale=240:240,tile=8x4:padding=4:color=gray`, '-frames:v', '1', path.join(out, 'mp4sheet.png')]);
+  ff(['-i', mp4, '-vf', `fps=32/${dur},scale=240:-2,tile=8x4:padding=4:color=gray`, '-frames:v', '1', path.join(out, 'mp4sheet.png')]);
   console.log(`\n${mp4}\n${probe}\n${lufs}\ncontact sheet: ${path.join(out, 'mp4sheet.png')}`);
 })().catch(e => { console.error(e); process.exit(1); });

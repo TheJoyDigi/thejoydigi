@@ -1,6 +1,8 @@
 /* Shared engine for the Value, Created chapter videos; a chapter's scene.js supplies the config globals listed in README.md. */
 const cv = document.getElementById('c'), ctx = cv.getContext('2d');
-const W = 1080, H = 1080;
+/* render.js passes h=1920 for vertical folders (video.json) */
+const W = 1080, H = +(new URLSearchParams(location.search).get('h') || 1080);
+cv.height = H;
 const C = {
   paper: '#F4EDE0', ink: '#1A1814', ink2: '#5E564B', faint: '#CDBFA7',
   gold: '#B8893A', goldText: '#946A1C', goldL: '#DDB65F', night: '#16130F', cream: '#F4EDE0', fill: '#3A342C'
@@ -146,7 +148,7 @@ function kicker(t) {
   ctx.font = font('sans', 26, 700); ctx.letterSpacing = '5px'; ctx.fillStyle = C.goldText;
   ctx.fillText('VALUE, CREATED', 72, 96);
   const w = ctx.measureText('VALUE, CREATED').width;
-  ctx.fillStyle = C.ink2; ctx.fillText('CHAPTER ' + CHAPTER, 72 + w + 26, 96);
+  ctx.fillStyle = C.ink2; ctx.fillText(typeof KICKER === 'string' ? KICKER : 'CHAPTER ' + CHAPTER, 72 + w + 26, 96);
   ctx.fillStyle = C.gold; ctx.fillRect(72 + w + 6, 85, 9, 3);
   ctx.restore();
 }
@@ -187,6 +189,17 @@ function draw(real) {
   progressBar(t, real);
 }
 
+/* working box for 9:16 (union of TikTok, Reels and Shorts ad specs, from Worth It's safezone.json); red = covered by platform UI */
+const SAFE = { top: 270, bottom: 1560, left: 120, right: 960, rightLow: 780, splitY: 840 };
+function safeOverlay() {
+  if (H !== 1920) return;
+  ctx.setTransform(1, 0, 0, 1, 0, 0); ctx.globalAlpha = 1; ctx.fillStyle = 'rgba(220,40,40,0.28)';
+  ctx.fillRect(0, 0, W, SAFE.top); ctx.fillRect(0, SAFE.bottom, W, H - SAFE.bottom);
+  ctx.fillRect(0, SAFE.top, SAFE.left, SAFE.bottom - SAFE.top);
+  ctx.fillRect(SAFE.right, SAFE.top, W - SAFE.right, SAFE.splitY - SAFE.top);
+  ctx.fillRect(SAFE.rightLow, SAFE.splitY, W - SAFE.rightLow, SAFE.bottom - SAFE.splitY);
+}
+
 function boot() {
   const DUR = WARP[WARP.length - 1][1];
   window.DUR = DUR;
@@ -196,7 +209,7 @@ function boot() {
     cues: CUES.map(c => Object.assign({}, c, { t: toReal(c.t), d: c.d ? toReal(c.t + c.d) - toReal(c.t) : undefined })).sort((a, b) => a.t - b.t),
     markers: Object.fromEntries(Object.entries(MARKERS).map(([k, v]) => [k, toReal(v)]))
   });
-  window.frame = (t, type, q) => { draw(t); return cv.toDataURL(type || 'image/jpeg', q || .95).split(',')[1]; };
+  window.frame = (t, type, q, safe) => { draw(t); if (safe) safeOverlay(); return cv.toDataURL(type || 'image/jpeg', q || .95).split(',')[1]; };
   window.ready = Promise.all(['600 20px "Fraunces"', '500 20px "DM Sans"', '700 20px "DM Sans"'].map(f => document.fonts.load(f))).then(() => draw(0));
   let t0 = null;
   if (!/render/.test(location.search)) requestAnimationFrame(function loop(ts) { if (t0 === null) t0 = ts; draw(((ts - t0) / 1000) % DUR); requestAnimationFrame(loop); });

@@ -22,12 +22,14 @@ video/value-created/
 | `node _engine/render.js chNN-slug --sheet 2,6,11 [--design]` | Writes stills and a tiled `out/sheet.png` (times in real seconds, or design seconds with `--design`) |
 | `node _engine/render.js chNN-slug` | Full render to `out/value-created-chN-slug.mp4`, then prints format and loudness and writes `out/mp4sheet.png` (32 frames) |
 
+**Vertical 9:16.** Add `video.json` containing `{ "height": 1920 }` to the folder. `H` becomes 1920, and `--sheet … --safe` tints in red the areas that platform UI covers. Keep every word inside the working box: y 270 to 1560 and x 120 to 960, narrowing to x 780 below y 840 (TikTok's button column). These numbers come from `video/worth-it/02-engine/render/safezone.json`.
+
 Rendering takes about 30 s. It needs ffmpeg, numpy and Playwright, all found the same way as the Worth It engine.
 
 ## What `scene.js` must define
 | Global | Meaning |
 |---|---|
-| `CHAPTER`, `KICKER_END`, `BAR_END` | Chapter number. Design times at which the top-left kicker fades and the progress bar stops (just before the end card). |
+| `CHAPTER`, `KICKER_END`, `BAR_END` | Chapter number (or set `KICKER` to a string to replace "CHAPTER N", e.g. for the book promo). Design times at which the top-left kicker fades and the progress bar stops (just before the end card). |
 | `WARP` | `[design, real]` pairs. Write scenes at a relaxed pace (about 52 s design) and map them to about 0.7× (36 to 40 s real); the end card keeps about 5 s real. |
 | `SWIPES` | Design times of the 3 ink swipes that hide the biggest cuts |
 | `KB` | `[start, end]` slow camera-push segments; put boundaries at swipe centres |
