@@ -138,10 +138,12 @@ function Panorama() {
   );
 }
 
-function Hero({ show, player, total, share }: { show: Show; player: Player; total: number; share: ShareControl }) {
+function Hero({ show, player, total, share, episode }: { show: Show; player: Player; total: number; share: ShareControl; episode?: number }) {
   const latest = show.episodes[show.episodes.length - 1];
   const resumeEp = player.resume ? show.episodes[player.resume.index] : null;
-  const start = player.resume?.index ?? 0;
+  // On a chapter share page (/N), the CTA follows the URL chapter, not the resume state.
+  const urlEp = episode === undefined ? undefined : show.episodes[episode];
+  const start = episode ?? player.resume?.index ?? 0;
   return (
     <section className="relative isolate min-h-[100svh] overflow-hidden">
       <Panorama />
@@ -214,10 +216,10 @@ function Hero({ show, player, total, share }: { show: Show; player: Player; tota
               className="group inline-flex items-center justify-center gap-3 rounded-full bg-gradient-to-b from-[#F3DE9E] to-[#C9A45C] px-7 py-4 font-semibold text-[#060E1A] shadow-[0_0_40px_-6px_rgba(217,181,106,0.7)] transition-transform duration-300 hover:-translate-y-0.5"
             >
               {player.index === start && player.playing ? <PauseIcon className="h-5 w-5" /> : <PlayIcon className="h-5 w-5" />}
-              {resumeEp ? `Continue Chapter ${roman(resumeEp.number)}` : "Begin Chapter I"}
-              {resumeEp && player.resume!.time > 0 && <span className="text-sm font-medium opacity-70">· {fmtLeft(resumeEp.seconds - (player.index === start ? player.time : player.resume!.time))}</span>}
+              {urlEp ? `Begin Chapter ${roman(urlEp.number)}` : resumeEp ? `Continue Chapter ${roman(resumeEp.number)}` : "Begin Chapter I"}
+              {!urlEp && resumeEp && player.resume!.time > 0 && <span className="text-sm font-medium opacity-70">· {fmtLeft(resumeEp.seconds - (player.index === start ? player.time : player.resume!.time))}</span>}
             </button>
-            {latest && latest.number !== (resumeEp?.number ?? 1) && (
+            {latest && latest.number !== (urlEp?.number ?? resumeEp?.number ?? 1) && (
               <button
                 onClick={() => player.playIndex(show.episodes.length - 1)}
                 className="inline-flex items-center justify-center gap-3 rounded-full border border-[#D9B56A]/50 px-7 py-4 font-semibold text-[#F3DE9E] transition-colors hover:border-[#D9B56A] hover:bg-[#D9B56A]/10"
@@ -571,7 +573,7 @@ export default function MoneyMastered({ show, episode }: { show: Show; episode?:
         description={show.description}
         episode={episode}
       />
-      <Hero show={show} player={player} total={total} share={share} />
+      <Hero show={show} player={player} total={total} share={share} episode={episode} />
       <Ledger show={show} player={player} total={total} />
       <Contents show={show} player={player} share={share} />
       <EpisodeTranscript episode={episode === undefined ? undefined : show.episodes[episode]} />
