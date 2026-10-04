@@ -144,10 +144,12 @@ function Mark({ className = "" }: { className?: string }) {
   );
 }
 
-function Hero({ show, player, total, share }: { show: Show; player: Player; total: number; share: ShareControl }) {
+function Hero({ show, player, total, share, episode }: { show: Show; player: Player; total: number; share: ShareControl; episode?: number }) {
   const latest = show.episodes[show.episodes.length - 1];
   const resumeEp = player.resume ? show.episodes[player.resume.index] : null;
-  const start = player.resume?.index ?? 0;
+  // On a chapter share page (/N), the CTA follows the URL chapter, not the resume state.
+  const urlEp = episode === undefined ? undefined : show.episodes[episode];
+  const start = episode ?? player.resume?.index ?? 0;
   const { scrollY } = useScroll();
   const yMark = useTransform(scrollY, [0, 700], [0, 90]);
   return (
@@ -226,10 +228,10 @@ function Hero({ show, player, total, share }: { show: Show; player: Player; tota
               className="group inline-flex items-center justify-center gap-3 rounded-full bg-gradient-to-b from-[#FFD47E] to-[#D1941F] px-7 py-4 font-semibold text-[#0C1130] shadow-[0_0_40px_-6px_rgba(242,168,29,0.7)] transition-transform duration-300 hover:-translate-y-0.5"
             >
               {player.index === start && player.playing ? <PauseIcon className="h-5 w-5" /> : <PlayIcon className="h-5 w-5" />}
-              {resumeEp ? `Continue Chapter ${roman(resumeEp.number)}` : "Begin Chapter I"}
-              {resumeEp && player.resume!.time > 0 && <span className="text-sm font-medium opacity-70">· {fmtLeft(resumeEp.seconds - (player.index === start ? player.time : player.resume!.time))}</span>}
+              {urlEp ? `Begin Chapter ${roman(urlEp.number)}` : resumeEp ? `Continue Chapter ${roman(resumeEp.number)}` : "Begin Chapter I"}
+              {!urlEp && resumeEp && player.resume!.time > 0 && <span className="text-sm font-medium opacity-70">· {fmtLeft(resumeEp.seconds - (player.index === start ? player.time : player.resume!.time))}</span>}
             </button>
-            {latest && latest.number !== (resumeEp?.number ?? 1) && (
+            {latest && latest.number !== (urlEp?.number ?? resumeEp?.number ?? 1) && (
               <button
                 onClick={() => player.playIndex(show.episodes.length - 1)}
                 className="inline-flex items-center justify-center gap-3 rounded-full border border-[#F2A81D]/50 px-7 py-4 font-semibold text-[#FFD47E] transition-colors hover:border-[#F2A81D] hover:bg-[#F2A81D]/10"
@@ -589,7 +591,7 @@ export default function ValueCreated({ show, episode }: { show: Show; episode?: 
         description={show.description}
         episode={episode}
       />
-      <Hero show={show} player={player} total={total} share={share} />
+      <Hero show={show} player={player} total={total} share={share} episode={episode} />
       <Ledger show={show} player={player} total={total} />
       <Contents show={show} player={player} share={share} />
       <EpisodeTranscript episode={episode === undefined ? undefined : show.episodes[episode]} />
