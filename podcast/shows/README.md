@@ -36,3 +36,4 @@ episodic audio with chapters instead of episodes.
 - `oc-pack/` — The OC Pack: Orange County Dog & Pet Parents. Weekly, ~20 min.
 - `money-mastered/` — Money, Mastered. 36-chapter book, 3 chapters/week (Mon/Wed/Fri).
 - `daily-ai-brief/` — legacy daily-news project (separate pipeline, library only).
+- `incentives-decoded/` — Incentives, Decoded. 32-chapter book; sound identity kit so far (start at `HANDOFF.md`).
