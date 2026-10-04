@@ -11,8 +11,7 @@ export function PodcastSeo({ show, title: showTitle, description: showDescriptio
   const url = ep ? `${show.pageUrl}/${ep.number}` : show.pageUrl;
   const cover = `https://www.thejoydigi.com${show.cover}`;
   const card = `https://www.thejoydigi.com/og/podcasts/${show.slug}/${ep ? ep.number : "show"}.png`;
-  const jsonLd = {
-    "@context": "https://schema.org",
+  const series = {
     "@type": "PodcastSeries",
     name: show.title,
     description: show.description,
@@ -21,16 +20,31 @@ export function PodcastSeo({ show, title: showTitle, description: showDescriptio
     image: cover,
     author: { "@type": "Person", name: show.author },
     publisher: { "@type": "Organization", name: "The Joy Digi", url: "https://www.thejoydigi.com" },
-    episode: show.episodes.map((ep) => ({
-      "@type": "PodcastEpisode",
-      url: `${show.pageUrl}/${ep.number}`,
-      name: ep.title,
-      description: ep.description,
-      datePublished: new Date(ep.pubDate).toISOString(),
-      timeRequired: `PT${Math.round(ep.seconds / 60)}M`,
-      associatedMedia: { "@type": "MediaObject", contentUrl: `https://www.thejoydigi.com${ep.audio}` },
-    })),
   };
+  const episodeLd = (e: Show["episodes"][number]) => ({
+    "@type": "PodcastEpisode",
+    url: `${show.pageUrl}/${e.number}`,
+    name: e.title,
+    episodeNumber: e.number,
+    description: e.description,
+    datePublished: new Date(e.pubDate).toISOString(),
+    timeRequired: `PT${Math.round(e.seconds / 60)}M`,
+    associatedMedia: { "@type": "MediaObject", contentUrl: `https://www.thejoydigi.com${e.audio}` },
+  });
+  const jsonLd = ep
+    ? [
+        { "@context": "https://schema.org", ...episodeLd(ep), image: cover, partOfSeries: { "@type": "PodcastSeries", name: show.title, url: show.pageUrl } },
+        {
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            { "@type": "ListItem", position: 1, name: "Podcasts", item: "https://www.thejoydigi.com/podcasts" },
+            { "@type": "ListItem", position: 2, name: show.title, item: show.pageUrl },
+            { "@type": "ListItem", position: 3, name: ep.shortTitle, item: url },
+          ],
+        },
+      ]
+    : { "@context": "https://schema.org", ...series, episode: show.episodes.map(episodeLd) };
   return (
     <>
       <NextSeo
