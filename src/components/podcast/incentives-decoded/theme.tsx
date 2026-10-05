@@ -51,24 +51,35 @@ export function DecodeText({ text, delay = 0, duration = 900, className = "" }: 
   useEffect(() => {
     if (reduce) return setShown(text);
     let raf = 0;
+    let last = -Infinity;
     const start = performance.now() + delay;
     const tick = (now: number) => {
       const p = Math.max(0, Math.min(1, (now - start) / duration));
-      const solved = Math.floor(p * text.length);
-      setShown(
-        text
-          .split("")
-          .map((ch, i) => (i < solved || ch === " " || ch === "," ? ch : GLYPHS[Math.floor(Math.random() * GLYPHS.length)]))
-          .join("")
-      );
+      // Swap glyphs ~14×/s, not every frame, so it reads as decoding rather than strobing.
+      if (now - last >= 70 || p === 1) {
+        last = now;
+        const solved = Math.floor(p * text.length);
+        setShown(
+          text
+            .split("")
+            .map((ch, i) => (i < solved || ch === " " || ch === "," ? ch : GLYPHS[Math.floor(Math.random() * GLYPHS.length)]))
+            .join("")
+        );
+      }
       if (p < 1) raf = requestAnimationFrame(tick);
     };
     raf = requestAnimationFrame(tick);
     return () => cancelAnimationFrame(raf);
   }, [text, delay, duration, reduce]);
+  // Each slot keeps the real character's width so scrambling never reflows the layout.
   return (
     <span className={className} aria-label={text}>
-      <span aria-hidden>{shown}</span>
+      {text.split("").map((ch, i) => (
+        <span key={i} aria-hidden className="relative inline-block whitespace-pre">
+          <span className="invisible">{ch}</span>
+          <span className="absolute inset-0 flex justify-center">{shown[i]}</span>
+        </span>
+      ))}
     </span>
   );
 }
