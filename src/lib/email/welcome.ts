@@ -84,7 +84,7 @@ const COPY: Record<ShowSlug, (name: string) => Copy> = {
       heading: "Find the payoff.",
       paragraphs: [
         `${hello(name)} you're on the list for **Incentives, Decoded**, 32 short chapters on the hidden payoffs behind how people act: at work, online, and in your own habits.`,
-        "Each level is about five minutes and builds on the last, so start at Level 01.",
+        "We call them levels: each one is about five minutes and builds on the last, so start at Level 01.",
       ],
       primary: { label: "Play Level 01", href: `${t.pageUrl}/1` },
       secondary: { label: "See all 32 levels", href: t.pageUrl },

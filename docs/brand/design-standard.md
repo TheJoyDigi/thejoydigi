@@ -35,7 +35,7 @@ Code source of truth: `src/lib/email/brand.ts` (tokens) and `src/lib/email/layou
 
 ## 2. Show sub-brands
 
-A show owns: card colours, its cover art, its kicker, its heading/CTA wording and tone. A show never changes: the frame, the type families, the layout skeleton, the footer.
+A show owns: card colours, its cover art, its kicker, its heading/CTA wording and tone. A show never changes: the frame, the type families, the layout skeleton, the footer. (Exception: Incentives, Decoded uses Bricolage Grotesque + Space Mono on its web pages only; its emails and OG cards stay on Fraunces + DM Sans.)
 
 | Show | Card | Text | Heading | Accent (button) | On accent | Tone |
 |---|---|---|---|---|---|---|
@@ -49,7 +49,7 @@ Full token sets (muted, kicker, outline, subtle) live in `THEMES` in `brand.ts`.
 
 **Note:** OC Pack's web accent is `#FC7F46`/`#FF6F61`. In email it's `#B8431F` because the brighter orange fails contrast for 16px button text (3.5:1). Keep the brighter orange for large display art only.
 
-**Incentives, Decoded:** web uses Bricolage Grotesque + Space Mono, ink `#0E0D12` outlines with hard offset shadows, and accents Pink `#FF5CA8`, Cyan `#4FE0E8`, Orange `#FF8A3D` for level tiles. Chapters are called "levels" on the site; feed titles stay "Chapter N".
+**Incentives, Decoded:** web uses Bricolage Grotesque + Space Mono, ink `#0E0D12` outlines with hard offset shadows, and accents Pink `#FF5CA8`, Cyan `#4FE0E8`, Orange `#FF8A3D` for level tiles. Chapters are called "levels" on the site and in emails after first mentioning "32 chapters"; feed titles stay "Chapter N". Lime text only on violet or ink (it fails on paper).
 
 **Anthropic Blogcast:** never use Anthropic's or Claude's logo, wordmark, starburst or mascot. Always say it's independent and not affiliated.
 

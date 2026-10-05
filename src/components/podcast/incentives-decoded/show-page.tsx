@@ -31,7 +31,7 @@ function Hero({ show, player, share }: { show: Show; player: Player; share: Shar
       <Nav
         onShare={() => share.open({ show })}
         crumbs={
-          <Link href="/podcasts" className={`${monoLabel} text-white/80 no-underline hover:text-[#D4FF3A] hover:no-underline`}>
+          <Link href="/podcasts" className={`${monoLabel} text-white/90 no-underline hover:text-[#D4FF3A] hover:no-underline`}>
             ← The Joy Digi
           </Link>
         }
@@ -71,7 +71,7 @@ function Hero({ show, player, share }: { show: Show; player: Player; share: Shar
           <motion.p initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ ...SPRING, delay: 0.6 }} className="mt-8 max-w-xl text-2xl font-bold leading-tight tracking-[-0.02em] md:text-3xl">
             {TAGLINE}
           </motion.p>
-          <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.75 }} className="mt-3 max-w-xl text-lg text-white/80">
+          <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.75 }} className="mt-3 max-w-xl text-lg text-white/90">
             {show.description.replace(/\s*Produced by The Joy Digi\.?$/, "")}
           </motion.p>
           <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ ...SPRING, delay: 0.85 }} className="mt-9 flex flex-wrap items-center gap-4">

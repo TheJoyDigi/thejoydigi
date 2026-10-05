@@ -36,7 +36,7 @@ const SKINS: Record<string, { bg: string; text: string; sub: string; cta: string
   "incentives-decoded": {
     bg: "bg-[#5B3DF5] bg-[radial-gradient(rgba(255,255,255,0.16)_1.2px,transparent_1.2px)] [background-size:22px_22px]",
     text: "text-white",
-    sub: "text-white/80",
+    sub: "text-white/90",
     cta: "border-[2.5px] border-[#0E0D12] bg-[#D4FF3A] text-[#0E0D12] shadow-[4px_4px_0_#0E0D12] group-hover:-translate-y-0.5",
     label: "Audio series",
     unit: "levels",

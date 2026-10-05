@@ -45,7 +45,7 @@ function StartButton({ show, index, player }: Props) {
           {label}
           {playing && <Equalizer color="#D4FF3A" active />}
         </span>
-        <span className={`${monoLabel} mt-1 block !normal-case !tracking-normal text-white/70`}>{sub}</span>
+        <span className={`${monoLabel} mt-1 block !normal-case !tracking-normal text-white/90`}>{sub}</span>
       </span>
     </button>
   );
@@ -56,7 +56,7 @@ function XpBar({ show, index, player }: Props) {
   const cleared = show.episodes.filter((_, i) => player.progress(i).done).length;
   return (
     <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ ...SPRING, delay: 0.9 }} className="rounded-[20px] border-[2.5px] border-[#0E0D12] bg-[#0E0D12] p-4 md:p-5">
-      <div className={`${monoLabel} mb-3 flex justify-between gap-4 text-white/70`}>
+      <div className={`${monoLabel} mb-3 flex justify-between gap-4 text-white/90`}>
         <span>Your run</span>
         <span className="tabular-nums text-[#D4FF3A]">
           {cleared > 0 ? `${cleared}/${show.episodes.length} cleared` : `Level ${pad(show.episodes[index].number)} of ${show.episodes.length}`}
@@ -99,7 +99,7 @@ function Hero({ show, index, player, share }: Props & { share: ShareControl }) {
         onShare={() => share.open({ show, episode: ep })}
         crumbs={
           <nav aria-label="Breadcrumb">
-            <ol className={`${monoLabel} flex items-center gap-2 text-white/80`}>
+            <ol className={`${monoLabel} flex items-center gap-2 text-white/90`}>
               <li className="hidden sm:block">
                 <Link href="/podcasts" className="text-inherit no-underline hover:text-[#D4FF3A] hover:no-underline">
                   Podcasts
@@ -249,7 +249,7 @@ function ColdOpen({ show, index, player }: Props) {
             </span>
             <span className="min-w-0">
               <span className="block font-extrabold leading-tight">Alex, Jordan</span>
-              <span className={`${monoLabel} block !text-[10px] text-[#0E0D12]/55`}>Level {pad(ep.number)} · {ep.shortTitle}</span>
+              <span className={`${monoLabel} block !text-[10px] text-[#0E0D12]/75`}>Level {pad(ep.number)} · {ep.shortTitle}</span>
             </span>
           </div>
           <ul className="space-y-3 p-4 md:p-6">
@@ -265,7 +265,7 @@ function ColdOpen({ show, index, player }: Props) {
                   className={`flex ${left ? "justify-start" : "justify-end"}`}
                 >
                   <div className={`max-w-[85%] rounded-[20px] border-2 border-[#0E0D12] px-4 py-3 ${left ? "rounded-bl-[6px] bg-[#F1EEFF]" : "rounded-br-[6px] bg-[#D4FF3A]"}`}>
-                    <p className={`${monoLabel} !text-[10px] text-[#0E0D12]/55`}>{t.speaker}</p>
+                    <p className={`${monoLabel} !text-[10px] text-[#0E0D12]/75`}>{t.speaker}</p>
                     <p className="mt-1 text-[17px] font-medium leading-snug">{t.text}</p>
                   </div>
                 </motion.li>

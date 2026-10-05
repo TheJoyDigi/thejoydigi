@@ -217,7 +217,7 @@ export function Follow({ show }: { show: Show }) {
             </AnimatePresence>
           </button>
         </div>
-        <p className={`${monoLabel} mt-6 break-all !normal-case !tracking-normal text-[#0E0D12]/60`}>{show.feedUrl}</p>
+        <p className={`${monoLabel} mt-6 break-all !normal-case !tracking-normal text-[#0E0D12]/75`}>{show.feedUrl}</p>
       </div>
     </section>
   );
@@ -303,7 +303,7 @@ export function LevelTile({ show, index, player, current = false, className = ""
     >
       <span className="flex items-start justify-between gap-2">
         <span className="leading-none">
-          <span className={`${monoLabel} block !text-[10px] opacity-70`}>Level</span>
+          <span className={`${monoLabel} block !text-[10px] opacity-90`}>Level</span>
           <span className="text-5xl font-extrabold tracking-[-0.05em]">{pad(ep.number)}</span>
         </span>
         {current ? (
@@ -316,7 +316,7 @@ export function LevelTile({ show, index, player, current = false, className = ""
       </span>
       <span className="mt-6 text-lg font-extrabold leading-[1.1] tracking-[-0.02em]">{ep.shortTitle}</span>
       <span className="mt-auto flex items-center justify-between pt-4">
-        <span className={`${monoLabel} !text-[10px] opacity-70`}>{ep.duration}</span>
+        <span className={`${monoLabel} !text-[10px] opacity-90`}>{ep.duration}</span>
         <motion.button
           type="button"
           whileTap={{ scale: 0.85 }}
