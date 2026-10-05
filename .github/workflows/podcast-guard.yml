@@ -16,6 +16,7 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PR: ${{ github.event.pull_request.number }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
           REPO: ${{ github.repository }}
         run: |
           set -euo pipefail
@@ -33,6 +34,18 @@ jobs:
             echo "$outside"
             exit 0
           fi
+
+          # The chapter-email endpoint rejects pubDates without a timezone; catch them before they go live.
+          for feed in $(echo "$files" | grep -E '^public/podcasts/[^/]+/feed\.xml$' || true); do
+            bad=$(gh api -H "Accept: application/vnd.github.raw" "repos/$REPO/contents/$feed?ref=$HEAD_SHA" \
+              | grep -o '<pubDate>[^<]*</pubDate>' \
+              | grep -Ev '^<pubDate>(Mon|Tue|Wed|Thu|Fri|Sat|Sun), [0-9]{1,2} (Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec) [0-9]{4} [0-9]{2}:[0-9]{2}:[0-9]{2} ([+-][0-9]{4}|GMT|UTC)</pubDate>$' || true)
+            if [ -n "$bad" ]; then
+              echo "::error file=$feed::Malformed pubDate (needs a timezone, e.g. 'Mon, 05 Oct 2026 09:00:00 -0700') - not auto-merging:"
+              echo "$bad"
+              exit 1
+            fi
+          done
 
           gh pr merge "$PR" --repo "$REPO" --squash --auto
           echo "::notice::Podcast-only diff - auto-merge enabled."
