@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Build public/podcasts/incentives-decoded/feed.xml from Lola's final MP3s.
 
-Usage: python3 podcast/shows/incentives-decoded/build_feed.py <dir with ch{N}-final.mp3> [--date 2026-10-05]
+Usage: python3 podcast/shows/incentives-decoded/build_feed.py <dir with ch{N}-final.mp3> [--date 2026-10-04]
 Copies each MP3 into public/podcasts/incentives-decoded/ and measures real byte size and duration.
 """
 
@@ -41,7 +41,7 @@ def duration(mp3: Path) -> int:
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("mp3_dir", type=Path)
-    parser.add_argument("--date", default="2026-10-05", help="release day (Pacific); chapters are a minute apart")
+    parser.add_argument("--date", default="2026-10-04", help="release day (Pacific); chapters are a minute apart")
     args = parser.parse_args()
 
     copy = json.loads((Path(__file__).parent / "descriptions.json").read_text())
