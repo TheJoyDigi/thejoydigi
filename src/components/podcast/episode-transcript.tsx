@@ -14,7 +14,12 @@ const DEFAULT_SETTINGS: ReaderSettings = { size: 1, width: "comfortable", theme:
 const STORAGE_KEY = "thejoydigi.reader-settings";
 
 /** The complete transcript remains in server HTML, including when the reader is closed. */
-export function EpisodeTranscript({ episode }: { episode?: Episode }) {
+const COPY = {
+  default: { eyebrow: "THE READING ROOM", title: "The story, in your hands.", body: "Read along at your own pace. Make the page yours." },
+  arcade: { eyebrow: "READ MODE", title: "Every word, no headphones.", body: "Read along, skim back, steal the best lines." },
+};
+
+export function EpisodeTranscript({ episode, variant = "default" }: { episode?: Episode; variant?: keyof typeof COPY }) {
   const [settings, setSettings] = useState<ReaderSettings>(DEFAULT_SETTINGS);
   const [loaded, setLoaded] = useState(false);
   const [focused, setFocused] = useState(false);
@@ -93,16 +98,16 @@ export function EpisodeTranscript({ episode }: { episode?: Episode }) {
       aria-labelledby="transcript-heading"
       aria-modal={focused ? true : undefined}
       role={focused ? "dialog" : undefined}
-      className={`${styles.section} ${focused ? styles.focused : ""}`}
+      className={`${styles.section} ${variant === "arcade" ? styles.arcade : ""} ${focused ? styles.focused : ""}`}
     >
       <div className={styles.shell}>
         {!focused && (
           <div className={styles.intro}>
             <span className={styles.introMark} aria-hidden="true"><BookOpen size={18} strokeWidth={1.6} /></span>
             <div>
-              <p className={styles.eyebrow}>THE READING ROOM</p>
-              <h2 id="transcript-heading" className={styles.introTitle}>The story, in your hands.</h2>
-              <p className={styles.introCopy}>Read along at your own pace. Make the page yours.</p>
+              <p className={styles.eyebrow}>{COPY[variant].eyebrow}</p>
+              <h2 id="transcript-heading" className={styles.introTitle}>{COPY[variant].title}</h2>
+              <p className={styles.introCopy}>{COPY[variant].body}</p>
             </div>
           </div>
         )}

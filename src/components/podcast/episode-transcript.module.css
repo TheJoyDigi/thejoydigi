@@ -335,3 +335,41 @@
   .focused { padding: 0; }
   .focused .card { min-height: 100dvh; border: 0; border-radius: 0; }
 }
+
+/* Incentives, Decoded: chunky outlines and hard shadows on violet. */
+.arcade {
+  color: #fff;
+  background: radial-gradient(rgba(255, 255, 255, 0.16) 1.2px, transparent 1.2px) 0 0 / 22px 22px, #5b3df5;
+  border-top: 2.5px solid #0e0d12;
+  border-bottom: 2.5px solid #0e0d12;
+}
+.arcade .eyebrow { color: #d4ff3a; font-family: var(--id-mono), ui-monospace, monospace; letter-spacing: 0.18em; }
+.arcade .introMark { border: 2.5px solid #0e0d12; border-radius: 14px; color: #0e0d12; background: #d4ff3a; box-shadow: 3px 3px 0 #0e0d12; }
+.arcade .introTitle { color: #fff; font-family: var(--id-display), system-ui, sans-serif; font-weight: 800; letter-spacing: -0.045em; }
+.arcade .introCopy { color: rgba(255, 255, 255, 0.92); }
+.arcade .card {
+  --reader-bg: #fffdf7;
+  --reader-ink: #0e0d12;
+  --reader-muted: #4a4752;
+  --reader-accent: #5b3df5;
+  --reader-hairline: rgba(14, 13, 18, 0.18);
+  --reader-control: #f1eeff;
+  --reader-control-active: #d4ff3a;
+  border: 2.5px solid #0e0d12;
+  border-radius: 24px;
+  box-shadow: 8px 8px 0 #0e0d12;
+}
+.arcade .night {
+  --reader-bg: #16141d;
+  --reader-ink: #f5f3ff;
+  --reader-muted: #b9b4c9;
+  --reader-accent: #d4ff3a;
+  --reader-hairline: #2c2838;
+  --reader-control: #211e2b;
+  --reader-control-active: #3a2f8f;
+}
+.arcade .episodeTitle { font-family: var(--id-display), system-ui, sans-serif; font-weight: 800; letter-spacing: -0.045em; }
+.arcade .kicker, .arcade .chapterMeta { font-family: var(--id-mono), ui-monospace, monospace; }
+.arcade .summary { border: 2.5px solid #0e0d12; border-radius: 999px; box-shadow: 3px 3px 0 #0e0d12; }
+.arcade .transcript { font-family: var(--id-display), system-ui, sans-serif; letter-spacing: -0.01em; }
+.arcade .transcript strong { font-family: var(--id-mono), ui-monospace, monospace; }

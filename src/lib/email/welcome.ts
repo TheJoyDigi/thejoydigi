@@ -75,6 +75,22 @@ const COPY: Record<ShowSlug, (name: string) => Copy> = {
       signoff: "Happy listening.\n— Alex & Jordan",
     };
   },
+  "incentives-decoded": (name) => {
+    const t = THEMES["incentives-decoded"];
+    return {
+      subject: "Welcome to Incentives, Decoded",
+      preheader: "You're in. Level 01 takes about five minutes.",
+      kicker: "Incentives, Decoded · Audio series",
+      heading: "Find the payoff.",
+      paragraphs: [
+        `${hello(name)} you're on the list for **Incentives, Decoded**, 32 short chapters on the hidden payoffs behind how people act: at work, online, and in your own habits.`,
+        "We call them levels: each one is about five minutes and builds on the last, so start at Level 01.",
+      ],
+      primary: { label: "Play Level 01", href: `${t.pageUrl}/1` },
+      secondary: { label: "See all 32 levels", href: t.pageUrl },
+      signoff: "Ask what the payoff is. You'll never unsee it.\n— Alex & Jordan",
+    };
+  },
 };
 
 /** Welcome email for a show; `name` is raw user input (escaped by the layout). */
