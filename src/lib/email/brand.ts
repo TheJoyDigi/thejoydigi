@@ -109,6 +109,22 @@ export const THEMES = {
     outline: "#6E6961",
     subtle: "#1A1F24",
   },
+  "incentives-decoded": {
+    slug: "incentives-decoded",
+    name: "Incentives, Decoded",
+    from: "Incentives, Decoded <hello@thejoydigi.com>",
+    spotifyUrl: "",
+    ...show("incentives-decoded"),
+    card: "#5B3DF5",
+    text: "#FFFFFF",
+    muted: "#E4DEFF",
+    heading: "#D4FF3A",
+    kicker: "#D4FF3A",
+    accent: "#D4FF3A",
+    onAccent: "#0E0D12",
+    outline: "#0E0D12",
+    subtle: "#4A2FE0",
+  },
 } satisfies Record<string, ShowTheme>;
 
 export type ShowSlug = keyof typeof THEMES;

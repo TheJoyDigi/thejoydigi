@@ -33,6 +33,14 @@ const SKINS: Record<string, { bg: string; text: string; sub: string; cta: string
     label: "Audiobook series",
     unit: "chapters",
   },
+  "incentives-decoded": {
+    bg: "bg-[#5B3DF5] bg-[radial-gradient(rgba(255,255,255,0.16)_1.2px,transparent_1.2px)] [background-size:22px_22px]",
+    text: "text-white",
+    sub: "text-white/80",
+    cta: "border-[2.5px] border-[#0E0D12] bg-[#D4FF3A] text-[#0E0D12] shadow-[4px_4px_0_#0E0D12] group-hover:-translate-y-0.5",
+    label: "Audio series",
+    unit: "levels",
+  },
   "anthropic-blogcast": {
     bg: "bg-[#101418] bg-[radial-gradient(circle_at_85%_25%,rgba(226,114,91,0.35),transparent_55%)]",
     text: "text-[#F4EFE6]",
@@ -47,7 +55,7 @@ export default function Podcasts({ shows }: { shows: ShowCard[] }) {
   return (
     <MainLayout
       title="Podcasts | The Joy Digi"
-      description="Podcasts produced by The Joy Digi: Money, Mastered — an audiobook on money and investing — The OC Pack, the weekly show for Orange County pet parents, and Value, Created — an audiobook on the secret of value creation."
+      description="Podcasts produced by The Joy Digi: Money, Mastered — an audiobook on money and investing — The OC Pack, the weekly show for Orange County pet parents, Value, Created — an audiobook on the secret of value creation — and Incentives, Decoded, a 32-chapter series on the hidden payoffs behind how people act."
     >
       <Head>
         <link
@@ -67,6 +75,12 @@ export default function Podcasts({ shows }: { shows: ShowCard[] }) {
           type="application/rss+xml"
           title="Value, Created"
           href="https://www.thejoydigi.com/podcasts/value-created/feed.xml"
+        />
+        <link
+          rel="alternate"
+          type="application/rss+xml"
+          title="Incentives, Decoded"
+          href="https://www.thejoydigi.com/podcasts/incentives-decoded/feed.xml"
         />
         <link
           rel="alternate"
@@ -115,7 +129,7 @@ export default function Podcasts({ shows }: { shows: ShowCard[] }) {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const shows = ["money-mastered", "oc-pack", "value-created", "anthropic-blogcast"].map((slug) => {
+  const shows = ["incentives-decoded", "money-mastered", "oc-pack", "value-created", "anthropic-blogcast"].map((slug) => {
     const s = getShow(slug);
     return {
       slug,

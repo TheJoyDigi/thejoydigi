@@ -43,10 +43,13 @@ A show owns: card colours, its cover art, its kicker, its heading/CTA wording an
 | Money, Mastered | `#060E1A` | `#EFE6D2` | `#F3DE9E` | `#D9B56A` | `#060E1A` | Classic, confident course |
 | The OC Pack | `#FFF4DA` | `#6B3410` | `#6B3410` | `#B8431F` | `#FFFFFF` | Sunny, friendly, local, emoji welcome |
 | Anthropic Blogcast | `#101418` | `#F4EFE6` | `#F4EFE6` | `#E2725B` | `#101418` | Smart, warm tech-editorial, independent |
+| Incentives, Decoded | `#5B3DF5` | `#FFFFFF` | `#D4FF3A` | `#D4FF3A` | `#0E0D12` | Playful game zine for younger listeners: chunky ink outlines, hard shadows, sticker game pieces |
 
 Full token sets (muted, kicker, outline, subtle) live in `THEMES` in `brand.ts`.
 
 **Note:** OC Pack's web accent is `#FC7F46`/`#FF6F61`. In email it's `#B8431F` because the brighter orange fails contrast for 16px button text (3.5:1). Keep the brighter orange for large display art only.
+
+**Incentives, Decoded:** web uses Bricolage Grotesque + Space Mono, ink `#0E0D12` outlines with hard offset shadows, and accents Pink `#FF5CA8`, Cyan `#4FE0E8`, Orange `#FF8A3D` for level tiles. Chapters are called "levels" on the site; feed titles stay "Chapter N".
 
 **Anthropic Blogcast:** never use Anthropic's or Claude's logo, wordmark, starburst or mascot. Always say it's independent and not affiliated.
 
