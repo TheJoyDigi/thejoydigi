@@ -10,7 +10,7 @@ This book is about what money is made of. Its companion, *Money, Mastered*, is a
 
 ## A small request
 
-If this book changed something for you, the most valuable thing you can do in return is tell someone. A short, honest review on Amazon helps the next reader find it. That's the whole book in miniature: a small effort from you that creates real value for a stranger.
+If this book changed something for you, the most valuable thing you can do in return is tell someone. A short, honest review wherever you bought it helps the next reader find it. That's the whole book in miniature: a small effort from you that creates real value for a stranger.
 
 ## About The Joy Digi
 

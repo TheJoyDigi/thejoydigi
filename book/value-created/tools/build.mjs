@@ -3,69 +3,15 @@
 import { execFileSync } from "node:child_process";
 import fs from "node:fs";
 import path from "node:path";
-import { fileURLToPath } from "node:url";
-import { marked } from "marked";
 import book from "../book.json" with { type: "json" };
+import { esc, MS, NUM, OUT, pad, render as renderMd, smart } from "./lib.mjs";
 
-const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-const MS = path.join(ROOT, "manuscript");
-const OUT = path.join(ROOT, "out");
+const ROOT = path.resolve(OUT, "..");
 const STAGE = path.join(OUT, "epub");
 const OEBPS = path.join(STAGE, "OEBPS");
 const EPUB = path.join(OUT, "value-created.epub");
 const EPUBCHECK = path.join(OUT, "tools/epubcheck-5.2.1/epubcheck.jar");
-const NUM = ["One", "Two", "Three", "Four", "Five"];
-const pad = (n) => String(n).padStart(2, "0");
-const esc = (s) => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
-
-// Marked has already escaped quotes in text tokens, so decode those before curling them.
-const smart = (s) =>
-  s
-    .replace(/&#39;/g, "'")
-    .replace(/&quot;/g, '"')
-    .replace(/(^|[\s([{—–-])"/g, "$1“")
-    .replace(/"/g, "”")
-    .replace(/(\w)'(\w)/g, "$1’$2")
-    .replace(/(^|[\s([{—–-])'/g, "$1‘")
-    .replace(/'/g, "’")
-    .replace(/ -- /g, " — ")
-    .replace(/\.\.\./g, "…");
-
-marked.use({
-  walkTokens(t) {
-    if (t.type === "text" && !t.tokens) t.text = smart(t.text);
-  },
-  renderer: {
-    blockquote(quote) {
-      return `<blockquote class="pull">${quote}</blockquote>\n`;
-    },
-  },
-});
-
-function figure(id) {
-  const spec = JSON.parse(fs.readFileSync(path.join(ROOT, "infographics", `${id}.json`), "utf8"));
-  const items = (spec.terms || spec.steps || spec.nodes || spec.items || spec.bars || []).map((it) => (it.note ? `${it.label}: ${it.note}` : it.label));
-  if (spec.result) items.push(`Result, ${spec.result.label}: ${spec.result.note}`);
-  if (spec.rows) items.push(...spec.rows.map(([a, b]) => `${spec.left}: ${a}; ${spec.right}: ${b}`));
-  if (spec.quadrants) items.push(...Object.values(spec.quadrants).map((q) => `${q.label}: ${q.note}`));
-  const alt = `Infographic: ${spec.title}. ${items.join(". ")}. ${spec.takeaway}`.replace(/\.\./g, ".");
-  return `<figure class="infographic"><img src="../images/ch${id}.png" alt="${esc(alt)}"/></figure>`;
-}
-
-// Markdown → XHTML body; returns the H1 text separately.
-function render(file, figId) {
-  const src = fs.readFileSync(path.join(MS, file), "utf8");
-  const m = src.match(/^# (.+)\n/);
-  if (!m) throw new Error(`${file}: must start with "# Title"`);
-  let html = marked.parse(src.slice(m[0].length));
-  const marks = html.match(/<p>\{\{infographic(?::(\d\d))?\}\}<\/p>/g) || [];
-  if (figId && marks.length !== 1) throw new Error(`${file}: needs exactly one {{infographic}} (found ${marks.length})`);
-  html = html.replace(/<p>\{\{infographic(?::(\d\d))?\}\}<\/p>/g, (_, id) => figure(id || figId));
-  // XHTML: close void elements.
-  html = html.replace(/<(br|hr|img)([^>]*?)\s*\/?>/g, "<$1$2/>");
-  if (/\{\{|<table|<h3|<img(?![^>]*images\/ch)/.test(html)) throw new Error(`${file}: unsupported Markdown (see STYLE.md)`);
-  return { title: smart(m[1].trim()), html };
-}
+const render = (file, figId) => renderMd(file, figId, (id) => `../images/ch${id}.png`);
 
 const page = (title, body, type = "") => `<?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE html>
@@ -149,7 +95,7 @@ function main() {
 <p>No part of this book may be reproduced or shared in any form without written permission from the publisher, except for brief quotations in reviews and articles.</p>
 <p>This book is for education and general information only. It is not financial, investment, legal or tax advice. For decisions about your own situation, talk to a qualified professional.</p>
 <p>Published by ${esc(book.publisher)}. <a href="${book.site}">thejoydigi.com</a></p>
-<p>First Kindle edition, ${book.year}.</p>
+<p>First ebook edition, ${book.year}.</p>
 </section>`,
     ""
   );

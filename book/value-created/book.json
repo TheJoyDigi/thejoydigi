@@ -6,34 +6,76 @@
   "language": "en-US",
   "year": 2026,
   "identifier": "urn:uuid:6f0c7d5e-3b1a-4c8e-9a52-5d1e0b7a2f61",
+  "paperbackIsbn": "9798160611600",
   "site": "https://thejoydigi.com",
   "description": "Everyone wants more money. Almost no one asks what it's made of. Value, Created answers that question: money is created value, frozen so it can be spent later. In 32 short chapters and five parts, the book climbs from seeing value to creating, capturing, scaling and finally teaching it, with a one-page infographic, three takeaways and a small exercise in every chapter.",
-  "subjects": ["Business & Economics / Entrepreneurship", "Business & Economics / Economics / General", "Self-Help / Personal Growth / Success"],
+  "subjects": [
+    "Business & Economics / Entrepreneurship",
+    "Business & Economics / Economics / General",
+    "Self-Help / Personal Growth / Success"
+  ],
   "parts": [
     {
       "title": "Seeing Value",
       "intro": "Before you can create value, you have to see it clearly. These chapters take apart the most common mistake people make, the belief that value lives inside things, and replace it with a sharper picture: value lives in people, it shrinks with every extra unit, it wears two faces, it hides behind misleading prices and it springs from needs, wants and pain.",
-      "chapters": [1, 2, 3, 4, 5]
+      "chapters": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
     },
     {
       "title": "Creating Value",
       "intro": "Every value starts as a problem solved. This part is the workshop: what you really spend when you create something, why skill and knowledge compound, how to build things people want, and the quieter ingredients, attention, trust and less friction, that turn good work into real value. It ends with recombination: most new things are old things, rearranged.",
-      "chapters": [6, 7, 8, 9, 10, 11, 12, 13, 14]
+      "chapters": [
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ]
     },
     {
       "title": "Capturing Value",
       "intro": "Creating value is not the same as keeping some of it. This part explains why so many people who make things go broke, and the tools that let you keep a fair share of what you create: pricing, moats, systems that run without you, brand and ownership.",
-      "chapters": [15, 16, 17, 18, 19, 20]
+      "chapters": [
+        15,
+        16,
+        17,
+        18,
+        19,
+        20
+      ]
     },
     {
       "title": "Exchanging and Scaling",
       "intro": "Once you can create and capture value, the question becomes how far it can travel. This part follows value as it moves and multiplies: through trade, money and markets, and through the great multipliers of leverage, distribution, networks and compounding.",
-      "chapters": [21, 22, 23, 24, 25, 26, 27]
+      "chapters": [
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27
+      ]
     },
     {
       "title": "Mastery",
       "intro": "The last part puts it all together and passes it on: giving value first, letting delivered value become reputation, choosing problems worth your life, assembling your own value-creation system and, finally, teaching it.",
-      "chapters": [28, 29, 30, 31, 32]
+      "chapters": [
+        28,
+        29,
+        30,
+        31,
+        32
+      ]
     }
   ]
 }
