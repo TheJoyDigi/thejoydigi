@@ -21,6 +21,9 @@ export const CYAN = "#4FE0E8";
 export const POP = [LIME, PINK, CYAN, ORANGE];
 export const SPRING = { type: "spring", stiffness: 420, damping: 22 } as const;
 
+export const SPOTIFY_URL = "https://open.spotify.com/show/0PgULDCdLMhcq21DluiAdH";
+export const YOUTUBE_URL = "https://www.youtube.com/playlist?list=PLf6BgSwiDdyc";
+
 export const ID_ROOT = `${display.variable} ${mono.variable} min-h-screen overflow-x-clip bg-[#F6F4EE] text-[#0E0D12] [font-family:var(--id-display),system-ui,sans-serif] selection:bg-[#D4FF3A] selection:text-[#0E0D12]`;
 export const monoLabel = "[font-family:var(--id-mono),ui-monospace,monospace] text-[11px] font-bold uppercase tracking-[0.18em]";
 /** Chunky outlined control with a hard offset shadow that "presses" on click. */
@@ -218,8 +221,14 @@ export function Follow({ show }: { show: Show }) {
       <div className="relative mx-auto max-w-3xl text-center">
         <p className={monoLabel}>Don&apos;t miss a level</p>
         <h2 className="!py-0 text-[#0E0D12] mt-4 text-5xl font-extrabold leading-[0.95] tracking-[-0.04em] md:text-7xl">Put it in your queue.</h2>
-        <p className="mx-auto mt-5 max-w-lg text-lg font-medium text-[#0E0D12]/75">Add the feed to any podcast app (Apple Podcasts, Overcast, Pocket Casts) and every chapter lands where you already listen.</p>
+        <p className="mx-auto mt-5 max-w-lg text-lg font-medium text-[#0E0D12]/75">Follow on Spotify, watch on YouTube, or add the feed to any podcast app (Apple Podcasts, Overcast, Pocket Casts) and every chapter lands where you already listen.</p>
         <div className="mt-9 flex flex-wrap justify-center gap-3">
+          <a href={SPOTIFY_URL} target="_blank" rel="noopener noreferrer" className={`inline-flex items-center gap-3 rounded-2xl bg-[#1DB954] px-7 py-4 text-lg font-bold text-white no-underline hover:no-underline ${chunky}`}>
+            Listen on Spotify
+          </a>
+          <a href={YOUTUBE_URL} target="_blank" rel="noopener noreferrer" className={`inline-flex items-center gap-3 rounded-2xl bg-[#FF0000] px-7 py-4 text-lg font-bold text-white no-underline hover:no-underline ${chunky}`}>
+            Watch on YouTube
+          </a>
           <button onClick={copy} className={`inline-flex items-center gap-3 rounded-2xl bg-[#0E0D12] px-7 py-4 text-lg font-bold text-[#D4FF3A] ${chunky} shadow-[4px_4px_0_#5B3DF5] hover:shadow-[6px_6px_0_#5B3DF5]`}>
             <AnimatePresence mode="wait" initial={false}>
               <motion.span key={copied ? "y" : "n"} initial={{ y: 12, opacity: 0 }} animate={{ y: 0, opacity: 1 }} exit={{ y: -12, opacity: 0 }} transition={{ duration: 0.18 }}>
@@ -237,6 +246,14 @@ export function Follow({ show }: { show: Show }) {
 export function Footer() {
   return (
     <footer className="bg-[#0E0D12] px-4 pt-12 pb-36 text-center text-[#F6F4EE]/60">
+      <div className="mb-6 flex flex-wrap justify-center gap-3">
+        <a href={SPOTIFY_URL} target="_blank" rel="noopener noreferrer" className="rounded-full border border-[#F6F4EE]/25 px-5 py-2.5 text-sm font-bold text-[#F6F4EE] no-underline hover:no-underline hover:border-[#1DB954] hover:text-[#1DB954]">
+          Spotify
+        </a>
+        <a href={YOUTUBE_URL} target="_blank" rel="noopener noreferrer" className="rounded-full border border-[#F6F4EE]/25 px-5 py-2.5 text-sm font-bold text-[#F6F4EE] no-underline hover:no-underline hover:border-[#FF0000] hover:text-[#FF5CA8]">
+          YouTube
+        </a>
+      </div>
       <p className="text-sm">
         Incentives, Decoded is produced by{" "}
         <Link href="/" className="font-bold text-[#D4FF3A] no-underline hover:underline">
