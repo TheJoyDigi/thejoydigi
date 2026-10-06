@@ -1,0 +1,15 @@
+{
+  "kicker": "The whole book",
+  "type": "ladder",
+  "title": "Five steps up",
+  "subtitle": "The five parts of this book, from seeing value to teaching it.",
+  "steps": [
+    { "label": "See it", "note": "Value is not in things. It is in people." },
+    { "label": "Create it", "note": "The job is not to invent. It is to notice." },
+    { "label": "Capture it", "note": "Creation is abundant. Capture is scarce." },
+    { "label": "Scale it", "note": "Leverage is doing more with less." },
+    { "label": "Master it", "note": "Teaching is the final leverage." }
+  ],
+  "highlight": 4,
+  "takeaway": "Find a real problem. Solve it well. Charge less than the pain it caused."
+}

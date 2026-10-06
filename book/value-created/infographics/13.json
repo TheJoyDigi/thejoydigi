@@ -1,0 +1,13 @@
+{
+  "type": "flow",
+  "title": "Find the friction, then kill it",
+  "subtitle": "Friction doesn't destroy value. It locks it up.",
+  "steps": [
+    { "label": "Watch where people stall", "note": "Don't ask them. Watch them." },
+    { "label": "Delete a step", "note": "Before you add a feature" },
+    { "label": "Time every wait", "note": "Put a number and one name on it" },
+    { "label": "Collect the value", "note": "It was already yours" }
+  ],
+  "highlight": 3,
+  "takeaway": "Every hassle you erase is value created."
+}

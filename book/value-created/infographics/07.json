@@ -1,0 +1,12 @@
+{
+  "type": "grid",
+  "title": "Three inputs, only one grows",
+  "subtitle": "You spend all three on everything you make.",
+  "items": [
+    { "label": "Time", "note": "Capped at 24 hours. Spent once." },
+    { "label": "Effort", "note": "A small tank. Refills daily." },
+    { "label": "Skill", "note": "Compounds. Multiplies the other two." }
+  ],
+  "highlight": 2,
+  "takeaway": "Budget your time and effort. Invest in skill."
+}

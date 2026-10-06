@@ -1,0 +1,13 @@
+{
+  "type": "flow",
+  "title": "Three rooms, one loop",
+  "subtitle": "Every value-creation machine runs the same cycle, week after week.",
+  "steps": [
+    { "label": "Intake", "note": "What flows in: reading, notes, problems" },
+    { "label": "Engine", "note": "What you build: guides, tools, products" },
+    { "label": "Flywheel", "note": "What you give away, and what comes back" },
+    { "label": "Back to intake", "note": "Returns become new people and problems" }
+  ],
+  "highlight": 1,
+  "takeaway": "A machine isn't a decision. It's a rhythm you protect."
+}

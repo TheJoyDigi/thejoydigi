@@ -1,0 +1,14 @@
+{
+  "type": "compare",
+  "title": "Two kinds of givers",
+  "subtitle": "Givers land at the bottom of the rankings and at the top. How they give decides which.",
+  "left": "Givers who burn out",
+  "right": "Givers who win",
+  "rows": [
+    ["Give to anyone, indiscriminately", "Give with boundaries"],
+    ["Say yes to everything", "Give what they're good at"],
+    ["Keep helping the takers", "Join a room of other givers"],
+    ["Give until there's nothing left", "Never keep score"]
+  ],
+  "takeaway": "Give what's easy for you and precious to them."
+}

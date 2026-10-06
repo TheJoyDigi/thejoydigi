@@ -1,0 +1,16 @@
+{
+  "name": "value-created-book",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "infographics": "node tools/infographics.mjs",
+    "cover": "node tools/cover.mjs",
+    "build": "node tools/build.mjs",
+    "all": "node tools/infographics.mjs && node tools/cover.mjs && node tools/build.mjs"
+  },
+  "devDependencies": {
+    "marked": "^12.0.0",
+    "playwright": "1.63.0",
+    "sharp": "^0.33.0"
+  }
+}

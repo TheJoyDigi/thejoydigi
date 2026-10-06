@@ -1,0 +1,12 @@
+{
+  "type": "equation",
+  "title": "The one-line theory of value",
+  "subtitle": "Find a real problem, solve it well, charge less than the pain it caused.",
+  "terms": [
+    { "label": "Problem solved", "note": "The pain, times the people who have it" },
+    { "label": "Cost of solving", "note": "What it takes you to end it" }
+  ],
+  "ops": ["−"],
+  "result": { "label": "Value, created", "note": "There is no other source" },
+  "takeaway": "Stop asking what you can build. Start asking what’s broken."
+}

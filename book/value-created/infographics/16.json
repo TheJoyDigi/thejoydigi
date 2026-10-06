@@ -1,0 +1,15 @@
+{
+  "type": "compare",
+  "title": "Two ways to name a price",
+  "subtitle": "Same plumber, same burst pipe, same two hours.",
+  "left": "Cost-plus",
+  "right": "Value-based",
+  "rows": [
+    ["Starts from your costs", "Starts from the buyer's problem"],
+    ["Sells hours and materials", "Sells the outcome"],
+    ["Says: my work is a commodity", "Says: here is what you get"],
+    ["Lives on the floor", "Reaches toward the ceiling"],
+    ["Same two hours, half the pay", "Same two hours, twice the pay"]
+  ],
+  "takeaway": "Your costs set the floor. The buyer sets the ceiling."
+}

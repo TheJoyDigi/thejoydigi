@@ -1,0 +1,12 @@
+{
+  "type": "equation",
+  "title": "The number you multiply by",
+  "subtitle": "Every tool here is a multiplier. Your problem is what they multiply.",
+  "terms": [
+    { "label": "Every multiplier", "note": "Leverage, networks, compounding" },
+    { "label": "The problem you choose", "note": "Real pain you can actually finish" }
+  ],
+  "ops": ["×"],
+  "result": { "label": "What you end up with", "note": "A multiplier times zero is still zero" },
+  "takeaway": "Only you can choose what is worth building."
+}

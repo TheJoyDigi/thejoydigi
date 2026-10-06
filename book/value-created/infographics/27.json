@@ -1,0 +1,14 @@
+{
+  "type": "ladder",
+  "title": "Time multiplies all of them",
+  "subtitle": "Every multiplier in Part Four feeds the final one.",
+  "steps": [
+    { "label": "Trade", "note": "Multiplies your reach" },
+    { "label": "Markets", "note": "Price your value" },
+    { "label": "Leverage", "note": "Multiplies your effort" },
+    { "label": "Networks", "note": "Multiply your users" },
+    { "label": "Compounding", "note": "Multiplies all of it, given time" }
+  ],
+  "highlight": 4,
+  "takeaway": "Time is the final multiplier. Protect the years."
+}

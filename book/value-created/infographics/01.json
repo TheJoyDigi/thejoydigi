@@ -1,0 +1,13 @@
+{
+  "type": "equation",
+  "title": "Where value comes from",
+  "subtitle": "Move any one ingredient and the value moves. The object never changes.",
+  "terms": [
+    { "label": "Desire", "note": "What it does for the person" },
+    { "label": "Scarcity", "note": "How hard it is for them to get, right now" },
+    { "label": "Context", "note": "The situation they are in" }
+  ],
+  "ops": ["+", "+"],
+  "result": { "label": "Value", "note": "It lives in people, not in things" },
+  "takeaway": "The thing you make is the vehicle. The change is the product."
+}

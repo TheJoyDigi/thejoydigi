@@ -1,0 +1,14 @@
+{
+  "type": "compare",
+  "title": "Two halves of the job",
+  "subtitle": "Creation happens in the workshop. Value happens in the exchange.",
+  "left": "Creation",
+  "right": "Distribution",
+  "rows": [
+    ["Asks: is this good?", "Asks: is this seen?"],
+    ["Happens in the workshop", "Happens on the road"],
+    ["Betamax: the better machine", "VHS: on more shelves"],
+    ["A month making", "A month getting it seen"]
+  ],
+  "takeaway": "Not “Is it done?” but “Is it arriving?”"
+}

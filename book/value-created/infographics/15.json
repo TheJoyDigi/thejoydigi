@@ -1,0 +1,35 @@
+{
+  "type": "matrix",
+  "title": "Two games, two rulebooks",
+  "subtitle": "Making what people want is one game. Getting paid is another.",
+  "x": {
+    "label": "Value you create",
+    "low": "Little",
+    "high": "A lot"
+  },
+  "y": {
+    "label": "Value you capture",
+    "low": "Little",
+    "high": "A lot"
+  },
+  "quadrants": {
+    "tl": {
+      "label": "Owns the shelf",
+      "note": "Holds the bottleneck others must pass"
+    },
+    "tr": {
+      "label": "A business",
+      "note": "You made it, and you own the scarce piece"
+    },
+    "bl": {
+      "label": "Not started",
+      "note": "Nothing made, nothing kept"
+    },
+    "br": {
+      "label": "A donation",
+      "note": "Goodyear: made it all, captured none"
+    }
+  },
+  "highlight": "tr",
+  "takeaway": "Who captures this, and is it me?"
+}

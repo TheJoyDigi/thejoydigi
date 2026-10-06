@@ -1,0 +1,14 @@
+{
+  "type": "ladder",
+  "title": "How teaching multiplies",
+  "subtitle": "You keep what you teach, and each step builds on the last.",
+  "steps": [
+    { "label": "You learn it", "note": "Years of practice, half understood" },
+    { "label": "You teach one person", "note": "You know it better than before" },
+    { "label": "They do it", "note": "Guided doing, not telling" },
+    { "label": "They teach someone else", "note": "The one test of real teaching" },
+    { "label": "It outlives you", "note": "Apprentices of apprentices" }
+  ],
+  "highlight": 3,
+  "takeaway": "One idea, one person. That's how it multiplies."
+}

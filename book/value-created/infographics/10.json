@@ -1,0 +1,13 @@
+{
+  "type": "ladder",
+  "title": "Automation ate the bottom",
+  "subtitle": "The top of every market is still handmade.",
+  "steps": [
+    { "label": "Routine", "note": "Self-checkout and chatbots do it well" },
+    { "label": "Adequate", "note": "Does what it’s programmed to, no more" },
+    { "label": "The extra", "note": "Someone noticed, cared and did more" },
+    { "label": "Relationship", "note": "Present, real problem solved, followed up" }
+  ],
+  "highlight": 3,
+  "takeaway": "Machines do the routine. Humans do the caring."
+}

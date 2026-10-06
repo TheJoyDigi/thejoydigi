@@ -1,0 +1,16 @@
+{
+  "type": "bars",
+  "title": "Each next slice is worth less",
+  "subtitle": "Six slices of pizza when you haven't eaten all day.",
+  "bars": [
+    { "label": "Slice 1", "value": 100, "note": "Transcendent" },
+    { "label": "Slice 2", "value": 80, "note": "Still great" },
+    { "label": "Slice 3", "value": 55, "note": "Slowing down" },
+    { "label": "Slice 4", "value": 30, "note": "Getting full" },
+    { "label": "Slice 5", "value": 10, "note": "Pushing it" },
+    { "label": "Slice 6", "value": -25, "note": "Worth less than nothing" }
+  ],
+  "highlight": 5,
+  "axis": "Worth to you",
+  "takeaway": "Same pizza. The only thing that changed is you."
+}

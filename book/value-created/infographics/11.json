@@ -1,0 +1,26 @@
+{
+  "type": "compare",
+  "title": "Two ways to capture attention",
+  "subtitle": "Both work this quarter. Only one of them compounds.",
+  "left": "Earned",
+  "right": "Stolen",
+  "rows": [
+    [
+      "Worth the minutes it asks for",
+      "Hijacks your wiring"
+    ],
+    [
+      "Delivers what it promised",
+      "Clickbait that never delivers"
+    ],
+    [
+      "Spends your time carefully",
+      "Outrage, scroll, red badges"
+    ],
+    [
+      "Builds loyalty and trust",
+      "Leaves an empty room"
+    ]
+  ],
+  "takeaway": "Content is infinite. Attention is not."
+}

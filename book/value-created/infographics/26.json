@@ -1,0 +1,15 @@
+{
+  "type": "matrix",
+  "title": "When a crowd adds value",
+  "subtitle": "Every arrival changes the network for everyone already on it.",
+  "x": { "label": "Size of the crowd", "low": "Few", "high": "Many" },
+  "y": { "label": "What arrivals bring", "low": "Noise", "high": "Signal" },
+  "quadrants": {
+    "tl": { "label": "Seed it", "note": "First users bring the next" },
+    "tr": { "label": "A necessity", "note": "Better with every arrival" },
+    "bl": { "label": "A ghost town", "note": "Nothing worth joining yet" },
+    "br": { "label": "Bigger and worse", "note": "More users, less value" }
+  },
+  "highlight": "tr",
+  "takeaway": "Value lives in the connections. Protect the signal."
+}
