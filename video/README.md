@@ -6,6 +6,7 @@ Production sources for The Joy Digi's animated shows. Same idea as `podcast/`: t
 video/
   README.md
   worth-it/         Worth It: 30-second money shorts for young people (12 episodes for TikTok, Reels and Shorts)
+  incentives-decoded/  9:16 TikTok/Reels/Shorts, one per chapter: real episode audio + word-by-word captions + sticker stage. _engine/ (start at its README) + one epNN-<slug>/ per chapter; renders go to exports/ (git-ignored)
   value-created/    Square social cuts that teach one audiobook chapter each (LinkedIn): _engine/ (shared, start at its README) + one chNN-<slug>/ per chapter
 ```
 
