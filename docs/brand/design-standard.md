@@ -29,7 +29,8 @@ Code source of truth: `src/lib/email/brand.ts` (tokens) and `src/lib/email/layou
 | Ink Soft | `#4D7580` | Secondary text on sand (4.69:1, the lightest allowed) |
 
 - **Type:** Fraunces (display, headings, wordmark) + DM Sans (body, UI). Email fallbacks: Georgia and Helvetica/Arial.
-- **Mark:** the four-point coral sparkle ✦ (`public/logo.svg`; email PNG at `public/email/joydigi-mark.png`). Always paired with the "The Joy Digi" wordmark in Deep Teal.
+- **Mark:** the four-point coral sparkle ✦ (email PNG at `public/email/joydigi-mark.png`). Always paired with the "The Joy Digi" wordmark in Deep Teal.
+- **App/web icon:** the coral ✦ with a small Sun sparkle on a Deep Teal rounded tile (`public/icon.svg`, the source; `favicon.ico`, `apple-touch-icon.png` and `icon-192/512.png` are rendered from it). The one place the mark appears without the wordmark.
 - **Voice:** warm, clear, a little playful, never corporate. "Let's make something joyful." Plain words, short sentences, no hype.
 - **Credit line:** "Produced by The Joy Digi" or "<Show> is a production of The Joy Digi". Never "written by Long La" on show material (standing rule, 2026-09-26).
 

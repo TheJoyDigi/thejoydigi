@@ -8,6 +8,10 @@ export default function Document() {
         <meta name="theme-color" content="#f9f5eb" />
         <meta name="format-detection" content="telephone=no" />
         <meta name="text-size-adjust" content="100%" />
+        <link rel="icon" href="/favicon.ico" sizes="32x32" />
+        <link rel="icon" href="/icon.svg" type="image/svg+xml" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        <link rel="manifest" href="/site.webmanifest" />
 
         {/* Session recording Scripts */}
         <script
