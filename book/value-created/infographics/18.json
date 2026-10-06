@@ -1,0 +1,13 @@
+{
+  "type": "ladder",
+  "title": "From a job to an asset",
+  "subtitle": "The test: could it run a normal Tuesday without you?",
+  "steps": [
+    { "label": "Job", "note": "Trade hours for money. It stops when you stop." },
+    { "label": "Practice", "note": "Better paid, but still you, in a fancier trap" },
+    { "label": "Business", "note": "Others do the work, and the process holds" },
+    { "label": "Asset", "note": "It runs and grows, and someone would buy it" }
+  ],
+  "highlight": 3,
+  "takeaway": "If it stops when you stop, you own a job, not an asset."
+}

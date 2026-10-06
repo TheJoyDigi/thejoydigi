@@ -1,0 +1,28 @@
+{
+  "type": "grid",
+  "title": "Old parts, new arrangements",
+  "subtitle": "None of these was invented from scratch. Each was recombined.",
+  "items": [
+    {
+      "label": "Printing press",
+      "note": "Wine press + metal type + goldsmith's casting"
+    },
+    {
+      "label": "iPhone",
+      "note": "iPod + phone + internet communicator"
+    },
+    {
+      "label": "Post-it note",
+      "note": "Weak glue + paper bookmark"
+    },
+    {
+      "label": "Cronut",
+      "note": "Croissant + doughnut"
+    },
+    {
+      "label": "Karaoke",
+      "note": "Microphone + recording + bar"
+    }
+  ],
+  "takeaway": "Value is hiding in the uncombined."
+}

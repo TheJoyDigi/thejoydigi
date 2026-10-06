@@ -22,6 +22,7 @@
 - `gray-matter` parses the post metadata
 - `react-markdown` renders the post content
 - Video shows (animated, vertical) are produced in `/video/<show>/`, the video counterpart of `/podcast/`: sources and docs only, finals stay local. First show: `video/worth-it/` (start at its README).
+- Kindle books are produced in `/book/<title>/`: manuscript, infographic specs and build tools; the EPUB and cover build into git-ignored `out/`. First book: `book/value-created/` (start at its README).
 
 ## SEO Information
 

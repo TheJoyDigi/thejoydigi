@@ -1,0 +1,13 @@
+{
+  "type": "equation",
+  "title": "What makes a good freezer",
+  "subtitle": "Every money in history is a freezer for created value, judged by the same three tests.",
+  "terms": [
+    { "label": "It keeps", "note": "Durable. It can't rot like the fish." },
+    { "label": "It's scarce", "note": "Making more takes real effort" },
+    { "label": "It's trusted", "note": "Everyone believes the thaw will work" }
+  ],
+  "ops": ["+", "+"],
+  "result": { "label": "Good money", "note": "Created value, frozen for later" },
+  "takeaway": "Money is frozen value. The creating comes first."
+}

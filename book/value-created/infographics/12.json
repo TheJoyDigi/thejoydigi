@@ -1,0 +1,32 @@
+{
+  "type": "bars",
+  "title": "Slowly up, instantly down",
+  "subtitle": "Each kept promise is a small deposit. One broken one can empty the account.",
+  "bars": [
+    {
+      "label": "Promise 1 kept",
+      "value": 20
+    },
+    {
+      "label": "Promise 2 kept",
+      "value": 40
+    },
+    {
+      "label": "Promise 3 kept",
+      "value": 60
+    },
+    {
+      "label": "Promise 4 kept",
+      "value": 80,
+      "note": "Trust compounds"
+    },
+    {
+      "label": "One broken",
+      "value": 4,
+      "note": "Gone in a single afternoon"
+    }
+  ],
+  "axis": "Trust in the account",
+  "highlight": 4,
+  "takeaway": "Trust can't be bought. It can only be earned."
+}

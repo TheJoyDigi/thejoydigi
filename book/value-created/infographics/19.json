@@ -1,0 +1,15 @@
+{
+  "type": "cycle",
+  "title": "The brand flywheel",
+  "subtitle": "Every kept promise is a deposit. Around it goes, faster each time.",
+  "center": "Trust, stored",
+  "nodes": [
+    { "label": "Promise", "note": "Specific, checkable" },
+    { "label": "Keep it, visibly", "note": "Proof, receipted" },
+    { "label": "They tell others", "note": "Reviews spread it" },
+    { "label": "Trusted", "note": "Pays the premium" },
+    { "label": "Reinvest", "note": "Keep it even better" }
+  ],
+  "highlight": 1,
+  "takeaway": "It spins both ways. Never raid the account."
+}

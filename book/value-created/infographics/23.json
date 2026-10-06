@@ -1,0 +1,14 @@
+{
+  "type": "cycle",
+  "title": "How a market balances itself",
+  "subtitle": "Every price is a signal that moves a thousand small decisions.",
+  "center": "No one in charge",
+  "nodes": [
+    { "label": "Bids collide", "note": "Opinions forced into the open" },
+    { "label": "A price appears", "note": "This morning, tuna sells high" },
+    { "label": "Word spreads", "note": "More boats head for the harbor" },
+    { "label": "Price adjusts", "note": "More tuna lands, so the price eases" }
+  ],
+  "highlight": 1,
+  "takeaway": "A price is a message. Read it, don't fight it."
+}

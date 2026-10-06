@@ -1,0 +1,13 @@
+{
+  "type": "grid",
+  "title": "Four levers, one trick",
+  "subtitle": "Your effort, money or time, multiplied instead of spent.",
+  "items": [
+    { "label": "Capital", "note": "Multiplies money. It works while you sleep." },
+    { "label": "Code", "note": "Multiplies time. Write once, run a million times." },
+    { "label": "People", "note": "Multiplies reach. Ten do in a week what one can't in a year." },
+    { "label": "Media", "note": "Multiplies voice. The cheapest lever to start with." }
+  ],
+  "highlight": 3,
+  "takeaway": "Not harder work. A longer branch."
+}

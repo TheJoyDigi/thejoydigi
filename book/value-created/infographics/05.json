@@ -1,0 +1,12 @@
+{
+  "type": "grid",
+  "title": "The three wells of value",
+  "subtitle": "Same wallet, same person. The bread was a reflex, the bag a fantasy, the plumber a rescue.",
+  "items": [
+    { "label": "Needs", "note": "Keep you alive. Crowded, so buyers compare." },
+    { "label": "Wants", "note": "Make life sweet. Fickle, so desire fades." },
+    { "label": "Pain", "note": "Makes you act now. Priced against doing nothing." }
+  ],
+  "highlight": 2,
+  "takeaway": "Find the pain, and you've found the value."
+}

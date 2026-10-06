@@ -1,0 +1,14 @@
+{
+  "type": "cycle",
+  "title": "The reputation flywheel",
+  "subtitle": "Every job reaches the customer and everyone that customer tells.",
+  "center": "It spins faster",
+  "nodes": [
+    { "label": "Deliver value", "note": "Small stuff, done well" },
+    { "label": "Reputation", "note": "A story others tell" },
+    { "label": "Opportunity", "note": "It starts finding you" },
+    { "label": "More time", "note": "No weeks spent hunting the job" }
+  ],
+  "highlight": 0,
+  "takeaway": "The only way in is the first delivery, done well."
+}

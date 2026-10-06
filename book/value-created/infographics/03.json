@@ -1,0 +1,15 @@
+{
+  "type": "compare",
+  "title": "The two faces of value",
+  "subtitle": "Same coat: priceless on a freezing mountain, closet clutter in spring.",
+  "left": "Use value",
+  "right": "Exchange value",
+  "rows": [
+    ["What it does for you", "What others will trade for it"],
+    ["The coat on the mountain", "The certificate in the office"],
+    ["Changes with the moment", "Looks steady, feels true"],
+    ["Grandma's ring: memories", "Pawn shop offer: metal"],
+    ["What a business creates", "What a business captures"]
+  ],
+  "takeaway": "The gap between the faces is the business."
+}

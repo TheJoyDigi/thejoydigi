@@ -1,0 +1,13 @@
+{
+  "type": "flow",
+  "title": "Hear the rumor, price the thing",
+  "subtitle": "A price is one handshake at one moment. Check it against value before you say yes.",
+  "steps": [
+    { "label": "Worth to me?", "note": "Use value, in my life, at my margin" },
+    { "label": "Worth to the world?", "note": "Exchange value, calmly measured" },
+    { "label": "What the tag says", "note": "The rumor, right now" },
+    { "label": "Act on the gap", "note": "Below value: buy. Above value: walk away." }
+  ],
+  "highlight": 3,
+  "takeaway": "Mispricings are where opportunity lives."
+}

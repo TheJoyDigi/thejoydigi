@@ -1,0 +1,12 @@
+{
+  "type": "grid",
+  "title": "Four shallow moats, layered",
+  "subtitle": "One coffee roaster. A rival could copy one layer, not all four.",
+  "items": [
+    { "label": "A secret", "note": "A roast profile tuned for five years" },
+    { "label": "Switching costs", "note": "Subscribers would lose a morning ritual" },
+    { "label": "Relationships", "note": "300 regulars, known by name" },
+    { "label": "Brand", "note": "A local landmark, 15 years in the making" }
+  ],
+  "takeaway": "Together, they are wider than any single deep one."
+}

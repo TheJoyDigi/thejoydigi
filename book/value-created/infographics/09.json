@@ -1,0 +1,15 @@
+{
+  "type": "matrix",
+  "title": "Want beats engineering",
+  "subtitle": "Build the right thing, not just the thing right.",
+  "x": { "label": "Engineering", "low": "Simple", "high": "Brilliant" },
+  "y": { "label": "Want", "low": "Nobody asked", "high": "Already there" },
+  "quadrants": {
+    "tl": { "label": "The Pet Rock", "note": "Just a rock, but a million people wanted one" },
+    "tr": { "label": "Build here", "note": "A real want, served well" },
+    "bl": { "label": "A hobby", "note": "Aimed at nothing" },
+    "br": { "label": "The Segway", "note": "Brilliant, but nobody asked" }
+  },
+  "highlight": "tr",
+  "takeaway": "The best product doesn’t win. The best fit wins."
+}

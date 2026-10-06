@@ -1,0 +1,13 @@
+{
+  "type": "flow",
+  "title": "The trade test",
+  "subtitle": "Do one thing well, and trade for the rest.",
+  "steps": [
+    { "label": "Name the one thing", "note": "In one sentence. Ask this first." },
+    { "label": "List last week", "note": "Circle what created the most value" },
+    { "label": "The 80 percent question", "note": "Could someone do it 80 percent as well, for less?" },
+    { "label": "Trade the rest", "note": "Keep the crown jewel. Never trade it." }
+  ],
+  "highlight": 0,
+  "takeaway": "The network outperforms the hero every time."
+}

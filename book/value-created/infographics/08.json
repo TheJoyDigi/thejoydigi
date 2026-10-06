@@ -1,0 +1,14 @@
+{
+  "type": "compare",
+  "title": "Knowledge breaks the rules",
+  "subtitle": "The most valuable raw material weighs nothing.",
+  "left": "Other raw materials",
+  "right": "Knowledge",
+  "rows": [
+    ["Gets used up", "Gets sharper with use"],
+    ["Give it away, it’s gone", "Give it away, you keep it all"],
+    ["Wears out and spoils", "Weighs nothing, never spoils"],
+    ["Double output, double input", "Double output, one whiteboard"]
+  ],
+  "takeaway": "Write down the chalk marks. The raw material is free."
+}
