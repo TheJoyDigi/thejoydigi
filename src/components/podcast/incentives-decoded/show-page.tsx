@@ -6,7 +6,7 @@ import { Equalizer, fmtLeft, PauseIcon, PlayIcon, PodcastSeo } from "@/component
 import { ShareSheet, useShare, type ShareControl } from "@/components/podcast/share";
 import { usePlayer, type Player } from "@/components/podcast/use-player";
 import type { Show } from "@/lib/podcasts";
-import { chunky, DecodeText, dotGrid, DragSticker, Follow, Footer, ID_ROOT, LevelTile, Marquee, monoLabel, Nav, pad, SHARE_THEME, SPRING, Sticker, StickyPlayer } from "./theme";
+import { chunky, DecodeText, dotGrid, DragSticker, Follow, Footer, ID_ROOT, LevelTile, Marquee, monoLabel, Nav, pad, SHARE_THEME, SPOTIFY_URL, SPRING, Sticker, StickyPlayer, YOUTUBE_URL } from "./theme";
 
 const TAGLINE = "Find the payoff, predict the person.";
 const STEPS = [
@@ -82,6 +82,15 @@ function Hero({ show, player, share }: { show: Show; player: Player; share: Shar
             </button>
             <a href="#levels" className={`rounded-2xl bg-white px-6 py-4 text-lg font-extrabold text-[#0E0D12] no-underline hover:no-underline ${chunky}`}>
               Level select ↓
+            </a>
+          </motion.div>
+          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1 }} className="mt-6 flex flex-wrap items-center gap-3">
+            <span className={`${monoLabel} text-white/70`}>Also on</span>
+            <a href={SPOTIFY_URL} target="_blank" rel="noopener noreferrer" className="rounded-full border-2 border-white/40 px-4 py-1.5 text-sm font-bold text-white no-underline hover:no-underline hover:border-[#1DB954] hover:text-[#1DB954]">
+              Spotify
+            </a>
+            <a href={YOUTUBE_URL} target="_blank" rel="noopener noreferrer" className="rounded-full border-2 border-white/40 px-4 py-1.5 text-sm font-bold text-white no-underline hover:no-underline hover:border-[#FF5CA8] hover:text-[#FF5CA8]">
+              YouTube
             </a>
           </motion.div>
         </div>
