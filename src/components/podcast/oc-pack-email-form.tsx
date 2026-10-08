@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { track } from "@/lib/analytics";
 
 const inputCls =
   "w-full rounded-2xl border-[3px] border-[#6B3410] bg-white px-4 py-3 font-bold text-[#6B3410] placeholder:text-[#6B3410]/40 focus:outline-none focus:ring-2 focus:ring-[#FC7F46]";
@@ -24,6 +25,7 @@ export function OcPackEmailForm() {
       const data = await res.json().catch(() => ({}));
       if (res.ok) {
         setStatus("done");
+        track("newsletter_signup", { show: "oc-pack" });
       } else {
         setStatus("error");
         setMessage(data.error || "Something went wrong. Please try again.");

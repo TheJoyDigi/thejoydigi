@@ -2,8 +2,11 @@ import "@/styles/globals.css";
 import type { AppProps } from "next/app";
 import Head from "next/head";
 import { useEffect } from "react";
+import { initAnalytics } from "@/lib/analytics";
 
 export default function App({ Component, pageProps }: AppProps) {
+  useEffect(initAnalytics, []);
+
   // Add font loading detection to prevent FOUT (Flash of Unstyled Text)
   useEffect(() => {
     // Add a class when fonts are loaded to enable transitions

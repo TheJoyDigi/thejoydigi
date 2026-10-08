@@ -11,6 +11,14 @@ const removedPosts = require("./removed-blog-posts.json");
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  // PostHog via a first-party path so ad blockers don't drop events; see src/lib/analytics.ts.
+  async rewrites() {
+    return [
+      { source: "/ingest/static/:path*", destination: "https://us-assets.i.posthog.com/static/:path*" },
+      { source: "/ingest/:path*", destination: "https://us.i.posthog.com/:path*" },
+    ];
+  },
+  skipTrailingSlashRedirect: true,
   async redirects() {
     return [
       {

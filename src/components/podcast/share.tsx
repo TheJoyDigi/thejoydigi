@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useCallback, useEffect, useRef, useState, type ReactNode } from "react";
 import { createPortal } from "react-dom";
 import { FaFacebookF, FaLinkedinIn, FaWhatsapp, FaXTwitter } from "react-icons/fa6";
+import { track as capture } from "@/lib/analytics";
 import type { Episode, Show } from "@/lib/podcasts";
 import { fmt } from "./use-player";
 
@@ -33,8 +34,10 @@ declare global {
   }
 }
 
-const track = (method: string, show: Show, ep?: Episode | null) =>
+const track = (method: string, show: Show, ep?: Episode | null) => {
   window.gtag?.("event", "share", { method, content_type: ep ? "podcast_episode" : "podcast", item_id: ep ? `${show.slug}/${ep.number}` : show.slug });
+  capture("episode_shared", { method, show: show.slug, episode: ep?.number });
+};
 
 type Channel = { id: string; label: string; icon: ReactNode; href: (url: string, text: string, title: string) => string };
 

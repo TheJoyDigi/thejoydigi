@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { track } from "@/lib/analytics";
 import type { Episode, Show } from "@/lib/podcasts";
 
 const RATES = [1, 1.25, 1.5, 2];
@@ -109,6 +110,53 @@ export function usePlayer(show: Show, cueIndex?: number) {
     };
   }, [remember, show.episodes]);
 
+  // Listening analytics: episode_started once per episode per page view, plus 25/50/75% milestones.
+  useEffect(() => {
+    const audio = audioRef.current;
+    if (!audio) return;
+    const seen = new Set<string>();
+    const props = () => {
+      const ep = indexRef.current === null ? undefined : show.episodes[indexRef.current];
+      if (!ep) return null;
+      const t = audio.currentTime;
+      return { show: show.slug, episode: ep.number, episode_title: ep.title, position_s: Math.round(t), percent: Math.round((t / ep.seconds) * 100) };
+    };
+    const once = (key: string, event: string, p: Record<string, unknown>) => {
+      if (seen.has(key)) return;
+      seen.add(key);
+      track(event, p);
+    };
+    const onPlay = () => {
+      const p = props();
+      if (!p) return;
+      track("episode_play", { ...p, playback_rate: audio.playbackRate });
+      once(`${p.episode}:start`, "episode_started", p);
+    };
+    const onPause = () => {
+      const p = props();
+      if (p && !audio.ended) track("episode_pause", p);
+    };
+    const onTime = () => {
+      const p = props();
+      if (!p) return;
+      for (const m of [25, 50, 75]) if (p.percent >= m) once(`${p.episode}:${m}`, "episode_progress", { ...p, milestone: m });
+    };
+    const onEnded = () => {
+      const p = props();
+      if (p) once(`${p.episode}:done`, "episode_completed", p);
+    };
+    audio.addEventListener("play", onPlay);
+    audio.addEventListener("pause", onPause);
+    audio.addEventListener("timeupdate", onTime);
+    audio.addEventListener("ended", onEnded);
+    return () => {
+      audio.removeEventListener("play", onPlay);
+      audio.removeEventListener("pause", onPause);
+      audio.removeEventListener("timeupdate", onTime);
+      audio.removeEventListener("ended", onEnded);
+    };
+  }, [show.episodes, show.slug]);
+
   // Shared episode links autoplay; ?t= uses a media fragment to start mid-episode, else resume saved progress.
   useEffect(() => {
     const audio = audioRef.current;
@@ -203,7 +251,8 @@ export function usePlayer(show: Show, cueIndex?: number) {
     const next = RATES[(RATES.indexOf(rate) + 1) % RATES.length];
     setRate(next);
     if (audioRef.current) audioRef.current.playbackRate = next;
-  }, [rate]);
+    track("playback_rate_changed", { show: show.slug, playback_rate: next });
+  }, [rate, show.slug]);
 
   useEffect(() => {
     if (!current || !("mediaSession" in navigator)) return;

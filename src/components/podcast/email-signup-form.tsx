@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { track } from "@/lib/analytics";
 
 const tones = {
   anthropic: {
@@ -78,6 +79,7 @@ export function EmailSignupForm({
       const data = await res.json().catch(() => ({}));
       if (res.ok) {
         setStatus("done");
+        track("newsletter_signup", { show: selectedShow });
       } else {
         setStatus("error");
         setMessage(data.error || "Something went wrong. Please try again.");
