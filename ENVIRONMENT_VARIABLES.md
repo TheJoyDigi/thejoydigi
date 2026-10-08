@@ -87,3 +87,14 @@ The `value-created-email` GitHub Action checks the live feed after publication a
 `RESEND_CONTACTS_API_KEY` must also have Broadcasts access. First deploy the endpoint, set the Vercel values, then set the GitHub secret and enable variable. Choose `VALUE_CHAPTER_FIRST_NUMBER` from the live feed at activation; older chapters will not be emailed retroactively. To run immediately, dispatch the Action manually. Never use an email address as `NEWSLETTER_POSTAL_ADDRESS`.
 
 Keep `VALUE_CHAPTER_NOTIFY_SECRET` limited to the serialized GitHub Action and the Vercel endpoint. Resend broadcast names dedupe retries, but concurrent direct calls to the endpoint are not an atomic lock.
+
+## PostHog analytics
+
+Tracking runs only on `thejoydigi.com` / `www.thejoydigi.com`; events go through the `/ingest` rewrite in `next.config.js`. Both variables are optional.
+
+| Name | Value |
+| --- | --- |
+| `NEXT_PUBLIC_POSTHOG_KEY` | Overrides the project key hardcoded in `src/lib/analytics.ts` |
+| `NEXT_PUBLIC_POSTHOG_LOCAL` | `1` to send events from localhost when testing (tagged `$host=localhost`) |
+
+Visit any page with `?notrack=1` to stop tracking your own browser (`?notrack=0` turns it back on).
