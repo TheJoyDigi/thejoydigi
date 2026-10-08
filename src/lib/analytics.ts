@@ -39,10 +39,11 @@ const PLATFORMS: [RegExp, string][] = [
   [/(^|\.)podcasts\.apple\.com$/, "apple_podcasts"],
   [/(^|\.)overcast\.fm$/, "overcast"],
   [/(^|\.)pocketcasts\.com$/, "pocket_casts"],
+  [/(^|\.)amazon\.com$/, "amazon"],
 ];
 
-/** Show slug from /podcasts/<slug>[/<n>] so platform clicks are attributed to a show. */
-const showFromPath = () => window.location.pathname.match(/^\/podcasts\/([^/?#]+)/)?.[1];
+/** Show slug from /podcasts/<slug> or /books/<slug> so platform clicks are attributed to a show. */
+const showFromPath = () => window.location.pathname.match(/^\/(?:podcasts|books)\/([^/?#]+)/)?.[1];
 
 function onOutboundClick(e: MouseEvent) {
   const a = (e.target as Element | null)?.closest?.("a[href]") as HTMLAnchorElement | null;

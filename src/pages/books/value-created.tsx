@@ -9,8 +9,8 @@ import Link from "next/link";
 import React from "react";
 import { EASE, Footer, GoldMotes, goldText, Mark, roman, VC_ROOT } from "@/components/podcast/value-created/theme";
 
-// Set this to the Amazon listing URL once KDP publishes the book; until then the page says "Coming soon".
-const KINDLE_URL = "";
+// Amazon Kindle listing (ASIN B0HMFPCCHK); an empty string falls back to "Coming soon".
+const KINDLE_URL = "https://www.amazon.com/dp/B0HMFPCCHK";
 
 const PAGE_URL = "https://www.thejoydigi.com/books/value-created";
 const COVER = "/books/value-created/cover.jpg";
