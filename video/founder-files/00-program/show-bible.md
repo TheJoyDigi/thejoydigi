@@ -21,6 +21,12 @@ Real founder stories, 40 seconds each: how a real company won (or almost died), 
 ## Why no book pitch (Long's call 2026-10-09)
 Every episode ending in a pitch turns a great story into an ad, and ads don't get shared. Founder Files is pure content: true founder stories people watch and enjoy. Growth first (followers), book marketing later, when there's an audience to market to. The book can live in the profile and captions; it never interrupts the video.
 
+## Ongoing series, growth-first (Long's call 2026-10-09)
+Founder Files is an ongoing series whose job is growing the account. Cadence: 2–3 per week (Tue/Thu/Sat), indefinitely. Pipeline: Lola researches and writes each script (fact-checked, headline numbers verified before shipping), Claude produces the video, Long posts.
+- Backlog: `02-backlog/` holds verified draft outlines (Ep04–Ep08 done 2026-10-09: WhatsApp, Mailchimp, Gymshark, Bumble, Patagonia). Keep at least 5 episodes ahead of production.
+- Growth mechanics: every episode ends with a soft follow prompt on the end card ("Follow for the next one") — a series CTA, not a book pitch. The series mark + consistent cadence + shareable true stories are the growth engine.
+- Threads companion per episode (see below) doubles each script's mileage.
+
 ## Threads companion (Long's call 2026-10-09)
 Every episode also ships as a Threads-native text version. Not a cross-post: the story retold for a reading audience.
 - Post 1: the hook, verbatim ("Airbnb was saved by breakfast cereal.")
