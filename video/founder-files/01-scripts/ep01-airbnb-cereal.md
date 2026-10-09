@@ -16,10 +16,10 @@ So the founders buy a thousand boxes of cheap cereal, repackage them as "Obama O
 They make thirty thousand dollars. It keeps the company alive for months. And when Paul Graham sees the boxes, he says: "You guys are like cockroaches. You just won't die." Y Combinator funds them.
 
 **LESSON (35–40s):**
-The cereal wasn't the business. Resourcefulness was. Price is never about the thing. It's about the story. That's Chapter 4 of Value, Created.
+The cereal wasn't the business. Resourcefulness was. Price is never about the thing. It's about the story.
 
-**CTA (end card):**
-The full breakdown is in Value, Created, Chapter 4. Link in bio.
+**END CARD:**
+Series mark only. No pitch.
 
 ## Visual notes (direction, not execution)
 - Hook frame: giant "$40" kinetic type over a cereal box silhouette, sound-off readable.

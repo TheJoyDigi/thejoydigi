@@ -15,8 +15,11 @@ Real founder stories, 40 seconds each: how a real company won (or almost died), 
    Good: "Airbnb was saved by breakfast cereal." / "She built a billion-dollar company with a pair of scissors." / "This is just water. It's worth $1.4 billion."
    Bad: "Let me tell you about Airbnb." / "Success leaves clues."
 2. **STORY (3 beats, ~25s):** Setup (the hole they were in) → Move (the unlikely thing they did) → Payoff (the number).
-3. **LESSON (~8s):** One Value, Created principle, named with its chapter. The story is the principle wearing a disguise.
-4. **CTA (~4s):** "The full breakdown is in Value, Created, Chapter N." End card: book cover + thejoydigi.com.
+3. **LESSON (~8s):** One sharp principle the story proves. This is the brand's voice, not a pitch: state the principle, never name the book or a chapter. ("The cereal wasn't the business. Resourcefulness was. Price is never about the thing. It's about the story." Full stop.)
+4. **END CARD (~3s):** Series mark only. No book cover, no link, no CTA. The account grows on the strength of the stories; the book gets marketed when the audience exists.
+
+## Why no book pitch (Long's call 2026-10-09)
+Every episode ending in a pitch turns a great story into an ad, and ads don't get shared. Founder Files is pure content: true founder stories people watch and enjoy. Growth first (followers), book marketing later, when there's an audience to market to. The book can live in the profile and captions; it never interrupts the video.
 
 ## Hook rules
 - First frame must work with sound OFF (big kinetic type of the hook line).
@@ -29,7 +32,7 @@ Real founder stories, 40 seconds each: how a real company won (or almost died), 
 - **Archival treatment:** historical beats get a photo/document texture (cereal box, patent sketch, can design) — real artifacts, not stock.
 - **Pacing:** hard cuts between beats, no slow fades. The story should feel like it's leaning forward.
 - **Sound:** dry, confident single narrator. Subtle bed underneath, no cheesy whooshes or hype stingers.
-- **End card (3.8s):** book cover, "Value, Created — Chapter N", thejoydigi.com. Same card every episode (series identity).
+- **End card (3s):** series mark only. Same card every episode (series identity). No book, no link, no CTA.
 
 ## Sourcing rule (non-negotiable)
 Real companies, public facts, every number verified before the script ships. Each script lists its sources. Getting a number wrong about a real company torches credibility, and these will get shared. No composite characters, no "a founder I know."

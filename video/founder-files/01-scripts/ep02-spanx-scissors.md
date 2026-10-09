@@ -16,10 +16,10 @@ No fashion background. No investors. She takes five thousand dollars in savings,
 She demos it herself at Neiman Marcus. They put it in seven stores. Oprah names it a Favorite Thing. In 2012, she becomes the youngest self-made female billionaire.
 
 **LESSON (35–40s):**
-Every value starts as a problem solved. She didn't find a market. She was the market. That's Chapter 6 of Value, Created.
+Every value starts as a problem solved. She didn't find a market. She was the market.
 
-**CTA (end card):**
-The full breakdown is in Value, Created, Chapter 6. Link in bio.
+**END CARD:**
+Series mark only. No pitch.
 
 ## Visual notes (direction, not execution)
 - Hook frame: giant scissors + "$5,000" kinetic type.

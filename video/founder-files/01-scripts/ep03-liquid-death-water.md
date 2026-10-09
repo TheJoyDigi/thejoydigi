@@ -16,10 +16,10 @@ So he puts it in a tallboy can with a skull on it and calls it Liquid Death. Tag
 By 2024: a one-point-four billion dollar valuation, nearly eight million followers, in over a hundred thousand stores.
 
 **LESSON (35–40s):**
-The product didn't change. The meaning did. That's what a brand really is: trust, stored. Chapter 19 of Value, Created.
+The product didn't change. The meaning did. That's what a brand really is: trust, stored.
 
-**CTA (end card):**
-The full breakdown is in Value, Created, Chapter 19. Link in bio.
+**END CARD:**
+Series mark only. No pitch.
 
 ## Visual notes (direction, not execution)
 - Hook frame: a plain water glass morphing into the skull can; "$1.4B" kinetic slam.
