@@ -31,3 +31,10 @@ Series mark only. No pitch.
 - $40/box, ~$30K raised, 2008 election season, 500 boxes per design: verified via multiple sources 2026-10-08.
 - Paul Graham "cockroaches" quote: widely reported from Chesky interviews; keep as attributed quote, not narration fact.
 - Do NOT claim exact box counts sold beyond "~800 boxes / ~$30K" range; sources vary slightly.
+
+## Threads version (posts same day the video goes live)
+1. Airbnb was saved by breakfast cereal.
+2. 2008. Airbnb is dying. Almost no users, no investors, $20,000 in credit card debt.
+3. So the founders buy a thousand boxes of cheap cereal, repackage them as "Obama O's" and "Cap'n McCain's," and sell them for $40 a box.
+4. They make $30,000. It keeps the company alive for months. Paul Graham sees the boxes and says: "You guys are like cockroaches. You just won't die." Y Combinator funds them.
+5. The cereal wasn't the business. Resourcefulness was. Price is never about the thing. It's about the story.

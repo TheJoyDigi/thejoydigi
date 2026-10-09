@@ -21,6 +21,15 @@ Real founder stories, 40 seconds each: how a real company won (or almost died), 
 ## Why no book pitch (Long's call 2026-10-09)
 Every episode ending in a pitch turns a great story into an ad, and ads don't get shared. Founder Files is pure content: true founder stories people watch and enjoy. Growth first (followers), book marketing later, when there's an audience to market to. The book can live in the profile and captions; it never interrupts the video.
 
+## Threads companion (Long's call 2026-10-09)
+Every episode also ships as a Threads-native text version. Not a cross-post: the story retold for a reading audience.
+- Post 1: the hook, verbatim ("Airbnb was saved by breakfast cereal.")
+- Posts 2-4: the three beats, one post each, tightened for text.
+- Final post: the principle, stated plainly. No book mention, no CTA.
+- Same rules as the video: no em dashes, every number verified, human voice.
+- Lola writes the thread from the episode script; it posts the same day the video goes live.
+- The thread lives in the episode's script file under a "Threads version" section.
+
 ## Hook rules
 - First frame must work with sound OFF (big kinetic type of the hook line).
 - Never start with "Did you know" or a question the viewer can answer "no" to and swipe away.
