@@ -1,4 +1,4 @@
-import { JOY, SITE, type ShowTheme } from "./brand";
+import { JOY, SITE, STUDIO, type ShowTheme } from "./brand";
 
 export type Cta = { label: string; href: string };
 
@@ -48,6 +48,8 @@ function button(cta: Cta, bg: string, fg: string, border: string) {
 
 export function renderEmail(c: EmailContent, footer: EmailFooter = {}): { html: string; text: string } {
   const t = c.theme;
+  // Studio mail (STUDIO in brand.ts) has no feed and is the umbrella itself, so it skips the RSS box and show credit.
+  const isStudio = t.slug === STUDIO.slug;
   const unsubscribeUrl = footer.unsubscribeUrl ?? unsubscribeHref(t);
   const addressHtml = footer.postalAddress
     ? `<p style="margin:8px 0 0;">${escapeHtml(footer.postalAddress)}</p>`
@@ -61,6 +63,18 @@ export function renderEmail(c: EmailContent, footer: EmailFooter = {}): { html: 
         )
         .join("")}</table>`
     : "";
+  const rss = t.feedUrl
+    ? `<tr><td class="jd-pad" style="padding:8px 36px 0;">
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td bgcolor="${t.subtle}" style="background:${t.subtle};border-radius:12px;padding:14px 16px;font-family:${JOY.body};font-size:13px;line-height:20px;color:${t.muted};">
+      Prefer another app? Add this RSS feed to Apple Podcasts, Overcast or Pocket Casts:<br>
+      <a href="${t.feedUrl}" target="_blank" style="color:${t.text};word-break:break-all;">${t.feedUrl}</a>
+    </td></tr></table>
+  </td></tr>`
+    : "";
+  const joyLink = `<a href="${SITE}" target="_blank" style="color:${JOY.ink};font-weight:700;text-decoration:none;">The Joy Digi</a>`;
+  const credit = isStudio
+    ? `Every show and book here is a production of ${joyLink}: joyful things made with code and AI.`
+    : `${escapeHtml(t.name)} is a production of ${joyLink}: joyful things made with code and AI.`;
   const buttons = `<table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin:8px 0 12px;"><tr>${button(c.primary, t.accent, t.onAccent, t.accent)}${
     c.secondary ? button(c.secondary, t.card, t.text, t.outline) : ""
   }</tr></table>`;
@@ -98,7 +112,7 @@ export function renderEmail(c: EmailContent, footer: EmailFooter = {}): { html: 
   <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
   <tr><td class="jd-pad" style="padding:32px 36px 8px;">
     <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
-      <td valign="middle" style="padding-right:14px;"><img src="${t.cover}" width="64" height="64" alt="${escapeHtml(t.name)} cover art" style="display:block;border:0;border-radius:12px;"></td>
+      <td valign="middle" style="padding-right:14px;"><img src="${t.cover}" width="64" height="64" alt="${escapeHtml(isStudio ? t.name : `${t.name} cover art`)}" style="display:block;border:0;border-radius:12px;"></td>
       <td valign="middle" style="font-family:${JOY.body};font-size:12px;line-height:16px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:${t.kicker};">${escapeHtml(c.kicker ?? t.name)}</td>
     </tr></table>
   </td></tr>
@@ -108,19 +122,14 @@ export function renderEmail(c: EmailContent, footer: EmailFooter = {}): { html: 
     ${bullets}
     ${buttons}
   </td></tr>
-  <tr><td class="jd-pad" style="padding:8px 36px 0;">
-    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td bgcolor="${t.subtle}" style="background:${t.subtle};border-radius:12px;padding:14px 16px;font-family:${JOY.body};font-size:13px;line-height:20px;color:${t.muted};">
-      Prefer another app? Add this RSS feed to Apple Podcasts, Overcast or Pocket Casts:<br>
-      <a href="${t.feedUrl}" target="_blank" style="color:${t.text};word-break:break-all;">${t.feedUrl}</a>
-    </td></tr></table>
-  </td></tr>
+  ${rss}
   <tr><td class="jd-pad" style="padding:22px 36px 32px;font-family:${JOY.body};font-size:16px;line-height:24px;color:${t.text};">${rich(c.signoff)}</td></tr>
   </table>
 </td></tr>
 
 <tr><td class="jd-pad" align="left" style="padding:24px 8px 0;font-family:${JOY.body};font-size:13px;line-height:20px;color:${JOY.inkSoft};">
-  <p style="margin:0 0 8px;">${escapeHtml(t.name)} is a production of <a href="${SITE}" target="_blank" style="color:${JOY.ink};font-weight:700;text-decoration:none;">The Joy Digi</a>: joyful things made with code and AI.</p>
-  <p style="margin:0 0 8px;"><a href="${SITE}/podcasts" target="_blank" style="color:${JOY.ink};">All Joy Digi shows</a> &nbsp;&middot;&nbsp; <a href="${t.pageUrl}" target="_blank" style="color:${JOY.ink};">${escapeHtml(t.name)} on the web</a></p>
+  <p style="margin:0 0 8px;">${credit}</p>
+  <p style="margin:0 0 8px;"><a href="${SITE}/podcasts" target="_blank" style="color:${JOY.ink};">All Joy Digi shows</a>${isStudio ? "" : ` &nbsp;&middot;&nbsp; <a href="${t.pageUrl}" target="_blank" style="color:${JOY.ink};">${escapeHtml(t.name)} on the web</a>`}</p>
   <p style="margin:0;">${escapeHtml(c.reason)} <a href="${unsubscribeUrl}" style="color:${JOY.ink};">Unsubscribe</a>.</p>
   ${addressHtml}
 </td></tr>
@@ -132,7 +141,7 @@ export function renderEmail(c: EmailContent, footer: EmailFooter = {}): { html: 
 </html>`;
 
   const text = [
-    `THE JOY DIGI · ${t.name.toUpperCase()}`,
+    isStudio ? "THE JOY DIGI" : `THE JOY DIGI · ${t.name.toUpperCase()}`,
     "",
     c.heading,
     "",
@@ -140,12 +149,12 @@ export function renderEmail(c: EmailContent, footer: EmailFooter = {}): { html: 
     ...(c.bullets?.length ? [...c.bullets.map((b) => `* ${plain(b)}`), ""] : []),
     `${c.primary.label}: ${c.primary.href}`,
     ...(c.secondary ? [`${c.secondary.label}: ${c.secondary.href}`] : []),
-    `RSS feed: ${t.feedUrl}`,
+    ...(t.feedUrl ? [`RSS feed: ${t.feedUrl}`] : []),
     "",
     plain(c.signoff),
     "",
     "--",
-    `${t.name} is a production of The Joy Digi (${SITE}).`,
+    isStudio ? `Every show and book here is a production of The Joy Digi (${SITE}).` : `${t.name} is a production of The Joy Digi (${SITE}).`,
     footer.unsubscribeUrl
       ? `${c.reason} Unsubscribe: ${footer.unsubscribeUrl}`
       : `${c.reason} Unsubscribe: email ${UNSUBSCRIBE_EMAIL} with the subject "Unsubscribe from ${t.name}".`,

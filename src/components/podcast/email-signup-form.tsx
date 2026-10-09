@@ -40,26 +40,23 @@ const tones = {
   },
 } as const;
 
-type Show = "value-created" | "money-mastered" | "anthropic-blogcast" | "oc-pack";
+type Interest = "value-created" | "money-mastered" | "anthropic-blogcast" | "oc-pack";
 
-/** Show-specific newsletter signup. Homepage visitors can pick one show. */
+/** Signup for the single Joy Digi list. `interest` is the show page it sits on, if any; it tailors the welcome email. */
 export function EmailSignupForm({
-  show,
-  allowShowSelection = false,
+  interest,
   compact = false,
   tone = "light",
   buttonLabel = "Subscribe",
-  successMessage = "You're on the list! Watch your inbox for the next update.",
+  successMessage = "You're on The Joy Digi list! Watch your inbox for a welcome email.",
 }: {
-  show: Show;
-  allowShowSelection?: boolean;
+  interest?: Interest;
   compact?: boolean;
   tone?: keyof typeof tones;
   buttonLabel?: string;
   successMessage?: string;
 }) {
   const t = tones[tone];
-  const [selectedShow, setSelectedShow] = useState<Show>(show);
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
   const [hp, setHp] = useState("");
@@ -74,12 +71,12 @@ export function EmailSignupForm({
       const res = await fetch("/api/subscribe", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, name, hp, show: selectedShow }),
+        body: JSON.stringify({ email, name, hp, interest }),
       });
       const data = await res.json().catch(() => ({}));
       if (res.ok) {
         setStatus("done");
-        track("newsletter_signup", { show: selectedShow });
+        track("newsletter_signup", { show: interest });
       } else {
         setStatus("error");
         setMessage(data.error || "Something went wrong. Please try again.");
@@ -106,21 +103,6 @@ export function EmailSignupForm({
         aria-hidden="true"
         style={{ position: "absolute", left: "-9999px", width: 1, height: 1, opacity: 0 }}
       />
-      {allowShowSelection && (
-        <label className="flex flex-col gap-2 text-sm font-semibold text-[#FDF6EC]">
-          Choose a show
-          <select
-            value={selectedShow}
-            onChange={(e) => setSelectedShow(e.target.value as Show)}
-            className={t.input}
-          >
-            <option value="value-created">Value, Created · daily chapters</option>
-            <option value="money-mastered">Money, Mastered · three chapters a week</option>
-            <option value="anthropic-blogcast">Anthropic Blogcast · new posts</option>
-            <option value="oc-pack">The OC Pack · weekly episodes</option>
-          </select>
-        </label>
-      )}
       {!compact && (
         <input
           type="text"

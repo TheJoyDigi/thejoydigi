@@ -479,11 +479,11 @@ function Subscribe({ show }: { show: Show }) {
 
         <div className="mx-auto mt-12 max-w-2xl rounded-2xl border border-[#D9B56A]/30 bg-[#0B1B2E]/70 p-6 text-left md:p-8">
           <h3 className="!py-0 font-[family-name:var(--mm-serif)] text-2xl md:text-3xl font-medium text-[#F3DE9E]">
-            Get the next chapter in your inbox
+            Join The Joy Digi list
           </h3>
-          <p className="mt-2 text-[#EFE6D2]/60">Updates from Money, Mastered, where new chapters publish three times a week. Unsubscribe anytime.</p>
+          <p className="mt-2 text-[#EFE6D2]/60">News from Money, Mastered and the rest of the studio, plus first word on new shows and books. Unsubscribe anytime.</p>
           <div className="mt-5">
-            <EmailSignupForm show="money-mastered" tone="dark" buttonLabel="Keep me posted" successMessage="You're on the Money, Mastered list! Watch your inbox for updates." />
+            <EmailSignupForm interest="money-mastered" tone="dark" buttonLabel="Keep me posted" successMessage="You're on The Joy Digi list! Watch your inbox for a welcome email." />
           </div>
         </div>
       </div>

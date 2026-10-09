@@ -54,22 +54,20 @@ S3_BUCKET_NAME=your_bucket
 INTERESTS_KEY=interests.json # optional
 ```
 
-## Podcast email subscriptions (Resend)
+## Email list (Resend)
 
-The homepage and podcast signup forms call `POST /api/subscribe` with `email`, optional `name`, and `show` (`value-created`, `anthropic-blogcast`, `money-mastered`, or `oc-pack`). The existing show-specific routes delegate to the same handler. The free Resend plan has three segments, so Money, Mastered and Anthropic Blogcast share the existing Money segment. Separate opt-out-by-default topics record each show's explicit signup choice. Value, Created and OC Pack keep their existing segments. Existing globally opted-out contacts are never resubscribed by these endpoints.
+Every signup joins one Joy Digi list. The homepage and podcast signup forms call `POST /api/subscribe` with `email`, optional `name`, and an optional `interest` (`value-created`, `anthropic-blogcast`, `money-mastered`, or `oc-pack`; the older `show` field is still accepted). The interest only adds a line to the welcome email. The existing show-specific routes (`/api/<show>/subscribe`) delegate to the same handler with their show as the interest. Existing globally opted-out contacts are never resubscribed by these endpoints.
 
 ```env
 RESEND_CONTACTS_API_KEY=your_resend_full_access_key
 RESEND_API_KEY=your_resend_sending_key
-RESEND_TOPIC_MONEY_MASTERED=931ed58a-f3bb-496c-a714-af9e28142d8a # optional override
-RESEND_TOPIC_ANTHROPIC_BLOGCAST=a9b3ac5a-5a74-4ffb-aef7-6dcc84a4fa49 # optional override
+RESEND_SEGMENT_JOY_DIGI=1f112a61-0dd0-454e-872a-0d731a143985 # optional override
 ```
 
 - `RESEND_CONTACTS_API_KEY` must have Contacts access. When omitted, `RESEND_API_KEY` is used for Contacts too, so it must be a full-access key.
-- `RESEND_API_KEY` sends one welcome email for a new show subscription. Contact storage works without it if `RESEND_CONTACTS_API_KEY` is set.
-- `RESEND_TOPIC_MONEY_MASTERED` and `RESEND_TOPIC_ANTHROPIC_BLOGCAST` are optional overrides. The IDs above are the current topics and remain the defaults. Keep both topics' default subscription set to `opt_out`.
-- `RESEND_SEGMENT_VALUE_CREATED`, `RESEND_SEGMENT_MONEY_MASTERED`, and `RESEND_SEGMENT_OC_PACK` are optional overrides. The current existing segment IDs remain the defaults. Anthropic uses `RESEND_SEGMENT_MONEY_MASTERED` too.
-- Any future Money or Anthropic broadcast must specify its topic ID as well as the shared segment ID so only people opted into that show receive it.
+- `RESEND_API_KEY` sends one welcome email for a new subscription. Contact storage works without it if `RESEND_CONTACTS_API_KEY` is set.
+- `RESEND_SEGMENT_JOY_DIGI` is optional. It defaults to the original Value, Created segment, so existing subscribers stay on the list and the Value, Created chapter emails keep targeting the same segment.
+- The old per-show variables (`RESEND_SEGMENT_VALUE_CREATED`, `RESEND_SEGMENT_MONEY_MASTERED`, `RESEND_SEGMENT_OC_PACK`, `RESEND_TOPIC_MONEY_MASTERED`, `RESEND_TOPIC_ANTHROPIC_BLOGCAST`) are no longer read. Contacts already in the old Money, Mastered and OC Pack segments stay there; new signups go only to the Joy Digi segment.
 
 ## Value, Created chapter emails
 
