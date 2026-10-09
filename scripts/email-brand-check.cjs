@@ -1,8 +1,9 @@
 // Checks every email template against docs/brand/design-standard.md. Run: node scripts/email-brand-check.cjs
 // Exit code 1 on any failure, so it can gate PRs.
 const jiti = require("jiti")(__filename);
-const { JOY, THEMES } = jiti("../src/lib/email/brand.ts");
+const { JOY, THEMES, STUDIO } = jiti("../src/lib/email/brand.ts");
 const { welcomeEmail } = jiti("../src/lib/email/welcome.ts");
+const { NEWSLETTER_SHOWS } = jiti("../src/lib/email/subscribe.ts");
 
 const lum = (hex) => {
   const [r, g, b] = [1, 3, 5].map((i) => parseInt(hex.slice(i, i + 2), 16) / 255).map((c) => (c <= 0.03928 ? c / 12.92 : ((c + 0.055) / 1.055) ** 2.4));
@@ -28,8 +29,7 @@ for (const [label, fg, bg, min] of [
   row(r >= min, label, `${r.toFixed(2)}:1, need ${min}`);
 }
 
-for (const slug of Object.keys(THEMES)) {
-  const t = THEMES[slug];
+for (const t of [STUDIO, ...Object.values(THEMES)]) {
   console.log(`\n${t.name}`);
   // Small text (<18.66px bold / <24px regular) needs 4.5:1; the 34px heading needs 3:1 (WCAG AA).
   for (const [label, fg, bg, min] of [
@@ -45,13 +45,17 @@ for (const slug of Object.keys(THEMES)) {
     const r = contrast(fg, bg);
     row(r >= min, label, `${r.toFixed(2)}:1, need ${min}`);
   }
+}
 
-  const e = welcomeEmail(slug, `Sam <b>&</b>`);
+// One welcome for the whole list, with an optional line for the show the reader signed up from.
+for (const interest of [undefined, ...NEWSLETTER_SHOWS]) {
+  console.log(`\nWelcome email (${interest ?? "no interest"})`);
+  const e = welcomeEmail(`Sam <b>&</b>`, interest);
   const h = e.html;
   const kb = Buffer.byteLength(h) / 1024;
   row(kb < 90, "HTML under Gmail's ~102 KB clip limit", `${kb.toFixed(1)} KB`);
   row(/The Joy Digi<\/td>/.test(h), "umbrella header wordmark present");
-  row(h.includes("is a production of <a"), "umbrella footer credit present");
+  row(/is a production of <a[^>]*>The Joy Digi<\/a>/.test(h), "umbrella footer credit present");
   row(/href="mailto:[^"]+Unsubscribe/.test(h), "visible unsubscribe link");
   row(/display:none;max-height:0/.test(h), "hidden preheader present");
   row(h.includes("max-width:600px"), "600px max width");
@@ -60,9 +64,10 @@ for (const slug of Object.keys(THEMES)) {
   row([...h.matchAll(/<img\b[^>]*src="([^"]+)"/g)].every((m) => m[1].startsWith("https://")), "images are absolute https");
   row([...h.matchAll(/href="([^"]+)"/g)].every((m) => /^(https:\/\/|mailto:)/.test(m[1])), "links are https or mailto");
   row(!h.includes("<b>&</b>") && h.includes("&lt;b&gt;&amp;&lt;/b&gt;"), "subscriber name is HTML-escaped");
-  const plain = welcomeEmail(slug, "Sam").text;
+  const plain = welcomeEmail("Sam", interest).text;
   row(plain.length > 200 && !/<[a-z]/i.test(plain), "plain-text part present and tag-free");
   row(/^.+ <hello@thejoydigi\.com>$/.test(e.from), "from = '<Show> <hello@thejoydigi.com>'", e.from);
+  row(e.subject.length <= 50, "subject ≤ 50 chars", e.subject);
 }
 
 console.log(`\n${fails ? `${fails} FAILED` : "All checks passed"}`);

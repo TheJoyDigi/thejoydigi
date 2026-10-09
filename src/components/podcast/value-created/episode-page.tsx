@@ -460,7 +460,7 @@ function UpNext({ show, index, player, total, share }: Props & { total: number; 
             </h3>
             <p className="mt-3 text-[#F4EEDD]/60">Get it in your inbox the day it&apos;s released.</p>
             <div className="mt-6 max-w-xl">
-              <EmailSignupForm show="value-created" tone="dark" buttonLabel="Keep me posted" successMessage="You're on the list! Watch your inbox for the next Value, Created chapter." />
+              <EmailSignupForm interest="value-created" tone="dark" buttonLabel="Keep me posted" successMessage="You're on the list! Watch your inbox for a welcome email." />
             </div>
           </div>
         ) : (

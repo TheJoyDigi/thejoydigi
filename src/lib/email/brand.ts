@@ -128,3 +128,23 @@ export const THEMES = {
 } satisfies Record<string, ShowTheme>;
 
 export type ShowSlug = keyof typeof THEMES;
+
+/** The studio itself, for mail that isn't about one show (the newsletter welcome). Card matches the site's inbox section. */
+export const STUDIO: ShowTheme = {
+  slug: "joy-digi",
+  name: "The Joy Digi",
+  from: "The Joy Digi <hello@thejoydigi.com>",
+  pageUrl: SITE,
+  feedUrl: "", // no studio-wide feed, so the layout skips the RSS box
+  spotifyUrl: "",
+  cover: `${SITE}/email/joy-digi-cover.png`,
+  card: JOY.ink,
+  text: JOY.sand,
+  muted: "#C3D3D6",
+  heading: JOY.sand,
+  kicker: JOY.mint,
+  accent: JOY.sun,
+  onAccent: JOY.ink,
+  outline: "#4D8A96",
+  subtle: "#0A4D5E",
+};

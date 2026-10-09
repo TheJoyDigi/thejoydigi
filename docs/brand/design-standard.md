@@ -45,8 +45,9 @@ A show owns: card colours, its cover art, its kicker, its heading/CTA wording an
 | The OC Pack | `#FFF4DA` | `#6B3410` | `#6B3410` | `#B8431F` | `#FFFFFF` | Sunny, friendly, local, emoji welcome |
 | Anthropic Blogcast | `#101418` | `#F4EFE6` | `#F4EFE6` | `#E2725B` | `#101418` | Smart, warm tech-editorial, independent |
 | Incentives, Decoded | `#5B3DF5` | `#FFFFFF` | `#D4FF3A` | `#D4FF3A` | `#0E0D12` | Playful game zine for younger listeners: chunky ink outlines, hard shadows, sticker game pieces |
+| The Joy Digi (studio) | `#003B49` | `#FDF6EC` | `#FDF6EC` | `#FFC94A` | `#003B49` | Warm, plain-spoken studio voice; for mail that isn't about one show |
 
-Full token sets (muted, kicker, outline, subtle) live in `THEMES` in `brand.ts`.
+Full token sets (muted, kicker, outline, subtle) live in `THEMES` (and `STUDIO` for the studio) in `brand.ts`.
 
 **Note:** OC Pack's web accent is `#FC7F46`/`#FF6F61`. In email it's `#B8431F` because the brighter orange fails contrast for 16px button text (3.5:1). Keep the brighter orange for large display art only.
 
@@ -61,7 +62,7 @@ Full token sets (muted, kicker, outline, subtle) live in `THEMES` in `brand.ts`.
 ### Structure (enforced by `renderEmail`)
 1. Hidden preheader (40–90 chars) that adds to the subject, not repeats it.
 2. Umbrella header: ✦ + "The Joy Digi", linking to the site.
-3. Show card: cover (64px, rounded) + kicker, one H1, 1–3 short paragraphs, optional ✦ bullets (≤5), a primary CTA and at most one secondary, RSS box, signoff from "Alex & Jordan".
+3. Show card: cover (64px, rounded) + kicker, one H1, 1–3 short paragraphs, optional ✦ bullets (≤5), a primary CTA and at most one secondary, RSS box (skipped for studio mail, which has no feed), signoff from "Alex & Jordan".
 4. Umbrella footer: production credit, "All Joy Digi shows" + show page links, why they got it, visible **Unsubscribe**.
 
 ### Hard requirements (checked by `node scripts/email-brand-check.cjs`)
@@ -96,6 +97,6 @@ Full token sets (muted, kicker, outline, subtle) live in `THEMES` in `brand.ts`.
 
 1. Add the show to `THEMES` in `brand.ts`. Start from its web palette, then adjust until the brand check passes.
 2. Add a 240×240 cover to `public/email/<slug>-cover.jpg` (from the live feed cover).
-3. Add its copy to `welcome.ts` (or a new builder that calls `renderEmail`). Never hand-write a new HTML shell.
+3. There is one welcome email for the whole Joy Digi list (`welcome.ts`, studio theme `STUDIO` in `brand.ts`: no RSS box, footer credit "Every show and book here is a production of The Joy Digi", cover is the site icon at `public/email/joy-digi-cover.png`). If the show has a signup form, add its one-line interest note and secondary button there. Other show mail gets a builder that calls `renderEmail`. Never hand-write a new HTML shell.
 4. Run `node scripts/email-brand-check.cjs` (must pass) and `node scripts/email-preview.cjs`, then look at the previews at 600px and 375px.
 5. Ask the **joydigi-design** agent (`.claude/agents/joydigi-design.md`) to review before merging.

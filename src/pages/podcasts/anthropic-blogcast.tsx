@@ -337,13 +337,13 @@ function Subscribe({ show }: { show: Show }) {
         </p>
         <div className="mx-auto mt-12 max-w-2xl rounded-[1.75rem] border border-[#E2725B]/35 bg-[#1A2029] p-6 text-left md:p-8">
           <h3 className={`!py-0 ${font} text-2xl font-bold md:text-3xl`} style={{ color: PAPER }}>
-            Get the next episode in your inbox
+            Join The Joy Digi list
           </h3>
           <p className="mt-2 text-sm" style={{ color: MUTED }}>
-            Anthropic Blogcast updates when new episodes arrive. Unsubscribe anytime.
+            News from Anthropic Blogcast and the rest of the studio, plus first word on new shows and books. Unsubscribe anytime.
           </p>
           <div className="mt-5">
-            <EmailSignupForm show="anthropic-blogcast" tone="anthropic" buttonLabel="Keep me posted" successMessage="You're on the Anthropic Blogcast list! Watch your inbox for updates." />
+            <EmailSignupForm interest="anthropic-blogcast" tone="anthropic" buttonLabel="Keep me posted" successMessage="You're on The Joy Digi list! Watch your inbox for a welcome email." />
           </div>
         </div>
         <p className="mt-12 text-sm font-bold" style={{ color: MUTED }}>

@@ -198,11 +198,11 @@ export function Subscribe({ show }: { show: Show }) {
 
         <div className="mx-auto mt-12 max-w-2xl rounded-2xl border border-[#F2A81D]/30 bg-[#0B1330]/70 p-6 text-left md:p-8">
           <h3 className="!py-0 font-[family-name:var(--vc-serif)] text-2xl md:text-3xl font-medium text-[#FFD47E]">
-            Get the next chapter in your inbox
+            The book is complete. Get the next one first.
           </h3>
-          <p className="mt-2 text-[#F4EEDD]/60">Value, Created chapter emails as new chapters publish. Unsubscribe anytime.</p>
+          <p className="mt-2 text-[#F4EEDD]/60">All 32 chapters are live. Join The Joy Digi list to hear first about new books and shows. Unsubscribe anytime.</p>
           <div className="mt-5">
-            <EmailSignupForm show="value-created" tone="dark" buttonLabel="Keep me posted" successMessage="You're on the list! Watch your inbox for the next Value, Created chapter." />
+            <EmailSignupForm interest="value-created" tone="dark" buttonLabel="Get the next one first" successMessage="You're on the list! You'll be first to hear about the next book." />
           </div>
         </div>
       </div>
