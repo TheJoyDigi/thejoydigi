@@ -42,12 +42,12 @@ Every episode also ships as a Threads-native text version. Not a cross-post: the
 - Every hook makes a claim that sounds wrong until the story proves it.
 
 ## Visual + motion direction (WHAT, not how — Claude owns execution)
-- **Palette:** gold luxe, matching the brand: near-black backgrounds, champagne gold (#D4AF37), white serif type.
-- **Motion on every beat:** nothing static longer than ~2 seconds. Kinetic type for every number and name (numbers are the stars).
-- **Archival treatment:** historical beats get a photo/document texture (cereal box, patent sketch, can design) — real artifacts, not stock.
-- **Pacing:** hard cuts between beats, no slow fades. The story should feel like it's leaning forward.
-- **Sound:** dry, confident single narrator. Subtle bed underneath, no cheesy whooshes or hype stingers.
-- **End card (3s):** series mark only. Same card every episode (series identity). No book, no link, no CTA.
+**Style call (Long, 2026-10-09): modern and young. NOT the book's gold luxe style.** This series has its own visual identity, built for a young audience.
+- **Look:** bold, contemporary, high-energy. Big punchy type, high-contrast color, confident and playful. Think the feeds young people actually watch, not a finance book cover.
+- **Motion on every beat:** nothing static longer than ~2 seconds. Kinetic type for every number and name (numbers are the stars). Meme-aware pacing: fast cuts, satisfying builds, zero dead air.
+- **Archival texture:** historical beats get real artifacts (cereal box, patent sketch, can design), treated in the modern style, not sepia nostalgia.
+- **Sound:** dry, confident single narrator with edge. Subtle bed underneath, no cheesy whooshes.
+- **End card (3s):** series mark + "Follow for the next one." Same card every episode (series identity).
 
 ## Sourcing rule (non-negotiable)
 Real companies, public facts, every number verified before the script ships. Each script lists its sources. Getting a number wrong about a real company torches credibility, and these will get shared. No composite characters, no "a founder I know."
