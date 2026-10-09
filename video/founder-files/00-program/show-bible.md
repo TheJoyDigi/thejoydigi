@@ -15,7 +15,8 @@ Real founder stories, 40 seconds each: how a real company won (or almost died), 
    Good: "Airbnb was saved by breakfast cereal." / "She built a billion-dollar company with a pair of scissors." / "This is just water. It's worth $1.4 billion."
    Bad: "Let me tell you about Airbnb." / "Success leaves clues."
 2. **STORY (3 beats, ~25s):** Setup (the hole they were in) → Move (the unlikely thing they did) → Payoff (the number).
-3. **LESSON (~8s):** One sharp principle the story proves. This is the brand's voice, not a pitch: state the principle, never name the book or a chapter. ("The cereal wasn't the business. Resourcefulness was. Price is never about the thing. It's about the story." Full stop.)
+3. **LESSON (~8s):** One sharp principle the story proves, stated lightly. This is the brand's voice, not a pitch: state the principle, never name the book or a chapter. ("The cereal wasn't the business. Resourcefulness was. Price is never about the thing. It's about the story." Full stop.)
+   The story comes first, always. A real, interesting founder story with a light principle beats a forced book lesson every time. If the connection to the book's ideas is natural, keep it. If it feels shoehorned, cut it. Nobody ever shared a video because of its lesson; they share it because the story is great.
 4. **END CARD (~3s):** Series mark only. No book cover, no link, no CTA. The account grows on the strength of the stories; the book gets marketed when the audience exists.
 
 ## Why no book pitch (Long's call 2026-10-09)
@@ -53,7 +54,7 @@ Every episode also ships as a Threads-native text version. Not a cross-post: the
 Real companies, public facts, every number verified before the script ships. Each script lists its sources. Getting a number wrong about a real company torches credibility, and these will get shared. No composite characters, no "a founder I know."
 
 ## What makes an episode work
-The viewer should finish thinking two things: "I didn't know that" and "I want the next one." If an episode only delivers one, it gets rewritten.
+The viewer should finish thinking two things: "I didn't know that" and "I want the next one." If an episode only delivers one, it gets rewritten. The story being real and interesting is the whole game; the principle is seasoning, not the meal.
 
 ## Episode order (Season 1 batch 1)
 1. Airbnb cereal boxes → Ch4 Price Is Not Value
