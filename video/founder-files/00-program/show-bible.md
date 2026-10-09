@@ -43,8 +43,9 @@ Every episode also ships as a Threads-native text version. Not a cross-post: the
 - Every hook makes a claim that sounds wrong until the story proves it.
 
 ## Visual + motion direction (WHAT, not how — Claude owns execution)
-**Style call (Long, 2026-10-09): modern and young. NOT the book's gold luxe style.** This series has its own visual identity, built for a young audience.
-- **Look:** bold, contemporary, high-energy. Big punchy type, high-contrast color, confident and playful. Think the feeds young people actually watch, not a finance book cover.
+**Style call (Long, 2026-10-09): warm editorial, modern and young. NOT the book's gold luxe style, NOT neon.** This series has its own visual identity, built for a young audience and for comfortable watching.
+- **Palette (researched 2026-10-09):** warm paper base (#F4F1EA-ish), ink black type, ONE confident accent: vermilion (bold orange-red, ~#E8491D) reserved for numbers and key moments. Per-episode accent pairs still come from each story's real artifact. Rationale: brighter images outperform dark ones ~24% on IG; warm tones read human and trustworthy for founder stories; neon full-bleed fatigues over 40s and reads "crypto bro."
+- **Look:** bold, contemporary, high-energy. Big punchy type, high contrast, confident and playful. Think the feeds young people actually watch, not a finance book cover.
 - **Motion on every beat:** nothing static longer than ~2 seconds. Kinetic type for every number and name (numbers are the stars). Meme-aware pacing: fast cuts, satisfying builds, zero dead air.
 - **Archival texture:** historical beats get real artifacts (cereal box, patent sketch, can design), treated in the modern style, not sepia nostalgia.
 - **Sound:** dry, confident single narrator with edge. Subtle bed underneath, no cheesy whooshes.
