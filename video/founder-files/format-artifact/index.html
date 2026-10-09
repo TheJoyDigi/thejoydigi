@@ -171,12 +171,17 @@ h2 em{font-style:normal;color:var(--verm)}
 /* safe zones */
 .safe{position:absolute;inset:0;z-index:10;pointer-events:none;display:none}
 .stage.showsafe .safe{display:block}
-.safe i{position:absolute;background:repeating-linear-gradient(135deg,rgba(23,20,15,.22) 0 1.4cqw,rgba(23,20,15,.08) 1.4cqw 2.8cqw);outline:1px dashed rgba(23,20,15,.7);outline-offset:-1px;font-style:normal;font-family:var(--mono);font-size:2.6cqw;color:var(--ink);font-weight:600;display:grid;place-items:center;text-transform:uppercase;letter-spacing:.06em}
-.safe .sz-b{left:0;right:0;bottom:0;height:36cqw}
-.safe .sz-r{right:0;width:15cqw;top:78cqw;bottom:36cqw;writing-mode:vertical-rl}
-.safe .sz-t{left:0;right:0;top:0;height:12cqw}
+.safe i{position:absolute;background:repeating-linear-gradient(135deg,rgba(23,20,15,.24) 0 1.4cqw,rgba(23,20,15,.1) 1.4cqw 2.8cqw);outline:1px dashed rgba(23,20,15,.75);outline-offset:-1px;box-shadow:inset 0 0 0 2px rgba(244,241,234,.45);font-style:normal;display:grid;place-items:center}
+.safe i b{font-family:var(--mono);font-size:2.9cqw;font-weight:600;line-height:1.25;letter-spacing:.05em;text-transform:uppercase;text-align:center;white-space:nowrap;background:var(--ink);color:var(--paper);padding:.6cqw 1.6cqw;border-radius:1cqw;box-shadow:0 0 0 1px rgba(244,241,234,.6)}
+.safe .sz-t{left:0;right:0;top:0;height:18.52cqw}
+.safe .sz-r{right:0;width:15.74cqw;top:18.52cqw;bottom:32.41cqw;writing-mode:vertical-rl}
+.safe .sz-b{left:0;right:0;bottom:0;height:32.41cqw}
 
 /* ================= v5 INK + DOODLE LAYER ================= */
+/* mobile safe zone (bible, Long's call 2026-10-09): every shot composes inside x 0-910, y 200-1570 of the 1080x1920 frame.
+   .sh is its own container sized to the safe width, so every cqw inside it rescales with it and the composition stays intact;
+   backgrounds (.bg, .dots, tape) stay full bleed outside it. 81.02cqw = 875px, so the 1.07 drift push still ends inside x 910. */
+.sh{inset:auto;left:0;top:15.3cqw;width:81.02cqw;height:144.03cqw;container-type:inline-size}
 /* inks: one per moment. Doodles live in SVG at 10 units = 1cqw, so line weight scales with the frame */
 .ink{position:absolute;inset:0;width:100%;height:100%;overflow:visible;pointer-events:none;z-index:5;mix-blend-mode:multiply}
 .lsvg{position:absolute;overflow:visible;pointer-events:none}
@@ -671,7 +676,7 @@ h2 em{color:inherit;background:var(--ul-v) no-repeat 0 96%/100% .16em;padding-bo
       <div class="p-shot"><span id="shotName">Shot 01</span><b id="blockName">Hook</b></div>
       <div class="p-tg">
         <button class="tg" id="tgCaps" aria-pressed="true">Captions</button>
-        <button class="tg" id="tgSafe" aria-pressed="false">Platform UI zones</button>
+        <button class="tg" id="tgSafe" aria-pressed="true">Platform UI zones</button>
       </div>
       <p class="p-note" id="paceNote"></p>
     </div>
@@ -826,6 +831,7 @@ h2 em{color:inherit;background:var(--ul-v) no-repeat 0 96%/100% .16em;padding-bo
     <div class="sg"><div class="bx"></div><div><b>The hand-drawn layer</b><span>Loops, arrows, strikes, starbursts, highlighters, stamps, notes and small sketches that annotate the story. Too much, too little, or right?</span></div></div>
     <div class="sg"><div class="bx"></div><div><b>Beat 3 timing</b><span>Re-time the slot to the narration (recommended) or have Lola trim the beat.</span></div></div>
     <div class="sg"><div class="bx"></div><div><b>Hook frame + pacing</b><span>Full hook line within the first third of a second, $40 circled over the sketched box. Cuts on VO words, nothing still past 2 seconds.</span></div></div>
+    <div class="sg"><div class="bx"></div><div><b>Safe zone</b><span>Every frame reviewed with UI zones on, nothing important under the overlays.</span></div></div>
     <div class="sg"><div class="bx"></div><div><b>Device test</b><span>Play the animatic on your phone with Platform UI zones on. Nothing important should sit under the overlays.</span></div></div>
   </div>
 </section>
@@ -1143,7 +1149,7 @@ function Player(stage, shots, opts){
   var self = this;
   this.nodes = shots.map(function(s){ var n = prepShot(shotNode(s.id), s); stage.appendChild(n); return n; });
   if (this.opts.caps){ this.capEl = document.createElement('div'); this.capEl.className='caps'; stage.appendChild(this.capEl); this.capKey=''; }
-  if (this.opts.safe){ var z=document.createElement('div'); z.className='safe'; z.innerHTML='<i class="sz-t">platform UI</i><i class="sz-r">platform UI</i><i class="sz-b">caption · handle · platform UI</i>'; stage.appendChild(z); }
+  if (this.opts.safe){ var z=document.createElement('div'); z.className='safe'; z.setAttribute('aria-hidden','true'); z.innerHTML='<i class="sz-t"><b>Header · status bar<br>top 200px</b></i><i class="sz-r"><b>Action buttons · right 170px</b></i><i class="sz-b"><b>Caption · profile · audio · progress<br>bottom 350px</b></i>'; stage.appendChild(z); stage.classList.add('hassafe','showsafe'); }
   this.seek(this.t0);
 }
 Player.prototype.find = function(t){ for (var i=0;i<this.shots.length;i++) if (t < this.shots[i].end) return i; return this.shots.length-1; };
@@ -1235,7 +1241,9 @@ scrubEl.addEventListener('keydown', function(e){
   if (e.key===' '){ e.preventDefault(); setPlaying(!A.playing); }
 });
 function tog(id, cls, invert){ var b=document.getElementById(id); b.addEventListener('click', function(){ var on = b.getAttribute('aria-pressed')!=='true'; b.setAttribute('aria-pressed', on); stageA.classList.toggle(cls, invert ? !on : on); }); }
-tog('tgCaps','nocaps',true); tog('tgSafe','showsafe',false);
+tog('tgCaps','nocaps',true);
+/* platform UI zones: on by default on the animatic and every style frame; one toggle drives them all */
+var tgS=document.getElementById('tgSafe'); tgS.addEventListener('click', function(){ var on = tgS.getAttribute('aria-pressed')!=='true'; tgS.setAttribute('aria-pressed', on); document.querySelectorAll('.stage.hassafe').forEach(function(z){ z.classList.toggle('showsafe', on); }); });
 document.getElementById('paceNote').textContent = 'Timed from the script at an assumed '+WPS+' words/sec read ('+Math.round(WPS*60)+' wpm) with '+GAP+'s between blocks. The real cut re-times every shot to the recorded VO. Tap the screen to pause, drag the bar to scrub.';
 
 /* ---------- style frames ---------- */
@@ -1250,7 +1258,7 @@ SHOTS.filter(function(s){ return s.frame; }).sort(function(a,b){ return a.frame-
     '<ul class="mn">'+F.notes.map(function(n){ return '<li'+(n[0]==='Cut'||n[0]==='Loop'?' class="cut"':'')+'><b>'+esc(n[0])+'</b><span>'+esc(n[1])+'</span></li>'; }).join('')+'</ul>'+
     '<div class="rp"><button type="button">Replay</button><span>Loops at real speed</span></div>';
   card.appendChild(st); card.appendChild(meta); grid.appendChild(card);
-  var P = new Player(st, [s], {caps:true, loop:true, hold:1.1});
+  var P = new Player(st, [s], {caps:true, safe:true, loop:true, hold:1.1});
   players.push(P);
   meta.querySelector('button').addEventListener('click', function(){ P.seek(P.t0); P.play(); });
   /* rest on the final pose; replay from the top whenever the frame scrolls into view */
