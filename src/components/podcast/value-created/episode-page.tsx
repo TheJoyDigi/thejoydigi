@@ -478,6 +478,11 @@ function UpNext({ show, index, player, total, share }: Props & { total: number; 
                 Back to Chapter I
               </Link>
             </div>
+            <div className="mx-auto mt-10 max-w-xl border-t border-[#F2A81D]/20 pt-8 text-left">
+              <h4 className="!py-0 text-center font-[family-name:var(--vc-serif)] text-2xl font-medium text-[#FFD47E] md:text-3xl">The book is complete.</h4>
+              <p className="mb-5 mt-2 text-center text-[#F4EEDD]/60">Get the next one first. New books and shows from The Joy Digi, before anyone else.</p>
+              <EmailSignupForm interest="value-created" tone="dark" buttonLabel="Notify me" successMessage="You're on the list! You'll be first to hear about the next book." />
+            </div>
           </div>
         )}
         {prev && (

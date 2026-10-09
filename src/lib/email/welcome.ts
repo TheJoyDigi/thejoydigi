@@ -29,7 +29,7 @@ export function welcomeEmail(name: string, interest?: NewsletterShow) {
   const extra = interest ? INTEREST[interest] : undefined;
   const { html, text } = renderEmail({
     theme: STUDIO,
-    preheader: "One list for new episodes, new books and new shows.",
+    preheader: "First word on new books, shows and episodes. Never noisy.",
     kicker: "The Joy Digi · Newsletter",
     heading: "You're on the list.",
     paragraphs: [
@@ -38,12 +38,12 @@ export function welcomeEmail(name: string, interest?: NewsletterShow) {
       "Here's what to expect from us:",
     ],
     bullets: [
-      "New episodes every week from The OC Pack and Anthropic Blogcast",
-      "First word on new books and new shows, before anyone else",
+      "First word on every new book, show, and episode",
+      "Occasional letters, only when there's something worth your inbox",
     ],
     primary: { label: "Browse the shows", href: `${SITE}/podcasts` },
     secondary: extra?.cta,
-    signoff: "Glad you're here.\n— Alex & Jordan",
+    signoff: "Glad you're here.\nAlex & Jordan",
     reason: "You're getting this because you joined The Joy Digi list at thejoydigi.com.",
   });
   return { from: STUDIO.from, subject: "Welcome to The Joy Digi", html, text, headers: unsubscribeHeaders(STUDIO) };
