@@ -24,13 +24,13 @@ async function main() {
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{width:${W}px;height:${H}px;overflow:hidden;background:radial-gradient(ellipse 120% 80% at 50% 32%,#141B4A 0%,#0C1130 45%,#070B22 100%);position:relative}
-.art{position:absolute;left:50px;top:70px;width:1500px;height:1500px;background:url(data:image/jpeg;base64,${art.toString("base64")}) center/cover;
+.art{position:absolute;left:180px;top:90px;width:1240px;height:1240px;background:url(data:image/jpeg;base64,${art.toString("base64")}) center/cover;
   -webkit-mask-image:radial-gradient(closest-side at 50% 50%,#000 72%,transparent 100%);mask-image:radial-gradient(closest-side at 50% 50%,#000 72%,transparent 100%)}
-.title{position:absolute;left:0;right:0;top:1470px;text-align:center;font-family:"Cinzel";font-weight:700;font-size:250px;line-height:.98;letter-spacing:6px;
+.title{position:absolute;left:0;right:0;top:1350px;text-align:center;font-family:"Cinzel";font-weight:700;font-size:250px;line-height:.98;letter-spacing:6px;
   background:linear-gradient(180deg,#FFF0B8 0%,#FFD47E 35%,#F2A81D 62%,#B07A1E 100%);-webkit-background-clip:text;background-clip:text;color:transparent;
   filter:drop-shadow(0 6px 24px rgba(242,168,29,.28))}
-.rule{position:absolute;left:50%;top:2005px;width:420px;height:3px;margin-left:-210px;background:linear-gradient(90deg,transparent,#D9AE4A,transparent)}
-.sub{position:absolute;left:120px;right:120px;top:2050px;text-align:center;font-family:"Cormorant Garamond";font-style:italic;font-weight:500;font-size:84px;line-height:1.12;color:#F4EEDD}
+.rule{position:absolute;left:50%;top:1885px;width:420px;height:3px;margin-left:-210px;background:linear-gradient(90deg,transparent,#D9AE4A,transparent)}
+.sub{position:absolute;left:120px;right:120px;top:1930px;text-align:center;font-family:"Cormorant Garamond";font-style:italic;font-weight:500;font-size:84px;line-height:1.12;color:#F4EEDD}
 .by{position:absolute;left:0;right:0;bottom:120px;text-align:center;font-family:"Cinzel";font-weight:600;font-size:62px;letter-spacing:14px;color:#E9C870}
 </style></head><body>
 <div class="art"></div>

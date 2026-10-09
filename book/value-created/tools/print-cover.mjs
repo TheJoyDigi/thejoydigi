@@ -27,8 +27,24 @@ const STEPS = [
   ["Master it", "Teaching is the final leverage."],
 ];
 
+/** Renders the gold two-line title to a transparent 600 dpi PNG (6 x 1.9 in). */
+async function renderTitle(browser) {
+  const tab = await browser.newPage({ viewport: { width: 600, height: 190 }, deviceScaleFactor: 6 });
+  await tab.setContent(`<!doctype html><html><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&display=block" rel="stylesheet">
+<style>*{margin:0}html,body{background:transparent}text{font-family:"Cinzel";font-weight:700;font-size:92px;letter-spacing:2px}</style></head><body>
+<svg width="600" height="190" viewBox="0 0 600 190"><defs><linearGradient id="gold" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="0" y2="190"><stop offset="0" stop-color="#FFF0B8"/><stop offset=".35" stop-color="#FFD47E"/><stop offset=".62" stop-color="#F2A81D"/><stop offset="1" stop-color="#B07A1E"/></linearGradient></defs>
+    <text x="300" y="80" text-anchor="middle" fill="url(#gold)">VALUE,</text><text x="300" y="170" text-anchor="middle" fill="url(#gold)">CREATED</text></svg></body></html>`, { waitUntil: "networkidle" });
+  if (!(await tab.evaluate(async () => (await document.fonts.ready, document.fonts.check('700 20px "Cinzel"'))))) throw new Error("title font did not load");
+  const png = await tab.screenshot({ type: "png", omitBackground: true });
+  await tab.close();
+  return png;
+}
+
 async function main() {
   if (pages < 79) throw new Error(`${pages} pages: KDP allows spine text only from 79 pages`);
+  const browser = await chromium.launch();
+  const title = await renderTitle(browser);
   const art = await sharp(ART).extract({ left: 510, top: 60, width: 1980, height: 1980 }).jpeg({ quality: 95 }).toBuffer();
   const html = `<!doctype html><html><head><meta charset="utf-8">
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Cormorant+Garamond:ital,wght@0,500;1,500&family=DM+Sans:wght@500;700&display=block" rel="stylesheet">
@@ -43,13 +59,13 @@ body{position:relative;overflow:hidden;background:#0C1130;color:#F4EEDD;font-fam
 .spine{left:${BLEED + TRIM_W}in;width:${SPINE}in}
 .front{left:${BLEED + TRIM_W + SPINE}in;width:${TRIM_W + BLEED}in}
 /* Front: same composition as the eBook cover, scaled to 6 x 9 in. */
-.art{position:absolute;left:${0.15}in;top:${0.25}in;width:${5.7}in;height:${5.7}in;background:url(data:image/jpeg;base64,${art.toString("base64")}) center/cover;
+.art{position:absolute;left:${0.65}in;top:${0.3}in;width:${4.7}in;height:${4.7}in;background:url(data:image/jpeg;base64,${art.toString("base64")}) center/cover;
   -webkit-mask-image:radial-gradient(closest-side,#000 72%,transparent 100%);mask-image:radial-gradient(closest-side,#000 72%,transparent 100%)}
-.title{position:absolute;left:0;right:${BLEED}in;top:5.45in;text-align:center;font-family:"Cinzel";font-weight:700;font-size:0.92in;line-height:.98;letter-spacing:.02in;
-  background:linear-gradient(180deg,#FFF0B8 0%,#FFD47E 35%,#F2A81D 62%,#B07A1E 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+/* Title is a 600 dpi image: gradient text in Chrome's PDF leaves a hairline (background-clip) or misrenders in some viewers (SVG). */
+.title{position:absolute;left:0;top:5.15in;width:${TRIM_W}in;height:1.9in}
 .rule{position:absolute;left:50%;width:1.6in;height:1.2pt;margin-left:calc(-0.8in - ${BLEED / 2}in);background:linear-gradient(90deg,transparent,#D9AE4A,transparent)}
-.front .rule{top:7.45in}
-.sub{position:absolute;left:0.45in;right:${0.45 + BLEED}in;top:7.6in;text-align:center;font-style:italic;font-size:0.3in;line-height:1.12}
+.front .rule{top:7.15in}
+.sub{position:absolute;left:0.45in;right:${0.45 + BLEED}in;top:7.3in;text-align:center;font-style:italic;font-size:0.3in;line-height:1.12}
 .by{position:absolute;left:0;right:${BLEED}in;bottom:${0.3 + BLEED}in;text-align:center;font-family:"Cinzel";font-weight:600;font-size:0.21in;letter-spacing:.05in;color:#E9C870}
 /* Spine: reads top to bottom, as US spines do. */
 .spine .txt{position:absolute;left:50%;top:50%;width:${H - 1.2}in;transform:translate(-50%,-50%) rotate(90deg);display:flex;justify-content:space-between;align-items:center;font-family:"Cinzel";white-space:nowrap}
@@ -82,7 +98,7 @@ body{position:relative;overflow:hidden;background:#0C1130;color:#F4EEDD;font-fam
 <div class="panel spine"><div class="txt"><span class="t">VALUE, CREATED</span><span class="a">${esc(book.author.toUpperCase())}</span></div></div>
 <div class="panel front">
   <div class="art"></div>
-  <div class="title">VALUE,<br>CREATED</div>
+  <img class="title" src="data:image/png;base64,${title.toString("base64")}">
   <div class="rule"></div>
   <div class="sub">${esc(book.subtitle).replace(", ", ",<br>")}</div>
   <div class="by">${esc(book.author.toUpperCase())}</div>
@@ -90,7 +106,6 @@ body{position:relative;overflow:hidden;background:#0C1130;color:#F4EEDD;font-fam
 </body></html>`;
   const file = path.join(PRINT, "cover.html");
   fs.writeFileSync(file, html);
-  const browser = await chromium.launch();
   const tab = await browser.newPage({ viewport: { width: Math.round(W * 96), height: Math.round(H * 96) } });
   await tab.goto(`file://${file}`, { waitUntil: "networkidle" });
   const ok = await tab.evaluate(async () => (await document.fonts.ready, ['700 20px "Cinzel"', 'italic 500 20px "Cormorant Garamond"', '700 20px "DM Sans"'].every((f) => document.fonts.check(f))));
