@@ -52,6 +52,14 @@ Every episode also ships as a Threads-native text version. Not a cross-post: the
 - **Sound:** dry, confident single narrator with edge. Subtle bed underneath, no cheesy whooshes.
 - **End card (3s):** series mark + "Follow for the next one." Same card every episode (series identity).
 
+## Mobile safe zone (Long's call 2026-10-09)
+Every frame must be designed for the 9:16 Reels overlay. Keep all key type, numbers, and doodles inside the safe area:
+- **Right edge:** keep clear ~170px (1080-wide canvas) for the like/comment/share/music buttons.
+- **Bottom:** keep clear ~350px for the caption, profile row, audio title, and progress bar.
+- **Top:** keep clear ~200px for the status bar and Reels header.
+- **Safe area ≈ x 0–910, y 200–1570** on a 1080×1920 canvas. Nothing important outside it, ever.
+- The format artifact shows platform UI zones as a toggleable overlay; every style frame is reviewed with it on. Long device-tests on his phone before anything ships.
+
 ## Sourcing rule (non-negotiable)
 Real companies, public facts, every number verified before the script ships. Each script lists its sources. Getting a number wrong about a real company torches credibility, and these will get shared. No composite characters, no "a founder I know."
 
