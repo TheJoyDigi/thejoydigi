@@ -1,0 +1,43 @@
+// Real-time beat sheet (seconds). Audio cues are aligned to these in mix.py.
+const T = {
+  dur: 46.0,
+  hit: 26.35,
+  hook: [0.0, 3.2],
+  frozen: [3.2, 8.0],
+  reveal: [8.0, 12.6],
+  inside: [12.6, 18.2],
+  steps: [18.2, 24.2],
+  climax: [24.2, 28.0],
+  formats: [28.0, 36.6],
+  end: [36.6, 46.0],
+  leaks: [3.2, 8.0, 12.6, 18.2, 28.0, 36.6],
+};
+
+const COPY = {
+  hook1: "Everyone wants more money.",
+  hook2: ["ALMOST NO ONE ASKS", "WHAT IT’S MADE OF."],
+  frozen: ["Money is created value,", "frozen."],
+  revealKicker: "THE BOOK IS HERE",
+  revealLine: "Now in paperback.",
+  insideKicker: "32 SHORT CHAPTERS · 5 PARTS",
+  inside1: ["A one-page infographic", "in every chapter."],
+  inside2: ["Three takeaways.", "One small exercise."],
+  steps: [
+    ["SEE IT", "Value is not in things.", "It is in people."],
+    ["CREATE IT", "The job is not to invent.", "It is to notice."],
+    ["CAPTURE IT", "Creation is abundant.", "Capture is scarce."],
+    ["SCALE IT", "Leverage is doing", "more with less."],
+    ["MASTER IT", "Teaching is", "the final leverage."],
+  ],
+  climax1: "Value is not found.",
+  climax2: "IT IS CREATED.",
+  readKicker: "READ IT",
+  readLine: "Paperback · Kindle",
+  listenKicker: "LISTEN TO IT",
+  listenLine: ["Free audiobook", "on Spotify & YouTube"],
+  cardTitle: "Value, Created",
+  cardSub: "32 chapters · The Joy Digi",
+  endOut: "OUT NOW",
+  endCta: ["Search “Value, Created”", "on Amazon"],
+  endCredit: "PRODUCED BY THE JOY DIGI",
+};

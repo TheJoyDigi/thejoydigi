@@ -2,6 +2,11 @@
 
 The show's memory: every direction decision, dated. Newest first.
 
+## 2026-10-10
+- **Logo sun enlarged.** Long: the sun behind the pets looked busy. The sun is now one big disc that fully contains the dog and cat, with 7 rays instead of 9. The pets, wave and wordmark are pixel-identical (edited in code, not regenerated); the logo, lockup, mark, avatar and banners were rebuilt from the new master (`tools/master-logo.png`). Codex re-review: PASS. The X header logo moved right to clear the profile photo.
+- **Social kit QA pass.** Two independent reviews (pixel-level audit + Codex visual review), fixes, then two more Codex passes until every asset passed. Fixes: lockup, mark and avatar are now cut from the one master logo (mascots identical everywhere; lockup word spacing fixed); highlight icons redrawn as a one-object set on identical code-drawn discs; templates redrawn with crop-safe margins; story cover rebuilt inside the IG safe zones; pattern made truly seamless; examples exported at 1080×1350; episode drops use the pillar icon instead of the old feed cover. QA checklist added to the style guide (§10).
+- **Social identity shipped: "Poolside Sticker".** New logo (stacked die-cut sticker: dog + cat in front of the sun, THE OC PACK wordmark), horizontal lockup, text-free avatar, YouTube/X/Facebook banners, 6 Instagram highlight covers, 3 post templates, a pattern tile, and the social style guide, all in `docs/brand/social/oc-pack/`. Generated with Codex image_generation; three logo concepts were made and the strongest kept. The feed cover is unchanged (one-series-cover rule); swapping it for the new logo needs Long's sign-off.
+
 ## 2026-09-26
 - **Ep 1 correction staged (awaiting Long's approval).** Audit of the published episode found two inaccurate spoken lines: "A free adoption event next weekend" (organizer listing never says free) and "Every single time" (absolute microchip guarantee, unsupported). Both patched with synthesized Alex voice and remastered (−16.4 LUFS / −2.9 dBFS peak / 128 kbps, 468.88 s) as `episodes/001-starter-pack/audio-corrected.mp3`; script.txt and claims.md updated to match; correction logged in show bible per INFO_STANDARDS.md. Feed item updates only with Long's explicit approval. Also: original published audio re-measured −18.1 LUFS (notes said −16); corrected candidate measures −16.4 LUFS.
 
