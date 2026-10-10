@@ -5,24 +5,23 @@
 ![Kit overview](oc-pack-social-kit-overview.jpg)
 
 ```
-       the brand in one picture
+       the brand in one picture: "OC Monogram"
 
-   ╭─────────╮      ← one circle badge: Gold sun on top, no rays
-   │ 🐶   🐱 │      ← the Pack: golden retriever + orange tabby
-   │~~~~~~~~~│      ← one smooth wave line
-   ╰≈ water ≈╯      ← teal water fills the lower circle
-  THE OC PACK       ← chunky rounded cream letters, brown outline,
- ▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔       hard brown shadow ↘
+    🐶    🐱         ← the Pack peeks over the letters, paws hooked on top
+   ╭─[THE]─╮         ← small palm-green tab
+   │ O   C │         ← huge chunky Sunset-orange OC (Orange County = the show)
+   ╰─PACK──╯         ← cream plate, brown letters
+   cream die-cut border + hard brown shadow ↘
 ```
 
 ## 1. What's in the kit
 
 | Folder | File | Size | Use it for |
 |---|---|---|---|
-| `logo/` | `oc-pack-logo.png` | 1266² transparent | Primary logo: badge with the wordmark over its lower edge. Merch, decks, partner kits. |
+| `logo/` | `oc-pack-logo.png` | 1038×1192 transparent | Primary logo: OC Monogram (pets over OC, THE tab, PACK plate). Merch, decks, partner kits. |
 | | `oc-pack-logo-on-sand.jpg` | 1254² | When transparency isn't supported |
-| | `oc-pack-lockup-horizontal.png` | 2243×1085 transparent | Wide spaces: banners, headers, video end cards |
-| | `oc-pack-mark.png` | 1022×1085 transparent | The badge alone (no words): stickers, watermarks, favicons, merch |
+| | `oc-pack-lockup-horizontal.png` | 1500×824 transparent | Wide spaces: banners, headers, video end cards |
+| | `oc-pack-mark.png` | 1109×1083 transparent | Pets over OC, no THE/PACK: avatars, stickers, favicons, merch |
 | `profile/` | `oc-pack-avatar-1080.jpg` | 1080² | Profile picture on **every** platform (IG, TikTok, YouTube, X, Facebook, Threads) |
 | | `oc-pack-avatar-circle-preview.png` | 320² | How the avatar looks once cropped to a circle |
 | | `oc-pack-youtube-banner-2560x1440.jpg` | 2560×1440 | YouTube channel art (logo inside the 1546×423 safe area) |
@@ -34,38 +33,33 @@
 | | `oc-pack-story-reel-cover-1080x1920.jpg` | 9:16 | Blank plate for Story frames and Reel/TikTok/Shorts covers |
 | | `oc-pack-pattern-tile.jpg` | 1024² seamless | Backgrounds, stickers sheets, merch fills |
 | `examples/` | `oc-pack-example-{tip-card,episode-drop}.jpg` | 1080×1350 | The templates in use, upload-ready |
-| `tools/` | `gen.py`, `codex-style.txt`, `master-logo.png`, `build/` | | Make new on-brand art with Codex and rebuild lockups from the master (see §9) |
+| `tools/` | `gen.py`, `codex-style.txt`, `master-logo.png`, `build/` | | Make new on-brand art with Codex and re-key the logo family (see §9) |
 
 The **podcast feed cover** (`public/podcasts/oc-pack/cover.jpg`) is unchanged. The one-series-cover rule in `ART_DIRECTION.md` stands; replacing it with the new logo is Long's call.
 
 ## 2. Logo
 
 ```
- The badge: one circle. Sun on top, the pets on the horizon, water below.
-
-                             Primary            Horizontal lockup        Avatar
-     ╭─────────╮             ╭───────╮          ╭───────╮               ╭─────────╮
-     │ 🐶   🐱  │  sun        │ 🐶 🐱 │          │ 🐶 🐱 │  THE          │╲╭─────╮╱│ sunburst
-     │~~~~~~~~~│  wave line  │~~~~~~~│          │~~~~~~~│ OC PACK 🐾    │ │🐶 🐱│ │
-     │ ≈≈   ≈≈ │  water      ╰─THE───╯          ╰───────╯               │ ╰─────╯ │
-     ╰─────────╯              OC PACK 🐾        wide slots ≥ 2:1        ╰─────────╯
-                              square slots
-
- One master drawing: every lockup, the mark and the avatar are cut from the SAME
- art (tools/master-logo.png) and get a code-drawn die-cut border, so the mascots
- never drift between assets.
+ Primary (square)        Horizontal lockup                 Mark / Avatar
+   🐶 🐱                   🐶 🐱                              🐶 🐱
+  [THE]                   O  C    [THE]                     O  C
+  O   C                           [PACK]                 ╲ on a teal + lagoon
+  [PACK]                  wide slots ≥ 2:1                  sunburst (avatar)
+  square slots
 ```
 
 | Rule | Value |
 |---|---|
-| Clear space | The height of the "THE" letters, on every side |
-| Badge | One circle: the sun disc fully contains both pets and water fills the lower part below one smooth wave line (brown 14px). Nothing pokes outside the circle. Never add a separate wave strip under the pets, and no rays on the badge (they crowded its edge). Sunlight lives in backgrounds instead, like the avatar's coral sunburst. |
-| Sticker border | 22px cream die-cut + hard brown shadow offset 14px right / 16px down (at master scale), never blurred |
-| Minimum size | Primary 160px wide · Lockup 260px wide · Below that, use the mark or avatar |
-| Backgrounds | Any palette colour, the pattern, or a calm photo. The cream die-cut border is what separates it, so never remove it. |
+| Concept | **OC Monogram.** The dog and cat peek over two big chunky "OC" letters. Their whole heads and paws show, nothing crops or covers them. |
+| Letters | O and C are two separate letters with a small even gap (never touching, no notch between them). One small flat Gold highlight per letter, no gloss gradient. |
+| THE / PACK | THE: small palm-green tab, cream letters, centred over the O–C gap. PACK: cream plate, brown letters. In the lockup they stack beside OC as their own sticker. |
+| Avatar | The mark (pets + OC) on an Ocean teal / Lagoon sunburst. Orange on teal keeps OC readable; never put the orange letters on an orange background. |
+| Sticker border | Thick even cream die-cut + hard brown offset shadow down-right, never blurred |
+| Minimum size | Primary 160px wide · Lockup 260px wide · Below that, use the mark or avatar (reads at 48px) |
+| Backgrounds | Any palette colour, the pattern, or a calm photo. The cream die-cut border separates it, so never remove it. |
 | Words | Always "THE OC PACK", all caps in the logo. In sentences: "The OC Pack". |
 
-**Never:** recolour the mascots, swap the pets, stretch or rotate the logo, add a drop-blur or glow, redraw the letters in another font, put the words on the avatar, add rays back onto the badge, or regenerate the logo mascots with AI (cut them from the master instead).
+**Never:** recolour the mascots, swap the pets, crop or cover the pets (no water lines, no frames across them), stretch or rotate the logo, add rays or a sun disc around it, add a drop-blur or glow, or redraw the letters in another font.
 
 ## 3. Colour
 
@@ -77,7 +71,7 @@ The web palette, unchanged. **Brown is the ink**: every outline and almost all t
 | Cream | `#FFF4DA` | Sticker borders, text panels, display letters |
 | Sand | `#FDE3A7` | Default canvas |
 | Sunset | `#FC7F46` | Hero colour: highlights bg, sunbursts, kicker text on big art |
-| Coral | `#FF6F61` | Background sunbursts, labels, hearts. Pink-coral, never red. |
+| Coral | `#FF6F61` | Labels, hearts, warm accents. Pink-coral, never red. |
 | Gold | `#FEBB55` | Sun, the dog, floats |
 | Ocean teal | `#2E9CA6` | Water |
 | Lagoon | `#7CC8C8` | Water highlights, Ask the Pack |
@@ -190,17 +184,17 @@ Platforms change these, so check the current spec before uploading.
 
 ## 9. Making new assets with Codex
 
-All illustration in this kit was generated by Codex's built-in image tool (`gpt-5.6-sol`, ChatGPT auth, no API key). Layout, borders, discs, sunburst, sea, pattern repeat and crops are done in code (`tools/build/`) so they're exact and repeatable.
+All illustration in this kit was generated by Codex's built-in image tool (`gpt-5.6-sol`, ChatGPT auth, no API key). The logo family was redrawn by Codex on a flat `#00FF00` green screen and keyed out with `tools/build/keyc4.py`, which also builds the avatar; `tools/build/export.py` sizes the banners and overview. Highlight discs, pattern repeat and crops are code (`tools/build/`).
 
 ```bash
-python3 docs/brand/social/oc-pack/tools/gen.py hl-events "Instagram highlight cover icon: Sunset background, cream circle, a calendar with a paw print" -r docs/brand/social/oc-pack/tools/master-logo.png -o /tmp/oc-pack-art
+python3 docs/brand/social/oc-pack/tools/gen.py hl-events "Instagram highlight cover icon: Sunset background, cream circle, a calendar with a paw print" -r docs/brand/social/oc-pack/logo/oc-pack-logo-on-sand.jpg -o /tmp/oc-pack-art
 ```
 
 - `codex-style.txt` is the mandatory style block; it's appended to every prompt. Edit it there and nowhere else.
 - Always pass the logo as `-r` so the mascots stay on-model.
 - Run one image per `codex exec` (they stall when batched), in parallel. Each takes ~60s.
 - Ask for **no lettering** on plates; add words in Canva/Figma with Titan One + Nunito. Codex spells short text correctly, but check every letter.
-- Need the logo in a new shape (square sticker, vertical, merch)? Don't regenerate it. Run `tools/build/parts.py tools/master-logo.png parts.pkl`, then compose from the parts like `tools/build/compose.py` does. The master already includes the badge; `tools/build/badge.py` is the step that turned the old wave-strip master into it.
+- Need the logo in a new shape (vertical, merch)? Give Codex `logo/oc-pack-logo-on-sand.jpg` as the reference, ask for the new layout on a flat `#00FF00` background, keep the same pets and letters, then key it with `tools/build/keyc4.py`. Check the pets match the primary before using it.
 - Need something keyed (a new mascot pose)? Ask Codex for it on a flat `#00FF00` background and cut it out (see `tools/build/story.py`).
 - Art review rule: generate options, keep only the strongest, and show Long finished work only.
 

@@ -2,6 +2,9 @@
 
 The show's memory: every direction decision, dated. Newest first.
 
+## 2026-10-11 (later)
+- **New logo direction: "OC Monogram".** Long: the water line made the pets look like they were draining into the water. The joydigi-design agent proposed 4 fresh concepts (Whole Pack, Pin Point, Sunset Arch, OC Monogram); Codex drew all four; Long picked OC Monogram: the dog and cat peek over big chunky orange OC letters, with a palm-green THE tab and a cream PACK plate. Polished (separate O/C, flat highlights), mark and horizontal lockup redrawn from it, avatar on a teal/lagoon sunburst so the orange reads. Codex QA: all PASS. Supersedes the sun-badge logo.
+
 ## 2026-10-11
 - **Rays removed from the badge.** Long: the sun rays were busy and overlapped the circle. Tried 5 rays on a cream halo ring as well; the plain badge won. The sunburst now lives only in backgrounds (avatar). Avatar re-centred. Codex re-review: logo, lockup, mark PASS; avatar fixed after a low-placement note.
 - **Logo becomes a full-circle badge.** Long: the shape under the pets didn't look good (the old wave strip was lumpy, with a bite out of its bottom). The sun circle now continues all the way round; water fills its lower part below one smooth wave line. Pets and wordmark are unchanged pixels. Logo, lockup, mark, avatar and banners rebuilt; Codex re-review: PASS.
