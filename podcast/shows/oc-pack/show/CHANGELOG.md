@@ -3,6 +3,7 @@
 The show's memory: every direction decision, dated. Newest first.
 
 ## 2026-10-11
+- **Rays removed from the badge.** Long: the sun rays were busy and overlapped the circle. Tried 5 rays on a cream halo ring as well; the plain badge won. The sunburst now lives only in backgrounds (avatar). Avatar re-centred. Codex re-review: logo, lockup, mark PASS; avatar fixed after a low-placement note.
 - **Logo becomes a full-circle badge.** Long: the shape under the pets didn't look good (the old wave strip was lumpy, with a bite out of its bottom). The sun circle now continues all the way round; water fills its lower part below one smooth wave line. Pets and wordmark are unchanged pixels. Logo, lockup, mark, avatar and banners rebuilt; Codex re-review: PASS.
 
 ## 2026-10-10

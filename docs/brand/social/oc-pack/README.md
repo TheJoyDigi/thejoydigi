@@ -7,8 +7,7 @@
 ```
        the brand in one picture
 
-     ╲  │  ╱        ← 7 Coral rays
-   ╭─────────╮      ← one circle badge: Gold sun on top
+   ╭─────────╮      ← one circle badge: Gold sun on top, no rays
    │ 🐶   🐱 │      ← the Pack: golden retriever + orange tabby
    │~~~~~~~~~│      ← one smooth wave line
    ╰≈ water ≈╯      ← teal water fills the lower circle
@@ -44,7 +43,7 @@ The **podcast feed cover** (`public/podcasts/oc-pack/cover.jpg`) is unchanged. T
 ```
  The badge: one circle. Sun on top, the pets on the horizon, water below.
 
-        ╲ │ ╱                Primary            Horizontal lockup        Avatar
+                             Primary            Horizontal lockup        Avatar
      ╭─────────╮             ╭───────╮          ╭───────╮               ╭─────────╮
      │ 🐶   🐱  │  sun        │ 🐶 🐱 │          │ 🐶 🐱 │  THE          │╲╭─────╮╱│ sunburst
      │~~~~~~~~~│  wave line  │~~~~~~~│          │~~~~~~~│ OC PACK 🐾    │ │🐶 🐱│ │
@@ -60,7 +59,7 @@ The **podcast feed cover** (`public/podcasts/oc-pack/cover.jpg`) is unchanged. T
 | Rule | Value |
 |---|---|
 | Clear space | The height of the "THE" letters, on every side |
-| Badge | One circle: the sun disc fully contains both pets, 7 rays above, and water fills the lower part below one smooth wave line (brown 14px). Nothing pokes outside the circle. Never add a separate wave strip under the pets. |
+| Badge | One circle: the sun disc fully contains both pets and water fills the lower part below one smooth wave line (brown 14px). Nothing pokes outside the circle. Never add a separate wave strip under the pets, and no rays on the badge (they crowded its edge). Sunlight lives in backgrounds instead, like the avatar's coral sunburst. |
 | Sticker border | 22px cream die-cut + hard brown shadow offset 14px right / 16px down (at master scale), never blurred |
 | Minimum size | Primary 160px wide · Lockup 260px wide · Below that, use the mark or avatar |
 | Backgrounds | Any palette colour, the pattern, or a calm photo. The cream die-cut border is what separates it, so never remove it. |

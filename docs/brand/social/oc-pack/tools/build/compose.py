@@ -75,6 +75,8 @@ for k in np.arange(0.5, 2.5, 0.01):
     if best is None or best[0] < k - 0.011: break
 k = best[0] * 0.9; px = (xs - mark.width / 2) * k
 oy = max(o for o in np.arange(-0.2, 0.2, 0.002) if np.hypot(px, (ys - mark.height / 2) * k + o * A).max() <= 0.47 * A)
+if "main_a" in P:  # round badge: centre it, sized to sit inside the circle crop with an even margin
+    k = 0.78 * A / max(mark.width, mark.height); oy = 0.0
 print("avatar scale", round(k, 3), "offset", round(oy, 3))
 mk = mark.resize((round(mark.width * k), round(mark.height * k)), Image.LANCZOS)
 ox, oyp = round(A / 2 - mk.width / 2), round(A / 2 - mk.height / 2 + oy * A)
