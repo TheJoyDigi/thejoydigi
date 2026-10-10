@@ -65,7 +65,7 @@ The **podcast feed cover** (`public/podcasts/oc-pack/cover.jpg`) is unchanged. T
 | Backgrounds | Any palette colour, the pattern, or a calm photo. The cream die-cut border is what separates it, so never remove it. |
 | Words | Always "THE OC PACK", all caps in the logo. In sentences: "The OC Pack". |
 
-**Never:** recolour the mascots, swap the pets, stretch or rotate the logo, add a drop-blur or glow, redraw the letters in another font, put the words on the avatar, crop the sun rays, or regenerate the logo mascots with AI (cut them from the master instead).
+**Never:** recolour the mascots, swap the pets, stretch or rotate the logo, add a drop-blur or glow, redraw the letters in another font, put the words on the avatar, add rays back onto the badge, or regenerate the logo mascots with AI (cut them from the master instead).
 
 ## 3. Colour
 
@@ -77,7 +77,7 @@ The web palette, unchanged. **Brown is the ink**: every outline and almost all t
 | Cream | `#FFF4DA` | Sticker borders, text panels, display letters |
 | Sand | `#FDE3A7` | Default canvas |
 | Sunset | `#FC7F46` | Hero colour: highlights bg, sunbursts, kicker text on big art |
-| Coral | `#FF6F61` | Sun rays, labels, hearts. Pink-coral, never red. |
+| Coral | `#FF6F61` | Background sunbursts, labels, hearts. Pink-coral, never red. |
 | Gold | `#FEBB55` | Sun, the dog, floats |
 | Ocean teal | `#2E9CA6` | Water |
 | Lagoon | `#7CC8C8` | Water highlights, Ask the Pack |
