@@ -35,7 +35,7 @@
 | `examples/` | `oc-pack-example-{tip-card,episode-drop}.jpg` | 1080×1350 | The templates in use, upload-ready |
 | `tools/` | `gen.py`, `codex-style.txt`, `banner-scene.jpg`, `build/` | | Make new on-brand art with Codex and re-key the logo family (see §9) |
 
-The **podcast feed cover** (`public/podcasts/oc-pack/cover.jpg`) is unchanged. The one-series-cover rule in `ART_DIRECTION.md` stands; replacing it with the new logo is Long's call.
+The **podcast feed cover** is `public/podcasts/oc-pack/cover-v2.jpg` (3000×3000, OC Monogram on the teal/lagoon sunburst, approved by Long 2026-10-10). It also feeds the show page, homepage tiles, share cards and the email cover. One series cover at a time (`ART_DIRECTION.md`); a new version gets a new filename.
 
 ## 2. Logo
 

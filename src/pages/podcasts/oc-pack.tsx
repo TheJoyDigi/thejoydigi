@@ -308,7 +308,7 @@ function Postcard({ show, player, share }: { show: Show; player: Player; share: 
 const TOPICS = [
   { title: "Beaches, trails & patios", text: "Where your dog is actually welcome — sand, dirt, and brunch.", bg: GOLD, art: "beach", alt: "Golden retriever trotting along the beach" },
   { title: "Vet-bill savings", text: "Real strategies that keep care great and costs sane.", bg: "#FFB3A7", art: "vet", alt: "Orange tabby cat beside a first-aid bag with a stethoscope" },
-  { title: "Training & health", text: "Quick, practical tips for happier, healthier pets.", bg: "#9ED9C6", art: "training", alt: "Golden retriever sitting and looking up at a tennis ball" },
+  { title: "Training & health", text: "Quick, practical tips for happier, healthier pets.", bg: "#9ED9C6", art: "training", alt: "Golden retriever sitting and looking up at a tennis ball, with a bone nearby" },
   { title: "Local intel & events", text: "Adoption days, meetups, and what's happening around OC.", bg: "#FFD08A", art: "local", alt: "Golden retriever and orange tabby beside a map pin with a paw-print trail" },
 ];
 
