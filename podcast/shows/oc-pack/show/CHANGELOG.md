@@ -2,6 +2,9 @@
 
 The show's memory: every direction decision, dated. Newest first.
 
+## 2026-10-10 (site rebrand)
+- **Show page, feed cover and topic tiles moved to the OC Monogram.** Long chose the full rebrand (option C). New series cover `cover-v2.jpg` (3000×3000) in the feed, homepage and share cards; email cover regenerated; the 4 topic tiles on /podcasts/oc-pack redrawn by Codex with the new mascots (no coins on the vet tile).
+
 ## 2026-10-10 (later)
 - **New logo direction: "OC Monogram".** Long: the water line made the pets look like they were draining into the water. The joydigi-design agent proposed 4 fresh concepts (Whole Pack, Pin Point, Sunset Arch, OC Monogram); Codex drew all four; Long picked OC Monogram: the dog and cat peek over big chunky orange OC letters, with a palm-green THE tab and a cream PACK plate. Polished (clean O–C join, flatter highlights), mark and horizontal lockup redrawn from it, avatar on a teal/lagoon sunburst so the orange reads. Codex QA: all PASS. Supersedes the sun-badge logo.
 

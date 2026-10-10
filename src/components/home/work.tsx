@@ -73,7 +73,7 @@ function OcVisual() {
     <div className="relative grid h-full w-full place-items-center overflow-hidden bg-[#FDE3A7]">
       <div aria-hidden className="absolute aspect-square w-[88%] rounded-full bg-[repeating-conic-gradient(#FC7F46_0deg_9deg,#FF6F61_9deg_18deg)] opacity-90" />
       <div className="relative w-[58%] overflow-hidden rounded-full border-[5px] border-[#6B3410] shadow-[10px_10px_0_0_#6B3410]">
-        <Image src="/podcasts/oc-pack/cover.jpg" alt="The OC Pack cover" width={600} height={600} className="block h-auto w-full scale-[1.12]" />
+        <Image src="/podcasts/oc-pack/cover-v2.jpg" alt="The OC Pack cover" width={600} height={600} className="block h-auto w-full scale-[1.12]" />
       </div>
       <span className="absolute bottom-[10%] right-[8%] rotate-[6deg] rounded-2xl border-[3px] border-[#6B3410] bg-[#FFF4DA] px-4 py-2 text-sm font-extrabold text-[#6B3410] shadow-[4px_4px_0_0_#6B3410] md:text-base">
         New every Thursday

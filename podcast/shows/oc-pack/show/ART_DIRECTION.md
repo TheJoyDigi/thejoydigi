@@ -6,7 +6,7 @@
 
 ### Cover art (series)
 - Style: bold, cheerful flat vector illustration. Happy dog and cat, Orange County California cues (sun, coast, palm). Readable and inviting.
-- Current series cover: `~/workspace/podcasts/oc-pack/cover.jpg` (shared across episodes via `--series-id oc-pack-weekly`).
+- Current series cover: `public/podcasts/oc-pack/cover-v2.jpg` (3000×3000, the OC Monogram on the teal/lagoon sunburst; approved by Long 2026-10-10). The old `cover.jpg` stays on disk so earlier links don't break; the feed and site point at v2. New versions get a new filename so podcast apps refresh.
 - Thumbnail rule: the show must read at podcast-app thumbnail size — bold shapes, high contrast, minimal fine detail. If the title treatment isn't legible at 150px, it fails.
 - Consistency rule: one series cover. No per-episode cover experiments unless the Art Director approves a variant and Long signs off.
 
