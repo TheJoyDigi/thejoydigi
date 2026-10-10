@@ -33,7 +33,7 @@
 | | `oc-pack-story-reel-cover-1080x1920.jpg` | 9:16 | Blank plate for Story frames and Reel/TikTok/Shorts covers |
 | | `oc-pack-pattern-tile.jpg` | 1024² seamless | Backgrounds, stickers sheets, merch fills |
 | `examples/` | `oc-pack-example-{tip-card,episode-drop}.jpg` | 1080×1350 | The templates in use, upload-ready |
-| `tools/` | `gen.py`, `codex-style.txt`, `master-logo.png`, `build/` | | Make new on-brand art with Codex and re-key the logo family (see §9) |
+| `tools/` | `gen.py`, `codex-style.txt`, `banner-scene.jpg`, `build/` | | Make new on-brand art with Codex and re-key the logo family (see §9) |
 
 The **podcast feed cover** (`public/podcasts/oc-pack/cover.jpg`) is unchanged. The one-series-cover rule in `ART_DIRECTION.md` stands; replacing it with the new logo is Long's call.
 
@@ -51,8 +51,8 @@ The **podcast feed cover** (`public/podcasts/oc-pack/cover.jpg`) is unchanged. T
 | Rule | Value |
 |---|---|
 | Concept | **OC Monogram.** The dog and cat peek over two big chunky "OC" letters. Their whole heads and paws show, nothing crops or covers them. |
-| Letters | O and C are two separate letters with a small even gap (never touching, no notch between them). One small flat Gold highlight per letter, no gloss gradient. |
-| THE / PACK | THE: small palm-green tab, cream letters, centred over the O–C gap. PACK: cream plate, brown letters. In the lockup they stack beside OC as their own sticker. |
+| Letters | O and C sit tight together as one chunky pair, touching in the middle with a small cream notch above and below the join. Never pull them apart or overlap them further. One curved Gold highlight arc per letter, same weight on both. |
+| THE / PACK | THE: small palm-green tab, cream letters, centred over the O–C join. PACK: cream plate, brown letters. In the lockup they stack beside OC as their own sticker. |
 | Avatar | The mark (pets + OC) on an Ocean teal / Lagoon sunburst. Orange on teal keeps OC readable; never put the orange letters on an orange background. |
 | Sticker border | Thick even cream die-cut + hard brown offset shadow down-right, never blurred |
 | Minimum size | Primary 160px wide · Lockup 260px wide · Below that, use the mark or avatar (reads at 48px) |
@@ -72,8 +72,8 @@ The web palette, unchanged. **Brown is the ink**: every outline and almost all t
 | Sand | `#FDE3A7` | Default canvas |
 | Sunset | `#FC7F46` | Hero colour: highlights bg, sunbursts, kicker text on big art |
 | Coral | `#FF6F61` | Labels, hearts, warm accents. Pink-coral, never red. |
-| Gold | `#FEBB55` | Sun, the dog, floats |
-| Ocean teal | `#2E9CA6` | Water |
+| Gold | `#FEBB55` | Banner sun, the dog, floats |
+| Ocean teal | `#2E9CA6` | Avatar sunburst, banner sea |
 | Lagoon | `#7CC8C8` | Water highlights, Ask the Pack |
 | Palm | `#1F6B5C` | Palm fronds, dark accent text |
 
