@@ -7,9 +7,11 @@
 ```
        the brand in one picture
 
-   ✺  sun  ✺        ← Gold disc + Coral rays (the logo IS the sun)
-  ( 🐶 )( 🐱 )      ← the Pack: golden retriever + orange tabby
- ~~~~~~~~~~~~~~     ← teal wave
+     ╲  │  ╱        ← 7 Coral rays
+   ╭─────────╮      ← one circle badge: Gold sun on top
+   │ 🐶   🐱 │      ← the Pack: golden retriever + orange tabby
+   │~~~~~~~~~│      ← one smooth wave line
+   ╰≈ water ≈╯      ← teal water fills the lower circle
   THE OC PACK       ← chunky rounded cream letters, brown outline,
  ▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔       hard brown shadow ↘
 ```
