@@ -2,6 +2,9 @@
 
 The show's memory: every direction decision, dated. Newest first.
 
+## 2026-10-11
+- **Logo becomes a full-circle badge.** Long: the shape under the pets didn't look good (the old wave strip was lumpy, with a bite out of its bottom). The sun circle now continues all the way round; water fills its lower part below one smooth wave line. Pets and wordmark are unchanged pixels. Logo, lockup, mark, avatar and banners rebuilt; Codex re-review: PASS.
+
 ## 2026-10-10
 - **Logo sun enlarged.** Long: the sun behind the pets looked busy. The sun is now one big disc that fully contains the dog and cat, with 7 rays instead of 9. The pets, wave and wordmark are pixel-identical (edited in code, not regenerated); the logo, lockup, mark, avatar and banners were rebuilt from the new master (`tools/master-logo.png`). Codex re-review: PASS. The X header logo moved right to clear the profile photo.
 - **Social kit QA pass.** Two independent reviews (pixel-level audit + Codex visual review), fixes, then two more Codex passes until every asset passed. Fixes: lockup, mark and avatar are now cut from the one master logo (mascots identical everywhere; lockup word spacing fixed); highlight icons redrawn as a one-object set on identical code-drawn discs; templates redrawn with crop-safe margins; story cover rebuilt inside the IG safe zones; pattern made truly seamless; examples exported at 1080×1350; episode drops use the pillar icon instead of the old feed cover. QA checklist added to the style guide (§10).
