@@ -36,7 +36,7 @@ Code source of truth: `src/lib/email/brand.ts` (tokens) and `src/lib/email/layou
 
 ## 2. Show sub-brands
 
-A show owns: card colours, its cover art, its kicker, its heading/CTA wording and tone. A show never changes: the frame, the type families, the layout skeleton, the footer. (Exception: Incentives, Decoded uses Bricolage Grotesque + Space Mono on its web pages only; its emails and OG cards stay on Fraunces + DM Sans.)
+A show owns: card colours, its cover art, its kicker, its heading/CTA wording and tone. A show never changes: the frame, the type families, the layout skeleton, the footer. (Exceptions: Incentives, Decoded uses Bricolage Grotesque + Space Mono on its web pages only; The OC Pack uses Titan One + Nunito on its web pages and social kit (`docs/brand/social/oc-pack/README.md`). Both shows' emails and OG cards stay on Fraunces + DM Sans.)
 
 | Show | Card | Text | Heading | Accent (button) | On accent | Tone |
 |---|---|---|---|---|---|---|
@@ -90,6 +90,7 @@ Full token sets (muted, kicker, outline, subtle) live in `THEMES` in `brand.ts`.
 - Colours come from the show's `THEMES` entry; Fraunces for the title, DM Sans for everything else.
 - Every card carries the credit "Produced by The Joy Digi". Anthropic Blogcast cards add "Not affiliated with Anthropic".
 - A new show needs a `THEMES` entry before it gets cards.
+- Show social kits (profile art, banners, post templates) live in `docs/brand/social/<show>/`. The OC Pack's is the first.
 - Known exception: the existing Money, Mastered cover art shows coins and banknotes, and the cards show it. Swap the cover, not the card, if that changes.
 
 ## 5. Adding a new show or email
