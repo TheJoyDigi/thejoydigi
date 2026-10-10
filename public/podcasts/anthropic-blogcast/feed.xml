@@ -109,5 +109,14 @@
 <itunes:author>TheJoyDigi</itunes:author>
 <itunes:duration>0:08:28</itunes:duration>
 <itunes:episodeType>full</itunes:episodeType>
+</item><item>
+<title>Episode 11: The Anthropic Cyber Mission: AI for the Defenders</title>
+<description>Anthropic launches a long-term Cyber Mission to defend critical infrastructure and open-source software, with the Critical Infrastructure Defense Program and free OSS Scanner.</description>
+<pubDate>Sat, 10 Oct 2026 09:58:00 -0700</pubDate>
+<enclosure url="https://www.thejoydigi.com/podcasts/anthropic-blogcast/ab-ep11-anthropic-cyber-mission.mp3" length="9348987" type="audio/mpeg"/>
+<guid isPermaLink="false">ab-ep11-2026-10-10</guid>
+<itunes:author>TheJoyDigi</itunes:author>
+<itunes:duration>0:09:44</itunes:duration>
+<itunes:episodeType>full</itunes:episodeType>
 </item></channel>
 </rss>
