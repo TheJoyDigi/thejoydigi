@@ -17,7 +17,8 @@
 - Warm, sunny, outdoorsy: golden yellows, ocean blues, grass greens, warm neutrals. Avoid cold clinical blues/grays and aggressive reds.
 - Type: rounded, friendly, bold. Legible at small sizes; never thin or condensed for the show name.
 
-### Social clips and promo (future)
+### Social clips and promo
+- **Social style guide + asset kit: `docs/brand/social/oc-pack/README.md`** ("Poolside Sticker" system: logo, avatar, banners, highlights, post templates, Codex generator). It wins over the bullets below where they differ.
 - Clip template: series cover lockup + burned-in captions + episode hook as the headline. One visual language across Instagram/TikTok/YouTube Shorts.
 - Audiograms use the jingle's sonic identity, not generic stock music.
 
