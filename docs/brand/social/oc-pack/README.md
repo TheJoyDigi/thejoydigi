@@ -18,10 +18,10 @@
 
 | Folder | File | Size | Use it for |
 |---|---|---|---|
-| `logo/` | `oc-pack-logo.png` | 1266² transparent | Primary logo: stacked sticker. Merch, decks, partner kits. |
+| `logo/` | `oc-pack-logo.png` | 1266² transparent | Primary logo: badge with the wordmark over its lower edge. Merch, decks, partner kits. |
 | | `oc-pack-logo-on-sand.jpg` | 1254² | When transparency isn't supported |
-| | `oc-pack-lockup-horizontal.png` | 2268×879 transparent | Wide spaces: banners, headers, video end cards |
-| | `oc-pack-mark.png` | 1047×879 transparent | The mascots alone (no words): stickers, watermarks, favicons, merch |
+| | `oc-pack-lockup-horizontal.png` | 2243×1085 transparent | Wide spaces: banners, headers, video end cards |
+| | `oc-pack-mark.png` | 1022×1085 transparent | The badge alone (no words): stickers, watermarks, favicons, merch |
 | `profile/` | `oc-pack-avatar-1080.jpg` | 1080² | Profile picture on **every** platform (IG, TikTok, YouTube, X, Facebook, Threads) |
 | | `oc-pack-avatar-circle-preview.png` | 320² | How the avatar looks once cropped to a circle |
 | | `oc-pack-youtube-banner-2560x1440.jpg` | 2560×1440 | YouTube channel art (logo inside the 1546×423 safe area) |
@@ -40,14 +40,15 @@ The **podcast feed cover** (`public/podcasts/oc-pack/cover.jpg`) is unchanged. T
 ## 2. Logo
 
 ```
- Primary (stacked)      Horizontal lockup              Mark            Avatar
- ┌───────────┐          ┌───────────────────────┐     ┌─────────┐     ╭─────────╮
- │  ✺ 🐶🐱 ✺  │          │ ✺🐶🐱✺     THE         │     │ ✺ 🐶🐱 ✺ │     │ ╲ ✺🐶🐱 ╱│ sunburst
- │ ~~~~~~~~~ │          │ ~~~~~~   OC PACK 🐾    │     │ ~~~~~~~ │     │ ~~~~~~~ │ sea
- │  THE      │          └───────────────────────┘     └─────────┘     ╰─────────╯
- │ OC PACK 🐾│          wide slots ≥ 2.5:1             no words        circles
- └───────────┘
- square slots
+ The badge: one circle. Sun on top, the pets on the horizon, water below.
+
+        ╲ │ ╱                Primary            Horizontal lockup        Avatar
+     ╭─────────╮             ╭───────╮          ╭───────╮               ╭─────────╮
+     │ 🐶   🐱  │  sun        │ 🐶 🐱 │          │ 🐶 🐱 │  THE          │╲╭─────╮╱│ sunburst
+     │~~~~~~~~~│  wave line  │~~~~~~~│          │~~~~~~~│ OC PACK 🐾    │ │🐶 🐱│ │
+     │ ≈≈   ≈≈ │  water      ╰─THE───╯          ╰───────╯               │ ╰─────╯ │
+     ╰─────────╯              OC PACK 🐾        wide slots ≥ 2:1        ╰─────────╯
+                              square slots
 
  One master drawing: every lockup, the mark and the avatar are cut from the SAME
  art (tools/master-logo.png) and get a code-drawn die-cut border, so the mascots
@@ -57,7 +58,7 @@ The **podcast feed cover** (`public/podcasts/oc-pack/cover.jpg`) is unchanged. T
 | Rule | Value |
 |---|---|
 | Clear space | The height of the "THE" letters, on every side |
-| Sun | One large disc that fully contains both pets (nothing pokes past its edge), 7 rays. Keeps the mark calm: pets read as one unit. |
+| Badge | One circle: the sun disc fully contains both pets, 7 rays above, and water fills the lower part below one smooth wave line (brown 14px). Nothing pokes outside the circle. Never add a separate wave strip under the pets. |
 | Sticker border | 22px cream die-cut + hard brown shadow offset 14px right / 16px down (at master scale), never blurred |
 | Minimum size | Primary 160px wide · Lockup 260px wide · Below that, use the mark or avatar |
 | Backgrounds | Any palette colour, the pattern, or a calm photo. The cream die-cut border is what separates it, so never remove it. |
@@ -198,7 +199,7 @@ python3 docs/brand/social/oc-pack/tools/gen.py hl-events "Instagram highlight co
 - Always pass the logo as `-r` so the mascots stay on-model.
 - Run one image per `codex exec` (they stall when batched), in parallel. Each takes ~60s.
 - Ask for **no lettering** on plates; add words in Canva/Figma with Titan One + Nunito. Codex spells short text correctly, but check every letter.
-- Need the logo in a new shape (square sticker, vertical, merch)? Don't regenerate it. Run `tools/build/parts.py tools/master-logo.png parts.pkl`, then compose from the parts like `tools/build/compose.py` does.
+- Need the logo in a new shape (square sticker, vertical, merch)? Don't regenerate it. Run `tools/build/parts.py tools/master-logo.png parts.pkl`, then compose from the parts like `tools/build/compose.py` does. The master already includes the badge; `tools/build/badge.py` is the step that turned the old wave-strip master into it.
 - Need something keyed (a new mascot pose)? Ask Codex for it on a flat `#00FF00` background and cut it out (see `tools/build/story.py`).
 - Art review rule: generate options, keep only the strongest, and show Long finished work only.
 

@@ -6,18 +6,22 @@ from PIL import Image, ImageDraw, ImageFilter
 
 P = pickle.load(open(sys.argv[1], "rb")); OUT = pathlib.Path(sys.argv[2])
 rgb, lab = P["rgb"], P["lab"]
+main_c = max(P["comps"], key=lambda c: c["area"])
 CREAM, BROWN = (255, 244, 218), (107, 52, 16)
 BORDER, SHADOW = 22, (14, 16)
-main_c = max(P["comps"], key=lambda c: c["area"]); cut = main_c["bbox"][3] - 40
-mascot = [c for c in P["comps"] if c["cy"] < cut]
-words = [c for c in P["comps"] if c["cy"] >= cut]
+cut = P["sun"][1] if "sun" in P else main_c["bbox"][3] - 40
+mascot = [c for c in P["comps"] if c is main_c or c["cy"] < cut]
+words = [c for c in P["comps"] if c is not main_c and c["cy"] >= cut]
 
 def group(comps):
     x0 = min(c["bbox"][0] for c in comps); y0 = min(c["bbox"][1] for c in comps)
     x1 = max(c["bbox"][2] for c in comps); y1 = max(c["bbox"][3] for c in comps)
-    m = np.isin(lab[y0:y1, x0:x1], [c["n"] for c in comps])
+    m = np.isin(lab[y0:y1, x0:x1], [c["n"] for c in comps if not ("main_a" in P and c is main_c)])
     im = Image.fromarray(rgb[y0:y1, x0:x1]).convert("RGBA")
     im.putalpha(Image.fromarray((m * 255).astype("uint8")))
+    if "main_a" in P and any(c is main_c for c in comps):
+        base = Image.fromarray(P["main_rgb"][y0:y1, x0:x1]).convert("RGBA"); base.putalpha(Image.fromarray(P["main_a"][y0:y1, x0:x1]))
+        base.alpha_composite(im); im = base
     return im
 
 def dilate(alpha, r):
@@ -74,19 +78,20 @@ oy = max(o for o in np.arange(-0.2, 0.2, 0.002) if np.hypot(px, (ys - mark.heigh
 print("avatar scale", round(k, 3), "offset", round(oy, 3))
 mk = mark.resize((round(mark.width * k), round(mark.height * k)), Image.LANCZOS)
 ox, oyp = round(A / 2 - mk.width / 2), round(A / 2 - mk.height / 2 + oy * A)
-sx, sy = P["sun"] if "sun" in P else (main_c["bbox"][0] + main_c["bbox"][2]) / 2, main_c["bbox"][3] - 0.30 * (main_c["bbox"][3] - main_c["bbox"][1])
+sx, sy = P["sun"] if "sun" in P else ((main_c["bbox"][0] + main_c["bbox"][2]) / 2, main_c["bbox"][3] - 0.30 * (main_c["bbox"][3] - main_c["bbox"][1]))
 sun_cx = ox + (pad + sx - mx0) * k; sun_cy = oyp + (pad + sy - my0) * k
 av = Image.new("RGB", (A, A), (0xFC, 0x7F, 0x46)); d = ImageDraw.Draw(av); R = A * 2; n = 28
 for j in range(0, n, 2):
     t0, t1 = 2 * math.pi * j / n, 2 * math.pi * (j + 1) / n
     d.polygon([(sun_cx, sun_cy), (sun_cx + R * math.cos(t0), sun_cy + R * math.sin(t0)), (sun_cx + R * math.cos(t1), sun_cy + R * math.sin(t1))], fill=(0xFF, 0x6F, 0x61))
-sea_top = oyp + mk.height * 0.80
-def wave(y0, amp, period, phase):
-    return [(x, y0 + amp * math.sin(2 * math.pi * x / period + phase)) for x in range(-10, A + 11, 6)]
-top = wave(sea_top, 22, A / 2.5, 0.6)
-d.polygon(top + [(A + 10, A + 10), (-10, A + 10)], fill=(0x2E, 0x9C, 0xA6))
-d.line(top, fill=(0x6B, 0x34, 0x10), width=16, joint="curve")
-for yy, ph, x0, x1 in [(sea_top + 250, 1.9, 0.16, 0.46), (sea_top + 250, 1.9, 0.58, 0.80), (sea_top + 370, 0.4, 0.32, 0.66)]:
-    d.line([pt for pt in wave(yy, 14, A / 3.2, ph) if x0 * A < pt[0] < x1 * A], fill=(0x7C, 0xC8, 0xC8), width=24, joint="curve")
+if "main_a" not in P:
+    sea_top = oyp + mk.height * 0.80
+    def wave(y0, amp, period, phase):
+        return [(x, y0 + amp * math.sin(2 * math.pi * x / period + phase)) for x in range(-10, A + 11, 6)]
+    top = wave(sea_top, 22, A / 2.5, 0.6)
+    d.polygon(top + [(A + 10, A + 10), (-10, A + 10)], fill=(0x2E, 0x9C, 0xA6))
+    d.line(top, fill=(0x6B, 0x34, 0x10), width=16, joint="curve")
+    for yy, ph, x0, x1 in [(sea_top + 250, 1.9, 0.16, 0.46), (sea_top + 250, 1.9, 0.58, 0.80), (sea_top + 370, 0.4, 0.32, 0.66)]:
+        d.line([pt for pt in wave(yy, 14, A / 3.2, ph) if x0 * A < pt[0] < x1 * A], fill=(0x7C, 0xC8, 0xC8), width=24, joint="curve")
 av = av.convert("RGBA"); av.alpha_composite(mk, (ox, oyp))
 av.convert("RGB").resize((1080, 1080), Image.LANCZOS).save(OUT / "avatar.png"); print("avatar ok")
