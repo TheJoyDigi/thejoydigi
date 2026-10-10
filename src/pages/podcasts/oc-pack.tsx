@@ -222,9 +222,9 @@ function Hero({ show, player, share }: { show: Show; player: Player; share: Shar
         >
           <Sunburst className="absolute inset-[-6%] h-[112%] w-[112%]" />
           <div className="relative overflow-hidden rounded-full border-[5px] border-[#6B3410] shadow-[10px_10px_0_0_#6B3410]">
-            <Image src={show.cover} alt="The OC Pack cover art: a golden retriever and an orange cat at a beach sunset" width={1040} height={1040} priority sizes="(min-width: 1024px) 500px, 88vw" className="block h-auto w-full scale-[1.12]" />
+            <Image src={show.cover} alt="The OC Pack logo: a golden retriever and an orange tabby peeking over big orange OC letters" width={1040} height={1040} priority sizes="(min-width: 1024px) 500px, 88vw" className="block h-auto w-full scale-[1.12]" />
           </div>
-          <span className={`absolute -right-2 bottom-6 rotate-[8deg] rounded-2xl bg-[#FFF4DA] px-4 py-2 ${display} text-lg text-[#6B3410] ${sticker} md:-right-6`}>
+          <span className={`absolute -right-2 -top-3 rotate-[8deg] rounded-2xl bg-[#FFF4DA] px-4 py-2 ${display} text-lg text-[#6B3410] ${sticker} md:-right-6`}>
             Orange County, CA
           </span>
         </motion.div>
@@ -307,9 +307,9 @@ function Postcard({ show, player, share }: { show: Show; player: Player; share: 
 
 const TOPICS = [
   { title: "Beaches, trails & patios", text: "Where your dog is actually welcome — sand, dirt, and brunch.", bg: GOLD, art: "beach", alt: "Golden retriever trotting along the beach" },
-  { title: "Vet-bill savings", text: "Real strategies that keep care great and costs sane.", bg: "#FFB3A7", art: "vet", alt: "Orange tabby cat beside a piggy bank with a stethoscope" },
-  { title: "Training & health", text: "Quick, practical tips for happier, healthier pets.", bg: "#9ED9C6", art: "training", alt: "Golden retriever sitting and watching a tennis ball" },
-  { title: "Local intel & events", text: "Adoption days, meetups, and what's happening around OC.", bg: "#FFD08A", art: "local", alt: "Coastal town map with a pin and a paw-print trail" },
+  { title: "Vet-bill savings", text: "Real strategies that keep care great and costs sane.", bg: "#FFB3A7", art: "vet", alt: "Orange tabby cat beside a first-aid bag with a stethoscope" },
+  { title: "Training & health", text: "Quick, practical tips for happier, healthier pets.", bg: "#9ED9C6", art: "training", alt: "Golden retriever sitting and looking up at a tennis ball, with a bone nearby" },
+  { title: "Local intel & events", text: "Adoption days, meetups, and what's happening around OC.", bg: "#FFD08A", art: "local", alt: "Golden retriever and orange tabby beside a map pin with a paw-print trail" },
 ];
 
 function Topics() {
