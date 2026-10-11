@@ -26,7 +26,7 @@ export default function How() {
         <div className="mb-14 max-w-3xl md:mb-20">
           <SectionKicker>How I build</SectionKicker>
           <h2 className="font-display !py-0 mt-4 text-5xl font-[460] leading-[0.98] tracking-[-0.03em] text-[#003B49] md:text-7xl">
-            <RevealWords text="One human," /> <RevealWords text="one SI pair," delay={0.1} wordClassName="italic text-[#FF6B6B]" />{" "}
+            <RevealWords text="One human," /> <RevealWords text="one SI partner," delay={0.1} wordClassName="italic text-[#FF6B6B]" />{" "}
             <RevealWords text="a tight loop." delay={0.2} />
           </h2>
         </div>

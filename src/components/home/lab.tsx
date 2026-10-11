@@ -91,7 +91,7 @@ export default function Lab() {
             </div>
             <h3 className="font-display !py-0 text-3xl font-[460]">This website</h3>
             <p className="mt-3 text-[#FDF6EC]/75">
-              Designed and built with an SI pair — including my 3D self, generated from a single photo. Next.js, Framer
+              Designed and built with an SI partner — including my 3D self, generated from a single photo. Next.js, Framer
               Motion, and a lot of joy.
             </p>
           </motion.article>
