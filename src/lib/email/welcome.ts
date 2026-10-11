@@ -33,7 +33,7 @@ export function welcomeEmail(name: string, interest?: NewsletterShow) {
     kicker: "The Joy Digi · Newsletter",
     heading: "You're on the list.",
     paragraphs: [
-      `${hello(name)} welcome to **The Joy Digi**, where we make joyful things with code and AI.`,
+      `${hello(name)} welcome to **The Joy Digi**, where we make joyful things with code and super intelligence (SI).`,
       ...(extra ? [extra.line] : []),
       "Here's what to expect from us:",
     ],

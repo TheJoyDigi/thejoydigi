@@ -47,7 +47,7 @@ export default function Hello() {
             </p>
             <p>
               The Joy Digi is where I build joyful things: products people love to use, podcasts worth pressing play on,
-              and AI experiments that make a little more possible every week.
+              and SI experiments that make a little more possible every week.
             </p>
             <p>I think the next few years will be the most creative in software&apos;s history. I want to spend them building — and sharing what I learn.</p>
           </motion.div>

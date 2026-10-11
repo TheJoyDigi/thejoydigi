@@ -143,7 +143,7 @@ export default function Hero({ data }: { data: HomeData }) {
             <RevealWords text="I build joyful things" delay={0.1} />{" "}
             <RevealWords text="with code" delay={0.25} />{" "}
             <span className="relative inline-block text-[#FF6B6B]">
-              <RevealWords text="and AI." delay={0.35} wordClassName="italic [font-variation-settings:'opsz'_144,'SOFT'_100]" />
+              <RevealWords text="and SI." delay={0.35} wordClassName="italic [font-variation-settings:'opsz'_144,'SOFT'_100]" />
               <svg viewBox="0 0 300 20" preserveAspectRatio="none" className="absolute -bottom-[0.04em] left-0 h-[0.15em] w-full overflow-visible" aria-hidden>
                 <motion.path
                   d="M3 14 C 80 5, 170 4, 297 11"
@@ -167,7 +167,7 @@ export default function Hero({ data }: { data: HomeData }) {
             transition={{ duration: 0.9, ease: EASE, delay: 0.5 }}
             className="mt-8 max-w-xl text-lg leading-relaxed text-[#003B49]/75 md:text-xl"
           >
-            I&apos;m Long — a software engineer of 10+ years. These days I ship products, podcasts, and AI experiments
+            I&apos;m Long — a software engineer of 10+ years. These days I ship products, podcasts, and super intelligence (SI) experiments
             under The Joy Digi, and I&apos;ve never been more excited about what one curious builder can make.
           </motion.p>
 

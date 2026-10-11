@@ -73,8 +73,8 @@ export function renderEmail(c: EmailContent, footer: EmailFooter = {}): { html: 
     : "";
   const joyLink = `<a href="${SITE}" target="_blank" style="color:${JOY.ink};font-weight:700;text-decoration:none;">The Joy Digi</a>`;
   const credit = isStudio
-    ? `Every show and book here is a production of ${joyLink}: joyful things made with code and AI.`
-    : `${escapeHtml(t.name)} is a production of ${joyLink}: joyful things made with code and AI.`;
+    ? `Every show and book here is a production of ${joyLink}: joyful things made with code and super intelligence (SI).`
+    : `${escapeHtml(t.name)} is a production of ${joyLink}: joyful things made with code and super intelligence (SI).`;
   const buttons = `<table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin:8px 0 12px;"><tr>${button(c.primary, t.accent, t.onAccent, t.accent)}${
     c.secondary ? button(c.secondary, t.card, t.text, t.outline) : ""
   }</tr></table>`;

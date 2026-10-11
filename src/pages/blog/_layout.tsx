@@ -38,7 +38,7 @@ const BlogLayout: React.FC<BlogLayoutProps> = ({ children, postData }) => {
       ) : (
         <DefaultSEO
           title="Field Notes | The Joy Digi"
-          description="Long La's notes on building joyful products, podcasts, and AI experiments."
+          description="Long La's notes on building joyful products, podcasts, and super intelligence (SI) experiments."
         />
       )}
       <SiteFrame>{children}</SiteFrame>

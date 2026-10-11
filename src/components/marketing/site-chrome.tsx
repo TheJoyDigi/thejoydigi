@@ -139,7 +139,7 @@ export function SiteFooter() {
               Let&apos;s make something <em className="text-[#FFC94A]">joyful.</em>
             </p>
             <p className="mt-5 max-w-sm text-[#FDF6EC]/70">
-              The Joy Digi is where Long La builds joyful things with code and AI — products, podcasts, and experiments.
+              The Joy Digi is where Long La builds joyful things with code and super intelligence (SI) — products, podcasts, and experiments.
             </p>
             <a
               href={`mailto:${EMAIL}`}
