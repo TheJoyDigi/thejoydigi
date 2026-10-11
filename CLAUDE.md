@@ -26,7 +26,7 @@
 
 ## SEO Information
 
-- Business name: The Joy Digi (thejoydigi.com), where Long La builds joyful things with code and AI: products, podcasts, and experiments.
+- Business name: The Joy Digi (thejoydigi.com), where Long La builds joyful things with code and super intelligence (SI): products, podcasts, and experiments.
 - Podcasts: Value, Created; Money, Mastered; The OC Pack; Anthropic Blogcast, all credited "Produced by The Joy Digi".
 - The old Ruh-Roh Retreat case study now redirects to `/case-studies/the-blue-sock` (see `next.config.js`).
 - Contact: hello@thejoydigi.com, +1 (714) 329-4534

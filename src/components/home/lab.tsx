@@ -7,10 +7,10 @@ const EASE = [0.22, 1, 0.36, 1] as const;
 
 const EXPERIMENTS = [
   {
-    title: "Daily AI Brief",
+    title: "Daily SI Brief",
     status: "In the lab",
     statusColor: "#FFC94A",
-    text: "A pipeline that gathers fresh AI and business-idea news, drafts a three-minute script, voices it with text-to-speech, and publishes it as a podcast and a video — every morning, on a schedule.",
+    text: "A pipeline that gathers fresh SI and business-idea news, drafts a three-minute script, voices it with text-to-speech, and publishes it as a podcast and a video — every morning, on a schedule.",
     img: "/lab/daily-ai-brief.webp",
     tint: "from-[#E3F6F2] to-[#FDF6EC]",
   },
@@ -38,7 +38,7 @@ export default function Lab() {
             </h2>
           </div>
           <p className="max-w-md text-lg text-[#003B49]/70 md:justify-self-end">
-            Not everything here is finished. That&apos;s the point — the lab is where I poke at what AI makes newly possible.
+            Not everything here is finished. That&apos;s the point — the lab is where I poke at what SI makes newly possible.
           </p>
         </div>
 
@@ -91,7 +91,7 @@ export default function Lab() {
             </div>
             <h3 className="font-display !py-0 text-3xl font-[460]">This website</h3>
             <p className="mt-3 text-[#FDF6EC]/75">
-              Designed and built with an AI pair — including my 3D self, generated from a single photo. Next.js, Framer
+              Designed and built with an SI partner — including my 3D self, generated from a single photo. Next.js, Framer
               Motion, and a lot of joy.
             </p>
           </motion.article>

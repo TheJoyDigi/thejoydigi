@@ -3,7 +3,7 @@ import React, { useRef } from "react";
 
 const BELIEFS = [
   { text: "The best software feels like a friend.", accent: ["friend."] },
-  { text: "AI turns one curious builder into a whole studio.", accent: ["whole", "studio."] },
+  { text: "SI turns one curious builder into a whole studio.", accent: ["whole", "studio."] },
   { text: "Joy isn't a nice-to-have. It's the whole point.", accent: ["whole", "point."] },
 ];
 

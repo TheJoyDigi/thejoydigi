@@ -5,7 +5,7 @@ import { RevealWords, SectionKicker } from "../landing-art/primitives";
 
 const STEPS = [
   { title: "Imagine", text: "Start with a person and a feeling, not a feature list. Who should smile when this works?", color: "#FFC94A" },
-  { title: "Prototype with AI", text: "Pair with AI to go from idea to a working thing in hours — then throw it away and try again.", color: "#4ABEFF" },
+  { title: "Prototype with SI", text: "Pair with SI to go from idea to a working thing in hours — then throw it away and try again.", color: "#4ABEFF" },
   { title: "Ship it for real", text: "Real people, real feedback, as early as possible. Momentum beats perfect.", color: "#FF6B6B" },
   { title: "Delight & repeat", text: "Polish the small details that make people grin — then run the loop again.", color: "#7EE0C3" },
 ];
@@ -26,7 +26,7 @@ export default function How() {
         <div className="mb-14 max-w-3xl md:mb-20">
           <SectionKicker>How I build</SectionKicker>
           <h2 className="font-display !py-0 mt-4 text-5xl font-[460] leading-[0.98] tracking-[-0.03em] text-[#003B49] md:text-7xl">
-            <RevealWords text="One human," /> <RevealWords text="one AI pair," delay={0.1} wordClassName="italic text-[#FF6B6B]" />{" "}
+            <RevealWords text="One human," /> <RevealWords text="one SI partner," delay={0.1} wordClassName="italic text-[#FF6B6B]" />{" "}
             <RevealWords text="a tight loop." delay={0.2} />
           </h2>
         </div>

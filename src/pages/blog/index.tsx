@@ -26,7 +26,7 @@ export default function BlogIndex({ posts }: BlogIndexProps) {
         kicker="Field notes"
         title="Notes from the"
         accent="workbench."
-        lead="Honest write-ups on what I'm building, what AI is changing, and what I learn along the way."
+        lead="Honest write-ups on what I'm building, what super intelligence (SI) is changing, and what I learn along the way."
       />
 
       <section className="bg-[#FDF6EC] py-16 md:py-24">
