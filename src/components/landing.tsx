@@ -28,7 +28,7 @@ export default function Landing({ data }: { data: HomeData }) {
     `Money, Mastered — Chapter ${data.mm.latestNumber} of ${data.mm.total} is out`,
     "The OC Pack — new episode every Thursday",
     "The Blue Sock — live in Orange County",
-    "Daily SI Brief — cooking in the lab",
+    "Anthropic Blogcast — new episodes whenever Anthropic publishes",
     "QRganiz — shipped",
   ];
   return (

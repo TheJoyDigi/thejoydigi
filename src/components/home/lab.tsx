@@ -7,12 +7,14 @@ const EASE = [0.22, 1, 0.36, 1] as const;
 
 const EXPERIMENTS = [
   {
-    title: "Daily SI Brief",
-    status: "In the lab",
-    statusColor: "#FFC94A",
-    text: "A pipeline that gathers fresh SI and business-idea news, drafts a three-minute script, voices it with text-to-speech, and publishes it as a podcast and a video — every morning, on a schedule.",
-    img: "/lab/daily-ai-brief.webp",
-    tint: "from-[#E3F6F2] to-[#FDF6EC]",
+    title: "Anthropic Blogcast",
+    status: "Live",
+    statusColor: "#7EE0C3",
+    text: "An independent podcast that turns Anthropic's latest blog posts into listenable episodes, with new ones whenever Anthropic publishes. Not affiliated with Anthropic.",
+    img: "/lab/anthropic-blogcast.webp",
+    tint: "from-[#F7E3DC] to-[#FDF6EC]",
+    href: "/podcasts/anthropic-blogcast",
+    cover: true,
   },
   {
     title: "The Universe Whisper",
@@ -57,9 +59,17 @@ export default function Lab() {
                 {e.status}
               </span>
               <div className="relative mx-auto my-4 aspect-square w-[78%] transition-transform duration-500 ease-out group-hover:-translate-y-2 group-hover:rotate-[-2deg]">
-                <Image src={e.img} alt="" fill sizes="(min-width: 1024px) 300px, 70vw" className="object-contain [mask-image:radial-gradient(closest-side,black_80%,transparent)]" />
+                <Image src={e.img} alt="" fill sizes="(min-width: 1024px) 300px, 70vw" className={e.cover ? "rounded-2xl object-cover shadow-[0_18px_40px_-18px_rgba(0,59,73,0.45)]" : "object-contain [mask-image:radial-gradient(closest-side,black_80%,transparent)]"} />
               </div>
-              <h3 className="font-display !py-0 text-3xl font-[460] text-[#003B49]">{e.title}</h3>
+              <h3 className="font-display !py-0 text-3xl font-[460] text-[#003B49]">
+                {e.href ? (
+                  <a href={e.href} className="text-[#003B49] no-underline after:absolute after:inset-0 hover:text-[#003B49] hover:no-underline">
+                    {e.title}
+                  </a>
+                ) : (
+                  e.title
+                )}
+              </h3>
               <p className="mt-3 text-[#003B49]/75">{e.text}</p>
             </motion.article>
           ))}
