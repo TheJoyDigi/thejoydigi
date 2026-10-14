@@ -1,7 +1,7 @@
 import { useReducedMotion } from "framer-motion";
 import React, { useEffect, useRef } from "react";
 
-const VERT = `#version 300 es
+export const VERT = `#version 300 es
 in vec2 p;
 void main() { gl_Position = vec4(p, 0.0, 1.0); }`;
 
@@ -133,14 +133,33 @@ void main() {
   o = vec4(col, 1.0);
 }`;
 
-type Uniforms = Record<string, number | [number, number]>;
+type Uniforms = Record<string, number | [number, number] | [number, number, number]>;
 
 /** Runs a fragment shader on a canvas: resize, off-screen pause, pointer, reduced motion. Returns false if WebGL2 is missing. */
-function useShader(
+export function useShader(
   ref: React.RefObject<HTMLCanvasElement | null>,
   frag: string,
   uniforms: Uniforms,
-  { maxPixels = 2.2e6, follow = false, onFail, intro }: { maxPixels?: number; follow?: boolean; onFail?: () => void; intro?: { delay: number; duration: number } }
+  {
+    maxPixels = 2.2e6,
+    follow = false,
+    hoverRect = false,
+    onFail,
+    intro,
+    textures,
+    startTime,
+  }: {
+    maxPixels?: number;
+    follow?: boolean;
+    /** Lens engages while the cursor is over the canvas box, not just near its centre. */
+    hoverRect?: boolean;
+    onFail?: () => void;
+    intro?: { delay: number; duration: number };
+    /** Sampler name to image, uploaded once at setup. */
+    textures?: Record<string, TexImageSource>;
+    /** Fixed clock start, for shaders whose rest frame must match static art. */
+    startTime?: number;
+  }
 ) {
   const reduce = useReducedMotion();
   const live = useRef(uniforms);
@@ -182,10 +201,21 @@ function useShader(
     gl.enable(gl.BLEND);
     gl.blendFunc(gl.ONE, gl.ONE_MINUS_SRC_ALPHA);
     const loc = (n: string) => gl.getUniformLocation(prog, n);
+    Object.entries(textures ?? {}).forEach(([name, img], i) => {
+      gl.activeTexture(gl.TEXTURE0 + i);
+      gl.bindTexture(gl.TEXTURE_2D, gl.createTexture());
+      gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL, true);
+      gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, img);
+      gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR);
+      gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR);
+      gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE);
+      gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
+      gl.uniform1i(loc(name), i);
+    });
 
     let raf = 0;
     let visible = true;
-    let t = Math.random() * 20;
+    let t = startTime ?? Math.random() * 20;
     let last = performance.now();
     let dpr = 1;
     const mouse = { x: 0, y: 0, tx: 0, ty: 0, lens: 0, tlens: 0 };
@@ -217,8 +247,10 @@ function useShader(
       gl.uniform1f(loc("uLens"), mouse.lens);
       gl.uniform1f(loc("uReveal"), reveal());
       for (const [k, v] of Object.entries(live.current)) {
-        if (Array.isArray(v)) gl.uniform2f(loc(k), v[0], v[1]);
-        else gl.uniform1f(loc(k), v);
+        if (Array.isArray(v)) {
+          if (v.length === 3) gl.uniform3f(loc(k), v[0], v[1], v[2]);
+          else gl.uniform2f(loc(k), v[0], v[1]);
+        } else gl.uniform1f(loc(k), v);
       }
       gl.drawArrays(gl.TRIANGLES, 0, 3);
     };
@@ -260,7 +292,11 @@ function useShader(
       const m = Math.min(r.width, r.height) * 0.5 * size;
       mouse.tx = (e.clientX - (r.left + r.width / 2)) / m;
       mouse.ty = -(e.clientY - (r.top + r.height / 2)) / m;
-      mouse.tlens = Math.hypot(mouse.tx, mouse.ty) < 1.3 ? 1 : 0;
+      mouse.tlens = hoverRect
+        ? Number(e.clientX >= r.left && e.clientX <= r.right && e.clientY >= r.top && e.clientY <= r.bottom)
+        : Math.hypot(mouse.tx, mouse.ty) < 1.3
+          ? 1
+          : 0;
     };
     const onLeave = () => {
       mouse.tlens = 0;
@@ -281,7 +317,7 @@ function useShader(
       gl.getExtension("WEBGL_lose_context")?.loseContext();
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [frag, reduce, follow, maxPixels, intro?.delay, intro?.duration]);
+  }, [frag, reduce, follow, hoverRect, maxPixels, intro?.delay, intro?.duration]);
 }
 
 export function MedallionShader({

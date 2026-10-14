@@ -1,11 +1,11 @@
 import { AnimatePresence, motion } from "framer-motion";
-import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import React, { useState } from "react";
 import { CREAM } from "../landing-art/primitives";
 import { NightAurora } from "../landing-art/shaders";
 import { fontVars } from "./fonts";
+import { LiveLogo } from "./live-logo";
 
 export const EMAIL = "hello@thejoydigi.com";
 
@@ -17,12 +17,11 @@ const NAV = [
 ];
 
 /** P7 horizontal lockup; its baked #0B0B0C ground melts into the dark header and footer. */
-const LOGO = { src: "/brand/logo-horizontal-dark.svg", width: 2400, height: 879 };
 
 function Logo() {
   return (
     <Link href="/" className="-ml-2 inline-flex shrink-0 no-underline hover:no-underline" aria-label="The Joy Digi home">
-      <Image src={LOGO.src} width={LOGO.width} height={LOGO.height} alt="" priority unoptimized className="h-[62px] w-auto" />
+      <LiveLogo priority className="h-[62px]" />
     </Link>
   );
 }
@@ -149,7 +148,7 @@ export function SiteFooter() {
         <div className="grid gap-12 lg:grid-cols-[1.2fr_2fr]">
           <div>
             <Link href="/" className="-ml-3 mb-8 inline-flex no-underline hover:no-underline" aria-label="The Joy Digi home">
-              <Image src={LOGO.src} width={LOGO.width} height={LOGO.height} alt="" unoptimized className="h-[96px] w-auto mix-blend-lighten md:h-[112px]" />
+              <LiveLogo className="h-[96px] mix-blend-lighten md:h-[112px]" />
             </Link>
             <p className="font-bungee text-3xl leading-[1.08] md:text-[2.6rem]">
               Let&apos;s make something <span className="joy-accent-night">joyful.</span>

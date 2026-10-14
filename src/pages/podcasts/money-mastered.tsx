@@ -10,6 +10,7 @@ import { EmailSignupForm } from "@/components/podcast/email-signup-form";
 import { ShareIcon, ShareSheet, useShare, type ShareControl, type ShareTheme } from "@/components/podcast/share";
 import { fmt, usePlayer, type Player } from "@/components/podcast/use-player";
 import { getShow, type Show } from "@/lib/podcasts";
+import { ShowShader } from "@/components/landing-art/show-shader";
 
 const cinzel = Cinzel({ subsets: ["latin"], variable: "--mm-display", display: "swap" });
 const cormorant = Cormorant_Garamond({
@@ -134,6 +135,7 @@ function Panorama() {
       <Image src="/podcasts/money-mastered/art/panorama.webp" alt="" fill priority sizes="100vw" className="object-cover object-[center_78%]" />
       <div className="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(6,14,26,0.55)_0%,rgba(6,14,26,0.1)_45%,rgba(6,14,26,0)_70%,#060E1A_100%)]" />
       <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(6,14,26,0.8)_0%,rgba(6,14,26,0.35)_45%,transparent_75%)]" />
+      <ShowShader colors={["#D9B56A", "#B8862F", "#F3DFA8"]} center={[0.72, 0.62]} ripple={0.32} aurora={0.18} lobes={8} freq={15} fade={2.1} speed={0.8} />
     </motion.div>
   );
 }
