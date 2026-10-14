@@ -260,31 +260,8 @@ Client had a vision for a smart QR code-based item tracker. They needed both a p
 - Social media ad campaigns
 
 **Result:**
-QRganiz launched as a simple but powerful solution for organizing personal items. The app and website combo created a seamless user experience, supported by multi-channel marketing for growth.
+QRganiz launched as a simple but powerful solution for organizing personal items. The app and website combo created a seamless user experience, supported by multi-channel marketing for growth.`;
 
----
-
-#### **Ruh Roh Retreat**
-
-**Website:** [ruhrohretreat.com](https://ruhrohretreat.com)
-
-**Project Type:** Brand Identity + Website + Booking System + Content Strategy + Digital Marketing  
-**Industry:** Pet Services / Hospitality (California-based)
-
-**Challenge:**  
-Client needed help launching a premium dog boarding business from scratch: branding, website, bookings, SEO, and visibility.
-
-**What We Did:**
-
-- Developed business name, logo, and visual brand
-- Built a playful yet professional website that's mobile-friendly and pet-owner focused
-- Integrated a booking system and meet & greet intake flow
-- Wrote clear, value-driven copy emphasizing safety, 24/7 care, home-like experience, and owner control through add-ons
-- Set up blog structure and managed content publishing for SEO
-- Ran social media ad campaigns and guided local marketing strategy
-
-**Result:**
-Ruh Roh Retreat launched with a strong digital presence and a steady stream of inquiries. The website's charm and clarity paired with the booking and content systems helped build trust and fill the calendar quickly.`;
 
 const BrandDeckPage: React.FC = () => {
   // Check if we're on the client-side (to avoid SSR issues)

@@ -26,8 +26,8 @@ const built = [
   {
     icon: <FaPaintBrush />,
     color: "#1F6FE5",
-    title: "Brand evolution",
-    text: "Grew the Ruh Roh Retreat identity into The Blue Sock — a playful, boutique brand built for a community of sitters, not a single business.",
+    title: "Brand identity",
+    text: "A playful, boutique brand for The Blue Sock, built for a whole community of sitters and the families who trust them.",
   },
   {
     icon: <FaUsers />,
@@ -71,7 +71,7 @@ const TheBlueSock: NextPage = () => {
   return (
     <MainLayout
       title="The Blue Sock Case Study | The Joy Digi"
-      description="How The Joy Digi evolved Ruh Roh Retreat into The Blue Sock — a boutique dog-sitting marketplace for Irvine & Orange County with sitter profiles, badges, portals, and payments."
+      description="How The Joy Digi built The Blue Sock — a boutique dog-sitting marketplace for Irvine & Orange County with sitter profiles, badges, portals, and payments."
       image="/case-studies/bluesock-hero.webp"
     >
       <PageHero
@@ -83,9 +83,8 @@ const TheBlueSock: NextPage = () => {
         lead={
           <>
             <p>
-              What started as Ruh Roh Retreat, a single premium boarding business, grew into a curated marketplace where
-              Orange County pet parents compare Badge-Rated sitters, request stays, and manage everything from their own
-              portal.
+              A curated marketplace where Orange County pet parents compare Badge-Rated sitters, request stays, and manage
+              everything from their own portal.
             </p>
             <div className="mt-6 flex flex-wrap gap-2">
               <Pill color="#FF3D8B">Marketplace + Brand + Web App</Pill>
@@ -113,37 +112,6 @@ const TheBlueSock: NextPage = () => {
       </PageHero>
 
 
-      <Section
-        tone="white"
-        kicker="The evolution"
-        title="From one retreat to a"
-        accent="community of sitters."
-        lead="Ruh Roh Retreat proved the demand. The Blue Sock turns that same boutique care into a platform, so more families can find the right match for their dog."
-      >
-        <div className="grid items-center gap-8 lg:grid-cols-[1fr_auto_1fr]">
-          <Reveal>
-            <Card>
-              <p className="mb-4 text-xs font-bold uppercase tracking-[0.2em] text-[#6B5D4F]">Then — Ruh Roh Retreat</p>
-              <div className="overflow-hidden rounded-xl border border-[#1B140D]/10">
-                <Image src="/case-studies/ruh-roh-hero.webp" alt="The original Ruh Roh Retreat website" width={1416} height={792} className="h-auto w-full" />
-              </div>
-              <p className="mt-5 text-[#1B140D]/75">A single premium boarding business: brand, website, and a booking intake flow.</p>
-            </Card>
-          </Reveal>
-          <div aria-hidden className="mx-auto grid h-14 w-14 place-items-center rounded-full border-2 border-[#1B140D] bg-[#FFC94A] text-2xl font-bold rotate-90 lg:rotate-0">
-            →
-          </div>
-          <Reveal delay={0.1}>
-            <Card>
-              <p className="mb-4 text-xs font-bold uppercase tracking-[0.2em] text-[#6B5D4F]">Now — The Blue Sock</p>
-              <div className="overflow-hidden rounded-xl border border-[#1B140D]/10">
-                <Image src="/case-studies/bluesock-hero.webp" alt="The Blue Sock marketplace homepage" width={1440} height={810} className="h-auto w-full" />
-              </div>
-              <p className="mt-5 text-[#1B140D]/75">A curated marketplace: sitter profiles, badges, premium experiences, portals, and payments.</p>
-            </Card>
-          </Reveal>
-        </div>
-      </Section>
 
       <Section tone="cream" kicker="What we built" title="Everything a boutique" accent="marketplace needs.">
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">

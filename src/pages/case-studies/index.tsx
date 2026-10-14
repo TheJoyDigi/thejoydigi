@@ -9,7 +9,7 @@ const studies = [
     image: "/case-studies/bluesock-hero.webp",
     name: "The Blue Sock",
     summary:
-      "Boutique dog sitting for Irvine & Orange County — evolved from Ruh Roh Retreat into a curated marketplace of Badge-Rated sitters.",
+      "Boutique dog sitting for Irvine & Orange County: a curated marketplace of Badge-Rated sitters.",
     pills: ["Marketplace", "Brand", "Web App"],
   },
   {
