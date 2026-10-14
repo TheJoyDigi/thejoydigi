@@ -10,10 +10,10 @@ import { RevealWords } from "../landing-art/primitives";
 const EASE = [0.22, 1, 0.36, 1] as const;
 
 const CHIPS = [
-  { label: "The Blue Sock", kind: "Marketplace", img: "/case-studies/bluesock-hero.webp", href: "#work-blue-sock", pos: "left-[-4%] top-[16%]", depth: 18, delay: 0.9 },
-  { label: "Money, Mastered", kind: "Audiobook", img: "/podcasts/money-mastered/cover.jpg", href: "#work-money-mastered", pos: "right-[-6%] top-[8%]", depth: -14, delay: 1.0 },
-  { label: "The OC Pack", kind: "Podcast", img: "/podcasts/oc-pack/cover-v2.jpg", href: "#work-oc-pack", pos: "right-[-8%] top-[52%]", depth: 22, delay: 1.1 },
-  { label: "QRganiz", kind: "App", img: "/case-studies/qrganiz-hero.webp", href: "#work-qrganiz", pos: "left-[-8%] top-[60%]", depth: -20, delay: 1.2 },
+  { label: "The Blue Sock", kind: "Marketplace", img: "/case-studies/bluesock-hero.webp", href: "#work-blue-sock", pos: "left-[-4%] top-[16%]", depth: 18, delay: 1.4 },
+  { label: "Money, Mastered", kind: "Audiobook", img: "/podcasts/money-mastered/cover.jpg", href: "#work-money-mastered", pos: "right-[-6%] top-[8%]", depth: -14, delay: 1.52 },
+  { label: "The OC Pack", kind: "Podcast", img: "/podcasts/oc-pack/cover-v2.jpg", href: "#work-oc-pack", pos: "right-[-8%] top-[52%]", depth: 22, delay: 1.64 },
+  { label: "QRganiz", kind: "App", img: "/case-studies/qrganiz-hero.webp", href: "#work-qrganiz", pos: "left-[-8%] top-[60%]", depth: -20, delay: 1.76 },
 ];
 
 function Chip({ chip, mx, my }: { chip: (typeof CHIPS)[number]; mx: MotionValue<number>; my: MotionValue<number> }) {
@@ -23,9 +23,9 @@ function Chip({ chip, mx, my }: { chip: (typeof CHIPS)[number]; mx: MotionValue<
     <motion.a
       href={chip.href}
       style={{ x, y }}
-      initial={{ opacity: 0, scale: 0.6 }}
-      animate={{ opacity: 1, scale: 1 }}
-      transition={{ type: "spring", stiffness: 180, damping: 16, delay: chip.delay }}
+      initial={{ opacity: 0, scale: 0.4, filter: "blur(6px)" }}
+      animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
+      transition={{ type: "spring", stiffness: 260, damping: 15, delay: chip.delay }}
       className={`absolute ${chip.pos} z-20 hidden items-center gap-2.5 rounded-full border border-[#FDF6EC]/15 bg-[#0B0B0C]/75 py-1.5 pl-1.5 pr-4 shadow-[0_18px_40px_-18px_rgba(0,0,0,0.9)] backdrop-blur transition-transform duration-300 hover:scale-105 sm:flex no-underline hover:no-underline`}
     >
       <span className="relative h-9 w-9 overflow-hidden rounded-full border border-[#FDF6EC]/20">
@@ -65,20 +65,20 @@ function Portrait() {
     >
       <div aria-hidden className="absolute inset-x-[-12%] top-[-12%] aspect-square [mask-image:linear-gradient(to_bottom,black_52%,transparent_74%)]">
         <motion.div
-          initial={{ opacity: 0, scale: 0.7, rotate: -25 }}
-          animate={{ opacity: 1, scale: 1, rotate: 0 }}
-          transition={{ duration: 1.6, ease: EASE }}
+          initial={{ scale: 0.92, rotate: -12 }}
+          animate={{ scale: 1, rotate: 0 }}
+          transition={{ duration: 2.2, ease: EASE, delay: 0.45 }}
           className="relative h-full w-full"
         >
-          <OpArtField follow feather rim={false} rings={15} />
+          <OpArtField follow feather rim={false} rings={15} intro={{ delay: 0.45, duration: 1.5 }} />
           <div className="absolute inset-0 rounded-full bg-[radial-gradient(closest-side,rgba(11,11,12,0.6)_28%,transparent_70%)]" />
         </motion.div>
       </div>
       <motion.div
         style={{ x: px, y: py }}
-        initial={{ opacity: 0, y: 40 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ opacity: { duration: 0.45, delay: 0.1 }, y: { duration: 1.2, ease: EASE, delay: 0.1 } }}
+        initial={{ opacity: 0, y: 46, filter: "blur(12px)" }}
+        animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+        transition={{ opacity: { duration: 0.5, delay: 0.2 }, filter: { duration: 0.8, delay: 0.2 }, y: { duration: 1.3, ease: EASE, delay: 0.2 } }}
         className="absolute inset-0"
       >
         <Image
@@ -90,6 +90,15 @@ function Portrait() {
           className="object-contain object-bottom drop-shadow-[0_30px_40px_rgba(0,0,0,0.6)] [mask-image:linear-gradient(to_bottom,black_80%,transparent)]"
         />
         <span aria-hidden className="home-spark absolute left-[46%] top-[63%] h-24 w-24 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(closest-side,rgba(255,236,190,0.95),rgba(255,178,60,0.45)_45%,transparent)] mix-blend-screen" />
+        {/* Intro flare: the spark in his hands is what sets off the ripple behind him. */}
+        <span aria-hidden className="absolute left-[46%] top-[63%] h-0 w-0">
+          <motion.span
+            initial={{ scale: 0, opacity: 0 }}
+            animate={{ scale: [0, 3.2, 1.4], opacity: [0, 1, 0] }}
+            transition={{ duration: 1.1, times: [0, 0.35, 1], ease: "easeOut", delay: 0.35 }}
+            className="absolute -left-20 -top-20 h-40 w-40 rounded-full bg-[radial-gradient(closest-side,rgba(255,250,230,1),rgba(255,201,74,0.7)_40%,rgba(255,46,136,0.25)_65%,transparent)] mix-blend-screen"
+          />
+        </span>
       </motion.div>
       {CHIPS.map((c) => (
         <Chip key={c.label} chip={c} mx={mx} my={my} />
@@ -123,7 +132,7 @@ export default function Hero({ data }: { data: HomeData }) {
   return (
     <section id="home" className="relative overflow-hidden bg-[#0B0B0C] text-[#FDF6EC]">
       <div aria-hidden className="pointer-events-none absolute inset-0">
-        <NightAurora />
+        <NightAurora intro={{ delay: 0.2, duration: 2.4 }} />
         <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(11,11,12,0.78)_0%,rgba(11,11,12,0.35)_50%,transparent_75%)]" />
       </div>
 
@@ -131,9 +140,9 @@ export default function Hero({ data }: { data: HomeData }) {
         <div className="order-2 max-w-2xl lg:order-1">
           <motion.a
             href="#work-money-mastered"
-            initial={{ opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: EASE }}
+            initial={{ opacity: 0, y: 12, filter: "blur(4px)" }}
+            animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+            transition={{ duration: 0.8, ease: EASE, delay: 0.15 }}
             className="mb-8 inline-flex items-center gap-2.5 rounded-full border border-[#FDF6EC]/15 bg-[#FDF6EC]/[0.06] px-4 py-2 text-sm font-medium text-[#FDF6EC]/80 backdrop-blur no-underline hover:no-underline hover:text-[#FDF6EC]"
           >
             <span className="relative flex h-2 w-2">
@@ -144,18 +153,23 @@ export default function Hero({ data }: { data: HomeData }) {
           </motion.a>
 
           <h1 className="font-bungee !py-0 !font-normal text-[2.3rem] leading-[1.06] tracking-[-0.01em] text-[#FDF6EC] sm:text-[3.25rem] lg:text-[3.4rem] xl:text-[4.1rem]">
-            <RevealWords text="I build joyful things" delay={0.1} />{" "}
-            <RevealWords text="with code" delay={0.25} />{" "}
+            <RevealWords text="I build joyful things" delay={0.3} stagger={0.07} />{" "}
+            <RevealWords text="with code" delay={0.6} stagger={0.07} />{" "}
             {/* Echoes JOY in the dark P7 wordmark: Sun gold fill, night keyline, pink offset shadow. */}
-            <span className="joy-accent-night relative inline-block">
-              <RevealWords text="and SI." delay={0.35} />
-            </span>
+            <motion.span
+              initial={{ opacity: 0, scale: 1.35, rotate: -6, y: -8 }}
+              animate={{ opacity: 1, scale: 1, rotate: 0, y: 0 }}
+              transition={{ type: "spring", stiffness: 320, damping: 14, delay: 0.95 }}
+              className="joy-accent-night relative inline-block origin-bottom-left"
+            >
+              and SI.
+            </motion.span>
           </h1>
 
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.9, ease: EASE, delay: 0.5 }}
+            transition={{ duration: 0.9, ease: EASE, delay: 1.05 }}
             className="mt-8 max-w-xl text-lg leading-relaxed text-[#FDF6EC]/75 md:text-xl"
           >
             I&apos;m Long — a software engineer of 10+ years. These days I ship products, podcasts, and super intelligence (SI) experiments
@@ -165,7 +179,7 @@ export default function Hero({ data }: { data: HomeData }) {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.9, ease: EASE, delay: 0.62 }}
+            transition={{ duration: 0.9, ease: EASE, delay: 1.2 }}
             className="mt-10 flex flex-col gap-3 sm:flex-row sm:items-center"
           >
             <a

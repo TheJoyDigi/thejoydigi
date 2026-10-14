@@ -24,6 +24,8 @@ type Props = {
   rim?: boolean;
   /** Shader only: feather the outer rings into the background instead of a hard edge. */
   feather?: boolean;
+  /** Shader only: seconds for the ripple-out birth on mount. */
+  intro?: { delay: number; duration: number };
   className?: string;
 };
 

@@ -25,7 +25,7 @@ const MEDALLION_FRAG = `#version 300 es
 precision highp float;
 out vec4 o;
 uniform vec2 uRes;
-uniform float uTime, uRings, uLobes, uWobble, uTwist, uSize, uRim, uDpr, uFeather;
+uniform float uTime, uRings, uLobes, uWobble, uTwist, uSize, uRim, uDpr, uFeather, uReveal;
 uniform vec2 uMouse;
 uniform float uLens;
 ${PALETTE}
@@ -39,7 +39,7 @@ vec4 field(vec2 q, out float rr) {
   float a = atan(q.y, q.x);
   float t = uTime;
   float k = clamp(1.0 - r, 0.0, 1.0);
-  float ph = t * (1.0 + k * 0.6) + uTwist * uRings * 2.0 * min(r, 1.0);
+  float ph = t * (1.0 + k * 0.6) + uTwist * uRings * 2.0 * min(r, 1.0) + (1.0 - uReveal) * (1.0 - uReveal) * 6.0;
   float wob = uWobble * (0.6 + 0.8 * r);
   rr = r / (1.0 + wob * sin(uLobes * a + ph) + wob * 0.45 * sin((uLobes - 3.0) * a - ph * 1.3));
   float f = (1.0 - rr) * uRings;
@@ -84,8 +84,16 @@ void main() {
   float glow = exp(-outside * 9.0) * (1.0 - inside) * 0.5 * (1.0 - uFeather * 0.7) * (1.0 - smoothstep(edge * 0.8, edge * 0.97, length(q)));
   vec3 glowC = mix(C0, C5, 0.5 + 0.5 * sin(atan(q.y, q.x) * 2.0 + uTime));
 
+  // Birth: rings are born at the centre and ripple outward behind a bright gold wavefront.
+  float front = uReveal * 1.25;
+  float born = 1.0 - smoothstep(front - 0.12, front, rrG);
+  inside *= born;
+  rimA *= born;
+  glow *= born;
+  float wave = exp(-pow((rrG - front) / 0.045, 2.0)) * (1.0 - smoothstep(0.75, 1.0, uReveal)) * step(0.001, uReveal);
   float alpha = inside + rimA;
-  vec3 outC = col * inside + RIM * rimA;
+  vec3 outC = col * inside + RIM * rimA + vec3(1.0, 0.86, 0.5) * wave * 1.4;
+  alpha = max(alpha, wave * 0.9);
   // Premultiplied: medallion body plus additive-ish glow.
   o = vec4(outC + glowC * glow * (1.0 - alpha), clamp(alpha + glow * 0.6, 0.0, 1.0));
 }`;
@@ -94,7 +102,7 @@ const AURORA_FRAG = `#version 300 es
 precision highp float;
 out vec4 o;
 uniform vec2 uRes;
-uniform float uTime, uIntensity;
+uniform float uTime, uIntensity, uReveal;
 uniform vec2 uMouse;
 ${PALETTE}
 float noise(vec2 p) {
@@ -119,7 +127,7 @@ void main() {
   // Thin bright contour lines on top echo the medallion's banding.
   float lines = smoothstep(0.92, 1.0, abs(sin(n * 38.0)));
   float shape = smoothstep(0.35, 0.95, n) * (0.55 + 0.45 * smoothstep(1.2, 0.0, distance(uv, uMouse * 0.5 + 0.5)));
-  vec3 col = NIGHT + c * (shape * 0.32 + lines * shape * 0.18) * uIntensity;
+  vec3 col = NIGHT + c * (shape * 0.32 + lines * shape * 0.18) * uIntensity * uReveal;
   col += (hash(gl_FragCoord.xy + fract(uTime) * 77.0) - 0.5) * 0.03;
   o = vec4(col, 1.0);
 }`;
@@ -131,7 +139,7 @@ function useShader(
   ref: React.RefObject<HTMLCanvasElement | null>,
   frag: string,
   uniforms: Uniforms,
-  { maxPixels = 2.2e6, follow = false, onFail }: { maxPixels?: number; follow?: boolean; onFail?: () => void }
+  { maxPixels = 2.2e6, follow = false, onFail, intro }: { maxPixels?: number; follow?: boolean; onFail?: () => void; intro?: { delay: number; duration: number } }
 ) {
   const reduce = useReducedMotion();
   const live = useRef(uniforms);
@@ -180,6 +188,12 @@ function useShader(
     let last = performance.now();
     let dpr = 1;
     const mouse = { x: 0, y: 0, tx: 0, ty: 0, lens: 0, tlens: 0 };
+    const born = performance.now();
+    const reveal = () => {
+      if (!intro || reduce) return 1;
+      const k = Math.min(1, Math.max(0, ((performance.now() - born) / 1000 - intro.delay) / intro.duration));
+      return 1 - Math.pow(1 - k, 3);
+    };
 
     const resize = () => {
       const r = canvas.getBoundingClientRect();
@@ -200,6 +214,7 @@ function useShader(
       gl.uniform1f(loc("uDpr"), dpr);
       gl.uniform2f(loc("uMouse"), mouse.x, mouse.y);
       gl.uniform1f(loc("uLens"), mouse.lens);
+      gl.uniform1f(loc("uReveal"), reveal());
       for (const [k, v] of Object.entries(live.current)) {
         if (Array.isArray(v)) gl.uniform2f(loc(k), v[0], v[1]);
         else gl.uniform1f(loc(k), v);
@@ -219,7 +234,7 @@ function useShader(
     draw();
     // Reveal only after a real frame exists, so there is no blank or stretched first paint.
     requestAnimationFrame(() => {
-      canvas.style.transition = "opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1)";
+      canvas.style.transition = intro ? "opacity 0.2s linear" : "opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1)";
       canvas.style.opacity = "1";
     });
     const ro = new ResizeObserver(() => {
@@ -265,7 +280,7 @@ function useShader(
       gl.getExtension("WEBGL_lose_context")?.loseContext();
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [frag, reduce, follow, maxPixels]);
+  }, [frag, reduce, follow, maxPixels, intro?.delay, intro?.duration]);
 }
 
 export function MedallionShader({
@@ -278,6 +293,7 @@ export function MedallionShader({
   rim = true,
   feather = false,
   follow = false,
+  intro,
   onFail,
   className = "",
 }: {
@@ -290,6 +306,8 @@ export function MedallionShader({
   rim?: boolean;
   feather?: boolean;
   follow?: boolean;
+  /** Seconds: ripple the rings out from the centre on mount. */
+  intro?: { delay: number; duration: number };
   onFail?: () => void;
   className?: string;
 }) {
@@ -298,14 +316,14 @@ export function MedallionShader({
     ref,
     MEDALLION_FRAG,
     { uRings: rings, uLobes: lobes, uWobble: wobble, uTwist: twist, uSize: size, uRim: rim ? 1 : 0, uFeather: feather ? 1 : 0, uSpeed: speed },
-    { follow, onFail }
+    { follow, onFail, intro }
   );
   return <canvas ref={ref} aria-hidden style={{ opacity: 0 }} className={`block h-full w-full ${className}`} />;
 }
 
 /** Slow domain-warped spectrum light drifting over the night ground. */
-export function NightAurora({ intensity = 1, className = "" }: { intensity?: number; className?: string }) {
+export function NightAurora({ intensity = 1, intro, className = "" }: { intensity?: number; intro?: { delay: number; duration: number }; className?: string }) {
   const ref = useRef<HTMLCanvasElement>(null);
-  useShader(ref, AURORA_FRAG, { uIntensity: intensity, uSpeed: 1 }, { maxPixels: 9e5, follow: true });
+  useShader(ref, AURORA_FRAG, { uIntensity: intensity, uSpeed: 1 }, { maxPixels: 9e5, follow: true, intro });
   return <canvas ref={ref} aria-hidden style={{ opacity: 0 }} className={`block h-full w-full ${className}`} />;
 }

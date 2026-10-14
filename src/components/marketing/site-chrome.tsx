@@ -101,7 +101,13 @@ export function SiteHeader() {
           </motion.nav>
         )}
       </AnimatePresence>
-      <div aria-hidden className="h-[3px] bg-spectrum" />
+      <motion.div
+        aria-hidden
+        initial={{ scaleX: 0 }}
+        animate={{ scaleX: 1 }}
+        transition={{ duration: 1.1, ease: [0.22, 1, 0.36, 1] }}
+        className="h-[3px] origin-left bg-spectrum"
+      />
     </header>
   );
 }
