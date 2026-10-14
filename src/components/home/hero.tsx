@@ -70,7 +70,7 @@ function Portrait() {
           transition={{ duration: 1.6, ease: EASE }}
           className="relative h-full w-full"
         >
-          <OpArtField follow rings={15} />
+          <OpArtField follow feather rim={false} rings={15} />
           <div className="absolute inset-0 rounded-full bg-[radial-gradient(closest-side,rgba(11,11,12,0.6)_28%,transparent_70%)]" />
         </motion.div>
       </div>
@@ -78,7 +78,7 @@ function Portrait() {
         style={{ x: px, y: py }}
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1.2, ease: EASE, delay: 0.2 }}
+        transition={{ opacity: { duration: 0.45, delay: 0.1 }, y: { duration: 1.2, ease: EASE, delay: 0.1 } }}
         className="absolute inset-0"
       >
         <Image

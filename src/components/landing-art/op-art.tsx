@@ -22,6 +22,8 @@ type Props = {
   /** Lean the swirl toward the pointer. */
   follow?: boolean;
   rim?: boolean;
+  /** Shader only: feather the outer rings into the background instead of a hard edge. */
+  feather?: boolean;
   className?: string;
 };
 
@@ -142,7 +144,7 @@ function OpArtCanvas({ rings = 15, lobes = 9, wobble = 0.045, twist = 0.32, spee
 /** Live P7 medallion: a WebGL2 shader (ribbon shading, pointer lens, chromatic split) with a canvas 2D fallback. */
 export function OpArtField(props: Props) {
   const [fallback, setFallback] = useState(false);
-  return fallback ? <OpArtCanvas {...props} /> : <MedallionShader {...props} onFail={() => setFallback(true)} />;
+  return fallback ? <OpArtCanvas {...props} rim={props.feather ? false : props.rim} /> : <MedallionShader {...props} onFail={() => setFallback(true)} />;
 }
 
 const BANDS = ["#FF2E88", "#FF7A1A", "#FFC94A", "#3FE04A", "#19B8D6", "#7B3FE4"];

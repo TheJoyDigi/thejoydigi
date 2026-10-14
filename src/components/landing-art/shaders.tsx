@@ -25,7 +25,7 @@ const MEDALLION_FRAG = `#version 300 es
 precision highp float;
 out vec4 o;
 uniform vec2 uRes;
-uniform float uTime, uRings, uLobes, uWobble, uTwist, uSize, uRim, uDpr;
+uniform float uTime, uRings, uLobes, uWobble, uTwist, uSize, uRim, uDpr, uFeather;
 uniform vec2 uMouse;
 uniform float uLens;
 ${PALETTE}
@@ -69,7 +69,8 @@ void main() {
   vec3 col = vec3(mix(NIGHT.r, rC.r, rC.a), mix(NIGHT.g, g.g, g.a), mix(NIGHT.b, bC.b, bC.a));
 
   float aa = fwidth(rrG) * 1.5;
-  float inside = 1.0 - smoothstep(1.0 - aa, 1.0, rrG);
+  // Feathered edge melts the outer rings into the night instead of ending on a hard rim.
+  float inside = 1.0 - smoothstep(1.0 - max(aa, 0.22 * uFeather), 1.0, rrG);
   float rimOuter = 1.0 + 0.035 * uRim;
   float rimA = (1.0 - smoothstep(rimOuter - aa, rimOuter, rrG)) * (1.0 - inside) * uRim;
   // Dim the core so the portrait or text in front stays legible.
@@ -80,7 +81,7 @@ void main() {
   // Soft spectrum glow just outside the rim.
   float outside = max(rrG - rimOuter, 0.0);
   float edge = 1.0 / uSize;
-  float glow = exp(-outside * 9.0) * (1.0 - inside) * 0.5 * (1.0 - smoothstep(edge * 0.8, edge * 0.97, length(q)));
+  float glow = exp(-outside * 9.0) * (1.0 - inside) * 0.5 * (1.0 - uFeather * 0.7) * (1.0 - smoothstep(edge * 0.8, edge * 0.97, length(q)));
   vec3 glowC = mix(C0, C5, 0.5 + 0.5 * sin(atan(q.y, q.x) * 2.0 + uTime));
 
   float alpha = inside + rimA;
@@ -216,6 +217,11 @@ function useShader(
 
     resize();
     draw();
+    // Reveal only after a real frame exists, so there is no blank or stretched first paint.
+    requestAnimationFrame(() => {
+      canvas.style.transition = "opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1)";
+      canvas.style.opacity = "1";
+    });
     const ro = new ResizeObserver(() => {
       resize();
       draw();
@@ -270,6 +276,7 @@ export function MedallionShader({
   speed = 0.35,
   size = 0.86,
   rim = true,
+  feather = false,
   follow = false,
   onFail,
   className = "",
@@ -281,6 +288,7 @@ export function MedallionShader({
   speed?: number;
   size?: number;
   rim?: boolean;
+  feather?: boolean;
   follow?: boolean;
   onFail?: () => void;
   className?: string;
@@ -289,15 +297,15 @@ export function MedallionShader({
   useShader(
     ref,
     MEDALLION_FRAG,
-    { uRings: rings, uLobes: lobes, uWobble: wobble, uTwist: twist, uSize: size, uRim: rim ? 1 : 0, uSpeed: speed },
+    { uRings: rings, uLobes: lobes, uWobble: wobble, uTwist: twist, uSize: size, uRim: rim ? 1 : 0, uFeather: feather ? 1 : 0, uSpeed: speed },
     { follow, onFail }
   );
-  return <canvas ref={ref} aria-hidden className={`block h-full w-full ${className}`} />;
+  return <canvas ref={ref} aria-hidden style={{ opacity: 0 }} className={`block h-full w-full ${className}`} />;
 }
 
 /** Slow domain-warped spectrum light drifting over the night ground. */
 export function NightAurora({ intensity = 1, className = "" }: { intensity?: number; className?: string }) {
   const ref = useRef<HTMLCanvasElement>(null);
   useShader(ref, AURORA_FRAG, { uIntensity: intensity, uSpeed: 1 }, { maxPixels: 9e5, follow: true });
-  return <canvas ref={ref} aria-hidden className={`block h-full w-full ${className}`} />;
+  return <canvas ref={ref} aria-hidden style={{ opacity: 0 }} className={`block h-full w-full ${className}`} />;
 }
