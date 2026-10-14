@@ -7,7 +7,7 @@ import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import { BuyBook, KINDLE_URL, PAPERBACK_URL } from "@/components/podcast/value-created/buy-book";
+import { BuyBook, KINDLE_PRICE, KINDLE_URL, PAPERBACK_PRICE, PAPERBACK_URL } from "@/components/podcast/value-created/buy-book";
 import { EASE, Footer, GoldMotes, goldText, Mark, roman, VC_ROOT } from "@/components/podcast/value-created/theme";
 
 const PAGE_URL = "https://www.thejoydigi.com/books/value-created";
@@ -198,8 +198,8 @@ export default function ValueCreatedBook(props: Props) {
     image,
     inLanguage: "en",
     workExample: [
-      { "@type": "Book", bookFormat: "https://schema.org/Paperback", isbn: "9798160611600", url: PAPERBACK_URL },
-      { "@type": "Book", bookFormat: "https://schema.org/EBook", url: KINDLE_URL },
+      { "@type": "Book", bookFormat: "https://schema.org/Paperback", isbn: "9798160611600", url: PAPERBACK_URL, offers: { "@type": "Offer", price: PAPERBACK_PRICE.slice(1), priceCurrency: "USD", availability: "https://schema.org/InStock", url: PAPERBACK_URL } },
+      { "@type": "Book", bookFormat: "https://schema.org/EBook", url: KINDLE_URL, offers: { "@type": "Offer", price: KINDLE_PRICE.slice(1), priceCurrency: "USD", availability: "https://schema.org/InStock", url: KINDLE_URL } },
     ],
     author: { "@type": "Organization", name: "The Joy Digi", url: "https://www.thejoydigi.com" },
     publisher: { "@type": "Organization", name: "The Joy Digi", url: "https://www.thejoydigi.com" },

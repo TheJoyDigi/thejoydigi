@@ -4,6 +4,9 @@ import React from "react";
 // Amazon listings: paperback (ASIN B0HMFV4457, ISBN 9798160611600) and Kindle (ASIN B0HMFPCCHK).
 export const PAPERBACK_URL = "https://www.amazon.com/dp/B0HMFV4457";
 export const KINDLE_URL = "https://www.amazon.com/dp/B0HMFPCCHK";
+// US list prices on Amazon.com, confirmed by Long 2026-10-13; update here if they change.
+export const PAPERBACK_PRICE = "$14.99";
+export const KINDLE_PRICE = "$9.99";
 
 function BookIcon({ className = "" }: { className?: string }) {
   return (
@@ -56,14 +59,14 @@ export function BuyBook({ heading = "Own the book", compact = false, className =
           <BookIcon className="h-6 w-6 shrink-0" />
           <span className="text-left leading-tight">
             <span className="block text-base font-bold">Buy the paperback</span>
-            <span className="block text-xs font-semibold opacity-70">Print · ships from Amazon</span>
+            <span className="block text-xs font-semibold"><span className="font-extrabold">{PAPERBACK_PRICE}</span> <span className="opacity-70">· print edition</span></span>
           </span>
         </a>
         <a href={KINDLE_URL} target="_blank" rel="noopener noreferrer" className={`${btn} bg-[#F4EEDD] text-[#0C1130] shadow-[0_0_40px_-12px_rgba(244,238,221,0.6)]`}>
           <TabletIcon className="h-6 w-6 shrink-0" />
           <span className="text-left leading-tight">
             <span className="block text-base font-bold">Get it on Kindle</span>
-            <span className="block text-xs font-semibold opacity-70">Read instantly · any device</span>
+            <span className="block text-xs font-semibold"><span className="font-extrabold">{KINDLE_PRICE}</span> <span className="opacity-70">· read instantly</span></span>
           </span>
         </a>
       </div>
