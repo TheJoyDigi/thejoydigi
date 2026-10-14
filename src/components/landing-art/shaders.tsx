@@ -90,12 +90,13 @@ void main() {
   inside *= born;
   rimA *= born;
   glow *= born;
-  float wave = exp(-pow((rrG - front) / 0.045, 2.0)) * (1.0 - smoothstep(0.75, 1.0, uReveal)) * step(0.001, uReveal);
+  float wave = exp(-pow((rrG - front) / 0.035, 2.0)) * (1.0 - smoothstep(0.6, 1.0, uReveal)) * step(0.001, uReveal);
   float alpha = inside + rimA;
-  vec3 outC = col * inside + RIM * rimA + vec3(1.0, 0.86, 0.5) * wave * 1.4;
-  alpha = max(alpha, wave * 0.9);
+  // Wavefront is pure additive spectrum light (alpha 0), so it glows over the night and never lightens it to a pale haze.
+  vec3 waveC = hue(floor(mod(atan(q.y, q.x) / 6.28318 * 6.0 + uTime * 0.5, 6.0)));
+  vec3 outC = col * inside + RIM * rimA + waveC * wave * 0.55;
   // Premultiplied: medallion body plus additive-ish glow.
-  o = vec4(outC + glowC * glow * (1.0 - alpha), clamp(alpha + glow * 0.6, 0.0, 1.0));
+  o = vec4(outC + glowC * glow * 0.6 * (1.0 - alpha), clamp(alpha, 0.0, 1.0));
 }`;
 
 const AURORA_FRAG = `#version 300 es

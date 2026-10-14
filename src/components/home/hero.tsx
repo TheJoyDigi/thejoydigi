@@ -76,9 +76,9 @@ function Portrait() {
       </div>
       <motion.div
         style={{ x: px, y: py }}
-        initial={{ opacity: 0, y: 46, filter: "blur(12px)" }}
+        initial={{ opacity: 0, y: 46, filter: "blur(5px)" }}
         animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-        transition={{ opacity: { duration: 0.5, delay: 0.2 }, filter: { duration: 0.8, delay: 0.2 }, y: { duration: 1.3, ease: EASE, delay: 0.2 } }}
+        transition={{ opacity: { duration: 0.5, delay: 0.2 }, filter: { duration: 0.6, delay: 0.2 }, y: { duration: 1.3, ease: EASE, delay: 0.2 } }}
         className="absolute inset-0"
       >
         <Image
