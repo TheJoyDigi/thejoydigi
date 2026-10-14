@@ -112,6 +112,14 @@ function Hero({ show, player, total, share }: { show: Show; player: Player; tota
             >
               Read the book
             </Link>
+            <a
+              href="https://www.amazon.com/dp/B0HMFV4457"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-full bg-gradient-to-b from-[#FFD47E] to-[#D1941F] px-4 py-2 text-sm font-semibold text-[#0C1130] no-underline transition-transform hover:-translate-y-0.5 hover:no-underline"
+            >
+              Paperback on Amazon
+            </a>
           </motion.div>
         </div>
 
