@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import { CORAL, INK, RevealWords, SectionKicker } from "../landing-art/primitives";
+import { GOLD_DEEP, INK, RevealWords, SectionKicker, SUN } from "../landing-art/primitives";
 
 export { SectionKicker as Kicker };
 
@@ -35,7 +35,7 @@ export function DisplayTitle({
   as: Tag = "h2",
   title,
   accent,
-  accentColor = CORAL,
+  accentColor = GOLD_DEEP,
   after,
   className = "",
 }: {
@@ -47,7 +47,7 @@ export function DisplayTitle({
   className?: string;
 }) {
   return (
-    <Tag className={`font-display !py-0 font-[460] tracking-[-0.03em] text-[#003B49] ${className}`}>
+    <Tag className={`font-display !py-0 font-[460] tracking-[-0.03em] text-[#1B140D] ${className}`}>
       <RevealWords text={title} />
       {accent && (
         <>
@@ -80,9 +80,9 @@ export function Button({
 }) {
   const styles = {
     primary:
-      "bg-[#003B49] text-white shadow-[0_14px_30px_-12px_rgba(0,59,73,0.7)] hover:bg-[#0B5566]",
-    ghost: "border border-[#003B49]/25 text-[#003B49] hover:border-[#003B49] hover:bg-white",
-    light: "bg-[#FDF6EC] text-[#003B49] hover:bg-white",
+      "bg-[#FFC94A] text-[#0B0B0C] shadow-[0_14px_30px_-14px_rgba(27,20,13,0.55)] hover:bg-[#F2B731]",
+    ghost: "border border-[#1B140D]/25 text-[#1B140D] hover:border-[#1B140D] hover:bg-white",
+    light: "bg-[#FDF6EC] text-[#1B140D] hover:bg-white",
   }[variant];
   const external = /^https?:/.test(href);
   const cls = `group inline-flex items-center justify-center gap-3 rounded-full px-7 py-4 font-semibold transition-colors duration-300 no-underline hover:no-underline ${styles} ${className}`;
@@ -143,7 +143,7 @@ export function PageHero({
   return (
     <section className="relative overflow-hidden bg-[#FDF6EC]">
       <HeroGrid />
-      <div aria-hidden className="pointer-events-none absolute -right-40 -top-40 h-[36rem] w-[36rem] rounded-full bg-[radial-gradient(closest-side,rgba(74,190,255,0.22),transparent)]" />
+      <div aria-hidden className="pointer-events-none absolute -right-40 -top-40 h-[36rem] w-[36rem] rounded-full bg-[radial-gradient(closest-side,rgba(255,201,74,0.3),transparent)]" />
       <div
         className={`container relative mx-auto grid items-center gap-12 px-4 pt-14 pb-16 md:pt-20 md:pb-24 ${
           aside ? "lg:grid-cols-[1.05fr_1fr] lg:gap-16" : ""
@@ -152,7 +152,7 @@ export function PageHero({
         <div className={aside ? "" : "max-w-4xl"}>
           {breadcrumb && (
             <Reveal>
-              <Link href={breadcrumb.href} className="mb-6 inline-flex items-center gap-2 text-sm font-semibold text-[#003B49]/60 hover:text-[#003B49] no-underline hover:no-underline">
+              <Link href={breadcrumb.href} className="mb-6 inline-flex items-center gap-2 text-sm font-semibold text-[#6B5D4F] hover:text-[#1B140D] no-underline hover:no-underline">
                 <span aria-hidden>←</span> {breadcrumb.label}
               </Link>
             </Reveal>
@@ -167,7 +167,7 @@ export function PageHero({
           />
           {lead && (
             <Reveal delay={0.2}>
-              <div className="mt-6 max-w-2xl text-lg md:text-xl leading-relaxed text-[#003B49]/75">{lead}</div>
+              <div className="mt-6 max-w-2xl text-lg md:text-xl leading-relaxed text-[#1B140D]/75">{lead}</div>
             </Reveal>
           )}
           {children && (
@@ -185,7 +185,7 @@ export function PageHero({
 const TONES = {
   cream: "bg-[#FDF6EC]",
   white: "bg-white",
-  ink: "bg-[#003B49] text-[#FDF6EC]",
+  ink: "bg-[#0B0B0C] text-[#FDF6EC]",
 };
 
 export function Section({
@@ -215,18 +215,18 @@ export function Section({
       <div className="container mx-auto px-4">
         {(kicker || title) && (
           <div className={`mb-12 md:mb-16 ${center ? "mx-auto max-w-3xl text-center" : "max-w-3xl"}`}>
-            {kicker && <SectionKicker color={ink ? "#FFC94A" : CORAL}>{kicker}</SectionKicker>}
+            {kicker && <SectionKicker color={ink ? SUN : GOLD_DEEP}>{kicker}</SectionKicker>}
             {title && (
               <DisplayTitle
                 title={title}
                 accent={accent}
-                accentColor={ink ? "#FFC94A" : "#4ABEFF"}
+                accentColor={ink ? SUN : GOLD_DEEP}
                 className={`mt-4 text-4xl md:text-6xl leading-[1] ${ink ? "!text-[#FDF6EC]" : ""}`}
               />
             )}
             {lead && (
               <Reveal delay={0.15}>
-                <div className={`mt-5 text-lg ${ink ? "text-[#FDF6EC]/75" : "text-[#003B49]/75"}`}>{lead}</div>
+                <div className={`mt-5 text-lg ${ink ? "text-[#FDF6EC]/75" : "text-[#1B140D]/75"}`}>{lead}</div>
               </Reveal>
             )}
           </div>
@@ -246,7 +246,7 @@ export function Card({
   href?: string;
   className?: string;
 }) {
-  const cls = `group relative block h-full rounded-[2rem] border-2 border-[#003B49] bg-white p-7 md:p-8 text-[#003B49] shadow-[6px_6px_0_0_#003B49] transition-[transform,box-shadow] duration-300 ease-out hover:-translate-y-1 hover:shadow-[10px_10px_0_0_#003B49] ${className}`;
+  const cls = `group relative block h-full rounded-[2rem] border-2 border-[#1B140D] bg-white p-7 md:p-8 text-[#1B140D] shadow-[6px_6px_0_0_#1B140D] transition-[transform,box-shadow] duration-300 ease-out hover:-translate-y-1 hover:shadow-[10px_10px_0_0_#1B140D] ${className}`;
   return href ? (
     <Link href={href} className={`${cls} no-underline hover:no-underline`}>
       {children}
@@ -256,10 +256,10 @@ export function Card({
   );
 }
 
-export function IconBadge({ children, color = "#4ABEFF" }: { children: React.ReactNode; color?: string }) {
+export function IconBadge({ children, color = SUN }: { children: React.ReactNode; color?: string }) {
   return (
     <span
-      className="mb-5 inline-grid h-12 w-12 place-items-center rounded-2xl border-2 border-[#003B49] text-[#003B49] [&_svg]:h-5 [&_svg]:w-5"
+      className="mb-5 inline-grid h-12 w-12 place-items-center rounded-2xl border-2 border-[#1B140D] text-[#1B140D] [&_svg]:h-5 [&_svg]:w-5"
       style={{ background: `${color}40` }}
     >
       {children}
@@ -267,13 +267,13 @@ export function IconBadge({ children, color = "#4ABEFF" }: { children: React.Rea
   );
 }
 
-export function StarList({ items, color = "#4ABEFF", className = "" }: { items: string[]; color?: string; className?: string }) {
+export function StarList({ items, color = SUN, className = "" }: { items: string[]; color?: string; className?: string }) {
   return (
     <ul className={`space-y-2.5 ${className}`}>
       {items.map((item) => (
         <li key={item} className="flex items-start gap-3">
           <svg viewBox="-6 -6 12 12" className="mt-1.5 h-3 w-3 shrink-0" aria-hidden>
-            <path d="M0,-6 Q0,0 6,0 Q0,0 0,6 Q0,0 -6,0 Q0,0 0,-6Z" fill={color} stroke={INK} strokeWidth={0.8} />
+            <circle r="5" fill={color} stroke={INK} strokeWidth={1} />
           </svg>
           <span>{item}</span>
         </li>
@@ -282,15 +282,13 @@ export function StarList({ items, color = "#4ABEFF", className = "" }: { items: 
   );
 }
 
-export function Pill({ children, color = "#4ABEFF" }: { children: React.ReactNode; color?: string }) {
+export function Pill({ children, color = SUN }: { children: React.ReactNode; color?: string }) {
   return (
-    <span className="inline-flex rounded-full border-2 border-[#003B49] px-3.5 py-1 text-sm font-bold text-[#003B49]" style={{ background: color }}>
+    <span className="inline-flex rounded-full border-2 border-[#1B140D] px-3.5 py-1 text-sm font-bold text-[#1B140D]" style={{ background: color }}>
       {children}
     </span>
   );
 }
-
-const STEP_COLORS = ["#4ABEFF", "#FFC94A", "#FF6B6B", "#7EE0C3", "#4ABEFF", "#FFC94A"];
 
 /** Numbered process steps with a static connecting rule. */
 export function Steps({ steps }: { steps: { title: string; description: string }[] }) {
@@ -298,15 +296,15 @@ export function Steps({ steps }: { steps: { title: string; description: string }
     <ol className="relative grid gap-6 md:grid-cols-2 lg:grid-cols-3">
       {steps.map((step, i) => (
         <Reveal key={step.title} delay={i * 0.06}>
-          <li className="relative h-full rounded-[2rem] border-2 border-[#003B49]/10 bg-white p-7 transition-colors duration-300 hover:border-[#003B49]">
+          <li className="relative h-full rounded-[2rem] border-2 border-[#1B140D]/10 bg-white p-7 transition-colors duration-300 hover:border-[#1B140D]">
             <span
               className="font-display block text-6xl font-semibold leading-none"
-              style={{ color: STEP_COLORS[i % STEP_COLORS.length], WebkitTextStroke: `1.5px ${INK}` }}
+              style={{ color: SUN, WebkitTextStroke: `1.5px ${INK}` }}
             >
               {String(i + 1).padStart(2, "0")}
             </span>
-            <h3 className="font-display !py-0 mt-5 mb-2 text-2xl font-[460] text-[#003B49]">{step.title}</h3>
-            <p className="text-[#003B49]/75">{step.description}</p>
+            <h3 className="font-display !py-0 mt-5 mb-2 text-2xl font-[460] text-[#1B140D]">{step.title}</h3>
+            <p className="text-[#1B140D]/75">{step.description}</p>
           </li>
         </Reveal>
       ))}
@@ -327,7 +325,7 @@ export function CtaBand({
     <section className="bg-[#FDF6EC] py-16 md:py-24">
       <div className="container mx-auto px-4">
         <Reveal>
-          <div className="relative overflow-hidden rounded-[2.5rem] bg-[#003B49] px-7 py-14 md:px-16 md:py-20 text-[#FDF6EC]">
+          <div className="relative overflow-hidden rounded-[2.5rem] bg-[#0B0B0C] px-7 py-14 md:px-16 md:py-20 text-[#FDF6EC]">
             <div aria-hidden className="pointer-events-none absolute -right-24 -top-24 h-96 w-96 rounded-full bg-[radial-gradient(closest-side,rgba(255,201,74,0.3),transparent)]" />
             <div className="relative grid items-end gap-8 lg:grid-cols-[1.4fr_1fr]">
               <div>
@@ -339,7 +337,7 @@ export function CtaBand({
               <div className="flex flex-col gap-3 sm:flex-row lg:justify-end">
                 <a
                   href="mailto:hello@thejoydigi.com"
-                  className="group inline-flex items-center justify-center gap-3 rounded-full bg-[#FDF6EC] px-7 py-4 font-semibold text-[#003B49] transition-colors hover:bg-white no-underline hover:no-underline"
+                  className="group inline-flex items-center justify-center gap-3 rounded-full bg-[#FFC94A] px-7 py-4 font-semibold text-[#0B0B0C] transition-colors hover:bg-[#FFD86B] no-underline hover:no-underline"
                 >
                   Say hello <span aria-hidden className="transition-transform group-hover:translate-x-1">→</span>
                 </a>
@@ -377,12 +375,12 @@ export function BrowserFrame({
   className?: string;
 }) {
   return (
-    <div className={`overflow-hidden rounded-2xl border border-[#003B49]/10 bg-white shadow-[0_40px_80px_-30px_rgba(0,59,73,0.45)] ${className}`}>
-      <div className="flex items-center gap-1.5 border-b border-[#003B49]/10 bg-[#F6F1E8] px-4 py-2.5">
-        <span className="h-2.5 w-2.5 rounded-full bg-[#FF6B6B]/80" />
+    <div className={`overflow-hidden rounded-2xl border border-[#1B140D]/10 bg-white shadow-[0_40px_80px_-30px_rgba(27,20,13,0.45)] ${className}`}>
+      <div className="flex items-center gap-1.5 border-b border-[#1B140D]/10 bg-[#F6F1E8] px-4 py-2.5">
+        <span className="h-2.5 w-2.5 rounded-full bg-[#FF2E88]/80" />
         <span className="h-2.5 w-2.5 rounded-full bg-[#FFC94A]/90" />
-        <span className="h-2.5 w-2.5 rounded-full bg-[#7EE0C3]" />
-        <span className="ml-3 flex-1 truncate rounded-md bg-white px-3 py-1 text-[11px] font-medium text-[#003B49]/55">{label}</span>
+        <span className="h-2.5 w-2.5 rounded-full bg-[#14A03A]/80" />
+        <span className="ml-3 flex-1 truncate rounded-md bg-white px-3 py-1 text-[11px] font-medium text-[#6B5D4F]">{label}</span>
       </div>
       <Image src={src} alt={alt} width={width} height={height} priority={priority} sizes="(min-width: 1024px) 600px, 92vw" className="block h-auto w-full" />
     </div>

@@ -55,7 +55,7 @@ const built = [
   },
   {
     icon: <FaMapMarkedAlt />,
-    color: "#FF6B6B",
+    color: "#FFC94A",
     title: "Local SEO content",
     text: "City boarding guides and a blog that answer what Orange County pet parents search for first.",
   },
@@ -123,23 +123,23 @@ const TheBlueSock: NextPage = () => {
         <div className="grid items-center gap-8 lg:grid-cols-[1fr_auto_1fr]">
           <Reveal>
             <Card>
-              <p className="mb-4 text-xs font-bold uppercase tracking-[0.2em] text-[#003B49]/55">Then — Ruh Roh Retreat</p>
-              <div className="overflow-hidden rounded-xl border border-[#003B49]/10">
+              <p className="mb-4 text-xs font-bold uppercase tracking-[0.2em] text-[#6B5D4F]">Then — Ruh Roh Retreat</p>
+              <div className="overflow-hidden rounded-xl border border-[#1B140D]/10">
                 <Image src="/case-studies/ruh-roh-hero.webp" alt="The original Ruh Roh Retreat website" width={1416} height={792} className="h-auto w-full" />
               </div>
-              <p className="mt-5 text-[#003B49]/75">A single premium boarding business: brand, website, and a booking intake flow.</p>
+              <p className="mt-5 text-[#1B140D]/75">A single premium boarding business: brand, website, and a booking intake flow.</p>
             </Card>
           </Reveal>
-          <div aria-hidden className="mx-auto grid h-14 w-14 place-items-center rounded-full border-2 border-[#003B49] bg-[#FFC94A] text-2xl font-bold rotate-90 lg:rotate-0">
+          <div aria-hidden className="mx-auto grid h-14 w-14 place-items-center rounded-full border-2 border-[#1B140D] bg-[#FFC94A] text-2xl font-bold rotate-90 lg:rotate-0">
             →
           </div>
           <Reveal delay={0.1}>
             <Card>
-              <p className="mb-4 text-xs font-bold uppercase tracking-[0.2em] text-[#003B49]/55">Now — The Blue Sock</p>
-              <div className="overflow-hidden rounded-xl border border-[#003B49]/10">
+              <p className="mb-4 text-xs font-bold uppercase tracking-[0.2em] text-[#6B5D4F]">Now — The Blue Sock</p>
+              <div className="overflow-hidden rounded-xl border border-[#1B140D]/10">
                 <Image src="/case-studies/bluesock-hero.webp" alt="The Blue Sock marketplace homepage" width={1440} height={810} className="h-auto w-full" />
               </div>
-              <p className="mt-5 text-[#003B49]/75">A curated marketplace: sitter profiles, badges, premium experiences, portals, and payments.</p>
+              <p className="mt-5 text-[#1B140D]/75">A curated marketplace: sitter profiles, badges, premium experiences, portals, and payments.</p>
             </Card>
           </Reveal>
         </div>
@@ -152,7 +152,7 @@ const TheBlueSock: NextPage = () => {
               <Card>
                 <IconBadge color={b.color}>{b.icon}</IconBadge>
                 <h3 className="font-display !py-0 mb-2 text-2xl font-[460]">{b.title}</h3>
-                <p className="text-[#003B49]/75">{b.text}</p>
+                <p className="text-[#1B140D]/75">{b.text}</p>
               </Card>
             </Reveal>
           ))}

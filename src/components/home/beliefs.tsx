@@ -44,9 +44,9 @@ export default function Beliefs() {
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end end"] });
   const counter = useTransform(scrollYProgress, (v) => `0${Math.min(BELIEFS.length, Math.floor(v * BELIEFS.length) + 1)}`);
   return (
-    <section ref={ref} aria-label="What I believe" className="relative h-[300vh] bg-[#003B49]">
+    <section ref={ref} aria-label="What I believe" className="relative h-[300vh] bg-[#0B0B0C]">
       <div className="sticky top-0 flex h-screen items-center overflow-hidden">
-        <div aria-hidden className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_120%,rgba(255,201,74,0.22),transparent_60%),radial-gradient(ellipse_at_10%_0%,rgba(74,190,255,0.18),transparent_50%)]" />
+        <div aria-hidden className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_120%,rgba(255,201,74,0.22),transparent_60%),radial-gradient(ellipse_at_10%_0%,rgba(230,74,0,0.14),transparent_50%)]" />
         <p className="absolute left-1/2 top-24 -translate-x-1/2 text-xs font-semibold uppercase tracking-[0.3em] text-[#FFC94A]">
           What I believe · <motion.span>{counter}</motion.span> / 03
         </p>
@@ -57,7 +57,7 @@ export default function Beliefs() {
             </div>
           ))}
         </div>
-        <p className="absolute bottom-10 left-1/2 -translate-x-1/2 text-sm text-[#FDF6EC]/40">keep scrolling</p>
+        <p className="absolute bottom-10 left-1/2 -translate-x-1/2 text-sm text-[#FDF6EC]/55">keep scrolling</p>
       </div>
       <noscript>
         <div className="px-4 py-24 text-center font-display text-4xl text-[#FDF6EC]">{BELIEFS.map((b) => b.text).join(" ")}</div>

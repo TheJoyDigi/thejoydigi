@@ -253,7 +253,7 @@ Client had a vision for a smart QR code-based item tracker. They needed both a p
 **What We Did:**
 
 - Product Design & Branding (color-coded QR labels, brand identity)
-- Mobile App Development (React Native, AI photo tagging)
+- Mobile App Development (React Native, SI photo tagging)
 - Website design & development
 - Amazon product listing support
 - SEO strategy & content

@@ -36,7 +36,7 @@ const QRganizCaseStudy: NextPage = () => {
           </>
         }
         aside={
-          <div className="mx-auto max-w-[380px] rotate-[1.5deg] rounded-2xl border border-[#003B49]/10 bg-white p-2 shadow-[0_40px_80px_-30px_rgba(0,59,73,0.45)]">
+          <div className="mx-auto max-w-[380px] rotate-[1.5deg] rounded-2xl border border-[#1B140D]/10 bg-white p-2 shadow-[0_40px_80px_-30px_rgba(27,20,13,0.45)]">
             <div className="relative aspect-square overflow-hidden rounded-xl">
               <Image src="/case-studies/qrganiz-hero.webp" alt="QRganiz app interface" fill sizes="380px" className="object-cover" priority />
             </div>
@@ -53,7 +53,7 @@ const QRganizCaseStudy: NextPage = () => {
       <Section tone="white" kicker="The challenge" title="Belongings people" accent="keep losing track of.">
         <Reveal>
           <Card className="max-w-3xl">
-            <p className="text-[#003B49]/75">
+            <p className="text-[#1B140D]/75">
               The client needed a solution to help users keep track of their personal belongings, especially
               valuable items that are frequently misplaced or loaned out. The challenge was to create a system that
               was:
@@ -92,7 +92,7 @@ const QRganizCaseStudy: NextPage = () => {
             <Card>
               <h3 className="font-display !py-0 mb-4 text-2xl font-[460]">Backend Infrastructure</h3>
               <StarList
-                color="#FF6B6B"
+                color="#FFC94A"
                 items={[
                   "Developed a scalable backend using Node.js and MongoDB",
                   "Implemented secure user authentication",

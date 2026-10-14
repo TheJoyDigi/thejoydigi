@@ -9,31 +9,29 @@ import {
   useVelocity,
 } from "framer-motion";
 import React, { useRef } from "react";
-import { CORAL, SKY, SUN } from "./primitives";
+import { ORANGE, PINK, RippleMark, SKY, SUN } from "./primitives";
 
 const wrap = (min: number, max: number, v: number) => {
   const range = max - min;
   return ((((v - min) % range) + range) % range) + min;
 };
 
-function Star({ color }: { color: string }) {
-  return (
-    <svg viewBox="-10 -10 20 20" className="inline-block w-6 h-6 md:w-9 md:h-9 mx-5 md:mx-8 align-middle" aria-hidden>
-      <path d="M0,-10 Q0,0 10,0 Q0,0 0,10 Q0,0 -10,0 Q0,0 0,-10Z" fill={color} />
-    </svg>
-  );
+/** Ripple rings in spectrum order, offset per item so neighbours never repeat. */
+const RINGS = [PINK, ORANGE, SUN, SKY];
+
+function Ring({ index }: { index: number }) {
+  const at = (k: number) => RINGS[(index + k) % RINGS.length];
+  return <RippleMark colors={[at(0), at(1), at(2)]} className="inline-block w-6 h-6 md:w-8 md:h-8 mx-5 md:mx-8 align-middle" />;
 }
 
 export function Track({
   words,
   baseVelocity,
   className,
-  starColors,
 }: {
   words: string[];
   baseVelocity: number;
   className: string;
-  starColors: string[];
 }) {
   const reduce = useReducedMotion();
   const baseX = useMotionValue(0);
@@ -58,7 +56,7 @@ export function Track({
       {words.map((w, i) => (
         <React.Fragment key={w}>
           <span>{w}</span>
-          <Star color={starColors[i % starColors.length]} />
+          <Ring index={i} />
         </React.Fragment>
       ))}
     </span>
@@ -79,8 +77,8 @@ export function Track({
 export default function Marquee({ words }: { words: string[] }) {
   return (
     <div aria-label="Now shipping" className="relative overflow-hidden bg-[#FDF6EC] py-6 md:py-8">
-      <div className="bg-[#003B49] py-4 md:py-5">
-        <Track words={words} baseVelocity={-1.4} starColors={[SUN, CORAL, SKY]} className="font-display text-xl md:text-3xl italic text-[#FDF6EC]" />
+      <div className="bg-[#0B0B0C] py-4 md:py-5">
+        <Track words={words} baseVelocity={-1.4} className="font-display text-xl md:text-3xl italic text-[#FDF6EC]" />
       </div>
     </div>
   );

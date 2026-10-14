@@ -2,12 +2,19 @@ import { motion, useInView } from "framer-motion";
 import React, { useRef } from "react";
 import s from "./art.module.css";
 
-export const INK = "#003B49";
-export const SKY = "#4ABEFF";
-export const CORAL = "#FF6B6B";
+export const INK = "#1B140D";
+export const SKY = "#0A86B0";
+/** Primary accent role (was coral); fills and large display only. */
+export const CORAL = "#FFC94A";
 export const CREAM = "#FDF6EC";
 export const SUN = "#FFC94A";
-export const MINT = "#7EE0C3";
+export const MINT = "#14A03A";
+/** Sun gold darkened to hold 4.5:1 on sand; use for small text accents and links. */
+export const GOLD_DEEP = "#8F6300";
+export const NIGHT = "#0B0B0C";
+export const PINK = "#FF2E88";
+export const ORANGE = "#E64A00";
+export const VIOLET = "#5A189A";
 
 export function rng(seed: number) {
   let t = seed >>> 0;
@@ -161,9 +168,26 @@ export function WaveDivider({
   );
 }
 
+/** Concentric ripple glyph echoing the P7 medallion; `colors` paints rings outside in. */
+export function RippleMark({
+  colors,
+  className = "",
+}: {
+  colors: [string, string, string];
+  className?: string;
+}) {
+  return (
+    <svg viewBox="-8 -8 16 16" className={className} aria-hidden>
+      <circle r="6.6" fill="none" stroke={colors[0]} strokeWidth="1.8" />
+      <circle r="3.6" fill="none" stroke={colors[1]} strokeWidth="1.8" />
+      <circle r="1.3" fill={colors[2]} />
+    </svg>
+  );
+}
+
 export function SectionKicker({
   children,
-  color = CORAL,
+  color = GOLD_DEEP,
 }: {
   children: React.ReactNode;
   color?: string;
@@ -174,15 +198,10 @@ export function SectionKicker({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5 }}
-      className="inline-flex items-center gap-2 text-xs md:text-sm font-semibold uppercase tracking-[0.25em]"
+      className="inline-flex items-center gap-2.5 font-bungee text-xs md:text-sm uppercase tracking-[0.12em]"
       style={{ color }}
     >
-      <svg width="14" height="14" viewBox="-8 -8 16 16" aria-hidden>
-        <path
-          d="M0,-8 Q0,0 8,0 Q0,0 0,8 Q0,0 -8,0 Q0,0 0,-8Z"
-          fill={color}
-        />
-      </svg>
+      <RippleMark colors={[color, color, color]} className="h-3.5 w-3.5 shrink-0" />
       {children}
     </motion.span>
   );
