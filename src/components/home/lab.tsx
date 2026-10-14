@@ -61,7 +61,7 @@ export default function Lab() {
               <div className="relative mx-auto my-4 aspect-square w-[78%] transition-transform duration-500 ease-out group-hover:-translate-y-2 group-hover:rotate-[-2deg]">
                 <Image src={e.img} alt="" fill sizes="(min-width: 1024px) 300px, 70vw" className={e.cover ? "rounded-2xl object-cover shadow-[0_18px_40px_-18px_rgba(27,20,13,0.45)]" : "object-contain [mask-image:radial-gradient(closest-side,black_80%,transparent)]"} />
               </div>
-              <h3 className="font-display !py-0 text-3xl font-[460] text-[#1B140D]">
+              <h3 className="font-ui !py-0 font-bold tracking-[-0.02em] text-2xl text-[#1B140D]">
                 {e.href ? (
                   <a href={e.href} className="text-[#1B140D] no-underline after:absolute after:inset-0 hover:text-[#1B140D] hover:no-underline">
                     {e.title}
@@ -99,7 +99,7 @@ export default function Lab() {
                 </div>
               ))}
             </div>
-            <h3 className="font-display !py-0 text-3xl font-[460]">This website</h3>
+            <h3 className="font-ui !py-0 font-bold tracking-[-0.02em] text-2xl">This website</h3>
             <p className="mt-3 text-[#FDF6EC]/75">
               Designed and built with an SI partner — including my 3D self, generated from a single photo. Next.js, Framer
               Motion, and a lot of joy.

@@ -20,6 +20,8 @@ const config: Config = {
       body: ["Inter", "sans-serif"],
       display: ["var(--font-display)", "Georgia", "serif"],
       bungee: ["var(--font-bungee)", "Impact", "sans-serif"],
+      // DM Sans: UI, body and card titles; Bungee owns display.
+      ui: ["var(--font-body)", "system-ui", "sans-serif"],
     },
     extend: {
       backgroundImage: {

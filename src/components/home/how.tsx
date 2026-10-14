@@ -66,7 +66,7 @@ export default function How() {
                     {i + 1}
                   </span>
                   <div className={`transition-all duration-500 ${on ? "opacity-100" : "opacity-35"}`}>
-                    <h3 className="font-display !py-0 text-3xl font-[460] text-[#1B140D] md:text-4xl">{s.title}</h3>
+                    <h3 className="font-ui !py-0 font-bold tracking-[-0.02em] text-2xl text-[#1B140D] md:text-3xl">{s.title}</h3>
                     <p className="mt-3 max-w-md text-lg text-[#1B140D]/75">{s.text}</p>
                   </div>
                 </li>

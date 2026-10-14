@@ -1,132 +1,125 @@
+const EMAIL = "hello@thejoydigi.com";
+
 const PrivacyPolicyComponent = () => {
   return (
-    <div>
-      <div className="mainContainer">
-        <h1>Ruh-Roh Retreat Privacy Policy</h1>
+    <div className="legal-prose">
+      <h1>Privacy Policy</h1>
+      <p>
+        <em>Last updated: October 14, 2026</em>
+      </p>
+      <p>
+        The Joy Digi (&quot;The Joy Digi&quot;, &quot;we&quot;, &quot;us&quot;) is where Long La builds joyful things with code and super intelligence
+        (SI): products, podcasts, books, and experiments. This policy explains what we collect when you visit thejoydigi.com, listen to our shows,
+        or join our email list, and what we do with it. The short version: we collect very little, we never sell it, and you can leave anytime.
+      </p>
 
-        <section>
-          <h2>1. Introduction</h2>
-          <p>
-            Welcome to Ruh-Roh Retreat. This Privacy Policy explains how I
-            collect, use, disclose, and safeguard your information when you
-            visit my website and use my services. By using Ruh-Roh Retreat, you
-            agree to the terms of this Privacy Policy. If you do not agree with
-            the terms, please do not access my services.
-          </p>
-        </section>
+      <h2>1. What we collect</h2>
+      <h3>Information you give us</h3>
+      <ul>
+        <li>
+          <strong>Email list:</strong> when you sign up for The Joy Digi list or a show&apos;s updates, we collect your email address, the show(s)
+          you chose, and your first name if you choose to share it.
+        </li>
+        <li>
+          <strong>Messages:</strong> if you email us, we receive your email address and whatever you include in your message.
+        </li>
+      </ul>
+      <h3>Information collected automatically</h3>
+      <ul>
+        <li>
+          <strong>Analytics:</strong> on the live site we use PostHog, Microsoft Clarity, and Google Analytics to understand how pages are used:
+          pages visited, clicks, approximate location (city or country), device and browser type, and referring site. Clarity and PostHog may
+          record anonymized sessions (mouse movement, scrolling, clicks) to help us find confusing or broken parts of the site.
+        </li>
+        <li>
+          <strong>Listening progress:</strong> the podcast player remembers where you stopped in an episode. This is saved only in your
+          browser&apos;s local storage and is never sent to us.
+        </li>
+        <li>
+          <strong>Cookies and similar tools:</strong> our analytics providers set cookies or local storage entries to recognize returning
+          visitors. We do not use advertising cookies.
+        </li>
+      </ul>
 
-        <section>
-          <h2>2. Information I Collect</h2>
-          <h3>2.1 Personal Information</h3>
-          <p>
-            I may collect personal information that you voluntarily provide to
-            me when you register an account, use my services, or contact me.
-            This may include your name, email address, phone number, and other
-            contact details.
-          </p>
+      <h2>2. How we use it</h2>
+      <ul>
+        <li>To send you the emails you asked for: welcome notes, new episodes and chapters, and news about new shows and books.</li>
+        <li>To reply when you write to us.</li>
+        <li>To understand what people enjoy and fix what isn&apos;t working on the site.</li>
+        <li>To keep the site secure and prevent abuse.</li>
+      </ul>
+      <p>We do not sell or rent your personal information, and we do not use it for third-party advertising.</p>
 
-          <h3>2.2 Non-Personal Information</h3>
-          <p>
-            I may collect non-personal information about you automatically when
-            you interact with my website. This information may include your IP
-            address, browser type, device type, and usage data.
-          </p>
-        </section>
+      <h2>3. Who we share it with</h2>
+      <p>We share information only with the service providers that help us run The Joy Digi, and only for that purpose:</p>
+      <ul>
+        <li>
+          <strong>Resend</strong> stores our email list and delivers our emails.
+        </li>
+        <li>
+          <strong>PostHog, Microsoft Clarity, and Google Analytics</strong> provide site analytics.
+        </li>
+        <li>
+          <strong>Vercel</strong> hosts the website and processes standard server logs.
+        </li>
+      </ul>
+      <p>
+        Podcast platforms such as Spotify, Apple Podcasts, and YouTube, and stores such as Amazon, have their own privacy policies that apply
+        when you use them. We may also disclose information if the law requires it.
+      </p>
 
-        <section>
-          <h2>3. How I Use Your Information</h2>
-          <p>
-            I may use the information I collect for various purposes, including:
-          </p>
-          <ul>
-            <li>Providing and maintaining my services</li>
-            <li>Improving and personalizing your experience</li>
-            <li>Communicating with you about updates, promotions, and news</li>
-            <li>Responding to your inquiries and providing customer support</li>
-            <li>Monitoring and analyzing usage patterns and trends</li>
-            <li>Ensuring the security and integrity of my services</li>
-          </ul>
-        </section>
+      <h2>4. Your choices</h2>
+      <ul>
+        <li>
+          <strong>Unsubscribe:</strong> every email has an unsubscribe link, or you can email <a href={`mailto:${EMAIL}`}>{EMAIL}</a>.
+        </li>
+        <li>
+          <strong>Opt out of analytics:</strong> visit any page with <code>?notrack=1</code> added to the address (for example{" "}
+          {/* Full page load on purpose: analytics reads ?notrack only on startup. */}
+          {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
+          <a href="/?notrack=1">thejoydigi.com/?notrack=1</a>) to stop PostHog tracking in that browser. You can also block cookies in your
+          browser settings or use a tracking blocker.
+        </li>
+        <li>
+          <strong>Access or delete your data:</strong> email us and we will tell you what we hold about you, correct it, or delete it.
+        </li>
+      </ul>
 
-        <section>
-          <h2>4. How I Share Your Information</h2>
-          <p>I may share your information in the following circumstances:</p>
-          <ul>
-            <li>
-              <strong>With Service Providers:</strong> I may share your
-              information with third-party service providers who perform
-              services on my behalf.
-            </li>
-            <li>
-              <strong>For Legal Reasons:</strong> I may disclose your
-              information if required to do so by law or in response to valid
-              requests by public authorities.
-            </li>
-            <li>
-              <strong>Business Transfers:</strong> In the event of a merger,
-              acquisition, or sale of all or a portion of my assets, your
-              information may be transferred to the new owners.
-            </li>
-            <li>
-              <strong>With Your Consent:</strong> I may share your information
-              with third parties if you have given me your consent to do so.
-            </li>
-          </ul>
-        </section>
+      <h2>5. California residents</h2>
+      <p>
+        If you live in California, you have the right to know what personal information we collect, to ask us to delete it, to correct it, and
+        not to be discriminated against for using these rights. We do not sell or share personal information for cross-context behavioral
+        advertising. To make a request, email <a href={`mailto:${EMAIL}`}>{EMAIL}</a>.
+      </p>
 
-        <section>
-          <h2>5. Security of Your Information</h2>
-          <p>
-            I take reasonable measures to protect your information from
-            unauthorized access, use, or disclosure. However, no method of
-            transmission over the internet or electronic storage is completely
-            secure, and I cannot guarantee absolute security.
-          </p>
-        </section>
+      <h2>6. How long we keep it</h2>
+      <p>
+        We keep your email address until you unsubscribe or ask us to delete it. Analytics data is kept according to each provider&apos;s
+        retention settings. Messages you send us are kept as long as needed to respond and follow up.
+      </p>
 
-        <section>
-          <h2>6. Your Choices</h2>
-          <p>
-            You have the right to access, update, or delete your personal
-            information. You can do this by logging into your account or
-            contacting me at
-            <a href="mailto:hello@thejoydigi.com">hello@thejoydigi.com</a>. You
-            may also opt out of receiving promotional communications from me by
-            following the unsubscribe instructions provided in those emails.
-          </p>
-        </section>
+      <h2>7. Security</h2>
+      <p>
+        We use reputable providers and reasonable safeguards to protect your information, but no method of storage or transmission over the
+        internet is completely secure.
+      </p>
 
-        <section>
-          <h2>7. Children&apos;s Privacy</h2>
-          <p>
-            My services are not intended for use by children under the age of
-            13. I do not knowingly collect personal information from children
-            under 13. If I become aware that I have collected personal
-            information from a child under 13, I will take steps to delete such
-            information.
-          </p>
-        </section>
+      <h2>8. Children</h2>
+      <p>
+        The Joy Digi is not directed to children under 13, and we do not knowingly collect personal information from them. If you believe a
+        child has given us their information, email us and we will delete it.
+      </p>
 
-        <section>
-          <h2>8. Changes to This Privacy Policy</h2>
-          <p>
-            I may update this Privacy Policy from time to time. I will notify
-            you of any changes by posting the new Privacy Policy on my website.
-            You are advised to review this Privacy Policy periodically for any
-            changes. Your continued use of my services after any changes
-            signifies your acceptance of the updated Privacy Policy.
-          </p>
-        </section>
+      <h2>9. Changes to this policy</h2>
+      <p>
+        We may update this policy from time to time. When we do, we will change the date at the top of this page. If a change is significant,
+        we will let email subscribers know.
+      </p>
 
-        <section>
-          <h2>9. Contact Us</h2>
-          <p>
-            If you have any questions about this Privacy Policy, please contact
-            me at
-            <a href="mailto:hello@thejoydigi.com">hello@thejoydigi.com</a>.
-          </p>
-        </section>
-      </div>
+      <h2>10. Contact</h2>
+      <p>
+        Questions about this policy or your information? Email <a href={`mailto:${EMAIL}`}>{EMAIL}</a>.
+      </p>
     </div>
   );
 };

@@ -76,7 +76,7 @@ const QRganizCaseStudy: NextPage = () => {
         <div className="grid gap-6 md:grid-cols-2">
           <Reveal>
             <Card>
-              <h3 className="font-display !py-0 mb-4 text-2xl font-[460]">Mobile App Development</h3>
+              <h3 className="font-ui !py-0 font-bold tracking-[-0.02em] mb-4 text-xl">Mobile App Development</h3>
               <StarList
                 color="#4ABEFF"
                 items={[
@@ -90,7 +90,7 @@ const QRganizCaseStudy: NextPage = () => {
           </Reveal>
           <Reveal delay={0.08}>
             <Card>
-              <h3 className="font-display !py-0 mb-4 text-2xl font-[460]">Backend Infrastructure</h3>
+              <h3 className="font-ui !py-0 font-bold tracking-[-0.02em] mb-4 text-xl">Backend Infrastructure</h3>
               <StarList
                 color="#FFC94A"
                 items={[
@@ -109,7 +109,7 @@ const QRganizCaseStudy: NextPage = () => {
         <dl className="grid gap-8 border-t border-[#FDF6EC]/15 pt-10 md:grid-cols-3">
           {glance.map((g) => (
             <Reveal key={g.big}>
-              <dt className="font-display text-5xl md:text-6xl text-[#FFC94A]">{g.big}</dt>
+              <dt className="joy-accent-night font-bungee text-4xl md:text-5xl">{g.big}</dt>
               <dd className="mt-2 text-[#FDF6EC]/70">{g.small}</dd>
             </Reveal>
           ))}

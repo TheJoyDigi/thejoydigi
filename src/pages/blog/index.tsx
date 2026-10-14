@@ -54,7 +54,7 @@ export default function BlogIndex({ posts }: BlogIndexProps) {
                   <div className="mb-2 text-xs font-bold uppercase tracking-[0.2em] text-[#6B5D4F]">
                     {featured.date}
                   </div>
-                  <h2 className="font-display !py-0 mb-3 text-3xl font-[460] text-[#1B140D] md:text-4xl">
+                  <h2 className="font-ui !py-0 font-bold tracking-[-0.02em] mb-3 text-3xl text-[#1B140D] md:text-4xl">
                     {featured.title}
                   </h2>
                   <p className="text-[#1B140D]/75">{featured.excerpt}</p>
@@ -75,7 +75,7 @@ export default function BlogIndex({ posts }: BlogIndexProps) {
           ) : (
             <Reveal>
               <div className="mx-auto max-w-2xl rounded-[2rem] border-2 border-dashed border-[#1B140D]/25 bg-white/60 px-8 py-16 text-center">
-                <p className="font-display text-3xl md:text-4xl text-[#1B140D]">The first notes are brewing.</p>
+                <p className="font-bungee text-2xl md:text-3xl text-[#1B140D]">The first notes are <span className="joy-accent">brewing.</span></p>
                 <p className="mt-4 text-[#1B140D]/70">
                   In the meantime, see what I&apos;m building in the{" "}
                   <Link href="/#lab" className="font-semibold text-[#8F6300] underline-offset-4 hover:underline">

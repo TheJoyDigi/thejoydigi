@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { OpArtField } from "../landing-art/op-art";
+import { NightAurora } from "../landing-art/shaders";
 import { GOLD_DEEP, INK, RevealWords, SectionKicker, SUN } from "../landing-art/primitives";
 
 export { SectionKicker as Kicker };
@@ -216,8 +217,13 @@ export function Section({
 }) {
   const ink = tone === "ink";
   return (
-    <section id={id} className={`relative py-20 md:py-24 ${TONES[tone]} ${className}`}>
-      <div className="container mx-auto px-4">
+    <section id={id} className={`relative overflow-hidden py-20 md:py-24 ${TONES[tone]} ${className}`}>
+      {ink && (
+        <div aria-hidden className="pointer-events-none absolute inset-0">
+          <NightAurora intensity={0.9} />
+        </div>
+      )}
+      <div className="container relative mx-auto px-4">
         {(kicker || title) && (
           <div className={`mb-12 md:mb-16 ${center ? "mx-auto max-w-3xl text-center" : "max-w-3xl"}`}>
             {kicker && <SectionKicker color={ink ? SUN : GOLD_DEEP}>{kicker}</SectionKicker>}
@@ -301,14 +307,14 @@ export function Steps({ steps }: { steps: { title: string; description: string }
     <ol className="relative grid gap-6 md:grid-cols-2 lg:grid-cols-3">
       {steps.map((step, i) => (
         <Reveal key={step.title} delay={i * 0.06}>
-          <li className="relative h-full rounded-[2rem] border-2 border-[#1B140D]/10 bg-white p-7 transition-colors duration-300 hover:border-[#1B140D]">
+          <li className="card-joy relative h-full rounded-[2rem] border-2 border-[#1B140D]/10 bg-white p-7">
             <span
-              className="font-display block text-6xl font-semibold leading-none"
-              style={{ color: SUN, WebkitTextStroke: `1.5px ${INK}` }}
+              className="font-bungee block text-5xl leading-none"
+              style={{ color: SUN, WebkitTextStroke: `2px ${INK}`, paintOrder: "stroke fill", textShadow: `0.06em 0.06em 0 ${INK}` }}
             >
               {String(i + 1).padStart(2, "0")}
             </span>
-            <h3 className="font-display !py-0 mt-5 mb-2 text-2xl font-[460] text-[#1B140D]">{step.title}</h3>
+            <h3 className="font-ui !py-0 font-bold tracking-[-0.02em] mt-5 mb-2 text-xl text-[#1B140D]">{step.title}</h3>
             <p className="text-[#1B140D]/75">{step.description}</p>
           </li>
         </Reveal>
@@ -331,24 +337,29 @@ export function CtaBand({
       <div className="container mx-auto px-4">
         <Reveal>
           <div className="relative overflow-hidden rounded-[2.5rem] bg-[#0B0B0C] px-7 py-14 md:px-16 md:py-20 text-[#FDF6EC]">
-            <div aria-hidden className="pointer-events-none absolute -right-24 -top-24 h-96 w-96 rounded-full bg-[radial-gradient(closest-side,rgba(255,201,74,0.3),transparent)]" />
+            <div aria-hidden className="pointer-events-none absolute inset-0">
+              <NightAurora intensity={1.1} />
+            </div>
+            <div aria-hidden className="pointer-events-none absolute -right-36 -top-40 hidden h-[24rem] w-[24rem] opacity-70 [mask-image:radial-gradient(circle_at_70%_30%,black_35%,transparent_68%)] md:block">
+              <OpArtField feather rim={false} rings={12} speed={0.25} />
+            </div>
             <div className="relative grid items-end gap-8 lg:grid-cols-[1.4fr_1fr]">
               <div>
-                <p className="font-display text-4xl md:text-6xl leading-[1] tracking-[-0.03em]">
-                  {title} <em className="text-[#FFC94A]">{accent}</em>
+                <p className="font-bungee text-[2rem] leading-[1.06] md:text-5xl">
+                  {title} <span className="joy-accent-night">{accent}</span>
                 </p>
                 <p className="mt-5 max-w-xl text-lg text-[#FDF6EC]/75">{lead}</p>
               </div>
-              <div className="flex flex-col gap-3 sm:flex-row lg:justify-end">
+              <div className="relative z-10 flex flex-col gap-3 sm:flex-row lg:justify-end">
                 <a
                   href="mailto:hello@thejoydigi.com"
-                  className="group inline-flex items-center justify-center gap-3 rounded-full bg-[#FFC94A] px-7 py-4 font-semibold text-[#0B0B0C] transition-colors hover:bg-[#FFD86B] no-underline hover:no-underline"
+                  className="btn-joy group inline-flex items-center justify-center gap-3 rounded-full bg-[#FFC94A] px-7 py-4 font-semibold text-[#0B0B0C] hover:bg-[#FFD86B] no-underline hover:no-underline"
                 >
                   Say hello <span aria-hidden className="transition-transform group-hover:translate-x-1">→</span>
                 </a>
                 <Link
                   href="/#work"
-                  className="inline-flex items-center justify-center rounded-full border border-[#FDF6EC]/30 px-7 py-4 font-semibold text-[#FDF6EC] transition-colors hover:border-[#FDF6EC] no-underline hover:no-underline"
+                  className="inline-flex items-center justify-center rounded-full border border-[#FDF6EC]/30 bg-[#0B0B0C]/70 px-7 py-4 backdrop-blur font-semibold text-[#FDF6EC] transition-colors hover:border-[#FDF6EC] hover:bg-[#FDF6EC]/10 no-underline hover:no-underline"
                 >
                   See more work
                 </Link>

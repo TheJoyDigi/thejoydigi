@@ -62,7 +62,7 @@ export default function Hello() {
             <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#6B5D4F]">Say hi — I read everything</p>
             <a
               href={`mailto:${EMAIL}`}
-              className="group mt-3 inline-flex items-center gap-4 font-display text-3xl text-[#1B140D] no-underline hover:no-underline md:text-5xl"
+              className="group mt-3 inline-flex items-center gap-4 font-ui text-2xl font-bold tracking-[-0.02em] text-[#1B140D] underline decoration-[#FFC94A] decoration-[6px] underline-offset-[10px] transition-[text-decoration-color] hover:decoration-[#FF2E88] md:text-4xl"
             >
               <span className="bg-[linear-gradient(#FFC94A,#FFC94A)] bg-[length:0%_3px] bg-left-bottom bg-no-repeat pb-1 transition-[background-size] duration-500 group-hover:bg-[length:100%_3px]">
                 {EMAIL}
