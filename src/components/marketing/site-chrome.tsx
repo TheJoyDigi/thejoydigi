@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import React, { useState } from "react";
 import { CREAM } from "../landing-art/primitives";
+import { NightAurora } from "../landing-art/shaders";
 import { fontVars } from "./fonts";
 
 export const EMAIL = "hello@thejoydigi.com";
@@ -134,11 +135,15 @@ const FOOTER_COLUMNS = [
 export function SiteFooter() {
   return (
     <footer className="relative overflow-hidden bg-[#0B0B0C] text-[#FDF6EC]">
-      <div className="container mx-auto px-4 pt-20 pb-10">
+      <div aria-hidden className="pointer-events-none absolute inset-0 opacity-80">
+        <NightAurora intensity={0.8} />
+        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(11,11,12,0.2),rgba(11,11,12,0.85)_70%)]" />
+      </div>
+      <div className="container relative mx-auto px-4 pt-20 pb-10">
         <div className="grid gap-12 lg:grid-cols-[1.2fr_2fr]">
           <div>
             <Link href="/" className="-ml-3 mb-8 inline-flex no-underline hover:no-underline" aria-label="The Joy Digi home">
-              <Image src={LOGO.src} width={LOGO.width} height={LOGO.height} alt="" unoptimized className="h-[96px] w-auto md:h-[112px]" />
+              <Image src={LOGO.src} width={LOGO.width} height={LOGO.height} alt="" unoptimized className="h-[96px] w-auto mix-blend-lighten md:h-[112px]" />
             </Link>
             <p className="font-bungee text-3xl leading-[1.08] md:text-[2.6rem]">
               Let&apos;s make something <span className="joy-accent-night">joyful.</span>

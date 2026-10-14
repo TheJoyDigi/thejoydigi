@@ -1,5 +1,6 @@
 import { useReducedMotion } from "framer-motion";
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
+import { MedallionShader } from "./shaders";
 
 /** Ring hues of the dark P7 medallion, outside in; keep in sync with public/brand/logo-stacked-dark.svg. */
 export const MEDALLION = ["#FF2E88", "#FF7A1A", "#FFC94A", "#3FE04A", "#19B8D6", "#7B3FE4"];
@@ -24,8 +25,8 @@ type Props = {
   className?: string;
 };
 
-/** Live P7 medallion: concentric wavy spectrum bands that swirl; paused off-screen, static for reduced motion. */
-export function OpArtField({ rings = 15, lobes = 9, wobble = 0.045, twist = 0.32, speed = 0.35, size = 0.86, follow = false, rim = true, className = "" }: Props) {
+/** Canvas 2D medallion; the fallback when WebGL2 is unavailable. */
+function OpArtCanvas({ rings = 15, lobes = 9, wobble = 0.045, twist = 0.32, speed = 0.35, size = 0.86, follow = false, rim = true, className = "" }: Props) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const reduce = useReducedMotion();
 
@@ -136,6 +137,12 @@ export function OpArtField({ rings = 15, lobes = 9, wobble = 0.045, twist = 0.32
   }, [rings, lobes, wobble, twist, speed, size, follow, rim, reduce]);
 
   return <canvas ref={canvasRef} aria-hidden className={`block h-full w-full ${className}`} />;
+}
+
+/** Live P7 medallion: a WebGL2 shader (ribbon shading, pointer lens, chromatic split) with a canvas 2D fallback. */
+export function OpArtField(props: Props) {
+  const [fallback, setFallback] = useState(false);
+  return fallback ? <OpArtCanvas {...props} /> : <MedallionShader {...props} onFail={() => setFallback(true)} />;
 }
 
 const BANDS = ["#FF2E88", "#FF7A1A", "#FFC94A", "#3FE04A", "#19B8D6", "#7B3FE4"];

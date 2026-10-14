@@ -4,6 +4,7 @@ import React, { useRef } from "react";
 import type { HomeData } from "@/lib/home";
 import { EMAIL } from "../marketing/site-chrome";
 import { OpArtField } from "../landing-art/op-art";
+import { NightAurora } from "../landing-art/shaders";
 import { RevealWords } from "../landing-art/primitives";
 
 const EASE = [0.22, 1, 0.36, 1] as const;
@@ -121,7 +122,10 @@ function Portrait() {
 export default function Hero({ data }: { data: HomeData }) {
   return (
     <section id="home" className="relative overflow-hidden bg-[#0B0B0C] text-[#FDF6EC]">
-      <div aria-hidden className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_72%_40%,rgba(255,46,136,0.16),transparent_55%),radial-gradient(ellipse_at_10%_90%,rgba(25,184,214,0.12),transparent_50%)]" />
+      <div aria-hidden className="pointer-events-none absolute inset-0">
+        <NightAurora />
+        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(11,11,12,0.78)_0%,rgba(11,11,12,0.35)_50%,transparent_75%)]" />
+      </div>
 
       <div className="container relative mx-auto grid min-h-[calc(100svh-72px)] items-center gap-6 px-4 pt-10 pb-6 lg:grid-cols-[1.05fr_0.95fr] lg:gap-10 lg:py-10">
         <div className="order-2 max-w-2xl lg:order-1">

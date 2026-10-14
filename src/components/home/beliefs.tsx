@@ -1,6 +1,7 @@
 import { motion, useScroll, useTransform, type MotionValue } from "framer-motion";
 import React, { useRef } from "react";
 import { OpArtField } from "../landing-art/op-art";
+import { NightAurora } from "../landing-art/shaders";
 
 const BELIEFS = [
   { text: "The best software feels like a friend.", accent: ["friend."] },
@@ -47,6 +48,9 @@ export default function Beliefs() {
   return (
     <section ref={ref} aria-label="What I believe" className="relative h-[300vh] bg-[#0B0B0C]">
       <div className="sticky top-0 flex h-screen items-center overflow-hidden">
+        <div aria-hidden className="absolute inset-0">
+          <NightAurora intensity={1.3} />
+        </div>
         <div aria-hidden className="absolute left-1/2 top-1/2 aspect-square w-[150vmax] -translate-x-1/2 -translate-y-1/2 opacity-[0.38]">
           <OpArtField rings={26} lobes={11} wobble={0.03} twist={0.22} speed={0.18} rim={false} size={1} />
         </div>
