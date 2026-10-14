@@ -140,26 +140,7 @@ export function useShader(
   ref: React.RefObject<HTMLCanvasElement | null>,
   frag: string,
   uniforms: Uniforms,
-  {
-    maxPixels = 2.2e6,
-    follow = false,
-    hoverRect = false,
-    onFail,
-    intro,
-    textures,
-    startTime,
-  }: {
-    maxPixels?: number;
-    follow?: boolean;
-    /** Lens engages while the cursor is over the canvas box, not just near its centre. */
-    hoverRect?: boolean;
-    onFail?: () => void;
-    intro?: { delay: number; duration: number };
-    /** Sampler name to image, uploaded once at setup. */
-    textures?: Record<string, TexImageSource>;
-    /** Fixed clock start, for shaders whose rest frame must match static art. */
-    startTime?: number;
-  }
+  { maxPixels = 2.2e6, follow = false, onFail, intro }: { maxPixels?: number; follow?: boolean; onFail?: () => void; intro?: { delay: number; duration: number } }
 ) {
   const reduce = useReducedMotion();
   const live = useRef(uniforms);
@@ -201,21 +182,10 @@ export function useShader(
     gl.enable(gl.BLEND);
     gl.blendFunc(gl.ONE, gl.ONE_MINUS_SRC_ALPHA);
     const loc = (n: string) => gl.getUniformLocation(prog, n);
-    Object.entries(textures ?? {}).forEach(([name, img], i) => {
-      gl.activeTexture(gl.TEXTURE0 + i);
-      gl.bindTexture(gl.TEXTURE_2D, gl.createTexture());
-      gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL, true);
-      gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, img);
-      gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR);
-      gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR);
-      gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE);
-      gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
-      gl.uniform1i(loc(name), i);
-    });
 
     let raf = 0;
     let visible = true;
-    let t = startTime ?? Math.random() * 20;
+    let t = Math.random() * 20;
     let last = performance.now();
     let dpr = 1;
     const mouse = { x: 0, y: 0, tx: 0, ty: 0, lens: 0, tlens: 0 };
@@ -292,11 +262,7 @@ export function useShader(
       const m = Math.min(r.width, r.height) * 0.5 * size;
       mouse.tx = (e.clientX - (r.left + r.width / 2)) / m;
       mouse.ty = -(e.clientY - (r.top + r.height / 2)) / m;
-      mouse.tlens = hoverRect
-        ? Number(e.clientX >= r.left && e.clientX <= r.right && e.clientY >= r.top && e.clientY <= r.bottom)
-        : Math.hypot(mouse.tx, mouse.ty) < 1.3
-          ? 1
-          : 0;
+      mouse.tlens = Math.hypot(mouse.tx, mouse.ty) < 1.3 ? 1 : 0;
     };
     const onLeave = () => {
       mouse.tlens = 0;
@@ -317,7 +283,7 @@ export function useShader(
       gl.getExtension("WEBGL_lose_context")?.loseContext();
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [frag, reduce, follow, hoverRect, maxPixels, intro?.delay, intro?.duration]);
+  }, [frag, reduce, follow, maxPixels, intro?.delay, intro?.duration]);
 }
 
 export function MedallionShader({
