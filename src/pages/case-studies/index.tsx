@@ -49,14 +49,14 @@ const CaseStudies: NextPage = () => {
                   />
                 </div>
                 <div className="p-7 md:p-8">
-                  <h2 className="font-display !py-0 text-2xl font-[460] text-[#003B49]">{s.name}</h2>
-                  <p className="mt-3 text-[#003B49]/75">{s.summary}</p>
+                  <h2 className="font-display !py-0 text-2xl font-[460] text-[#1B140D]">{s.name}</h2>
+                  <p className="mt-3 text-[#1B140D]/75">{s.summary}</p>
                   <div className="mt-5 flex flex-wrap gap-2">
                     {s.pills.map((p) => (
                       <Pill key={p}>{p}</Pill>
                     ))}
                   </div>
-                  <p className="mt-6 font-semibold text-[#003B49] transition-transform duration-300 group-hover:translate-x-1">
+                  <p className="mt-6 font-semibold text-[#1B140D] transition-transform duration-300 group-hover:translate-x-1">
                     View case study →
                   </p>
                 </div>

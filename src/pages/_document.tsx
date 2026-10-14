@@ -5,7 +5,7 @@ export default function Document() {
     <Html lang="en">
       <Head>
         {/* Essential Document Meta Tags */}
-        <meta name="theme-color" content="#f9f5eb" />
+        <meta name="theme-color" content="#0B0B0C" />
         <meta name="format-detection" content="telephone=no" />
         <meta name="text-size-adjust" content="100%" />
         <link rel="icon" href="/favicon.ico" sizes="32x32" />

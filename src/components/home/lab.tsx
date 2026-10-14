@@ -34,12 +34,12 @@ export default function Lab() {
       <div className="container mx-auto px-4">
         <div className="mb-14 grid gap-6 md:mb-16 md:grid-cols-2 md:items-end">
           <div>
-            <SectionKicker color="#2FBF8F">The Lab</SectionKicker>
-            <h2 className="font-display !py-0 mt-4 text-5xl font-[460] leading-[0.98] tracking-[-0.03em] text-[#003B49] md:text-7xl">
-              <RevealWords text="Experiments at the" /> <RevealWords text="edge." delay={0.15} wordClassName="italic text-[#2FBF8F]" />
+            <SectionKicker>The Lab</SectionKicker>
+            <h2 className="font-display !py-0 mt-4 text-5xl font-[460] leading-[0.98] tracking-[-0.03em] text-[#1B140D] md:text-7xl">
+              <RevealWords text="Experiments at the" /> <RevealWords text="edge." delay={0.15} wordClassName="italic text-[#8F6300]" />
             </h2>
           </div>
-          <p className="max-w-md text-lg text-[#003B49]/70 md:justify-self-end">
+          <p className="max-w-md text-lg text-[#1B140D]/70 md:justify-self-end">
             Not everything here is finished. That&apos;s the point — the lab is where I poke at what SI makes newly possible.
           </p>
         </div>
@@ -52,25 +52,25 @@ export default function Lab() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-60px 0px" }}
               transition={{ duration: 0.7, ease: EASE, delay: i * 0.1 }}
-              className={`group relative flex flex-col overflow-hidden rounded-[2rem] border border-[#003B49]/10 bg-gradient-to-b ${e.tint} p-7`}
+              className={`group relative flex flex-col overflow-hidden rounded-[2rem] border border-[#1B140D]/10 bg-gradient-to-b ${e.tint} p-7`}
             >
-              <span className="inline-flex w-fit items-center gap-2 rounded-full border border-[#003B49]/10 bg-white/80 px-3 py-1 text-xs font-bold uppercase tracking-[0.15em] text-[#003B49]/70">
+              <span className="inline-flex w-fit items-center gap-2 rounded-full border border-[#1B140D]/10 bg-white/80 px-3 py-1 text-xs font-bold uppercase tracking-[0.15em] text-[#1B140D]/70">
                 <span className="h-2 w-2 rounded-full" style={{ background: e.statusColor }} />
                 {e.status}
               </span>
               <div className="relative mx-auto my-4 aspect-square w-[78%] transition-transform duration-500 ease-out group-hover:-translate-y-2 group-hover:rotate-[-2deg]">
-                <Image src={e.img} alt="" fill sizes="(min-width: 1024px) 300px, 70vw" className={e.cover ? "rounded-2xl object-cover shadow-[0_18px_40px_-18px_rgba(0,59,73,0.45)]" : "object-contain [mask-image:radial-gradient(closest-side,black_80%,transparent)]"} />
+                <Image src={e.img} alt="" fill sizes="(min-width: 1024px) 300px, 70vw" className={e.cover ? "rounded-2xl object-cover shadow-[0_18px_40px_-18px_rgba(27,20,13,0.45)]" : "object-contain [mask-image:radial-gradient(closest-side,black_80%,transparent)]"} />
               </div>
-              <h3 className="font-display !py-0 text-3xl font-[460] text-[#003B49]">
+              <h3 className="font-display !py-0 text-3xl font-[460] text-[#1B140D]">
                 {e.href ? (
-                  <a href={e.href} className="text-[#003B49] no-underline after:absolute after:inset-0 hover:text-[#003B49] hover:no-underline">
+                  <a href={e.href} className="text-[#1B140D] no-underline after:absolute after:inset-0 hover:text-[#1B140D] hover:no-underline">
                     {e.title}
                   </a>
                 ) : (
                   e.title
                 )}
               </h3>
-              <p className="mt-3 text-[#003B49]/75">{e.text}</p>
+              <p className="mt-3 text-[#1B140D]/75">{e.text}</p>
             </motion.article>
           ))}
 
@@ -79,7 +79,7 @@ export default function Lab() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-60px 0px" }}
             transition={{ duration: 0.7, ease: EASE, delay: 0.2 }}
-            className="group relative flex flex-col overflow-hidden rounded-[2rem] bg-[#003B49] p-7 text-[#FDF6EC]"
+            className="group relative flex flex-col overflow-hidden rounded-[2rem] bg-[#0B0B0C] p-7 text-[#FDF6EC]"
           >
             <span className="inline-flex w-fit items-center gap-2 rounded-full border border-[#FDF6EC]/20 px-3 py-1 text-xs font-bold uppercase tracking-[0.15em] text-[#FDF6EC]/80">
               <span className="h-2 w-2 rounded-full bg-[#7EE0C3]" />

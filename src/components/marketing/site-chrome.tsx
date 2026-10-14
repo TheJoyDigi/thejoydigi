@@ -1,8 +1,9 @@
 import { AnimatePresence, motion } from "framer-motion";
+import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import React, { useState } from "react";
-import { CORAL, INK } from "../landing-art/primitives";
+import { CREAM } from "../landing-art/primitives";
 import { fontVars } from "./fonts";
 
 export const EMAIL = "hello@thejoydigi.com";
@@ -14,15 +15,13 @@ const NAV = [
   { href: "/#about", label: "About" },
 ];
 
+/** P7 horizontal lockup; its baked #0B0B0C ground melts into the dark header and footer. */
+const LOGO = { src: "/brand/logo-horizontal-dark.svg", width: 2400, height: 879 };
+
 function Logo() {
   return (
-    <Link href="/" className="group inline-flex items-center gap-2 no-underline hover:no-underline" aria-label="The Joy Digi home">
-      <svg viewBox="-10 -10 20 20" className="h-5 w-5 transition-transform duration-500 group-hover:rotate-90" aria-hidden>
-        <path d="M0,-10 Q0,0 10,0 Q0,0 0,10 Q0,0 -10,0 Q0,0 0,-10Z" fill={CORAL} />
-      </svg>
-      <span className="font-display text-[1.45rem] font-[520] tracking-[-0.02em] text-[#003B49]">
-        The Joy Digi
-      </span>
+    <Link href="/" className="-ml-2 inline-flex shrink-0 no-underline hover:no-underline" aria-label="The Joy Digi home">
+      <Image src={LOGO.src} width={LOGO.width} height={LOGO.height} alt="" priority unoptimized className="h-[62px] w-auto" />
     </Link>
   );
 }
@@ -34,7 +33,7 @@ export function SiteHeader() {
     href === "/#work" ? pathname.startsWith("/case-studies") : !href.includes("#") && pathname.startsWith(href);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-[#003B49]/10 bg-[#FDF6EC]/85 backdrop-blur-md">
+    <header className="sticky top-0 z-50 bg-[#0B0B0C]">
       <div className="container mx-auto flex h-[72px] items-center justify-between px-4">
         <Logo />
         <nav className="hidden items-center gap-8 md:flex" aria-label="Main">
@@ -42,8 +41,8 @@ export function SiteHeader() {
             <Link
               key={item.href}
               href={item.href}
-              className={`relative text-[15px] font-medium no-underline hover:no-underline transition-colors after:absolute after:-bottom-1 after:left-0 after:h-[2px] after:bg-[#FF6B6B] after:transition-all after:duration-300 hover:text-[#003B49] ${
-                isActive(item.href) ? "text-[#003B49] after:w-full" : "text-[#003B49]/70 after:w-0 hover:after:w-full"
+              className={`relative text-[15px] font-medium no-underline hover:no-underline transition-colors after:absolute after:-bottom-1 after:left-0 after:h-[2px] after:bg-[#FFC94A] after:transition-all after:duration-300 hover:text-[#FDF6EC] ${
+                isActive(item.href) ? "text-[#FDF6EC] after:w-full" : "text-[#FDF6EC]/75 after:w-0 hover:after:w-full"
               }`}
             >
               {item.label}
@@ -51,18 +50,18 @@ export function SiteHeader() {
           ))}
           <a
             href={`mailto:${EMAIL}`}
-            className="rounded-full bg-[#003B49] px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-[#0B5566] no-underline hover:no-underline"
+            className="rounded-full bg-[#FFC94A] px-5 py-2.5 text-sm font-semibold text-[#0B0B0C] transition-colors hover:bg-[#FFD86B] no-underline hover:no-underline"
           >
             Say hi 👋
           </a>
         </nav>
         <button
           onClick={() => setOpen((v) => !v)}
-          className="grid h-10 w-10 place-items-center rounded-full border border-[#003B49]/15 md:hidden"
+          className="grid h-10 w-10 place-items-center rounded-full border border-[#FDF6EC]/20 md:hidden"
           aria-label={open ? "Close menu" : "Open menu"}
           aria-expanded={open}
         >
-          <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke={INK} strokeWidth={2} strokeLinecap="round" aria-hidden>
+          <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke={CREAM} strokeWidth={2} strokeLinecap="round" aria-hidden>
             {open ? <path d="M6 6l12 12M18 6L6 18" /> : <path d="M4 8h16M4 16h16" />}
           </svg>
         </button>
@@ -74,7 +73,7 @@ export function SiteHeader() {
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-            className="overflow-hidden border-t border-[#003B49]/10 md:hidden"
+            className="overflow-hidden border-t border-[#FDF6EC]/10 md:hidden"
             aria-label="Mobile"
           >
             <div className="container mx-auto flex flex-col px-4 py-3">
@@ -83,7 +82,9 @@ export function SiteHeader() {
                   key={item.href}
                   href={item.href}
                   onClick={() => setOpen(false)}
-                  className="border-b border-[#003B49]/5 py-3 font-display text-2xl text-[#003B49] no-underline hover:no-underline"
+                  className={`border-b border-[#FDF6EC]/10 py-3 font-display text-2xl no-underline hover:no-underline ${
+                    isActive(item.href) ? "text-[#FFC94A]" : "text-[#FDF6EC]"
+                  }`}
                 >
                   {item.label}
                 </Link>
@@ -91,7 +92,7 @@ export function SiteHeader() {
               <a
                 href={`mailto:${EMAIL}`}
                 onClick={() => setOpen(false)}
-                className="mt-4 mb-2 rounded-full bg-[#003B49] py-3.5 text-center font-semibold text-white no-underline hover:no-underline"
+                className="mt-4 mb-2 rounded-full bg-[#FFC94A] py-3.5 text-center font-semibold text-[#0B0B0C] no-underline hover:no-underline"
               >
                 Say hi 👋
               </a>
@@ -99,6 +100,7 @@ export function SiteHeader() {
           </motion.nav>
         )}
       </AnimatePresence>
+      <div aria-hidden className="h-[3px] bg-spectrum" />
     </header>
   );
 }
@@ -131,10 +133,13 @@ const FOOTER_COLUMNS = [
 
 export function SiteFooter() {
   return (
-    <footer className="relative overflow-hidden bg-[#003B49] text-[#FDF6EC]">
+    <footer className="relative overflow-hidden bg-[#0B0B0C] text-[#FDF6EC]">
       <div className="container mx-auto px-4 pt-20 pb-10">
         <div className="grid gap-12 lg:grid-cols-[1.2fr_2fr]">
           <div>
+            <Link href="/" className="-ml-3 mb-8 inline-flex no-underline hover:no-underline" aria-label="The Joy Digi home">
+              <Image src={LOGO.src} width={LOGO.width} height={LOGO.height} alt="" unoptimized className="h-[96px] w-auto md:h-[112px]" />
+            </Link>
             <p className="font-display text-4xl md:text-5xl leading-[1.02] tracking-[-0.02em]">
               Let&apos;s make something <em className="text-[#FFC94A]">joyful.</em>
             </p>
@@ -143,7 +148,7 @@ export function SiteFooter() {
             </p>
             <a
               href={`mailto:${EMAIL}`}
-              className="mt-8 inline-flex items-center gap-3 rounded-full bg-[#FDF6EC] px-6 py-3.5 font-semibold text-[#003B49] transition-colors hover:bg-white no-underline hover:no-underline"
+              className="mt-8 inline-flex items-center gap-3 rounded-full bg-[#FFC94A] px-6 py-3.5 font-semibold text-[#0B0B0C] transition-colors hover:bg-[#FFD86B] no-underline hover:no-underline"
             >
               Say hello <span aria-hidden>→</span>
             </a>
@@ -168,8 +173,8 @@ export function SiteFooter() {
         <div className="mt-16 flex flex-col gap-3 border-t border-[#FDF6EC]/15 pt-6 text-sm text-[#FDF6EC]/55 sm:flex-row sm:items-center sm:justify-between">
           <p>© {new Date().getFullYear()} The Joy Digi. All rights reserved.</p>
           <div className="flex gap-6">
-            <Link href="/privacy-policy" className="hover:text-[#FDF6EC] no-underline hover:no-underline">Privacy</Link>
-            <Link href="/terms-of-use" className="hover:text-[#FDF6EC] no-underline hover:no-underline">Terms</Link>
+            <Link href="/privacy-policy" className="hover:text-[#FFC94A] no-underline hover:no-underline">Privacy</Link>
+            <Link href="/terms-of-use" className="hover:text-[#FFC94A] no-underline hover:no-underline">Terms</Link>
           </div>
         </div>
       </div>
@@ -180,7 +185,7 @@ export function SiteFooter() {
 /** Applies brand fonts and page chrome; shared by MainLayout and BlogLayout. */
 export function SiteFrame({ children }: { children: React.ReactNode }) {
   return (
-    <div className={`${fontVars} min-h-screen bg-[#FDF6EC] text-[#003B49] [font-family:var(--font-body),system-ui,sans-serif]`}>
+    <div className={`${fontVars} min-h-screen bg-[#FDF6EC] text-[#1B140D] [font-family:var(--font-body),system-ui,sans-serif]`}>
       <SiteHeader />
       <main>{children}</main>
       <SiteFooter />

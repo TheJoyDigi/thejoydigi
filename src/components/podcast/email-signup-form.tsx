@@ -13,11 +13,11 @@ const tones = {
   },
   home: {
     input:
-      "w-full rounded-xl border border-white/25 bg-white px-4 py-3 font-medium text-[#003B49] placeholder:text-[#003B49]/45 focus:outline-none focus:ring-2 focus:ring-[#7EE0C3]",
+      "w-full rounded-xl border border-white/25 bg-white px-4 py-3 font-medium text-[#1B140D] placeholder:text-[#6B5D4F] focus:outline-none focus:ring-2 focus:ring-[#FFC94A]",
     button:
-      "rounded-xl bg-[#FFC94A] px-6 py-3 font-bold text-[#003B49] transition-transform hover:-translate-y-0.5 disabled:opacity-60",
+      "rounded-xl bg-[#FFC94A] px-6 py-3 font-bold text-[#0B0B0C] transition-transform hover:-translate-y-0.5 disabled:opacity-60",
     success:
-      "rounded-xl border border-[#7EE0C3]/50 bg-[#7EE0C3]/15 p-5 text-center text-lg font-semibold text-[#FDF6EC]",
+      "rounded-xl border border-[#FFC94A]/50 bg-[#FFC94A]/10 p-5 text-center text-lg font-semibold text-[#FDF6EC]",
     error: "text-[#FFD1D1]",
   },
   light: {

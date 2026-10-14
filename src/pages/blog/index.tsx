@@ -35,7 +35,7 @@ export default function BlogIndex({ posts }: BlogIndexProps) {
             <Reveal className="mb-10 md:mb-14">
               <Link
                 href={`/blog/${featured.slug}`}
-                className="group grid gap-0 overflow-hidden rounded-[2rem] border-2 border-[#003B49] bg-white shadow-[6px_6px_0_0_#003B49] transition-[transform,box-shadow] duration-300 ease-out hover:-translate-y-1 hover:shadow-[10px_10px_0_0_#003B49] no-underline hover:no-underline lg:grid-cols-2"
+                className="group grid gap-0 overflow-hidden rounded-[2rem] border-2 border-[#1B140D] bg-white shadow-[6px_6px_0_0_#1B140D] transition-[transform,box-shadow] duration-300 ease-out hover:-translate-y-1 hover:shadow-[10px_10px_0_0_#1B140D] no-underline hover:no-underline lg:grid-cols-2"
               >
                 <div className="relative aspect-[16/10] overflow-hidden lg:aspect-auto">
                   <Image
@@ -46,19 +46,19 @@ export default function BlogIndex({ posts }: BlogIndexProps) {
                     sizes="(min-width: 1024px) 50vw, 100vw"
                     className="object-cover transition-transform duration-300 group-hover:scale-[1.03]"
                   />
-                  <span className="absolute left-4 top-4 inline-flex rounded-full border-2 border-[#003B49] bg-[#FFC94A] px-3 py-1 text-sm font-bold text-[#003B49]">
+                  <span className="absolute left-4 top-4 inline-flex rounded-full border-2 border-[#1B140D] bg-[#FFC94A] px-3 py-1 text-sm font-bold text-[#1B140D]">
                     {featured.category}
                   </span>
                 </div>
                 <div className="flex flex-col justify-center p-8 md:p-10">
-                  <div className="mb-2 text-xs font-bold uppercase tracking-[0.2em] text-[#003B49]/55">
+                  <div className="mb-2 text-xs font-bold uppercase tracking-[0.2em] text-[#6B5D4F]">
                     {featured.date}
                   </div>
-                  <h2 className="font-display !py-0 mb-3 text-3xl font-[460] text-[#003B49] md:text-4xl">
+                  <h2 className="font-display !py-0 mb-3 text-3xl font-[460] text-[#1B140D] md:text-4xl">
                     {featured.title}
                   </h2>
-                  <p className="text-[#003B49]/75">{featured.excerpt}</p>
-                  <span className="mt-5 inline-flex items-center gap-1 font-semibold text-[#FF6B6B]">
+                  <p className="text-[#1B140D]/75">{featured.excerpt}</p>
+                  <span className="mt-5 inline-flex items-center gap-1 font-semibold text-[#8F6300]">
                     Read article <span aria-hidden>→</span>
                   </span>
                 </div>
@@ -74,15 +74,15 @@ export default function BlogIndex({ posts }: BlogIndexProps) {
             </div>
           ) : (
             <Reveal>
-              <div className="mx-auto max-w-2xl rounded-[2rem] border-2 border-dashed border-[#003B49]/25 bg-white/60 px-8 py-16 text-center">
-                <p className="font-display text-3xl md:text-4xl text-[#003B49]">The first notes are brewing.</p>
-                <p className="mt-4 text-[#003B49]/70">
+              <div className="mx-auto max-w-2xl rounded-[2rem] border-2 border-dashed border-[#1B140D]/25 bg-white/60 px-8 py-16 text-center">
+                <p className="font-display text-3xl md:text-4xl text-[#1B140D]">The first notes are brewing.</p>
+                <p className="mt-4 text-[#1B140D]/70">
                   In the meantime, see what I&apos;m building in the{" "}
-                  <Link href="/#lab" className="font-semibold text-[#FF6B6B] underline-offset-4 hover:underline">
+                  <Link href="/#lab" className="font-semibold text-[#8F6300] underline-offset-4 hover:underline">
                     Lab
                   </Link>{" "}
                   or press play on a{" "}
-                  <Link href="/podcasts" className="font-semibold text-[#FF6B6B] underline-offset-4 hover:underline">
+                  <Link href="/podcasts" className="font-semibold text-[#8F6300] underline-offset-4 hover:underline">
                     podcast
                   </Link>
                   .

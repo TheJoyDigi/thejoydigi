@@ -40,23 +40,23 @@ export default function BlogPost({ post, relatedPosts }: BlogPostProps) {
             <Reveal>
               <Link
                 href="/blog"
-                className="mb-6 inline-flex items-center gap-2 text-sm font-semibold text-[#003B49]/60 hover:text-[#003B49] no-underline hover:no-underline"
+                className="mb-6 inline-flex items-center gap-2 text-sm font-semibold text-[#6B5D4F] hover:text-[#1B140D] no-underline hover:no-underline"
               >
                 <span aria-hidden>←</span> All articles
               </Link>
               <div className="mb-4 flex items-center gap-3">
-                <span className="inline-flex rounded-full border-2 border-[#003B49] bg-[#FFC94A] px-3.5 py-1 text-sm font-bold text-[#003B49]">
+                <span className="inline-flex rounded-full border-2 border-[#1B140D] bg-[#FFC94A] px-3.5 py-1 text-sm font-bold text-[#1B140D]">
                   {post.category}
                 </span>
-                <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#003B49]/55">{post.date}</span>
+                <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#6B5D4F]">{post.date}</span>
               </div>
-              <h1 className="font-display !py-0 text-4xl font-[460] tracking-[-0.03em] text-[#003B49] md:text-6xl">
+              <h1 className="font-display !py-0 text-4xl font-[460] tracking-[-0.03em] text-[#1B140D] md:text-6xl">
                 {post.title}
               </h1>
             </Reveal>
 
             <Reveal delay={0.1}>
-              <div className="relative mt-10 aspect-[16/9] overflow-hidden rounded-[2rem] shadow-[0_40px_80px_-30px_rgba(0,59,73,0.45)]">
+              <div className="relative mt-10 aspect-[16/9] overflow-hidden rounded-[2rem] shadow-[0_40px_80px_-30px_rgba(27,20,13,0.45)]">
                 <Image
                   src={post.coverImage}
                   alt={post.title}
@@ -86,7 +86,7 @@ export default function BlogPost({ post, relatedPosts }: BlogPostProps) {
             <div className="container mx-auto px-4">
               <Reveal className="mb-12 max-w-3xl">
                 <Kicker>Keep reading</Kicker>
-                <h2 className="font-display !py-0 mt-4 text-3xl font-[460] text-[#003B49] md:text-4xl">
+                <h2 className="font-display !py-0 mt-4 text-3xl font-[460] text-[#1B140D] md:text-4xl">
                   More {post.category} articles.
                 </h2>
               </Reveal>

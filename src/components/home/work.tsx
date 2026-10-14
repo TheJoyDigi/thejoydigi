@@ -22,12 +22,12 @@ type Project = {
 function BlueSockVisual() {
   return (
     <div className="relative h-full w-full bg-[radial-gradient(ellipse_at_20%_10%,#FFD6E7,transparent_55%),radial-gradient(ellipse_at_90%_90%,#CFE3FF,transparent_55%)] bg-[#FFF3E6] p-[7%]">
-      <div className="relative h-full w-full -rotate-[2deg] overflow-hidden rounded-2xl border border-[#003B49]/10 bg-white shadow-[0_40px_80px_-30px_rgba(0,59,73,0.5)]">
-        <div className="flex items-center gap-1.5 border-b border-[#003B49]/10 bg-[#F6F1E8] px-4 py-2.5">
-          <span className="h-2.5 w-2.5 rounded-full bg-[#FF6B6B]/80" />
+      <div className="relative h-full w-full -rotate-[2deg] overflow-hidden rounded-2xl border border-[#1B140D]/10 bg-white shadow-[0_40px_80px_-30px_rgba(27,20,13,0.5)]">
+        <div className="flex items-center gap-1.5 border-b border-[#1B140D]/10 bg-[#F6F1E8] px-4 py-2.5">
+          <span className="h-2.5 w-2.5 rounded-full bg-[#FF2E88]/80" />
           <span className="h-2.5 w-2.5 rounded-full bg-[#FFC94A]/90" />
-          <span className="h-2.5 w-2.5 rounded-full bg-[#7EE0C3]" />
-          <span className="ml-3 truncate rounded-md bg-white px-3 py-0.5 text-[11px] font-medium text-[#003B49]/55">thebluesock.com</span>
+          <span className="h-2.5 w-2.5 rounded-full bg-[#14A03A]/80" />
+          <span className="ml-3 truncate rounded-md bg-white px-3 py-0.5 text-[11px] font-medium text-[#6B5D4F]">thebluesock.com</span>
         </div>
         <div className="relative h-full">
           <Image src="/case-studies/bluesock-hero.webp" alt="The Blue Sock homepage" fill sizes="(min-width: 1024px) 640px, 92vw" className="object-cover object-top" />
@@ -85,7 +85,7 @@ function OcVisual() {
 function QrVisual() {
   return (
     <div className="relative grid h-full w-full place-items-center bg-[#DDF1FF] bg-[radial-gradient(ellipse_at_20%_80%,rgba(126,224,195,0.5),transparent_55%)] p-[8%]">
-      <div className="relative w-[62%] rotate-[3deg] overflow-hidden rounded-2xl border border-[#003B49]/10 bg-white p-2 shadow-[0_40px_80px_-30px_rgba(0,59,73,0.5)]">
+      <div className="relative w-[62%] rotate-[3deg] overflow-hidden rounded-2xl border border-[#1B140D]/10 bg-white p-2 shadow-[0_40px_80px_-30px_rgba(27,20,13,0.5)]">
         <Image src="/case-studies/qrganiz-hero.webp" alt="QRganiz product and app" width={679} height={679} className="block h-auto w-full rounded-xl" />
       </div>
     </div>
@@ -143,23 +143,23 @@ function Info({ p, index, compact = false }: { p: Project; index: number; compac
   return (
     <div>
       <div className="flex items-baseline gap-4">
-        <span className="font-display text-5xl font-semibold leading-none md:text-7xl" style={{ color: p.accent, WebkitTextStroke: "1.5px #003B49" }}>
+        <span className="font-display text-5xl font-semibold leading-none md:text-7xl" style={{ color: p.accent, WebkitTextStroke: "1.5px #1B140D" }}>
           {String(index + 1).padStart(2, "0")}
         </span>
-        <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#003B49]/55">{p.kind}</span>
+        <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#6B5D4F]">{p.kind}</span>
       </div>
-      <h3 className={`font-display !py-0 mt-4 font-[460] tracking-[-0.03em] text-[#003B49] ${compact ? "text-4xl" : "text-5xl xl:text-6xl"}`}>{p.title}</h3>
-      <p className="mt-4 max-w-md text-lg leading-relaxed text-[#003B49]/75">{p.line}</p>
+      <h3 className={`font-display !py-0 mt-4 font-[460] tracking-[-0.03em] text-[#1B140D] ${compact ? "text-4xl" : "text-5xl xl:text-6xl"}`}>{p.title}</h3>
+      <p className="mt-4 max-w-md text-lg leading-relaxed text-[#1B140D]/75">{p.line}</p>
       <div className="mt-5 flex flex-wrap gap-2">
         {p.tags.map((t) => (
-          <span key={t} className="rounded-full border border-[#003B49]/15 bg-white px-3 py-1 text-sm text-[#003B49]/80">
+          <span key={t} className="rounded-full border border-[#1B140D]/15 bg-white px-3 py-1 text-sm text-[#1B140D]/80">
             {t}
           </span>
         ))}
       </div>
       <Link
         href={p.href}
-        className="group mt-7 inline-flex items-center gap-3 rounded-full bg-[#003B49] px-6 py-3.5 font-semibold text-white transition-colors hover:bg-[#0B5566] no-underline hover:no-underline"
+        className="group mt-7 inline-flex items-center gap-3 rounded-full bg-[#FFC94A] px-6 py-3.5 font-semibold text-[#0B0B0C] transition-colors hover:bg-[#F2B731] no-underline hover:no-underline"
       >
         {p.cta}
         <span aria-hidden className="transition-transform group-hover:translate-x-1">→</span>
@@ -181,7 +181,7 @@ function Panel({ p, index, data, onActive }: { p: Project; index: number; data: 
   return (
     <div ref={ref} id={`work-${p.id}`} className="scroll-mt-24 lg:flex lg:min-h-[88vh] lg:items-center">
       <div className="w-full">
-        <motion.div style={{ scale, rotate }} className="aspect-[4/3] w-full overflow-hidden rounded-[2rem] shadow-[0_50px_100px_-50px_rgba(0,59,73,0.6)] md:rounded-[2.5rem]">
+        <motion.div style={{ scale, rotate }} className="aspect-[4/3] w-full overflow-hidden rounded-[2rem] shadow-[0_50px_100px_-50px_rgba(27,20,13,0.6)] md:rounded-[2.5rem]">
           <p.Visual data={data} />
         </motion.div>
         <div className="mt-8 lg:hidden">
@@ -200,8 +200,8 @@ export default function Work({ data }: { data: HomeData }) {
       <div className="container mx-auto px-4">
         <div className="mb-14 max-w-3xl md:mb-8">
           <SectionKicker>Selected work</SectionKicker>
-          <h2 className="font-display !py-0 mt-4 text-5xl font-[460] leading-[0.98] tracking-[-0.03em] text-[#003B49] md:text-7xl">
-            <RevealWords text="Things I've" /> <RevealWords text="shipped." delay={0.12} wordClassName="italic text-[#4ABEFF]" />
+          <h2 className="font-display !py-0 mt-4 text-5xl font-[460] leading-[0.98] tracking-[-0.03em] text-[#1B140D] md:text-7xl">
+            <RevealWords text="Things I've" /> <RevealWords text="shipped." delay={0.12} wordClassName="italic text-[#8F6300]" />
           </h2>
         </div>
 
@@ -226,7 +226,7 @@ export default function Work({ data }: { data: HomeData }) {
                       href={`#work-${proj.id}`}
                       aria-label={proj.title}
                       className="block h-1.5 rounded-full transition-all duration-500"
-                      style={{ width: i === active ? 48 : 18, background: i === active ? proj.accent : "rgba(0,59,73,0.15)" }}
+                      style={{ width: i === active ? 48 : 18, background: i === active ? proj.accent : "rgba(27,20,13,0.15)" }}
                     />
                   </li>
                 ))}

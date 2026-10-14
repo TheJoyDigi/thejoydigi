@@ -79,19 +79,19 @@ a {
   @apply w-full px-4 md:px-[20%];
 }
 .blogContainer p {
-  @apply text-lg md:text-xl leading-[1.8] md:leading-[1.8] mb-8 tracking-wide text-[#003B49]/85;
+  @apply text-lg md:text-xl leading-[1.8] md:leading-[1.8] mb-8 tracking-wide text-[#1B140D]/85;
 }
 .blogContainer h2 {
-  @apply !py-0 mt-12 mb-6 text-2xl font-[460] md:text-3xl text-[#003B49];
+  @apply !py-0 mt-12 mb-6 text-2xl font-[460] md:text-3xl text-[#1B140D];
   font-family: var(--font-display), Georgia, serif;
 }
 .blogContainer h3 {
-  @apply !py-0 mt-8 mb-4 text-xl font-[460] md:text-2xl text-[#003B49];
+  @apply !py-0 mt-8 mb-4 text-xl font-[460] md:text-2xl text-[#1B140D];
   font-family: var(--font-display), Georgia, serif;
 }
 .blogContainer ul,
 .blogContainer ol {
-  @apply mb-8 ml-8 text-lg md:text-xl text-[#003B49]/85;
+  @apply mb-8 ml-8 text-lg md:text-xl text-[#1B140D]/85;
 }
 .blogContainer ul {
   @apply list-disc;
@@ -100,22 +100,22 @@ a {
   @apply list-decimal;
 }
 .blogContainer li {
-  @apply mb-4 pl-1 leading-[1.8] md:leading-[1.8] marker:text-[#FF6B6B];
+  @apply mb-4 pl-1 leading-[1.8] md:leading-[1.8] marker:text-[#8F6300];
 }
 .blogContainer strong {
-  @apply font-semibold text-[#003B49];
+  @apply font-semibold text-[#1B140D];
 }
 .blogContainer em {
-  @apply italic text-[#003B49]/85;
+  @apply italic text-[#1B140D]/85;
 }
 .blogContainer a {
-  @apply text-[#FF6B6B] underline underline-offset-4 hover:text-[#003B49];
+  @apply text-[#8F6300] underline decoration-[#FFC94A] decoration-2 underline-offset-4 hover:text-[#1B140D];
 }
 .blogContainer blockquote {
-  @apply my-8 rounded-r-xl border-l-4 border-[#FFC94A] bg-[#FDF6EC] py-4 pl-6 pr-4 text-lg italic text-[#003B49]/85 md:text-xl;
+  @apply my-8 rounded-r-xl border-l-4 border-[#FFC94A] bg-[#FDF6EC] py-4 pl-6 pr-4 text-lg italic text-[#1B140D]/85 md:text-xl;
 }
 .blogContainer code {
-  @apply rounded bg-[#FDF6EC] px-2 py-1 text-base text-[#003B49] md:text-lg;
+  @apply rounded bg-[#FDF6EC] px-2 py-1 text-base text-[#1B140D] md:text-lg;
   font-family: "JetBrains Mono", monospace;
 }
 .logo {

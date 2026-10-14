@@ -24,14 +24,14 @@ function Chip({ chip, mx, my }: { chip: (typeof CHIPS)[number]; mx: MotionValue<
       initial={{ opacity: 0, scale: 0.6 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ type: "spring", stiffness: 180, damping: 16, delay: chip.delay }}
-      className={`absolute ${chip.pos} z-20 hidden items-center gap-2.5 rounded-full border border-[#003B49]/10 bg-white/90 py-1.5 pl-1.5 pr-4 shadow-[0_18px_40px_-18px_rgba(0,59,73,0.55)] backdrop-blur transition-transform duration-300 hover:scale-105 sm:flex no-underline hover:no-underline`}
+      className={`absolute ${chip.pos} z-20 hidden items-center gap-2.5 rounded-full border border-[#1B140D]/10 bg-white/90 py-1.5 pl-1.5 pr-4 shadow-[0_18px_40px_-18px_rgba(27,20,13,0.55)] backdrop-blur transition-transform duration-300 hover:scale-105 sm:flex no-underline hover:no-underline`}
     >
-      <span className="relative h-9 w-9 overflow-hidden rounded-full border border-[#003B49]/10">
+      <span className="relative h-9 w-9 overflow-hidden rounded-full border border-[#1B140D]/10">
         <Image src={chip.img} alt="" fill sizes="36px" className="object-cover object-top" />
       </span>
       <span className="leading-tight">
-        <span className="block text-sm font-semibold text-[#003B49]">{chip.label}</span>
-        <span className="block text-[11px] font-medium uppercase tracking-[0.14em] text-[#003B49]/50">{chip.kind}</span>
+        <span className="block text-sm font-semibold text-[#1B140D]">{chip.label}</span>
+        <span className="block text-[11px] font-medium uppercase tracking-[0.14em] text-[#6B5D4F]">{chip.kind}</span>
       </span>
     </motion.a>
   );
@@ -61,7 +61,7 @@ function Portrait() {
       }}
       className="relative mx-auto aspect-[4/5] w-full max-w-[540px]"
     >
-      <div aria-hidden className="absolute inset-[6%] rounded-full bg-[radial-gradient(closest-side,rgba(255,201,74,0.55),rgba(255,107,107,0.28)_55%,transparent)]" />
+      <div aria-hidden className="absolute inset-[6%] rounded-full bg-[radial-gradient(closest-side,rgba(255,201,74,0.6),rgba(230,74,0,0.16)_55%,transparent)]" />
       <svg aria-hidden viewBox="0 0 400 400" className="absolute inset-[2%] h-[96%] w-[96%] opacity-60">
         <circle cx="200" cy="200" r="188" fill="none" stroke={INK} strokeOpacity="0.14" strokeDasharray="2 10" />
         <circle cx="200" cy="200" r="150" fill="none" stroke={CORAL} strokeOpacity="0.25" strokeDasharray="1 8" />
@@ -81,7 +81,7 @@ function Portrait() {
           sizes="(min-width: 1024px) 540px, 92vw"
           className="object-contain object-bottom [mask-image:linear-gradient(to_bottom,black_78%,transparent)]"
         />
-        <span aria-hidden className="home-spark absolute left-[46%] top-[63%] h-24 w-24 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(closest-side,rgba(255,236,190,0.95),rgba(255,140,120,0.45)_45%,transparent)] mix-blend-screen" />
+        <span aria-hidden className="home-spark absolute left-[46%] top-[63%] h-24 w-24 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(closest-side,rgba(255,236,190,0.95),rgba(255,178,60,0.45)_45%,transparent)] mix-blend-screen" />
       </motion.div>
       {CHIPS.map((c) => (
         <Chip key={c.label} chip={c} mx={mx} my={my} />
@@ -130,27 +130,27 @@ export default function Hero({ data }: { data: HomeData }) {
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: EASE }}
-            className="mb-8 inline-flex items-center gap-2.5 rounded-full border border-[#003B49]/10 bg-white/70 px-4 py-2 text-sm font-medium text-[#003B49]/80 shadow-sm backdrop-blur no-underline hover:no-underline hover:text-[#003B49]"
+            className="mb-8 inline-flex items-center gap-2.5 rounded-full border border-[#1B140D]/10 bg-white/70 px-4 py-2 text-sm font-medium text-[#1B140D]/80 shadow-sm backdrop-blur no-underline hover:no-underline hover:text-[#1B140D]"
           >
             <span className="relative flex h-2 w-2">
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#7EE0C3] opacity-70" />
               <span className="relative inline-flex h-2 w-2 rounded-full bg-[#2FBF8F]" />
             </span>
-            Just shipped: <span className="font-semibold text-[#003B49]">Money, Mastered · Ch. {data.mm.latestNumber}</span>
+            Just shipped: <span className="font-semibold text-[#1B140D]">Money, Mastered · Ch. {data.mm.latestNumber}</span>
           </motion.a>
 
-          <h1 className="font-display !py-0 text-[3.2rem] leading-[0.98] tracking-[-0.035em] text-[#003B49] sm:text-7xl lg:text-[5.6rem] [font-variation-settings:'opsz'_144] font-[430]">
+          <h1 className="font-bungee !py-0 !font-normal text-[2.3rem] leading-[1.06] tracking-[-0.01em] text-[#1B140D] sm:text-[3.25rem] lg:text-[3.4rem] xl:text-[4.1rem]">
             <RevealWords text="I build joyful things" delay={0.1} />{" "}
             <RevealWords text="with code" delay={0.25} />{" "}
-            <span className="relative inline-block text-[#FF6B6B]">
-              <RevealWords text="and SI." delay={0.35} wordClassName="italic [font-variation-settings:'opsz'_144,'SOFT'_100]" />
-              <svg viewBox="0 0 300 20" preserveAspectRatio="none" className="absolute -bottom-[0.04em] left-0 h-[0.15em] w-full overflow-visible" aria-hidden>
+            {/* Echoes JOY in the P7 wordmark: Sun gold fill, ink keyline, hard offset shadow. */}
+            <span className="relative inline-block text-[#FFC94A] [-webkit-text-stroke:3px_#1B140D] [paint-order:stroke_fill] [text-shadow:0.06em_0.06em_0_#1B140D]">
+              <RevealWords text="and SI." delay={0.35} />
+              <svg viewBox="0 0 300 20" preserveAspectRatio="none" className="absolute -bottom-[0.16em] left-0 h-[0.15em] w-full overflow-visible" aria-hidden>
                 <motion.path
                   d="M3 14 C 80 5, 170 4, 297 11"
                   fill="none"
                   stroke={CORAL}
-                  strokeOpacity={0.5}
-                  strokeWidth={4}
+                  strokeWidth={5}
                   strokeLinecap="round"
                   vectorEffect="non-scaling-stroke"
                   initial={{ pathLength: 0 }}
@@ -165,7 +165,7 @@ export default function Hero({ data }: { data: HomeData }) {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, ease: EASE, delay: 0.5 }}
-            className="mt-8 max-w-xl text-lg leading-relaxed text-[#003B49]/75 md:text-xl"
+            className="mt-8 max-w-xl text-lg leading-relaxed text-[#1B140D]/75 md:text-xl"
           >
             I&apos;m Long — a software engineer of 10+ years. These days I ship products, podcasts, and super intelligence (SI) experiments
             under The Joy Digi, and I&apos;ve never been more excited about what one curious builder can make.
@@ -179,14 +179,14 @@ export default function Hero({ data }: { data: HomeData }) {
           >
             <a
               href="#work"
-              className="group inline-flex items-center justify-center gap-3 rounded-full bg-[#003B49] px-7 py-4 font-semibold text-white shadow-[0_14px_30px_-12px_rgba(0,59,73,0.7)] transition-colors hover:bg-[#0B5566] no-underline hover:no-underline"
+              className="group inline-flex items-center justify-center gap-3 rounded-full bg-[#FFC94A] px-7 py-4 font-semibold text-[#0B0B0C] shadow-[0_14px_30px_-14px_rgba(27,20,13,0.55)] transition-colors hover:bg-[#F2B731] no-underline hover:no-underline"
             >
               See the work
               <span aria-hidden className="transition-transform duration-300 group-hover:translate-y-0.5">↓</span>
             </a>
             <a
               href={`mailto:${EMAIL}`}
-              className="inline-flex items-center justify-center rounded-full border border-[#003B49]/25 px-7 py-4 font-semibold text-[#003B49] transition-colors hover:border-[#003B49] hover:bg-white no-underline hover:no-underline"
+              className="inline-flex items-center justify-center rounded-full border border-[#1B140D]/25 px-7 py-4 font-semibold text-[#1B140D] transition-colors hover:border-[#1B140D] hover:bg-white no-underline hover:no-underline"
             >
               Say hi 👋
             </a>
