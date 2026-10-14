@@ -7,6 +7,7 @@ import { episodePath, Equalizer, fmtLeft, ListenProgress, PauseIcon, PlatformLin
 import { ShareIcon, ShareSheet, useShare, type ShareControl } from "@/components/podcast/share";
 import { usePlayer, type Player } from "@/components/podcast/use-player";
 import { EASE, Footer, GOLD_LIGHT, GoldMotes, goldText, Mark, PARTS, roman, SHARE_THEME, SPOTIFY_URL, StickyPlayer, Subscribe, totalChapters, VC_ROOT, YOUTUBE_URL } from "@/components/podcast/value-created/theme";
+import { BuyBook } from "@/components/podcast/value-created/buy-book";
 import { getShow, type Show } from "@/lib/podcasts";
 
 function Hero({ show, player, total, share }: { show: Show; player: Player; total: number; share: ShareControl }) {
@@ -112,14 +113,9 @@ function Hero({ show, player, total, share }: { show: Show; player: Player; tota
             >
               Read the book
             </Link>
-            <a
-              href="https://www.amazon.com/dp/B0HMFV4457"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="rounded-full bg-gradient-to-b from-[#FFD47E] to-[#D1941F] px-4 py-2 text-sm font-semibold text-[#0C1130] no-underline transition-transform hover:-translate-y-0.5 hover:no-underline"
-            >
-              Paperback on Amazon
-            </a>
+          </motion.div>
+          <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, ease: EASE, delay: 1.1 }} className="mt-6 max-w-xl">
+            <BuyBook heading="Prefer to read it?" compact />
           </motion.div>
         </div>
 

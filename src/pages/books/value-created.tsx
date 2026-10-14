@@ -7,11 +7,8 @@ import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import { BuyBook, KINDLE_URL, PAPERBACK_URL } from "@/components/podcast/value-created/buy-book";
 import { EASE, Footer, GoldMotes, goldText, Mark, roman, VC_ROOT } from "@/components/podcast/value-created/theme";
-
-// Amazon listings: paperback (ASIN B0HMFV4457, ISBN 9798160611600) and Kindle (ASIN B0HMFPCCHK).
-const PAPERBACK_URL = "https://www.amazon.com/dp/B0HMFV4457";
-const KINDLE_URL = "https://www.amazon.com/dp/B0HMFPCCHK";
 
 const PAGE_URL = "https://www.thejoydigi.com/books/value-created";
 const COVER = "/books/value-created/cover.jpg";
@@ -19,30 +16,6 @@ const SAMPLES = ["01", "02", "13", "19", "24", "00"];
 
 type Part = { title: string; intro: string; chapters: { n: number; title: string }[] };
 type Props = { title: string; subtitle: string; description: string; parts: Part[]; words: number; samples: { id: string; title: string; label: string }[] };
-
-function BuyButtons({ big = false }: { big?: boolean }) {
-  const size = big ? "px-8 py-4 text-base" : "px-7 py-3.5 text-sm";
-  return (
-    <>
-      <a
-        href={PAPERBACK_URL}
-        target="_blank"
-        rel="noopener noreferrer"
-        className={`inline-flex items-center justify-center gap-3 rounded-full bg-gradient-to-b from-[#FFD47E] to-[#D1941F] ${size} font-semibold text-[#0C1130] no-underline shadow-[0_0_40px_-6px_rgba(242,168,29,0.7)] transition-transform duration-300 hover:-translate-y-0.5 hover:no-underline`}
-      >
-        Get the paperback
-      </a>
-      <a
-        href={KINDLE_URL}
-        target="_blank"
-        rel="noopener noreferrer"
-        className={`inline-flex items-center justify-center gap-3 rounded-full border border-[#F2A81D]/60 bg-[#F2A81D]/10 ${size} font-semibold text-[#FFD47E] no-underline transition-colors hover:border-[#F2A81D] hover:bg-[#F2A81D]/20 hover:no-underline`}
-      >
-        Kindle edition
-      </a>
-    </>
-  );
-}
 
 function Hero({ title, subtitle, description }: Pick<Props, "title" | "subtitle" | "description">) {
   return (
@@ -89,13 +62,15 @@ function Hero({ title, subtitle, description }: Pick<Props, "title" | "subtitle"
             {description}
           </motion.p>
           <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, ease: EASE, delay: 0.8 }} className="mt-10 flex flex-col gap-3 sm:flex-row sm:items-center">
-            <BuyButtons big />
             <Link
               href="/podcasts/value-created"
-              className="inline-flex items-center justify-center gap-3 rounded-full border border-[#F2A81D]/40 px-7 py-4 font-semibold text-[#F4EEDD] no-underline transition-colors hover:border-[#F2A81D] hover:bg-[#F2A81D]/10 hover:no-underline"
+              className="inline-flex items-center justify-center gap-3 rounded-full border border-[#F2A81D]/60 bg-[#F2A81D]/10 px-7 py-4 font-semibold text-[#FFD47E] no-underline transition-colors hover:border-[#F2A81D] hover:bg-[#F2A81D]/20 hover:no-underline"
             >
-              Or listen free
+              Listen free · the audiobook
             </Link>
+          </motion.div>
+          <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, ease: EASE, delay: 0.95 }} className="mt-5 max-w-xl">
+            <BuyBook compact />
           </motion.div>
           <p className="mt-5 text-sm tracking-wide text-[#F4EEDD]/50">Produced by The Joy Digi</p>
         </div>
@@ -199,11 +174,11 @@ function OneSentence() {
       <blockquote className="mx-auto max-w-4xl font-[family-name:var(--vc-serif)] text-3xl italic leading-snug text-[#F4EEDD] md:text-5xl">
         Find a real problem. Solve it well. <span className="text-[#FFD47E]">Charge less than the pain it caused.</span>
       </blockquote>
-      <div className="mt-12 flex flex-col items-center justify-center gap-3 sm:flex-row">
-        <BuyButtons />
-        <Link href="/podcasts/value-created" className="text-sm font-semibold text-[#FFD47E] underline-offset-4 hover:underline">
-          Listen to the audiobook free
+      <div className="mx-auto mt-12 max-w-2xl text-left">
+        <Link href="/podcasts/value-created" className="mb-5 block text-center text-sm font-semibold text-[#FFD47E] underline-offset-4 hover:underline">
+          Listen to the audiobook free →
         </Link>
+        <BuyBook heading="Make it yours" />
       </div>
     </section>
   );
