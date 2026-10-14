@@ -4,6 +4,8 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head>
+        {/* First paint matches the night header and hero before any stylesheet loads; body keeps its own sand ground. */}
+        <style dangerouslySetInnerHTML={{ __html: "html{background-color:#0B0B0C}" }} />
         {/* Essential Document Meta Tags */}
         <meta name="theme-color" content="#0B0B0C" />
         <meta name="format-detection" content="telephone=no" />

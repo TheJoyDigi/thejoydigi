@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import { OpArtField } from "../landing-art/op-art";
 import { GOLD_DEEP, INK, RevealWords, SectionKicker, SUN } from "../landing-art/primitives";
 
 export { SectionKicker as Kicker };
@@ -47,13 +48,13 @@ export function DisplayTitle({
   className?: string;
 }) {
   return (
-    <Tag className={`font-display !py-0 font-[460] tracking-[-0.03em] text-[#1B140D] ${className}`}>
+    <Tag className={`font-bungee !py-0 !font-normal tracking-[-0.005em] text-[#1B140D] ${className}`}>
       <RevealWords text={title} />
       {accent && (
         <>
           {" "}
-          <span style={{ color: accentColor }}>
-            <RevealWords text={accent} delay={0.12} wordClassName="italic [font-variation-settings:'SOFT'_100]" />
+          <span className={accentColor === GOLD_DEEP ? "joy-accent" : "joy-accent-night"}>
+            <RevealWords text={accent} delay={0.12} />
           </span>
         </>
       )}
@@ -80,7 +81,7 @@ export function Button({
 }) {
   const styles = {
     primary:
-      "bg-[#FFC94A] text-[#0B0B0C] shadow-[0_14px_30px_-14px_rgba(27,20,13,0.55)] hover:bg-[#F2B731]",
+      "btn-joy bg-[#FFC94A] text-[#0B0B0C] shadow-[0_14px_30px_-14px_rgba(27,20,13,0.55)] hover:bg-[#FFD86B]",
     ghost: "border border-[#1B140D]/25 text-[#1B140D] hover:border-[#1B140D] hover:bg-white",
     light: "bg-[#FDF6EC] text-[#1B140D] hover:bg-white",
   }[variant];
@@ -143,7 +144,11 @@ export function PageHero({
   return (
     <section className="relative overflow-hidden bg-[#FDF6EC]">
       <HeroGrid />
-      <div aria-hidden className="pointer-events-none absolute -right-40 -top-40 h-[36rem] w-[36rem] rounded-full bg-[radial-gradient(closest-side,rgba(255,201,74,0.3),transparent)]" />
+      {!aside && (
+        <div aria-hidden className="pointer-events-none absolute -right-48 -top-48 hidden h-[34rem] w-[34rem] opacity-60 md:block lg:-right-32">
+          <OpArtField rings={13} speed={0.25} />
+        </div>
+      )}
       <div
         className={`container relative mx-auto grid items-center gap-12 px-4 pt-14 pb-16 md:pt-20 md:pb-24 ${
           aside ? "lg:grid-cols-[1.05fr_1fr] lg:gap-16" : ""
@@ -163,7 +168,7 @@ export function PageHero({
             title={title}
             accent={accent}
             after={after}
-            className="mt-4 text-[2.9rem] leading-[1.02] sm:text-6xl lg:text-[4.4rem]"
+            className="mt-4 text-[2.3rem] leading-[1.06] sm:text-5xl lg:text-[3.6rem]"
           />
           {lead && (
             <Reveal delay={0.2}>
@@ -221,7 +226,7 @@ export function Section({
                 title={title}
                 accent={accent}
                 accentColor={ink ? SUN : GOLD_DEEP}
-                className={`mt-4 text-4xl md:text-6xl leading-[1] ${ink ? "!text-[#FDF6EC]" : ""}`}
+                className={`mt-4 text-[2rem] md:text-5xl leading-[1.06] ${ink ? "!text-[#FDF6EC]" : ""}`}
               />
             )}
             {lead && (

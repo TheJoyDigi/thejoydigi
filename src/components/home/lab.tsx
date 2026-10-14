@@ -35,8 +35,8 @@ export default function Lab() {
         <div className="mb-14 grid gap-6 md:mb-16 md:grid-cols-2 md:items-end">
           <div>
             <SectionKicker>The Lab</SectionKicker>
-            <h2 className="font-display !py-0 mt-4 text-5xl font-[460] leading-[0.98] tracking-[-0.03em] text-[#1B140D] md:text-7xl">
-              <RevealWords text="Experiments at the" /> <RevealWords text="edge." delay={0.15} wordClassName="italic text-[#8F6300]" />
+            <h2 className="font-bungee !py-0 !font-normal mt-4 text-[2.4rem] leading-[1.04] tracking-[-0.005em] text-[#1B140D] sm:text-5xl md:text-6xl">
+              <RevealWords text="Experiments at the" /> <RevealWords text="edge." delay={0.15} wordClassName="joy-accent" />
             </h2>
           </div>
           <p className="max-w-md text-lg text-[#1B140D]/70 md:justify-self-end">
@@ -52,7 +52,7 @@ export default function Lab() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-60px 0px" }}
               transition={{ duration: 0.7, ease: EASE, delay: i * 0.1 }}
-              className={`group relative flex flex-col overflow-hidden rounded-[2rem] border border-[#1B140D]/10 bg-gradient-to-b ${e.tint} p-7`}
+              className={`card-joy group relative flex flex-col overflow-hidden rounded-[2rem] border border-[#1B140D]/10 bg-gradient-to-b ${e.tint} p-7`}
             >
               <span className="inline-flex w-fit items-center gap-2 rounded-full border border-[#1B140D]/10 bg-white/80 px-3 py-1 text-xs font-bold uppercase tracking-[0.15em] text-[#1B140D]/70">
                 <span className="h-2 w-2 rounded-full" style={{ background: e.statusColor }} />
@@ -79,7 +79,7 @@ export default function Lab() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-60px 0px" }}
             transition={{ duration: 0.7, ease: EASE, delay: 0.2 }}
-            className="group relative flex flex-col overflow-hidden rounded-[2rem] bg-[#0B0B0C] p-7 text-[#FDF6EC]"
+            className="card-joy group relative flex flex-col overflow-hidden rounded-[2rem] bg-[#0B0B0C] p-7 text-[#FDF6EC]"
           >
             <span className="inline-flex w-fit items-center gap-2 rounded-full border border-[#FDF6EC]/20 px-3 py-1 text-xs font-bold uppercase tracking-[0.15em] text-[#FDF6EC]/80">
               <span className="h-2 w-2 rounded-full bg-[#7EE0C3]" />

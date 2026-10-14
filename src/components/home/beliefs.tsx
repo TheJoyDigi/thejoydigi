@@ -1,5 +1,7 @@
 import { motion, useScroll, useTransform, type MotionValue } from "framer-motion";
 import React, { useRef } from "react";
+import { OpArtField } from "../landing-art/op-art";
+import { NightAurora } from "../landing-art/shaders";
 
 const BELIEFS = [
   { text: "The best software feels like a friend.", accent: ["friend."] },
@@ -10,7 +12,7 @@ const BELIEFS = [
 function Word({ word, progress, range, accent }: { word: string; progress: MotionValue<number>; range: [number, number]; accent: boolean }) {
   const opacity = useTransform(progress, range, [0.14, 1]);
   return (
-    <motion.span style={{ opacity }} className={accent ? "italic text-[#FFC94A]" : undefined}>
+    <motion.span style={{ opacity }} className={accent ? "joy-accent-night" : undefined}>
       {word}{" "}
     </motion.span>
   );
@@ -28,7 +30,7 @@ function Statement({ belief, index, progress }: { belief: (typeof BELIEFS)[numbe
   return (
     <motion.p
       style={{ opacity, y }}
-      className="mx-auto w-full max-w-5xl px-4 text-center font-display text-[2.6rem] font-[430] leading-[1.02] tracking-[-0.03em] text-[#FDF6EC] sm:text-6xl lg:text-[5.4rem]"
+      className="mx-auto w-full max-w-5xl px-4 text-center font-bungee text-[2.1rem] leading-[1.08] tracking-[-0.005em] text-[#FDF6EC] sm:text-5xl lg:text-[4.2rem]"
     >
       {words.map((w, i) => {
         const a = fillStart + ((fillEnd - fillStart) * i) / words.length;
@@ -46,7 +48,13 @@ export default function Beliefs() {
   return (
     <section ref={ref} aria-label="What I believe" className="relative h-[300vh] bg-[#0B0B0C]">
       <div className="sticky top-0 flex h-screen items-center overflow-hidden">
-        <div aria-hidden className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_120%,rgba(255,201,74,0.22),transparent_60%),radial-gradient(ellipse_at_10%_0%,rgba(230,74,0,0.14),transparent_50%)]" />
+        <div aria-hidden className="absolute inset-0">
+          <NightAurora intensity={1.3} />
+        </div>
+        <div aria-hidden className="absolute left-1/2 top-1/2 aspect-square w-[150vmax] -translate-x-1/2 -translate-y-1/2 opacity-[0.38]">
+          <OpArtField rings={26} lobes={11} wobble={0.03} twist={0.22} speed={0.18} rim={false} size={1} />
+        </div>
+        <div aria-hidden className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_50%,rgba(11,11,12,0.92)_25%,rgba(11,11,12,0.55)_60%,rgba(11,11,12,0.2))]" />
         <p className="absolute left-1/2 top-24 -translate-x-1/2 text-xs font-semibold uppercase tracking-[0.3em] text-[#FFC94A]">
           What I believe · <motion.span>{counter}</motion.span> / 03
         </p>
@@ -60,7 +68,7 @@ export default function Beliefs() {
         <p className="absolute bottom-10 left-1/2 -translate-x-1/2 text-sm text-[#FDF6EC]/55">keep scrolling</p>
       </div>
       <noscript>
-        <div className="px-4 py-24 text-center font-display text-4xl text-[#FDF6EC]">{BELIEFS.map((b) => b.text).join(" ")}</div>
+        <div className="px-4 py-24 text-center font-bungee text-3xl text-[#FDF6EC]">{BELIEFS.map((b) => b.text).join(" ")}</div>
       </noscript>
     </section>
   );
