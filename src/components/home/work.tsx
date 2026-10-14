@@ -148,7 +148,7 @@ function Info({ p, index, compact = false }: { p: Project; index: number; compac
         </span>
         <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#6B5D4F]">{p.kind}</span>
       </div>
-      <h3 className={`font-display !py-0 mt-4 font-[460] tracking-[-0.03em] text-[#1B140D] ${compact ? "text-4xl" : "text-5xl xl:text-6xl"}`}>{p.title}</h3>
+      <h3 className={`font-bungee !py-0 !font-normal mt-4 tracking-[-0.005em] text-[#1B140D] ${compact ? "text-3xl" : "text-4xl xl:text-5xl"}`}>{p.title}</h3>
       <p className="mt-4 max-w-md text-lg leading-relaxed text-[#1B140D]/75">{p.line}</p>
       <div className="mt-5 flex flex-wrap gap-2">
         {p.tags.map((t) => (

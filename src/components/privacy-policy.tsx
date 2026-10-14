@@ -1,7 +1,7 @@
 const PrivacyPolicyComponent = () => {
   return (
     <div>
-      <div className="mainContainer">
+      <div className="legal-prose">
         <h1>Ruh-Roh Retreat Privacy Policy</h1>
 
         <section>

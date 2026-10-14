@@ -39,7 +39,7 @@ export default function BlogCard({
         </div>
         <div className="p-6 md:p-7">
           <div className="mb-2 text-xs font-bold uppercase tracking-[0.2em] text-[#6B5D4F]">{date}</div>
-          <h2 className="font-display !py-0 mb-2 text-2xl font-[460] text-[#1B140D] line-clamp-2">
+          <h2 className="font-ui !py-0 font-bold tracking-[-0.02em] mb-2 text-xl text-[#1B140D] line-clamp-2">
             {title}
           </h2>
           <p className="text-[#1B140D]/75 line-clamp-3">{excerpt}</p>

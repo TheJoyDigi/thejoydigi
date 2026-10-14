@@ -151,7 +151,7 @@ const TheBlueSock: NextPage = () => {
             <Reveal key={b.title} delay={i * 0.05}>
               <Card>
                 <IconBadge color={b.color}>{b.icon}</IconBadge>
-                <h3 className="font-display !py-0 mb-2 text-2xl font-[460]">{b.title}</h3>
+                <h3 className="font-ui !py-0 font-bold tracking-[-0.02em] mb-2 text-xl">{b.title}</h3>
                 <p className="text-[#1B140D]/75">{b.text}</p>
               </Card>
             </Reveal>
@@ -173,7 +173,7 @@ const TheBlueSock: NextPage = () => {
         <dl className="grid gap-8 border-t border-[#FDF6EC]/15 pt-10 md:grid-cols-3">
           {glance.map((g) => (
             <Reveal key={g.big}>
-              <dt className="font-display text-5xl md:text-6xl text-[#FFC94A]">{g.big}</dt>
+              <dt className="joy-accent-night font-bungee text-4xl md:text-5xl">{g.big}</dt>
               <dd className="mt-2 text-[#FDF6EC]/70">{g.small}</dd>
             </Reveal>
           ))}
