@@ -368,6 +368,10 @@ a {
   border-radius: 999px;
   background: linear-gradient(90deg, #ff2e88, #ff7a1a, #ffc94a, #3fe04a, #19b8d6, #7b3fe4);
 }
+.legal-prose h2,
+.legal-prose h3 {
+  font-family: var(--font-body), system-ui, sans-serif;
+}
 .legal-prose h2 {
   font-weight: 700;
   letter-spacing: -0.02em;
@@ -397,4 +401,15 @@ a {
   text-decoration-color: #ffc94a;
   text-decoration-thickness: 3px;
   text-underline-offset: 3px;
+}
+.legal-prose strong {
+  color: #1b140d;
+  font-weight: 700;
+}
+.legal-prose code {
+  border-radius: 6px;
+  background: rgba(255, 201, 74, 0.25);
+  padding: 0.1em 0.35em;
+  font-size: 0.9em;
+  color: #1b140d;
 }
