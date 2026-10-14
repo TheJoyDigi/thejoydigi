@@ -63,7 +63,7 @@ function Portrait() {
       }}
       className="relative mx-auto aspect-[4/5] w-full max-w-[540px]"
     >
-      <div aria-hidden className="absolute inset-x-[-12%] top-[-12%] aspect-square">
+      <div aria-hidden className="absolute inset-x-[-12%] top-[-12%] aspect-square [mask-image:linear-gradient(to_bottom,black_52%,transparent_74%)]">
         <motion.div
           initial={{ opacity: 0, scale: 0.7, rotate: -25 }}
           animate={{ opacity: 1, scale: 1, rotate: 0 }}
