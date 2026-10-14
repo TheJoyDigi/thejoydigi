@@ -216,3 +216,126 @@ a {
 .wooden-sign {
   @apply relative bg-orange-300 text-white p-4 rounded-lg border-4 border-orange-400 text-center font-bold mx-auto max-w-sm;
 }
+
+/* P7 rebrand: motion and display utilities */
+@keyframes spectrum-drift {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* Accent word styled like JOY in the wordmark: gold fill, ink keyline, hard offset shadow. Use on sand. */
+.joy-accent {
+  color: #ffc94a;
+  -webkit-text-stroke: 0.06em #1b140d;
+  paint-order: stroke fill;
+  text-shadow: 0.07em 0.07em 0 #1b140d;
+}
+/* On the night ground: gold with the dark logo's pink keyline. */
+.joy-accent-night {
+  color: #ffc94a;
+  -webkit-text-stroke: 0.05em #0b0b0c;
+  paint-order: stroke fill;
+  text-shadow: 0.06em 0.06em 0 #ff2e88;
+}
+
+/* Gold action button: a spectrum ripple ring blooms on hover. */
+.btn-joy {
+  position: relative;
+  isolation: isolate;
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1), background-color 0.2s;
+}
+.btn-joy::before,
+.btn-joy::after {
+  content: "";
+  position: absolute;
+  inset: -3px;
+  border-radius: inherit;
+  z-index: -1;
+  opacity: 0;
+  pointer-events: none;
+}
+.btn-joy::before {
+  padding: 3px;
+  background: conic-gradient(from var(--joy-spin, 0deg), #ff2e88, #ff7a1a, #ffc94a, #3fe04a, #19b8d6, #7b3fe4, #ff2e88);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  transition: opacity 0.3s;
+}
+.btn-joy::after {
+  inset: 0;
+  box-shadow: 0 0 0 0 rgba(255, 46, 136, 0.55), 0 0 0 0 rgba(25, 184, 214, 0.45);
+}
+.btn-joy:hover,
+.btn-joy:focus-visible {
+  transform: translateY(-2px);
+}
+.btn-joy:hover::before,
+.btn-joy:focus-visible::before {
+  opacity: 1;
+  animation: joy-spin 2.4s linear infinite;
+}
+.btn-joy:hover::after,
+.btn-joy:focus-visible::after {
+  animation: joy-ripple 1.4s cubic-bezier(0.22, 1, 0.36, 1) infinite;
+}
+@property --joy-spin {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+@keyframes joy-spin {
+  to { --joy-spin: 360deg; }
+}
+@keyframes joy-ripple {
+  0% { opacity: 1; box-shadow: 0 0 0 0 rgba(255, 46, 136, 0.5), 0 0 0 0 rgba(25, 184, 214, 0.4); }
+  100% { opacity: 0; box-shadow: 0 0 0 14px rgba(255, 46, 136, 0), 0 0 0 26px rgba(25, 184, 214, 0); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .btn-joy:hover::before,
+  .btn-joy:hover::after,
+  .btn-joy:focus-visible::before,
+  .btn-joy:focus-visible::after {
+    animation: none;
+  }
+}
+
+/* Card hover: a spinning spectrum border, the medallion's ripples as a frame. */
+.card-joy {
+  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.45s;
+}
+.card-joy::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 3px;
+  background: conic-gradient(from var(--joy-spin, 0deg), #ff2e88, #ff7a1a, #ffc94a, #3fe04a, #19b8d6, #7b3fe4, #ff2e88);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.35s;
+  pointer-events: none;
+  z-index: 5;
+}
+.card-joy:hover,
+.card-joy:focus-within {
+  transform: translateY(-6px);
+  box-shadow: 0 28px 50px -28px rgba(27, 20, 13, 0.55);
+}
+.card-joy:hover::after,
+.card-joy:focus-within::after {
+  opacity: 1;
+  animation: joy-spin 3s linear infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .card-joy:hover,
+  .card-joy:focus-within {
+    transform: none;
+  }
+  .card-joy:hover::after,
+  .card-joy:focus-within::after {
+    animation: none;
+  }
+}

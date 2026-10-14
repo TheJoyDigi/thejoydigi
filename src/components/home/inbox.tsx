@@ -7,7 +7,7 @@ export default function Inbox() {
       <div className="container mx-auto grid gap-8 rounded-[2rem] bg-[#0B0B0C] p-7 text-[#FDF6EC] shadow-[0_24px_60px_-36px_rgba(27,20,13,0.7)] md:grid-cols-[1fr_1fr] md:items-center md:gap-12 md:p-10">
         <div>
           <p className="text-xs font-bold uppercase tracking-[0.22em] text-[#FFC94A]">A little good thing in your inbox</p>
-          <h2 id="inbox-heading" className="font-display !py-0 mt-3 text-3xl leading-tight font-[460] md:text-4xl">
+          <h2 id="inbox-heading" className="font-bungee !py-0 !font-normal mt-3 text-2xl leading-tight md:text-3xl">
             Be first to hear what&apos;s next.
           </h2>
           <p className="mt-3 max-w-lg text-sm leading-relaxed text-[#FDF6EC]/75 md:text-base">

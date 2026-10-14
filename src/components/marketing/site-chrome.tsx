@@ -50,7 +50,7 @@ export function SiteHeader() {
           ))}
           <a
             href={`mailto:${EMAIL}`}
-            className="rounded-full bg-[#FFC94A] px-5 py-2.5 text-sm font-semibold text-[#0B0B0C] transition-colors hover:bg-[#FFD86B] no-underline hover:no-underline"
+            className="btn-joy rounded-full bg-[#FFC94A] px-5 py-2.5 text-sm font-semibold text-[#0B0B0C] hover:bg-[#FFD86B] no-underline hover:no-underline"
           >
             Say hi 👋
           </a>
@@ -82,7 +82,7 @@ export function SiteHeader() {
                   key={item.href}
                   href={item.href}
                   onClick={() => setOpen(false)}
-                  className={`border-b border-[#FDF6EC]/10 py-3 font-display text-2xl no-underline hover:no-underline ${
+                  className={`border-b border-[#FDF6EC]/10 py-3 font-bungee text-2xl no-underline hover:no-underline ${
                     isActive(item.href) ? "text-[#FFC94A]" : "text-[#FDF6EC]"
                   }`}
                 >
@@ -140,15 +140,15 @@ export function SiteFooter() {
             <Link href="/" className="-ml-3 mb-8 inline-flex no-underline hover:no-underline" aria-label="The Joy Digi home">
               <Image src={LOGO.src} width={LOGO.width} height={LOGO.height} alt="" unoptimized className="h-[96px] w-auto md:h-[112px]" />
             </Link>
-            <p className="font-display text-4xl md:text-5xl leading-[1.02] tracking-[-0.02em]">
-              Let&apos;s make something <em className="text-[#FFC94A]">joyful.</em>
+            <p className="font-bungee text-3xl leading-[1.08] md:text-[2.6rem]">
+              Let&apos;s make something <span className="joy-accent-night">joyful.</span>
             </p>
             <p className="mt-5 max-w-sm text-[#FDF6EC]/70">
               The Joy Digi is where Long La builds joyful things with code and super intelligence (SI) — products, podcasts, and experiments.
             </p>
             <a
               href={`mailto:${EMAIL}`}
-              className="mt-8 inline-flex items-center gap-3 rounded-full bg-[#FFC94A] px-6 py-3.5 font-semibold text-[#0B0B0C] transition-colors hover:bg-[#FFD86B] no-underline hover:no-underline"
+              className="btn-joy mt-8 inline-flex items-center gap-3 rounded-full bg-[#FFC94A] px-6 py-3.5 font-semibold text-[#0B0B0C] hover:bg-[#FFD86B] no-underline hover:no-underline"
             >
               Say hello <span aria-hidden>→</span>
             </a>

@@ -31,8 +31,8 @@ export default function Hello() {
 
         <div className="order-1 pb-4 lg:order-2 lg:pb-24">
           <SectionKicker>About</SectionKicker>
-          <h2 className="font-display !py-0 mt-4 text-5xl font-[460] leading-[0.98] tracking-[-0.03em] text-[#1B140D] md:text-7xl">
-            <RevealWords text="Hi, I'm" /> <RevealWords text="Long." delay={0.12} wordClassName="italic text-[#8F6300]" />
+          <h2 className="font-bungee !py-0 !font-normal mt-4 text-[2.4rem] leading-[1.04] tracking-[-0.005em] text-[#1B140D] sm:text-5xl md:text-6xl">
+            <RevealWords text="Hi, I'm" /> <RevealWords text="Long." delay={0.12} wordClassName="joy-accent" />
           </h2>
           <motion.div
             initial={{ opacity: 0, y: 20 }}

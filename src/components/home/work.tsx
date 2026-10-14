@@ -143,7 +143,7 @@ function Info({ p, index, compact = false }: { p: Project; index: number; compac
   return (
     <div>
       <div className="flex items-baseline gap-4">
-        <span className="font-display text-5xl font-semibold leading-none md:text-7xl" style={{ color: p.accent, WebkitTextStroke: "1.5px #1B140D" }}>
+        <span className="font-bungee text-5xl leading-none md:text-7xl" style={{ color: p.accent, WebkitTextStroke: "2px #1B140D", paintOrder: "stroke fill", textShadow: "0.06em 0.06em 0 #1B140D" }}>
           {String(index + 1).padStart(2, "0")}
         </span>
         <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#6B5D4F]">{p.kind}</span>
@@ -200,8 +200,8 @@ export default function Work({ data }: { data: HomeData }) {
       <div className="container mx-auto px-4">
         <div className="mb-14 max-w-3xl md:mb-8">
           <SectionKicker>Selected work</SectionKicker>
-          <h2 className="font-display !py-0 mt-4 text-5xl font-[460] leading-[0.98] tracking-[-0.03em] text-[#1B140D] md:text-7xl">
-            <RevealWords text="Things I've" /> <RevealWords text="shipped." delay={0.12} wordClassName="italic text-[#8F6300]" />
+          <h2 className="font-bungee !py-0 !font-normal mt-4 text-[2.4rem] leading-[1.04] tracking-[-0.005em] text-[#1B140D] sm:text-5xl md:text-6xl">
+            <RevealWords text="Things I've" /> <RevealWords text="shipped." delay={0.12} wordClassName="joy-accent" />
           </h2>
         </div>
 

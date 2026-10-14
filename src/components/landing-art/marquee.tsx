@@ -9,6 +9,7 @@ import {
   useVelocity,
 } from "framer-motion";
 import React, { useRef } from "react";
+import { SpectrumWaves } from "./op-art";
 import { ORANGE, PINK, RippleMark, SKY, SUN } from "./primitives";
 
 const wrap = (min: number, max: number, v: number) => {
@@ -76,10 +77,11 @@ export function Track({
 
 export default function Marquee({ words }: { words: string[] }) {
   return (
-    <div aria-label="Now shipping" className="relative overflow-hidden bg-[#FDF6EC] py-6 md:py-8">
-      <div className="bg-[#0B0B0C] py-4 md:py-5">
-        <Track words={words} baseVelocity={-1.4} className="font-display text-xl md:text-3xl italic text-[#FDF6EC]" />
+    <div aria-label="Now shipping" className="relative overflow-hidden bg-[#0B0B0C]">
+      <div className="border-y border-[#FDF6EC]/10 py-4 md:py-5">
+        <Track words={words} baseVelocity={-1.4} className="font-bungee text-lg uppercase tracking-[0.02em] text-[#FDF6EC] md:text-2xl" />
       </div>
+      <SpectrumWaves from="#0B0B0C" to="#FDF6EC" />
     </div>
   );
 }
