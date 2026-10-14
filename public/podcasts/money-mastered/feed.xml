@@ -135,5 +135,14 @@
 <itunes:author>The Joy Digi</itunes:author>
 <itunes:duration>0:10:47</itunes:duration>
 <itunes:episodeType>full</itunes:episodeType>
+</item><item>
+<title>Money, Mastered — Chapter 14: Risk, Volatility, and Drawdowns</title>
+<description>A fifty percent loss needs a one hundred percent gain just to break even, and that brutal arithmetic is why survival matters more than prediction. Chapter fourteen separates risk, volatility, and drawdowns, walks through real crashes from the financial crisis to Bitcoin, and shows how to size the bumpiness your horizon, cash cushion, and temperament can honestly carry.</description>
+<pubDate>Wed, 14 Oct 2026 08:49:00 -0700</pubDate>
+<enclosure url="https://www.thejoydigi.com/podcasts/money-mastered/money-mastered-chapter-14-risk-volatility-and-drawdowns-2026-10-14.mp3" length="11095220" type="audio/mpeg"/>
+<guid isPermaLink="false">mm-ch14-2026-10-14</guid>
+<itunes:author>The Joy Digi</itunes:author>
+<itunes:duration>0:11:33</itunes:duration>
+<itunes:episodeType>full</itunes:episodeType>
 </item></channel>
 </rss>
