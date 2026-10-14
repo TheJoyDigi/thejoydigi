@@ -10,6 +10,7 @@ import { OcPackEmailForm } from "@/components/podcast/oc-pack-email-form";
 import { ShareIcon, ShareSheet, useShare, type ShareControl, type ShareTheme } from "@/components/podcast/share";
 import { fmt, usePlayer, type Player } from "@/components/podcast/use-player";
 import { getShow, type Show } from "@/lib/podcasts";
+import { ShowShader } from "@/components/landing-art/show-shader";
 
 const titan = Titan_One({ subsets: ["latin"], weight: "400", variable: "--oc-display", display: "swap" });
 const nunito = Nunito({ subsets: ["latin"], variable: "--oc-body", display: "swap" });
@@ -118,7 +119,8 @@ function Hero({ show, player, share }: { show: Show; player: Player; share: Shar
   const cont = player.resume && player.resume.index !== latest ? player.resume : null;
   const { copied, copy } = useCopy(show.feedUrl);
   return (
-    <section className="relative overflow-hidden" style={{ background: SAND }}>
+    <section className="relative isolate overflow-hidden" style={{ background: SAND }}>
+      <ShowShader light colors={["#FC7F46", "#FF6F61", "#2E9CA6"]} center={[0.74, 0.5]} ripple={0.3} aurora={0.12} lobes={6} freq={14} fade={1.6} speed={0.9} className="-z-10" />
       <nav className="relative z-10 mx-auto flex max-w-7xl items-center justify-between px-5 pt-6 md:px-8">
         <Link href="/" className="font-bold text-[#6B3410]/80 no-underline hover:text-[#6B3410] hover:no-underline">
           ← The Joy Digi

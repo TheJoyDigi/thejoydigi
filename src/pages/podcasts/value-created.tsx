@@ -8,6 +8,7 @@ import { ShareIcon, ShareSheet, useShare, type ShareControl } from "@/components
 import { usePlayer, type Player } from "@/components/podcast/use-player";
 import { EASE, Footer, GOLD_LIGHT, GoldMotes, goldText, Mark, PARTS, roman, SHARE_THEME, SPOTIFY_URL, StickyPlayer, Subscribe, totalChapters, VC_ROOT, YOUTUBE_URL } from "@/components/podcast/value-created/theme";
 import { BuyBook } from "@/components/podcast/value-created/buy-book";
+import { ShowShader } from "@/components/landing-art/show-shader";
 import { getShow, type Show } from "@/lib/podcasts";
 
 function Hero({ show, player, total, share }: { show: Show; player: Player; total: number; share: ShareControl }) {
@@ -21,6 +22,7 @@ function Hero({ show, player, total, share }: { show: Show; player: Player; tota
       <motion.div aria-hidden style={{ y: yMark }} className="absolute inset-0 -z-10">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_75%_15%,rgba(242,168,29,0.16),transparent_60%)]" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_20%_85%,rgba(87,182,217,0.10),transparent_55%)]" />
+        <ShowShader colors={["#F2A81D", "#FFD47E", "#57B6D9"]} center={[0.74, 0.6]} ripple={0.4} aurora={0.3} lobes={7} freq={16} />
         <Mark className="absolute -right-10 top-24 h-[420px] w-auto opacity-[0.14] md:right-16 md:h-[560px]" />
       </motion.div>
       <GoldMotes />

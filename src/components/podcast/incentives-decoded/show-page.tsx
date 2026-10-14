@@ -6,6 +6,7 @@ import { Equalizer, fmtLeft, PauseIcon, PlayIcon, PodcastSeo } from "@/component
 import { ShareSheet, useShare, type ShareControl } from "@/components/podcast/share";
 import { usePlayer, type Player } from "@/components/podcast/use-player";
 import type { Show } from "@/lib/podcasts";
+import { ShowShader } from "@/components/landing-art/show-shader";
 import { chunky, DecodeText, dotGrid, DragSticker, Follow, Footer, ID_ROOT, LevelTile, Marquee, monoLabel, Nav, pad, SHARE_THEME, SPOTIFY_URL, SPRING, Sticker, StickyPlayer, YOUTUBE_URL } from "./theme";
 
 const TAGLINE = "Find the payoff, predict the person.";
@@ -36,6 +37,7 @@ function Hero({ show, player, share }: { show: Show; player: Player; share: Shar
           </Link>
         }
       />
+      <ShowShader light poster colors={["#D4FF3A", "#FF5CA8", "#4FE0E8"]} center={[0.8, 0.55]} ripple={0.4} aurora={0.14} lobes={5} freq={12} fade={1.7} speed={1.1} className="-z-10" />
       <DragSticker kind="coin" bounds={bounds} className="right-[6%] top-24 h-24 w-24 md:h-36 md:w-36" rotate={12} delay={0.5} />
       <DragSticker kind="die" bounds={bounds} className="bottom-[16%] left-[46%] hidden h-24 w-24 lg:block" rotate={-14} delay={0.7} />
       <DragSticker kind="cursor" bounds={bounds} className="bottom-10 right-[40%] h-16 w-16 md:h-20 md:w-20" rotate={-8} delay={0.9} />

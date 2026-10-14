@@ -1,7 +1,7 @@
 import { useReducedMotion } from "framer-motion";
 import React, { useEffect, useRef } from "react";
 
-const VERT = `#version 300 es
+export const VERT = `#version 300 es
 in vec2 p;
 void main() { gl_Position = vec4(p, 0.0, 1.0); }`;
 
@@ -133,10 +133,10 @@ void main() {
   o = vec4(col, 1.0);
 }`;
 
-type Uniforms = Record<string, number | [number, number]>;
+type Uniforms = Record<string, number | [number, number] | [number, number, number]>;
 
 /** Runs a fragment shader on a canvas: resize, off-screen pause, pointer, reduced motion. Returns false if WebGL2 is missing. */
-function useShader(
+export function useShader(
   ref: React.RefObject<HTMLCanvasElement | null>,
   frag: string,
   uniforms: Uniforms,
@@ -217,8 +217,10 @@ function useShader(
       gl.uniform1f(loc("uLens"), mouse.lens);
       gl.uniform1f(loc("uReveal"), reveal());
       for (const [k, v] of Object.entries(live.current)) {
-        if (Array.isArray(v)) gl.uniform2f(loc(k), v[0], v[1]);
-        else gl.uniform1f(loc(k), v);
+        if (Array.isArray(v)) {
+          if (v.length === 3) gl.uniform3f(loc(k), v[0], v[1], v[2]);
+          else gl.uniform2f(loc(k), v[0], v[1]);
+        } else gl.uniform1f(loc(k), v);
       }
       gl.drawArrays(gl.TRIANGLES, 0, 3);
     };

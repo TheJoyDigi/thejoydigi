@@ -10,6 +10,7 @@ import { EpisodeTranscript } from "@/components/podcast/episode-transcript";
 import { ShareIcon, ShareSheet, useShare, type ShareControl, type ShareTheme } from "@/components/podcast/share";
 import { fmt, usePlayer, type Player } from "@/components/podcast/use-player";
 import { getShow, type Show } from "@/lib/podcasts";
+import { ShowShader } from "@/components/landing-art/show-shader";
 
 const display = Space_Grotesk({ subsets: ["latin"], weight: ["500", "700"], variable: "--ab-display", display: "swap" });
 const body = Inter({ subsets: ["latin"], variable: "--ab-body", display: "swap" });
@@ -48,7 +49,8 @@ function Hero({ show, player, share }: { show: Show; player: Player; share: Shar
   const isLatestPlaying = player.index === latest && player.playing;
   const cont = player.resume && player.resume.index !== latest ? player.resume : null;
   return (
-    <section className="relative overflow-hidden" style={{ background: INK }}>
+    <section className="relative isolate overflow-hidden" style={{ background: INK }}>
+      <ShowShader colors={["#E2725B", "#E9B44C", "#B9503F"]} center={[0.74, 0.58]} ripple={0.4} aurora={0.26} lobes={8} freq={16} className="-z-10" />
       <div
         aria-hidden
         className="pointer-events-none absolute inset-0"

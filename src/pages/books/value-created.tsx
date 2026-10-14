@@ -9,6 +9,7 @@ import Link from "next/link";
 import React from "react";
 import { BuyBook, KINDLE_PRICE, KINDLE_URL, PAPERBACK_PRICE, PAPERBACK_URL } from "@/components/podcast/value-created/buy-book";
 import { EASE, Footer, GoldMotes, goldText, Mark, roman, VC_ROOT } from "@/components/podcast/value-created/theme";
+import { ShowShader } from "@/components/landing-art/show-shader";
 
 const PAGE_URL = "https://www.thejoydigi.com/books/value-created";
 const COVER = "/books/value-created/cover.jpg";
@@ -23,6 +24,7 @@ function Hero({ title, subtitle, description }: Pick<Props, "title" | "subtitle"
       <div aria-hidden className="absolute inset-0 -z-10">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_75%_15%,rgba(242,168,29,0.16),transparent_60%)]" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_20%_85%,rgba(87,182,217,0.10),transparent_55%)]" />
+        <ShowShader colors={["#F2A81D", "#FFD47E", "#57B6D9"]} center={[0.74, 0.6]} ripple={0.4} aurora={0.3} lobes={7} freq={16} />
         <Mark className="absolute -right-10 top-24 h-[420px] w-auto opacity-[0.12] md:right-16 md:h-[560px]" />
       </div>
       <GoldMotes />
