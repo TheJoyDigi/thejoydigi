@@ -34,7 +34,7 @@ EPUBCheck (needs Java): download `epubcheck-5.2.1.zip` from github.com/w3c/epubc
 | Edition | Store | Status (2026-10-10) |
 |---|---|---|
 | Kindle eBook | KDP, $9.99, 70% royalty, not in KDP Select | Live: [B0HMFPCCHK](https://www.amazon.com/dp/B0HMFPCCHK) |
-| Paperback | KDP, $14.99, ISBN 9798160611600, 6x9 B&W white, matte | Live (confirmed by Long 2026-10-10) |
+| Paperback | KDP, $14.99, ISBN 9798160611600, 6x9 B&W white, matte | Live: [B0HMFV4457](https://www.amazon.com/dp/B0HMFV4457) |
 | Apple Books | Apple Books for Authors | Waiting on Apple account verification + Paid Books Agreement |
 
 The EPUB is store-neutral (no store names in the back matter) so the same file works on Apple Books and other stores.

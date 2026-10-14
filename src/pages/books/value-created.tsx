@@ -9,7 +9,8 @@ import Link from "next/link";
 import React from "react";
 import { EASE, Footer, GoldMotes, goldText, Mark, roman, VC_ROOT } from "@/components/podcast/value-created/theme";
 
-// Amazon Kindle listing (ASIN B0HMFPCCHK); an empty string falls back to "Coming soon".
+// Amazon listings: paperback (ASIN B0HMFV4457, ISBN 9798160611600) and Kindle (ASIN B0HMFPCCHK).
+const PAPERBACK_URL = "https://www.amazon.com/dp/B0HMFV4457";
 const KINDLE_URL = "https://www.amazon.com/dp/B0HMFPCCHK";
 
 const PAGE_URL = "https://www.thejoydigi.com/books/value-created";
@@ -19,23 +20,27 @@ const SAMPLES = ["01", "02", "13", "19", "24", "00"];
 type Part = { title: string; intro: string; chapters: { n: number; title: string }[] };
 type Props = { title: string; subtitle: string; description: string; parts: Part[]; words: number; samples: { id: string; title: string; label: string }[] };
 
-function KindleButton({ big = false }: { big?: boolean }) {
+function BuyButtons({ big = false }: { big?: boolean }) {
   const size = big ? "px-8 py-4 text-base" : "px-7 py-3.5 text-sm";
-  if (KINDLE_URL)
-    return (
+  return (
+    <>
       <a
-        href={KINDLE_URL}
+        href={PAPERBACK_URL}
         target="_blank"
         rel="noopener noreferrer"
         className={`inline-flex items-center justify-center gap-3 rounded-full bg-gradient-to-b from-[#FFD47E] to-[#D1941F] ${size} font-semibold text-[#0C1130] no-underline shadow-[0_0_40px_-6px_rgba(242,168,29,0.7)] transition-transform duration-300 hover:-translate-y-0.5 hover:no-underline`}
       >
-        Get it on Kindle
+        Get the paperback
       </a>
-    );
-  return (
-    <span className={`inline-flex items-center justify-center gap-3 rounded-full border border-[#F2A81D]/60 bg-[#F2A81D]/10 ${size} font-semibold text-[#FFD47E]`}>
-      Coming soon to Kindle
-    </span>
+      <a
+        href={KINDLE_URL}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={`inline-flex items-center justify-center gap-3 rounded-full border border-[#F2A81D]/60 bg-[#F2A81D]/10 ${size} font-semibold text-[#FFD47E] no-underline transition-colors hover:border-[#F2A81D] hover:bg-[#F2A81D]/20 hover:no-underline`}
+      >
+        Kindle edition
+      </a>
+    </>
   );
 }
 
@@ -64,7 +69,7 @@ function Hero({ title, subtitle, description }: Pick<Props, "title" | "subtitle"
       <div className="relative z-10 mx-auto grid max-w-7xl items-center gap-14 px-5 pt-10 pb-24 md:px-8 lg:grid-cols-[1.1fr_0.9fr] lg:pt-16">
         <div>
           <motion.p initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.9, ease: EASE }} className="mb-6 font-[family-name:var(--vc-display)] text-xs md:text-sm tracking-[0.35em] text-[#F2A81D]">
-            The book · Kindle edition
+            The book · Paperback & Kindle
           </motion.p>
           <motion.h1
             initial={{ opacity: 0, y: 24, filter: "blur(8px)" }}
@@ -84,12 +89,12 @@ function Hero({ title, subtitle, description }: Pick<Props, "title" | "subtitle"
             {description}
           </motion.p>
           <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, ease: EASE, delay: 0.8 }} className="mt-10 flex flex-col gap-3 sm:flex-row sm:items-center">
-            <KindleButton big />
+            <BuyButtons big />
             <Link
               href="/podcasts/value-created"
               className="inline-flex items-center justify-center gap-3 rounded-full border border-[#F2A81D]/40 px-7 py-4 font-semibold text-[#F4EEDD] no-underline transition-colors hover:border-[#F2A81D] hover:bg-[#F2A81D]/10 hover:no-underline"
             >
-              Or listen to the free audiobook
+              Or listen free
             </Link>
           </motion.div>
           <p className="mt-5 text-sm tracking-wide text-[#F4EEDD]/50">Produced by The Joy Digi</p>
@@ -195,7 +200,7 @@ function OneSentence() {
         Find a real problem. Solve it well. <span className="text-[#FFD47E]">Charge less than the pain it caused.</span>
       </blockquote>
       <div className="mt-12 flex flex-col items-center justify-center gap-3 sm:flex-row">
-        <KindleButton />
+        <BuyButtons />
         <Link href="/podcasts/value-created" className="text-sm font-semibold text-[#FFD47E] underline-offset-4 hover:underline">
           Listen to the audiobook free
         </Link>
@@ -217,15 +222,18 @@ export default function ValueCreatedBook(props: Props) {
     url: PAGE_URL,
     image,
     inLanguage: "en",
-    bookFormat: "https://schema.org/EBook",
+    workExample: [
+      { "@type": "Book", bookFormat: "https://schema.org/Paperback", isbn: "9798160611600", url: PAPERBACK_URL },
+      { "@type": "Book", bookFormat: "https://schema.org/EBook", url: KINDLE_URL },
+    ],
     author: { "@type": "Organization", name: "The Joy Digi", url: "https://www.thejoydigi.com" },
     publisher: { "@type": "Organization", name: "The Joy Digi", url: "https://www.thejoydigi.com" },
-    ...(KINDLE_URL ? { sameAs: KINDLE_URL } : {}),
+    sameAs: [PAPERBACK_URL, KINDLE_URL],
   };
   return (
     <div className={VC_ROOT}>
       <NextSeo
-        title={`${fullTitle} | Kindle book by The Joy Digi`}
+        title={`${fullTitle} | Paperback & Kindle book by The Joy Digi`}
         description={description}
         canonical={PAGE_URL}
         openGraph={{ type: "book", url: PAGE_URL, title: fullTitle, description, siteName: "The Joy Digi", images: [{ url: image, width: 1000, height: 1600, alt: `${title} book cover` }] }}
