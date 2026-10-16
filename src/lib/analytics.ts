@@ -1,4 +1,5 @@
 import posthog from "posthog-js";
+import { KINDLE_PRICE, KINDLE_URL, PAPERBACK_PRICE, PAPERBACK_URL } from "@/components/podcast/value-created/buy-book";
 
 // Public project key (safe to ship, like the Clarity/GA ids in _document.tsx).
 const KEY = process.env.NEXT_PUBLIC_POSTHOG_KEY || "phc_uqwvizTTXUbrpT7wnWbqzRqQQMpwoc43kJeJuxn4cwLj";
@@ -39,8 +40,12 @@ const PLATFORMS: [RegExp, string][] = [
   [/(^|\.)podcasts\.apple\.com$/, "apple_podcasts"],
   [/(^|\.)overcast\.fm$/, "overcast"],
   [/(^|\.)pocketcasts\.com$/, "pocket_casts"],
-  [/(^|\.)amazon\.com$/, "amazon"],
 ];
+
+const BOOK_LINKS: Record<string, { book: string; format: string; price: number }> = {
+  [PAPERBACK_URL]: { book: "value-created", format: "paperback", price: Number(PAPERBACK_PRICE.slice(1)) },
+  [KINDLE_URL]: { book: "value-created", format: "kindle", price: Number(KINDLE_PRICE.slice(1)) },
+};
 
 /** Show slug from /podcasts/<slug> or /books/<slug> so platform clicks are attributed to a show. */
 const showFromPath = () => window.location.pathname.match(/^\/(?:podcasts|books)\/([^/?#]+)/)?.[1];
@@ -54,13 +59,12 @@ function onOutboundClick(e: MouseEvent) {
   } catch {
     return;
   }
+  const base = { show: showFromPath(), page: window.location.pathname, link_text: a.textContent?.trim().slice(0, 80), href: url.href };
+  const book = BOOK_LINKS[`${url.origin}${url.pathname}`];
+  if (book) return track("book_buy_click", { ...base, ...book, store: "amazon" });
   const isFeed = url.origin === window.location.origin && /\.(xml|rss)$|\/feed\b/.test(url.pathname);
   const platform = isFeed ? "rss" : PLATFORMS.find(([re]) => re.test(url.hostname))?.[1];
-  if (!platform) return;
-  track("listen_elsewhere_click", {
-    platform,
-    show: showFromPath(),
-    link_text: a.textContent?.trim().slice(0, 80),
-    href: url.href,
-  });
+  if (platform) return track("listen_elsewhere_click", { ...base, platform });
+  if (url.protocol === "mailto:") return track("outbound_click", { ...base, domain: "email" });
+  if (/^https?:$/.test(url.protocol) && url.origin !== window.location.origin) track("outbound_click", { ...base, domain: url.hostname.replace(/^www\./, "") });
 }
