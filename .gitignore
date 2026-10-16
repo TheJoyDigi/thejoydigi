@@ -65,3 +65,6 @@ Thumbs.db
 /podcast/daily-ai-brief/.env.example
 
 .email-previews/
+
+# PostHog CLI login for this repo only (direnv)
+.envrc
