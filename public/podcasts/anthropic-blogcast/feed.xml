@@ -172,5 +172,14 @@
 <itunes:author>TheJoyDigi</itunes:author>
 <itunes:duration>0:08:59</itunes:duration>
 <itunes:episodeType>full</itunes:episodeType>
+</item><item>
+<title>Episode 18: Investing in the Public Benefit: A Fund That Grows With Anthropic</title>
+<description>Anthropic commits five percent of its shares to a new Public Benefit Fund that grows as the company grows, bringing its total public-good stake to about twenty percent.</description>
+<pubDate>Mon, 19 Oct 2026 11:06:35 -0700</pubDate>
+<enclosure url="https://www.thejoydigi.com/podcasts/anthropic-blogcast/ab-ep18-public-benefit-fund.mp3" length="7305166" type="audio/mpeg"/>
+<guid isPermaLink="false">ab-ep18-2026-10-19</guid>
+<itunes:author>TheJoyDigi</itunes:author>
+<itunes:duration>0:07:36</itunes:duration>
+<itunes:episodeType>full</itunes:episodeType>
 </item></channel>
 </rss>
