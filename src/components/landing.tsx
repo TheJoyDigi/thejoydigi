@@ -2,6 +2,7 @@ import { motion, MotionConfig, useScroll, useSpring } from "framer-motion";
 import React from "react";
 import type { HomeData } from "@/lib/home";
 import Beliefs from "./home/beliefs";
+import Books from "./home/books";
 import Hello from "./home/hello";
 import Hero from "./home/hero";
 import How from "./home/how";
@@ -38,6 +39,7 @@ export default function Landing({ data }: { data: HomeData }) {
         <div aria-hidden className={s.grain} />
         <Hero data={data} />
         <Marquee words={now} />
+        <Books />
         <Inbox />
         <Work data={data} />
         <Lab />
