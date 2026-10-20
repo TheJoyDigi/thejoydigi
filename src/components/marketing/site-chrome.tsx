@@ -13,6 +13,7 @@ const NAV = [
   { href: "/#work", label: "Work" },
   { href: "/#lab", label: "Lab" },
   { href: "/podcasts", label: "Podcasts" },
+  { href: "/books", label: "Books" },
   { href: "/#about", label: "About" },
 ];
 
@@ -127,6 +128,7 @@ const FOOTER_COLUMNS = [
       { href: "/podcasts/money-mastered", label: "Money, Mastered" },
       { href: "/podcasts/oc-pack", label: "The OC Pack" },
       { href: "/podcasts", label: "All podcasts" },
+      { href: "/books", label: "Books" },
     ],
   },
   {
