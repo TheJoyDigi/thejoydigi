@@ -181,5 +181,14 @@
 <itunes:author>TheJoyDigi</itunes:author>
 <itunes:duration>0:07:36</itunes:duration>
 <itunes:episodeType>full</itunes:episodeType>
+</item><item>
+<title>Episode 19: Claude Haiku 5.5: Cheaper, Faster, and Surprisingly Capable</title>
+<description>Alex and Jordan break down Claude Haiku 5.5, Anthropic&#x27;s cheapest and fastest small model, its big benchmark jumps, new effort setting, and the Sonnet cache and API credit changes that came with it.</description>
+<pubDate>Wed, 21 Oct 2026 09:58:56 -0700</pubDate>
+<enclosure url="https://www.thejoydigi.com/podcasts/anthropic-blogcast/ab-ep19-claude-haiku-5-5.mp3" length="8670221" type="audio/mpeg"/>
+<guid isPermaLink="false">ab-ep19-2026-10-21</guid>
+<itunes:author>TheJoyDigi</itunes:author>
+<itunes:duration>0:09:01</itunes:duration>
+<itunes:episodeType>full</itunes:episodeType>
 </item></channel>
 </rss>
