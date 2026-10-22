@@ -190,5 +190,14 @@
 <itunes:author>TheJoyDigi</itunes:author>
 <itunes:duration>0:09:01</itunes:duration>
 <itunes:episodeType>full</itunes:episodeType>
+</item><item>
+<title>Episode 20: Christopher Stubbs Joins Anthropic&#x27;s Trust: The Physicist Who Found the Universe Speeding Up</title>
+<description>Alex and Jordan break down why Anthropic added Harvard physicist Christopher Stubbs, who helped discover the accelerating expansion of the universe, to the Long-Term Benefit Trust that can appoint a majority of its board.</description>
+<pubDate>Thu, 22 Oct 2026 10:00:05 -0700</pubDate>
+<enclosure url="https://www.thejoydigi.com/podcasts/anthropic-blogcast/ab-ep20-christopher-stubbs-long-term-benefit-trust.mp3" length="7960108" type="audio/mpeg"/>
+<guid isPermaLink="false">ab-ep20-2026-10-22</guid>
+<itunes:author>TheJoyDigi</itunes:author>
+<itunes:duration>0:08:17</itunes:duration>
+<itunes:episodeType>full</itunes:episodeType>
 </item></channel>
 </rss>
