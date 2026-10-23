@@ -199,5 +199,14 @@
 <itunes:author>TheJoyDigi</itunes:author>
 <itunes:duration>0:08:17</itunes:duration>
 <itunes:episodeType>full</itunes:episodeType>
+</item><item>
+<title>Episode 21: Agent Skills Gets a Neutral Home: Anthropic Donates the Standard to the Agentic AI Foundation</title>
+<description>Alex and Jordan break down Anthropic&#x27;s donation of Agent Skills to the Agentic AI Foundation: one million published skills, more than seventy platforms, and what vendor-neutral governance means for builders.</description>
+<pubDate>Fri, 23 Oct 2026 10:01:26 -0700</pubDate>
+<enclosure url="https://www.thejoydigi.com/podcasts/anthropic-blogcast/ab-ep21-donating-agent-skills-agentic-ai-foundation.mp3" length="7378727" type="audio/mpeg"/>
+<guid isPermaLink="false">ab-ep21-2026-10-23</guid>
+<itunes:author>TheJoyDigi</itunes:author>
+<itunes:duration>0:07:41</itunes:duration>
+<itunes:episodeType>full</itunes:episodeType>
 </item></channel>
 </rss>
