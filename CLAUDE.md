@@ -6,13 +6,13 @@
 - Build: `npm run build`
 - Production: `npm run start`
 - Clean: `npm run clean` (removes .next directory)
-- Lint: `npm run lint`
+- Lint: `npm run lint` (ESLint 9 flat config, `eslint.config.mjs`)
 
 ## Environment
 
-- Next.js: 15.1.7
-- React: 19.0.0
-- Node.js: v23.6.0
+- Next.js: 16.4.3 (Turbopack for dev + build)
+- React: 19.3.1
+- Node.js: 24.x LTS (`engines` + `.nvmrc`)
 - npm: 11.1.0
 
 ## Project Structure
