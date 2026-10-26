@@ -13,9 +13,14 @@ type BlogLayoutProps = {
     category: string;
     excerpt: string;
   };
+  /** Title/description for hub and publication section pages. */
+  seo?: {
+    title: string;
+    description: string;
+  };
 };
 
-const BlogLayout: React.FC<BlogLayoutProps> = ({ children, postData }) => {
+const BlogLayout: React.FC<BlogLayoutProps> = ({ children, postData, seo }) => {
   const router = useRouter();
   const [currentPostData, setCurrentPostData] = useState(postData);
 
@@ -31,14 +36,17 @@ const BlogLayout: React.FC<BlogLayoutProps> = ({ children, postData }) => {
           title={currentPostData.title}
           description={currentPostData.excerpt}
           date={currentPostData.date}
-          author="TheJoyDigi Team"
+          author="Long La"
           slug={currentPostData.slug}
           hasCoverImage={!!currentPostData.coverImage}
         />
       ) : (
         <DefaultSEO
-          title="Field Notes | The Joy Digi"
-          description="Long La's notes on building joyful products, podcasts, and super intelligence (SI) experiments."
+          title={seo?.title || "Value Creation for Founders | The Joy Digi"}
+          description={
+            seo?.description ||
+            "Plain-language answers on how value is created, proven, and priced, for people building a first real business."
+          }
         />
       )}
       <SiteFrame>{children}</SiteFrame>

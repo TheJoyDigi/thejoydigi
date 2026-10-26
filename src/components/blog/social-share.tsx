@@ -23,11 +23,11 @@ const SocialShare: React.FC<SocialShareProps> = ({
   };
 
   const iconButtonClass =
-    "inline-grid h-10 w-10 place-items-center rounded-full border-2 border-[#1B140D] text-[#1B140D] transition-colors duration-300 hover:bg-[#FFC94A] hover:text-[#0B0B0C] no-underline hover:no-underline";
+    "inline-grid h-10 w-10 place-items-center rounded-full border border-[#2A2A2E] text-[#9C9788] transition-colors duration-300 hover:border-[#FFC94A] hover:text-[#F7F1E5] no-underline hover:no-underline";
 
   return (
-    <div className="flex flex-wrap items-center gap-4 border-y-2 border-[#1B140D]/10 py-6">
-      <span className="font-semibold text-[#1B140D]">Share this post:</span>
+    <div className="flex flex-wrap items-center gap-4 py-2">
+      <span className="text-sm text-[#9C9788]">Share this</span>
       <div className="flex gap-3">
         <a
           href={shareLinks.twitter}

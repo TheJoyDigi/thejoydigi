@@ -1,108 +1,179 @@
 import { GetStaticProps } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import BlogCard from "../../components/blog/blog-card";
-import { CtaBand, PageHero, Reveal } from "@/components/marketing/kit";
-import { getAllPosts } from "../../lib/posts";
+import { getPostSummaries, type PostSummary } from "@/lib/posts";
+import { PUBLICATIONS } from "@/lib/publications";
+import { BLOG_TRAIL } from "@/content/blog-trail";
+import BlogCard from "@/components/blog/blog-card";
 import BlogLayout from "./_layout";
 
-interface BlogIndexProps {
-  posts: {
-    slug: string;
-    title: string;
-    excerpt: string;
-    date: string;
-    coverImage: string;
-    category: string;
-  }[];
+interface TrailView {
+  n: number;
+  title: string;
+  slug?: string;
 }
 
-export default function BlogIndex({ posts }: BlogIndexProps) {
-  const [featured, ...rest] = posts;
+interface BlogIndexProps {
+  posts: PostSummary[];
+  trail: TrailView[];
+  publishedInTrail: number;
+}
+
+export default function BlogIndex({
+  posts,
+  trail,
+  publishedInTrail,
+}: BlogIndexProps) {
+  const [lead, ...rest] = posts;
+  const upcoming = PUBLICATIONS.filter((p) => !p.launched);
 
   return (
-    <BlogLayout>
-      <PageHero
-        kicker="Field notes"
-        title="Notes from the"
-        accent="workbench."
-        lead="Honest write-ups on what I'm building, what super intelligence (SI) is changing, and what I learn along the way."
-      />
+    <BlogLayout
+      seo={{
+        title: "Value Creation for Founders | The Joy Digi",
+        description:
+          "Plain-language answers on how value is created, proven, and priced, for people building a first real business.",
+      }}
+    >
+      <div className="blog-dark">
+        <div className="b-wrap">
+          <header className="b-mast">
+            <p className="xp-label">Value, Created: the field guide</p>
+            <h1 className="b-h1">
+              How value is actually{" "}
+              <em className="b-h1__accent">created, proven, and priced.</em>
+            </h1>
+            <p className="b-lead">
+              Plain-language answers for people building a first real
+              business. One founder question per article, each drawn from a
+              chapter of the free audiobook Value, Created, produced by The
+              Joy Digi.
+            </p>
+            <p className="b-meta">
+              {posts.length} article{posts.length === 1 ? "" : "s"} · New
+              questions twice a week
+            </p>
+          </header>
 
-      <section className="bg-[#FDF6EC] py-16 md:py-24">
-        <div className="container mx-auto px-4">
-          {featured && (
-            <Reveal className="mb-10 md:mb-14">
-              <Link
-                href={`/blog/${featured.slug}`}
-                className="group grid gap-0 overflow-hidden rounded-[2rem] border-2 border-[#1B140D] bg-white shadow-[6px_6px_0_0_#1B140D] transition-[transform,box-shadow] duration-300 ease-out hover:-translate-y-1 hover:shadow-[10px_10px_0_0_#1B140D] no-underline hover:no-underline lg:grid-cols-2"
-              >
-                <div className="relative aspect-[16/10] overflow-hidden lg:aspect-auto">
-                  <Image
-                    src={featured.coverImage}
-                    alt={featured.title}
-                    fill
-                    priority
-                    sizes="(min-width: 1024px) 50vw, 100vw"
-                    className="object-cover transition-transform duration-300 group-hover:scale-[1.03]"
-                  />
-                  <span className="absolute left-4 top-4 inline-flex rounded-full border-2 border-[#1B140D] bg-[#FFC94A] px-3 py-1 text-sm font-bold text-[#1B140D]">
-                    {featured.category}
-                  </span>
-                </div>
-                <div className="flex flex-col justify-center p-8 md:p-10">
-                  <div className="mb-2 text-xs font-bold uppercase tracking-[0.2em] text-[#6B5D4F]">
-                    {featured.date}
-                  </div>
-                  <h2 className="font-ui !py-0 font-bold tracking-[-0.02em] mb-3 text-3xl text-[#1B140D] md:text-4xl">
-                    {featured.title}
-                  </h2>
-                  <p className="text-[#1B140D]/75">{featured.excerpt}</p>
-                  <span className="mt-5 inline-flex items-center gap-1 font-semibold text-[#8F6300]">
-                    Read article <span aria-hidden>→</span>
-                  </span>
-                </div>
-              </Link>
-            </Reveal>
-          )}
-
-          {featured ? (
-            <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-              {rest.map((post) => (
-                <BlogCard key={post.slug} {...post} />
-              ))}
+          <section className="b-section" aria-label="Start here">
+            <div className="b-section__head">
+              <span className="xp-label">Start here: the first nine questions</span>
+              <span className="b-meta">
+                {publishedInTrail} of {trail.length} published
+              </span>
             </div>
-          ) : (
-            <Reveal>
-              <div className="mx-auto max-w-2xl rounded-[2rem] border-2 border-dashed border-[#1B140D]/25 bg-white/60 px-8 py-16 text-center">
-                <p className="font-bungee text-2xl md:text-3xl text-[#1B140D]">The first notes are <span className="joy-accent">brewing.</span></p>
-                <p className="mt-4 text-[#1B140D]/70">
-                  In the meantime, see what I&apos;m building in the{" "}
-                  <Link href="/#lab" className="font-semibold text-[#8F6300] underline-offset-4 hover:underline">
-                    Lab
-                  </Link>{" "}
-                  or press play on a{" "}
-                  <Link href="/podcasts" className="font-semibold text-[#8F6300] underline-offset-4 hover:underline">
-                    podcast
-                  </Link>
-                  .
-                </p>
-              </div>
-            </Reveal>
-          )}
-        </div>
-      </section>
+            <p className="b-trail__intro">
+              The path I would give a founder with no customers yet.
+            </p>
+            <ol className="b-trail">
+              {trail.map((item) => (
+                <li key={item.n} className="b-trail__item">
+                  <span
+                    className={
+                      item.slug ? "b-trail__n is-live" : "b-trail__n"
+                    }
+                  >
+                    {item.n}
+                  </span>
+                  {item.slug ? (
+                    <Link href={`/blog/${item.slug}`} className="b-trail__link">
+                      {item.title}
+                      <span className="b-chip">Read</span>
+                    </Link>
+                  ) : (
+                    <span className="b-trail__soon" aria-disabled="true">
+                      {item.title}
+                      <span className="b-chip b-chip--soon">Soon</span>
+                    </span>
+                  )}
+                </li>
+              ))}
+            </ol>
+            <p className="b-meta">
+              The full series lives in its own section:{" "}
+              <Link href="/blog/value-created" className="b-inline-link">
+                Value, Created articles
+              </Link>
+            </p>
+          </section>
 
-      <CtaBand />
+          <section className="b-section" aria-label="Latest articles">
+            <h2 className="b-h2">Latest</h2>
+            {lead ? (
+              <>
+                <article className="b-lead-story">
+                  <div>
+                    <Link href={`/blog/${lead.slug}`} className="b-lead-story__link">
+                      <span className="b-lead-story__title">{lead.title}</span>
+                    </Link>
+                    <p className="b-lead-story__excerpt">{lead.excerpt}</p>
+                    <p className="b-meta">
+                      {lead.dateLabel} · {lead.readingTime} min read
+                    </p>
+                  </div>
+                  <div className="b-lead-story__cover">
+                    <Image
+                      src={lead.coverImage}
+                      alt={lead.title}
+                      width={220}
+                      height={220}
+                      sizes="220px"
+                    />
+                  </div>
+                </article>
+                <div>
+                  {rest.map((post) => (
+                    <BlogCard
+                      key={post.slug}
+                      title={post.title}
+                      excerpt={post.excerpt}
+                      date={post.date}
+                      dateLabel={post.dateLabel}
+                      slug={post.slug}
+                      category={post.category}
+                      readingTime={post.readingTime}
+                      chapter={post.chapter}
+                    />
+                  ))}
+                </div>
+              </>
+            ) : (
+              <p className="b-lead">The first articles are on the way.</p>
+            )}
+          </section>
+
+          <section className="b-section" aria-label="Publications">
+            <span className="xp-label">Publications</span>
+            <p className="b-pubs">
+              <Link href="/blog/value-created" className="b-inline-link">
+                Value, Created
+              </Link>{" "}
+              is publishing now.{" "}
+              {upcoming.map((p) => p.name).join(", ")} are on the way, each
+              opening when its first articles are ready.
+            </p>
+          </section>
+        </div>
+      </div>
     </BlogLayout>
   );
 }
 
-export const getStaticProps: GetStaticProps = async () => {
-  const posts = await getAllPosts();
+export const getStaticProps: GetStaticProps<BlogIndexProps> = async () => {
+  const posts = await getPostSummaries();
+  const slugs = new Set(posts.map((p) => p.slug));
+  for (const item of BLOG_TRAIL) {
+    if (item.slug && !slugs.has(item.slug)) {
+      throw new Error(
+        `blog-trail references missing post slug: ${item.slug}`
+      );
+    }
+  }
   return {
     props: {
       posts,
+      trail: BLOG_TRAIL,
+      publishedInTrail: BLOG_TRAIL.filter((t) => t.slug).length,
     },
   };
 };

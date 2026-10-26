@@ -1,33 +1,60 @@
-# Value, Created SEO Blog: Topic Queue
+# Value, Created Blog: Topic Queue
 
-_Ranked by Claude (editorial director), 2026-10-26. Rules and workflow:
-[PROGRAM.md](PROGRAM.md). Work from the top. When fewer than 6 topics remain,
-Claude re-ranks from the reserve chapters._
+_Niche-first (Long, 2026-10-26): value creation for early-stage founders, in
+plain language. Editorial ranking: Claude. Rules: [PROGRAM.md](PROGRAM.md).
+Cadence: 2 posts per week, top of the beachhead first._
 
-| # | Post title (search question) | Target search query | Chapter | Angle |
-|---|---|---|---|---|
-| 1 | How Do I Price My Services Without Undercharging? | how to price my services | Ch 16: Pricing: Naming Your Worth | Costs set your floor, the buyer's outcome sets your ceiling. Moving from hourly or cost-plus to value-based pricing, why a low price signals low quality, and how to say the number without apologizing. |
-| 2 | How Do I Make My Business Run Without Me? | how to make my business run without me | Ch 18: Systems That Run Without You | The difference between owning a job and owning an asset. Checklists for the three tasks only you do, train someone, then a real week off to test it. |
-| 3 | How Do I Find Out If People Actually Want What I'm Building? | how to validate a business idea | Ch 9: Making Things People Want | Watch what people do, not what they say. Build the smallest test, charge early, and treat a paid yes as the only real yes. |
-| 4 | How Do I Get Customers Without Running Ads? | how to get customers without advertising | Ch 29: The Reputation Flywheel | Word of mouth is a system, not luck. Three rules for making every delivery generate the next referral, and why trust shortens the price conversation. |
-| 5 | What Is a Business Moat and How Do I Build One? | what is a moat in business | Ch 17: Scarcity and Moats | Good work gets copied. Relationships, secrets, and systems a copycat cannot clone in a quarter, plus how a moat quietly turns into a trap. |
-| 6 | How Do I Find a Business Idea Worth Pursuing? | how to find a business idea | Ch 6: Every Value Starts as a Problem Solved | Stop brainstorming products and start collecting problems. Where to look, how to tell a real pain from a mild annoyance, and how to pick one worth years. |
-| 7 | How Do I Build a Brand With No Budget? | how to build a brand from scratch | Ch 19: Brand: Trust, Stored | A brand is a promise, proof, and memory. The index-card method: write the promise, list the proof, repeat it until people remember it. |
-| 8 | Why Do Customers Abandon Checkout and Signup? | how to reduce friction in customer experience | Ch 13: Removing Friction | Every extra form field, wait, and click is a tax on revenue you cannot see. Three rules for finding friction in your own business by going through it as a customer. |
-| 9 | Why Do Great Products Fail to Sell? | why do good products fail | Ch 25: Distribution | Better value does not win, value that arrives wins. The 50/50 rule: half your effort goes to getting it seen. |
-| 10 | How Do I Make Money From What I Create Instead of Giving It Away? | how to monetize what you create | Ch 15: Creating Isn't Enough | The market pays for capture, not creation. Find the bottleneck, own the scarce piece, and get the deal in writing. |
-| 11 | How Do I Build Trust With Customers When I'm New? | how to build trust with customers | Ch 12: Trust, the Invisible Ingredient | Keep small promises, overcorrect when you break one, and give first. Why trust compounds slowly and breaks in an afternoon. |
-| 12 | What Is Leverage in Business and How Do I Use It? | what is leverage in business | Ch 24: Leverage | The four levers (capital, code, people, media), how to pick the cheapest one first, and why you never lever something broken. Includes the weekly lever audit. |
+**Rule: no ring post publishes until all 9 beachhead posts are live, except
+by Long's call.**
 
-## Status
+## Beachhead cluster (9 posts, in priority order)
 
-- #1 **Published 2026-10-26**: `posts/how-to-price-my-services.md`
-- #2 **Published 2026-10-26**: `posts/how-to-make-my-business-run-without-me.md`
+| # | Post title (search question) | Target query | Chapter tie | Angle | Status |
+|---|---|---|---|---|---|
+| 1 | What Is Value Creation, and How Does a Founder Actually Do It? | what is value creation in business | Ch 1 (support: Ch 3) | Value lives in people, not things. Creating it means changing something for someone. Then the split that matters: creating vs capturing. | **Published 2026-10-26** (`what-is-value-creation-for-founders`) |
+| 2 | How Do I Find Out If Customers Will Actually Pay for What I'm Building? | how to get first paying customers | Ch 9 | The count that proves value is people who paid, not who said they would. Smallest test, charge from day one. | **Published 2026-10-26** (`how-to-get-first-paying-customers`) |
+| 3 | Is Price the Same as Value? What a Price Actually Tells You | price vs value | Ch 4 (support: Ch 23) | A price is one trade between two people, not a fact about the thing. Read it as information without marrying it. | Next |
+| 4 | How Do I Price My Services Without Undercharging? | how to price my services | Ch 16 | Costs set the floor, the buyer's outcome sets the ceiling. The practical sequel to #3. | **Published 2026-10-26** (`how-to-price-my-services`) |
+| 5 | Why Will Anyone Pay? Needs, Wants, and Pain | how to find a customer pain point | Ch 5 | Pain is the deepest well: people pay almost anything to make it stop. Tell a need, a want, and a pain apart in your own customer. | Queued |
+| 6 | How Do I Find a Business Idea Worth Pursuing? | how to find a business idea | Ch 6 | Collect problems, not products. Real pain vs mild annoyance. | Queued |
+| 7 | Why Do Founders Create Value and Still Not Get Paid? | value creation vs value capture | Ch 15 (support: Ch 3) | The market pays for capture, not creation. Own the scarce piece; get the deal in writing. | Queued |
+| 8 | Why Am I Busy but Not Making Money? | why am I busy but not making money | Ch 7 | Stop selling hours; spend your best effort on the hardest problem; invest in the input that compounds. | Queued |
+| 9 | How Do I Choose What to Build Next? | how to choose what to build | Ch 30 | Fall in love with the problem. Three questions that pick a problem worth years. | Queued |
 
-## Reserve chapters (next ranking round)
+Beachhead completes at 6 more posts after 2026-10-26, about 3 weeks at
+cadence. Sequencing logic: the order a founder meets the problem. Every
+beachhead post links to its siblings. Ch 23 and Ch 2 supply material for
+posts 3 and 1 rather than standing alone.
 
-Ch 20 Ownership, Ch 30 Choosing What to Build, Ch 11 Attention Is an Asset,
-Ch 26 Networks, Ch 27 Compounding, Ch 28 Give Value First, Ch 10 Service, by
-Hand. Held back from this round: the theory-leaning chapters (Ch 2, 3, 22, 23)
-whose searchers are usually students, not founders. Revisit if the founder
-queue ever runs dry.
+## Expansion rings (after the beachhead is published)
+
+**Ring 1: Trust and brand as stored value**
+1. How Do I Build Trust With Customers When I'm New? (Ch 12)
+2. How Do I Build a Brand With No Budget? (Ch 19)
+3. How Do I Get Customers Without Running Ads? (Ch 29)
+4. How Do I Give Value First Without Getting Taken Advantage Of? (Ch 28)
+5. What Does Great Customer Service Do for a Small Business? (Ch 10)
+
+**Ring 2: Distribution**
+1. Why Do Great Products Fail to Sell? (Ch 25)
+2. How Do I Get Noticed When Attention Is Scarce? (Ch 11)
+3. Why Do Customers Abandon Checkout and Signup? (Ch 13)
+4. What Is a Network Effect and Do I Need One? (Ch 26)
+
+**Ring 3: Systems, leverage, and compounding**
+1. How Do I Make My Business Run Without Me? (Ch 18) **Published 2026-10-26**
+   (`how-to-make-my-business-run-without-me`). The anchor of Ring 3; shipped
+   at launch, before the niche sequencing. It stays live in this honest home.
+2. What Is a Business Moat and How Do I Build One? (Ch 17)
+3. What Is Leverage in Business and How Do I Use It? (Ch 24)
+4. Equity vs. Wages: Why Do Owners Keep What Workers Create? (Ch 20)
+5. How Does Compounding Work in a Small Business? (Ch 27)
+6. How Do I Build a Personal System for Creating Value? (Ch 31)
+
+**Held back** (theory-heavy, student searchers): Ch 2, 8, 14, 21, 22, 23, 32.
+Reuse as supporting material inside posts above, not as posts.
+
+## Published so far
+
+- 2026-10-26: `how-to-price-my-services` (Ch 16), `how-to-make-my-business-run-without-me` (Ch 18) — launch pair.
+- 2026-10-26: `what-is-value-creation-for-founders` (Ch 1), `how-to-get-first-paying-customers` (Ch 9) — beachhead 1 and 2, with the reading-experience redesign.
