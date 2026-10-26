@@ -1,14 +1,18 @@
-import Image from "next/image";
 import Link from "next/link";
-import { Reveal } from "@/components/marketing/kit";
+import type { ChapterRef } from "@/lib/posts";
 
 interface BlogCardProps {
   title: string;
   excerpt: string;
   date: string;
   slug: string;
-  coverImage: string;
   category: string;
+  /** "row" for index lists, "compact" for related reading. */
+  variant?: "row" | "compact";
+  /** Preformatted date, e.g. "October 26, 2026". Falls back to `date`. */
+  dateLabel?: string;
+  readingTime?: number;
+  chapter?: ChapterRef | null;
 }
 
 export default function BlogCard({
@@ -16,38 +20,37 @@ export default function BlogCard({
   excerpt,
   date,
   slug,
-  coverImage,
-  category,
+  variant = "row",
+  dateLabel,
+  readingTime,
+  chapter,
 }: BlogCardProps) {
-  return (
-    <Reveal className="h-full">
-      <Link
-        href={`/blog/${slug}`}
-        className="group block h-full overflow-hidden rounded-[2rem] border-2 border-[#1B140D] bg-white shadow-[6px_6px_0_0_#1B140D] transition-[transform,box-shadow] duration-300 ease-out hover:-translate-y-1 hover:shadow-[10px_10px_0_0_#1B140D] no-underline hover:no-underline"
-      >
-        <div className="relative aspect-[16/10] overflow-hidden">
-          <Image
-            src={coverImage}
-            alt={title}
-            fill
-            sizes="(min-width: 1024px) 400px, 92vw"
-            className="object-cover transition-transform duration-300 group-hover:scale-[1.03]"
-          />
-          <span className="absolute left-4 top-4 inline-flex rounded-full border-2 border-[#1B140D] bg-[#FFC94A] px-3 py-1 text-sm font-bold text-[#1B140D]">
-            {category}
-          </span>
-        </div>
-        <div className="p-6 md:p-7">
-          <div className="mb-2 text-xs font-bold uppercase tracking-[0.2em] text-[#6B5D4F]">{date}</div>
-          <h2 className="font-ui !py-0 font-bold tracking-[-0.02em] mb-2 text-xl text-[#1B140D] line-clamp-2">
-            {title}
-          </h2>
-          <p className="text-[#1B140D]/75 line-clamp-3">{excerpt}</p>
-          <span className="mt-4 inline-flex items-center gap-1 font-semibold text-[#8F6300]">
-            Read article <span aria-hidden>→</span>
-          </span>
-        </div>
+  const when = dateLabel || date;
+  const meta = readingTime ? `${when} · ${readingTime} min read` : when;
+
+  if (variant === "compact") {
+    return (
+      <Link href={`/blog/${slug}`} className="b-compact">
+        {chapter ? (
+          <span className="b-compact__ch">Chapter {chapter.number}</span>
+        ) : null}
+        <span className="b-compact__title">{title}</span>
+        <span className="b-compact__meta">{meta}</span>
       </Link>
-    </Reveal>
+    );
+  }
+
+  return (
+    <Link href={`/blog/${slug}`} className="b-row">
+      <span className="b-row__ch">{chapter ? `CH ${chapter.number}` : ""}</span>
+      <span className="b-row__main">
+        <span className="b-row__title">{title}</span>
+        <span className="b-row__excerpt">{excerpt}</span>
+        <span className="b-row__meta">{meta}</span>
+      </span>
+      <span className="b-row__arrow" aria-hidden="true">
+        →
+      </span>
+    </Link>
   );
 }

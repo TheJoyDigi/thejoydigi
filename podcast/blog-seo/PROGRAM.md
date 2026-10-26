@@ -14,6 +14,51 @@ searching a real question at 11 PM is a warm lead, and a good answer keeps
 collecting visits for years. Every post routes readers to the free chapter
 episode and the book page. We do not sell hard in posts; we teach, then point.
 
+## The niche (Long, 2026-10-26: niche-first)
+
+**The niche: value creation for early-stage founders, in plain language.** The
+blog aims to become the obvious home for "how value is actually created,
+proven, and priced" for people building a first real business. Not generic
+business advice.
+
+- **Beachhead cluster:** the first 9 posts (QUEUE.md), sequenced in the order
+  a founder meets the problem: what value is, whether customers will pay,
+  what a price means, how to set one, pain, ideas, capture, inputs, choosing.
+  Beachhead posts link to each other; the cluster reads as one body of work.
+- **Expansion rings** (only after the beachhead is fully published): Ring 1
+  trust and brand as stored value; Ring 2 distribution; Ring 3 systems,
+  leverage, and compounding.
+- **The rule:** new topics must serve the niche, and **no ring post publishes
+  until all 9 beachhead posts are live**, except by Long's call. Two posts
+  shipped at launch before this sequencing (pricing, Ch 16; systems, Ch 18).
+  They stay live and are positioned honestly in QUEUE.md (pricing is the
+  beachhead's practical #4; systems anchors Ring 3).
+
+## Multi-blog architecture
+
+The site is prepared for **multiple publications** sharing one engine:
+
+- Every post carries a `publication` frontmatter field. All publications
+  share the modern reading template, the explainer components, and the SEO
+  machinery (Article JSON-LD, PostHog measurement).
+- `/blog` is the hub. Each publication gets a section index at
+  `/blog/<publication>` with its own title and meta: its own SEO lane.
+  Registry: `src/lib/publications.ts`. Post URLs stay `/blog/<slug>` for
+  every publication.
+- **Launch rule:** a publication's section index is created and linked only
+  when its **first 3 posts are ready**, so no section ever opens empty, and
+  no empty section page enters the sitemap or the nav. Publications with no
+  posts are architecture-ready only: a registry entry, no page.
+- The lanes:
+  - **Value, Created** (`value-created`): value creation for early founders.
+    Live.
+  - **Money, Mastered** (`money-mastered`): personal money, plain language.
+  - **The OC Pack** (`oc-pack`): Orange County pet parents.
+  - **Anthropic Blogcast** (`anthropic-blogcast`): SI industry explainers.
+
+This program governs the Value, Created publication. Future publications get
+their own program notes in this folder when they approach launch.
+
 ## The rules
 
 1. **One post = one founder search question = one chapter's idea.** The title is
@@ -25,7 +70,10 @@ episode and the book page. We do not sell hard in posts; we teach, then point.
 3. **Internal links, always both:**
    - the chapter episode: `https://www.thejoydigi.com/podcasts/value-created/<N>`
    - the book page: `https://www.thejoydigi.com/books/value-created`
-   Episode link first, book page second, one short paragraph at the end.
+   Episode link first, book page second, one short paragraph at the end. The
+   closing link must keep the exact markdown pattern
+   `[Chapter Title](https://www.thejoydigi.com/podcasts/value-created/<N>)`:
+   the loader parses it to build the end-of-post "listen" card.
 4. **Frontmatter** (loader: `src/lib/posts.ts`; posts are `.md` files in `posts/`):
    - `title`: the search question.
    - `excerpt`: the meta description. One or two sentences, under ~160 characters
@@ -33,8 +81,8 @@ episode and the book page. We do not sell hard in posts; we teach, then point.
    - `date`: quoted ISO date, `"2026-10-26"` (quote it; unquoted dates parse as
      Date objects and break serialization).
    - `coverImage`: `/posts/<slug>/cover.webp`.
-   - `category`: `Value, Created` for every post in this program (keeps the
-     related-posts module inside the series).
+   - `category`: `Value, Created` for every post in this program.
+   - `publication`: `value-created` for every post in this program.
    - Slug: short, hyphenated, built from the search query
      (`how-to-price-my-services`).
 5. **Cover image.** `public/posts/<slug>/cover.webp`, converted from an existing
@@ -51,16 +99,47 @@ episode and the book page. We do not sell hard in posts; we teach, then point.
    coffee cart), introduced as composites ("call her Dana"). Never present
    invented numbers as facts about real companies.
 9. **Length:** ~900-1,300 words of body. Short paragraphs. `##` section
-   headings that carry the argument. No tables (the MDX pipeline does not
-   render them reliably). No raw HTML, no curly braces in prose.
+   headings that carry the argument, and **heading text must be unique within
+   a post** (anchor ids derive from the text; duplicates fail the build).
+   No markdown tables in prose. No raw HTML, no curly braces in prose.
 10. **Cadence: 2 posts per week**, top of the queue first. A pace we can keep
-    forever beats a burst that dies.
+    forever beats a burst that dies. When a post publishes, add its slug to
+    `src/content/blog-trail.ts` in the same PR.
+
+## The reading experience and visual explainers
+
+Blog pages use the P7 reading room (near-black `#0B0B0C`, Fraunces headlines,
+DM Sans body at ~20px/1.75 in a 68ch column, gold for links, progress, and the
+primary button; iridescent only in the progress bar and the route-card rule).
+Tokens and styles live in the `.blog-dark` block of `src/styles/globals.css`;
+the template is `src/pages/blog/[slug].tsx` with components in
+`src/components/blog/`. Reading time, the table of contents, the chapter
+route card, and related reading are all derived by the loader; authors only
+write the post.
+
+**Explainers** (`src/components/blog/mdx-components.tsx`): `Ledger` (two-column
+comparison), `Stat` (key figure), `Flow` (numbered steps), `PullQuote`.
+Author rules:
+
+1. PascalCase JSX with **double-quoted string props only**. No braces, no
+   arrays, no text children, no markdown inside props.
+2. One blank line before and after every block; **no blank lines inside** a
+   block.
+3. A double quote inside a prop value is written `&quot;`. Apostrophes and
+   `$` are fine. No em dashes.
+4. **Every number or claim on a visual must already appear in the body text.**
+   An explainer restates; it never adds.
+5. Max 3 explainers per post, never two back to back, never above the first
+   `##`, except a `Flow` roadmap directly after the opening story.
+6. Explainers clarify, not decorate. If the prose already says it plainly in
+   two lines, skip the visual.
 
 ## Editorial workflow
 
 1. **Claude directs:** picks topics from the 32 chapters, ranks the queue,
    writes the outline for each post (hook, section beats, example, takeaway,
-   close). Queue lives in QUEUE.md; refresh it when it drops below 6 topics.
+   close, explainer placements). Queue lives in QUEUE.md; refresh it when it
+   drops below 6 topics.
 2. **Lola drafts** from the outline, then **Claude reviews** the draft against
    this program's rules before anything ships.
 3. **Lola publishes** (see below) and runs the measurement loop.
@@ -76,24 +155,37 @@ episode and the book page. We do not sell hard in posts; we teach, then point.
   `prj_clYNb8SniwzY2p7h9AZy1ObOSPe5`, no teamId). Git-triggered deploys of
   API-authored commits land blocked on this project; a merged PR is not live
   until this step runs.
-- `next-sitemap` regenerates the sitemap at build. Never commit
-  `public/sitemap-0.xml`.
+- **Sitemap (verified 2026-10-26, contrary to the usual assumption):**
+  production serves the committed `public/sitemap-0.xml` byte-for-byte;
+  next-sitemap's build output does not reach production on this project.
+  So **add new post URLs to `public/sitemap-0.xml` in the same PR** (one-line
+  `<url>` entries after the `/blog` entry, `changefreq` weekly, `priority`
+  0.7), and verify the live sitemap after deploy. This is an exception to the
+  house "never commit the sitemap" rule, made because the file is empirically
+  what production serves; revisit if the build pipeline changes.
 - Verify live before reporting: `/blog` lists the new posts, each post URL
-  returns 200 with the right title, and the live sitemap contains both URLs.
+  returns 200 with the right title, and the live sitemap contains the URLs.
 
 ## QA checklist (every post, before the PR)
 
 - [ ] Title is the search question; slug matches the query.
 - [ ] Excerpt works as a meta description (no truncation mid-thought).
-- [ ] Date is a quoted ISO string; category is `Value, Created`.
+- [ ] Date is a quoted ISO string; category is `Value, Created`;
+      publication is `value-created`.
 - [ ] Body 900-1,300 words; question answered in the first lines.
-- [ ] Both internal links present, episode first, book page second, and both
-      URLs return 200.
+- [ ] Both internal links present, episode first, book page second, exact
+      markdown pattern, and both URLs return 200.
 - [ ] Cover webp exists at `public/posts/<slug>/cover.webp` and the
       `coverImage` path matches it exactly.
 - [ ] Zero em dashes; zero standalone "AI"; no "written by Long La".
 - [ ] Examples clearly invented composites; no factual claims about real
       companies that we cannot source.
+- [ ] `##` headings unique within the post.
+- [ ] Explainers: string props only, numbers already in the prose, max 3,
+      none back to back.
+- [ ] Trail updated in `src/content/blog-trail.ts` if the post is in the
+      beachhead cluster.
+- [ ] New post URLs added to `public/sitemap-0.xml`.
 - [ ] The MDX compiles through the site's own loader (`getPostBySlug`) and
       `npx tsc --noEmit` passes.
 - [ ] Claude's review pass is done and its fixes applied.
@@ -123,3 +215,5 @@ the next 12 topics from the reserve chapters. SEO results compound on a
 - `src/content/seo-plan.md` is a retired agency-era roadmap (services,
   consultations). It does not describe this program; leave it or remove it in
   a separate cleanup PR.
+- The sitemap lists only some podcast episodes (it predates the blog). A full
+  sitemap regeneration fix belongs to the build pipeline, not this program.

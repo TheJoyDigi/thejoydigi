@@ -4,6 +4,7 @@ excerpt: "Write down how the work is done, hand it to someone, then stay away lo
 date: "2026-10-26"
 coverImage: "/posts/how-to-make-my-business-run-without-me/cover.webp"
 category: "Value, Created"
+publication: "value-created"
 ---
 
 Short answer: write down how the work is done, hand the pages to someone else, and then stay away long enough to find out what breaks. That is the whole road. It is not glamorous, and it works.
@@ -15,6 +16,14 @@ Consider two house painters who started in the same town, the same year, with th
 The first does every estimate himself, holds every brush on the important jobs, and answers every phone call personally. His customers love him. When his shoulder gives out one spring, his income goes to zero within weeks, because there was never a business separate from his body.
 
 The second spent her first slow winter doing something duller. She wrote checklists and trained two crews. She takes most of July off. Same trade, same talent. The difference is structure, and structure can be built on purpose.
+
+<Flow title="The road from a job to an asset">
+  <FlowStep title="Find what stops" text="List every recurring task. Mark what only you can do and what nobody wrote down." />
+  <FlowStep title="Write the checklists" text="One page for each of the three things only you do, written while doing the task." />
+  <FlowStep title="Train one person" text="Do it together twice, watch them do it once, then step back. Check the result, not the method." />
+  <FlowStep title="Fix the system" text="When something breaks, ask which step was missing from the checklist, and add the line." />
+  <FlowStep title="Take a real week off" text="Write down every call that reached you anyway. Each one is a missing page." />
+</Flow>
 
 ## The test: what stops if you vanish for two weeks?
 
@@ -44,6 +53,8 @@ Next, hand one checklist to one person. A first hire, a part-timer, a family mem
 Here is the part most owners get wrong. They inspect the method. They hover, correct the grip, redo the edges. Instead, define what done right looks like: the estimate is accurate within a small range, the customer got the follow-up message, the site is clean. Check those outcomes. Let the method be theirs.
 
 And be honest about the trade: at first, their version will be a little worse than yours. That is acceptable. A consistent 90 percent that happens without you beats a perfect 100 percent that requires you, because the 90 percent version still happens in July.
+
+<PullQuote quote="A consistent 90 percent that happens without you beats a perfect 100 percent that requires you." />
 
 ## When it breaks, fix the system, not the person
 
