@@ -57,7 +57,7 @@ Build for the people who would miss it. Pain pays and stays. Wants wander off to
 
 One last piece, and it surprises people: your first price should probably embarrass you slightly. A price is a hypothesis about what the result is worth, and a refused price teaches you more than a free favor ever will. If everyone says yes instantly, you have learned only that you were too cheap.
 
-This connects to two neighbors in this series: [price is not the same as value](/blog), because a price is information before it is income, and the practical guide to [pricing your services without undercharging](/blog/how-to-price-my-services), which works through the floor and the ceiling in detail.
+This connects to two neighbors in this series: [price is not the same as value](/blog), because a price is information before it is income, and the practical guide to [pricing your services without undercharging](/blog/value-created/how-to-price-my-services), which works through the floor and the ceiling in detail.
 
 ## The seven-day paid test
 

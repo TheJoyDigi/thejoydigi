@@ -43,8 +43,13 @@ The site is prepared for **multiple publications** sharing one engine:
   machinery (Article JSON-LD, PostHog measurement).
 - `/blog` is the hub. Each publication gets a section index at
   `/blog/<publication>` with its own title and meta: its own SEO lane.
-  Registry: `src/lib/publications.ts`. Post URLs stay `/blog/<slug>` for
-  every publication.
+  Registry: `src/lib/publications.ts`. **Post URLs nest under their
+  publication: `/blog/<publication>/<slug>`** for every publication. Slugs
+  are unique per publication, not globally. (The flat `/blog/<slug>` form
+  shipped at launch on 2026-10-26 and was retired the same day, while the
+  URLs carried no external equity; permanent redirects from each flat URL
+  to its nested URL live in `next.config.js` `redirects()` — never link
+  the flat form.)
 - **Launch rule:** a publication's section index is created and linked only
   when its **first 3 posts are ready**, so no section ever opens empty, and
   no empty section page enters the sitemap or the nav. Publications with no
@@ -84,7 +89,9 @@ their own program notes in this folder when they approach launch.
    - `category`: `Value, Created` for every post in this program.
    - `publication`: `value-created` for every post in this program.
    - Slug: short, hyphenated, built from the search query
-     (`how-to-price-my-services`).
+     (`how-to-price-my-services`). Unique within its publication; the same
+     slug may exist under another publication. The published URL is
+     `/blog/<publication>/<slug>`.
 5. **Cover image.** `public/posts/<slug>/cover.webp`, converted from an existing
    site or brand asset (default: the Value, Created cover,
    `public/podcasts/value-created/cover.jpg`). Never invent a path that 404s.
@@ -112,7 +119,7 @@ Blog pages use the P7 reading room (near-black `#0B0B0C`, Fraunces headlines,
 DM Sans body at ~20px/1.75 in a 68ch column, gold for links, progress, and the
 primary button; iridescent only in the progress bar and the route-card rule).
 Tokens and styles live in the `.blog-dark` block of `src/styles/globals.css`;
-the template is `src/pages/blog/[slug].tsx` with components in
+the template is `src/pages/blog/[publication]/[slug].tsx` with components in
 `src/components/blog/`. Reading time, the table of contents, the chapter
 route card, and related reading are all derived by the loader; authors only
 write the post.
@@ -160,7 +167,8 @@ Author rules:
   next-sitemap's build output does not reach production on this project.
   So **add new post URLs to `public/sitemap-0.xml` in the same PR** (one-line
   `<url>` entries after the `/blog` entry, `changefreq` weekly, `priority`
-  0.7), and verify the live sitemap after deploy. This is an exception to the
+  0.7, in the nested form `https://www.thejoydigi.com/blog/<publication>/<slug>`),
+  and verify the live sitemap after deploy. This is an exception to the
   house "never commit the sitemap" rule, made because the file is empirically
   what production serves; revisit if the build pipeline changes.
 - Verify live before reporting: `/blog` lists the new posts, each post URL
@@ -185,7 +193,8 @@ Author rules:
       none back to back.
 - [ ] Trail updated in `src/content/blog-trail.ts` if the post is in the
       beachhead cluster.
-- [ ] New post URLs added to `public/sitemap-0.xml`.
+- [ ] New post URLs (nested `/blog/<publication>/<slug>` form) added to
+      `public/sitemap-0.xml`; nothing links the retired flat form.
 - [ ] The MDX compiles through the site's own loader (`getPostBySlug`) and
       `npx tsc --noEmit` passes.
 - [ ] Claude's review pass is done and its fixes applied.

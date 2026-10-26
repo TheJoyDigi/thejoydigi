@@ -65,7 +65,7 @@ Try to write yours. If the first blank will not fill, you do not have a product 
 
 Do this today, on paper: write your value sentence for your current customer, or for your best guess at one. Then circle the word "from." The "from" is the pain you are actually selling against, and it is worth more of your attention than your feature list.
 
-The next question is the harder one, and it is the subject of the next article in this series: [how do I find out if customers will actually pay for it?](/blog/how-to-get-first-paying-customers) Because value in theory is free. Value someone pays for is a business.
+The next question is the harder one, and it is the subject of the next article in this series: [how do I find out if customers will actually pay for it?](/blog/value-created/how-to-get-first-paying-customers) Because value in theory is free. Value someone pays for is a business.
 
 ---
 

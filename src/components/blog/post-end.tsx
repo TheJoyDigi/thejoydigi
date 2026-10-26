@@ -18,7 +18,7 @@ export default function PostEnd({
   related: PostSummary[];
 }) {
   const chapter = post.chapter;
-  const postUrl = `https://www.thejoydigi.com/blog/${post.slug}`;
+  const postUrl = `https://www.thejoydigi.com/blog/${post.publication}/${post.slug}`;
 
   return (
     <div className="b-end">
@@ -49,12 +49,13 @@ export default function PostEnd({
           <div className="b-related">
             {related.map((r) => (
               <BlogCard
-                key={r.slug}
+                key={`${r.publication}/${r.slug}`}
                 title={r.title}
                 excerpt={r.excerpt}
                 date={r.date}
                 dateLabel={r.dateLabel}
                 slug={r.slug}
+                publication={r.publication}
                 category={r.category}
                 variant="compact"
                 readingTime={r.readingTime}

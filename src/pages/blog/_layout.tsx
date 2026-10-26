@@ -7,6 +7,7 @@ type BlogLayoutProps = {
   children: React.ReactNode;
   postData?: {
     slug: string;
+    publication: string;
     title: string;
     date: string;
     coverImage: string;
@@ -31,13 +32,14 @@ const BlogLayout: React.FC<BlogLayoutProps> = ({ children, postData, seo }) => {
 
   return (
     <>
-      {router.pathname === "/blog/[slug]" && currentPostData ? (
+      {router.pathname === "/blog/[publication]/[slug]" && currentPostData ? (
         <BlogPostSEO
           title={currentPostData.title}
           description={currentPostData.excerpt}
           date={currentPostData.date}
           author="Long La"
           slug={currentPostData.slug}
+          path={`/blog/${currentPostData.publication}/${currentPostData.slug}`}
           hasCoverImage={!!currentPostData.coverImage}
         />
       ) : (
