@@ -124,7 +124,42 @@ export const BlogPostSEO: React.FC<BlogPostSEOProps> = ({
     day: "numeric",
   });
 
+  const articleJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: title,
+    description,
+    image: [imageUrl],
+    datePublished: date,
+    dateModified: date,
+    author: {
+      "@type": "Organization",
+      name: "The Joy Digi",
+      url: SITE_URL,
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "The Joy Digi",
+      url: SITE_URL,
+      logo: {
+        "@type": "ImageObject",
+        url: `${SITE_URL}/og-the-joy-digi-v2.png`,
+      },
+    },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": pageUrl,
+    },
+  };
+
   return (
+    <>
+    <Head>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+      />
+    </Head>
     <NextSeo
       title={fullTitle}
       description={description}
@@ -172,5 +207,6 @@ export const BlogPostSEO: React.FC<BlogPostSEOProps> = ({
         },
       ]}
     />
+    </>
   );
 };
