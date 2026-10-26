@@ -217,5 +217,14 @@
 <itunes:author>TheJoyDigi</itunes:author>
 <itunes:duration>0:08:39</itunes:duration>
 <itunes:episodeType>full</itunes:episodeType>
+</item><item>
+<title>Episode 23: Anthropic Files Its S-1 for a Proposed IPO</title>
+<description>Alex and Jordan break down Anthropic&#x27;s S-1 filing for a proposed Nasdaq IPO under the symbol ANT, with share count and price still to be determined.</description>
+<pubDate>Mon, 26 Oct 2026 09:54:46 -0700</pubDate>
+<enclosure url="https://www.thejoydigi.com/podcasts/anthropic-blogcast/ab-ep23-anthropic-files-s1-sec.mp3" length="6732562" type="audio/mpeg"/>
+<guid isPermaLink="false">ab-ep23-2026-10-26</guid>
+<itunes:author>TheJoyDigi</itunes:author>
+<itunes:duration>0:07:00</itunes:duration>
+<itunes:episodeType>full</itunes:episodeType>
 </item></channel>
 </rss>
