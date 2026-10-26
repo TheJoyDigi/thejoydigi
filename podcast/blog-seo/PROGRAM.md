@@ -115,10 +115,14 @@ their own program notes in this folder when they approach launch.
 
 ## The reading experience and visual explainers
 
-Blog pages use the P7 reading room (near-black `#0B0B0C`, Fraunces headlines,
-DM Sans body at ~20px/1.75 in a 68ch column, gold for links, progress, and the
-primary button; iridescent only in the progress bar and the route-card rule).
-Tokens and styles live in the `.blog-dark` block of `src/styles/globals.css`;
+Blog pages use a light reading theme modeled on Anthropic's blog (warm paper
+`#FAF9F5`, near-black ink `#141413`, Fraunces headlines, DM Sans body at
+~19px/1.75 in a 68ch column, hairline dividers, white explainer panels; gold
+is the single sparing accent: deep gold `#7A5500` for links, the progress
+fill, and focus rings, bright gold `#FFC94A` only as the route-card button
+fill and the pull-quote mark). The dark P7 reading room shipped at launch
+was replaced the same day (2026-10-26) at Long's direction. Tokens and
+styles live in the `.blog-light` block of `src/styles/globals.css`;
 the template is `src/pages/blog/[publication]/[slug].tsx` with components in
 `src/components/blog/`. Reading time, the table of contents, the chapter
 route card, and related reading are all derived by the loader; authors only

@@ -28,7 +28,7 @@ export default function BlogPost({ post, relatedPosts }: BlogPostProps) {
 
   return (
     <BlogLayout postData={post}>
-      <div className="blog-dark">
+      <div className="blog-light">
         <ReadingProgress targetId="post-body" />
         <header className="b-head">
           <Link href="/blog" className="b-back">

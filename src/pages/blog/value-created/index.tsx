@@ -25,7 +25,7 @@ export default function ValueCreatedSection({
     <BlogLayout
       seo={{ title: `${publication.name} | The Joy Digi`, description: publication.description }}
     >
-      <div className="blog-dark">
+      <div className="blog-light">
         <div className="b-wrap">
           <header className="b-mast">
             <Link href="/blog" className="b-back">

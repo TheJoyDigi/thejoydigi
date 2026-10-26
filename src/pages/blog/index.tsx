@@ -37,7 +37,7 @@ export default function BlogIndex({
           "Plain-language answers on how value is created, proven, and priced, for people building a first real business.",
       }}
     >
-      <div className="blog-dark">
+      <div className="blog-light">
         <div className="b-wrap">
           <header className="b-mast">
             <p className="xp-label">Value, Created: the field guide</p>
