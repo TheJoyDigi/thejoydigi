@@ -4,6 +4,7 @@ excerpt: "Price from what the result is worth to the buyer, not from what the wo
 date: "2026-10-26"
 coverImage: "/posts/how-to-price-my-services/cover.webp"
 category: "Value, Created"
+publication: "value-created"
 ---
 
 If you are asking this question, you are probably doing the math the way I used to. Add up your costs, add a margin, divide by your hours, and hope nobody winces at the number. That math is not wrong. It is just answering a different question. It tells you the lowest price you can survive at. It says nothing about what the work is worth to the person buying it.
@@ -20,6 +21,8 @@ She works about 40 hours a week, but only 25 of those are billable. The rest goe
 
 Spread her target income over the hours she can actually sell, and her honest floor is closer to $70 an hour. She was charging $45. That gap is where her evenings went.
 
+<Stat value="$70" unit="an hour" label="Dana's honest floor, once unbillable time is counted" note="About 40 hours a week, only 25 billable. She was charging $45." />
+
 This is what cost-based pricing is good for: finding the minimum. It is a survival calculation. The mistake is stopping there and treating the floor as the price. A floor tells you when to walk away. It was never meant to tell you what to ask.
 
 ## The buyer's result sets the ceiling
@@ -32,6 +35,13 @@ So ask the question Dana never asked: what is a clean year worth to him? Not in 
 
 That is the ceiling, and it has nothing to do with Dana's costs. The same work, priced from the buyer's side, supports a completely different number. Costs set your floor. The buyer's outcome sets your ceiling. A good price lives between them, much closer to the ceiling than most of us dare to put it.
 
+<Ledger title="Two numbers, two jobs" left="Floor" right="Ceiling" caption="A good price lives between them, much closer to the ceiling than most of us dare to put it.">
+  <LedgerRow label="Set by" left="Your costs" right="The buyer's outcome" />
+  <LedgerRow label="Tells you" left="The lowest price you can survive at" right="What the work is worth to the person buying it" />
+  <LedgerRow label="In the example" left="Closer to $70 an hour for Dana" right="$250 a month, if a clean year is worth $4,000 a year to him" />
+  <LedgerRow label="Use" left="It tells you when to walk away" right="It supports a completely different number" />
+</Ledger>
+
 ## A low price tells a story you did not intend
 
 There is a second problem with pricing low, and it is not arithmetic. It is storytelling.
@@ -39,6 +49,8 @@ There is a second problem with pricing low, and it is not arithmetic. It is stor
 Imagine two plumbers quoting the same drain job under your kitchen floor. One says $90. The other says $240 and puts the guarantee in writing. You cannot see the work once the floor is back down. You have no way to judge the quality directly, so you judge the signal you can see: the price.
 
 Plenty of buyers privately assume the $90 plumber cuts corners. For work the buyer cannot evaluate, price is the first piece of evidence they get. A low price does not read as generous. It reads as a warning. When you undercharge, you are not just leaving money on the table. You are telling a story about your own work that you never meant to tell.
+
+<PullQuote quote="A low price does not read as generous. It reads as a warning." />
 
 ## Say the number, then stop talking
 
