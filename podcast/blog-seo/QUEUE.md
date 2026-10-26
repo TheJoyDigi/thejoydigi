@@ -11,10 +11,10 @@ by Long's call.**
 
 | # | Post title (search question) | Target query | Chapter tie | Angle | Status |
 |---|---|---|---|---|---|
-| 1 | What Is Value Creation, and How Does a Founder Actually Do It? | what is value creation in business | Ch 1 (support: Ch 3) | Value lives in people, not things. Creating it means changing something for someone. Then the split that matters: creating vs capturing. | **Published 2026-10-26** (`what-is-value-creation-for-founders`) |
-| 2 | How Do I Find Out If Customers Will Actually Pay for What I'm Building? | how to get first paying customers | Ch 9 | The count that proves value is people who paid, not who said they would. Smallest test, charge from day one. | **Published 2026-10-26** (`how-to-get-first-paying-customers`) |
+| 1 | What Is Value Creation, and How Does a Founder Actually Do It? | what is value creation in business | Ch 1 (support: Ch 3) | Value lives in people, not things. Creating it means changing something for someone. Then the split that matters: creating vs capturing. | **Published 2026-10-26** (https://www.thejoydigi.com/blog/value-created/what-is-value-creation-for-founders) |
+| 2 | How Do I Find Out If Customers Will Actually Pay for What I'm Building? | how to get first paying customers | Ch 9 | The count that proves value is people who paid, not who said they would. Smallest test, charge from day one. | **Published 2026-10-26** (https://www.thejoydigi.com/blog/value-created/how-to-get-first-paying-customers) |
 | 3 | Is Price the Same as Value? What a Price Actually Tells You | price vs value | Ch 4 (support: Ch 23) | A price is one trade between two people, not a fact about the thing. Read it as information without marrying it. | Next |
-| 4 | How Do I Price My Services Without Undercharging? | how to price my services | Ch 16 | Costs set the floor, the buyer's outcome sets the ceiling. The practical sequel to #3. | **Published 2026-10-26** (`how-to-price-my-services`) |
+| 4 | How Do I Price My Services Without Undercharging? | how to price my services | Ch 16 | Costs set the floor, the buyer's outcome sets the ceiling. The practical sequel to #3. | **Published 2026-10-26** (https://www.thejoydigi.com/blog/value-created/how-to-price-my-services) |
 | 5 | Why Will Anyone Pay? Needs, Wants, and Pain | how to find a customer pain point | Ch 5 | Pain is the deepest well: people pay almost anything to make it stop. Tell a need, a want, and a pain apart in your own customer. | Queued |
 | 6 | How Do I Find a Business Idea Worth Pursuing? | how to find a business idea | Ch 6 | Collect problems, not products. Real pain vs mild annoyance. | Queued |
 | 7 | Why Do Founders Create Value and Still Not Get Paid? | value creation vs value capture | Ch 15 (support: Ch 3) | The market pays for capture, not creation. Own the scarce piece; get the deal in writing. | Queued |
@@ -43,8 +43,9 @@ posts 3 and 1 rather than standing alone.
 
 **Ring 3: Systems, leverage, and compounding**
 1. How Do I Make My Business Run Without Me? (Ch 18) **Published 2026-10-26**
-   (`how-to-make-my-business-run-without-me`). The anchor of Ring 3; shipped
-   at launch, before the niche sequencing. It stays live in this honest home.
+   (https://www.thejoydigi.com/blog/value-created/how-to-make-my-business-run-without-me).
+   The anchor of Ring 3; shipped at launch, before the niche sequencing. It
+   stays live in this honest home.
 2. What Is a Business Moat and How Do I Build One? (Ch 17)
 3. What Is Leverage in Business and How Do I Use It? (Ch 24)
 4. Equity vs. Wages: Why Do Owners Keep What Workers Create? (Ch 20)
@@ -56,5 +57,8 @@ Reuse as supporting material inside posts above, not as posts.
 
 ## Published so far
 
-- 2026-10-26: `how-to-price-my-services` (Ch 16), `how-to-make-my-business-run-without-me` (Ch 18) — launch pair.
-- 2026-10-26: `what-is-value-creation-for-founders` (Ch 1), `how-to-get-first-paying-customers` (Ch 9) — beachhead 1 and 2, with the reading-experience redesign.
+_Post URLs nest under the publication (`/blog/value-created/<slug>` since
+2026-10-26; the original flat URLs permanently redirect to the nested ones)._
+
+- 2026-10-26: https://www.thejoydigi.com/blog/value-created/how-to-price-my-services (Ch 16), https://www.thejoydigi.com/blog/value-created/how-to-make-my-business-run-without-me (Ch 18) — launch pair.
+- 2026-10-26: https://www.thejoydigi.com/blog/value-created/what-is-value-creation-for-founders (Ch 1), https://www.thejoydigi.com/blog/value-created/how-to-get-first-paying-customers (Ch 9) — beachhead 1 and 2, with the reading-experience redesign.

@@ -98,7 +98,9 @@ interface BlogPostSEOProps {
   author: string;
   slug: string;
   hasCoverImage: boolean;
-  /** Canonical page path. Defaults to `/blog/<slug>`; override for pages like /seo-plan. */
+  /** Canonical page path. Post pages pass `/blog/<publication>/<slug>` explicitly
+   *  (posts nest under their publication section); the `/blog/<slug>` default is
+   *  only a fallback for legacy callers like /seo-plan. */
   path?: string;
 }
 

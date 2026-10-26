@@ -1,4 +1,5 @@
 import { Post } from "@/core/types";
+import { DEFAULT_PUBLICATION } from "@/lib/publications";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -21,7 +22,7 @@ export const PostCardCompoent = ({ post }: { post: Post }) => {
         <div className="bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
           <div>
             <div className="text-gray-900 font-bold text-xl mb-2">
-              <Link href={`/blog/${post.slug}`}>{post.title}</Link>
+              <Link href={`/blog/${post.publication || DEFAULT_PUBLICATION}/${post.slug}`}>{post.title}</Link>
             </div>
             <p className="text-gray-700 text-base">{post.description}</p>
           </div>

@@ -18,8 +18,20 @@ export interface ChapterRef {
   url: string;
 }
 
+/** Canonical path for a post: posts nest under their publication section. */
+export function postPath(publication: string, slug: string): string {
+  return `/blog/${publication}/${slug}`;
+}
+
+/** Canonical absolute URL for a post. */
+export function postUrl(publication: string, slug: string): string {
+  return `https://www.thejoydigi.com${postPath(publication, slug)}`;
+}
+
 export interface PostSummary {
   slug: string;
+  /** Canonical path: /blog/<publication>/<slug>. */
+  url: string;
   title: string;
   excerpt: string;
   /** Raw ISO date string from frontmatter; used for sorting and <time dateTime>. */
@@ -99,15 +111,17 @@ function extractChapter(content: string): ChapterRef | null {
 function buildSummary(slug: string, data: any, content: string): PostSummary {
   const wordCount = countWords(content);
   const date = data.date || new Date().toISOString();
+  const publication = data.publication || DEFAULT_PUBLICATION;
   return {
     slug,
+    url: postPath(publication, slug),
     title: data.title || "Untitled Post",
     excerpt: data.excerpt || content.slice(0, 150) + "...",
     date,
     dateLabel: formatDateLabel(date),
     coverImage: data.coverImage || "/images/blog-default.jpg",
     category: data.category || "Technology",
-    publication: data.publication || DEFAULT_PUBLICATION,
+    publication,
     readingTime: Math.max(1, Math.ceil(wordCount / 230)),
     chapter: extractChapter(content),
   };
@@ -150,11 +164,30 @@ export async function getAllPosts(): Promise<Post[]> {
   const summaries = await getPostSummaries();
   const posts = await Promise.all(
     summaries.map(async (summary) => {
-      const post = await getPostBySlug(summary.slug);
+      const post = await getPostByPublicationAndSlug(
+        summary.publication,
+        summary.slug
+      );
       return post as Post;
     })
   );
   return posts.filter(Boolean);
+}
+
+/**
+ * Slugs are unique per publication, not globally: the same slug may exist
+ * under two publications. Resolve a post by its (publication, slug) pair;
+ * returns null when the slug is unknown or belongs to another publication.
+ */
+export async function getPostByPublicationAndSlug(
+  publication: string,
+  slug: string
+): Promise<Post | null> {
+  const post = await getPostBySlug(slug);
+  if (!post || post.publication !== publication) {
+    return null;
+  }
+  return post;
 }
 
 export async function getPostBySlug(slug: string): Promise<Post | null> {
@@ -187,7 +220,10 @@ export async function getRelatedPosts(
   limit: number = 3
 ): Promise<PostSummary[]> {
   const all = await getPostSummaries();
-  const others = all.filter((post) => post.slug !== current.slug);
+  const others = all.filter(
+    (post) =>
+      !(post.slug === current.slug && post.publication === current.publication)
+  );
   const tier = (post: PostSummary): number => {
     if (post.publication === current.publication && post.category === current.category)
       return 0;

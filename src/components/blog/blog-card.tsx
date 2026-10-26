@@ -6,6 +6,8 @@ interface BlogCardProps {
   excerpt: string;
   date: string;
   slug: string;
+  /** Publication slug; post URLs nest under it: /blog/<publication>/<slug>. */
+  publication: string;
   category: string;
   /** "row" for index lists, "compact" for related reading. */
   variant?: "row" | "compact";
@@ -20,6 +22,7 @@ export default function BlogCard({
   excerpt,
   date,
   slug,
+  publication,
   variant = "row",
   dateLabel,
   readingTime,
@@ -27,10 +30,11 @@ export default function BlogCard({
 }: BlogCardProps) {
   const when = dateLabel || date;
   const meta = readingTime ? `${when} · ${readingTime} min read` : when;
+  const href = `/blog/${publication}/${slug}`;
 
   if (variant === "compact") {
     return (
-      <Link href={`/blog/${slug}`} className="b-compact">
+      <Link href={href} className="b-compact">
         {chapter ? (
           <span className="b-compact__ch">Chapter {chapter.number}</span>
         ) : null}
@@ -41,7 +45,7 @@ export default function BlogCard({
   }
 
   return (
-    <Link href={`/blog/${slug}`} className="b-row">
+    <Link href={href} className="b-row">
       <span className="b-row__ch">{chapter ? `CH ${chapter.number}` : ""}</span>
       <span className="b-row__main">
         <span className="b-row__title">{title}</span>

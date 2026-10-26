@@ -13,8 +13,9 @@ interface SectionProps {
 /**
  * Section index for the Value, Created publication. A section page like
  * this one is added only when its publication launches (launch rule: the
- * first 3 posts ready; see podcast/blog-seo/PROGRAM.md). Post URLs stay
- * at /blog/<slug>; this page is the publication's home and SEO lane.
+ * first 3 posts ready; see podcast/blog-seo/PROGRAM.md). Post URLs nest
+ * under the section at /blog/value-created/<slug>; this page is the
+ * publication's home and SEO lane.
  */
 export default function ValueCreatedSection({
   publication,
@@ -57,12 +58,13 @@ export default function ValueCreatedSection({
             <div>
               {posts.map((post) => (
                 <BlogCard
-                  key={post.slug}
+                  key={`${post.publication}/${post.slug}`}
                   title={post.title}
                   excerpt={post.excerpt}
                   date={post.date}
                   dateLabel={post.dateLabel}
                   slug={post.slug}
+                  publication={post.publication}
                   category={post.category}
                   readingTime={post.readingTime}
                   chapter={post.chapter}

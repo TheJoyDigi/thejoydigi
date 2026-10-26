@@ -11,6 +11,8 @@ interface TrailView {
   n: number;
   title: string;
   slug?: string;
+  /** Nested post URL (/blog/<publication>/<slug>) once the post is live. */
+  href?: string;
 }
 
 interface BlogIndexProps {
@@ -70,13 +72,13 @@ export default function BlogIndex({
                 <li key={item.n} className="b-trail__item">
                   <span
                     className={
-                      item.slug ? "b-trail__n is-live" : "b-trail__n"
+                      item.href ? "b-trail__n is-live" : "b-trail__n"
                     }
                   >
                     {item.n}
                   </span>
-                  {item.slug ? (
-                    <Link href={`/blog/${item.slug}`} className="b-trail__link">
+                  {item.href ? (
+                    <Link href={item.href} className="b-trail__link">
                       {item.title}
                       <span className="b-chip">Read</span>
                     </Link>
@@ -103,7 +105,7 @@ export default function BlogIndex({
               <>
                 <article className="b-lead-story">
                   <div>
-                    <Link href={`/blog/${lead.slug}`} className="b-lead-story__link">
+                    <Link href={`/blog/${lead.publication}/${lead.slug}`} className="b-lead-story__link">
                       <span className="b-lead-story__title">{lead.title}</span>
                     </Link>
                     <p className="b-lead-story__excerpt">{lead.excerpt}</p>
@@ -124,12 +126,13 @@ export default function BlogIndex({
                 <div>
                   {rest.map((post) => (
                     <BlogCard
-                      key={post.slug}
+                      key={`${post.publication}/${post.slug}`}
                       title={post.title}
                       excerpt={post.excerpt}
                       date={post.date}
                       dateLabel={post.dateLabel}
                       slug={post.slug}
+                      publication={post.publication}
                       category={post.category}
                       readingTime={post.readingTime}
                       chapter={post.chapter}
@@ -161,19 +164,22 @@ export default function BlogIndex({
 
 export const getStaticProps: GetStaticProps<BlogIndexProps> = async () => {
   const posts = await getPostSummaries();
-  const slugs = new Set(posts.map((p) => p.slug));
-  for (const item of BLOG_TRAIL) {
-    if (item.slug && !slugs.has(item.slug)) {
+  const bySlug = new Map(posts.map((p) => [p.slug, p]));
+  const trail: TrailView[] = BLOG_TRAIL.map((item) => {
+    if (!item.slug) return item;
+    const post = bySlug.get(item.slug);
+    if (!post) {
       throw new Error(
         `blog-trail references missing post slug: ${item.slug}`
       );
     }
-  }
+    return { ...item, href: post.url };
+  });
   return {
     props: {
       posts,
-      trail: BLOG_TRAIL,
-      publishedInTrail: BLOG_TRAIL.filter((t) => t.slug).length,
+      trail,
+      publishedInTrail: trail.filter((t) => t.href).length,
     },
   };
 };

@@ -2,7 +2,7 @@ import { GetStaticPaths, GetStaticProps } from "next";
 import { MDXRemote } from "next-mdx-remote";
 import Link from "next/link";
 import {
-  getPostBySlug,
+  getPostByPublicationAndSlug,
   getPostSummaries,
   getRelatedPosts,
   type Post,
@@ -13,7 +13,7 @@ import { mdxComponents } from "@/components/blog/mdx-components";
 import ReadingProgress from "@/components/blog/reading-progress";
 import Toc from "@/components/blog/toc";
 import PostEnd from "@/components/blog/post-end";
-import BlogLayout from "./_layout";
+import BlogLayout from "../_layout";
 
 interface BlogPostProps {
   post: Post;
@@ -75,7 +75,7 @@ export default function BlogPost({ post, relatedPosts }: BlogPostProps) {
 export const getStaticPaths: GetStaticPaths = async () => {
   const posts = await getPostSummaries();
   const paths = posts.map((post) => ({
-    params: { slug: post.slug },
+    params: { publication: post.publication, slug: post.slug },
   }));
 
   return {
@@ -87,7 +87,15 @@ export const getStaticPaths: GetStaticPaths = async () => {
 export const getStaticProps: GetStaticProps<BlogPostProps> = async ({
   params,
 }) => {
-  const post = await getPostBySlug(params?.slug as string);
+  const publication = params?.publication as string;
+  const slug = params?.slug as string;
+
+  // Unknown publication: clean 404, never a half-resolved post page.
+  if (!getPublication(publication)) {
+    return { notFound: true };
+  }
+
+  const post = await getPostByPublicationAndSlug(publication, slug);
 
   if (!post) {
     return { notFound: true };
