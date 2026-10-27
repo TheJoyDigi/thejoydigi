@@ -14,7 +14,7 @@ export interface TrailItem {
 export const BLOG_TRAIL: TrailItem[] = [
   { n: 1, title: "What Is Value Creation, and How Does a Founder Actually Do It?", slug: "what-is-value-creation-for-founders" },
   { n: 2, title: "How Do I Find Out If Customers Will Actually Pay for What I'm Building?", slug: "how-to-get-first-paying-customers" },
-  { n: 3, title: "Is Price the Same as Value? What a Price Actually Tells You" },
+  { n: 3, title: "Is Price the Same as Value? What a Price Actually Tells You", slug: "is-price-the-same-as-value" },
   { n: 4, title: "How Do I Price My Services Without Undercharging?", slug: "how-to-price-my-services" },
   { n: 5, title: "Why Will Anyone Pay? Needs, Wants, and Pain" },
   { n: 6, title: "How Do I Find a Business Idea Worth Pursuing?" },
@@ -22,3 +22,4 @@ export const BLOG_TRAIL: TrailItem[] = [
   { n: 8, title: "Why Am I Busy but Not Making Money?" },
   { n: 9, title: "How Do I Choose What to Build Next?" },
 ];
+

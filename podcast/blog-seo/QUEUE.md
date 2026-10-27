@@ -13,7 +13,7 @@ by Long's call.**
 |---|---|---|---|---|---|
 | 1 | What Is Value Creation, and How Does a Founder Actually Do It? | what is value creation in business | Ch 1 (support: Ch 3) | Value lives in people, not things. Creating it means changing something for someone. Then the split that matters: creating vs capturing. | **Published 2026-10-26** (https://www.thejoydigi.com/blog/value-created/what-is-value-creation-for-founders) |
 | 2 | How Do I Find Out If Customers Will Actually Pay for What I'm Building? | how to get first paying customers | Ch 9 | The count that proves value is people who paid, not who said they would. Smallest test, charge from day one. | **Published 2026-10-26** (https://www.thejoydigi.com/blog/value-created/how-to-get-first-paying-customers) |
-| 3 | Is Price the Same as Value? What a Price Actually Tells You | price vs value | Ch 4 (support: Ch 23) | A price is one trade between two people, not a fact about the thing. Read it as information without marrying it. | Next |
+| 3 | Is Price the Same as Value? What a Price Actually Tells You | price vs value | Ch 4 (support: Ch 23) | A price is one trade between two people, not a fact about the thing. Read it as information without marrying it. | **Published 2026-10-27** (https://www.thejoydigi.com/blog/value-created/is-price-the-same-as-value) |
 | 4 | How Do I Price My Services Without Undercharging? | how to price my services | Ch 16 | Costs set the floor, the buyer's outcome sets the ceiling. The practical sequel to #3. | **Published 2026-10-26** (https://www.thejoydigi.com/blog/value-created/how-to-price-my-services) |
 | 5 | Why Will Anyone Pay? Needs, Wants, and Pain | how to find a customer pain point | Ch 5 | Pain is the deepest well: people pay almost anything to make it stop. Tell a need, a want, and a pain apart in your own customer. | Queued |
 | 6 | How Do I Find a Business Idea Worth Pursuing? | how to find a business idea | Ch 6 | Collect problems, not products. Real pain vs mild annoyance. | Queued |
@@ -21,7 +21,7 @@ by Long's call.**
 | 8 | Why Am I Busy but Not Making Money? | why am I busy but not making money | Ch 7 | Stop selling hours; spend your best effort on the hardest problem; invest in the input that compounds. | Queued |
 | 9 | How Do I Choose What to Build Next? | how to choose what to build | Ch 30 | Fall in love with the problem. Three questions that pick a problem worth years. | Queued |
 
-Beachhead completes at 6 more posts after 2026-10-26, about 3 weeks at
+Beachhead completes at 5 more posts after 2026-10-27, about 3 weeks at
 cadence. Sequencing logic: the order a founder meets the problem. Every
 beachhead post links to its siblings. Ch 23 and Ch 2 supply material for
 posts 3 and 1 rather than standing alone.
@@ -62,3 +62,4 @@ _Post URLs nest under the publication (`/blog/value-created/<slug>` since
 
 - 2026-10-26: https://www.thejoydigi.com/blog/value-created/how-to-price-my-services (Ch 16), https://www.thejoydigi.com/blog/value-created/how-to-make-my-business-run-without-me (Ch 18) — launch pair.
 - 2026-10-26: https://www.thejoydigi.com/blog/value-created/what-is-value-creation-for-founders (Ch 1), https://www.thejoydigi.com/blog/value-created/how-to-get-first-paying-customers (Ch 9) — beachhead 1 and 2, with the reading-experience redesign.
+- 2026-10-27: https://www.thejoydigi.com/blog/value-created/is-price-the-same-as-value (Ch 4) — beachhead 3.
