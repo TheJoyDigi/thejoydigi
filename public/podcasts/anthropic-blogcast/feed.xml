@@ -226,5 +226,14 @@
 <itunes:author>TheJoyDigi</itunes:author>
 <itunes:duration>0:07:00</itunes:duration>
 <itunes:episodeType>full</itunes:episodeType>
+</item><item>
+<title>Episode 24: Spending Your Effort in Claude Code</title>
+<description>Alex and Jordan break down Anthropic&#x27;s guide to effort levels in Claude Code: what effort changes, when verification pays, and how to choose low, medium, high, or max.</description>
+<pubDate>Tue, 27 Oct 2026 09:57:49 -0700</pubDate>
+<enclosure url="https://www.thejoydigi.com/podcasts/anthropic-blogcast/ab-ep24-spending-your-effort.mp3" length="8621738" type="audio/mpeg"/>
+<guid isPermaLink="false">ab-ep24-2026-10-27</guid>
+<itunes:author>TheJoyDigi</itunes:author>
+<itunes:duration>0:08:58</itunes:duration>
+<itunes:episodeType>full</itunes:episodeType>
 </item></channel>
 </rss>
