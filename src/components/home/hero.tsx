@@ -2,7 +2,6 @@ import { motion, useMotionValue, useSpring, useTransform, type MotionValue } fro
 import Image from "next/image";
 import React, { useRef } from "react";
 import type { HomeData } from "@/lib/home";
-import { EMAIL } from "../marketing/site-chrome";
 import { OpArtField } from "../landing-art/op-art";
 import { NightAurora } from "../landing-art/shaders";
 import { RevealWords } from "../landing-art/primitives";
@@ -11,8 +10,8 @@ const EASE = [0.22, 1, 0.36, 1] as const;
 
 const CHIPS = [
   { label: "The Blue Sock", kind: "Marketplace", img: "/case-studies/bluesock-hero.webp", href: "#work-blue-sock", pos: "left-[-4%] top-[16%]", depth: 18, delay: 1.4 },
-  { label: "Money, Mastered", kind: "Audiobook", img: "/podcasts/money-mastered/cover.jpg", href: "#work-money-mastered", pos: "right-[-6%] top-[8%]", depth: -14, delay: 1.52 },
-  { label: "The OC Pack", kind: "Podcast", img: "/podcasts/oc-pack/cover-v2.jpg", href: "#work-oc-pack", pos: "right-[-8%] top-[52%]", depth: 22, delay: 1.64 },
+  { label: "Money, Mastered", kind: "Podcast", img: "/podcasts/money-mastered/cover.jpg", href: "#show-money-mastered", pos: "right-[-6%] top-[8%]", depth: -14, delay: 1.52 },
+  { label: "The OC Pack", kind: "Podcast", img: "/podcasts/oc-pack/cover-v2.jpg", href: "#show-oc-pack", pos: "right-[-8%] top-[52%]", depth: 22, delay: 1.64 },
   { label: "QRganiz", kind: "App", img: "/case-studies/qrganiz-hero.webp", href: "#work-qrganiz", pos: "left-[-8%] top-[60%]", depth: -20, delay: 1.76 },
 ];
 
@@ -139,7 +138,7 @@ export default function Hero({ data }: { data: HomeData }) {
       <div className="container relative mx-auto grid min-h-[calc(100svh-72px)] items-center gap-6 px-4 pt-10 pb-6 lg:grid-cols-[1.05fr_0.95fr] lg:gap-10 lg:py-10">
         <div className="order-2 max-w-2xl lg:order-1">
           <motion.a
-            href="#work-money-mastered"
+            href="#show-money-mastered"
             initial={{ opacity: 0, y: 12, filter: "blur(4px)" }}
             animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
             transition={{ duration: 0.8, ease: EASE, delay: 0.15 }}
@@ -153,8 +152,8 @@ export default function Hero({ data }: { data: HomeData }) {
           </motion.a>
 
           <h1 className="font-bungee !py-0 !font-normal text-[2.3rem] leading-[1.06] tracking-[-0.01em] text-[#FDF6EC] sm:text-[3.25rem] lg:text-[3.4rem] xl:text-[4.1rem]">
-            <RevealWords text="I build joyful things" delay={0.3} stagger={0.07} />{" "}
-            <RevealWords text="with code" delay={0.6} stagger={0.07} />{" "}
+            <RevealWords text="I make podcasts" delay={0.3} stagger={0.07} />{" "}
+            <RevealWords text="for people" delay={0.6} stagger={0.07} />{" "}
             {/* Echoes JOY in the dark P7 wordmark: Sun gold fill, night keyline, pink offset shadow. */}
             <motion.span
               initial={{ opacity: 0, scale: 1.35, rotate: -6, y: -8 }}
@@ -162,7 +161,7 @@ export default function Hero({ data }: { data: HomeData }) {
               transition={{ type: "spring", stiffness: 320, damping: 14, delay: 0.95 }}
               className="joy-accent-night relative inline-block origin-bottom-left"
             >
-              and SI.
+              who build.
             </motion.span>
           </h1>
 
@@ -172,8 +171,8 @@ export default function Hero({ data }: { data: HomeData }) {
             transition={{ duration: 0.9, ease: EASE, delay: 1.05 }}
             className="mt-8 max-w-xl text-lg leading-relaxed text-[#FDF6EC]/75 md:text-xl"
           >
-            I&apos;m Long — a software engineer of 10+ years. These days I ship products, podcasts, and super intelligence (SI) experiments
-            under The Joy Digi, and I&apos;ve never been more excited about what one curious builder can make.
+            I&apos;m Long La, founder of The Joy Digi. I write and host shows about creating value, mastering money, and the incentives
+            underneath everything, plus one for dog people in Orange County. Every episode is free.
           </motion.p>
 
           <motion.div
@@ -183,17 +182,17 @@ export default function Hero({ data }: { data: HomeData }) {
             className="mt-10 flex flex-col gap-3 sm:flex-row sm:items-center"
           >
             <a
-              href="#work"
+              href="#shows"
               className="btn-joy group inline-flex items-center justify-center gap-3 rounded-full bg-[#FFC94A] px-7 py-4 font-semibold text-[#0B0B0C] hover:bg-[#FFD86B] no-underline hover:no-underline"
             >
-              See the work
+              Start listening
               <span aria-hidden className="transition-transform duration-300 group-hover:translate-y-0.5">↓</span>
             </a>
             <a
-              href={`mailto:${EMAIL}`}
+              href="#books"
               className="inline-flex items-center justify-center rounded-full border border-[#FDF6EC]/30 px-7 py-4 font-semibold text-[#FDF6EC] transition-colors hover:border-[#FDF6EC] hover:bg-[#FDF6EC]/10 no-underline hover:no-underline"
             >
-              Say hi 👋
+              The book: Value, Created
             </a>
           </motion.div>
         </div>

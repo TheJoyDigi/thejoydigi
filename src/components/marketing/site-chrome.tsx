@@ -11,7 +11,7 @@ export const EMAIL = "hello@thejoydigi.com";
 
 const NAV = [
   { href: "/#work", label: "Work" },
-  { href: "/#lab", label: "Lab" },
+  { href: "/#shows", label: "Shows" },
   { href: "/podcasts", label: "Podcasts" },
   { href: "/books", label: "Books" },
   { href: "/#about", label: "About" },

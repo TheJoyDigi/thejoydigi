@@ -8,12 +8,12 @@ export default function Books() {
     <section id="books" aria-labelledby="books-heading" className="bg-[#FDF6EC] px-4 pb-12 md:pb-16">
       <div className="container mx-auto grid gap-8 rounded-[2rem] bg-[#0C1130] bg-[radial-gradient(circle_at_85%_25%,rgba(242,168,29,0.3),transparent_55%)] p-7 text-[#F4EEDD] shadow-[0_24px_60px_-36px_rgba(27,20,13,0.7)] md:grid-cols-[1fr_200px] md:items-center md:gap-12 md:p-10">
         <div>
-          <p className="text-xs font-bold uppercase tracking-[0.22em] text-[#FFD47E]">New on Kindle</p>
+          <p className="text-xs font-bold uppercase tracking-[0.22em] text-[#FFD47E]">The book</p>
           <h2 id="books-heading" className="font-display !py-0 mt-3 text-3xl leading-tight font-[460] md:text-5xl">
             Value, <em className="text-[#FFD47E]">Created.</em>
           </h2>
           <p className="mt-3 max-w-lg text-[#F4EEDD]/75 md:text-lg">
-            The secret of value creation in 32 chapters, with an infographic for every one. Read it, or listen free.
+            Read it, or listen to all 32 chapters free. Every chapter comes with its own infographic.
           </p>
           <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center">
             <Button href="/books/value-created">See the book</Button>
