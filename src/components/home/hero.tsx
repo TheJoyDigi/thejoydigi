@@ -9,10 +9,10 @@ import { RevealWords } from "../landing-art/primitives";
 const EASE = [0.22, 1, 0.36, 1] as const;
 
 const CHIPS = [
-  { label: "The Blue Sock", kind: "Marketplace", img: "/case-studies/bluesock-hero.webp", href: "#work-blue-sock", pos: "left-[-4%] top-[16%]", depth: 18, delay: 1.4 },
+  { label: "Incentives, Decoded", kind: "Podcast", img: "/podcasts/incentives-decoded/cover.jpg", href: "#show-incentives-decoded", pos: "left-[-4%] top-[16%]", depth: 18, delay: 1.4 },
   { label: "Money, Mastered", kind: "Podcast", img: "/podcasts/money-mastered/cover.jpg", href: "#show-money-mastered", pos: "right-[-6%] top-[8%]", depth: -14, delay: 1.52 },
   { label: "The OC Pack", kind: "Podcast", img: "/podcasts/oc-pack/cover-v2.jpg", href: "#show-oc-pack", pos: "right-[-8%] top-[52%]", depth: 22, delay: 1.64 },
-  { label: "QRganiz", kind: "App", img: "/case-studies/qrganiz-hero.webp", href: "#work-qrganiz", pos: "left-[-8%] top-[60%]", depth: -20, delay: 1.76 },
+  { label: "Anthropic Blogcast", kind: "Podcast", img: "/podcasts/anthropic-blogcast/cover-v2.jpg", href: "#show-anthropic-blogcast", pos: "left-[-8%] top-[60%]", depth: -20, delay: 1.76 },
 ];
 
 function Chip({ chip, mx, my }: { chip: (typeof CHIPS)[number]; mx: MotionValue<number>; my: MotionValue<number> }) {

@@ -7,7 +7,6 @@ import Hello from "./home/hello";
 import Hero from "./home/hero";
 import Inbox from "./home/inbox";
 import Shows from "./home/shows";
-import Work from "./home/work";
 import s from "./landing-art/art.module.css";
 import Marquee from "./landing-art/marquee";
 
@@ -31,7 +30,6 @@ export default function Landing({ data }: { data: HomeData }) {
     "The OC Pack: new episode every Thursday",
     `Incentives, Decoded: ${count("incentives-decoded")} chapters on why people do what they do`,
     "Anthropic Blogcast: new episodes whenever Anthropic publishes",
-    "The Blue Sock: live in Orange County",
   ];
   return (
     <MotionConfig reducedMotion="user">
@@ -43,7 +41,6 @@ export default function Landing({ data }: { data: HomeData }) {
         <Shows data={data} />
         <Books />
         <Inbox />
-        <Work />
         <Beliefs />
         <Hello />
       </div>

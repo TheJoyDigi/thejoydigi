@@ -10,7 +10,6 @@ import { fontVars } from "./fonts";
 export const EMAIL = "hello@thejoydigi.com";
 
 const NAV = [
-  { href: "/#work", label: "Work" },
   { href: "/#shows", label: "Shows" },
   { href: "/podcasts", label: "Podcasts" },
   { href: "/books", label: "Books" },
@@ -114,14 +113,6 @@ export function SiteHeader() {
 }
 
 const FOOTER_COLUMNS = [
-  {
-    title: "Work",
-    links: [
-      { href: "/case-studies/the-blue-sock", label: "The Blue Sock" },
-      { href: "/case-studies/qrganiz", label: "QRganiz" },
-      { href: "/case-studies", label: "All projects" },
-    ],
-  },
   {
     title: "Listen",
     links: [
