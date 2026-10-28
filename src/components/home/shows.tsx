@@ -30,7 +30,7 @@ export default function Shows({ data }: { data: HomeData }) {
             </h2>
           </div>
           <p className="max-w-md text-lg text-[#1B140D]/70 md:justify-self-end">
-            Every show is hosted by Long, and every episode is free to listen.
+            Every show is produced by Long, and every episode is free to listen.
           </p>
         </div>
 
