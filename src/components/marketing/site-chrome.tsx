@@ -126,7 +126,8 @@ const FOOTER_COLUMNS = [
     title: "Say hi",
     links: [
       { href: `mailto:${EMAIL}`, label: EMAIL },
-      { href: "/#lab", label: "The Lab" },
+      { href: "https://www.linkedin.com/in/longla", label: "LinkedIn" },
+      { href: "https://www.instagram.com/thejoydigi", label: "Instagram" },
     ],
   },
 ];
@@ -148,7 +149,8 @@ export function SiteFooter() {
               Let&apos;s make something <span className="joy-accent-night">joyful.</span>
             </p>
             <p className="mt-5 max-w-sm text-[#FDF6EC]/70">
-              The Joy Digi is where Long La builds joyful things with code and super intelligence (SI) — products, podcasts, and experiments.
+              The Joy Digi is Long La&apos;s independent podcast studio: five shows and the book Value, Created, produced in
+              Orange County.
             </p>
             <a
               href={`mailto:${EMAIL}`}

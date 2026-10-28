@@ -77,12 +77,19 @@ export default function Hello() {
             <div className="mt-8 flex flex-wrap gap-3 text-sm font-semibold">
               {[
                 { href: "/podcasts", label: "🎧 Podcasts" },
-                { href: "/case-studies", label: "🛠 Projects" },
                 { href: "/books", label: "📖 Books" },
               ].map((l) => (
                 <Link key={l.href} href={l.href} className="rounded-full border border-[#1B140D]/15 bg-white px-4 py-2 text-[#1B140D] transition-colors hover:border-[#1B140D] no-underline hover:no-underline">
                   {l.label}
                 </Link>
+              ))}
+              {[
+                { href: "https://www.linkedin.com/in/longla", label: "LinkedIn" },
+                { href: "https://www.instagram.com/thejoydigi", label: "Instagram" },
+              ].map((l) => (
+                <a key={l.href} href={l.href} target="_blank" rel="noreferrer" className="rounded-full border border-[#1B140D]/15 bg-white px-4 py-2 text-[#1B140D] transition-colors hover:border-[#1B140D] no-underline hover:no-underline">
+                  {l.label}
+                </a>
               ))}
             </div>
           </motion.div>

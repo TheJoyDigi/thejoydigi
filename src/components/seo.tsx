@@ -69,7 +69,7 @@ export const DefaultSEO: React.FC<DefaultSEOProps> = ({
           {
             name: "keywords",
             content:
-              "Long La, The Joy Digi, podcasts, podcast studio, Value Created, Money Mastered, Incentives Decoded, The OC Pack, Anthropic Blogcast, The Blue Sock, QRganiz",
+              "Long La, The Joy Digi, podcasts, podcast studio, Value Created, Money Mastered, Incentives Decoded, The OC Pack, Anthropic Blogcast",
           },
           {
             name: "author",
