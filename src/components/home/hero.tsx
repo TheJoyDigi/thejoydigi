@@ -171,7 +171,7 @@ export default function Hero({ data }: { data: HomeData }) {
             transition={{ duration: 0.9, ease: EASE, delay: 1.05 }}
             className="mt-8 max-w-xl text-lg leading-relaxed text-[#FDF6EC]/75 md:text-xl"
           >
-            I&apos;m Long La, founder of The Joy Digi. I write and host shows about creating value, mastering money, and the incentives
+            I&apos;m Long La, founder of The Joy Digi. I produce shows about creating value, mastering money, and the incentives
             underneath everything, plus one for dog people in Orange County. Every episode is free.
           </motion.p>
 

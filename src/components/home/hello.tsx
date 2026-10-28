@@ -42,8 +42,8 @@ export default function Hello() {
             className="mt-8 max-w-xl space-y-5 text-lg leading-relaxed text-[#1B140D]/80"
           >
             <p>
-              I&apos;m the founder of The Joy Digi, an independent podcast studio based in Orange County. I wrote the book
-              Value, Created, and I write and host every show on this page.
+              I&apos;m the founder of The Joy Digi, an independent podcast studio based in Orange County. I produce every
+              show on this page, and the studio is home to the book Value, Created.
             </p>
             <p>
               I also founded The Blue Sock, a dog-sitting company in Irvine. By trade, I&apos;ve been a software engineer for over
