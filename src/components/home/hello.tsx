@@ -46,7 +46,7 @@ export default function Hello() {
               show on this page, and the studio is home to the book Value, Created.
             </p>
             <p>
-              I also founded The Blue Sock, a dog-sitting company in Irvine. By trade, I&apos;ve been a software engineer for over
+              By trade, I&apos;ve been a software engineer for over
               ten years.
             </p>
             <p>
