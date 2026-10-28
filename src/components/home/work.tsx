@@ -2,7 +2,6 @@ import { AnimatePresence, motion, useInView, useScroll, useTransform } from "fra
 import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect, useRef, useState } from "react";
-import type { HomeData } from "@/lib/home";
 import { RevealWords, SectionKicker } from "../landing-art/primitives";
 
 const EASE = [0.22, 1, 0.36, 1] as const;
@@ -16,7 +15,7 @@ type Project = {
   href: string;
   cta: string;
   accent: string;
-  Visual: React.FC<{ data: HomeData }>;
+  Visual: React.FC;
 };
 
 function BlueSockVisual() {
@@ -33,51 +32,6 @@ function BlueSockVisual() {
           <Image src="/case-studies/bluesock-hero.webp" alt="The Blue Sock homepage" fill sizes="(min-width: 1024px) 640px, 92vw" className="object-cover object-top" />
         </div>
       </div>
-    </div>
-  );
-}
-
-function MoneyVisual({ data }: { data: HomeData }) {
-  return (
-    <div className="relative flex h-full w-full items-center gap-[6%] overflow-hidden bg-[#060E1A] bg-[radial-gradient(ellipse_at_80%_20%,rgba(217,181,106,0.35),transparent_60%)] p-[7%]">
-      <Image src="/podcasts/money-mastered/art/panorama.webp" alt="" fill sizes="(min-width: 1024px) 700px, 92vw" className="object-cover object-bottom opacity-40" />
-      <div className="relative w-[42%] shrink-0 rotate-[-3deg] rounded-md border border-[#D9B56A]/60 p-1.5 shadow-[0_30px_60px_-20px_rgba(0,0,0,0.9)]">
-        <Image src="/podcasts/money-mastered/cover.jpg" alt="Money, Mastered cover" width={500} height={500} className="block h-auto w-full rounded-sm" />
-      </div>
-      <div className="relative flex-1">
-        <p className="text-[10px] font-semibold uppercase tracking-[0.3em] text-[#D9B56A] md:text-xs">The Ledger</p>
-        <p className="mt-2 font-display text-2xl leading-tight text-[#F3DE9E] md:text-4xl">
-          {data.mm.released} of {data.mm.total} chapters
-        </p>
-        <p className="mt-1 text-xs text-[#EFE6D2]/60 md:text-sm">out now — the rest are on the way</p>
-        <div className="mt-4 grid grid-cols-9 gap-1 md:gap-1.5">
-          {Array.from({ length: data.mm.total }, (_, i) => (
-            <span
-              key={i}
-              className="aspect-square rounded-full"
-              style={
-                i < data.mm.released
-                  ? { background: "radial-gradient(circle at 35% 30%, #FFF1C4, #D9B56A 45%, #8C6A2E 100%)" }
-                  : { border: "1px dashed rgba(217,181,106,0.35)" }
-              }
-            />
-          ))}
-        </div>
-      </div>
-    </div>
-  );
-}
-
-function OcVisual() {
-  return (
-    <div className="relative grid h-full w-full place-items-center overflow-hidden bg-[#FDE3A7]">
-      <div aria-hidden className="absolute aspect-square w-[88%] rounded-full bg-[repeating-conic-gradient(#FC7F46_0deg_9deg,#FF6F61_9deg_18deg)] opacity-90" />
-      <div className="relative w-[58%] overflow-hidden rounded-full border-[5px] border-[#6B3410] shadow-[10px_10px_0_0_#6B3410]">
-        <Image src="/podcasts/oc-pack/cover-v2.jpg" alt="The OC Pack cover" width={600} height={600} className="block h-auto w-full scale-[1.12]" />
-      </div>
-      <span className="absolute bottom-[10%] right-[8%] rotate-[6deg] rounded-2xl border-[3px] border-[#6B3410] bg-[#FFF4DA] px-4 py-2 text-sm font-extrabold text-[#6B3410] shadow-[4px_4px_0_0_#6B3410] md:text-base">
-        New every Thursday
-      </span>
     </div>
   );
 }
@@ -105,32 +59,10 @@ const PROJECTS: Project[] = [
     Visual: BlueSockVisual,
   },
   {
-    id: "money-mastered",
-    title: "Money, Mastered",
-    kind: "Audiobook podcast",
-    line: "A 36-chapter journey from zero to mastery in macroeconomics, money, investing, trading, and Bitcoin — with its own gilded listening room.",
-    tags: ["Audiobook", "Podcast feed", "Web player"],
-    href: "/podcasts/money-mastered",
-    cta: "Press play",
-    accent: "#D9B56A",
-    Visual: MoneyVisual,
-  },
-  {
-    id: "oc-pack",
-    title: "The OC Pack",
-    kind: "Weekly podcast",
-    line: "The podcast for Orange County pet parents: dog-friendly beaches and trails, vet-bill savings, training tips, and local intel. New episode every Thursday.",
-    tags: ["Weekly show", "Local", "Pets"],
-    href: "/podcasts/oc-pack",
-    cta: "Listen in",
-    accent: "#FC7F46",
-    Visual: OcVisual,
-  },
-  {
     id: "qrganiz",
     title: "QRganiz",
     kind: "Mobile app · Product",
-    line: "A smart QR-code item tracker that helps people organize their belongings — product design, a React Native app, the website, and an Amazon launch.",
+    line: "A smart QR-code item tracker that helps people organize their belongings: product design, a React Native app, the website, and an Amazon launch.",
     tags: ["React Native", "Product launch", "SEO"],
     href: "/case-studies/qrganiz",
     cta: "See how it works",
@@ -168,7 +100,7 @@ function Info({ p, index, compact = false }: { p: Project; index: number; compac
   );
 }
 
-function Panel({ p, index, data, onActive }: { p: Project; index: number; data: HomeData; onActive: (i: number) => void }) {
+function Panel({ p, index, onActive }: { p: Project; index: number; onActive: (i: number) => void }) {
   const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { amount: 0.55 });
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] });
@@ -182,7 +114,7 @@ function Panel({ p, index, data, onActive }: { p: Project; index: number; data: 
     <div ref={ref} id={`work-${p.id}`} className="scroll-mt-24 lg:flex lg:min-h-[88vh] lg:items-center">
       <div className="w-full">
         <motion.div style={{ scale, rotate }} className="aspect-[4/3] w-full overflow-hidden rounded-[2rem] shadow-[0_50px_100px_-50px_rgba(27,20,13,0.6)] md:rounded-[2.5rem]">
-          <p.Visual data={data} />
+          <p.Visual />
         </motion.div>
         <div className="mt-8 lg:hidden">
           <Info p={p} index={index} compact />
@@ -192,7 +124,7 @@ function Panel({ p, index, data, onActive }: { p: Project; index: number; data: 
   );
 }
 
-export default function Work({ data }: { data: HomeData }) {
+export default function Work() {
   const [active, setActive] = useState(0);
   const p = PROJECTS[active];
   return (
@@ -201,7 +133,7 @@ export default function Work({ data }: { data: HomeData }) {
         <div className="mb-14 max-w-3xl md:mb-8">
           <SectionKicker>Selected work</SectionKicker>
           <h2 className="font-bungee !py-0 !font-normal mt-4 text-[2.4rem] leading-[1.04] tracking-[-0.005em] text-[#1B140D] sm:text-5xl md:text-6xl">
-            <RevealWords text="Things I've" /> <RevealWords text="shipped." delay={0.12} wordClassName="joy-accent" />
+            <RevealWords text="Products I have" /> <RevealWords text="shipped." delay={0.12} wordClassName="joy-accent" />
           </h2>
         </div>
 
@@ -235,7 +167,7 @@ export default function Work({ data }: { data: HomeData }) {
           </div>
           <div className="space-y-20 lg:space-y-0">
             {PROJECTS.map((proj, i) => (
-              <Panel key={proj.id} p={proj} index={i} data={data} onActive={setActive} />
+              <Panel key={proj.id} p={proj} index={i} onActive={setActive} />
             ))}
           </div>
         </div>

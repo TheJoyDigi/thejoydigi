@@ -42,14 +42,17 @@ export default function Hello() {
             className="mt-8 max-w-xl space-y-5 text-lg leading-relaxed text-[#1B140D]/80"
           >
             <p>
-              I&apos;ve spent over 10 years as a software engineer across big tech, startups, and consulting firms —
-              building everything from polished apps to robust internal systems.
+              I&apos;m the founder of The Joy Digi, an independent podcast studio based in Orange County. I wrote the book
+              Value, Created, and I write and host every show on this page.
             </p>
             <p>
-              The Joy Digi is where I build joyful things: products people love to use, podcasts worth pressing play on,
-              and SI experiments that make a little more possible every week.
+              I also founded The Blue Sock, a dog-sitting company in Irvine. By trade, I&apos;ve been a software engineer for over
+              ten years.
             </p>
-            <p>I think the next few years will be the most creative in software&apos;s history. I want to spend them building — and sharing what I learn.</p>
+            <p>
+              I think the next few years will reward the people who create real value. I&apos;m spending them building, and sharing
+              what I learn along the way.
+            </p>
           </motion.div>
 
           <motion.div
@@ -59,7 +62,7 @@ export default function Hello() {
             transition={{ duration: 0.8, ease: EASE, delay: 0.3 }}
             className="mt-10"
           >
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#6B5D4F]">Say hi — I read everything</p>
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#6B5D4F]">Say hi. I read everything.</p>
             <a
               href={`mailto:${EMAIL}`}
               className="group mt-3 inline-flex items-center gap-4 font-ui text-2xl font-bold tracking-[-0.02em] text-[#1B140D] underline decoration-[#FFC94A] decoration-[6px] underline-offset-[10px] transition-[text-decoration-color] hover:decoration-[#FF2E88] md:text-4xl"
@@ -75,7 +78,7 @@ export default function Hello() {
               {[
                 { href: "/podcasts", label: "🎧 Podcasts" },
                 { href: "/case-studies", label: "🛠 Projects" },
-                { href: "/#lab", label: "🧪 The Lab" },
+                { href: "/books", label: "📖 Books" },
               ].map((l) => (
                 <Link key={l.href} href={l.href} className="rounded-full border border-[#1B140D]/15 bg-white px-4 py-2 text-[#1B140D] transition-colors hover:border-[#1B140D] no-underline hover:no-underline">
                   {l.label}

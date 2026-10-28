@@ -5,7 +5,7 @@ import { NightAurora } from "../landing-art/shaders";
 
 const BELIEFS = [
   { text: "The best software feels like a friend.", accent: ["friend."] },
-  { text: "SI turns one curious builder into a whole studio.", accent: ["whole", "studio."] },
+  { text: "Create real value. The rest follows.", accent: ["real", "value."] },
   { text: "Joy isn't a nice-to-have. It's the whole point.", accent: ["whole", "point."] },
 ];
 

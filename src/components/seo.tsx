@@ -30,8 +30,8 @@ const organizationJsonLd = {
 };
 
 export const DefaultSEO: React.FC<DefaultSEOProps> = ({
-  title = "The Joy Digi — Long La, a joyful builder",
-  description = "Long La builds joyful things with code and super intelligence (SI): The Blue Sock, QRganiz, the Money, Mastered audiobook, The OC Pack podcast, and experiments from the lab.",
+  title = "The Joy Digi: Podcasts by Long La",
+  description = "The Joy Digi is Long La's independent podcast studio: Value, Created, Money, Mastered, Incentives, Decoded, The OC Pack, and the Anthropic Blogcast. Every episode free.",
   image = "/og-the-joy-digi-v2.png",
   noindex = false,
 }) => {
@@ -55,7 +55,7 @@ export const DefaultSEO: React.FC<DefaultSEOProps> = ({
               url: imageUrl,
               width: 1200,
               height: 630,
-              alt: "Long La, a 3D illustrated portrait, next to the words: I build joyful things with code & SI",
+              alt: "Long La, a 3D illustrated portrait",
             },
           ],
           siteName: "TheJoyDigi",
@@ -69,7 +69,7 @@ export const DefaultSEO: React.FC<DefaultSEOProps> = ({
           {
             name: "keywords",
             content:
-              "Long La, The Joy Digi, software engineer, super intelligence, SI, builder, portfolio, podcasts, The Blue Sock, QRganiz, Money Mastered, The OC Pack",
+              "Long La, The Joy Digi, podcasts, podcast studio, Value Created, Money Mastered, Incentives Decoded, The OC Pack, Anthropic Blogcast, The Blue Sock, QRganiz",
           },
           {
             name: "author",

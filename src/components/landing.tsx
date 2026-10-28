@@ -5,9 +5,8 @@ import Beliefs from "./home/beliefs";
 import Books from "./home/books";
 import Hello from "./home/hello";
 import Hero from "./home/hero";
-import How from "./home/how";
 import Inbox from "./home/inbox";
-import Lab from "./home/lab";
+import Shows from "./home/shows";
 import Work from "./home/work";
 import s from "./landing-art/art.module.css";
 import Marquee from "./landing-art/marquee";
@@ -25,12 +24,14 @@ function ScrollProgress() {
 }
 
 export default function Landing({ data }: { data: HomeData }) {
+  const count = (slug: string) => data.shows.find((sh) => sh.slug === slug)?.count ?? 0;
   const now = [
-    `Money, Mastered — Chapter ${data.mm.latestNumber} of ${data.mm.total} is out`,
-    "The OC Pack — new episode every Thursday",
-    "The Blue Sock — live in Orange County",
-    "Anthropic Blogcast — new episodes whenever Anthropic publishes",
-    "QRganiz — shipped",
+    `Value, Created: all ${count("value-created")} chapters free to listen`,
+    `Money, Mastered: Chapter ${data.mm.latestNumber} of ${data.mm.total} is out`,
+    "The OC Pack: new episode every Thursday",
+    `Incentives, Decoded: ${count("incentives-decoded")} chapters on why people do what they do`,
+    "Anthropic Blogcast: new episodes whenever Anthropic publishes",
+    "The Blue Sock: live in Orange County",
   ];
   return (
     <MotionConfig reducedMotion="user">
@@ -39,11 +40,10 @@ export default function Landing({ data }: { data: HomeData }) {
         <div aria-hidden className={s.grain} />
         <Hero data={data} />
         <Marquee words={now} />
+        <Shows data={data} />
         <Books />
         <Inbox />
-        <Work data={data} />
-        <Lab />
-        <How />
+        <Work />
         <Beliefs />
         <Hello />
       </div>
