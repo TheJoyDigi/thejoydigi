@@ -213,7 +213,7 @@ export default function ValueCreatedBook(props: Props) {
         title={`${fullTitle} | Paperback & Kindle book by The Joy Digi`}
         description={description}
         canonical={PAGE_URL}
-        openGraph={{ type: "book", url: PAGE_URL, title: fullTitle, description, siteName: "The Joy Digi", images: [{ url: image, width: 1000, height: 1600, alt: `${title} book cover` }] }}
+        openGraph={{ type: "book", url: PAGE_URL, title: fullTitle, description, siteName: "The Joy Digi", images: [{ url: "https://www.thejoydigi.com/og/site/book-value-created.png", width: 1200, height: 630, alt: `${title}, a book by The Joy Digi` }] }}
         twitter={{ cardType: "summary_large_image" }}
       />
       <Head>

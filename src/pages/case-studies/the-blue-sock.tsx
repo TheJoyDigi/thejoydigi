@@ -72,7 +72,7 @@ const TheBlueSock: NextPage = () => {
     <MainLayout
       title="The Blue Sock Case Study | The Joy Digi"
       description="How The Joy Digi built The Blue Sock — a boutique dog-sitting marketplace for Irvine & Orange County with sitter profiles, badges, portals, and payments."
-      image="/case-studies/bluesock-hero.webp"
+      image="/og/site/case-study-the-blue-sock.png"
     >
       <PageHero
         breadcrumb={{ href: "/case-studies", label: "All work" }}
