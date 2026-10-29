@@ -244,5 +244,14 @@
 <itunes:author>TheJoyDigi</itunes:author>
 <itunes:duration>0:08:53</itunes:duration>
 <itunes:episodeType>full</itunes:episodeType>
+</item><item>
+<title>Episode 26: How Claude Made Claude.ai 3x Faster in Two Weeks</title>
+<description>Claude ran a two-week performance sprint in one Slack channel and made claude.ai about three times faster, merging over three thousand changes with no incidents.</description>
+<pubDate>Thu, 29 Oct 2026 09:57:35 -0700</pubDate>
+<enclosure url="https://www.thejoydigi.com/podcasts/anthropic-blogcast/ab-ep26-how-we-made-claude-ai-faster.mp3" length="8169088" type="audio/mpeg"/>
+<guid isPermaLink="false">ab-ep26-2026-10-29</guid>
+<itunes:author>TheJoyDigi</itunes:author>
+<itunes:duration>0:08:30</itunes:duration>
+<itunes:episodeType>full</itunes:episodeType>
 </item></channel>
 </rss>
