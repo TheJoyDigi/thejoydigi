@@ -17,7 +17,7 @@ export const BLOG_TRAIL: TrailItem[] = [
   { n: 3, title: "Is Price the Same as Value? What a Price Actually Tells You", slug: "is-price-the-same-as-value" },
   { n: 4, title: "How Do I Price My Services Without Undercharging?", slug: "how-to-price-my-services" },
   { n: 5, title: "Why Will Anyone Pay? Needs, Wants, and Pain", slug: "how-to-find-a-customer-pain-point" },
-  { n: 6, title: "How Do I Find a Business Idea Worth Pursuing?" },
+  { n: 6, title: "How Do I Find a Business Idea Worth Pursuing?", slug: "how-to-find-a-business-idea" },
   { n: 7, title: "Why Do Founders Create Value and Still Not Get Paid?" },
   { n: 8, title: "Why Am I Busy but Not Making Money?" },
   { n: 9, title: "How Do I Choose What to Build Next?" },
