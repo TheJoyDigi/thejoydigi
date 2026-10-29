@@ -26,6 +26,8 @@ const nextConfig = {
     return [
       { source: "/ingest/static/:path*", destination: "https://us-assets.i.posthog.com/static/:path*" },
       { source: "/ingest/:path*", destination: "https://us.i.posthog.com/:path*" },
+      // Old next-sitemap URL, possibly still submitted in Search Console; serves the sitemap from src/app/sitemap.ts.
+      { source: "/sitemap-0.xml", destination: "/sitemap.xml" },
     ];
   },
   skipTrailingSlashRedirect: true,
