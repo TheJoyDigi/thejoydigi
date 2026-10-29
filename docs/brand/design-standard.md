@@ -91,6 +91,9 @@ Full token sets (muted, kicker, outline, subtle) live in `THEMES` (and `STUDIO` 
 - Colours come from the show's `THEMES` entry; Fraunces for the title, DM Sans for everything else.
 - Every card carries the credit "Produced by The Joy Digi". Anthropic Blogcast cards add "Not affiliated with Anthropic".
 - A new show needs a `THEMES` entry before it gets cards.
+- Blog posts get `/og/blog/<slug>.png` (publication colours, post cover) from `src/app/og/blog/[card]/route.tsx`. Every other page uses a site card from `src/app/og/site/[card]/route.tsx`: `home.png` (the default, mirroring the homepage hero), `blog.png`, `book-value-created.png` and the case studies. All share the layout in `src/app/og/card.tsx`.
+- Site cards that aren't about a show use `NIGHT` in `card.tsx` (the site's dark surface: `#0B0B0C` card, Sand text, Sun kicker and accent). Credit exceptions: case studies say "Built by The Joy Digi", and the home card carries the P7 logo instead of a credit line.
+- Never point `og:image` at a WebP or a non-1200×630 file; add a card instead.
 - Show social kits (profile art, banners, post templates) live in `docs/brand/social/<show>/`. The OC Pack's is the first.
 - Known exception: the existing Money, Mastered cover art shows coins and banknotes, and the cards show it. Swap the cover, not the card, if that changes.
 
