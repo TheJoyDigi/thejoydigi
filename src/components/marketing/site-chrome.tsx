@@ -16,7 +16,7 @@ const NAV = [
   { href: "/#about", label: "About" },
 ];
 
-/** P7 horizontal lockup; its baked #0B0B0C ground melts into the dark header and footer. */
+/** P7 horizontal lockup on a transparent ground, so the footer aurora shows through. */
 const LOGO = { src: "/brand/logo-horizontal-dark.svg", width: 2400, height: 879 };
 
 function Logo() {
@@ -143,7 +143,7 @@ export function SiteFooter() {
         <div className="grid gap-12 lg:grid-cols-[1.2fr_2fr]">
           <div>
             <Link href="/" className="-ml-3 mb-8 inline-flex no-underline hover:no-underline" aria-label="The Joy Digi home">
-              <Image src={LOGO.src} width={LOGO.width} height={LOGO.height} alt="" unoptimized className="h-[96px] w-auto mix-blend-lighten md:h-[112px]" />
+              <Image src={LOGO.src} width={LOGO.width} height={LOGO.height} alt="" unoptimized className="h-[96px] w-auto md:h-[112px]" />
             </Link>
             <p className="font-bungee text-3xl leading-[1.08] md:text-[2.6rem]">
               Let&apos;s make something <span className="joy-accent-night">joyful.</span>
