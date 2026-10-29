@@ -44,6 +44,7 @@ const BlogLayout: React.FC<BlogLayoutProps> = ({ children, postData, seo }) => {
         />
       ) : (
         <DefaultSEO
+          image="/og/site/blog.png"
           title={seo?.title || "Value Creation for Founders | The Joy Digi"}
           description={
             seo?.description ||

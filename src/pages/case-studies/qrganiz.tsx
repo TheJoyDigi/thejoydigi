@@ -14,7 +14,7 @@ const QRganizCaseStudy: NextPage = () => {
     <MainLayout
       title="QRganiz Case Study | The Joy Digi"
       description="How we built a smart QR code-based item tracker to help users organize their personal belongings."
-      image="/case-studies/qrganiz-hero.webp"
+      image="/og/site/case-study-qrganiz.png"
     >
       <PageHero
         breadcrumb={{ href: "/case-studies", label: "All work" }}

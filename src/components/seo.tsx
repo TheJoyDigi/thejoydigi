@@ -18,7 +18,7 @@ const organizationJsonLd = {
       "@type": "Organization",
       name: "The Joy Digi",
       url: SITE_URL,
-      logo: `${SITE_URL}/og-the-joy-digi-v2.png`,
+      logo: `${SITE_URL}/icon-512.png`,
     },
     {
       "@type": "WebSite",
@@ -32,7 +32,7 @@ const organizationJsonLd = {
 export const DefaultSEO: React.FC<DefaultSEOProps> = ({
   title = "The Joy Digi: Podcasts by Long La",
   description = "The Joy Digi is Long La's independent podcast studio: Value, Created, Money, Mastered, Incentives, Decoded, The OC Pack, and the Anthropic Blogcast. Every episode free.",
-  image = "/og-the-joy-digi-v2.png",
+  image = "/og/site/home.png",
   noindex = false,
 }) => {
   const { asPath } = useRouter();
@@ -55,7 +55,7 @@ export const DefaultSEO: React.FC<DefaultSEOProps> = ({
               url: imageUrl,
               width: 1200,
               height: 630,
-              alt: "Long La, a 3D illustrated portrait",
+              alt: title,
             },
           ],
           siteName: "TheJoyDigi",
@@ -116,8 +116,8 @@ export const BlogPostSEO: React.FC<BlogPostSEOProps> = ({
   const pagePath = path ?? `/blog/${slug}`;
   const pageUrl = `https://www.thejoydigi.com${pagePath}`;
   const imageUrl = hasCoverImage
-    ? `https://www.thejoydigi.com/posts/${slug}/cover.webp`
-    : "https://www.thejoydigi.com/og-the-joy-digi-v2.png";
+    ? `${SITE_URL}/og/blog/${slug}.png`
+    : `${SITE_URL}/og/site/home.png`;
 
   const fullTitle = `${title} - TheJoyDigi Blog`;
   const formattedDate = new Date(date).toLocaleDateString("en-US", {
@@ -145,7 +145,7 @@ export const BlogPostSEO: React.FC<BlogPostSEOProps> = ({
       url: SITE_URL,
       logo: {
         "@type": "ImageObject",
-        url: `${SITE_URL}/og-the-joy-digi-v2.png`,
+        url: `${SITE_URL}/icon-512.png`,
       },
     },
     mainEntityOfPage: {
