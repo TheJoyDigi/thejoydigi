@@ -9,10 +9,10 @@ import { RevealWords } from "../landing-art/primitives";
 const EASE = [0.22, 1, 0.36, 1] as const;
 
 const CHIPS = [
-  { label: "Incentives, Decoded", kind: "Podcast", img: "/podcasts/incentives-decoded/cover.jpg", href: "#show-incentives-decoded", pos: "left-[-4%] top-[16%]", depth: 18, delay: 1.4 },
-  { label: "Money, Mastered", kind: "Podcast", img: "/podcasts/money-mastered/cover.jpg", href: "#show-money-mastered", pos: "right-[-6%] top-[8%]", depth: -14, delay: 1.52 },
-  { label: "The OC Pack", kind: "Podcast", img: "/podcasts/oc-pack/cover-v2.jpg", href: "#show-oc-pack", pos: "right-[-8%] top-[52%]", depth: 22, delay: 1.64 },
-  { label: "Anthropic Blogcast", kind: "Podcast", img: "/podcasts/anthropic-blogcast/cover-v2.jpg", href: "#show-anthropic-blogcast", pos: "left-[-8%] top-[60%]", depth: -20, delay: 1.76 },
+  { label: "Incentives, Decoded", kind: "Podcast", img: "/podcasts/incentives-decoded/cover.jpg", href: "#show-incentives-decoded", pos: "left-0 top-[7%] sm:left-[-4%] sm:top-[16%]", depth: 18, delay: 1.4 },
+  { label: "Money, Mastered", kind: "Podcast", img: "/podcasts/money-mastered/cover.jpg", href: "#show-money-mastered", pos: "right-0 top-[-3%] sm:right-[-6%] sm:top-[8%]", depth: -14, delay: 1.52 },
+  { label: "The OC Pack", kind: "Podcast", img: "/podcasts/oc-pack/cover-v2.jpg", href: "#show-oc-pack", pos: "right-0 top-[54%] sm:right-[-8%] sm:top-[52%]", depth: 22, delay: 1.64 },
+  { label: "Anthropic Blogcast", kind: "Podcast", img: "/podcasts/anthropic-blogcast/cover-v2.jpg", href: "#show-anthropic-blogcast", pos: "left-0 top-[80%] sm:left-[-8%] sm:top-[60%]", depth: -20, delay: 1.76 },
 ];
 
 function Chip({ chip, mx, my }: { chip: (typeof CHIPS)[number]; mx: MotionValue<number>; my: MotionValue<number> }) {
@@ -25,14 +25,14 @@ function Chip({ chip, mx, my }: { chip: (typeof CHIPS)[number]; mx: MotionValue<
       initial={{ opacity: 0, scale: 0.4, filter: "blur(6px)" }}
       animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
       transition={{ type: "spring", stiffness: 260, damping: 15, delay: chip.delay }}
-      className={`absolute ${chip.pos} z-20 hidden items-center gap-2.5 rounded-full border border-[#FDF6EC]/15 bg-[#0B0B0C]/75 py-1.5 pl-1.5 pr-4 shadow-[0_18px_40px_-18px_rgba(0,0,0,0.9)] backdrop-blur transition-transform duration-300 hover:scale-105 sm:flex no-underline hover:no-underline`}
+      className={`absolute ${chip.pos} z-20 flex items-center gap-2 sm:gap-2.5 rounded-full border border-[#FDF6EC]/15 bg-[#0B0B0C]/75 py-1 pl-1 pr-3 sm:py-1.5 sm:pl-1.5 sm:pr-4 shadow-[0_18px_40px_-18px_rgba(0,0,0,0.9)] backdrop-blur transition-transform duration-300 hover:scale-105 no-underline hover:no-underline`}
     >
-      <span className="relative h-9 w-9 overflow-hidden rounded-full border border-[#FDF6EC]/20">
+      <span className="relative h-7 w-7 shrink-0 overflow-hidden sm:h-9 sm:w-9 rounded-full border border-[#FDF6EC]/20">
         <Image src={chip.img} alt="" fill sizes="36px" className="object-cover object-top" />
       </span>
       <span className="leading-tight">
-        <span className="block text-sm font-semibold text-[#FDF6EC]">{chip.label}</span>
-        <span className="block text-[11px] font-medium uppercase tracking-[0.14em] text-[#FFC94A]">{chip.kind}</span>
+        <span className="block whitespace-nowrap text-xs font-semibold sm:text-sm text-[#FDF6EC]">{chip.label}</span>
+        <span className="block text-[10px] font-medium uppercase tracking-[0.14em] sm:text-[11px] text-[#FFC94A]">{chip.kind}</span>
       </span>
     </motion.a>
   );
