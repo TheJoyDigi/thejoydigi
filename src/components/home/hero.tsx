@@ -25,14 +25,14 @@ function Chip({ chip, mx, my }: { chip: (typeof CHIPS)[number]; mx: MotionValue<
       initial={{ opacity: 0, scale: 0.4, filter: "blur(6px)" }}
       animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
       transition={{ type: "spring", stiffness: 260, damping: 15, delay: chip.delay }}
-      className={`absolute ${chip.pos} z-20 flex items-center gap-2 sm:gap-2.5 rounded-full border border-[#FDF6EC]/15 bg-[#0B0B0C]/75 py-1 pl-1 pr-3 sm:py-1.5 sm:pl-1.5 sm:pr-4 shadow-[0_18px_40px_-18px_rgba(0,0,0,0.9)] backdrop-blur transition-transform duration-300 hover:scale-105 no-underline hover:no-underline`}
+      className={`absolute ${chip.pos} z-20 flex items-center gap-2.5 rounded-full border border-[#FDF6EC]/15 bg-[#0B0B0C]/75 p-1 sm:py-1.5 sm:pl-1.5 sm:pr-4 shadow-[0_18px_40px_-18px_rgba(0,0,0,0.9)] backdrop-blur transition-transform duration-300 hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FFC94A] no-underline hover:no-underline`}
     >
-      <span className="relative h-7 w-7 shrink-0 overflow-hidden sm:h-9 sm:w-9 rounded-full border border-[#FDF6EC]/20">
-        <Image src={chip.img} alt="" fill sizes="36px" className="object-cover object-top" />
+      <span className="relative h-10 w-10 shrink-0 overflow-hidden sm:h-9 sm:w-9 rounded-full border border-[#FDF6EC]/20">
+        <Image src={chip.img} alt="" fill sizes="40px" className="object-cover object-top" />
       </span>
-      <span className="leading-tight">
-        <span className="block whitespace-nowrap text-xs font-semibold sm:text-sm text-[#FDF6EC]">{chip.label}</span>
-        <span className="block text-[10px] font-medium uppercase tracking-[0.14em] sm:text-[11px] text-[#FFC94A]">{chip.kind}</span>
+      <span className="sr-only leading-tight sm:not-sr-only">
+        <span className="block whitespace-nowrap text-sm font-semibold text-[#FDF6EC]">{chip.label}</span>
+        <span className="block text-[11px] font-medium uppercase tracking-[0.14em] text-[#FFC94A]">{chip.kind}</span>
       </span>
     </motion.a>
   );
