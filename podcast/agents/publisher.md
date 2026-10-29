@@ -25,8 +25,7 @@ the link listeners share. No `src/` change is needed per episode.
 - A published `N` is permanent. Renumbering, retitling or removing an item breaks links
   already sitting in people's texts.
 - The description's first sentence is the link-preview text — write it as a teaser.
-- Never commit `public/sitemap-0.xml` (a local build rewrites it); it's outside
-  `public/podcasts/`, so the guard won't auto-merge. The deploy regenerates it.
+- The sitemap needs no edit: `src/app/sitemap.ts` lists every episode in the feed at build time.
 
 ## Transcript step for every new episode
 Run this from the site repo root **after the spoken script is final and before
