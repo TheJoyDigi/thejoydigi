@@ -17,11 +17,11 @@ by Long's call.**
 | 4 | How Do I Price My Services Without Undercharging? | how to price my services | Ch 16 | Costs set the floor, the buyer's outcome sets the ceiling. The practical sequel to #3. | **Published 2026-10-26** (https://www.thejoydigi.com/blog/value-created/how-to-price-my-services) |
 | 5 | Why Will Anyone Pay? Needs, Wants, and Pain | how to find a customer pain point | Ch 5 | Pain is the deepest well: people pay almost anything to make it stop. Tell a need, a want, and a pain apart in your own customer. | **Published 2026-10-28** (https://www.thejoydigi.com/blog/value-created/how-to-find-a-customer-pain-point) |
 | 6 | How Do I Find a Business Idea Worth Pursuing? | how to find a business idea | Ch 6 | Collect problems, not products. Real pain vs mild annoyance. | **Published 2026-10-29** (https://www.thejoydigi.com/blog/value-created/how-to-find-a-business-idea) |
-| 7 | Why Do Founders Create Value and Still Not Get Paid? | value creation vs value capture | Ch 15 (support: Ch 3) | The market pays for capture, not creation. Own the scarce piece; get the deal in writing. | Queued |
+| 7 | Why Do Founders Create Value and Still Not Get Paid? | value creation vs value capture | Ch 15 (support: Ch 3) | The market pays for capture, not creation. Own the scarce piece; get the deal in writing. | **Published 2026-10-30** (https://www.thejoydigi.com/blog/value-created/value-creation-vs-value-capture) |
 | 8 | Why Am I Busy but Not Making Money? | why am I busy but not making money | Ch 7 | Stop selling hours; spend your best effort on the hardest problem; invest in the input that compounds. | Queued |
 | 9 | How Do I Choose What to Build Next? | how to choose what to build | Ch 30 | Fall in love with the problem. Three questions that pick a problem worth years. | Queued |
 
-Beachhead completes at 3 more posts after 2026-10-29, about 2 weeks
+Beachhead completes at 2 more posts after 2026-10-30, about 1 week
 at cadence. Sequencing logic: the order a founder meets the problem. Every
 beachhead post links to its siblings. Ch 23 and Ch 2 supply material for
 posts 3 and 1 rather than standing alone.
@@ -65,3 +65,4 @@ _Post URLs nest under the publication (`/blog/value-created/<slug>` since
 - 2026-10-27: https://www.thejoydigi.com/blog/value-created/is-price-the-same-as-value (Ch 4) — beachhead 3.
 - 2026-10-28: https://www.thejoydigi.com/blog/value-created/how-to-find-a-customer-pain-point (Ch 5) — beachhead 5. (Beachhead 4, Ch 16, shipped at launch.)
 - 2026-10-29: https://www.thejoydigi.com/blog/value-created/how-to-find-a-business-idea (Ch 6) — beachhead 6.
+- 2026-10-30: https://www.thejoydigi.com/blog/value-created/value-creation-vs-value-capture (Ch 15) — beachhead 7.
