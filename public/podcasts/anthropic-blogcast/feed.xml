@@ -253,5 +253,14 @@
 <itunes:author>TheJoyDigi</itunes:author>
 <itunes:duration>0:08:30</itunes:duration>
 <itunes:episodeType>full</itunes:episodeType>
+</item><item>
+<title>Episode 27: AI for Science Expands: Anthropic Brings the Institutions In</title>
+<description>Anthropic expands its AI for Science program to twenty foundations, institutions, and research projects, giving away Claude credits to speed up discovery from fly brains to climate models.</description>
+<pubDate>Fri, 30 Oct 2026 09:59:45 -0700</pubDate>
+<enclosure url="https://www.thejoydigi.com/podcasts/anthropic-blogcast/ab-ep27-ai-for-science-expands.mp3" length="8737512" type="audio/mpeg"/>
+<guid isPermaLink="false">ab-ep27-2026-10-30</guid>
+<itunes:author>TheJoyDigi</itunes:author>
+<itunes:duration>0:09:06</itunes:duration>
+<itunes:episodeType>full</itunes:episodeType>
 </item></channel>
 </rss>
