@@ -271,5 +271,14 @@
 <itunes:author>TheJoyDigi</itunes:author>
 <itunes:duration>0:07:53</itunes:duration>
 <itunes:episodeType>full</itunes:episodeType>
+</item><item>
+<title>Episode 29: Stopping the Copycats: Anthropic&#x27;s New Defenses Against Distillation Attacks</title>
+<description>Anthropic cut reasoning-data harvesting by distillers by about 90 to 99 percent with preserved thinking, a two-stage classifier, and account bans, and argues every frontier lab and platform must do the same.</description>
+<pubDate>Sun, 01 Nov 2026 09:58:00 -0700</pubDate>
+<enclosure url="https://www.thejoydigi.com/podcasts/anthropic-blogcast/ab-ep29-distillation-defenses.mp3" length="8348392" type="audio/mpeg"/>
+<guid isPermaLink="false">ab-ep29-2026-11-01</guid>
+<itunes:author>TheJoyDigi</itunes:author>
+<itunes:duration>0:08:41</itunes:duration>
+<itunes:episodeType>full</itunes:episodeType>
 </item></channel>
 </rss>
