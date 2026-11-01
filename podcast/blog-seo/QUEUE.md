@@ -19,10 +19,10 @@ by Long's call.**
 | 6 | How Do I Find a Business Idea Worth Pursuing? | how to find a business idea | Ch 6 | Collect problems, not products. Real pain vs mild annoyance. | **Published 2026-10-29** (https://www.thejoydigi.com/blog/value-created/how-to-find-a-business-idea) |
 | 7 | Why Do Founders Create Value and Still Not Get Paid? | value creation vs value capture | Ch 15 (support: Ch 3) | The market pays for capture, not creation. Own the scarce piece; get the deal in writing. | **Published 2026-10-30** (https://www.thejoydigi.com/blog/value-created/value-creation-vs-value-capture) |
 | 8 | Why Am I Busy but Not Making Money? | why am I busy but not making money | Ch 7 | Stop selling hours; spend your best effort on the hardest problem; invest in the input that compounds. | **Published 2026-10-31** (https://www.thejoydigi.com/blog/value-created/why-am-i-busy-but-not-making-money) |
-| 9 | How Do I Choose What to Build Next? | how to choose what to build | Ch 30 | Fall in love with the problem. Three questions that pick a problem worth years. | Queued |
+| 9 | How Do I Choose What to Build Next? | how to choose what to build | Ch 30 | Fall in love with the problem. Three questions that pick a problem worth years. | **Published 2026-11-01** (https://www.thejoydigi.com/blog/value-created/how-to-choose-what-to-build-next) |
 
-Beachhead completes at 1 more post after 2026-10-31, about 1 week
-at cadence. Sequencing logic: the order a founder meets the problem. Every
+Beachhead completed 2026-11-01: all 9 posts are live.
+Sequencing logic: the order a founder meets the problem. Every
 beachhead post links to its siblings. Ch 23 and Ch 2 supply material for
 posts 3 and 1 rather than standing alone.
 
@@ -67,3 +67,4 @@ _Post URLs nest under the publication (`/blog/value-created/<slug>` since
 - 2026-10-29: https://www.thejoydigi.com/blog/value-created/how-to-find-a-business-idea (Ch 6) — beachhead 6.
 - 2026-10-30: https://www.thejoydigi.com/blog/value-created/value-creation-vs-value-capture (Ch 15) — beachhead 7.
 - 2026-10-31: https://www.thejoydigi.com/blog/value-created/why-am-i-busy-but-not-making-money (Ch 7) — beachhead 8.
+- 2026-11-01: https://www.thejoydigi.com/blog/value-created/how-to-choose-what-to-build-next (Ch 30) — beachhead 9. Beachhead cluster complete.
