@@ -20,6 +20,6 @@ export const BLOG_TRAIL: TrailItem[] = [
   { n: 6, title: "How Do I Find a Business Idea Worth Pursuing?", slug: "how-to-find-a-business-idea" },
   { n: 7, title: "Why Do Founders Create Value and Still Not Get Paid?", slug: "value-creation-vs-value-capture" },
   { n: 8, title: "Why Am I Busy but Not Making Money?", slug: "why-am-i-busy-but-not-making-money" },
-  { n: 9, title: "How Do I Choose What to Build Next?" },
+  { n: 9, title: "How Do I Choose What to Build Next?", slug: "how-to-choose-what-to-build-next" },
 ];
 
