@@ -280,5 +280,14 @@
 <itunes:author>TheJoyDigi</itunes:author>
 <itunes:duration>0:08:41</itunes:duration>
 <itunes:episodeType>full</itunes:episodeType>
+</item><item>
+<title>Episode 30: Getting the Most Out of Opus 5.5 in Claude and Claude Code</title>
+<description>Alex and Jordan walk through the claude.dev guide to prompting Opus 5.5, steering long Claude Code runs, and checking the results.</description>
+<pubDate>Mon, 02 Nov 2026 10:02:00 -0700</pubDate>
+<enclosure url="https://www.thejoydigi.com/podcasts/anthropic-blogcast/ab-ep30-getting-the-most-out-of-opus-5-5.mp3" length="7596066" type="audio/mpeg"/>
+<guid isPermaLink="false">ab-ep30-2026-11-02</guid>
+<itunes:author>TheJoyDigi</itunes:author>
+<itunes:duration>0:07:54</itunes:duration>
+<itunes:episodeType>full</itunes:episodeType>
 </item></channel>
 </rss>
