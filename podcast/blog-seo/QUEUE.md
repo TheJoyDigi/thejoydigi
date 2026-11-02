@@ -29,7 +29,8 @@ posts 3 and 1 rather than standing alone.
 ## Expansion rings (after the beachhead is published)
 
 **Ring 1: Trust and brand as stored value**
-1. How Do I Build Trust With Customers When I'm New? (Ch 12)
+1. How Do I Build Trust With Customers When I'm New? (Ch 12) **Published 2026-11-02**
+   (https://www.thejoydigi.com/blog/value-created/how-to-build-trust-with-customers-when-new).
 2. How Do I Build a Brand With No Budget? (Ch 19)
 3. How Do I Get Customers Without Running Ads? (Ch 29)
 4. How Do I Give Value First Without Getting Taken Advantage Of? (Ch 28)
@@ -68,3 +69,4 @@ _Post URLs nest under the publication (`/blog/value-created/<slug>` since
 - 2026-10-30: https://www.thejoydigi.com/blog/value-created/value-creation-vs-value-capture (Ch 15) — beachhead 7.
 - 2026-10-31: https://www.thejoydigi.com/blog/value-created/why-am-i-busy-but-not-making-money (Ch 7) — beachhead 8.
 - 2026-11-01: https://www.thejoydigi.com/blog/value-created/how-to-choose-what-to-build-next (Ch 30) — beachhead 9. Beachhead cluster complete.
+- 2026-11-02: https://www.thejoydigi.com/blog/value-created/how-to-build-trust-with-customers-when-new (Ch 12) — Ring 1 #1 (trust and brand).
