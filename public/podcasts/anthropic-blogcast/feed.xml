@@ -289,5 +289,14 @@
 <itunes:author>TheJoyDigi</itunes:author>
 <itunes:duration>0:07:54</itunes:duration>
 <itunes:episodeType>full</itunes:episodeType>
+</item><item>
+<title>Episode 31: Proving Which Model Really Answered: Anthropic&#x27;s FlashProve</title>
+<description>Alex and Jordan break down Anthropic&#x27;s FlashProve progress on provable inference, cryptographic proofs that a response came from the claimed model, at 110 tokens per second on a 400B model.</description>
+<pubDate>Tue, 03 Nov 2026 09:57:00 -0700</pubDate>
+<enclosure url="https://www.thejoydigi.com/podcasts/anthropic-blogcast/ab-ep31-provable-inference.mp3" length="8387263" type="audio/mpeg"/>
+<guid isPermaLink="false">ab-ep31-2026-11-03</guid>
+<itunes:author>TheJoyDigi</itunes:author>
+<itunes:duration>0:08:44</itunes:duration>
+<itunes:episodeType>full</itunes:episodeType>
 </item></channel>
 </rss>
