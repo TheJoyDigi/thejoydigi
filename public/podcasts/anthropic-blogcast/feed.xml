@@ -298,5 +298,14 @@
 <itunes:author>TheJoyDigi</itunes:author>
 <itunes:duration>0:08:44</itunes:duration>
 <itunes:episodeType>full</itunes:episodeType>
+</item><item>
+<title>Episode 32: Claude Opus 5.5: Fable-Level Work, Forty Percent Cheaper</title>
+<description>Opus 5.5 matches Fable 5.1 on most work, costs 40% less to run than Opus 5, and launches with Fable-class safeguards and the best alignment audit scores Anthropic has recorded.</description>
+<pubDate>Wed, 04 Nov 2026 10:10:34 -0700</pubDate>
+<enclosure url="https://www.thejoydigi.com/podcasts/anthropic-blogcast/ab-ep32-claude-opus-5-5.mp3" length="8695716" type="audio/mpeg"/>
+<guid isPermaLink="false">ab-ep32-2026-11-04</guid>
+<itunes:author>TheJoyDigi</itunes:author>
+<itunes:duration>0:09:03</itunes:duration>
+<itunes:episodeType>full</itunes:episodeType>
 </item></channel>
 </rss>
