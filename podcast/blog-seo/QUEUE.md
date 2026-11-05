@@ -35,7 +35,8 @@ posts 3 and 1 rather than standing alone.
    (https://www.thejoydigi.com/blog/value-created/how-to-build-a-brand-with-no-budget).
 3. How Do I Get Customers Without Running Ads? (Ch 29) **Published 2026-11-04**
    (https://www.thejoydigi.com/blog/value-created/how-to-get-customers-without-running-ads).
-4. How Do I Give Value First Without Getting Taken Advantage Of? (Ch 28)
+4. How Do I Give Value First Without Getting Taken Advantage Of? (Ch 28) **Published 2026-11-05**
+   (https://www.thejoydigi.com/blog/value-created/how-to-give-value-first-without-getting-taken-advantage-of).
 5. What Does Great Customer Service Do for a Small Business? (Ch 10)
 
 **Ring 2: Distribution**
@@ -74,3 +75,4 @@ _Post URLs nest under the publication (`/blog/value-created/<slug>` since
 - 2026-11-02: https://www.thejoydigi.com/blog/value-created/how-to-build-trust-with-customers-when-new (Ch 12) — Ring 1 #1 (trust and brand).
 - 2026-11-03: https://www.thejoydigi.com/blog/value-created/how-to-build-a-brand-with-no-budget (Ch 19) — Ring 1 #2 (trust and brand).
 - 2026-11-04: https://www.thejoydigi.com/blog/value-created/how-to-get-customers-without-running-ads (Ch 29) — Ring 1 #3 (trust and brand).
+- 2026-11-05: https://www.thejoydigi.com/blog/value-created/how-to-give-value-first-without-getting-taken-advantage-of (Ch 28) — Ring 1 #4 (trust and brand).
