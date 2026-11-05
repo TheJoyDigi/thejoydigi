@@ -307,5 +307,14 @@
 <itunes:author>TheJoyDigi</itunes:author>
 <itunes:duration>0:09:03</itunes:duration>
 <itunes:episodeType>full</itunes:episodeType>
+</item><item>
+<title>Episode 33: The Vault Mystery: Claude Maps a Particle No One Understands</title>
+<description>Anthropic&#x27;s biology lab used Claude to solve the first three dimensional structure of a vault particle in prokaryotic cells, cutting isolation from three days to ninety minutes while the particle&#x27;s function remains unknown.</description>
+<pubDate>Thu, 05 Nov 2026 09:59:00 -0800</pubDate>
+<enclosure url="https://www.thejoydigi.com/podcasts/anthropic-blogcast/ab-ep33-investigating-vault-particles-with-claude.mp3" length="8371380" type="audio/mpeg"/>
+<guid isPermaLink="false">ab-ep33-2026-11-05</guid>
+<itunes:author>TheJoyDigi</itunes:author>
+<itunes:duration>0:08:43</itunes:duration>
+<itunes:episodeType>full</itunes:episodeType>
 </item></channel>
 </rss>
