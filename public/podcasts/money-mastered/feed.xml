@@ -234,5 +234,14 @@
 <itunes:author>The Joy Digi</itunes:author>
 <itunes:duration>0:11:55</itunes:duration>
 <itunes:episodeType>full</itunes:episodeType>
+</item><item>
+<title>Money, Mastered — Chapter 25: Backtesting and Journaling</title>
+<description>Evidence beats memory every time — a strategy you have never tested is just a story, and a trade you never recorded is a lesson you paid for and threw away. This chapter teaches backtesting and journaling: precise rules, the traps of look ahead bias, survivorship bias, and overfitting, in sample versus out of sample testing, expectancy, and grading your execution instead of your outcomes.</description>
+<pubDate>Fri, 06 Nov 2026 08:49:00 -0800</pubDate>
+<enclosure url="https://www.thejoydigi.com/podcasts/money-mastered/money-mastered-chapter-25-backtesting-and-journaling-2026-11-06.mp3" length="11709620" type="audio/mpeg"/>
+<guid isPermaLink="false">mm-ch25-2026-11-06</guid>
+<itunes:author>The Joy Digi</itunes:author>
+<itunes:duration>0:12:11</itunes:duration>
+<itunes:episodeType>full</itunes:episodeType>
 </item></channel>
 </rss>
