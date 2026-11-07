@@ -316,5 +316,14 @@
 <itunes:author>TheJoyDigi</itunes:author>
 <itunes:duration>0:08:43</itunes:duration>
 <itunes:episodeType>full</itunes:episodeType>
+</item><item>
+<title>Episode 34: Insight, Not Numbers: Teaching AI to Build Scientific Models</title>
+<description>Alex and Jordan explore how AI is learning to build, constrain, and interpret scientific models, and why a range of models beats a single best fit.</description>
+<pubDate>Sat, 07 Nov 2026 09:58:04 -0800</pubDate>
+<enclosure url="https://www.thejoydigi.com/podcasts/anthropic-blogcast/ab-ep34-teaching-ai-to-build-scientific-models.mp3" length="8260621" type="audio/mpeg"/>
+<guid isPermaLink="false">ab-ep34-2026-11-07</guid>
+<itunes:author>TheJoyDigi</itunes:author>
+<itunes:duration>0:08:36</itunes:duration>
+<itunes:episodeType>full</itunes:episodeType>
 </item></channel>
 </rss>
