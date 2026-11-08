@@ -43,7 +43,8 @@ posts 3 and 1 rather than standing alone.
 **Ring 2: Distribution**
 1. Why Do Great Products Fail to Sell? (Ch 25) **Published 2026-11-07**
    (https://www.thejoydigi.com/blog/value-created/why-do-great-products-fail-to-sell).
-2. How Do I Get Noticed When Attention Is Scarce? (Ch 11)
+2. How Do I Get Noticed When Attention Is Scarce? (Ch 11) **Published 2026-11-08**
+   (https://www.thejoydigi.com/blog/value-created/how-do-i-get-noticed-when-attention-is-scarce).
 3. Why Do Customers Abandon Checkout and Signup? (Ch 13)
 4. What Is a Network Effect and Do I Need One? (Ch 26)
 
@@ -80,3 +81,4 @@ _Post URLs nest under the publication (`/blog/value-created/<slug>` since
 - 2026-11-05: https://www.thejoydigi.com/blog/value-created/how-to-give-value-first-without-getting-taken-advantage-of (Ch 28) — Ring 1 #4 (trust and brand).
 - 2026-11-06: https://www.thejoydigi.com/blog/value-created/what-does-great-customer-service-do-for-a-small-business (Ch 10) — Ring 1 #5 (trust and brand). Ring 1 complete.
 - 2026-11-07: https://www.thejoydigi.com/blog/value-created/why-do-great-products-fail-to-sell (Ch 25) — Ring 2 #1 (distribution). Ring 2 opens.
+- 2026-11-08: https://www.thejoydigi.com/blog/value-created/how-do-i-get-noticed-when-attention-is-scarce (Ch 11) — Ring 2 #2 (distribution).
