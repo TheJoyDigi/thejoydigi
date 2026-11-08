@@ -325,5 +325,14 @@
 <itunes:author>TheJoyDigi</itunes:author>
 <itunes:duration>0:08:36</itunes:duration>
 <itunes:episodeType>full</itunes:episodeType>
+</item><item>
+<title>Episode 35: Dreaming Agents: How Claude Learns What to Remember</title>
+<description>Alex and Jordan break down Anthropic&#x27;s research on agent memory: memory notes, judging what is worth saving, and dreaming, the offline pass that corrects mistakes and builds wikis.</description>
+<pubDate>Sun, 08 Nov 2026 09:59:44 -0800</pubDate>
+<enclosure url="https://www.thejoydigi.com/podcasts/anthropic-blogcast/ab-ep35-components-of-agent-memory.mp3" length="8531040" type="audio/mpeg"/>
+<guid isPermaLink="false">ab-ep35-2026-11-08</guid>
+<itunes:author>TheJoyDigi</itunes:author>
+<itunes:duration>0:08:53</itunes:duration>
+<itunes:episodeType>full</itunes:episodeType>
 </item></channel>
 </rss>
