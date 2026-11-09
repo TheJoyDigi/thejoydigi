@@ -334,5 +334,14 @@
 <itunes:author>TheJoyDigi</itunes:author>
 <itunes:duration>0:08:53</itunes:duration>
 <itunes:episodeType>full</itunes:episodeType>
+</item><item>
+<title>Episode 36: Project EVE: Claude Trades, Teams Up, and Misses the Saboteur</title>
+<description>Alex and Jordan break down Anthropic&#x27;s Project EVE, where Claude traded for profit in EVE Online and flew in four-agent fleets in EVE Frontier that almost never caught a secret saboteur</description>
+<pubDate>Mon, 09 Nov 2026 10:09:42 -0800</pubDate>
+<enclosure url="https://www.thejoydigi.com/podcasts/anthropic-blogcast/ab-ep36-project-eve-claude-plays-mmorpgs.mp3" length="8035341" type="audio/mpeg"/>
+<guid isPermaLink="false">ab-ep36-2026-11-09</guid>
+<itunes:author>TheJoyDigi</itunes:author>
+<itunes:duration>0:08:22</itunes:duration>
+<itunes:episodeType>full</itunes:episodeType>
 </item></channel>
 </rss>
