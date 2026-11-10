@@ -1,0 +1,51 @@
+name: OC Pack Friday email
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - public/podcasts/oc-pack/friday.json
+  schedule:
+    # Catches merges GitHub suppresses; the endpoint is idempotent and skips stale issues.
+    - cron: "23 * * * *"
+  workflow_dispatch:
+
+concurrency:
+  group: oc-pack-friday-email
+  cancel-in-progress: false
+
+permissions: {}
+
+jobs:
+  notify:
+    if: vars.OC_PACK_FRIDAY_EMAIL_ENABLED == 'true'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send the Friday letter
+        env:
+          VALUE_CHAPTER_NOTIFY_SECRET: ${{ secrets.VALUE_CHAPTER_NOTIFY_SECRET }}
+        run: |
+          set -u
+          if [ -z "$VALUE_CHAPTER_NOTIFY_SECRET" ]; then
+            echo "VALUE_CHAPTER_NOTIFY_SECRET is not set."
+            exit 1
+          fi
+          # A content push can precede the Vercel deploy, so retry for up to 15 minutes.
+          for attempt in $(seq 1 30); do
+            status=$(curl -sS -o response.json -w "%{http_code}" -X POST \
+              -H "Authorization: Bearer ${VALUE_CHAPTER_NOTIFY_SECRET}" \
+              https://www.thejoydigi.com/api/oc-pack/notify-friday || echo "000")
+            if [ "$status" = "200" ]; then
+              cat response.json
+              exit 0
+            fi
+            if [ "$status" = "401" ] || [ "$status" = "403" ]; then
+              echo "Notify endpoint rejected the secret ($status)."
+              exit 1
+            fi
+            echo "Attempt $attempt/30 returned $status; retrying in 30s."
+            sleep 30
+          done
+          echo "Notify endpoint never succeeded."
+          cat response.json 2>/dev/null || true
+          exit 1
