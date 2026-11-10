@@ -5,7 +5,7 @@ import { fridayEmail, validateFridayIssue } from "@/lib/email/oc-pack-friday";
 import { OC_PACK_SEGMENT_ID } from "@/lib/email/subscribe";
 
 const RESEND_API = "https://api.resend.com";
-const MAX_DAYS_BEFORE = 4;
+const MAX_DAYS_BEFORE = 1; // One day of grace for a delayed Friday send; a stale file must never send.
 const MAX_DAYS_AFTER = 0; // Never send before the issue date: Wednesday staging must wait for Friday.
 
 type Broadcast = {
