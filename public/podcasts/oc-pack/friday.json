@@ -1,0 +1,16 @@
+{
+  "date": "2026-11-06",
+  "subject": "Your Friday 5: dog things for this weekend · The OC Pack",
+  "headline": "5 dog things to do in Orange County this weekend.",
+  "intro": "Morning, pack. Cooler air, empty trails, and one very good beach window on Saturday. Here are the five we'd pick:",
+  "picks": [
+    { "name": "Huntington Dog Beach", "detail": "Off-leash along the surf. Go before 10 for easy parking off Goldenwest." },
+    { "name": "Central Bark, Irvine", "detail": "Three fenced acres by the Great Park. Small-dog side if your pup likes it calm." },
+    { "name": "Newport Back Bay", "detail": "Leashed sunrise loop, flat and stroller-friendly. Herons included at no charge." },
+    { "name": "Santiago Oaks, Orange", "detail": "Shaded canyon trails under the oaks. Leash on, water in the pack, ticks checked after." },
+    { "name": "Main Beach boardwalk, Laguna", "detail": "Leashed sunset stroll and people-watching. Check the seasonal beach hours before you go." }
+  ],
+  "trailGuide": { "name": "Top of the World, Laguna Beach", "parking": "Alta Laguna lot, fills by 10 on weekends", "shade": "almost none, so start early", "leash": "required the whole way", "note": "Ocean on one side, canyon on the other." },
+  "vetPlaybook": { "title": "What a dental cleaning actually runs in OC", "detail": "The range is wider than you'd guess, and three questions before you book can cut it in half." },
+  "episode": { "title": "Three Acres of Freedom, Inside Irvine Central Bark", "url": "https://www.thejoydigi.com/podcasts/oc-pack/6" }
+}

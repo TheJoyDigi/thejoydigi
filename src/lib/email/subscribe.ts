@@ -14,6 +14,9 @@ type ResendResponse = { status: number; data: Record<string, unknown> };
 // so existing subscribers stay put and chapter broadcasts keep reaching the same people.
 const FALLBACK_SEGMENT = "1f112a61-0dd0-454e-872a-0d731a143985";
 
+// OC Pack signups also join this segment (it receives the Friday letter); the one-list strategy is unchanged.
+export const OC_PACK_SEGMENT_ID = "9a6cdf3c-6e44-4b6a-bf56-85cf6da344c4";
+
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 export function isNewsletterShow(value: unknown): value is NewsletterShow {
@@ -77,6 +80,7 @@ export async function subscribeToNewsletter(req: NextApiRequest, res: NextApiRes
 
   const contactsKey = process.env.RESEND_CONTACTS_API_KEY || process.env.RESEND_API_KEY;
   const id = getNewsletterSegmentId();
+  const requiredSegments = interest === "oc-pack" ? [id, OC_PACK_SEGMENT_ID] : [id];
   const source = interest ?? "joy-digi";
   if (!contactsKey) {
     console.error(`Email signup is missing Resend configuration for ${source}.`);
@@ -93,7 +97,7 @@ export async function subscribeToNewsletter(req: NextApiRequest, res: NextApiRes
         email,
         first_name: name || undefined,
         unsubscribed: false,
-        segments: [{ id }],
+        segments: requiredSegments.map((segmentId) => ({ id: segmentId })),
       });
       if (created.status >= 200 && created.status < 300) {
         newlySubscribed = true;
@@ -112,14 +116,20 @@ export async function subscribeToNewsletter(req: NextApiRequest, res: NextApiRes
       }
       if (contact.data.unsubscribed !== false) throw new Error("Resend contact lookup omitted subscription status");
 
-      const listed = await hasSegment(email, id, contactsKey);
-      if (listed === null) throw new Error("Resend segment lookup failed");
-      if (listed) return res.status(200).json({ ok: true, welcomeSent: false, alreadySubscribed: true });
+      const missing: string[] = [];
+      for (const segmentId of requiredSegments) {
+        const listed = await hasSegment(email, segmentId, contactsKey);
+        if (listed === null) throw new Error("Resend segment lookup failed");
+        if (!listed) missing.push(segmentId);
+      }
+      if (missing.length === 0) return res.status(200).json({ ok: true, welcomeSent: false, alreadySubscribed: true });
 
-      const added = await resend(`/contacts/${encodeURIComponent(email)}/segments/${id}`, "POST", contactsKey);
-      if (added.status < 200 || added.status >= 300) {
-        if (!isDuplicate(added) || (await hasSegment(email, id, contactsKey)) !== true) {
-          throw new Error(`Resend add-to-segment returned ${added.status}`);
+      for (const segmentId of missing) {
+        const added = await resend(`/contacts/${encodeURIComponent(email)}/segments/${segmentId}`, "POST", contactsKey);
+        if (added.status < 200 || added.status >= 300) {
+          if (!isDuplicate(added) || (await hasSegment(email, segmentId, contactsKey)) !== true) {
+            throw new Error(`Resend add-to-segment returned ${added.status}`);
+          }
         }
       }
     }
