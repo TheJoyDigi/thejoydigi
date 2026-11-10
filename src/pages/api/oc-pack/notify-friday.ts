@@ -6,7 +6,7 @@ import { OC_PACK_SEGMENT_ID } from "@/lib/email/subscribe";
 
 const RESEND_API = "https://api.resend.com";
 const MAX_DAYS_BEFORE = 4;
-const MAX_DAYS_AFTER = 1;
+const MAX_DAYS_AFTER = 0; // Never send before the issue date: Wednesday staging must wait for Friday.
 
 type Broadcast = {
   id: string;
