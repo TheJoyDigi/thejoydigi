@@ -47,7 +47,8 @@ posts 3 and 1 rather than standing alone.
    (https://www.thejoydigi.com/blog/value-created/how-do-i-get-noticed-when-attention-is-scarce).
 3. Why Do Customers Abandon Checkout and Signup? (Ch 13) **Published 2026-11-09**
    (https://www.thejoydigi.com/blog/value-created/why-do-customers-abandon-checkout-and-signup).
-4. What Is a Network Effect and Do I Need One? (Ch 26)
+4. What Is a Network Effect and Do I Need One? (Ch 26) **Published 2026-11-10**
+   (https://www.thejoydigi.com/blog/value-created/what-is-a-network-effect-and-do-i-need-one).
 
 **Ring 3: Systems, leverage, and compounding**
 1. How Do I Make My Business Run Without Me? (Ch 18) **Published 2026-10-26**
@@ -84,3 +85,4 @@ _Post URLs nest under the publication (`/blog/value-created/<slug>` since
 - 2026-11-07: https://www.thejoydigi.com/blog/value-created/why-do-great-products-fail-to-sell (Ch 25) — Ring 2 #1 (distribution). Ring 2 opens.
 - 2026-11-08: https://www.thejoydigi.com/blog/value-created/how-do-i-get-noticed-when-attention-is-scarce (Ch 11) — Ring 2 #2 (distribution).
 - 2026-11-09: https://www.thejoydigi.com/blog/value-created/why-do-customers-abandon-checkout-and-signup (Ch 13) — Ring 2 #3 (distribution).
+- 2026-11-10: https://www.thejoydigi.com/blog/value-created/what-is-a-network-effect-and-do-i-need-one (Ch 26) — Ring 2 #4 (distribution). Ring 2 complete.
