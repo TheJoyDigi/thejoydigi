@@ -1,43 +1,43 @@
 {
-  "date": "2026-11-09",
-  "subject": "Your Friday 5: dog things for this weekend \u00b7 The OC Pack",
+  "date": "2026-11-13",
+  "subject": "Your Friday 5: dog things for this weekend · The OC Pack",
   "headline": "5 dog things to do in Orange County this weekend.",
-  "intro": "A one-time test of the new Friday letter, so you can see the real thing in your inbox before the first issue lands this Friday. Same format, sample picks:",
+  "intro": "Two adoption stops, a Saturday pack walk, dachshund racing in Huntington Beach and a paint afternoon in Placentia. Here is the weekend:",
   "picks": [
     {
-      "name": "Huntington Dog Beach",
-      "detail": "Off-leash along the surf. Go before 10 for easy parking off Goldenwest."
+      "name": "Pack Walk at Laguna Niguel Regional Park",
+      "detail": "Saturday at 9:30 AM with The Dog Director crew. Meet behind the Whole Foods by the park and walk the lake loop together. A good first group outing for dogs still learning their manners around other dogs."
     },
     {
-      "name": "Central Bark, Irvine",
-      "detail": "Three fenced acres by the Great Park. Small-dog side if your pup likes it calm."
+      "name": "Santa Paws Adoption Event, Irvine",
+      "detail": "Saturday, 11 AM to 2 PM at Mathis Home in The Market Place, 13300 Jamboree Road. Free and family friendly, with local rescues to meet, Santa selfies and pup cups. Come say hello to a dog even if you are only thinking about adopting."
     },
     {
-      "name": "Newport Back Bay",
-      "detail": "Leashed sunrise loop, flat and stroller-friendly. Herons included at no charge."
+      "name": "Paint Your Pet, Placentia",
+      "detail": "Saturday at El Farolito in Placentia, sessions at noon and 2:30 PM. Your pet is pre-sketched on a clock from your photo and you do the painting. It is $55, and $30 of it goes to Labradors and Friends Dog Rescue. Email your pet photo to fundraisingLAF@gmail.com to register. Your dog gets this one off."
     },
     {
-      "name": "Santiago Oaks, Orange",
-      "detail": "Shaded canyon trails under the oaks. Leash on, water in the pack, ticks checked after."
+      "name": "Wiener Nationals Championship, Huntington Beach",
+      "detail": "Sunday at Old World Village, 7561 Center Avenue. Gates open at 10 AM, with the final qualifying race at 11 AM and the championship at 1 PM on the cobblestones. Each race takes its own ticket, and parking is free. Dachshunds race, everyone else cheers."
     },
     {
-      "name": "Main Beach boardwalk, Laguna",
-      "detail": "Leashed sunset stroll and people-watching. Check the seasonal beach hours before you go."
+      "name": "Dog Adoption Event at Petco, Tustin",
+      "detail": "Sunday, 11 AM to 1 PM at the Petco at 1192 Irvine Boulevard. Amazing Dogs Rescue brings adoptable dogs to meet in person, with time to ask about temperament, energy level and what each dog needs at home."
     }
   ],
   "trailGuide": {
-    "name": "Top of the World, Laguna Beach",
-    "parking": "Alta Laguna lot, fills by 10 on weekends",
-    "shade": "almost none, so start early",
-    "leash": "required the whole way",
-    "note": "Ocean on one side, canyon on the other."
+    "name": "Laguna Niguel Lake Loop, Laguna Niguel",
+    "parking": "Lots inside the park, $5 per vehicle on weekends, and fall hours run 7 AM to 6 PM",
+    "shade": "Good tree shade on much of the loop, with open sunny stretches too",
+    "leash": "Required at all times, six foot maximum",
+    "note": "About two paved miles around the 44 acre lake. The East Trail is closed for a water main project, so the lake loop is the walk. Give the geese near the play areas a wide berth."
   },
   "vetPlaybook": {
-    "title": "What a dental cleaning actually runs in OC",
-    "detail": "The range is wider than you'd guess, and three questions before you book can cut it in half."
+    "title": "Spay and neuter: what actually drives the bill",
+    "detail": "The surgery is only part of the total. Your dog's size and age, whether she is in heat, pre-op bloodwork, pain medicine and the recovery cone all move the number, and a full service hospital and a nonprofit clinic price the same surgery very differently. Before you book, ask for the estimate in writing, what it includes, and what is optional. And if you just adopted, check the paperwork first. Many rescue dogs go home already fixed."
   },
   "episode": {
-    "title": "Three Acres of Freedom, Inside Irvine Central Bark",
+    "title": "The OC Pack — Episode 6: Three Acres of Freedom: Inside Irvine Central Bark",
     "url": "https://www.thejoydigi.com/podcasts/oc-pack/6"
   }
 }
