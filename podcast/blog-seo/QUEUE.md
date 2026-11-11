@@ -88,3 +88,4 @@ _Post URLs nest under the publication (`/blog/value-created/<slug>` since
 - 2026-11-09: https://www.thejoydigi.com/blog/value-created/why-do-customers-abandon-checkout-and-signup (Ch 13) — Ring 2 #3 (distribution).
 - 2026-11-10: https://www.thejoydigi.com/blog/value-created/what-is-a-network-effect-and-do-i-need-one (Ch 26) — Ring 2 #4 (distribution). Ring 2 complete.
 - 2026-11-11: https://www.thejoydigi.com/blog/value-created/what-is-a-business-moat-and-how-do-i-build-one (Ch 17) — Ring 3 #2 (systems, leverage, and compounding).
+<!-- vc-blog-producer: Ch 17 post merged 2026-11-11 in PR #267; this commit triggers its Vercel deployment. -->
