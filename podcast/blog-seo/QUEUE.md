@@ -55,7 +55,8 @@ posts 3 and 1 rather than standing alone.
    (https://www.thejoydigi.com/blog/value-created/how-to-make-my-business-run-without-me).
    The anchor of Ring 3; shipped at launch, before the niche sequencing. It
    stays live in this honest home.
-2. What Is a Business Moat and How Do I Build One? (Ch 17)
+2. What Is a Business Moat and How Do I Build One? (Ch 17) **Published 2026-11-11**
+   (https://www.thejoydigi.com/blog/value-created/what-is-a-business-moat-and-how-do-i-build-one).
 3. What Is Leverage in Business and How Do I Use It? (Ch 24)
 4. Equity vs. Wages: Why Do Owners Keep What Workers Create? (Ch 20)
 5. How Does Compounding Work in a Small Business? (Ch 27)
@@ -86,3 +87,4 @@ _Post URLs nest under the publication (`/blog/value-created/<slug>` since
 - 2026-11-08: https://www.thejoydigi.com/blog/value-created/how-do-i-get-noticed-when-attention-is-scarce (Ch 11) — Ring 2 #2 (distribution).
 - 2026-11-09: https://www.thejoydigi.com/blog/value-created/why-do-customers-abandon-checkout-and-signup (Ch 13) — Ring 2 #3 (distribution).
 - 2026-11-10: https://www.thejoydigi.com/blog/value-created/what-is-a-network-effect-and-do-i-need-one (Ch 26) — Ring 2 #4 (distribution). Ring 2 complete.
+- 2026-11-11: https://www.thejoydigi.com/blog/value-created/what-is-a-business-moat-and-how-do-i-build-one (Ch 17) — Ring 3 #2 (systems, leverage, and compounding).
