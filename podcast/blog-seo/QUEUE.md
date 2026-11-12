@@ -57,7 +57,8 @@ posts 3 and 1 rather than standing alone.
    stays live in this honest home.
 2. What Is a Business Moat and How Do I Build One? (Ch 17) **Published 2026-11-11**
    (https://www.thejoydigi.com/blog/value-created/what-is-a-business-moat-and-how-do-i-build-one).
-3. What Is Leverage in Business and How Do I Use It? (Ch 24)
+3. What Is Leverage in Business and How Do I Use It? (Ch 24) **Published 2026-11-12**
+   (https://www.thejoydigi.com/blog/value-created/what-is-leverage-in-business-and-how-do-i-use-it).
 4. Equity vs. Wages: Why Do Owners Keep What Workers Create? (Ch 20)
 5. How Does Compounding Work in a Small Business? (Ch 27)
 6. How Do I Build a Personal System for Creating Value? (Ch 31)
@@ -88,4 +89,5 @@ _Post URLs nest under the publication (`/blog/value-created/<slug>` since
 - 2026-11-09: https://www.thejoydigi.com/blog/value-created/why-do-customers-abandon-checkout-and-signup (Ch 13) — Ring 2 #3 (distribution).
 - 2026-11-10: https://www.thejoydigi.com/blog/value-created/what-is-a-network-effect-and-do-i-need-one (Ch 26) — Ring 2 #4 (distribution). Ring 2 complete.
 - 2026-11-11: https://www.thejoydigi.com/blog/value-created/what-is-a-business-moat-and-how-do-i-build-one (Ch 17) — Ring 3 #2 (systems, leverage, and compounding).
+- 2026-11-12: https://www.thejoydigi.com/blog/value-created/what-is-leverage-in-business-and-how-do-i-use-it (Ch 24) — Ring 3 #3 (systems, leverage, and compounding).
 <!-- vc-blog-producer: Ch 17 post merged 2026-11-11 in PR #267; this commit triggers its Vercel deployment. -->
