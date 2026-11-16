@@ -63,7 +63,8 @@ posts 3 and 1 rather than standing alone.
    (https://www.thejoydigi.com/blog/value-created/equity-vs-wages-why-do-owners-keep-what-workers-create).
 5. How Does Compounding Work in a Small Business? (Ch 27) **Published 2026-11-14**
    (https://www.thejoydigi.com/blog/value-created/how-does-compounding-work-in-a-small-business).
-6. How Do I Build a Personal System for Creating Value? (Ch 31)
+6. How Do I Build a Personal System for Creating Value? (Ch 31) **Published 2026-11-15**
+   (https://www.thejoydigi.com/blog/value-created/how-do-i-build-a-personal-system-for-creating-value).
 
 **Held back** (theory-heavy, student searchers): Ch 2, 8, 14, 21, 22, 23, 32.
 Reuse as supporting material inside posts above, not as posts.
@@ -94,5 +95,6 @@ _Post URLs nest under the publication (`/blog/value-created/<slug>` since
 - 2026-11-12: https://www.thejoydigi.com/blog/value-created/what-is-leverage-in-business-and-how-do-i-use-it (Ch 24) — Ring 3 #3 (systems, leverage, and compounding).
 - 2026-11-13: https://www.thejoydigi.com/blog/value-created/equity-vs-wages-why-do-owners-keep-what-workers-create (Ch 20) — Ring 3 #4 (systems, leverage, and compounding).
 - 2026-11-14: https://www.thejoydigi.com/blog/value-created/how-does-compounding-work-in-a-small-business (Ch 27) — Ring 3 #5 (systems, leverage, and compounding).
+- 2026-11-15: https://www.thejoydigi.com/blog/value-created/how-do-i-build-a-personal-system-for-creating-value (Ch 31) — Ring 3 #6 (systems, leverage, and compounding). Ring 3 complete.
 <!-- vc-blog-producer: Ch 17 post merged 2026-11-11 in PR #267; this commit triggers its Vercel deployment. -->
 <!-- 2026-11-12: repo made public, which removed the Vercel Hobby deploy wall; this commit redeploys main so the Ch 17 moat post (merged 2026-11-11, PR #267) actually ships. -->
