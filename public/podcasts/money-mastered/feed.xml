@@ -261,5 +261,14 @@
 <itunes:author>The Joy Digi</itunes:author>
 <itunes:duration>0:14:27</itunes:duration>
 <itunes:episodeType>full</itunes:episodeType>
+</item><item>
+<title>Money, Mastered — Chapter 28: How Bitcoin Actually Works, Simply</title>
+<description>Alex and Jordan open the hood on Bitcoin and explain, in plain language, how a money system runs for over fifteen years with no bank and no company in charge. The chapter covers the shared public record book called the blockchain, wallets and keys, and how payments get checked and written into blocks about every ten minutes.</description>
+<pubDate>Fri, 13 Nov 2026 08:45:00 -0800</pubDate>
+<enclosure url="https://www.thejoydigi.com/podcasts/money-mastered/money-mastered-chapter-28-how-bitcoin-actually-works-simply-2026-11-13.mp3" length="5283885" type="audio/mpeg"/>
+<guid isPermaLink="false">mm-ch28-2026-11-13</guid>
+<itunes:author>The Joy Digi</itunes:author>
+<itunes:duration>0:11:00</itunes:duration>
+<itunes:episodeType>full</itunes:episodeType>
 </item></channel>
 </rss>
