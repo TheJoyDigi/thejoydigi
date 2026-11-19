@@ -252,5 +252,14 @@
 <itunes:author>The Joy Digi</itunes:author>
 <itunes:duration>0:11:30</itunes:duration>
 <itunes:episodeType>full</itunes:episodeType>
+</item><item>
+<title>Money, Mastered — Chapter 27: Bitcoin: Digital Scarcity</title>
+<description>Alex and Jordan open Part Five by grading Bitcoin against the same money scorecard from Chapter One: the three jobs of money and the qualities that make money good. The chapter explains why the fixed supply of twenty one million coins makes Bitcoin the first money with scarcity written into software instead of promised by a government.</description>
+<pubDate>Wed, 11 Nov 2026 08:45:00 -0800</pubDate>
+<enclosure url="https://www.thejoydigi.com/podcasts/money-mastered/money-mastered-chapter-27-bitcoin-digital-scarcity-2026-11-11.mp3" length="6941229" type="audio/mpeg"/>
+<guid isPermaLink="false">mm-ch27-2026-11-11</guid>
+<itunes:author>The Joy Digi</itunes:author>
+<itunes:duration>0:14:27</itunes:duration>
+<itunes:episodeType>full</itunes:episodeType>
 </item></channel>
 </rss>
