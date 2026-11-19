@@ -68,7 +68,7 @@ So the full nesting, said once, in one breath. The account holds campaigns. Each
 
 ## The Blue Sock map, drawn in words
 
-Now draw yours. Remember, this is the teaching map. It shows what a great Blue Sock setup looks like. The live account, audited on November 14, 2026, looks different: one main campaign holding both boarding and daycare ad groups, an ended experiment campaign, and two paused campaigns. Chapter 10 lays the two maps side by side.
+Now draw yours. Remember, this is the teaching map. It shows what a great Blue Sock setup looks like. The live account looks different, and the next section describes it as of November 19, 2026. Chapter 10 lays the two maps side by side.
 
 At the top, one account. The Blue Sock.
 
@@ -76,13 +76,27 @@ Inside it, two main campaigns to start.
 
 The first campaign is Boarding. Its goal is overnight stays, your flagship service. Its budget is its own, because boarding money should not get quietly eaten by daycare clicks. Its locations are your boarding cities. Its bidding hunts, first for clicks and later for booking requests, as later chapters explain.
 
-Inside the Boarding campaign, the ad groups follow your roster and your real themes. One ad group for boarding in Irvine, where Johnny and Jennifer and David host, and where your deepest reviews live. One for boarding in Costa Mesa, built around McKenna and the dogs she is best with. One for boarding in Santa Ana, built around Olivia and the solo stay promise. One for boarding in San Juan Capistrano, around Mariia and Nataliya. A theme group can also cut by need where the need is strong, like a group for senior dog boarding, speaking to medication, calm homes, and experienced hands. Each group holds its own keywords, city words and need words together, and its own ads that echo those exact words.
+Inside the Boarding campaign, the ad groups follow your roster and your real themes. One ad group for boarding in Irvine, where Johnny, Jennifer and David, and Denise host, and where your deepest reviews live. One for boarding in Costa Mesa, built around McKenna and the dogs she is best with. One for boarding in Santa Ana, built around Olivia and the solo stay promise. One for boarding in San Juan Capistrano, around Mariia and Nataliya. A theme group can also cut by need where the need is strong, like a group for senior dog boarding, speaking to medication, calm homes, and experienced hands. Each group holds its own keywords, city words and need words together, and its own ads that echo those exact words.
 
-The second campaign is Daycare. Its goal is daytime care. Its budget is separate and, at the start, likely smaller, because a daycare day, from forty two dollars, is worth less on day one than a multi night boarding stay. Its locations mirror where daycare is actually offered. Inside it, an ad group for daycare in Irvine. One for daycare in Costa Mesa, where McKenna's daycare is fifty four dollars a day. One for daycare in San Juan Capistrano, where daycare starts at forty two dollars a day. Same pattern as boarding. City and service, tight and clear.
+The second campaign is Daycare. Its goal is daytime care. Its budget is separate and, at the start, likely smaller, because a daycare day, from about thirty five dollars, is worth less on day one than a multi night boarding stay. Its locations mirror where daycare is actually offered. Inside it, an ad group for daycare in Irvine. One for daycare in Costa Mesa, where McKenna's daycare is fifty four dollars a day. One for daycare in San Juan Capistrano, where Mariia and Nataliya's daycare is forty two dollars a day. Same pattern as boarding. City and service, tight and clear.
 
 Notice what is not on this map. There is no dog walking campaign, because you do not sell dog walking. There are no campaigns for Anaheim, Tustin, Newport Beach, or Mission Viejo, even though people search there and even though your own blog writes helpful guides for some of those cities. Reading a free guide costs you nothing. Paying for a click in a city with no sitter costs you every time. A training campaign for McKenna could join the map later, as a third box with very different math, and Chapter 12 will give it that moment. It does not belong in the starter map.
 
 Count the boxes and feel how manageable it is. One account. Two campaigns. A handful of ad groups in each. A focused set of keywords and ads in every group. A beginner can hold that whole map in his head, and an owner can check it in minutes. That holdability is a feature, not a limitation.
+
+## The live account today
+
+Now compare the drawing to the real thing. This is the live account as of November 19, 2026.
+
+It has one live campaign, named The Blue Sock, Dog Sitting, Search with Geo's. It runs on Google search only. Its budget is twenty dollars a day, about six hundred dollars a month. Its ad schedule runs from eight in the morning to ten at night. That schedule is a campaign level setting, the kind this chapter said lives at the top.
+
+The campaign has seven locations. Four are the cities where your sitters host: Irvine, Costa Mesa, Santa Ana, and San Juan Capistrano. Three are Tustin, Lake Forest, and Mission Viejo. Those have no sitter, but they border the sitter cities, and they were added back on November 11 at Steph's suggestion. Wildomar was removed on November 17.
+
+Inside that one campaign sit ten ad groups. Eight are city groups, a boarding group and a daycare group for each of the four sitter cities. Two are general groups, one for overnight searches like near me and Orange County, and one for daycare near me. All sixty seven keywords are exact match.
+
+Three old campaigns sit beside it. One is an experiment that has ended but still shows as enabled. One is a paused dynamic search campaign. One is a paused Performance Max campaign.
+
+So the live map already follows this chapter's best idea, tight city and service groups. What it does differently is keep boarding and daycare in one campaign. At twenty dollars a day, that is a fair choice, because one budget feeds one pool of learning. Think of the two campaign map above as the recommendation for when budget and tracked booking requests can feed both.
 
 ## A word from the modern playbook
 
@@ -125,5 +139,5 @@ The lesson. Structure is strategy you can draw. Consolidate the campaigns, keep 
 The map nests four levels: account, campaigns, ad groups, then keywords and ads.
 Budget, location, and bidding live at the campaign level, one campaign per goal.
 Ad groups are tight themes, and keywords and ads live inside them together.
-The Blue Sock map is two campaigns, Boarding and Daycare, with city groups inside.
+The recommended map is two campaigns, Boarding and Daycare. The live account is one campaign with city groups.
 Consolidate campaigns for learning, keep groups tight for relevance.

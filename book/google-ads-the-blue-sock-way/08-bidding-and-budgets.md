@@ -30,6 +30,10 @@ There is a second, quieter reason. The smarter strategies in this chapter run on
 
 A practical guardrail for this phase is a maximum cost per click limit, a ceiling on what any single click may cost. Without a ceiling, a hungry system can pay surprising prices for a few competitive searches early on. With one, you may miss some auctions, and that is fine. In phase one you are buying information at a sane price, not winning every fight in Orange County.
 
+The live account is in this phase. As of November 19, 2026, the one live campaign runs Maximize Clicks with a maximum cost per click of 5 dollars. The cap was lowered from 8 dollars on November 17, 2026. The daily budget is 20 dollars, about 608 dollars a month. Over the last 30 days to November 19, the campaign spent about 419 dollars on 99 clicks, an average of about 4.23 dollars a click. The Conversions column reads zero.
+
+Two things stand out. First, 419 dollars is well under the roughly 608 a budget could spend, which suggests the budget is not the limit. The limit is how many searches the exact match keywords and the cap let you into. Second, a lower cap trims the rare expensive auction, but it may also lose auctions on weak keywords, where a low Quality Score makes each click cost more to win. Watch whether clicks fall after the change before you judge it.
+
 What should you watch during this phase? Not bookings yet, though early ones are welcome. Watch whether the clicks are the right clicks. Are they coming from cities where sitters actually host, the lesson of Chapter 7? Are the search terms about boarding and daycare, in words a real dog owner would use? Is the cost per click in a range your budget can survive? If yes, the campaign is learning the right lessons.
 
 ## The switch: Maximize Conversions
@@ -40,15 +44,17 @@ Maximize Conversions tells Google to spend your budget chasing as many of your c
 
 This is the moment the campaign stops being a traffic machine and becomes a booking machine. It is also the moment Chapter 9 earns its keep. If the counting is wrong, this strategy will hunt the wrong thing with total confidence. If a page view is accidentally counted as a conversion, Google will buy you more page views. If only forms are counted and calls are not, Google will steer away from people who prefer to call, who are many of your best customers.
 
+There is also a volume floor. Google suggests about 15 conversions in 30 days as a practical minimum before conversion bidding has much to learn from. As of November 19, 2026, the live campaign has zero in the Conversions column, so it is not ready, and Chapter 9 explains why that number needs checking before anyone trusts it.
+
 So the switch has conditions. Tracking is installed and tested. Booking requests show up in the reports when real requests come in. Calls are counted too, with a sensible minimum length. The numbers have been steady long enough that you trust them. When those things are true, switch, and then be patient. Any big change sends the system into a learning stretch, where results wobble while it recalibrates. Judge the new phase over weeks, not over the first anxious weekend.
 
 ## Later still: Target CPA
 
 There is a third step, and it is not for beginners or for new campaigns. It is for a campaign with a proven record.
 
-CPA stands for cost per action. For you, the action is a booking request. Target CPA lets you say to Google, hunt for booking requests, and try to keep the average cost of each one near this amount.
+CPA stands for cost per action. For you, the action is a booking request. In Google Ads today, Target CPA is no longer a separate strategy. It is an optional target you set inside Maximize Conversions. It lets you say to Google, hunt for booking requests, and try to keep the average cost of each one near this amount. An older halfway option, Enhanced CPC, is retired for Search campaigns, so you will not be choosing it.
 
-It sounds like control, and it is, but it is control that must be fed. The research behind this book gives a clear rule of thumb. A target makes sense when a campaign has gathered roughly 30 conversions in the past 30 days. Thirty real booking requests and calls, in one month, in that campaign. Below that level, the system decides from a handful of examples, and a firm target can starve it. It bids too carefully, shows up too rarely, and learns even less.
+It sounds like control, and it is, but it is control that must be fed. Here is the rule of thumb. About 15 conversions in 30 days is a practical floor for conversion bidding at all. About 30 is the number often cited before a target can be trusted. Thirty real booking requests and calls, in one month, in that campaign. Below that level, the system decides from a handful of examples, and a firm target can starve it. It bids too carefully, shows up too rarely, and learns even less.
 
 When you do set a first target, set it near what you are already paying. If your booking requests have been costing about 35 dollars each under Maximize Conversions, a first target near that number is reasonable. A target of 12 dollars, chosen because it would be nice, is not a strategy. It is a wish, and the system will respond by barely spending at all.
 
@@ -60,7 +66,7 @@ You may also hear about Target ROAS, which hunts for value rather than for a cou
 
 Google budgets are set as an average daily budget. That phrase hides two facts every beginner should know.
 
-First, the monthly math. Take your daily budget and multiply it by 30.4, the average number of days in a month. That gives you the most the campaign will spend in a month. A daily budget of about 16 dollars and 45 cents is a 500 dollar month. About 32 dollars and 89 cents a day is a 1,000 dollar month. About 49 dollars and 34 cents a day is a 1,500 dollar month. This multiplication is how you check that a daily number and a monthly number describe the same plan.
+First, the monthly math. Take your daily budget and multiply it by 30.4, the average number of days in a month. That gives you the most the campaign will spend in a month. A daily budget of about 16 dollars and 45 cents is a 500 dollar month. About 32 dollars and 89 cents a day is a 1,000 dollar month. About 49 dollars and 34 cents a day is a 1,500 dollar month. This multiplication is how you check that a daily number and a monthly number describe the same plan. The live campaign's 20 dollars a day works out to 608 dollars a month, and it may touch 40 dollars on a surge day.
 
 Second, the busy day rule. On a day when searches surge, Google may spend up to twice your average daily budget. A 33 dollar day can become a 66 dollar day. That is not an error, because the monthly cap still holds. The system borrows from quiet days to spend on busy ones, and for boarding, busy days are often the valuable ones. People plan trips in bursts, around holidays, school breaks, and summer. Judge it on the month, not on one startling Tuesday.
 
@@ -68,7 +74,7 @@ The word average is doing real work in all of this. Expect uneven days. Plan on 
 
 ## Think in clicks per day
 
-The method behind this book suggests aiming for roughly 10 to 20 clicks a day on a focused local campaign. Fewer than that, and learning crawls. A good day and a bad day look the same when both are built on three clicks. More than that is welcome, of course, but 10 to 20 is the range where patterns start to separate from luck.
+The method behind this book suggests aiming for roughly 10 to 20 clicks a day on a focused local campaign. Fewer than that, and learning crawls. A good day and a bad day look the same when both are built on three clicks. For the record, 99 clicks in 30 days, the live campaign's number as of November 19, 2026, is about three a day. More than that is welcome, of course, but 10 to 20 is the range where patterns start to separate from luck.
 
 So work backwards. If clicks in your market cost around 4 dollars each, and the next sections explain where that number comes from, then 10 clicks a day costs about 40 dollars a day, and 20 clicks a day costs about 80 dollars a day. Over a month, that is roughly 1,200 to 2,400 dollars. That is the honest price of fast learning at those click costs.
 
@@ -78,7 +84,7 @@ If your budget is smaller, the math does not scold you. It just tells you what t
 
 Before you can judge any cost, you need to know what the prize is worth. Let us build that from your real prices.
 
-Boarding at The Blue Sock runs from 55 dollars a night with Trudy in Wildomar to 89 dollars a night with Olivia in Santa Ana. Most sitters sit between those ends. Jennifer and David charge 71 dollars. Johnny charges 60 dollars. McKenna charges 70 dollars. Mariia and Nataliya charge 59 dollars.
+As of November 19, 2026, boarding at The Blue Sock lists from 55 dollars a night with Trudy in Wildomar to about 89 dollars a night with Olivia in Santa Ana. Wildomar is no longer an ad city, so inside the cities the ads target, boarding runs from 59 to about 89. Most sitters sit between those ends. Jennifer and David charge about 71 dollars. Denise charges about 73. Johnny charges 60. McKenna charges about 70. Mariia and Nataliya charge 59.
 
 Now remember how boarding is actually bought. Rarely for one night. A typical trip is several nights. Say, as a labeled example, a four night stay at 70 dollars a night. That booking is worth 280 dollars in stay value before fees and add-ons. A week long trip roughly doubles that. And a happy first customer is not one booking. Dog owners travel again, and they need daycare between trips. A first stay that goes well can become years of repeat stays.
 
@@ -86,21 +92,23 @@ This is why a booking request can be worth paying real money for, and why you mu
 
 Here is the thinking in example form, with made up numbers labeled as such. Say a completed average stay is worth about 300 dollars. Say about half of real requests become completed stays. Then each request is worth, on average, about 150 dollars in expected stay value. Paying 30 dollars for a request leaves wide room. Paying 140 dollars leaves almost none. Your real numbers will differ, and you can compute them from real history in the booking portal. The shape is what matters. Value of a stay, times the share of requests that become stays, sets the ceiling a request cost must stay well under.
 
-And here the example can step aside, because as of the November 14, 2026 audit, your real numbers exist. A completed booking at The Blue Sock is worth 303 dollars on average. About 53 percent of booking requests become paid bookings. Multiply, and one booking request carries about 161 dollars of expected value, before counting the fact that over half of your customers book again. The made up example above guessed 300 dollars and half. Reality landed almost exactly on it. The boarding stays behind that average are worth 359 dollars each and run 4.5 nights on average, and repeat customers, who are over half of all customers, produce nearly four fifths of the revenue, which means the true value of a first booking is higher still. So the ceiling from this chapter is no longer a teaching device: a cost per booking request anywhere near 161 dollars would eat the whole value of the average first booking, and a healthy target sits far below it, in the range the national lead cost suggests, around 30 to 50 dollars while the account is young.
+And here the example can step aside, because your real numbers exist. These come from the November 14, 2026 audit and were not pulled again for November 19, so refresh them before you lean on them. A completed booking at The Blue Sock is worth 303 dollars on average. About 53 percent of booking requests become paid bookings. Multiply, and one booking request carries about 161 dollars of expected value, before counting the fact that over half of your customers book again. The made up example above guessed 300 dollars and half. Reality landed almost exactly on it. The boarding stays behind that average are worth 359 dollars each and run 4.5 nights on average, and repeat customers, who are over half of all customers, produce nearly four fifths of the revenue, which means the true value of a first booking is higher still. So the ceiling from this chapter is no longer a teaching device: a cost per booking request anywhere near 161 dollars would eat the whole value of the average first booking, and a healthy target sits far below it, in the range the national lead cost suggests, around 30 to 50 dollars while the account is young.
+
+Now hold that ceiling up to the live account. As of November 19, 2026, it has spent several hundred dollars in the last 30 days, and the All conversions column shows two booking requests, both credited to the old experiment campaign on November 4 and 5. Two is far too few to judge. But it shows why Maximize Clicks is a phase to pass through, not a place to live.
 
 ## Industry context, labeled honestly
 
 It helps to know what the wider world pays, as long as you hold the numbers at arm's length.
 
-Industry studies of 2026 put pet category clicks at around 4 dollars each, and the cost of a lead in that category at around 31 dollars and 50 cents. Those are national medians from large studies, blending many kinds of pet businesses and many cities. They are not promises, and Orange County may sit above them. Treat them as a sanity check. If your clicks cost 4 to 6 dollars and your booking requests land near that lead cost, you are in a normal range. If your clicks cost 18 dollars each, something about targeting or relevance deserves a hard look before you raise the budget.
+Industry studies of 2026 put pet category clicks at around 4 dollars each, and the cost of a lead in that category at around 31 dollars and 50 cents. Those are national medians from large studies, blending many kinds of pet businesses and many cities. They are not promises, and Orange County may sit above them. Treat them as a sanity check. The live campaign's average click, about 4.23 dollars as of November 19, 2026, sits right at that median. If your clicks cost 4 to 6 dollars and your booking requests land near that lead cost, you are in a normal range. If your clicks cost 18 dollars each, something about targeting or relevance deserves a hard look before you raise the budget.
 
-Notice how the pieces fit. At a lead cost near 31 dollars and 50 cents, a 1,000 dollar month would buy roughly 30 leads at that level of efficiency. Thirty a month is exactly the level where a Target CPA starts to make sense. The research numbers and the bidding rules tell the same story. Volume feeds the system, and the system rewards volume with better hunting.
+Notice how the pieces fit. At a lead cost near 31 dollars and 50 cents, a 1,000 dollar month would buy roughly 30 leads at that level of efficiency. Thirty a month is the level where a dependable target becomes possible. The research numbers and the bidding rules tell the same story. Volume feeds the system, and the system rewards volume with better hunting.
 
 A new account should not expect national medians in its first month. Medians describe settled accounts.
 
 ## Three example budgets
 
-Let us put the whole chapter into three labeled examples. These are examples, not a description of what The Blue Sock spends today. For the record, the live account audited on November 14, 2026 spends about 600 dollars a month, 20 dollars a day on one live campaign, which puts it between the first and second examples below. These examples teach the shape of a decision.
+Let us put the whole chapter into three labeled examples. These are examples, not a description of what The Blue Sock spends today. For the record, as of November 19, 2026, the live account runs one live campaign at 20 dollars a day, about 608 dollars a month, which puts it between the first and second examples below. These examples teach the shape of a decision.
 
 A 500 dollar month is a test budget. At around 4 dollars a click, it buys about 125 clicks, about 4 a day. Used well, it covers one service in one tight area, with Maximize Clicks, while tracking is proven. It answers the question, do the right searches and the right pages connect? It does not produce enough conversions to feed advanced bidding, and it should not be asked to.
 
@@ -120,11 +128,11 @@ Your job as the owner is not to touch the dial daily. It is to know which phase 
 
 ## Play It: Your Move
 
-It is a Friday night, three weeks into a boarding campaign. The example budget is 1,000 dollars a month. Clicks are coming in from the right cities at a reasonable cost. But booking request tracking was only finished yesterday, so the campaign has counted exactly two conversions, ever. A shiny option appears in the dashboard. You can switch to Target CPA right now, and set the target at 15 dollars per booking request, about half the national median lead cost. It would be nice if it worked. What is your move?
+It is a Friday night, three weeks into a boarding campaign. The example budget is 1,000 dollars a month. Clicks are coming in from the right cities at a reasonable cost. But booking request tracking was only finished yesterday, so the campaign has counted exactly two conversions, ever. A shiny option appears in the dashboard. You can switch to Maximize Conversions right now, with a target CPA of 15 dollars per booking request, about half the national median lead cost. It would be nice if it worked. What is your move?
 
 A. Switch now, and set the 15 dollar target. Ambitious targets save money, and the system is smart enough to figure it out.
 
-B. Stay on Maximize Clicks for now, while the freshly finished tracking proves itself. Switch to Maximize Conversions once booking requests are arriving steadily, and leave Target CPA for the day the campaign is gathering roughly 30 conversions in 30 days.
+B. Stay on Maximize Clicks for now, while the freshly finished tracking proves itself. Switch to Maximize Conversions, with no target, once booking requests are arriving steadily and the count nears a practical floor of 15 in 30 days. Add a target only on the day the campaign is gathering roughly 30 conversions in 30 days.
 
 C. Skip the middle step entirely later. Keep Maximize Clicks forever, because clicks are what you can see, and bookings take care of themselves.
 
@@ -142,7 +150,7 @@ The lesson is that a bidding strategy is a hunt order, and a hunt order is only 
 
 A bidding strategy is an instruction that tells Google what to hunt for.
 Start with Maximize Clicks while the account learns and tracking is proven.
-Switch to Maximize Conversions once booking requests and calls are counted and arriving steadily.
-Add a Target CPA only with roughly 30 conversions in the past 30 days, set near your real cost.
+Switch to Maximize Conversions once booking requests and calls are counted and arriving steadily, about 15 in 30 days as a floor.
+Target CPA is an optional target inside Maximize Conversions, so add one only with roughly 30 conversions in 30 days, set near your real cost.
 Your daily budget times 30.4 is your monthly cap, and Google may spend up to twice the daily budget on a busy day.
 

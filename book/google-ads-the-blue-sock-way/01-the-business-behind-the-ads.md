@@ -14,7 +14,7 @@ The Blue Sock sells nights on other people's calendars. It sells care, in real h
 
 The Blue Sock is a small, curated platform for dog boarding and doggy daycare in Irvine and Orange County.
 
-Curated is the key word. This is not a giant open marketplace where anyone can sign up and start taking dogs tonight. Your roster is small on purpose. Each sitter was picked. Each sitter cares for dogs in their own home. Each profile says what that sitter is especially great for, so a dog gets matched by neighborhood and by need, not just by whoever shows up first in a list.
+Curated is the key word. This is not a giant open directory where anyone can sign up and start taking dogs tonight. Your roster is small on purpose. Each sitter is an independent sitter who was chosen to join. Each one cares for dogs in their own home. Each profile says what that sitter is especially great for, so a dog gets matched by neighborhood and by need, not just by whoever shows up first in a list.
 
 That matching idea sits at the center of the brand. The site says it plainly. Do not choose a sitter. Choose an experience. A stay is not a night in a cage. It is a dogcation, in a home, with a person who fits that dog.
 
@@ -22,7 +22,7 @@ There are two services, and only two.
 
 The first is boarding. A dog stays overnight in a sitter's home. This is the flagship service. Someone books a flight, plans a wedding weekend, or takes a family trip, and their dog sleeps at a sitter's house instead of a kennel.
 
-The second is daycare. A dog spends the day with a sitter and comes home at night. Boarding starts at fifty five dollars a night. Daycare starts at forty two dollars a day.
+The second is daycare. A dog spends the day with a sitter and comes home at night. Boarding starts at fifty five dollars a night. Daycare starts at about thirty five dollars a day. Those are the floors on the roster as of November 19, 2026.
 
 That is the whole menu. There is no dog walking service. There is no drop in visit service. There is no house sitting service. Walks and outings exist, but only as extra experiences during a stay. A dog on a boarding stay might go on a sniff adventure outing, for example. That is an add on to a stay, not a service you sell on its own. This matters for ads later, because you should never pay for a click from someone looking for a service you do not sell.
 
@@ -34,11 +34,11 @@ Walk through a booking slowly, because every step of it shapes what a good ad lo
 
 A pet parent lands on thebluesock.com. They browse sitter profiles. They read reviews. They look at photos of real homes and real backyards. They find a sitter who fits their dog.
 
-Then they message the sitter through the site. They send a booking request with their dates.
+Then they send a booking request with their dates. Sending a request is free.
 
 Now notice what does not happen. The booking is not instant. No calendar just takes the money and locks it in. A human sitter reads the request and accepts it. Only then do the next steps start.
 
-After the sitter accepts, the pet parent and the sitter coordinate a meet and greet in the chat on the site. Sometimes the meet and greet is free. Sometimes a trial daycare session takes its place, so the dog can test the home for a day before a long stay. They confirm the dates. They confirm any extras. Then the pet parent pays through a checkout backed by Stripe, and the stay is managed in the Pet Parent Portal.
+After the sitter accepts, the pet parent and the sitter set up a meet and greet in the chat on the site. New customers do one. For daycare, or for a long stay, a trial daycare day may come first, so the dog can test the home before the big booking. They confirm the dates. They confirm any extras. Then the sitter sends a payment request. The pet parent sees the total before paying, pays through a checkout backed by Stripe, and the stay is booked and managed in the Pet Parent Portal.
 
 The site promises that most requests get an answer in under two hours. Sit with that for a second. A stranger is deciding whether to trust a person they have never met with a member of their family. The speed and warmth of that first reply is part of the product.
 
@@ -52,25 +52,27 @@ Your ads sit at the very start of that chain. An ad cannot close the sale. An ad
 
 In a normal business, inventory is stock. Boxes on shelves. Units in a warehouse.
 
-Your inventory is people. Six sitters on the public site today, each with a home, a rate, a city, and a kind of dog they are best with.
+Your inventory is people. Seven active sitters today, each with a home, a rate, a city, and a kind of dog they are best with.
 
 Start with Johnny, in Irvine. Johnny is your most reviewed sitter by far, with fifty plus reviews, every one of them five stars. He is a former vet assistant. He can give injectable medication. He is strong with active dogs, and with senior and special needs dogs too. His rate is sixty dollars a night. When a nervous pet parent worries that nobody can handle their dog's medication schedule, Johnny is the answer your roster gives.
 
 Jennifer and David are also in Irvine, at seventy one dollars a night. They bring an animal behavior background and more than twenty years around animals. They are the match for small, senior, calm, and social dogs. Five reviews, five stars.
 
+Denise is the newest sitter, also in Irvine, at about seventy three dollars a night for boarding and about thirty five dollars a day for daycare, the lowest daycare rate on the roster. She brings twenty five years of experience. She is brand new on the site, with no reviews yet, so her profile carries a New Sitter badge instead of a record. That is worth remembering. A new home can be a great match, but it has no proof on the page yet.
+
 The roster keeps growing carefully, one trusted home at a time, and every new home changes what your ads can honestly promise.
 
-In Costa Mesa, there is McKenna, at seventy dollars a night for boarding and fifty four dollars a day for daycare. McKenna holds a Top Dog badge and has fourteen five star reviews. She is the roster's only certified trainer, and she is the one who takes reactive dogs, puppies, and large dogs that other homes might turn away. Her training work, from obedience sessions to longer Board and Train programs, is a side door in the business. It is real, and it matters, but it is not what most of your ads will sell.
+In Costa Mesa, there is McKenna, at seventy dollars a night for boarding and fifty four dollars a day for daycare. McKenna holds a Top Dog badge and has fifteen five star reviews. She is the roster's only certified trainer, and she is the one who takes reactive dogs, puppies, and large dogs that other homes might turn away. Her training work, from obedience sessions to longer Board and Train programs, is a side door in the business. It is real, and it matters, but it is not what most of your ads will sell.
 
-In Santa Ana, there is Olivia, at eighty nine dollars a night, the highest rate on the roster. Olivia sells something specific. Solo stays. One family at a time. No other dogs in the home. For a calm or anxious dog who cannot handle a busy house, that quiet is worth a premium price. Her profile promises replies in about an hour.
+In Santa Ana, there is Olivia, at eighty nine dollars a night, the highest rate on the roster. Olivia, who is new on the site and has no reviews yet, sells something specific. Solo stays. One family at a time. No other dogs in the home. For a calm or anxious dog who cannot handle a busy house, that quiet is worth a premium price. Her profile promises replies in about an hour.
 
-In San Juan Capistrano, Mariia and Nataliya board at fifty nine dollars a night, with seven five star reviews. They come from an animal rescue background. They are great for calm, senior, anxious, and social dogs, and their beach sniffari outings are part of their charm. They also anchor the low end of daycare, at forty two dollars a day.
+In San Juan Capistrano, Mariia and Nataliya board at fifty nine dollars a night, with eight five star reviews. They come from an animal rescue background. They are great for calm, senior, anxious, and social dogs, and their beach sniffari outings are part of their charm. Their daycare is forty two dollars a day.
 
-At the far edge of the map, in Wildomar, there is Trudy, at fifty five dollars a night, the lowest rate on the roster. She is the match for senior and social dogs, with one five star review so far.
+At the far edge of the map, in Wildomar, there is Trudy, at fifty five dollars a night, the lowest rate on the roster. She is the match for senior and social dogs, with one five star review so far. Wildomar is in Riverside County, well away from the other homes, and as of November 17, 2026 it is no longer a city your ads target. Trudy stays on the site.
 
-Put the roster side by side and the rate range tells a story. Fifty five to eighty nine dollars a night is not one product at one price. It is six different promises. Quiet solo care costs more. A home at the edge of your service area costs less. Experience, reviews, and special skills all show up in the number.
+Put the roster side by side and the rate range tells a story. Fifty five to eighty nine dollars a night is not one product at one price. It is seven different promises. Quiet solo care costs more. A home at the edge of your service area costs less. Experience, reviews, and special skills all show up in the number.
 
-The whole platform carries a 5.0 star rating from forty nine Google reviews. That record is not decoration. In a trust business, it is the closest thing you have to a shelf full of proof.
+The site shows 5.0 stars from eighty six pet parent reviews across your sitters, as of November 19, 2026. That record is not decoration. In a trust business, it is the closest thing you have to a shelf full of proof.
 
 ## Capacity is a ceiling, not a detail
 
@@ -78,13 +80,13 @@ Now here is where your ads really part ways with store ads.
 
 Olivia can take one family at a time. That is her whole offer. When her calendar fills for a holiday weekend, she is done. There is no back room with more Olivias in it.
 
-The same is true, in softer form, for every sitter. A home can hold so many dogs and stay good. Push past that, and the care that makes you different disappears. Your sitters' calendars are limited, and the limit is a feature. It is what one on one care means.
+The same is true, in softer form, for any sitter. A home can hold so many dogs and stay good. Push past that, and the care that makes you different disappears. Your sitters' calendars are limited, and the limit is a feature. It is what one on one care means.
 
 Think about what that does to advertising. A store wants maximum traffic, all the time. You do not. You want the right amount of the right traffic. Ten booking requests for a weekend when only three sitters have space is not a win. It is seven disappointed people and a lot of wasted ad money.
 
 It also means timing matters in a way store owners never feel. A boarding request is tied to a trip. The trip has dates. If your sitters are free on those dates, the click can become money. If they are booked solid, the same click, from the same lovely person, is worth nothing that week.
 
-Geography works the same way. Your sitters sit in Irvine, Costa Mesa, Santa Ana, San Juan Capistrano, and Wildomar. A pet parent in one of those cities, or close to one, can use you. A pet parent in Anaheim, Fullerton, or Huntington Beach cannot, because you have no sitter there yet. Their click costs the same as an Irvine click. It just can never turn into a stay. That gap, between where people search and where your sitters live, is one of the most expensive traps in this whole book, and we will come back to it more than once.
+Geography works the same way. Your sitters sit in Irvine, Costa Mesa, Santa Ana, San Juan Capistrano, and Wildomar. As of November 19, 2026, your ads target those first four, plus three bordering cities with no sitter, which Chapter 3 covers. A pet parent in one of those cities, or close to one, can use you. A pet parent in Anaheim, Fullerton, or Huntington Beach cannot, because you have no sitter there yet. Their click costs the same as an Irvine click. It just can never turn into a stay. That gap, between where people search and where your sitters live, is one of the most expensive traps in this whole book, and we will come back to it more than once.
 
 ## The product is trust
 
@@ -98,7 +100,7 @@ That is why your wider marketing runs the way it does. The trust first work on N
 
 It also means your ads carry a heavier burden than most. A store ad has to make a product look good. Your ad has to make a stranger feel safe enough to start a conversation. The click is only the handshake. The trust gets built in the profile, the reviews, the chat, and the meet and greet that follow.
 
-This is also why judging your ads takes owner judgment, not just numbers. The Blue Sock's ads were run by Brandon until November 14, 2026. From that date, you manage the account yourself, working with Claude, and this book was updated from a full read-only audit of the live account taken that day. So this book is now two things at once. It teaches you how the system works and what a great setup looks like for a business built like yours, and where the live account's real numbers appear, they are labeled with the audit date, November 14, 2026.
+This is also why judging your ads takes owner judgment, not just numbers. The Blue Sock's ads were run by Brandon until November 14, 2026. From that date, you manage the account yourself, working with Claude, and this book was updated from read-only checks of the live account in November 2026, the latest on November 19. So this book is two things at once. It teaches you how the system works and what a great setup looks like for a business built like yours, and where the live account's real numbers appear, they are labeled with their date.
 
 ## The job of an ad, in one sentence
 
@@ -152,6 +154,6 @@ The lesson. In your business, a click outside your coverage is not a maybe. It i
 
 The Blue Sock sells boarding and daycare in real sitters' homes, and nothing else.
 A booking is a chain of trust, from profile to chat to meet and greet to payment.
-Your inventory is six sitters' calendars, and every calendar has a hard limit.
+Your inventory is seven sitters' calendars, and every calendar has a hard limit.
 Trust is the product, and your 5.0 star record is the proof.
 Your ad's job is the right neighbor, right city, right dog, and right time.
