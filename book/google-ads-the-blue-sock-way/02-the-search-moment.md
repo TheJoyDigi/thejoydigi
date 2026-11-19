@@ -34,6 +34,8 @@ Her deadline shapes everything that follows. If her search fails tonight, she do
 
 This is also why so many of your best searches happen on a phone, often in the evening. The problem arrives when the day quiets down. A tap is easier than a form. A call button is easier than an email. Keep that picture in mind whenever later chapters talk about phones and calls. The search moment is a person on a couch, not a person at a desk filling out paperwork for fun.
 
+One honest note about the clock. As of November 19, 2026, the live ad schedule runs from eight in the morning to ten at night, every day. Her ten o'clock search lands right at the edge. A worried parent typing the same four words at ten thirty would see no Blue Sock ad at all. Whether a closed schedule is helping or costing you is worth questioning, and Chapter 3 shows where that setting lives.
+
 ## What Google does in a split second
 
 She presses enter. In less time than it takes her to blink twice, a lot happens.
@@ -74,9 +76,9 @@ Money goes in as budget. Say, as an example, your budget is one thousand dollars
 
 Searches happen. All day and into the night, pet parents type their problems into Google. Your ads show where they match. Impressions happen, free of charge.
 
-Some searchers click. Each click takes a few dollars out of the pool. Pet care clicks are, by industry measures, cheaper than clicks in many other local services, but cheap is a relative word, and a click that can never book is expensive at any price. Chapter 8 will do the budget math properly. For now, feel the flow. Budget in. Clicks out of the pool, a few dollars at a time.
+Some searchers click. Each click takes a few dollars out of the pool. Here is a real number, not an example. In the thirty days to November 19, 2026, the live campaign spent about four hundred nineteen dollars on ninety nine clicks, from eight hundred forty nine impressions. That is an average of about four dollars and twenty three cents a click. Whether that is cheap depends on how often a click books, and a click that can never book is expensive at any price. Chapter 8 will do the budget math properly. For now, feel the flow. Budget in. Clicks out of the pool, a few dollars at a time.
 
-Clicks land on your site. Here is where Chapter 1's chain of trust takes over. The clicker sees a sitter profile. She reads the reviews. She checks the rate, somewhere between fifty five and eighty nine dollars a night for boarding, or from forty two dollars a day for daycare. If the fit feels right, she sends a message and a booking request. The site promises most requests get an answer in under two hours, and the sitter accepts, a meet and greet gets set in chat, and payment happens later through the Stripe backed checkout.
+Clicks land on your site. Here is where Chapter 1's chain of trust takes over. The clicker sees a sitter profile. She reads the reviews. She checks the rate, somewhere between fifty five and eighty nine dollars a night for boarding, or from about thirty five dollars a day for daycare. If the fit feels right, she sends a message and a booking request. The site promises most requests get an answer in under two hours, and the sitter accepts, a meet and greet gets set in chat, and the sitter sends a payment request that she pays through the Stripe backed checkout.
 
 Bookings come out the other end. One accepted request for a four night stay, at, say, seventy dollars a night, is two hundred and eighty dollars of stay value, from a chain that started with a few dollars of clicks. That arithmetic is why this channel can work so well. It is also why it can disappoint. Between the click and the booking sit all the human steps. Profiles can fail to convince. Replies can come too slowly. Dates can clash with a full calendar. Ads buy the chance. The business earns the booking.
 
