@@ -22,6 +22,8 @@ Sorting by cost is the discipline. A strange search that cost 40 cents is a curi
 
 Here are real searches from the last thirty days, as of November 19, 2026, to train your eye. Good ones: dog boarding irvine, dog day care costa mesa, small group dog daycare near me. Waste: dog walker, dog walker app, dog kennels riverside, dog boarding in garden grove ca, and the bare words dog and dogs. Judgment calls: dog boarding cost per day, affordable doggy daycare, and competitor names like the dog stop tustin. More on those below.
 
+Ask a second question of each good line: did it land in the right group? The column showing the matched keyword answers it. Between November 17 and 19, 2026, dog day care orange county matched the boarding keyword dog boarding orange county, so a daycare parent saw a boarding ad. The fix is not a negative on its own. Give the search a home: add it as an exact keyword in the daycare group, and if it still strays, add it as an exact negative in the boarding group.
+
 ### Minutes 15 to 20: add negatives to the shared lists
 
 Turn the report's No lines into negatives, in families, on the shared lists described in the next section, so one fix covers every campaign at once.
@@ -36,25 +38,27 @@ Do not pause anything on one week of thirty clicks. Note what you see. Act on it
 
 Write every change in the log while you still remember why you made it. A loop you do not record is just a series of opinions.
 
+Then open the account's change history, which lists every edit and who made it. Steph and Johnny can change the account too, and Google can apply its own recommendations if that setting is ever switched on. Anything in the history that is not in your log gets a line in the log, with who and why. Otherwise next month you will judge a change you did not know about.
+
 ## Shared negative keyword lists
 
 As of November 19, 2026, the live campaign has 42 negative keywords, all attached to that one campaign, and no shared lists at all. That works while there is one campaign. It breaks the day a second one appears, because the new campaign starts with no protection, and someone has to remember to copy 42 words by hand.
 
-A shared list fixes that. You build it once, in the account's shared library, and attach it to as many campaigns as you like. An account can hold up to twenty lists, each with up to five thousand words. You will need six. Build them from what is already live plus what the search terms have shown.
+A shared list fixes that. You build it once, in the account's shared library, and attach it to as many campaigns as you like. An account can hold up to twenty lists, each with up to five thousand words. You need far fewer. Six families of words cover this account, described below. Keep them in three lists, because every extra list is one more place to forget to attach: one called Never a Customer, holding the jobs, free and do it yourself, places and outings, and adoption and sale families; one called Services We Do Not Sell; and one called Wrong Geography, which you will edit most often. Build them from what is already live plus what the search terms have shown.
 
-The first list: Jobs and Careers. Job, jobs, hiring, careers, salary, employment, become a dog sitter, how to start, franchise, business plan, course, certification. These people want work, not care, and in a young pet account they are often the biggest single leak.
+The first family: Jobs and Careers. Job, jobs, hiring, careers, salary, employment, become a dog sitter, how to start, franchise, business plan, course, certification. These people want work, not care, and in a young pet account they are often the biggest single leak.
 
-The second list: Services We Do Not Sell. Dog walker, dog walkers, dog walking, walker, walkers, drop in, house sitting, cat, cats, cat sitting, grooming, groomer, pet taxi, bird boarding, rabbit boarding. The Blue Sock sells boarding and daycare. Walks exist only as optional experiences during a stay, so a search for a walker is never your customer.
+The second family: Services We Do Not Sell. Dog walker, dog walkers, dog walking, walker, walkers, drop in, house sitting, cat, cats, cat sitting, grooming, groomer, pet taxi, bird boarding, rabbit boarding. The Blue Sock sells boarding and daycare. Walks exist only as optional experiences during a stay, so a search for a walker is never your customer.
 
 Training needs care. Dog training and board and train are live negatives today, and that is right, because training is not advertised. But McKenna offers Board and Train as an add-on to boarding, and Chapter 12 describes a training campaign that might one day exist. The day it launches, remove those negatives from anything attached to the training campaign, or it will block its own best searches. That is one more reason to keep training words out of the shared lists, which reach every campaign, and on the boarding and daycare campaign alone, where removing them is one deliberate step.
 
-The third list: Free and Do It Yourself. Free, diy, kennel plans, equipment. A parent hunting for free care, or for plans to build a kennel, is a different market.
+The third family: Free and Do It Yourself. Free, diy, kennel plans, equipment. A parent hunting for free care, or for plans to build a kennel, is a different market.
 
-The fourth list: Places and Outings. Dog park, dog beach, hikes, trails. These are people looking for somewhere to take their own dog, not somewhere to leave it.
+The fourth family: Places and Outings. Dog park, dog beach, hikes, trails. These are people looking for somewhere to take their own dog, not somewhere to leave it.
 
-The fifth list: Wrong Geography. Riverside, garden grove, anaheim, and whatever other cities the geography report and the search terms show. Presence targeting already keeps people in those cities from seeing your ads. This list catches a different case: a person inside your area typing another city's name. Two cautions. Do not add Tustin, Lake Forest, or Mission Viejo while you are deliberately testing them. And since Wildomar, in Riverside County, left the ads on November 17, riverside searches may fade on their own. Keep the negative anyway. It costs nothing.
+The fifth family: Wrong Geography. Riverside, garden grove, anaheim, and whatever other cities the geography report and the search terms show. Presence targeting already keeps people in those cities from seeing your ads. This list catches a different case: a person inside your area typing another city's name. Two cautions. Do not add Tustin, Lake Forest, or Mission Viejo while you are deliberately testing them. And since Wildomar, in Riverside County, left the ads on November 17, riverside searches may fade on their own. Keep the negative anyway. It costs nothing.
 
-The sixth list: Adoption and Sale. Adoption, shelter, puppies for sale, and rescue, handled carefully. A parent searching boarding for my rescue dog is a perfect customer. So block phrases like dog rescue and rescue near me, not the word rescue on its own.
+The sixth family: Adoption and Sale. Adoption, shelter, puppies for sale, and rescue, handled carefully. A parent searching boarding for my rescue dog is a perfect customer. So block phrases like dog rescue and rescue near me, not the word rescue on its own. The live campaign breaks this rule today. As of November 19, 2026, it carries rescue dogs as a phrase negative, which blocks dog boarding for rescue dogs. Delete it. The adoption negative already catches the adoption searches it was meant for.
 
 Keep one thing out of every shared list: your brand terms. Blue sock, thebluesock, and the old name are negatives on the live campaign today, and that is fine. If you ever build a brand campaign, a shared list carrying those words would block it from its own name.
 
@@ -94,7 +98,9 @@ Third, the near me groups. Have their Quality Scores moved off 1 and 2? Are they
 
 Fourth, ad refresh. Update the review count, which grows. Swap the seasonal headline, so Request Holiday Stays Early comes out in January. Check ad strength, and retire a weak headline or two in the busiest groups.
 
-Fifth, and most important, sitter capacity. Your inventory is seven sitters' calendars. Before any budget increase, ask who actually has room. If Johnny is booked solid for the holiday week, Irvine boarding should coast, not climb. Ads follow capacity. Never the other way around.
+Fifth, the two reports that explain the auction. Impression share shows how many searches you missed and whether you lost them to budget or to rank. Lost to rank means fix quality or the cap. Lost to budget means money, if the sitters have room. And auction insights shows who else showed up beside you, and how often. If a new name starts appearing above you on your own city searches, or on your own brand name, that is the cue Chapter 12 describes.
+
+Sixth, and most important, sitter capacity. Your inventory is seven sitters' calendars. Before any budget increase, ask who actually has room. If Johnny is booked solid for the holiday week, Irvine boarding should coast, not climb. Ads follow capacity. Never the other way around.
 
 ## One change at a time, and a log that proves it
 
@@ -121,7 +127,7 @@ What happens with each: With C, nothing changes, because dog walking as a phrase
 ## The Short Version
 
 Weekly: check the counting first, then search terms by cost, top down, a verdict on each line.
-Build six shared negative lists, and keep training and brand words off them.
+Build three shared negative lists from six families of words, and keep training and brand words off them.
 Negatives do not stretch, and a broad negative needs every word, so cheap cheapest blocks almost nothing.
 Price and competitor searches are allowed on purpose; revisit that with data.
 Monthly: balance the services, read the city scorecard, refresh ads, and check sitter capacity first.

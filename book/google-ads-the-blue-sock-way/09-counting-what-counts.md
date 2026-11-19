@@ -16,7 +16,7 @@ The first is a submitted booking request. The second is a phone call of real len
 
 Everything else is a signal, not a goal. Signals are worth watching. Goals are worth paying for. Confusing the two is how small businesses teach Google to buy the wrong thing, efficiently, at scale.
 
-Here is how the live account is set up as of November 19, 2026. Booking Request is primary, and it is the number in the Conversions column. Calls from ads is also primary, but it cannot fire until the account has a call asset, which Chapter 7 left as the owner's decision. Booking Paid is secondary, so it sits outside the Conversions column. Later sections explain each choice.
+Here is how the live account is set up as of November 19, 2026. Booking Request is primary, and it is the number in the Conversions column. Calls from ads is also primary, but it cannot fire until the account has a call asset, which Chapter 7 left as the owner's decision, and even then the live campaign's goal list would need the phone call goal added before calls reach its Conversions column. Booking Paid is secondary, so it sits outside the Conversions column. Later sections explain each choice.
 
 ## Primary one: the submitted booking request
 
@@ -40,7 +40,7 @@ A wrong number counts for nothing. A hang up after four seconds counts for nothi
 
 Sixty seconds is a judgment call, not a law of nature. Some businesses use 30. Some use 90. The principle is what matters. The line should sit where real conversations live, and pocket dials do not. Pick a line, write it down, and do not move it every month, or your own history stops meaning anything.
 
-One live caveat, as of November 19, 2026. Calls from ads is set up as a primary conversion, but with no call asset in the account it has nothing to count. A conversion that can never fire is not tracking. It is a placeholder.
+One live caveat, as of November 19, 2026. Calls from ads is set up as a primary conversion, but with no call asset in the account it has nothing to count, and the live campaign does not yet bid on the phone call goal, as the section called Two switches, not one explains below. A conversion that can never fire is not tracking. It is a placeholder.
 
 Count calls from two places. Calls made straight from the ad, by tapping the call asset from Chapter 7. And calls made from the website, by a visitor who arrived through an ad and then dialed the number on the page. That second kind needs a small piece of technology, explained in plain words below, because the site has to know which calls came from ad visitors.
 
@@ -50,7 +50,7 @@ Miss the calls, and you blind yourself to half the story. Practitioners who audi
 
 Below the two primaries sits a second tier, and Google gives it a name too. Secondary conversions are actions you observe but do not bid toward.
 
-For The Blue Sock, the natural secondaries are a click for directions, the start of a chat, and a view of the sitter list by someone who arrived from an ad. Google also keeps its own hosted local actions, such as directions and website visits, and as of November 19, 2026 those stay out of the Conversions column too. Each one says something real. Directions suggest a meet and greet may be forming. A chat start is warmer than a page view. A sitter list view means the visitor got past the front door and into the heart of the offer.
+For The Blue Sock, the natural secondaries are a click for directions, the start of a chat, and a view of the sitter list by someone who arrived from an ad. Google also keeps its own hosted local actions, such as directions and website visits. Oddly, as of November 19, 2026, the account marks them primary, but the live campaign's goal list leaves them out, so they stay out of its Conversions column too. The next section explains how both of those can be true at once. Each one says something real. Directions suggest a meet and greet may be forming. A chat start is warmer than a page view. A sitter list view means the visitor got past the front door and into the heart of the offer.
 
 Watch them. Do not promote them.
 
@@ -58,11 +58,17 @@ Here is why the fence between primary and secondary matters. Whatever you mark p
 
 Check the primary and secondary labels after any website change, any new tool, or any helpful suggestion applied inside the account. Labels drift. Defaults creep. The fence needs an owner, and the owner is you.
 
+## Two switches, not one
+
+There is a second fence, and it catches almost everyone. Google groups conversion actions into goals, such as submit lead form or phone call leads. Each campaign then has its own list of goals it bids on. An action reaches a campaign's Conversions column only when both switches are on: the action is primary, and its goal is on that campaign's list.
+
+As of November 19, 2026, the live campaign's list holds one goal, submit lead form. Booking Request lives there, so it counts. Calls from ads lives under phone call leads, which is not on the list, so a call would land in All conversions even with a call asset. The hosted local actions sit under goals that are not on the list either. When you add a call asset, add the phone call goal to the campaign the same day. And when a primary action seems to vanish from Conversions, check the campaign's goal list before you blame the tag.
+
 ## Why Booking Paid is secondary, for now
 
 The most important secondary in the live account is Booking Paid. It fires on the payment success page, with the real dollar amount of the stay. It is the closest thing the account has to a receipt. So why is it secondary, and Booking Request primary?
 
-Because of volume and timing. A request is quick and fairly common. A paid booking comes later, after the sitter accepts, after the meet and greet, after the payment request. It is rarer and slower, and bidding learns from the events it can see. Chapter 8 said conversion bidding wants about 15 conversions in 30 days to work with. A campaign asked to hunt paid bookings, with a trickle of them, would starve. Requests give it more examples sooner.
+Because of volume and timing. A request is quick and fairly common. A paid booking comes later, after the sitter accepts, after the meet and greet, after the payment request. It is rarer and slower, and bidding learns from the events it can see. Chapter 8 gave the practical rule of thumb: conversion bidding wants about 15 conversions in 30 days to work with. A campaign asked to hunt paid bookings, with a trickle of them, would starve. Requests give it more examples sooner.
 
 The cost of this choice is real. A request is not a stay. Bidding learns which clicks lead to requests, and nothing yet tells it which requests turn into paid stays.
 
@@ -104,9 +110,9 @@ Here is the honest status. As of November 19, 2026, enhanced conversions for lea
 
 ## Privacy and consent, for a US business
 
-You will hear about Consent Mode v2. It is a requirement for visitors in the European Economic Area. The Blue Sock serves Orange County, so it is good practice here, not the main worry.
+You will hear about Consent Mode v2. Google requires it for visitors in the European Economic Area, the United Kingdom, and Switzerland. The Blue Sock serves Orange County, so it is good practice here, not the main worry.
 
-The rules closer to home are California's privacy laws. They matter most where you use remarketing, which shows ads to people who visited your site, and Customer Match, which uses your own customer lists. Be clear in your privacy policy about what you collect and share for advertising, and honor opt-outs. This book is not legal advice, so confirm the details with counsel before you scale either one.
+The rules closer to home are California's privacy laws. They matter most where you use remarketing, which shows ads to people who visited your site, and Customer Match, which uses your own customer lists. Be clear in your privacy policy about what you collect and share for advertising, and honor opt-outs, including the browser opt-out signal called Global Privacy Control, which California treats as a real request. Google Ads also has a restricted data processing option for US state privacy laws, which limits how Google uses the data of people who opted out. This book is not legal advice, so confirm the details with counsel before you scale either one.
 
 As for where these stand, as of November 19, 2026, the Customer Match lists in the account serve zero on Search. Small lists often do, because Google needs enough matched people before a list serves. That means the exclusion of past customers from the campaign does nothing yet. It is harmless, but do not count on it.
 
@@ -148,7 +154,7 @@ Run those five checks before any big decision, and you will catch most counting 
 
 This is not theory for you anymore. When your live account was audited on November 14, 2026, it failed this chapter's checks in almost every way an account can. Booking Paid had an inactive tag. Eight conversion actions had no recent conversions, and not one action in the account was verifiably recording. Booking Request showed two conversions in one report and zero in the campaign columns, valued at one dollar each. The live campaign was set to optimize toward yet another action, Submit lead forms. And a two week experiment had just finished running Maximize Conversions against this counting, steering hard by instruments that were never switched on. The account had spent 611 dollars in thirty days and could not prove what it bought. Those audit details were not re-pulled on November 19, so treat them as the starting picture, not today's.
 
-Here is the picture as of November 19, 2026. Booking Request is primary and counts in Conversions. Booking Paid is secondary. Calls from ads is primary but cannot fire. Enhanced conversions for leads is on but not working. And the Conversions column reads zero while All conversions shows two booking requests. Those two arrived on November 4 and 5, 2026, and Google credited them to the old experiment campaign, which was not set to count them, so they landed in All conversions only. The live campaign itself recorded no booking requests in those thirty days. That is the first job: prove the live campaign can record one. Do the real world test from the checklist above, and check the Booking Request count against the success page. The account calendar also plans a check of the booking request count with real data around November 23, 2026.
+Here is the picture as of November 19, 2026. Booking Request is primary and counts in Conversions. Booking Paid is secondary. Calls from ads is primary but cannot fire. Enhanced conversions for leads is on but not working. And the Conversions column reads zero while All conversions shows two booking requests. Those two arrived on November 4 and 5, 2026, and Google credited them to the old experiment campaign, which was not set to count them, so they landed in All conversions only. The live campaign itself recorded no booking requests in those thirty days. Its goal list is set right, since it bids on the lead form goal where Booking Request lives, so the setting is not the suspect. That is the first job: prove the live campaign can record one. Do the real world test from the checklist above, and check the Booking Request count against the success page. The account calendar also plans a check of the booking request count with real data around November 23, 2026.
 
 That is why counting is chapter nine and not an appendix. When you took over the account, this checklist became job one, ahead of keywords, ahead of budgets, ahead of everything.
 

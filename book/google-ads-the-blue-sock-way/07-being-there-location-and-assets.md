@@ -116,7 +116,7 @@ Assets used to be called extensions. An asset is an extra piece you attach to yo
 
 Assets cost nothing to add. You pay when someone clicks a clickable part, under the same logic as a click on the ad itself. Google chooses which assets to show on each search, so adding one does not guarantee it appears every time. Add them anyway. When they show, they help. When they do not, they cost nothing.
 
-Here is what the live campaign carries as of November 19, 2026. Six sitelinks, five callouts, one structured snippet, plus a business name, a logo, and an image. It has no call asset and no location asset. The rest of this section walks through each one and what to change.
+Here is what the live campaign carries as of November 19, 2026. Six sitelinks, six callouts (one of them listed twice), one structured snippet, plus a business name, a logo, and seventeen images. It has no call asset and no location asset. The rest of this section walks through each one and what to change.
 
 Assets have size limits, and Google will not accept text over them. Sitelink text gets 25 characters, and so does each callout. A sitelink can also carry two optional description lines of 35 characters each. Structured snippets work differently. The header comes from a fixed list Google provides, such as Services or Amenities, and only the values are yours, at 25 characters each. Twenty-five characters is short. Find Your Perfect Sitter fits with one to spare.
 
@@ -128,7 +128,7 @@ A dog owner comparing sitters does not always want to read three pages and fill 
 
 As of November 19, 2026, the live campaign has no call asset. Whether to add one is a decision for the owner, and it has a real tradeoff.
 
-The case for it. Calls are a strong local signal. A worried owner who picks up the phone is close to booking, and the one tap is what a phone searcher wants. Chapter 9 explains that Calls from ads is already set up as a primary conversion in the account, but it cannot fire without a call asset.
+The case for it. Calls are a strong local signal. A worried owner who picks up the phone is close to booking, and the one tap is what a phone searcher wants. Chapter 9 explains that Calls from ads is already set up as a primary conversion in the account, but it cannot fire without a call asset. There is one more catch, as of November 19, 2026. The live campaign's goal list holds only the lead form goal, where Booking Request lives. So adding the asset alone would put calls in All conversions, not in Conversions. Adding the call asset means adding the phone call goal to the campaign in the same sitting. Do both, and every real call also counts toward the booking requests Chapter 8 waits for before switching to Maximize Conversions. At this budget, that may be the fastest honest way to get there.
 
 The case against. The number would be 714-329-4534, which is Johnny's line. Every ring has to be answered, or returned fast, during the hours you schedule. A call that rings out wastes the click that bought it and sends a worried owner to a competitor. The asset can be scheduled, so the honest version is a promise you can keep. The site lists 7 in the morning to 9 at night, and the ads currently run from 8 in the morning to 10 at night. Pick call hours Johnny can truly cover, and schedule the asset to match.
 
@@ -158,13 +158,13 @@ For The Blue Sock, strong callouts sound like this. In-home care. 5.0 rated. Mee
 
 Every phrase should survive one question. Can a searcher see this proven within a minute of clicking? In-home care, yes, the sitter pages show homes. 5.0 rated, yes, the reviews are right there. Meet Your Sitter First, yes, the booking flow includes a meet and greet. A claim like Replies in about an hour is only a good callout after you have measured it. It has not been verified for this book, so treat it as a labeled example, not a line to print. Four to six honest callouts beat ten vague ones.
 
-As of November 19, 2026, the live campaign has five callouts, all generic: Comfort & Care For Dogs, Experienced Dog Sitters, Personalized Dog Care, Pet Care With Love, and Trusted In-Home Dog Care. They are pleasant, but any dog sitter anywhere could say them. The ones above can only be said by you.
+As of November 19, 2026, the live campaign has six callouts, all generic: Comfort & Care For Dogs, Experienced Dog Sitters, Personalized Dog Care, Trusted In-Home Dog Care, and Pet Care With Love, which is attached twice. They are pleasant, but any dog sitter anywhere could say them. The ones above can only be said by you.
 
 ### Structured snippets
 
 Structured snippets sound technical, but the idea is friendly. A snippet is a small labeled list. There is a header, a category word, and then a short list of values under it.
 
-For you, the natural header is Services. Under it, the values are Dog Boarding and Doggy Daycare. That is the business, stated cleanly, inside the ad, before the click. One catch. Google asks for at least three values in a snippet, and the platform honestly sells two services. The live campaign, as of November 19, 2026, uses the Amenities header instead, which can hold true features of the experience. Its values were not checked for this book. Whichever header you use, every value must be a fact you can prove, within 25 characters. McKenna's training lives in the negative keywords for now, so leave it out of the snippet.
+For you, the natural header is Services. Under it, the values are Dog Boarding and Doggy Daycare. That is the business, stated cleanly, inside the ad, before the click. One catch. Google asks for at least three values in a snippet, and the platform honestly sells two services. The live campaign, as of November 19, 2026, uses the Amenities header instead, which can hold true features of the experience. Its values were not checked for this book. A stronger fit is the Neighborhoods header, with the four sitter cities as values: Irvine, Costa Mesa, Santa Ana, San Juan Capistrano. Four true values, each easy to check, and the snippet then does coverage work, telling a parent in Anaheim before the click that you are not in her town. Whichever header you use, every value must be a fact you can prove, within 25 characters. McKenna's training lives in the negative keywords for now, so leave it out of the snippet.
 
 Snippets also sort the audience. A person looking for a service you do not offer, and remember, there is no standalone dog walking service, no drop-in visits, and no house sitting at The Blue Sock, can see your list and move on without costing you a click. A person looking for exactly what you offer clicks with more confidence. Good assets attract the right click and repel the wrong one.
 

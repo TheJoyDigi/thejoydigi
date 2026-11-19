@@ -68,11 +68,11 @@ The descriptions get to breathe a little. Ninety characters each, two likely to 
 
 ## What the live ads say today
 
-Here is the real thing, dated. As of November 19, 2026, the account has twelve enabled responsive search ads, all approved. The city ads carry twelve to fourteen headlines and four descriptions each.
+Here is the real thing, dated. As of November 19, 2026, the account has ten live responsive search ads, one in each of the ten live ad groups, all approved. The city ads carry twelve to fourteen headlines and four descriptions each. The two general ads carry the full fifteen.
 
 Take the Costa Mesa boarding ad. It leads with Dog Boarding in Costa Mesa, pinned to the first position. Then it mixes in Costa Mesa Dog Sitters, Overnight Stays in Costa Mesa, A Sitter's Home, Not a Kennel, Compare Sitters & Reviews, Meet & Greet Before Booking, Free to Request a Stay, See the Total Before You Pay, and Rated 5.0 by Pet Parents. That is this chapter's recipe already at work: echo first, then proof.
 
-Now the humbling part. Ten of the twelve ads rate Average for ad strength, one rates Good, and one rates Excellent. Remember, that grade is a guide, not a ranking factor. Open the ad in the account and read the note under the rating, because it says what Google wants more of. Pinning, and several headlines that say related things, are the usual suspects. Do not guess. Read the note.
+Now the humbling part. As of November 19, 2026, all ten live ads rate Average for ad strength, even the two with all fifteen headlines. Remember, that grade is a guide, not a ranking factor. Open the ad in the account and read the note under the rating, because it says what Google wants more of. Pinning, and several headlines that say related things, are the usual suspects. Do not guess. Read the note.
 
 ## Boarding words for boarding. Daycare words for daycare.
 

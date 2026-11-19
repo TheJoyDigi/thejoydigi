@@ -58,6 +58,8 @@ Generic callouts. Phrases like Pet Care With Love and Trusted In-Home Dog Care f
 
 No call asset. As of November 19, 2026, the phone number appears on no ad, even though calls from ads are set up to count. Either add the asset, or decide on purpose not to and write down why.
 
+A change nobody logged. Steph and Johnny can edit the account too. If the change history shows an edit your log does not, find out who made it and why before you judge the month.
+
 Then the classic ones. Clicks from places nobody chose: money from people in cities you never meant to reach, or a border city test running past its end date with no verdict. Note what is not on this list: spend in Tustin, Lake Forest, or Mission Viejo. That was a deliberate choice on November 11, 2026. The flag is not that they spend. It is spending there without ever asking whether those cities produce requests a neighboring sitter can serve. One ad group eating the budget, often a near me group with a low Quality Score, while the tight city groups share the crumbs. Ads pointing at the homepage instead of the city landing page. And a slow one: cost per request rising three months in a row with no story attached. Not a crisis. A summons.
 
 ## Green flags: what healthy looks like
