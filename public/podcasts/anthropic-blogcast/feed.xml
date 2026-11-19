@@ -361,5 +361,14 @@
 <itunes:author>TheJoyDigi</itunes:author>
 <itunes:duration>0:07:22</itunes:duration>
 <itunes:episodeType>full</itunes:episodeType>
+</item><item>
+<title>Episode 39: How the Claude Code Team Verifies Its Work</title>
+<description>How end-to-end, property and differential tests let coding agents verify their work with evidence, and what the Claude Code team does to keep its verifiers honest.</description>
+<pubDate>Thu, 19 Nov 2026 09:55:00 -0800</pubDate>
+<enclosure url="https://www.thejoydigi.com/podcasts/anthropic-blogcast/ab-ep39-claude-code-verification.mp3" length="7807971" type="audio/mpeg"/>
+<guid isPermaLink="false">ab-ep39-2026-11-19</guid>
+<itunes:author>TheJoyDigi</itunes:author>
+<itunes:duration>0:08:07</itunes:duration>
+<itunes:episodeType>full</itunes:episodeType>
 </item></channel>
 </rss>
