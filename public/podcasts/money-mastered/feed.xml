@@ -270,5 +270,14 @@
 <itunes:author>The Joy Digi</itunes:author>
 <itunes:duration>0:11:00</itunes:duration>
 <itunes:episodeType>full</itunes:episodeType>
+</item><item>
+<title>Money, Mastered — Chapter 29: Ethereum and Smart Contracts</title>
+<description>Alex and Jordan ask what happens when the shared record book behind Bitcoin can carry agreements that run themselves. The chapter explains Ethereum as a shared computer that belongs to no one, and smart contracts as vending machines made of code: programs that hold, release, and split money automatically when their conditions are met.</description>
+<pubDate>Mon, 16 Nov 2026 08:45:00 -0800</pubDate>
+<enclosure url="https://www.thejoydigi.com/podcasts/money-mastered/money-mastered-chapter-29-ethereum-and-smart-contracts-2026-11-16.mp3" length="6316077" type="audio/mpeg"/>
+<guid isPermaLink="false">mm-ch29-2026-11-16</guid>
+<itunes:author>The Joy Digi</itunes:author>
+<itunes:duration>0:13:09</itunes:duration>
+<itunes:episodeType>full</itunes:episodeType>
 </item></channel>
 </rss>
