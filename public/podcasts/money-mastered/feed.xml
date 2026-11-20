@@ -288,5 +288,14 @@
 <itunes:author>The Joy Digi</itunes:author>
 <itunes:duration>0:14:39</itunes:duration>
 <itunes:episodeType>full</itunes:episodeType>
+</item><item>
+<title>Money, Mastered — Chapter 31: On-Chain Basics: What to Watch</title>
+<description>Every coin movement is written in a public notebook anyone can read — here is how to read it without fooling yourself. This chapter teaches on-chain basics: supply and long-term holders, exchange flows, and five simple metrics for holder profit, network use, security, and ready liquidity.</description>
+<pubDate>Fri, 20 Nov 2026 08:49:00 -0800</pubDate>
+<enclosure url="https://www.thejoydigi.com/podcasts/money-mastered/money-mastered-chapter-31-on-chain-basics-what-to-watch-2026-11-20.mp3" length="12169375" type="audio/mpeg"/>
+<guid isPermaLink="false">mm-ch31-2026-11-20</guid>
+<itunes:author>The Joy Digi</itunes:author>
+<itunes:duration>0:12:40</itunes:duration>
+<itunes:episodeType>full</itunes:episodeType>
 </item></channel>
 </rss>
