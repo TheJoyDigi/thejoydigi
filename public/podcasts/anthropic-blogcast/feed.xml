@@ -370,5 +370,14 @@
 <itunes:author>TheJoyDigi</itunes:author>
 <itunes:duration>0:08:07</itunes:duration>
 <itunes:episodeType>full</itunes:episodeType>
+</item><item>
+<title>Episode 40: Which Claude Model Should You Build With?</title>
+<description>Alex and Jordan break down Anthropic&#x27;s developer guide to choosing between Fable, Opus, Sonnet, and Haiku: start on Opus at medium effort, use effort as the first dial, mix in cheaper subagents, and measure cost per finished task on your own work.</description>
+<pubDate>Fri, 20 Nov 2026 09:49:00 -0800</pubDate>
+<enclosure url="https://www.thejoydigi.com/podcasts/anthropic-blogcast/ab-ep40-which-claude-model-should-you-build-with.mp3" length="7904520" type="audio/mpeg"/>
+<guid isPermaLink="false">ab-ep40-2026-11-20</guid>
+<itunes:author>TheJoyDigi</itunes:author>
+<itunes:duration>0:08:13</itunes:duration>
+<itunes:episodeType>full</itunes:episodeType>
 </item></channel>
 </rss>
