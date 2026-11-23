@@ -388,5 +388,14 @@
 <itunes:author>TheJoyDigi</itunes:author>
 <itunes:duration>0:09:05</itunes:duration>
 <itunes:episodeType>full</itunes:episodeType>
+</item><item>
+<title>Episode 42: Anthropic&#x27;s IPO Closes</title>
+<description>Alex and Jordan break down Anthropic&#x27;s IPO closing: 1.127 billion shares at 83 dollars, the full underwriters option, and a 26 billion dollar private placement for a combined 119.5 billion dollars</description>
+<pubDate>Mon, 23 Nov 2026 09:49:00 -0800</pubDate>
+<enclosure url="https://www.thejoydigi.com/podcasts/anthropic-blogcast/ab-ep42-anthropic-ipo-closes.mp3" length="8060418" type="audio/mpeg"/>
+<guid isPermaLink="false">ab-ep42-2026-11-23</guid>
+<itunes:author>TheJoyDigi</itunes:author>
+<itunes:duration>0:08:23</itunes:duration>
+<itunes:episodeType>full</itunes:episodeType>
 </item></channel>
 </rss>
