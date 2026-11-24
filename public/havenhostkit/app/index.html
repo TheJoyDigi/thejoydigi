@@ -1,47 +1,66 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="heritage">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>HavenHostKit — Make Your Welcome Book</title>
-<meta name="description" content="Answer a few quick questions and download a finished, printable welcome book for your Airbnb or vacation rental.">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>HavenHostKit · Make your welcome book</title>
+<meta name="description" content="Pick a cover, answer a few quick questions, and download a finished, printable welcome book for your Airbnb or vacation rental.">
+<meta name="theme-color" content="#FAF6F0">
+<link rel="preload" href="fonts/fraunces-v38-latin-regular.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="preload" href="fonts/inter-v20-latin-regular.ttf" as="font" type="font/ttf" crossorigin>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header>
-  <div class="brand"><div class="monogram">H<span>K</span></div>
-    <div><strong>HavenHostKit</strong><small>Your welcome book, made easy</small></div></div>
-  <div class="progress-wrap">
-    <div id="progress-label">Step 1 of 6</div>
-    <div class="progress"><div id="progress-bar"></div></div>
+<div class="ambient" aria-hidden="true"><i></i><i></i><i></i></div>
+
+<header class="topbar">
+  <div class="brand">
+    <div class="brand-mark" aria-hidden="true"><span>H</span><span>K</span></div>
+    <div class="brand-text"><strong>HavenHostKit</strong><small>Welcome book maker</small></div>
+  </div>
+  <div class="progress" aria-live="polite">
+    <div class="progress-top">
+      <span id="progress-label">Pick your look</span>
+      <span id="progress-cheer" class="cheer">Let's go</span>
+    </div>
+    <div class="progress-track" id="progress-track"></div>
   </div>
 </header>
 
-<main>
+<main id="main">
   <section class="form-side">
-    <div id="steps"></div>
-    <div class="nav">
-      <button id="back" class="ghost">Back</button>
-      <button id="next" class="primary big">Next</button>
-      <button id="download" class="primary big hidden">Download my printable book</button>
+    <div id="stage" class="stage"></div>
+    <div class="actionbar" id="actionbar">
+      <button id="back" class="btn ghost" aria-label="Back"><span class="arrow-l" aria-hidden="true"></span><span class="lbl">Back</span></button>
+      <button class="peek" id="peek" aria-label="Open live preview"><span class="peek-thumb" id="peek-thumb"></span></button>
+      <button id="next" class="btn primary"><span id="next-label">Next</span><span class="arrow-r" aria-hidden="true"></span></button>
     </div>
-    <p id="status" class="status"></p>
-    <p class="fineprint">Your answers are saved only in this browser, on this
-       device. Nothing is sent anywhere. Come back any time and pick up where
-       you left off.</p>
+    <p id="status" class="status" role="status"></p>
+    <p class="fineprint">Saved only in this browser, on this device. Nothing is sent anywhere.
+      Close the tab and come back any time.</p>
   </section>
 
-  <aside class="preview-side">
-    <div class="preview-tabs">
-      <button data-page="cover" class="active">Cover</button>
-      <button data-page="glance">At a Glance</button>
-      <button data-page="wifi">WiFi</button>
+  <aside class="preview-side" id="preview-side" aria-label="Live preview">
+    <div class="sheet-handle" aria-hidden="true"></div>
+    <div class="preview-head">
+      <div class="preview-title">Live preview</div>
+      <button class="sheet-close" id="sheet-close" aria-label="Close preview">Close</button>
     </div>
-    <div id="preview" class="preview"></div>
-    <p class="fineprint">Live preview. Your final book has all 32 pages,
-       print-ready, with everything you type filled in everywhere it belongs.</p>
+    <div class="preview-tabs" role="tablist">
+      <button data-page="cover" class="active" role="tab">Cover</button>
+      <button data-page="glance" role="tab">At a Glance</button>
+      <button data-page="wifi" role="tab">WiFi</button>
+    </div>
+    <div class="preview-frame"><div id="preview" class="preview"></div></div>
+    <p class="fineprint">Your finished book has all 32 pages, print-ready, with your
+      details filled in everywhere they belong.</p>
   </aside>
 </main>
+
+
+
+<div class="scrim" id="scrim"></div>
+<div class="confetti" id="confetti" aria-hidden="true"></div>
 
 <script src="jspdf.umd.min.js"></script>
 <script src="fonts.js"></script>
