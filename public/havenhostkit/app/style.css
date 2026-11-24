@@ -1,0 +1,82 @@
+@font-face { font-family: Fraunces; src: url(fonts/fraunces-v38-latin-regular.ttf); }
+@font-face { font-family: Fraunces; font-weight: 700; src: url(fonts/fraunces-v38-latin-700.ttf); }
+@font-face { font-family: Fraunces; font-style: italic; src: url(fonts/fraunces-v38-latin-italic.ttf); }
+@font-face { font-family: Inter; src: url(fonts/inter-v20-latin-regular.ttf); }
+@font-face { font-family: Inter; font-weight: 500; src: url(fonts/inter-v20-latin-500.ttf); }
+@font-face { font-family: Inter; font-weight: 600; src: url(fonts/inter-v20-latin-600.ttf); }
+@font-face { font-family: Inter; font-weight: 700; src: url(fonts/inter-v20-latin-700.ttf); }
+
+:root {
+  --ink: #1A2E28; --cream: #FAF6F0; --terra: #C67B5C;
+  --sage: #8A9B8E; --gold: #C9A86A; --gold-tx: #A07C3E; --hair: #CED6CC;
+}
+* { box-sizing: border-box; }
+body { margin: 0; font-family: Inter, sans-serif; background: var(--cream); color: var(--ink); }
+.hidden { display: none !important; }
+h1, h2, .serif { font-family: Fraunces, serif; font-weight: 400; }
+button { font-family: Inter, sans-serif; cursor: pointer; }
+.primary { background: var(--ink); color: var(--cream); border: 0; border-radius: 10px; padding: 12px 22px; font-weight: 600; }
+.primary.big { padding: 16px 28px; font-size: 17px; flex: 1; }
+.primary:disabled { opacity: .45; cursor: not-allowed; }
+.primary:hover:not(:disabled) { background: #24443a; }
+.ghost { background: transparent; border: 1px solid var(--sage); color: var(--ink); border-radius: 10px; padding: 16px 20px; font-size: 16px; }
+.fineprint { font-size: 12px; color: #5C6C64; }
+label { display: block; font-size: 14px; font-weight: 600; margin: 16px 0 0; }
+label small { display: block; font-weight: 400; color: #5C6C64; margin-top: 2px; }
+label .req { color: var(--terra); }
+input, textarea { width: 100%; margin-top: 6px; padding: 13px 14px; border: 1px solid var(--hair);
+  border-radius: 10px; font: 16px Inter, sans-serif; background: #fff; color: var(--ink); }
+input:focus, textarea:focus { outline: 2px solid var(--gold); border-color: var(--gold); }
+input.missing { border-color: var(--terra); outline: 2px solid rgba(198,123,92,.35); }
+
+.monogram { width: 38px; height: 38px; border: 1.5px solid var(--gold); display: grid;
+  place-items: center; font-family: Fraunces, serif; font-size: 16px; color: var(--ink); flex: none; }
+.monogram span { color: var(--terra); }
+
+header { display: flex; justify-content: space-between; align-items: center; gap: 18px;
+  padding: 12px 20px; border-bottom: 1px solid var(--hair); flex-wrap: wrap;
+  position: sticky; top: 0; background: var(--cream); z-index: 5; }
+.brand { display: flex; gap: 12px; align-items: center; }
+.brand small { display: block; color: #5C6C64; }
+.progress-wrap { min-width: 200px; flex: 0 1 420px; }
+#progress-label { font-size: 12px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--gold-tx); }
+.progress { height: 8px; background: #E9E9E2; border-radius: 99px; margin-top: 6px; overflow: hidden; }
+#progress-bar { height: 100%; width: 16%; background: var(--terra); border-radius: 99px; transition: width .3s; }
+main { display: grid; grid-template-columns: minmax(320px, 520px) 1fr; gap: 28px;
+  padding: 20px; align-items: start; max-width: 1180px; margin: 0 auto; }
+@media (max-width: 900px) { main { grid-template-columns: 1fr; } }
+.step h2 { font-size: 27px; margin: 2px 0 4px; }
+.step .blurb { color: #5C6C64; margin: 0 0 6px; }
+.step .kicker { font-size: 11px; font-weight: 600; letter-spacing: .16em; color: var(--gold-tx); text-transform: uppercase; }
+.nav { display: flex; gap: 10px; margin-top: 26px; }
+.status { color: var(--terra); font-weight: 600; min-height: 20px; }
+.pick { border: 1px solid var(--hair); border-radius: 10px; padding: 4px 14px 14px; margin-top: 18px; background: #fff; }
+.pick legend { font-weight: 600; font-size: 14px; padding: 0 6px; }
+.review-row { display: flex; justify-content: space-between; gap: 16px; padding: 7px 0; border-bottom: 1px solid var(--hair); font-size: 14px; }
+.review-row b { font-weight: 600; color: #5C6C64; font-size: 12px; text-transform: uppercase; letter-spacing: .06em; flex: none; }
+.done-note { background: #E9E9E2; border-left: 4px solid var(--terra); padding: 14px 16px; margin-top: 16px; font-size: 14px; }
+
+.preview-side { position: sticky; top: 92px; }
+@media (max-width: 900px) { .preview-side { position: static; } }
+.preview-tabs { display: flex; gap: 8px; margin-bottom: 10px; }
+.preview-tabs button { border: 1px solid var(--sage); background: #fff; border-radius: 99px; padding: 8px 15px; font-weight: 600; font-size: 13px; }
+.preview-tabs button.active { background: var(--ink); color: var(--cream); border-color: var(--ink); }
+.preview { aspect-ratio: 612/792; max-height: 70vh; width: 100%; max-width: 460px;
+  box-shadow: 0 10px 34px rgba(26,46,40,.18); border-radius: 4px; overflow: hidden; position: relative; }
+.pv { position: absolute; inset: 0; padding: 32px 34px; background: var(--cream); overflow: hidden; }
+.pv .kicker { font-size: 10px; font-weight: 600; letter-spacing: .16em; color: var(--gold-tx); text-transform: uppercase; }
+.pv h3 { font-family: Fraunces, serif; font-weight: 400; font-size: 26px; margin: 8px 0 12px; }
+.pv p, .pv li { font-size: 13px; line-height: 1.55; }
+.pv .rule { height: 2px; background: var(--sage); opacity: .55; margin: 10px 0; }
+.pv .val { color: var(--terra); font-weight: 600; }
+.pv .kv { display: flex; justify-content: space-between; gap: 14px; padding: 6px 0; border-bottom: 1px solid var(--hair); font-size: 13px; }
+.pv .kv b { font-size: 11px; text-transform: uppercase; letter-spacing: .06em; color: #5C6C64; flex: none; }
+.pv-cover { background: var(--ink); color: var(--cream); display: flex; flex-direction: column; }
+.pv-cover .welcome { margin-top: auto; font-size: 11px; letter-spacing: .3em; color: var(--gold); font-weight: 600; }
+.pv-cover h3 { font-size: 38px; color: var(--cream); margin: 10px 0 6px; line-height: 1.08; }
+.pv-cover .goldrule { width: 110px; height: 2px; background: var(--gold); margin: 14px 0; }
+.pv-cover .tagline { font-family: Fraunces, serif; font-style: italic; font-size: 16px; color: #E8E2D6; }
+.pv-cover .prop { color: var(--terra); font-family: Fraunces, serif; font-size: 16px; margin-top: 24px; }
+.pv-cover .addr, .pv-cover .by { color: #D6D0C4; font-size: 13px; margin-top: 4px; }
+.pv-wifi-box { background: #E9E9E2; border-left: 4px solid var(--terra); padding: 16px 18px; margin: 16px 0; }
+.pv-wifi-box .big { font-size: 19px; font-weight: 700; }
