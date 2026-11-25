@@ -306,5 +306,14 @@
 <itunes:author>The Joy Digi</itunes:author>
 <itunes:duration>0:11:25</itunes:duration>
 <itunes:episodeType>full</itunes:episodeType>
+</item><item>
+<title>Money, Mastered — Chapter 33: The Macro Framework: Putting It All Together</title>
+<description>Three dials explain almost every market move you will ever see: growth, inflation, and liquidity. This chapter combines them into the four market regimes, shows what each regime means for stocks, bonds, gold, and Bitcoin, and teaches the calm habit of checking the weather before you sail.</description>
+<pubDate>Wed, 25 Nov 2026 08:57:00 -0800</pubDate>
+<enclosure url="https://www.thejoydigi.com/podcasts/money-mastered/money-mastered-chapter-33-the-macro-framework-putting-it-all-together-2026-11-25.mp3" length="11520285" type="audio/mpeg"/>
+<guid isPermaLink="false">mm-ch33-2026-11-25</guid>
+<itunes:author>The Joy Digi</itunes:author>
+<itunes:duration>0:11:59</itunes:duration>
+<itunes:episodeType>full</itunes:episodeType>
 </item></channel>
 </rss>
