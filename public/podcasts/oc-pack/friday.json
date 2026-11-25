@@ -1,43 +1,43 @@
 {
-  "date": "2026-11-20",
-  "episode": {
-    "title": "The OC Pack — Episode 6: Three Acres of Freedom: Inside Irvine Central Bark",
-    "url": "https://www.thejoydigi.com/podcasts/oc-pack/6"
-  },
+  "date": "2026-11-27",
+  "subject": "Your Friday 5: dog things for this weekend · The OC Pack",
   "headline": "5 dog things to do in Orange County this weekend.",
-  "intro": "Santa photos in Lake Forest, a makers market in Old Town Tustin, and three good places to run, splash and hike. Here is the weekend:",
+  "intro": "Dachshund races in Placentia, Santa photos in Anaheim and Brea, and two good walks to work off Thanksgiving. Here is the weekend:",
   "picks": [
     {
-      "detail": "Saturday, 1 to 5 PM at The Pet Adoption Center of Orange County, 24331 Muirlands Boulevard, Suites E and F. Bring your dog for a festive photo with Santa at this annual holiday gathering. Check the center site before you go for photo pricing and any reservation details.",
-      "name": "Pet Photos with Santa, Lake Forest"
+      "name": "Wienersgiving at The Bruery, Placentia",
+      "detail": "Sunday, 1 to 5 PM at The Bruery, 717 Dunn Way. This Thanksgiving themed dachshund meetup has races at 2 PM and a costume contest at 3 PM, plus pet vendors. Race sign up is 1 to 1:45 PM and the racer fee is $10 cash. Spectators and other breeds are welcome."
     },
     {
-      "detail": "Sunday, 11 AM to 5 PM at 245 El Camino Real. This outdoor makers show fills Old Town with local vendors, food trucks and DIY crafts, and leashed dogs are welcome at Patchwork outdoor shows. Start at the info booth to pick up a scavenger hunt card.",
-      "name": "Patchwork Show, Old Town Tustin"
+      "name": "Puppy Pics with Santa, Anaheim",
+      "detail": "Sunday, 2 to 4 PM at Colony Wine Merchant, 280 South Lemon Street. Bring your pup for a holiday photo with Santa to kick off the Christmas season, with photography by Parker's Pet Photos. Tickets are sold through the Colony Wine Merchant website, so check there before you go."
     },
     {
-      "detail": "Open daily 5 AM to 10 PM on Pacific Coast Highway between Seapoint Avenue and Goldenwest Street. Dogs stay leashed in the parking lots and on the upper bluff, and the sand is leash optional for dogs with strong recall. Metered parking fills early on weekends, so go in the morning.",
-      "name": "Huntington Dog Beach"
+      "name": "Pet Photos with Santa, Brea Mall",
+      "detail": "Sunday, 6:30 to 8 PM in Center Court at Brea Mall, 1065 Brea Mall. Bring your pet to pose with Santa at this special pet photo session, with no reservation needed. The Santa set is near Sephora. Check the Brea Mall site before you go to confirm the session."
     },
     {
-      "detail": "Saturday and Sunday, 6:30 AM to 10 PM at 6405 Oak Canyon. Nearly three acres of fenced off-leash play, with a separate area for small or frail dogs, plus water, seating and lighting. Weekends get busy, so early visits suit shy dogs best.",
-      "name": "Irvine Central Bark"
+      "name": "Costa Mesa Bark Park",
+      "detail": "Friday through Sunday, 7:30 AM to 8:45 PM at 890 Arlington Drive, inside TeWinkle Park. Two fenced acres of off-leash play, with a separate area for small, elderly and disabled dogs, plus water, benches and free parking. The park is closed Wednesdays for maintenance."
     },
     {
-      "detail": "A 2.5 mile loop around the reservoir at Peters Canyon Regional Park, 8548 Canyon View Avenue. Dogs are welcome on a leash of six feet or less, and the park is open 7 AM to sunset. Parking is $3 for the day. Bring water, as shade is limited on the loop.",
-      "name": "Peters Canyon Lake View Loop, Orange"
+      "name": "Upper Newport Bay Back Bay Loop, Newport Beach",
+      "detail": "Open 7 AM to sunset, starting at the Peter and Mary Muth Interpretive Center, 2301 University Drive. Walk the paved bay trails with your dog on a leash and watch for herons and egrets over the marsh. Parking is free at the center lot. Bring water for you and your dog."
     }
   ],
-  "subject": "Your Friday 5: dog things for this weekend · The OC Pack",
   "trailGuide": {
+    "name": "Santiago Creek Trail, Santiago Oaks Regional Park, Orange",
+    "parking": "Main lot at 2145 North Windes Drive, $5 per vehicle on weekends; park open 7 AM to sunset",
+    "shade": "Good shade along the creek under the oaks, with sunnier stretches if you climb toward the ridge trails",
     "leash": "Required at all times, six foot maximum",
-    "name": "Peters Canyon Lake View Loop, Orange",
-    "note": "About 2.5 miles of wide dirt trail around the reservoir. Trails can close for up to three days after rain, so check OC Parks alerts if the weather turns.",
-    "parking": "Main lot at 8548 Canyon View Avenue, $3 per day; lot closes at sunset",
-    "shade": "Limited shade, with open sunny stretches around the reservoir; go early"
+    "note": "The easy Santiago Creek Trail is just under a mile along the creek, a calm pick after a busy holiday. Trails may close for up to three days after rain, so check OC Parks before you go."
   },
   "vetPlaybook": {
-    "detail": "Which shots are due matters more than the visit itself. Core vaccines, boosters your dog is due for, the exam fee and add-ons like bordetella for boarding or daycare all change the total. Ask which vaccines are required, which are optional for your dog's lifestyle, and get the list in writing before the visit.",
-    "title": "Vaccines: what actually drives the bill"
+    "title": "Emergency visits: what actually drives the bill",
+    "detail": "After hours timing, the triage exam, and diagnostics like bloodwork and imaging drive most of the total, before any treatment or overnight stay. Ask what is urgent tonight, what can wait for your regular vet, and for a written estimate with a low and high range before you approve care."
+  },
+  "episode": {
+    "title": "The OC Pack — Episode 8: The Thanksgiving Boarding Squeeze",
+    "url": "https://www.thejoydigi.com/podcasts/oc-pack/8"
   }
 }
