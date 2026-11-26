@@ -349,7 +349,74 @@
     }
     setTimeout(() => { box.innerHTML = ""; }, 5200);
   }
+  /* ---------- buyer access code (hosted copy only) ----------
+     Trying the hosted builder is free end to end. Only the final PDF
+     download asks for the access code that ships with the Etsy Builder
+     download (printed in builder-access-code.pdf, publish-package).
+     Codes are kept here as SHA-256 hashes, never in plain text. This is
+     friction, not vault security, and that is the accepted design.
+     TO ADD OR RETIRE A CODE: compute the lowercase hex SHA-256 of the
+     code exactly as printed (format HHK-XXXXXX, uppercase) and add or
+     remove its hash in the one list below. Launch codes issued
+     2026-11-26: two codes, both printed in builder-access-code.pdf.
+     The packaged offline copy never asks: its gate-config.js sets
+     HHK_GATE.enabled = false (see gate-config.js and the README). */
+  const ACCESS_CODE_HASHES = [
+    "5a3445edffca74eb92e235e2c63b9c02c4f7732d02497501eac6a3a968dc31c7",
+    "ab585ba6960f5ec9b1810ab9ce143c6171d682a2a9c40e4891b7a54c41e28037"
+  ];
+  const GATE = window.HHK_GATE || { enabled: false, etsyShop: "" };
+  const LS_UNLOCK = "hhk-unlocked-v1";
+  function gateUnlocked() {
+    if (!GATE.enabled) return true;
+    try { return localStorage.getItem(LS_UNLOCK) === "1"; } catch (e) { return false; }
+  }
+  async function codeMatches(raw) {
+    const code = String(raw || "").trim().toUpperCase();
+    if (!code || !(window.crypto && crypto.subtle)) return false;
+    const buf = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(code));
+    const hex = Array.from(new Uint8Array(buf)).map((b) => b.toString(16).padStart(2, "0")).join("");
+    return ACCESS_CODE_HASHES.indexOf(hex) !== -1;
+  }
+  const gateEl = $("gate"), gateInput = $("gate-code"), gateError = $("gate-error");
+  function openGate() {
+    gateError.textContent = "";
+    gateEl.hidden = false;
+    document.body.style.overflow = "hidden";
+    setTimeout(() => gateInput.focus(), 60);
+  }
+  function closeGate() {
+    gateEl.hidden = true;
+    document.body.style.overflow = "";
+  }
+  async function tryUnlock() {
+    const btn = $("gate-unlock");
+    if (btn.disabled) return;
+    btn.disabled = true;
+    const ok = await codeMatches(gateInput.value);
+    btn.disabled = false;
+    if (ok) {
+      try { localStorage.setItem(LS_UNLOCK, "1"); } catch (e) {}
+      closeGate();
+      download();
+    } else {
+      gateError.textContent = "That code does not match. Check the access code in your HavenHostKit download and try again.";
+      gateInput.classList.add("missing");
+      gateInput.focus();
+      gateInput.select();
+    }
+  }
+  if (gateEl) {
+    $("gate-unlock").addEventListener("click", tryUnlock);
+    $("gate-close").addEventListener("click", closeGate);
+    gateEl.addEventListener("click", (e) => { if (e.target === gateEl) closeGate(); });
+    gateInput.addEventListener("keydown", (e) => { if (e.key === "Enter") { e.preventDefault(); tryUnlock(); } });
+    gateInput.addEventListener("input", () => gateInput.classList.remove("missing"));
+    document.addEventListener("keydown", (e) => { if (e.key === "Escape" && !gateEl.hidden) closeGate(); });
+  }
+
   function download() {
+    if (!gateUnlocked()) { openGate(); return; }
     const btn = $("download"), lbl = btn.querySelector(".lbl"), after = $("after");
     if (btn.classList.contains("busy")) return;
     btn.classList.remove("done"); btn.classList.add("busy");

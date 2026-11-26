@@ -408,3 +408,27 @@ h1 em, h2 em { font-style: italic; color: var(--accent); }
   .fan-card.m { width: 186px; margin-left: -93px; }
   .fan-card.l { --tx: -108px; } .fan-card.r { --tx: 108px; }
 }
+
+/* ---------- access code gate (hosted copy only; see gate-config.js) ---------- */
+.gate { position: fixed; inset: 0; z-index: 60; display: flex; align-items: center; justify-content: center;
+  padding: 20px; background: rgba(10, 12, 12, .52); }
+.gate[hidden] { display: none; }
+.gate-card { position: relative; width: 100%; max-width: 450px; background: var(--paper); color: var(--ink);
+  border-radius: calc(var(--r) + 8px); box-shadow: var(--lift-shadow); padding: 34px 30px 26px;
+  text-align: center; animation: gate-in .45s var(--spring); max-height: calc(100vh - 40px); overflow: auto; }
+@keyframes gate-in { from { transform: translateY(18px) scale(.97); opacity: 0; } }
+.gate-card .eyebrow { justify-content: center; }
+.gate-card h2 { font-family: var(--font-display); font-weight: var(--display-semi); font-size: 26px;
+  line-height: 1.2; margin: 10px 0 10px; }
+.gate-lede { color: var(--mute); font-size: 15px; line-height: 1.55; margin: 0 0 20px; }
+.gate-input input { text-align: center; font-size: 19px; font-weight: 600; letter-spacing: .12em;
+  text-transform: uppercase; }
+.gate-error { color: var(--accent); font-size: 14px; font-weight: 600; line-height: 1.45;
+  min-height: 21px; margin: 10px 0 4px; }
+.gate-go { width: 100%; flex: none; margin-top: 6px; }
+.gate-help { color: var(--mute); font-size: 13.5px; line-height: 1.55; margin: 16px 0 0; }
+.gate-help a { color: var(--gold-tx); font-weight: 700; }
+.gate-close { position: absolute; top: 12px; right: 14px; background: none; border: none;
+  color: var(--mute); font-size: 13.5px; font-weight: 600; padding: 8px; min-height: 40px; }
+.gate-close:hover { color: var(--ink); }
+@media (prefers-reduced-motion: reduce) { .gate-card { animation: none; } }
