@@ -415,5 +415,14 @@
 <itunes:author>TheJoyDigi</itunes:author>
 <itunes:duration>0:09:20</itunes:duration>
 <itunes:episodeType>full</itunes:episodeType>
+</item><item>
+<title>Episode 45: Anthropic Launches Its IPO Roadshow</title>
+<description>Anthropic launches the roadshow for its proposed IPO: 825 million shares, an expected 70 to 78 dollar price range, and a planned Nasdaq listing as ANT.</description>
+<pubDate>Thu, 26 Nov 2026 09:49:00 -0800</pubDate>
+<enclosure url="https://www.thejoydigi.com/podcasts/anthropic-blogcast/ab-ep45-roadshow-launch.mp3" length="8959031" type="audio/mpeg"/>
+<guid isPermaLink="false">ab-ep45-2026-11-26</guid>
+<itunes:author>TheJoyDigi</itunes:author>
+<itunes:duration>0:09:19</itunes:duration>
+<itunes:episodeType>full</itunes:episodeType>
 </item></channel>
 </rss>
