@@ -351,32 +351,64 @@
   }
   /* ---------- buyer access code (hosted copy only) ----------
      Trying the hosted builder is free end to end. Only the final PDF
-     download asks for the access code that ships with the Etsy Builder
-     download (printed in builder-access-code.pdf, publish-package).
-     Codes are kept here as SHA-256 hashes, never in plain text. This is
-     friction, not vault security, and that is the accepted design.
-     TO ADD OR RETIRE A CODE: compute the lowercase hex SHA-256 of the
-     code exactly as printed (format HHK-XXXXXX, uppercase) and add or
-     remove its hash in the one list below. Launch codes issued
-     2026-11-26: two codes, both printed in builder-access-code.pdf.
+     download asks for the buyer's unique access code (one per Etsy
+     order, emailed to the buyer after purchase; unique-code system
+     built 2026-11-27). Validation is SERVER-SIDE: this app calls the
+     havenhostkit Supabase validate-code Edge Function, which checks
+     the code's hash in the database and returns a signed unlock token
+     (30 day expiry) that we store in localStorage. A code can be
+     revoked instantly in the database; no app redeploy is involved.
+     Codes and hashes never live in this file.
+     The two shared launch codes from 2026-11-26 are RETIRED by this
+     change: they stop working when this build ships, and the printed
+     builder-access-code.pdf in the publish package must be replaced
+     before publishing (buyers now receive their code by email).
      The packaged offline copy never asks: its gate-config.js sets
      HHK_GATE.enabled = false (see gate-config.js and the README). */
-  const ACCESS_CODE_HASHES = [
-    "5a3445edffca74eb92e235e2c63b9c02c4f7732d02497501eac6a3a968dc31c7",
-    "ab585ba6960f5ec9b1810ab9ce143c6171d682a2a9c40e4891b7a54c41e28037"
-  ];
   const GATE = window.HHK_GATE || { enabled: false, etsyShop: "" };
-  const LS_UNLOCK = "hhk-unlocked-v1";
+  const LS_UNLOCK = "hhk-unlocked-v2";
+  function storedToken() {
+    try {
+      const raw = localStorage.getItem(LS_UNLOCK);
+      if (!raw) return null;
+      const t = JSON.parse(raw);
+      if (!t.token || !t.expires_at || t.expires_at * 1000 < Date.now()) return null;
+      return t;
+    } catch (e) { return null; }
+  }
   function gateUnlocked() {
     if (!GATE.enabled) return true;
-    try { return localStorage.getItem(LS_UNLOCK) === "1"; } catch (e) { return false; }
+    return !!storedToken();
   }
-  async function codeMatches(raw) {
+  async function validateCode(raw) {
     const code = String(raw || "").trim().toUpperCase();
-    if (!code || !(window.crypto && crypto.subtle)) return false;
-    const buf = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(code));
-    const hex = Array.from(new Uint8Array(buf)).map((b) => b.toString(16).padStart(2, "0")).join("");
-    return ACCESS_CODE_HASHES.indexOf(hex) !== -1;
+    if (!code) return { ok: false, error: "empty" };
+    let res;
+    try {
+      res = await fetch(GATE.supabaseUrl + "/functions/v1/validate-code", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "apikey": GATE.supabaseAnonKey,
+          "Authorization": "Bearer " + GATE.supabaseAnonKey
+        },
+        body: JSON.stringify({ code: code })
+      });
+    } catch (e) {
+      return { ok: false, error: "network" };
+    }
+    if (res.status === 200) {
+      try {
+        const body = await res.json();
+        return { ok: true, token: body.token, expires_at: body.expires_at };
+      } catch (e) { return { ok: false, error: "network" }; }
+    }
+    let err = "invalid_code";
+    try {
+      const body = await res.json();
+      if (body && body.error) err = body.error;
+    } catch (e) {}
+    return { ok: false, error: err };
   }
   const gateEl = $("gate"), gateInput = $("gate-code"), gateError = $("gate-error");
   function openGate() {
@@ -393,14 +425,25 @@
     const btn = $("gate-unlock");
     if (btn.disabled) return;
     btn.disabled = true;
-    const ok = await codeMatches(gateInput.value);
+    const result = await validateCode(gateInput.value);
     btn.disabled = false;
-    if (ok) {
-      try { localStorage.setItem(LS_UNLOCK, "1"); } catch (e) {}
+    if (result.ok) {
+      try {
+        localStorage.setItem(LS_UNLOCK, JSON.stringify({ token: result.token, expires_at: result.expires_at }));
+      } catch (e) {}
       closeGate();
       download();
+    } else if (result.error === "network") {
+      // Never silently unlock on a failed check.
+      gateError.textContent = "Couldn't check your code. Check your connection and try again.";
+      gateInput.focus();
+    } else if (result.error === "code_revoked") {
+      gateError.textContent = "This code has been revoked. If you bought HavenHostKit, reply to your order email and we will sort it out.";
+      gateInput.classList.add("missing");
+      gateInput.focus();
+      gateInput.select();
     } else {
-      gateError.textContent = "That code does not match. Check the access code in your HavenHostKit download and try again.";
+      gateError.textContent = "That code does not match. Check the access code in the email we sent after your purchase and try again.";
       gateInput.classList.add("missing");
       gateInput.focus();
       gateInput.select();
