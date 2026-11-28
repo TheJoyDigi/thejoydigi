@@ -433,5 +433,14 @@
 <itunes:author>TheJoyDigi</itunes:author>
 <itunes:duration>0:10:46</itunes:duration>
 <itunes:episodeType>full</itunes:episodeType>
+</item><item>
+<title>Episode 47: Working With AI: What 58 Companies Learned</title>
+<description>Anthropic interviewed 58 companies about working with Claude: few layoffs, reduced hiring, and why reorganizing roles beats plain automation</description>
+<pubDate>Sat, 28 Nov 2026 09:49:00 -0800</pubDate>
+<enclosure url="https://www.thejoydigi.com/podcasts/anthropic-blogcast/ab-ep47-working-with-ai.mp3" length="11821633" type="audio/mpeg"/>
+<guid isPermaLink="false">ab-ep47-2026-11-28</guid>
+<itunes:author>TheJoyDigi</itunes:author>
+<itunes:duration>0:12:18</itunes:duration>
+<itunes:episodeType>full</itunes:episodeType>
 </item></channel>
 </rss>
