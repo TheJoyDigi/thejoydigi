@@ -10,14 +10,14 @@
    When updating the app, copy this file last and set the flag for the
    target build. Everything else must stay identical between builds.
 
-   BEFORE THIS HOSTED BUILD GOES LIVE, fill in the two values below from
-   the havenhostkit Supabase project (Project Settings > API). The anon
+   The two values below are from the havenhostkit Supabase project
+   (Project Settings > API), filled in 2026-11-27. The anon
    key is safe to ship in public code: Row Level Security denies it all
    direct table access; it only identifies the project to the Edge
    Function. The service role key must NEVER appear here. */
 window.HHK_GATE = {
   enabled: true,
   etsyShop: "https://www.etsy.com/shop/HavenHostKit",
-  supabaseUrl: "https://YOUR-PROJECT-REF.supabase.co",
-  supabaseAnonKey: "YOUR-ANON-KEY"
+  supabaseUrl: "https://qfzbfuvjskwqttodongu.supabase.co",
+  supabaseAnonKey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFmemJmdXZqc2t3cXR0b2Rvbmd1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTU4MTM5MzIsImV4cCI6MjExMTM4OTkzMn0.I3dvwQUZuRWoOf9AN0D_L7xJl3W22Any1XOJNrFc4Dk"
 };
